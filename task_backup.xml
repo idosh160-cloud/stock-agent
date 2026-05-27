@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-16"?>
+<Task version="1.2" xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task">
+  <RegistrationInfo>
+    <Date>2026-05-20T22:36:03.0784625</Date>
+    <Author>DESKTOP-9FHTP1G\User</Author>
+    <URI>\Stock Agent</URI>
+  </RegistrationInfo>
+  <Principals>
+    <Principal id="Author">
+      <UserId>S-1-5-21-2685844464-141766457-2579116073-1001</UserId>
+      <LogonType>InteractiveToken</LogonType>
+    </Principal>
+  </Principals>
+  <Settings>
+    <DisallowStartIfOnBatteries>true</DisallowStartIfOnBatteries>
+    <StopIfGoingOnBatteries>true</StopIfGoingOnBatteries>
+    <MultipleInstancesPolicy>IgnoreNew</MultipleInstancesPolicy>
+    <WakeToRun>true</WakeToRun>
+    <IdleSettings>
+      <StopOnIdleEnd>true</StopOnIdleEnd>
+      <RestartOnIdle>false</RestartOnIdle>
+    </IdleSettings>
+  </Settings>
+  <Triggers>
+    <CalendarTrigger>
+      <StartBoundary>2026-05-20T08:00:00</StartBoundary>
+      <ScheduleByDay>
+        <DaysInterval>1</DaysInterval>
+      </ScheduleByDay>
+    </CalendarTrigger>
+    <LogonTrigger />
+  </Triggers>
+  <Actions Context="Author">
+    <Exec>
+      <Command>C:\Users\User\AppData\Local\Python\pythoncore-3.14-64\python.exe</Command>
+      <Arguments>run.py</Arguments>
+      <WorkingDirectory>C:\Users\User\stock_agent</WorkingDirectory>
+    </Exec>
+  </Actions>
+</Task>

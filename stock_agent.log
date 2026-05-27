@@ -1,0 +1,56 @@
+2026-05-23 13:55:21 INFO Stock Agent started
+2026-05-23 13:55:52 INFO Stock Agent started
+2026-05-23 13:55:52 INFO Network ready, starting pipeline
+2026-05-23 13:56:01 ERROR HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"No fundamentals data found for symbol: DRAM"}}}
+2026-05-23 13:56:06 ERROR HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ^TA35.TA"}}}
+2026-05-23 13:56:07 ERROR $^TA35.TA: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+2026-05-23 13:57:25 INFO HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-23 13:57:31 INFO Email sent successfully — marked as ran
+2026-05-24 10:01:03 INFO Stock Agent started
+2026-05-24 10:01:03 INFO Network ready, starting pipeline
+2026-05-24 10:06:50 INFO Stock Agent started
+2026-05-24 10:06:50 INFO Network ready, starting pipeline
+2026-05-24 10:07:01 ERROR HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"No fundamentals data found for symbol: DRAM"}}}
+2026-05-24 10:07:07 ERROR HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ^TA35.TA"}}}
+2026-05-24 10:07:08 ERROR $^TA35.TA: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+2026-05-24 10:08:33 INFO HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-24 10:08:41 INFO Email sent successfully — marked as ran
+2026-05-25 14:24:31 INFO Stock Agent started
+2026-05-25 14:24:35 INFO Network ready, starting pipeline
+2026-05-25 14:24:49 ERROR HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"No fundamentals data found for symbol: DRAM"}}}
+2026-05-25 14:24:56 ERROR HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ^TA35.TA"}}}
+2026-05-25 14:24:57 ERROR $^TA35.TA: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+2026-05-25 14:26:22 INFO HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-25 14:26:30 INFO Email sent successfully — marked as ran
+2026-05-26 09:11:34 INFO Stock Agent started
+2026-05-26 10:57:42 ERROR Network unavailable after 90s — aborting without marking as ran
+2026-05-26 11:50:42 INFO Stock Agent started
+2026-05-26 11:50:42 INFO Network ready, starting pipeline
+2026-05-26 11:50:50 ERROR HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"No fundamentals data found for symbol: DRAM"}}}
+2026-05-26 11:50:54 ERROR HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ^TA35.TA"}}}
+2026-05-26 11:50:56 ERROR $^TA35.TA: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+2026-05-26 11:52:15 INFO HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-26 11:52:21 INFO Email sent successfully — marked as ran
+2026-05-26 12:12:51 INFO Stock Agent started
+2026-05-26 12:12:51 INFO Network ready, starting pipeline
+2026-05-26 12:13:01 ERROR HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"No fundamentals data found for symbol: DRAM"}}}
+2026-05-26 12:13:05 ERROR HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ^TA35.TA"}}}
+2026-05-26 12:13:06 ERROR $^TA35.TA: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+2026-05-26 12:14:33 INFO HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-26 12:14:39 INFO Email sent successfully — marked as ran
+2026-05-26 12:20:16 INFO Stock Agent started
+2026-05-26 12:20:16 INFO Network ready, starting pipeline
+2026-05-26 12:20:25 ERROR HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"No fundamentals data found for symbol: DRAM"}}}
+2026-05-26 12:20:29 ERROR HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ^TA35.TA"}}}
+2026-05-26 12:20:30 ERROR $^TA35.TA: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+2026-05-26 12:22:03 INFO HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-26 12:22:09 INFO Email sent successfully — marked as ran
+2026-05-27 09:25:46 INFO Stock Agent started
+2026-05-27 09:25:46 INFO Network ready, starting pipeline
+2026-05-27 09:25:58 ERROR HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"No fundamentals data found for symbol: DRAM"}}}
+2026-05-27 09:26:03 ERROR HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ^TA35.TA"}}}
+2026-05-27 09:26:05 ERROR $^TA35.TA: possibly delisted; no price data found  (period=5d) (Yahoo error = "No data found, symbol may be delisted")
+2026-05-27 09:27:27 INFO HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+2026-05-27 09:27:34 INFO Email sent successfully — marked as ran
+2026-05-27 09:31:39 INFO Stock Agent started
+2026-05-27 09:31:39 INFO Already ran today — skipping
