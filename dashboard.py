@@ -59,21 +59,33 @@ def load_scan():
         return None
 
 def fetch_live_prices(symbols):
-    """מחירים חיים / סגירה אחרונה"""
+    """מחירים חיים / טרום-מסחר / סגירה אחרונה"""
     prices = {}
     for sym in symbols:
         try:
             t    = yf.Ticker(sym)
             info = t.info
-            p    = safe_float(info.get("currentPrice") or info.get("regularMarketPrice"))
-            if p == 0:
+
+            # טרום-מסחר / אחרי-מסחר
+            pre  = safe_float(info.get("preMarketPrice") or info.get("postMarketPrice"))
+            reg  = safe_float(info.get("currentPrice") or info.get("regularMarketPrice"))
+            prev = safe_float(info.get("previousClose") or reg)
+
+            if pre > 0:
+                p        = pre
+                is_ext   = True
+            elif reg > 0:
+                p        = reg
+                is_ext   = False
+            else:
                 hist = t.history(period="2d")
-                p = safe_float(hist["Close"].iloc[-1]) if len(hist) > 0 else 0
-            prev = safe_float(info.get("previousClose") or p)
-            chg  = round((p - prev) / prev * 100, 2) if prev else 0
-            prices[sym] = {"price": round(p, 2), "change_pct": chg}
+                p    = safe_float(hist["Close"].iloc[-1]) if len(hist) > 0 else 0
+                is_ext = False
+
+            chg = round((p - prev) / prev * 100, 2) if prev else 0
+            prices[sym] = {"price": round(p, 2), "change_pct": chg, "extended": is_ext}
         except Exception:
-            prices[sym] = {"price": 0, "change_pct": 0}
+            prices[sym] = {"price": 0, "change_pct": 0, "extended": False}
     return prices
 
 def fetch_chart(symbol, period="3mo"):
@@ -181,20 +193,23 @@ ACTION_COLORS = {
 }
 
 for r in us_recs:
-    sym    = r["symbol"]
-    live_price = safe_float(live.get(sym, {}).get("price", 0))
-    price  = live_price if live_price > 0 else safe_float(r.get("current_price", 0))
-    chg    = safe_float(live.get(sym, {}).get("change_pct") or r.get("daily_change_pct", 0))
-    shares = safe_float(r.get("shares", 0))
-    avg    = safe_float(r.get("avg_cost", 0))
-    val    = safe_float(r.get("current_value", 0)) or price * shares
-    pnl    = safe_float(r.get("pnl_dollars", 0)) or val - avg * shares
-    pnl_p  = safe_float(r.get("pnl_pct", 0)) or (round(pnl / (avg * shares) * 100, 1) if avg and shares else 0)
-    action = r.get("action", "HOLD")
-    conf   = r.get("confidence", "MEDIUM")
-    target = r.get("analyst_target")
-    upside = r.get("upside_to_target_pct")
-    signals = r.get("key_signals", [])
+    sym      = r["symbol"]
+    live_data = live.get(sym, {})
+    live_price = safe_float(live_data.get("price", 0))
+    is_ext   = live_data.get("extended", False)
+    price    = live_price if live_price > 0 else safe_float(r.get("current_price", 0))
+    chg      = safe_float(live_data.get("change_pct") or r.get("daily_change_pct", 0))
+    shares   = safe_float(r.get("shares", 0))
+    avg      = safe_float(r.get("avg_cost", 0))
+    val      = price * shares if shares > 0 else safe_float(r.get("current_value", 0))
+    orig_val = avg * shares if shares > 0 else safe_float(r.get("original_value", 0))
+    pnl      = val - orig_val
+    pnl_p    = round(pnl / orig_val * 100, 1) if orig_val else safe_float(r.get("pnl_pct", 0))
+    action   = r.get("action", "HOLD")
+    conf     = r.get("confidence", "MEDIUM")
+    target   = r.get("analyst_target")
+    upside   = r.get("upside_to_target_pct")
+    signals  = r.get("key_signals", [])
     reasoning = r.get("reasoning", "")
     sec_insight = r.get("sec_insight", "")
     position_advice = r.get("position_advice", "")
@@ -206,8 +221,11 @@ for r in us_recs:
         # שורה עליונה
         hc1, hc2, hc3 = st.columns([2, 2, 1])
         with hc1:
-            st.markdown(f"<span class='ticker'>{sym}</span> <span class='name'>{r.get('name','')}</span>", unsafe_allow_html=True)
-            st.markdown(f"<span class='badge' style='background:{ac};color:white'>{action}</span><span class='badge' style='background:#334155;color:#94a3b8'>Confidence: {conf}</span>", unsafe_allow_html=True)
+            ext_badge = "<span style='background:#854d0e;color:#fef08a;padding:2px 7px;border-radius:4px;font-size:10px;margin-left:6px'>טרום-מסחר</span>" if is_ext else ""
+            st.markdown(f"<span style='font-size:28px;font-weight:900;color:#f1f5f9;letter-spacing:1px'>{sym}</span>{ext_badge}<br><span style='color:#64748b;font-size:13px'>{r.get('name','')}</span>", unsafe_allow_html=True)
+            conf_colors = {"HIGH": "#065f46", "MEDIUM": "#92400e", "LOW": "#4b5563"}
+            cc = conf_colors.get(conf, "#4b5563")
+            st.markdown(f"<span style='background:{ac};color:white;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:700'>{action}</span>&nbsp;<span style='background:{cc};color:white;padding:4px 10px;border-radius:20px;font-size:11px'>{conf}</span>", unsafe_allow_html=True)
         with hc2:
             chg_col = "#34d399" if chg >= 0 else "#f87171"
             pnl_col = "#34d399" if pnl >= 0 else "#f87171"
@@ -219,21 +237,23 @@ for r in us_recs:
                     "<div style='font-size:15px;font-weight:600;color:#93c5fd'>$" + str(target) + "</div>"
                     "<div style='font-size:11px;color:" + up_col + "'>" + sign(upside or 0) + str(upside) + "%</div></div>"
                 )
-            price_html = (
-                "<div style='display:flex;gap:16px;flex-wrap:wrap'>"
-                "<div><div style='font-size:10px;color:#64748b'>מחיר</div>"
-                "<div style='font-size:20px;font-weight:700;color:#f1f5f9'>$" + f"{price:.2f}" + "</div>"
-                "<div style='color:" + chg_col + ";font-size:12px'>" + sign(chg) + f"{chg:.2f}" + "% היום</div></div>"
-                "<div><div style='font-size:10px;color:#64748b'>עלות</div>"
-                "<div style='font-size:18px;font-weight:600;color:#94a3b8'>$" + f"{avg:.2f}" + "</div></div>"
-                "<div><div style='font-size:10px;color:#64748b'>שווי</div>"
-                "<div style='font-size:18px;font-weight:600;color:#f1f5f9'>$" + f"{val:,.0f}" + "</div></div>"
-                "<div><div style='font-size:10px;color:#64748b'>P&L</div>"
-                "<div style='font-size:18px;font-weight:700;color:" + pnl_col + "'>" + sign(pnl) + "$" + f"{abs(pnl):,.0f}" + "</div>"
-                "<div style='font-size:11px;color:" + pnl_col + "'>" + sign(pnl_p) + f"{pnl_p}" + "%</div></div>"
-                + target_html +
-                "</div>"
-            )
+            def box(label, val_str, sub="", color="#f1f5f9", size="24px"):
+                return (
+                    f"<div style='background:#0f172a;border-radius:10px;padding:10px 16px;min-width:90px'>"
+                    f"<div style='font-size:10px;color:#475569;text-transform:uppercase;letter-spacing:1px'>{label}</div>"
+                    f"<div style='font-size:{size};font-weight:800;color:{color}'>{val_str}</div>"
+                    f"<div style='font-size:11px;color:{color};opacity:0.8'>{sub}</div>"
+                    f"</div>"
+                )
+            price_label_str = "טרום-מסחר" if is_ext else "מחיר"
+            price_html = "<div style='display:flex;gap:8px;flex-wrap:wrap;margin-top:8px'>"
+            price_html += box(price_label_str, f"${price:.2f}", sign(chg)+f"{chg:.2f}%", chg_col, "26px")
+            price_html += box("עלות ממוצעת", f"${avg:.2f}", f"{shares:.0f} מניות", "#94a3b8", "22px")
+            price_html += box("שווי", f"${val:,.0f}", "", "#e2e8f0", "22px")
+            price_html += box("P&L", sign(pnl)+f"${abs(pnl):,.0f}", sign(pnl_p)+f"{pnl_p}%", pnl_col, "22px")
+            if target_html:
+                price_html += target_html
+            price_html += "</div>"
             st.markdown(price_html, unsafe_allow_html=True)
         with hc3:
             # גרף מיני
