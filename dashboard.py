@@ -186,7 +186,8 @@ ACTION_COLORS = {
 for r in us_recs:
     sym    = r["symbol"]
     cfg    = PORTFOLIO_US.get(sym, {})
-    price  = safe_float(live.get(sym, {}).get("price") or r.get("current_price", 0))
+    live_price = safe_float(live.get(sym, {}).get("price", 0))
+    price  = live_price if live_price > 0 else safe_float(r.get("current_price", 0))
     chg    = safe_float(live.get(sym, {}).get("change_pct") or r.get("daily_change_pct", 0))
     shares = cfg.get("shares", r.get("shares", 0))
     avg    = cfg.get("avg_cost", r.get("avg_cost", 0))
@@ -254,13 +255,19 @@ for r in us_recs:
                 )
                 st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": False})
 
-        # אותות
+        # אותות — נקה HTML אם יש
         if signals:
+            import re
             sig_html = ""
             for s in signals:
-                is_warn = any(w in s.upper() for w in ["WARNING","SELLING","CONCERN","HIGH SHORT","ELEVATED","DEBT","MISS"])
-                cls = "signal-warn" if is_warn else "signal-ok"
-                sig_html += f"<span class='{cls}'>{'⚠️' if is_warn else '✅'} {s}</span>"
+                s_clean = re.sub(r'<[^>]+>', '', str(s)).strip()
+                if not s_clean:
+                    continue
+                is_warn = any(w in s_clean.upper() for w in ["WARNING","SELLING","CONCERN","HIGH SHORT","ELEVATED","DEBT","MISS","AVOID","LOSS"])
+                color = "#f87171" if is_warn else "#6ee7b7"
+                bg    = "#1a0a0a" if is_warn else "#0a1a0a"
+                icon  = "⚠️" if is_warn else "✅"
+                sig_html += f"<div style='background:{bg};border-radius:6px;padding:5px 10px;margin:2px 0;font-size:12px;color:{color}'>{icon} {s_clean}</div>"
             st.markdown(sig_html, unsafe_allow_html=True)
 
         # SEC insight

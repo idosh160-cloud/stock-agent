@@ -467,6 +467,8 @@ RECENT NEWS:
     prompt = f"""You are an expert stock analyst. Today is {market_data['fetched_at'][:10]}.
 Price type: {price_label} | Risk profile: {RISK_PROFILE}
 
+IMPORTANT: Write ALL text fields in Hebrew (עברית) — reasoning, position_advice, sec_insight, earnings_expectations, why_interesting, catalyst, risk, thesis, market_summary, yesterday_recap, rumors_and_contracts, scan_summary. Only symbols and numbers stay in English.
+
 Your job: Analyze each stock using the pre-processed signals below and produce a structured JSON recommendation.
 The signals were extracted from Finnhub (analyst consensus, earnings surprises, insider trades),
 Finviz (short interest, RSI, debt), and SEC Edgar (actual 10-Q filings).
