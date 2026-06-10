@@ -1,0 +1,51 @@
+{
+  "timestamp": "2026-06-10T22:53:32.676567",
+  "balance": {
+    "ADA": 0.11115247,
+    "USDC": 298.08060031,
+    "ETH": 0.18086108,
+    "XRP": 0.00417466
+  },
+  "portfolio_usd": 592.48,
+  "usdc": 298.08,
+  "signals": [
+    {
+      "coin": "BTC",
+      "pair": "XXBTZUSD",
+      "action": "HOLD",
+      "rsi": 58.39,
+      "price": 61914.0,
+      "volume": 0,
+      "usd_value": 0.0,
+      "limit_price": 0
+    },
+    {
+      "coin": "ETH",
+      "pair": "XETHZUSD",
+      "action": "HOLD",
+      "rsi": 50.33,
+      "price": 1627.75,
+      "volume": 0,
+      "usd_value": 0.0,
+      "limit_price": 0
+    },
+    {
+      "coin": "XRP",
+      "pair": "XXRPZUSD",
+      "action": "HOLD",
+      "rsi": 42.61,
+      "price": 1.09762,
+      "volume": 0,
+      "usd_value": 0.0,
+      "limit_price": 0
+    }
+  ],
+  "orders_today": 0,
+  "params": {
+    "RSI_BUY": 32,
+    "RSI_SELL": 68,
+    "MAX_TRADE_USD": 30,
+    "MAX_DAILY_TRADES": 4
+  },
+  "recent_trades": []
+}
