@@ -504,6 +504,22 @@ def run_cycle(auto_trade: bool = True) -> dict:
         if coin in prices:
             portfolio_usd += amt * prices[coin]
 
+    # פקודות limit פתוחות לתצוגה בדשבורד
+    open_orders_display = []
+    try:
+        for txid, o in get_open_orders().items():
+            descr = o.get("descr", {})
+            open_orders_display.append({
+                "txid":   txid,
+                "coin":   descr.get("pair", ""),
+                "side":   descr.get("type", ""),
+                "price":  float(descr.get("price", 0)),
+                "volume": float(o.get("vol", 0)),
+                "usd":    round(float(o.get("vol", 0)) * float(descr.get("price", 0) or 0), 2),
+            })
+    except Exception:
+        pass
+
     state = {
         "timestamp":     datetime.now().isoformat(),
         "balance":       balance,
@@ -512,6 +528,7 @@ def run_cycle(auto_trade: bool = True) -> dict:
         "signals":       signals,
         "orders_today":  daily,
         "params":        params,
+        "open_orders":   open_orders_display,
         "recent_trades": load_trades()[-20:],
     }
 

@@ -162,6 +162,7 @@ with tab_crypto:
         portfolio_usd = crypto.get("portfolio_usd", 0)
         usdc = crypto.get("usdc", 0)
         signals = crypto.get("signals", [])
+        open_orders = crypto.get("open_orders", [])
         trades = crypto.get("recent_trades", [])
         params = crypto.get("params", {})
 
@@ -238,6 +239,27 @@ with tab_crypto:
                 """, unsafe_allow_html=True)
         else:
             st.info("אין עסקאות עדיין — הבוט ימתין לסיגנל RSI.")
+
+        # ── פקודות limit ממתינות ──────────────────────────────────────────
+        st.divider()
+        st.markdown("#### ⏳ פקודות Limit ממתינות")
+        if open_orders:
+            for o in open_orders:
+                side  = o.get("side", "")
+                color = "#34d399" if side == "buy" else "#f87171"
+                st.markdown(f"""
+                <div style='background:#0f172a;border-left:3px solid {color};border-radius:0 8px 8px 0;
+                            padding:10px 14px;margin-bottom:6px;display:flex;justify-content:space-between;align-items:center'>
+                  <div>
+                    <span style='color:{color};font-weight:700;text-transform:uppercase'>{side}</span>
+                    <span style='color:#94a3b8;font-size:13px;margin-left:10px'>{o.get('coin','')}</span>
+                  </div>
+                  <div style='color:#e2e8f0;font-weight:600'>${o.get('price',0):,.4f}</div>
+                  <div style='color:#64748b;font-size:12px'>{o.get('volume',0):.6f} · ${o.get('usd',0):.2f}</div>
+                </div>
+                """, unsafe_allow_html=True)
+        else:
+            st.caption("אין פקודות פתוחות כרגע — הבוט ישים ברמות תמיכה בשעה הקרובה.")
 
         # ── פרמטרים ──────────────────────────────────────────────────────
         with st.expander("⚙️ פרמטרים נוכחיים (אוטו-כוונון שבועי)"):
