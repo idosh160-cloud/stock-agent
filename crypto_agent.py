@@ -24,18 +24,20 @@ logging.basicConfig(
 
 def push_to_github():
     try:
-        subprocess.run(["git", "add", "last_crypto.json", "crypto_trades.json", "crypto_params.json"],
-                       cwd=DIR, check=True, capture_output=True)
-        result = subprocess.run(
+        for f in ["last_crypto.json", "crypto_trades.json", "crypto_params.json"]:
+            subprocess.run(["git", "add", f], cwd=DIR, capture_output=True)
+        has_changes = subprocess.run(
             ["git", "diff", "--cached", "--quiet"], cwd=DIR, capture_output=True
-        )
-        if result.returncode != 0:
+        ).returncode != 0
+        if has_changes:
             subprocess.run(
                 ["git", "commit", "-m", f"crypto: update {datetime.now().strftime('%Y-%m-%d %H:%M')}"],
                 cwd=DIR, capture_output=True
             )
             subprocess.run(["git", "push"], cwd=DIR, capture_output=True)
             logging.info("GitHub updated")
+        else:
+            logging.info("No changes to push")
     except Exception as e:
         logging.error(f"Git push failed: {e}")
 
