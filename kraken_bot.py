@@ -316,44 +316,85 @@ def tune_params():
     logging.info(f"[Crypto] Tuned params win_rate={win_rate:.0%} → {params}")
 
 
-# ── Pre-place limit orders at key levels ─────────────────────────────────────
+# ── Order management ─────────────────────────────────────────────────────────
+
+def get_open_coins() -> set:
+    """מחזיר סט של מטבעות שכבר יש עליהם פקודה פתוחה."""
+    try:
+        orders = get_open_orders()
+        coins = set()
+        for o in orders.values():
+            pair = o.get("descr", {}).get("pair", "")
+            for coin, kpair in PAIRS.items():
+                if coin in pair or kpair[:4] in pair:
+                    coins.add(coin)
+        return coins
+    except Exception:
+        return set()
+
+def cancel_bot_orders():
+    """מבטל את כל פקודות ה-limit של הבוט."""
+    try:
+        for txid, o in get_open_orders().items():
+            cancel_order(txid)
+            logging.info(f"[Crypto] Cancelled {txid}")
+    except Exception as e:
+        logging.warning(f"[Crypto] Cancel failed: {e}")
 
 def refresh_limit_orders(balance: dict):
     """
-    מחליף פקודות limit ממתינות ברמות תמיכה/התנגדות עדכניות.
-    מבטל פקודות ישנות ושם חדשות.
+    שם פקודות limit ממתינות ברמות תמיכה — רק למטבעות שאין עליהם פקודה פתוחה.
+    מחשב כמה USDC פנוי לאחר הפרשת כסף לפקודות קיימות.
     """
-    params = load_params()
-    usdc   = balance.get("USDC", 0) + balance.get("USD", 0)
-
+    params      = load_params()
+    open_orders = {}
     try:
         open_orders = get_open_orders()
-        # בטל פקודות ישנות של הבוט (לפי descr)
-        for txid, o in open_orders.items():
-            descr = o.get("descr", {}).get("order", "")
-            if "limit" in descr:
-                cancel_order(txid)
-                logging.info(f"[Crypto] Cancelled old limit {txid}")
     except Exception as e:
-        logging.warning(f"[Crypto] Could not refresh limit orders: {e}")
+        logging.warning(f"[Crypto] Cannot fetch open orders: {e}")
         return
 
-    if usdc < 15:
+    # חשב כמה USDC כבר "שמור" בפקודות פתוחות
+    reserved_usdc = 0.0
+    open_coins    = set()
+    for o in open_orders.values():
+        descr   = o.get("descr", {})
+        side    = descr.get("type", "")
+        pair    = descr.get("pair", "")
+        vol     = float(o.get("vol", 0))
+        price   = float(descr.get("price", 0))
+        if side == "buy" and price > 0:
+            reserved_usdc += vol * price
+        for coin, kpair in PAIRS.items():
+            if coin in pair or kpair[:4] in pair:
+                open_coins.add(coin)
+
+    usdc_free = (balance.get("USDC", 0) + balance.get("USD", 0)) - reserved_usdc
+
+    if usdc_free < 15:
+        logging.info(f"[Crypto] Skipping limit orders — free USDC={usdc_free:.2f}")
         return
 
     for coin, pair in PAIRS.items():
+        if coin in open_coins:
+            logging.info(f"[Crypto] Skipping {coin} — already has open order")
+            continue
         try:
-            ohlc     = get_ohlc(pair, interval=240, count=100)
-            price    = get_ticker(pair)["last"]
-            sr       = find_support_resistance(ohlc["high"], ohlc["low"], price)
-            support  = sr.get("support")
+            ohlc    = get_ohlc(pair, interval=240, count=100)
+            price   = get_ticker(pair)["last"]
+            sr      = find_support_resistance(ohlc["high"], ohlc["low"], price)
+            support = sr.get("support")
 
-            if support and support < price * 0.97:
-                spend  = min(params["MAX_TRADE_USD"], usdc * 0.3)
-                vol    = round(spend / support, 6)
+            # שים limit רק אם הרמה לפחות 2% מתחת למחיר הנוכחי
+            if support and support < price * 0.98:
+                spend = min(params["MAX_TRADE_USD"], usdc_free * 0.3)
+                vol   = round(spend / support, 6)
                 if vol >= MIN_VOLUMES.get(coin, 0.0001):
-                    place_order(pair, "buy", vol, round(support * 1.001, 4))
-                    logging.info(f"[Crypto] Pre-placed BUY {coin} @ support {support}")
+                    lp = round(support * 1.002, 4)
+                    place_order(pair, "buy", vol, lp)
+                    reserved_usdc += vol * lp
+                    usdc_free     -= vol * lp
+                    logging.info(f"[Crypto] Pre-placed BUY {coin} @ {lp} (support={support})")
         except Exception as e:
             logging.warning(f"[Crypto] Pre-place failed {coin}: {e}")
 
@@ -361,13 +402,14 @@ def refresh_limit_orders(balance: dict):
 # ── Main cycle ────────────────────────────────────────────────────────────────
 
 def run_cycle(auto_trade: bool = True) -> dict:
-    params  = load_params()
-    balance = get_balance()
-    usdc    = balance.get("USDC", 0) + balance.get("USD", 0)
-    daily   = trades_today()
-    signals = []
-    orders  = []
-    prices  = {}
+    params     = load_params()
+    balance    = get_balance()
+    usdc       = balance.get("USDC", 0) + balance.get("USD", 0)
+    daily      = trades_today()
+    signals    = []
+    orders     = []
+    prices     = {}
+    open_coins = get_open_coins()  # מטבעות שכבר יש עליהם פקודה פתוחה
 
     for coin, pair in PAIRS.items():
         try:
@@ -391,14 +433,17 @@ def run_cycle(auto_trade: bool = True) -> dict:
             vol    = 0
             lp     = 0
 
-            if action == "BUY" and usdc >= 10 and daily < params["MAX_DAILY_TRADES"]:
+            # אם יש פקודה פתוחה על המטבע — לא מוסיפים עוד
+            if coin in open_coins:
+                action = "HOLD (pending order)"
+                vol, lp = 0, 0
+            elif action == "BUY" and usdc >= 10 and daily < params["MAX_DAILY_TRADES"]:
                 spend = min(params["MAX_TRADE_USD"], usdc * 0.9)
                 vol   = round(spend / price, 6)
                 if vol < MIN_VOLUMES.get(coin, 0.0001):
                     action = "HOLD"
                 else:
                     lp = round(price * 0.998, 4)
-
             elif action == "SELL" and holding >= MIN_VOLUMES.get(coin, 0.0001) and daily < params["MAX_DAILY_TRADES"]:
                 vol = round(holding * 0.5, 6)
                 lp  = round(price * 1.002, 4)
