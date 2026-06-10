@@ -61,11 +61,24 @@ def main():
     print(f"[{datetime.now().strftime('%H:%M:%S')}] Crypto Agent מתחיל...")
 
     try:
-        from kraken_bot import run_cycle, tune_params
+        from kraken_bot import run_cycle, tune_params, refresh_limit_orders, get_balance
 
         if should_tune_params():
             tune_params()
             logging.info("Params tuned")
+
+        # רענן פקודות limit ברמות תמיכה — פעם בשעה
+        limit_flag = os.path.join(DIR, "last_limit_refresh.txt")
+        now_hour   = datetime.now().strftime("%Y-%m-%d %H")
+        last_hour  = open(limit_flag).read().strip() if os.path.exists(limit_flag) else ""
+        if last_hour != now_hour:
+            try:
+                refresh_limit_orders(get_balance())
+                with open(limit_flag, "w") as f:
+                    f.write(now_hour)
+                logging.info("Limit orders refreshed")
+            except Exception as e:
+                logging.warning(f"Limit refresh failed: {e}")
 
         state = run_cycle(auto_trade=True)
 
