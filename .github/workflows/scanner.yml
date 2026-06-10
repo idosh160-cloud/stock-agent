@@ -1,0 +1,48 @@
+name: Hourly Market Scanner
+
+on:
+  schedule:
+    # כל שעה בשעות מסחר — 9:30-16:00 ET = 14:30-21:00 UTC
+    - cron: '30 14 * * 1-5'  # 9:30 ET
+    - cron: '0 15 * * 1-5'   # 10:00 ET
+    - cron: '0 16 * * 1-5'   # 11:00 ET
+    - cron: '0 17 * * 1-5'   # 12:00 ET
+    - cron: '0 18 * * 1-5'   # 13:00 ET
+    - cron: '0 19 * * 1-5'   # 14:00 ET
+    - cron: '0 20 * * 1-5'   # 15:00 ET
+    - cron: '0 21 * * 1-5'   # 16:00 ET
+  workflow_dispatch:  # הרצה ידנית מ-GitHub
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install anthropic yfinance finviz requests python-dotenv pytz
+
+      - name: Run scanner
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          FINNHUB_API_KEY: ${{ secrets.FINNHUB_API_KEY }}
+        run: python scanner.py
+
+      - name: Push scan results to repo
+        run: |
+          git config user.name "Stock Scanner Bot"
+          git config user.email "bot@stock-agent"
+          git add scan_results.json
+          git diff --staged --quiet || git commit -m "scan: $(date -u '+%Y-%m-%d %H:%M') UTC"
+          git push
