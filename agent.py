@@ -668,6 +668,25 @@ Return ONLY valid JSON, no markdown:
         }
     analysis["portfolio_totals"] = portfolio_totals
 
+    # מזג נתוני תיק מ-us_summary לתוך us_recommendations
+    us_summary_map = {s["symbol"]: s for s in us_summary}
+    for r in analysis.get("us_recommendations", []):
+        sym = r.get("symbol", "")
+        if sym in us_summary_map:
+            s = us_summary_map[sym]
+            r.setdefault("shares", s.get("shares", 0))
+            r.setdefault("current_price", s.get("current_price", 0))
+            r.setdefault("current_value", s.get("current_value", 0))
+            r.setdefault("original_value", s.get("original_value", 0))
+            r.setdefault("pnl_dollars", s.get("pnl_dollars", 0))
+            r.setdefault("pnl_pct", s.get("pnl_pct", 0))
+            r.setdefault("daily_change_pct", s.get("daily_change_pct", 0))
+            # עדכן גם אם Claude שם 0
+            if r.get("current_price", 0) == 0 and s.get("current_price", 0) > 0:
+                r["current_price"] = s["current_price"]
+            if r.get("current_value", 0) == 0 and s.get("current_value", 0) > 0:
+                r["current_value"] = s["current_value"]
+
     # fallback — אם Claude לא החזיר מניות, בנה כרטיסיות בסיסיות מהנתונים
     if not analysis.get("us_recommendations"):
         print("  [Agent] us_recommendations empty — building fallback cards")

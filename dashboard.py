@@ -144,19 +144,16 @@ if "last_refresh" not in st.session_state or time.time() - st.session_state.last
 
 live = st.session_state.get("live_prices", {})
 
-# ── Portfolio Summary ────────────────────────────────────────────────────
-from config import PORTFOLIO_US
+# ── Portfolio Summary — קורא ישירות מ-last_analysis.json ────────────────
+totals = analysis.get("portfolio_totals", {})
+total_current  = safe_float(totals.get("total_us_current_usd", 0))
+total_original = safe_float(totals.get("total_us_original_usd", 0))
 
-total_current  = 0
-total_original = 0
-for r in us_recs:
-    sym    = r["symbol"]
-    cfg    = PORTFOLIO_US.get(sym, {})
-    price  = safe_float(live.get(sym, {}).get("price") or r.get("current_price", 0))
-    shares = cfg.get("shares", r.get("shares", 0))
-    avg    = cfg.get("avg_cost", r.get("avg_cost", 0))
-    total_current  += price * shares
-    total_original += avg * shares
+# fallback — חשב מהמניות אם totals ריק
+if total_current == 0:
+    for r in us_recs:
+        total_current  += safe_float(r.get("current_value", 0))
+        total_original += safe_float(r.get("original_value", 0))
 
 total_pnl     = total_current - total_original
 total_pnl_pct = round(total_pnl / total_original * 100, 1) if total_original else 0
@@ -185,15 +182,14 @@ ACTION_COLORS = {
 
 for r in us_recs:
     sym    = r["symbol"]
-    cfg    = PORTFOLIO_US.get(sym, {})
     live_price = safe_float(live.get(sym, {}).get("price", 0))
     price  = live_price if live_price > 0 else safe_float(r.get("current_price", 0))
     chg    = safe_float(live.get(sym, {}).get("change_pct") or r.get("daily_change_pct", 0))
-    shares = cfg.get("shares", r.get("shares", 0))
-    avg    = cfg.get("avg_cost", r.get("avg_cost", 0))
-    val    = price * shares
-    pnl    = val - avg * shares
-    pnl_p  = round(pnl / (avg * shares) * 100, 1) if avg and shares else 0
+    shares = safe_float(r.get("shares", 0))
+    avg    = safe_float(r.get("avg_cost", 0))
+    val    = safe_float(r.get("current_value", 0)) or price * shares
+    pnl    = safe_float(r.get("pnl_dollars", 0)) or val - avg * shares
+    pnl_p  = safe_float(r.get("pnl_pct", 0)) or (round(pnl / (avg * shares) * 100, 1) if avg and shares else 0)
     action = r.get("action", "HOLD")
     conf   = r.get("confidence", "MEDIUM")
     target = r.get("analyst_target")
