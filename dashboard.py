@@ -199,6 +199,15 @@ ACTION_COLORS = {
     "SELL PARTIAL": "#92400e", "SELL ALL": "#7f1d1d",
 }
 
+PORTFOLIO_SHARES = {
+    "CIFR": {"shares": 113, "avg_cost": 16.03},
+    "FPS":  {"shares": 99,  "avg_cost": 46.61},
+    "IBM":  {"shares": 11,  "avg_cost": 314.58},
+    "IREN": {"shares": 28,  "avg_cost": 58.95},
+    "FORM": {"shares": 8,   "avg_cost": 118.72},
+    "DRAM": {"shares": 67,  "avg_cost": 51.97},
+}
+
 for r in us_recs:
     sym      = r["symbol"]
     live_data = live.get(sym, {})
@@ -206,8 +215,10 @@ for r in us_recs:
     is_ext   = live_data.get("extended", False)
     price    = live_price if live_price > 0 else safe_float(r.get("current_price", 0))
     chg      = safe_float(live_data.get("change_pct") or r.get("daily_change_pct", 0))
-    shares   = safe_float(r.get("shares", 0))
-    avg      = safe_float(r.get("avg_cost", 0))
+    # shares — מ-JSON, אם חסר — מהקונפיג הקשוח
+    cfg_data = PORTFOLIO_SHARES.get(sym, {})
+    shares   = safe_float(r.get("shares") or cfg_data.get("shares", 0))
+    avg      = safe_float(r.get("avg_cost") or cfg_data.get("avg_cost", 0))
     # שווי — מחיר × כמות, אם אין כמות — לקח מ-JSON
     if shares > 0 and price > 0:
         val      = price * shares
