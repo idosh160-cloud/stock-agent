@@ -1,17 +1,7 @@
 name: Hourly Market Scanner
 
 on:
-  schedule:
-    # כל שעה בשעות מסחר — 9:30-16:00 ET = 14:30-21:00 UTC
-    - cron: '30 14 * * 1-5'  # 9:30 ET
-    - cron: '0 15 * * 1-5'   # 10:00 ET
-    - cron: '0 16 * * 1-5'   # 11:00 ET
-    - cron: '0 17 * * 1-5'   # 12:00 ET
-    - cron: '0 18 * * 1-5'   # 13:00 ET
-    - cron: '0 19 * * 1-5'   # 14:00 ET
-    - cron: '0 20 * * 1-5'   # 15:00 ET
-    - cron: '0 21 * * 1-5'   # 16:00 ET
-  workflow_dispatch:  # הרצה ידנית מ-GitHub
+  workflow_dispatch:  # הרצה ידנית בלבד — מהדשבורד או מ-GitHub
 
 jobs:
   scan:

@@ -156,23 +156,18 @@ if "last_refresh" not in st.session_state or time.time() - st.session_state.last
 
 live = st.session_state.get("live_prices", {})
 
-# ── Portfolio Summary — קורא ישירות מ-last_analysis.json ────────────────
-totals = analysis.get("portfolio_totals", {})
-total_current  = safe_float(totals.get("total_us_current_usd", 0))
-total_original = safe_float(totals.get("total_us_original_usd", 0))
-
-# fallback — חשב מהמניות אם totals ריק
-if total_current == 0:
-    for r in us_recs:
-        r_shares = safe_float(r.get("shares", 0))
-        r_price  = safe_float(live.get(r.get("symbol",""), {}).get("price") or r.get("current_price", 0))
-        r_avg    = safe_float(r.get("avg_cost", 0))
-        if r_shares > 0 and r_price > 0:
-            total_current  += r_price * r_shares
-            total_original += r_avg * r_shares
-        else:
-            total_current  += safe_float(r.get("current_value", 0))
-            total_original += safe_float(r.get("original_value", 0))
+# ── Portfolio Summary — תמיד מהקונפיג + מחירים חיים ────────────────────
+total_current  = 0
+total_original = 0
+for sym, cfg_data in PORTFOLIO_SHARES.items():
+    p = safe_float(live.get(sym, {}).get("price", 0))
+    if p == 0:  # fallback למחיר מה-JSON
+        for r in us_recs:
+            if r.get("symbol") == sym:
+                p = safe_float(r.get("current_price", 0))
+                break
+    total_current  += p * cfg_data["shares"]
+    total_original += cfg_data["avg_cost"] * cfg_data["shares"]
 
 total_pnl     = total_current - total_original
 total_pnl_pct = round(total_pnl / total_original * 100, 1) if total_original else 0
@@ -238,6 +233,9 @@ for r in us_recs:
     reasoning = r.get("reasoning", "")
     sec_insight = r.get("sec_insight", "")
     position_advice = r.get("position_advice", "")
+    earnings_date = r.get("earnings_date", "")
+    earnings_exp  = r.get("earnings_expectations", "")
+    news_list = r.get("news", [])[:3] if r.get("news") else []
     ac = ACTION_COLORS.get(action, "#1e293b")
 
     with st.container():
@@ -270,16 +268,33 @@ for r in us_recs:
                     f"<div style='font-size:11px;color:{color};opacity:0.8'>{sub}</div>"
                     f"</div>"
                 )
-            price_label_str = "טרום-מסחר" if is_ext else "מחיר"
+            price_label_str = "טרום-מסחר" if is_ext else "מחיר נוכחי"
+            chg_sub = (sign(chg)+f"{chg:.2f}% מסגירה אחרונה") if chg != 0 else ""
             price_html = "<div style='display:flex;gap:8px;flex-wrap:wrap;margin-top:8px'>"
-            price_html += box(price_label_str, f"${price:.2f}", sign(chg)+f"{chg:.2f}%", chg_col, "26px")
+            price_html += box(price_label_str, f"${price:.2f}", chg_sub, chg_col, "26px")
             price_html += box("עלות ממוצעת", f"${avg:.2f}", f"{shares:.0f} מניות", "#94a3b8", "22px")
-            price_html += box("שווי", f"${val:,.0f}", "", "#e2e8f0", "22px")
-            price_html += box("P&L", sign(pnl)+f"${abs(pnl):,.0f}", sign(pnl_p)+f"{pnl_p}%", pnl_col, "22px")
-            if target_html:
-                price_html += target_html
+            price_html += box("שווי נוכחי", f"${val:,.0f}", "", "#e2e8f0", "22px")
+            price_html += box("רווח/הפסד", sign(pnl)+f"${abs(pnl):,.0f}", sign(pnl_p)+f"{pnl_p}%", pnl_col, "22px")
+            if target:
+                up_col = "#34d399" if (upside or 0) >= 0 else "#f87171"
+                up_dir = "מתחת ליעד" if (upside or 0) >= 0 else "מעל ליעד"
+                up_str = f"{abs(upside or 0):.1f}% {up_dir}"
+                price_html += box("יעד אנליסטים", f"${target}", up_str, up_col, "20px")
             price_html += "</div>"
             st.markdown(price_html, unsafe_allow_html=True)
+
+            # Earnings + חדשות
+            if earnings_date:
+                st.markdown(f"<div style='margin-top:6px;font-size:12px;color:#fbbf24'>📅 דוח רווחים: {earnings_date} {' — '+earnings_exp if earnings_exp else ''}</div>", unsafe_allow_html=True)
+            if news_list:
+                news_html = "<div style='margin-top:6px'>"
+                for n in news_list:
+                    title = n.get('headline') or n.get('title','')
+                    url   = n.get('url','#')
+                    if title:
+                        news_html += f"<div style='font-size:11px;color:#64748b;margin:2px 0'>📰 <a href='{url}' target='_blank' style='color:#93c5fd;text-decoration:none'>{title[:80]}</a></div>"
+                news_html += "</div>"
+                st.markdown(news_html, unsafe_allow_html=True)
         with hc3:
             # גרף מיני
             hist = fetch_chart(sym, "1mo")
