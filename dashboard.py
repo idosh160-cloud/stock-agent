@@ -25,6 +25,15 @@ ANALYSIS_FILE = os.path.join(BASE_DIR, "last_analysis.json")
 SCAN_FILE     = os.path.join(BASE_DIR, "scan_results.json")
 REFRESH_SEC   = 60  # רענון מחירים אוטומטי
 
+PORTFOLIO_SHARES = {
+    "CIFR": {"shares": 113, "avg_cost": 16.03},
+    "FPS":  {"shares": 99,  "avg_cost": 46.61},
+    "IBM":  {"shares": 11,  "avg_cost": 314.58},
+    "IREN": {"shares": 28,  "avg_cost": 58.95},
+    "FORM": {"shares": 8,   "avg_cost": 118.72},
+    "DRAM": {"shares": 67,  "avg_cost": 51.97},
+}
+
 
 # ── עזרים ───────────────────────────────────────────────────────────────
 def safe_float(v):
@@ -192,15 +201,6 @@ ACTION_COLORS = {
     "BUY MORE": "#065f46", "BUY": "#065f46",
     "HOLD": "#1e3a5f",
     "SELL PARTIAL": "#92400e", "SELL ALL": "#7f1d1d",
-}
-
-PORTFOLIO_SHARES = {
-    "CIFR": {"shares": 113, "avg_cost": 16.03},
-    "FPS":  {"shares": 99,  "avg_cost": 46.61},
-    "IBM":  {"shares": 11,  "avg_cost": 314.58},
-    "IREN": {"shares": 28,  "avg_cost": 58.95},
-    "FORM": {"shares": 8,   "avg_cost": 118.72},
-    "DRAM": {"shares": 67,  "avg_cost": 51.97},
 }
 
 for r in us_recs:
