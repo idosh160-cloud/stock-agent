@@ -1,22 +1,22 @@
 {
-  "timestamp": "2026-06-10T23:34:07.633305",
+  "timestamp": "2026-06-10T23:36:51.488118",
   "balance": {
     "ADA": 0.11115247,
     "USDC": 298.08060031,
     "ETH": 0.18086108,
     "XRP": 0.00417466
   },
-  "portfolio_usd": 593.08,
+  "portfolio_usd": 592.83,
   "usdc": 298.08,
   "signals": [
     {
       "coin": "BTC",
       "pair": "XXBTZUSD",
       "action": "HOLD",
-      "rsi": 55.93,
-      "macd": 74.255904,
-      "ma50": 62162.15,
-      "ma200": 62990.71,
+      "rsi": 55.36,
+      "macd": 71.901032,
+      "ma50": 62161.41,
+      "ma200": 62990.53,
       "support": 61576.0,
       "resistance": 61957.6,
       "near_support": true,
@@ -28,7 +28,7 @@
         "Near support $61,576.0000",
         "Near resistance $61,957.6000"
       ],
-      "price": 61845.9,
+      "price": 61812.0,
       "volume": 0,
       "usd_value": 0.0,
       "limit_price": 0
@@ -37,10 +37,10 @@
       "coin": "ETH",
       "pair": "XETHZUSD",
       "action": "HOLD",
-      "rsi": 50.05,
-      "macd": 0.84176,
-      "ma50": 1652.85,
-      "ma200": 1692.15,
+      "rsi": 49.47,
+      "macd": 0.75433,
+      "ma50": 1652.82,
+      "ma200": 1692.14,
       "support": 1623.37,
       "resistance": 1644.64,
       "near_support": true,
@@ -52,7 +52,7 @@
         "Near support $1,623.3700",
         "Near resistance $1,644.6400"
       ],
-      "price": 1631.05,
+      "price": 1629.68,
       "volume": 0,
       "usd_value": 0.0,
       "limit_price": 0
@@ -61,12 +61,12 @@
       "coin": "XRP",
       "pair": "XXRPZUSD",
       "action": "HOLD",
-      "rsi": 44.13,
-      "macd": -0.000479,
+      "rsi": 43.17,
+      "macd": -0.000579,
       "ma50": 1.14,
       "ma200": 1.15,
       "support": 1.0903,
-      "resistance": 1.1034,
+      "resistance": 1.1005,
       "near_support": true,
       "buy_score": 3,
       "sell_score": 4,
@@ -75,9 +75,9 @@
         "Below MA50 ($1.14)",
         "Below MA200 (downtrend)",
         "Near support $1.0903",
-        "Near resistance $1.1034"
+        "Near resistance $1.1005"
       ],
-      "price": 1.10027,
+      "price": 1.0987,
       "volume": 0,
       "usd_value": 0.0,
       "limit_price": 0
@@ -91,5 +91,6 @@
     "MAX_DAILY_TRADES": 4,
     "MIN_SIGNALS": 2
   },
+  "open_orders": [],
   "recent_trades": []
 }
