@@ -1,20 +1,34 @@
 {
-  "timestamp": "2026-06-10T22:53:32.676567",
+  "timestamp": "2026-06-10T23:34:07.633305",
   "balance": {
     "ADA": 0.11115247,
     "USDC": 298.08060031,
     "ETH": 0.18086108,
     "XRP": 0.00417466
   },
-  "portfolio_usd": 592.48,
+  "portfolio_usd": 593.08,
   "usdc": 298.08,
   "signals": [
     {
       "coin": "BTC",
       "pair": "XXBTZUSD",
       "action": "HOLD",
-      "rsi": 58.39,
-      "price": 61914.0,
+      "rsi": 55.93,
+      "macd": 74.255904,
+      "ma50": 62162.15,
+      "ma200": 62990.71,
+      "support": 61576.0,
+      "resistance": 61957.6,
+      "near_support": true,
+      "buy_score": 3,
+      "sell_score": 3,
+      "reasons": [
+        "MACD bullish crossover",
+        "Below MA200 (downtrend)",
+        "Near support $61,576.0000",
+        "Near resistance $61,957.6000"
+      ],
+      "price": 61845.9,
       "volume": 0,
       "usd_value": 0.0,
       "limit_price": 0
@@ -23,8 +37,22 @@
       "coin": "ETH",
       "pair": "XETHZUSD",
       "action": "HOLD",
-      "rsi": 50.33,
-      "price": 1627.75,
+      "rsi": 50.05,
+      "macd": 0.84176,
+      "ma50": 1652.85,
+      "ma200": 1692.15,
+      "support": 1623.37,
+      "resistance": 1644.64,
+      "near_support": true,
+      "buy_score": 3,
+      "sell_score": 3,
+      "reasons": [
+        "MACD bullish crossover",
+        "Below MA200 (downtrend)",
+        "Near support $1,623.3700",
+        "Near resistance $1,644.6400"
+      ],
+      "price": 1631.05,
       "volume": 0,
       "usd_value": 0.0,
       "limit_price": 0
@@ -33,8 +61,23 @@
       "coin": "XRP",
       "pair": "XXRPZUSD",
       "action": "HOLD",
-      "rsi": 42.61,
-      "price": 1.09762,
+      "rsi": 44.13,
+      "macd": -0.000479,
+      "ma50": 1.14,
+      "ma200": 1.15,
+      "support": 1.0903,
+      "resistance": 1.1034,
+      "near_support": true,
+      "buy_score": 3,
+      "sell_score": 4,
+      "reasons": [
+        "MACD bearish crossover",
+        "Below MA50 ($1.14)",
+        "Below MA200 (downtrend)",
+        "Near support $1.0903",
+        "Near resistance $1.1034"
+      ],
+      "price": 1.10027,
       "volume": 0,
       "usd_value": 0.0,
       "limit_price": 0
@@ -42,10 +85,11 @@
   ],
   "orders_today": 0,
   "params": {
-    "RSI_BUY": 32,
-    "RSI_SELL": 68,
+    "RSI_BUY": 38,
+    "RSI_SELL": 62,
     "MAX_TRADE_USD": 30,
-    "MAX_DAILY_TRADES": 4
+    "MAX_DAILY_TRADES": 4,
+    "MIN_SIGNALS": 2
   },
   "recent_trades": []
 }
