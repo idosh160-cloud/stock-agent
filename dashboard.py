@@ -164,8 +164,15 @@ total_original = safe_float(totals.get("total_us_original_usd", 0))
 # fallback — חשב מהמניות אם totals ריק
 if total_current == 0:
     for r in us_recs:
-        total_current  += safe_float(r.get("current_value", 0))
-        total_original += safe_float(r.get("original_value", 0))
+        r_shares = safe_float(r.get("shares", 0))
+        r_price  = safe_float(live.get(r.get("symbol",""), {}).get("price") or r.get("current_price", 0))
+        r_avg    = safe_float(r.get("avg_cost", 0))
+        if r_shares > 0 and r_price > 0:
+            total_current  += r_price * r_shares
+            total_original += r_avg * r_shares
+        else:
+            total_current  += safe_float(r.get("current_value", 0))
+            total_original += safe_float(r.get("original_value", 0))
 
 total_pnl     = total_current - total_original
 total_pnl_pct = round(total_pnl / total_original * 100, 1) if total_original else 0
@@ -201,10 +208,17 @@ for r in us_recs:
     chg      = safe_float(live_data.get("change_pct") or r.get("daily_change_pct", 0))
     shares   = safe_float(r.get("shares", 0))
     avg      = safe_float(r.get("avg_cost", 0))
-    val      = price * shares if shares > 0 else safe_float(r.get("current_value", 0))
-    orig_val = avg * shares if shares > 0 else safe_float(r.get("original_value", 0))
-    pnl      = val - orig_val
-    pnl_p    = round(pnl / orig_val * 100, 1) if orig_val else safe_float(r.get("pnl_pct", 0))
+    # שווי — מחיר × כמות, אם אין כמות — לקח מ-JSON
+    if shares > 0 and price > 0:
+        val      = price * shares
+        orig_val = avg * shares
+        pnl      = val - orig_val
+        pnl_p    = round(pnl / orig_val * 100, 1) if orig_val else 0
+    else:
+        val      = safe_float(r.get("current_value", 0))
+        orig_val = safe_float(r.get("original_value", 0))
+        pnl      = safe_float(r.get("pnl_dollars", val - orig_val))
+        pnl_p    = safe_float(r.get("pnl_pct", 0))
     action   = r.get("action", "HOLD")
     conf     = r.get("confidence", "MEDIUM")
     target   = r.get("analyst_target")
