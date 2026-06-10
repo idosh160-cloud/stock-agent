@@ -245,7 +245,7 @@ for r in us_recs:
         hc1, hc2, hc3 = st.columns([2, 2, 1])
         with hc1:
             ext_badge = "<span style='background:#854d0e;color:#fef08a;padding:2px 7px;border-radius:4px;font-size:10px;margin-left:6px'>טרום-מסחר</span>" if is_ext else ""
-            st.markdown(f"<span style='font-size:28px;font-weight:900;color:#f1f5f9;letter-spacing:1px'>{sym}</span>{ext_badge}<br><span style='color:#64748b;font-size:13px'>{r.get('name','')}</span>", unsafe_allow_html=True)
+            st.markdown(f"<span style='font-size:28px;font-weight:900;color:#f1f5f9;letter-spacing:1px'>{sym}</span>{ext_badge}<br><span style='color:#e2e8f0;font-size:16px;font-weight:600'>{r.get('name','')}</span>", unsafe_allow_html=True)
             conf_colors = {"HIGH": "#065f46", "MEDIUM": "#92400e", "LOW": "#4b5563"}
             cc = conf_colors.get(conf, "#4b5563")
             st.markdown(f"<span style='background:{ac};color:white;padding:4px 14px;border-radius:20px;font-size:13px;font-weight:700'>{action}</span>&nbsp;<span style='background:{cc};color:white;padding:4px 10px;border-radius:20px;font-size:11px'>{conf}</span>", unsafe_allow_html=True)
