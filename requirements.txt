@@ -1,0 +1,9 @@
+streamlit
+yfinance
+plotly
+anthropic
+finviz
+requests
+python-dotenv
+pytz
+finnhub-python
