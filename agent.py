@@ -467,7 +467,7 @@ RECENT NEWS:
     prompt = f"""You are an expert stock analyst. Today is {market_data['fetched_at'][:10]}.
 Price type: {price_label} | Risk profile: {RISK_PROFILE}
 
-IMPORTANT: Write ALL text fields in Hebrew (עברית) — reasoning, position_advice, sec_insight, earnings_expectations, why_interesting, catalyst, risk, thesis, market_summary, yesterday_recap, rumors_and_contracts, scan_summary. Only symbols and numbers stay in English.
+IMPORTANT: Write text fields (reasoning, position_advice, sec_insight, market_summary, yesterday_recap, rumors_and_contracts, why_interesting, catalyst, risk) in Hebrew. Keep all JSON keys, symbols, numbers, and action values in English. Use only standard ASCII quotes in the JSON structure.
 
 Your job: Analyze each stock using the pre-processed signals below and produce a structured JSON recommendation.
 The signals were extracted from Finnhub (analyst consensus, earnings surprises, insider trades),
@@ -648,6 +648,13 @@ Return ONLY valid JSON, no markdown:
             if part.startswith("{"):
                 raw = part
                 break
+
+    # חלץ JSON גולמי אם עדיין לא תקין
+    if not raw.strip().startswith("{"):
+        start = raw.find("{")
+        end   = raw.rfind("}") + 1
+        if start >= 0 and end > start:
+            raw = raw[start:end]
 
     print("✅ ניתוח הושלם")
     try:
