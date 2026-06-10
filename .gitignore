@@ -1,0 +1,18 @@
+# סודות — לא לעלות לגיטהאב לעולם
+.env
+
+# נתונים שנוצרים בזמן ריצה
+last_run.txt
+stock_agent.log
+recommendations_history.json
+task_fixed.xml
+update_task_path.ps1
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Windows
+Thumbs.db
+Desktop.ini

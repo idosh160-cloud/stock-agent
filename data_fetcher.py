@@ -128,9 +128,43 @@ def collect_all_data(us_symbols, portfolio_il, funds_il):
     print("  ✅ מניות ישראליות")
     index_data = get_index_data(funds_il)
     print("  ✅ מדדים")
+
+    # נתונים מועשרים מ-Finnhub
+    finnhub_data = {}
+    try:
+        from finnhub_fetcher import enrich_us_stocks
+        print("  [Finnhub] fetching...")
+        finnhub_data = enrich_us_stocks(us_symbols)
+        print("  OK Finnhub")
+    except Exception as e:
+        print(f"  WARN Finnhub failed: {e}")
+
+    # נתונים מ-SEC Edgar
+    sec_data = {}
+    try:
+        from sec_fetcher import fetch_sec_data_for_portfolio
+        print("  [SEC] fetching...")
+        sec_data = fetch_sec_data_for_portfolio(us_symbols)
+        print("  OK SEC Edgar")
+    except Exception as e:
+        print(f"  WARN SEC failed: {e}")
+
+    # נתונים מ-Finviz
+    finviz_data = {}
+    try:
+        from finviz_fetcher import get_portfolio_finviz_data
+        print("  [Finviz] fetching...")
+        finviz_data = get_portfolio_finviz_data(us_symbols)
+        print("  OK Finviz")
+    except Exception as e:
+        print(f"  WARN Finviz failed: {e}")
+
     return {
         "stocks": stock_data,
         "il_stocks": il_data,
         "indices": index_data,
+        "finnhub": finnhub_data,
+        "sec": sec_data,
+        "finviz": finviz_data,
         "fetched_at": datetime.now().isoformat()
     }

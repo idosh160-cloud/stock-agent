@@ -13,7 +13,19 @@ try:
 except Exception:
     pass
 
-load_dotenv()
+import os as _os
+_ENV_PATH = r"C:\Users\User\Documents\stock_agent\.env"
+try:
+    with open(_ENV_PATH, "r", encoding="utf-8-sig") as _f:
+        for _line in _f:
+            _line = _line.strip()
+            if "=" in _line and not _line.startswith("#"):
+                _k, _v = _line.split("=", 1)
+                _k, _v = _k.strip(), _v.strip()
+                if _v:
+                    _os.environ[_k] = _v
+except Exception:
+    load_dotenv()
 
 from config import PORTFOLIO_US, PORTFOLIO_IL, FUNDS_IL
 from data_fetcher import collect_all_data
