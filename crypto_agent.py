@@ -24,7 +24,7 @@ logging.basicConfig(
 
 def push_to_github():
     try:
-        for f in ["last_crypto.json", "crypto_trades.json", "crypto_params.json"]:
+        for f in ["last_crypto.json", "crypto_trades.json", "crypto_params.json", "swing_trades.json"]:
             subprocess.run(["git", "add", f], cwd=DIR, capture_output=True)
         has_changes = subprocess.run(
             ["git", "diff", "--cached", "--quiet"], cwd=DIR, capture_output=True
@@ -63,42 +63,66 @@ def main():
     print(f"[{datetime.now().strftime('%H:%M:%S')}] Crypto Agent מתחיל...")
 
     try:
-        from kraken_bot import run_cycle, tune_params, refresh_limit_orders, get_balance
+        from kraken_bot import run_cycle, tune_params, refresh_limit_orders, get_balance, _request
+        from swing_trader import check_open_swings, run_swing_scan
 
         if should_tune_params():
             tune_params()
             logging.info("Params tuned")
 
+        balance  = get_balance()
+        now_hour = datetime.now().strftime("%Y-%m-%d %H")
+
         # רענן פקודות limit ברמות תמיכה — פעם בשעה
         limit_flag = os.path.join(DIR, "last_limit_refresh.txt")
-        now_hour   = datetime.now().strftime("%Y-%m-%d %H")
         last_hour  = open(limit_flag).read().strip() if os.path.exists(limit_flag) else ""
         if last_hour != now_hour:
             try:
-                refresh_limit_orders(get_balance())
+                refresh_limit_orders(balance)
                 with open(limit_flag, "w") as f:
                     f.write(now_hour)
                 logging.info("Limit orders refreshed")
             except Exception as e:
                 logging.warning(f"Limit refresh failed: {e}")
 
+        # ── ציקל מניות עיקרי (BTC/ETH/XRP) ─────────────────────────────
         state = run_cycle(auto_trade=True)
+        usdc  = state["usdc"]
+        btc_price = next((s["price"] for s in state["signals"] if s["coin"] == "BTC"), 0)
 
-        orders = state.get("recent_trades", [])
-        new_orders = [t for t in orders if t.get("date", "").startswith(date.today().isoformat())]
+        # ── בדיקת swing פתוחות — כל 15 דק' ──────────────────────────────
+        try:
+            swing_trades = check_open_swings(balance, _request)
+            open_swings  = [t for t in swing_trades if t.get("status") == "open"]
+            logging.info(f"Swing check: {len(open_swings)} open positions")
+        except Exception as e:
+            logging.warning(f"Swing check failed: {e}")
+            swing_trades = []
 
-        print(f"Portfolio: ${state['portfolio_usd']} | USDC: ${state['usdc']}")
+        # ── סריקת swing חדשים — פעם בשעה ──────────────────────────────
+        swing_flag = os.path.join(DIR, "last_swing_scan.txt")
+        last_swing = open(swing_flag).read().strip() if os.path.exists(swing_flag) else ""
+        if last_swing != now_hour and usdc > 20:
+            try:
+                swing_trades = run_swing_scan(balance, usdc, _request, btc_price)
+                with open(swing_flag, "w") as f:
+                    f.write(now_hour)
+                logging.info("Swing scan completed")
+            except Exception as e:
+                logging.warning(f"Swing scan failed: {e}")
+
+        # ── הדפס סיכום ──────────────────────────────────────────────────
+        print(f"Portfolio: ${state['portfolio_usd']} | USDC: ${usdc:.2f}")
         for s in state["signals"]:
             icon = "BUY" if s["action"] == "BUY" else "SELL" if s["action"] == "SELL" else "hold"
-            print(f"  {s['coin']} RSI={s['rsi']} ${s['price']:,.2f} → {icon}")
+            print(f"  {s['coin']} RSI={s['rsi']:.1f} ${s['price']:,.2f} → {icon}")
 
-        if new_orders:
-            print(f"  ** {len(new_orders)} עסקאות בוצעו היום **")
-            push_to_github()
-        else:
-            push_to_github()
+        open_sw = [t for t in swing_trades if t.get("status") == "open"]
+        if open_sw:
+            print(f"  Swings פתוחים: {len(open_sw)} — {', '.join(t['coin'] for t in open_sw)}")
 
-        logging.info(f"Cycle complete. Portfolio=${state['portfolio_usd']} orders_today={state['orders_today']}")
+        push_to_github()
+        logging.info(f"Cycle complete. Portfolio=${state['portfolio_usd']} orders_today={state['orders_today']} swings={len(open_sw)}")
 
     except Exception as e:
         logging.exception(f"Crypto Agent crashed: {e}")

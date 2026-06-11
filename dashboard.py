@@ -69,6 +69,8 @@ def load_scan():
     except Exception:
         return None
 
+SWING_FILE = os.path.join(BASE_DIR, "swing_trades.json")
+
 def load_crypto():
     if not os.path.exists(CRYPTO_FILE):
         return None
@@ -77,6 +79,15 @@ def load_crypto():
             return json.load(f)
     except Exception:
         return None
+
+def load_swings():
+    if not os.path.exists(SWING_FILE):
+        return []
+    try:
+        with open(SWING_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return []
 
 def fetch_live_prices(symbols, json_fallback=None):
     """מחירים חיים / טרום-מסחר / סגירה אחרונה. אם yfinance נכשל — fallback מה-JSON."""
@@ -519,6 +530,114 @@ with tab_crypto:
                         <span style='color:#f1f5f9;font-weight:700;font-size:15px'>${o.get('price',0):,.4f}</span>
                       </div>
                       <div style='color:#64748b;font-size:11px;margin-top:4px'>{o.get('volume',0):.6f} · ${o.get('usd',0):.2f}</div>
+                    </div>
+                    """, unsafe_allow_html=True)
+
+        # ── Swing Trades ──────────────────────────────────────────────────
+        swings     = load_swings()
+        open_sw    = [t for t in swings if t.get("status") == "open"]
+        closed_sw  = [t for t in reversed(swings) if t.get("status", "").startswith("closed")]
+        wins       = [t for t in closed_sw if t.get("status") == "closed_profit"]
+        losses     = [t for t in closed_sw if t.get("status") == "closed_loss"]
+        total_pnl  = sum(safe_float(t.get("pnl_usd", 0)) for t in closed_sw)
+
+        st.markdown("---")
+        sw_header, sw_stats = st.columns([3, 2])
+        with sw_header:
+            st.markdown("#### 🎲 Swing Trades — סיבובים תנודתיים")
+        with sw_stats:
+            if closed_sw:
+                wr = round(len(wins) / len(closed_sw) * 100)
+                pnl_color = "green" if total_pnl >= 0 else "red"
+                st.markdown(
+                    f"<div style='text-align:right;padding-top:6px'>"
+                    f"<span style='color:#94a3b8;font-size:12px'>סה\"כ סגורים: {len(closed_sw)} | "
+                    f"✅ {len(wins)} ❌ {len(losses)} | "
+                    f"Win rate: {wr}% | </span>"
+                    f"<span style='color:{'#34d399' if total_pnl>=0 else '#f87171'};font-weight:700'>"
+                    f"P&L: {'+' if total_pnl>=0 else ''}${total_pnl:.2f}</span></div>",
+                    unsafe_allow_html=True
+                )
+
+        if open_sw:
+            st.markdown("**פתוחות:**")
+            sw_cols = st.columns(min(len(open_sw), 3))
+            for i, t in enumerate(open_sw):
+                with sw_cols[i % 3]:
+                    coin      = t["coin"]
+                    entry     = t["entry_price"]
+                    target    = t["target_price"]
+                    stop      = t["stop_price"]
+                    current   = t.get("current_price", entry)
+                    pnl_pct   = t.get("pnl_pct", 0) or 0
+                    pnl_usd   = t.get("pnl_usd", 0) or 0
+                    reasoning = t.get("reasoning", "")
+                    conf      = t.get("confidence", "")
+                    dt_open   = t.get("date_open", "")[:16].replace("T", " ")
+
+                    pnl_col = "#34d399" if pnl_pct >= 0 else "#f87171"
+                    pnl_bg  = "#082318" if pnl_pct >= 0 else "#230808"
+                    # progress: 0% = stop, 100% = target
+                    full_range = target - stop
+                    progress   = ((current - stop) / full_range * 100) if full_range else 50
+                    progress   = max(0, min(100, progress))
+                    prog_color = "#34d399" if progress > 50 else "#fbbf24" if progress > 25 else "#f87171"
+                    conf_colors = {"HIGH": "#064e3b", "MEDIUM": "#92400e", "LOW": "#4b5563"}
+                    conf_bg = conf_colors.get(conf, "#1e293b")
+
+                    st.markdown(f"""
+                    <div style='background:#1e293b;border-radius:14px;padding:16px;border:1px solid #334155;margin-bottom:8px'>
+                      <div style='display:flex;justify-content:space-between;align-items:center;margin-bottom:8px'>
+                        <span style='font-size:20px;font-weight:900;color:#f1f5f9'>{coin}</span>
+                        <span style='background:{conf_bg};color:white;padding:2px 8px;border-radius:10px;font-size:10px'>{conf}</span>
+                      </div>
+                      <div style='display:flex;justify-content:space-between;margin-bottom:6px'>
+                        <div><div style='color:#475569;font-size:10px'>כניסה</div><div style='color:#94a3b8;font-size:12px'>${entry:.4f}</div></div>
+                        <div style='text-align:center'><div style='color:#475569;font-size:10px'>כעת</div><div style='color:#f1f5f9;font-size:14px;font-weight:700'>${current:.4f}</div></div>
+                        <div style='text-align:right'><div style='color:#475569;font-size:10px'>יעד</div><div style='color:#34d399;font-size:12px'>${target:.4f}</div></div>
+                      </div>
+                      <div style='background:#0f172a;border-radius:6px;height:6px;margin-bottom:8px'>
+                        <div style='width:{progress:.0f}%;height:100%;background:{prog_color};border-radius:6px'></div>
+                      </div>
+                      <div style='display:flex;justify-content:space-between;margin-bottom:8px'>
+                        <span style='color:#f87171;font-size:10px'>stop ${stop:.4f}</span>
+                        <span style='color:#475569;font-size:10px'>{progress:.0f}% ליעד</span>
+                        <span style='color:#34d399;font-size:10px'>+5% = ${target:.4f}</span>
+                      </div>
+                      <div style='background:{pnl_bg};border-radius:8px;padding:6px 10px;display:flex;justify-content:space-between'>
+                        <span style='color:{pnl_col};font-size:13px;font-weight:700'>{'+' if pnl_pct>=0 else ''}{pnl_pct:.2f}%</span>
+                        <span style='color:{pnl_col};font-size:13px;font-weight:700'>{'+' if pnl_usd>=0 else ''}${pnl_usd:.2f}</span>
+                      </div>
+                      <div style='font-size:11px;color:#64748b;margin-top:8px;line-height:1.5'>{reasoning[:120]}</div>
+                      <div style='font-size:10px;color:#334155;margin-top:4px'>{dt_open}</div>
+                    </div>
+                    """, unsafe_allow_html=True)
+        else:
+            st.caption("אין סינגים פתוחים — הסריקה הבאה תהיה בשעה הקרובה.")
+
+        if closed_sw[:5]:
+            with st.expander(f"📋 {len(closed_sw)} סינגים סגורים"):
+                for t in closed_sw[:10]:
+                    is_win   = t.get("status") == "closed_profit"
+                    color    = "#34d399" if is_win else "#f87171"
+                    bg       = "#0a1f14" if is_win else "#1f0a0a"
+                    icon     = "✅" if is_win else "❌"
+                    pnl      = t.get("pnl_usd", 0) or 0
+                    pnl_pct  = t.get("pnl_pct", 0) or 0
+                    dt_close = (t.get("date_close") or "")[:16].replace("T", " ")
+                    entry    = t.get("entry_price", 0)
+                    close_p  = t.get("close_price", 0)
+                    st.markdown(f"""
+                    <div style='background:{bg};border:1px solid {'#065f46' if is_win else '#7f1d1d'};border-radius:8px;
+                                padding:10px 14px;margin-bottom:5px;display:flex;justify-content:space-between;align-items:center'>
+                      <div>
+                        <span style='color:{color};font-weight:700'>{icon} {t['coin']}</span>
+                        <span style='color:#64748b;font-size:11px;margin-left:8px'>${entry:.4f} → ${close_p:.4f if close_p else 0:.4f}</span>
+                      </div>
+                      <div style='text-align:right'>
+                        <span style='color:{color};font-weight:700'>{'+' if pnl>=0 else ''}${pnl:.2f} ({'+' if pnl_pct>=0 else ''}{pnl_pct:.1f}%)</span>
+                        <div style='color:#334155;font-size:10px'>{dt_close}</div>
+                      </div>
                     </div>
                     """, unsafe_allow_html=True)
 
