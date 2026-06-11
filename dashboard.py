@@ -7,6 +7,7 @@ import time
 import math
 from datetime import datetime
 
+import requests
 import streamlit as st
 import yfinance as yf
 import plotly.graph_objects as go
@@ -110,6 +111,31 @@ def fetch_live_prices(symbols, json_fallback=None):
             prices[sym] = {"price": 0, "change_pct": 0, "extended": False}
     return prices
 
+def fetch_kraken_prices(pairs: dict) -> dict:
+    """מחירים חיים מ-Kraken API פומבי. pairs = {"BTC": "XBTUSDC", ...}"""
+    try:
+        pair_str = ",".join(pairs.values())
+        r = requests.get(
+            f"https://api.kraken.com/0/public/Ticker?pair={pair_str}",
+            timeout=6
+        )
+        data = r.json().get("result", {})
+        prices = {}
+        for coin, kpair in pairs.items():
+            ticker = data.get(kpair) or data.get(kpair.upper())
+            if ticker:
+                prices[coin] = {
+                    "price": float(ticker["c"][0]),
+                    "high":  float(ticker["h"][1]),
+                    "low":   float(ticker["l"][1]),
+                    "vol":   float(ticker["v"][1]),
+                    "change_pct": round((float(ticker["c"][0]) - float(ticker["o"])) / float(ticker["o"]) * 100, 2)
+                        if float(ticker["o"]) else 0,
+                }
+        return prices
+    except Exception:
+        return {}
+
 def fetch_chart(symbol, period="3mo"):
     try:
         hist = yf.Ticker(symbol).history(period=period)
@@ -169,8 +195,19 @@ with tab_crypto:
         trades        = crypto.get("recent_trades", [])
         params        = crypto.get("params", {})
 
-        # מחיר לכל מטבע מהסיגנלים
+        CRYPTO_PAIRS = {"BTC": "XBTUSDC", "ETH": "ETHUSDC", "XRP": "XRPUSDC"}
+
+        # רענון מחירים חיים מ-Kraken
+        if "crypto_prices" not in st.session_state or \
+           time.time() - st.session_state.get("crypto_refresh_ts", 0) > 60:
+            st.session_state.crypto_prices    = fetch_kraken_prices(CRYPTO_PAIRS)
+            st.session_state.crypto_refresh_ts = time.time()
+
+        # מחירים — Kraken live עדיפות, fallback לסיגנלים
+        live_crypto = st.session_state.get("crypto_prices", {})
         price_map = {s["coin"]: s["price"] for s in signals}
+        for coin, data in live_crypto.items():
+            price_map[coin] = data["price"]
 
         # חישוב avg cost לכל מטבע מהיסטוריית עסקאות
         def calc_avg_cost(coin, trades_list):
@@ -189,8 +226,8 @@ with tab_crypto:
                     total_vol  -= vol
             return (total_cost / total_vol) if total_vol > 0.0001 else None
 
-        # פוזיציות פעילות
-        positions = []
+        # פוזיציות — ממשיות מהבאלנס + ממתינות מ-open_orders
+        pos_map = {}
         for coin, qty in balance.items():
             if coin in ("USDC", "USD") or safe_float(qty) < 0.0001:
                 continue
@@ -199,81 +236,151 @@ with tab_crypto:
             avg       = calc_avg_cost(coin, trades)
             pnl_usd   = (price_now - avg) * safe_float(qty) if avg else None
             pnl_pct   = ((price_now - avg) / avg * 100) if avg else None
-            positions.append({
-                "coin": coin, "qty": safe_float(qty),
-                "price": price_now, "value": val,
-                "avg_cost": avg, "pnl_usd": pnl_usd, "pnl_pct": pnl_pct,
-            })
-        positions.sort(key=lambda x: x["value"], reverse=True)
+            pos_map[coin] = {
+                "coin": coin, "qty": safe_float(qty), "price": price_now,
+                "value": val, "avg_cost": avg, "pnl_usd": pnl_usd,
+                "pnl_pct": pnl_pct, "pending_qty": 0, "pending_usd": 0,
+            }
+        # הוסף כמויות ממתינות מ-open_orders
+        for o in open_orders:
+            coin = o.get("coin", "")
+            if o.get("side") != "buy":
+                continue
+            vol   = safe_float(o.get("volume", 0))
+            price_o = safe_float(o.get("price", 0))
+            if coin not in pos_map:
+                pos_map[coin] = {
+                    "coin": coin, "qty": 0, "price": price_map.get(coin, price_o),
+                    "value": 0, "avg_cost": price_o, "pnl_usd": None,
+                    "pnl_pct": None, "pending_qty": 0, "pending_usd": 0,
+                }
+            pos_map[coin]["pending_qty"] += vol
+            pos_map[coin]["pending_usd"] += safe_float(o.get("usd", 0))
+        positions = sorted(pos_map.values(), key=lambda x: x["value"] + x["pending_usd"], reverse=True)
 
-        invested_usd  = sum(p["value"] for p in positions)
+        invested_usd  = sum(p["value"] + p.get("pending_usd", 0) for p in positions)
         today_str     = datetime.now().strftime("%Y-%m-%d")
         today_pnl     = sum(safe_float(t.get("usd", 0)) * (1 if t.get("action") == "SELL" else -1)
                             for t in trades if t.get("date", "")[:10] == today_str)
         today_count   = sum(1 for t in trades if t.get("date", "")[:10] == today_str)
 
-        # ── כותרת ────────────────────────────────────────────────────────
-        st.markdown("""
-        <div style='background:linear-gradient(135deg,#0f172a,#1e293b);border-radius:16px;padding:20px 24px;margin-bottom:16px'>
-          <div style='font-size:13px;color:#64748b;text-transform:uppercase;letter-spacing:2px;margin-bottom:4px'>Crypto Portfolio</div>
-          <div style='display:flex;align-items:baseline;gap:12px'>
-            <span style='font-size:36px;font-weight:900;color:#f1f5f9'>${portfolio_usd:,.2f}</span>
-            <span style='font-size:14px;color:#64748b'>שווי כולל</span>
-          </div>
-        </div>
-        """.replace("{portfolio_usd:,.2f}", f"{portfolio_usd:,.2f}"), unsafe_allow_html=True)
-
-        hc1, hc2, hc3, hc4 = st.columns(4)
-        hc1.metric("מושקע במטבעות", f"${invested_usd:,.2f}")
-        hc2.metric("USDC פנוי", f"${usdc:,.2f}")
-        hc3.metric("עסקאות היום", str(today_count))
-        hc4.metric("עודכן", ts)
+        # ── כותרת + רענון ────────────────────────────────────────────────
+        hdr_l, hdr_r = st.columns([4, 1])
+        with hdr_l:
+            invested_label = f"${invested_usd:,.2f}" if invested_usd > 0 else "—"
+            change_24h_str = ""
+            if live_crypto:
+                weighted_chg = sum(
+                    live_crypto[c]["change_pct"] * pos_map[c]["value"]
+                    for c in live_crypto if c in pos_map and pos_map[c]["value"] > 0
+                )
+                total_val = sum(pos_map[c]["value"] for c in live_crypto if c in pos_map)
+                if total_val > 0:
+                    avg_chg = weighted_chg / total_val
+                    chg_color = "#34d399" if avg_chg >= 0 else "#f87171"
+                    change_24h_str = f"<span style='font-size:15px;color:{chg_color};margin-left:10px'>{'+' if avg_chg>=0 else ''}{avg_chg:.2f}% היום</span>"
+            st.markdown(f"""
+            <div style='background:linear-gradient(135deg,#0f172a,#1e1f3a);border-radius:16px;padding:20px 24px;margin-bottom:8px;border:1px solid #1e293b'>
+              <div style='font-size:11px;color:#475569;text-transform:uppercase;letter-spacing:3px;margin-bottom:6px'>Crypto Portfolio</div>
+              <div style='display:flex;align-items:baseline;gap:10px'>
+                <span style='font-size:40px;font-weight:900;color:#f1f5f9'>${portfolio_usd:,.2f}</span>
+                {change_24h_str}
+              </div>
+              <div style='display:flex;gap:24px;margin-top:12px'>
+                <div><span style='color:#475569;font-size:11px'>מושקע</span><br><span style='color:#94a3b8;font-weight:600'>{invested_label}</span></div>
+                <div><span style='color:#475569;font-size:11px'>USDC פנוי</span><br><span style='color:#94a3b8;font-weight:600'>${usdc:,.2f}</span></div>
+                <div><span style='color:#475569;font-size:11px'>עסקאות היום</span><br><span style='color:#94a3b8;font-weight:600'>{today_count}</span></div>
+                <div><span style='color:#475569;font-size:11px'>עודכן</span><br><span style='color:#94a3b8;font-size:12px'>{ts}</span></div>
+              </div>
+            </div>
+            """.replace("{portfolio_usd:,.2f}", f"{portfolio_usd:,.2f}"), unsafe_allow_html=True)
+        with hdr_r:
+            st.markdown("<div style='height:20px'></div>", unsafe_allow_html=True)
+            if st.button("🔄 רענן מחירים", use_container_width=True):
+                st.session_state.crypto_prices     = fetch_kraken_prices(CRYPTO_PAIRS)
+                st.session_state.crypto_refresh_ts  = time.time()
+                for coin, data in st.session_state.crypto_prices.items():
+                    price_map[coin] = data["price"]
+                st.rerun()
+            last_ref = st.session_state.get("crypto_refresh_ts", 0)
+            secs_ago = int(time.time() - last_ref)
+            st.caption(f"לפני {secs_ago}ש'" if secs_ago < 60 else f"לפני {secs_ago//60}ד'")
 
         # ── פוזיציות ─────────────────────────────────────────────────────
         if positions:
             st.markdown("---")
-            st.markdown("#### 💼 פוזיציות פעילות")
-            pos_cols = st.columns(len(positions))
+            st.markdown("#### 💼 פוזיציות")
+            pos_cols = st.columns(max(len(positions), 1))
             for i, p in enumerate(positions):
                 with pos_cols[i]:
-                    coin     = p["coin"]
-                    qty      = p["qty"]
-                    price_p  = p["price"]
-                    val      = p["value"]
-                    avg      = p["avg_cost"]
-                    pnl_usd  = p["pnl_usd"]
-                    pnl_pct  = p["pnl_pct"]
-                    pnl_color = "#34d399" if (pnl_usd or 0) >= 0 else "#f87171"
-                    pnl_bg    = "#064e3b" if (pnl_usd or 0) >= 0 else "#450a0a"
+                    coin        = p["coin"]
+                    qty         = p["qty"]
+                    price_p     = p["price"]
+                    val         = p["value"]
+                    avg         = p["avg_cost"]
+                    pnl_usd     = p["pnl_usd"]
+                    pnl_pct     = p["pnl_pct"]
+                    pending_qty = p.get("pending_qty", 0)
+                    pending_usd = p.get("pending_usd", 0)
+                    live_data   = live_crypto.get(coin, {})
+                    chg24       = live_data.get("change_pct", 0)
+                    high24      = live_data.get("high", 0)
+                    low24       = live_data.get("low", 0)
 
+                    pnl_color = "#34d399" if (pnl_usd or 0) >= 0 else "#f87171"
+                    pnl_bg    = "#082318" if (pnl_usd or 0) >= 0 else "#230808"
+                    chg_color = "#34d399" if chg24 >= 0 else "#f87171"
                     coin_icons = {"BTC": "₿", "ETH": "Ξ", "XRP": "✕", "ADA": "₳"}
                     icon = coin_icons.get(coin, "●")
 
-                    avg_str = f"<div style='display:flex;justify-content:space-between;margin-top:6px'><span style='color:#64748b;font-size:11px'>כניסה ממוצעת</span><span style='color:#94a3b8;font-size:12px'>${avg:,.4f}</span></div>" if avg else ""
-                    pnl_str = f"""
-                    <div style='background:{pnl_bg};border-radius:8px;padding:8px 12px;margin-top:10px;display:flex;justify-content:space-between;align-items:center'>
-                      <span style='color:{pnl_color};font-size:13px;font-weight:700'>{'+' if (pnl_usd or 0)>=0 else ''}${abs(pnl_usd):,.2f}</span>
-                      <span style='color:{pnl_color};font-size:12px'>{'+' if (pnl_pct or 0)>=0 else ''}{pnl_pct:.1f}%</span>
+                    pending_html = f"""
+                    <div style='background:#1c1c0a;border:1px dashed #854d0e;border-radius:8px;padding:8px 12px;margin-top:8px'>
+                      <div style='font-size:10px;color:#854d0e;font-weight:600;margin-bottom:4px'>⏳ ממתין למילוי</div>
+                      <div style='display:flex;justify-content:space-between'>
+                        <span style='color:#fbbf24;font-size:12px'>{pending_qty:.6f} {coin}</span>
+                        <span style='color:#fbbf24;font-size:12px;font-weight:700'>${pending_usd:,.2f}</span>
+                      </div>
+                    </div>""" if pending_qty > 0 else ""
+
+                    avg_row = f"<div style='display:flex;justify-content:space-between;margin-top:5px;padding-top:5px;border-top:1px solid #1e293b'><span style='color:#475569;font-size:10px'>כניסה ממוצעת</span><span style='color:#94a3b8;font-size:11px'>${avg:,.4f}</span></div>" if avg else ""
+
+                    pnl_html = f"""
+                    <div style='background:{pnl_bg};border-radius:8px;padding:8px 12px;margin-top:8px;display:flex;justify-content:space-between'>
+                      <div>
+                        <div style='color:#475569;font-size:10px'>P&L</div>
+                        <div style='color:{pnl_color};font-size:14px;font-weight:700'>{'+' if (pnl_usd or 0)>=0 else ''}${abs(pnl_usd):,.2f}</div>
+                      </div>
+                      <div style='text-align:right'>
+                        <div style='color:#475569;font-size:10px'>&nbsp;</div>
+                        <div style='color:{pnl_color};font-size:14px;font-weight:700'>{'+' if (pnl_pct or 0)>=0 else ''}{pnl_pct:.1f}%</div>
+                      </div>
                     </div>""" if pnl_usd is not None else ""
 
+                    high_low = f"<div style='display:flex;justify-content:space-between;margin-top:4px'><span style='color:#475569;font-size:10px'>24H L: ${low24:,.2f}</span><span style='color:#475569;font-size:10px'>H: ${high24:,.2f}</span></div>" if high24 else ""
+
                     st.markdown(f"""
-                    <div style='background:#1e293b;border-radius:14px;padding:18px;border:1px solid #334155'>
-                      <div style='display:flex;justify-content:space-between;align-items:center;margin-bottom:10px'>
-                        <span style='font-size:28px;font-weight:900;color:#f1f5f9'>{icon} {coin}</span>
-                        <span style='font-size:20px;font-weight:700;color:#e2e8f0'>${price_p:,.4f}</span>
+                    <div style='background:#1e293b;border-radius:16px;padding:18px;border:1px solid #334155;margin-bottom:4px'>
+                      <div style='display:flex;justify-content:space-between;align-items:center;margin-bottom:4px'>
+                        <span style='font-size:26px;font-weight:900;color:#f1f5f9'>{icon} {coin}</span>
+                        <div style='text-align:right'>
+                          <div style='font-size:20px;font-weight:700;color:#e2e8f0'>${price_p:,.4f}</div>
+                          <div style='font-size:11px;color:{chg_color}'>{'+' if chg24>=0 else ''}{chg24:.2f}% היום</div>
+                        </div>
                       </div>
-                      <div style='background:#0f172a;border-radius:8px;padding:10px 12px'>
+                      {high_low}
+                      <div style='background:#0f172a;border-radius:10px;padding:12px;margin-top:10px'>
                         <div style='display:flex;justify-content:space-between'>
-                          <span style='color:#64748b;font-size:11px'>כמות</span>
+                          <span style='color:#475569;font-size:11px'>כמות מוחזקת</span>
                           <span style='color:#e2e8f0;font-size:13px;font-weight:600'>{qty:.6f} {coin}</span>
                         </div>
-                        <div style='display:flex;justify-content:space-between;margin-top:4px'>
-                          <span style='color:#64748b;font-size:11px'>שווי</span>
-                          <span style='color:#f1f5f9;font-size:15px;font-weight:700'>${val:,.2f}</span>
+                        <div style='display:flex;justify-content:space-between;margin-top:6px'>
+                          <span style='color:#475569;font-size:11px'>שווי נוכחי</span>
+                          <span style='color:#f1f5f9;font-size:16px;font-weight:800'>${val:,.2f}</span>
                         </div>
-                        {avg_str}
+                        {avg_row}
                       </div>
-                      {pnl_str}
+                      {pnl_html}
+                      {pending_html}
                     </div>
                     """, unsafe_allow_html=True)
 

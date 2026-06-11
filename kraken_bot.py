@@ -510,12 +510,15 @@ def run_cycle(auto_trade: bool = True) -> dict:
 
     # פקודות limit פתוחות לתצוגה בדשבורד
     open_orders_display = []
+    pair_to_coin = {v: k for k, v in PAIRS.items()}
     try:
         for txid, o in get_open_orders().items():
-            descr = o.get("descr", {})
+            descr    = o.get("descr", {})
+            raw_pair = descr.get("pair", "")
+            coin_name = pair_to_coin.get(raw_pair, raw_pair.replace("USDC","").replace("XBT","BTC"))
             open_orders_display.append({
                 "txid":   txid,
-                "coin":   descr.get("pair", ""),
+                "coin":   coin_name,
                 "side":   descr.get("type", ""),
                 "price":  float(descr.get("price", 0)),
                 "volume": float(o.get("vol", 0)),
