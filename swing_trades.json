@@ -19,7 +19,8 @@
     "pnl_usd": 0.02,
     "txid": "OTGVDG-MET36-52DHYW",
     "close_price": null,
-    "close_txid": null
+    "close_txid": null,
+    "sell_txid": "OEYNW2-ON6ZN-UAZUPK"
   },
   {
     "coin": "LINK",
@@ -41,7 +42,8 @@
     "pnl_usd": -0.01,
     "txid": "OHW2XD-LSPEO-ZWPPXN",
     "close_price": null,
-    "close_txid": null
+    "close_txid": null,
+    "sell_txid": "OHS4NU-LRLC4-4OTVDM"
   },
   {
     "coin": "ATOM",

@@ -220,27 +220,44 @@ def check_open_swings(balance: dict, request_fn) -> list:
             reason = "loss"
 
         if reason:
-            holding = float(balance.get(coin, 0))
-            sell_vol = min(vol, holding)
-            cfg = CANDIDATES.get(coin, {})
-            if sell_vol < cfg.get("min_vol", 0.01):
-                logging.warning(f"[Swing] {coin} holding {holding} below min — cannot sell")
-                continue
+            cfg       = CANDIDATES.get(coin, {})
             price_dec = cfg.get("price_dec", 4)
-            lp = round(current * (1.001 if reason == "profit" else 0.999), price_dec)
-            try:
-                res  = request_fn("/0/private/AddOrder", {
-                    "pair": pair, "type": "sell", "ordertype": "limit",
-                    "volume": f"{sell_vol:.8f}", "price": f"{lp:.{price_dec}f}",
-                }, private=True)
-                txid = list(res.get("txid", ["?"]))[0]
-                t["status"]     = f"closed_{reason}"
-                t["date_close"] = datetime.now().isoformat()
-                t["close_price"]= current
-                t["close_txid"] = txid
-                logging.info(f"[Swing] CLOSE {reason.upper()} {coin} @ {current:.4f} | P&L {pnl_pct:+.1f}% | txid={txid}")
-            except Exception as e:
-                logging.error(f"[Swing] sell failed {coin}: {e}")
+
+            if reason == "profit" and t.get("sell_txid"):
+                # כבר יש limit sell פתוח — פשוט סמן כסגור
+                t["status"]      = "closed_profit"
+                t["date_close"]  = datetime.now().isoformat()
+                t["close_price"] = current
+                t["close_txid"]  = t["sell_txid"]
+                logging.info(f"[Swing] CLOSE PROFIT {coin} @ {current:.4f} (limit already placed)")
+            else:
+                # stop-loss — בטל את ה-TP הפתוח ושים market sell
+                if t.get("sell_txid"):
+                    try:
+                        request_fn("/0/private/CancelOrder", {"txid": t["sell_txid"]}, private=True)
+                        logging.info(f"[Swing] Cancelled TP order {t['sell_txid']} for {coin}")
+                    except Exception as ce:
+                        logging.warning(f"[Swing] cancel TP failed: {ce}")
+
+                holding  = float(balance.get(coin, 0))
+                sell_vol = min(vol, holding)
+                if sell_vol < cfg.get("min_vol", 0.01):
+                    logging.warning(f"[Swing] {coin} holding {holding} below min — cannot sell")
+                    continue
+                lp = round(current * 0.999, price_dec)
+                try:
+                    res  = request_fn("/0/private/AddOrder", {
+                        "pair": pair, "type": "sell", "ordertype": "limit",
+                        "volume": f"{sell_vol:.8f}", "price": f"{lp:.{price_dec}f}",
+                    }, private=True)
+                    txid = list(res.get("txid", ["?"]))[0]
+                    t["status"]      = "closed_loss"
+                    t["date_close"]  = datetime.now().isoformat()
+                    t["close_price"] = current
+                    t["close_txid"]  = txid
+                    logging.info(f"[Swing] CLOSE STOP {coin} @ {current:.4f} | P&L {pnl_pct:+.1f}% | txid={txid}")
+                except Exception as e:
+                    logging.error(f"[Swing] stop sell failed {coin}: {e}")
 
     if changed:
         save_swing_trades(trades)
@@ -299,23 +316,38 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0)
             logging.warning(f"[Swing] {coin} vol={vol:.6f} < min={min_v} — skip")
             continue
 
-        lp = round(price * 0.999, price_dec)
+        buy_lp      = round(price * 0.999, price_dec)
+        target_p    = round(price * (1 + TARGET_PCT), price_dec)
+        stop_p      = round(price * (1 - STOP_PCT),   price_dec)
         try:
+            # פקודת קנייה
             res  = request_fn("/0/private/AddOrder", {
                 "pair": pair, "type": "buy", "ordertype": "limit",
-                "volume": f"{vol:.8f}", "price": f"{lp:.{price_dec}f}",
+                "volume": f"{vol:.8f}", "price": f"{buy_lp:.{price_dec}f}",
             }, private=True)
             txid = list(res.get("txid", ["?"]))[0]
+
+            # פקודת מכירה ב-take-profit (מיד אחרי הקנייה)
+            sell_txid = None
+            try:
+                sell_res  = request_fn("/0/private/AddOrder", {
+                    "pair": pair, "type": "sell", "ordertype": "limit",
+                    "volume": f"{vol:.8f}", "price": f"{target_p:.{price_dec}f}",
+                }, private=True)
+                sell_txid = list(sell_res.get("txid", ["?"]))[0]
+                logging.info(f"[Swing] SELL-TP placed {coin} @ {target_p} txid={sell_txid}")
+            except Exception as se:
+                logging.warning(f"[Swing] sell-tp failed {coin}: {se}")
 
             trade = {
                 "coin":          coin,
                 "pair":          pair,
                 "entry_price":   price,
-                "limit_price":   lp,
+                "limit_price":   buy_lp,
                 "volume":        vol,
                 "usd":           round(vol * price, 2),
-                "target_price":  round(price * (1 + TARGET_PCT), price_dec),
-                "stop_price":    round(price * (1 - STOP_PCT),   price_dec),
+                "target_price":  target_p,
+                "stop_price":    stop_p,
                 "date_open":     datetime.now().isoformat(),
                 "date_close":    None,
                 "status":        "open",
@@ -326,12 +358,13 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0)
                 "pnl_pct":       0.0,
                 "pnl_usd":       0.0,
                 "txid":          txid,
+                "sell_txid":     sell_txid,
                 "close_price":   None,
                 "close_txid":    None,
             }
             trades.append(trade)
             open_coins.add(coin)
-            logging.info(f"[Swing] OPEN {coin} @ {price:.4f} target={trade['target_price']} stop={trade['stop_price']} | {reason[:80]}")
+            logging.info(f"[Swing] OPEN {coin} @ {price:.4f} target={target_p} stop={stop_p} | {reason[:80]}")
         except Exception as e:
             logging.error(f"[Swing] buy failed {coin}: {e}")
 
