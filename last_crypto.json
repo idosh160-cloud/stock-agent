@@ -1,22 +1,22 @@
 {
-  "timestamp": "2026-06-11T08:30:47.680126",
+  "timestamp": "2026-06-11T08:45:47.032485",
   "balance": {
     "ADA": 0.11115247,
     "USDC": 298.08060031,
     "ETH": 0.18086108,
     "XRP": 0.00417466
   },
-  "portfolio_usd": 595.99,
+  "portfolio_usd": 596.46,
   "usdc": 298.08,
   "signals": [
     {
       "coin": "BTC",
       "pair": "XXBTZUSD",
       "action": "HOLD",
-      "rsi": 49.53,
-      "macd": 122.381745,
-      "ma50": 61956.55,
-      "ma200": 62740.3,
+      "rsi": 50.54,
+      "macd": 126.198041,
+      "ma50": 61957.74,
+      "ma200": 62740.6,
       "support": 62388.2,
       "resistance": 62690.5,
       "near_support": true,
@@ -28,7 +28,7 @@
         "Near support $62,388.2000",
         "Near resistance $62,690.5000"
       ],
-      "price": 62561.1,
+      "price": 62620.9,
       "volume": 0,
       "usd_value": 0.0,
       "limit_price": 0
@@ -37,11 +37,11 @@
       "coin": "ETH",
       "pair": "XETHZUSD",
       "action": "HOLD",
-      "rsi": 45.54,
-      "macd": 3.610124,
-      "ma50": 1644.21,
-      "ma200": 1679.26,
-      "support": 1644.64,
+      "rsi": 46.69,
+      "macd": 3.776688,
+      "ma50": 1644.27,
+      "ma200": 1679.28,
+      "support": 1648.01,
       "resistance": 1654.12,
       "near_support": true,
       "buy_score": 3,
@@ -49,10 +49,10 @@
       "reasons": [
         "MACD bullish crossover",
         "Below MA200 (downtrend)",
-        "Near support $1,644.6400",
+        "Near support $1,648.0100",
         "Near resistance $1,654.1200"
       ],
-      "price": 1647.16,
+      "price": 1649.77,
       "volume": 0,
       "usd_value": 0.0,
       "limit_price": 0
@@ -61,8 +61,8 @@
       "coin": "XRP",
       "pair": "XXRPZUSD",
       "action": "HOLD",
-      "rsi": 42.38,
-      "macd": 0.00289,
+      "rsi": 42.65,
+      "macd": 0.002923,
       "ma50": 1.13,
       "ma200": 1.14,
       "support": 1.1092,
@@ -76,7 +76,7 @@
         "Near support $1.1092",
         "Near resistance $1.1176"
       ],
-      "price": 1.11494,
+      "price": 1.11546,
       "volume": 0,
       "usd_value": 0.0,
       "limit_price": 0
