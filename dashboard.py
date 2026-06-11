@@ -283,12 +283,16 @@ with tab_stocks:
         st.warning("⚠️ אין ניתוח זמין — הרץ את הסוכן קודם (`python run.py`)")
     else:
         with st.expander("🌍 סיכום שוק + חדשות", expanded=False):
-            st.write(analysis.get("market_summary", ""))
+            market_summary = analysis.get("market_summary", "")
+            if market_summary and "JSON parse error" not in market_summary and "Data unavailable" not in market_summary:
+                st.write(market_summary)
+            else:
+                st.caption("⏳ סיכום שוק יתעדכן בריצה הבאה של הסוכן")
             recap = analysis.get("yesterday_recap", "")
-            if recap:
+            if recap and "JSON parse error" not in recap:
                 st.caption(f"⏮ {recap}")
             rumors = analysis.get("rumors_and_contracts", "")
-            if rumors:
+            if rumors and "JSON parse error" not in rumors:
                 st.info(f"🔔 {rumors}")
 
         us_recs = analysis.get("us_recommendations", [])

@@ -662,11 +662,19 @@ Return ONLY valid JSON, no markdown:
     except json.JSONDecodeError as e:
         print(f"  [Agent] JSON parse error: {e}")
         print(f"  [Agent] raw (first 500): {raw[:500]}")
-        # fallback — תחזיר מבנה ריק עם הנתונים שיש
+        # שמור ניתוח קודם אם קיים — כדי לא לאבד את חדשות השוק
+        prev_analysis = {}
+        try:
+            analysis_path_prev = os.path.join(os.path.dirname(__file__), "last_analysis.json")
+            if os.path.exists(analysis_path_prev):
+                with open(analysis_path_prev, "r", encoding="utf-8") as f:
+                    prev_analysis = json.load(f)
+        except Exception:
+            pass
         analysis = {
-            "market_summary": "Data unavailable — JSON parse error",
-            "yesterday_recap": "",
-            "rumors_and_contracts": "",
+            "market_summary": prev_analysis.get("market_summary", ""),
+            "yesterday_recap": prev_analysis.get("yesterday_recap", ""),
+            "rumors_and_contracts": prev_analysis.get("rumors_and_contracts", ""),
             "us_recommendations": [],
             "il_recommendations": [],
             "funds_analysis": [],
