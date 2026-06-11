@@ -7,6 +7,10 @@ import time
 import math
 from datetime import datetime
 
+import hashlib
+import hmac
+import base64
+import urllib.parse
 import requests
 import streamlit as st
 import yfinance as yf
@@ -122,6 +126,134 @@ def fetch_live_prices(symbols, json_fallback=None):
             prices[sym] = {"price": 0, "change_pct": 0, "extended": False}
     return prices
 
+# ── Kraken direct API ────────────────────────────────────────────────────
+
+def _kraken_keys():
+    try:
+        return st.secrets["KRAKEN_API_KEY"], st.secrets["KRAKEN_PRIVATE_KEY"]
+    except Exception:
+        return None, None
+
+def _kraken_private(endpoint: str, data: dict = None) -> dict:
+    api_key, api_secret = _kraken_keys()
+    if not api_key:
+        return {}
+    data = data or {}
+    data["nonce"] = str(int(time.time() * 1000))
+    encoded  = urllib.parse.urlencode(data).encode()
+    secret   = api_secret + "=" * (-len(api_secret) % 4)
+    decoded  = base64.b64decode(secret)
+    msg      = endpoint.encode() + hashlib.sha256(data["nonce"].encode() + encoded).digest()
+    sig      = base64.b64encode(hmac.new(decoded, msg, hashlib.sha512).digest()).decode()
+    try:
+        r = requests.post(
+            f"https://api.kraken.com{endpoint}",
+            headers={"API-Key": api_key, "API-Sign": sig},
+            data=data, timeout=8
+        )
+        result = r.json()
+        if result.get("error"):
+            return {}
+        return result.get("result", {})
+    except Exception:
+        return {}
+
+@st.cache_data(ttl=30)
+def kraken_get_balance() -> dict:
+    raw = _kraken_private("/0/private/Balance")
+    name_map = {"ZUSD": "USD", "XXBT": "BTC", "XETH": "ETH", "XXRP": "XRP", "USDC": "USDC", "ADA": "ADA"}
+    return {name_map.get(k, k): round(float(v), 8) for k, v in raw.items() if float(v) > 0.00001}
+
+@st.cache_data(ttl=30)
+def kraken_get_open_orders() -> list:
+    raw = _kraken_private("/0/private/OpenOrders")
+    orders = raw.get("open", {})
+    _PAIR_COIN = {
+        "ETHUSDC": "ETH", "XRPUSDC": "XRP", "XBTUSDC": "BTC",
+        "SOLUSDC": "SOL", "ADAUSDC": "ADA", "AVAXUSDC": "AVAX",
+        "LINKUSDC": "LINK", "DOTUSDC": "DOT", "LTCUSDC": "LTC",
+        "BCHUSDC": "BCH", "ALGOUSDC": "ALGO", "ATOMUSDC": "ATOM",
+        "XTZUSDC": "XTZ",
+    }
+    out = []
+    for txid, o in orders.items():
+        d    = o.get("descr", {})
+        pair = d.get("pair", "")
+        coin = _PAIR_COIN.get(pair, pair.replace("USDC","").replace("XBT","BTC"))
+        out.append({
+            "txid":   txid,
+            "coin":   coin,
+            "side":   d.get("type", ""),
+            "price":  float(d.get("price", 0)),
+            "volume": float(o.get("vol", 0)),
+            "usd":    round(float(o.get("vol", 0)) * float(d.get("price", 0) or 0), 2),
+        })
+    return out
+
+@st.cache_data(ttl=300)
+def kraken_get_avg_costs() -> dict:
+    raw = _kraken_private("/0/private/TradesHistory", {"trades": True})
+    trades = raw.get("trades", {})
+    _PAIR_COIN = {
+        "XETHZUSD": "ETH", "ETHUSDC": "ETH", "XXBTZUSD": "BTC", "XBTUSDC": "BTC",
+        "XXRPZUSD": "XRP", "XRPUSDC": "XRP", "SOLUSDC": "SOL", "ADAUSDC": "ADA",
+        "XADAZUSD": "ADA", "AVAXUSDC": "AVAX", "LINKUSDC": "LINK", "DOTUSDC": "DOT",
+        "LTCUSDC": "LTC", "BCHUSDC": "BCH", "ALGOUSDC": "ALGO", "ATOMUSDC": "ATOM",
+        "XTZUSDC": "XTZ",
+    }
+    def pair_to_coin(pair):
+        if pair in _PAIR_COIN:
+            return _PAIR_COIN[pair]
+        for suffix in ("USDC", "ZUSD", "USD"):
+            if pair.endswith(suffix):
+                return pair[:-len(suffix)].lstrip("X").replace("XBT","BTC")
+        return None
+
+    holdings = {}
+    for t in sorted(trades.values(), key=lambda x: float(x.get("time", 0))):
+        coin = pair_to_coin(t.get("pair",""))
+        if not coin:
+            continue
+        vol, price, side = float(t.get("vol",0)), float(t.get("price",0)), t.get("type","")
+        h = holdings.setdefault(coin, {"vol": 0.0, "cost": 0.0})
+        if side == "buy":
+            h["vol"] += vol; h["cost"] += vol * price
+        elif side == "sell" and h["vol"] > 0:
+            ratio = min(vol / h["vol"], 1.0)
+            h["cost"] -= h["cost"] * ratio
+            h["vol"]   = max(0.0, h["vol"] - vol)
+    return {c: round(h["cost"]/h["vol"], 6) for c,h in holdings.items() if h["vol"] > 0.0001 and h["cost"] > 0}
+
+@st.cache_data(ttl=15)
+def kraken_get_prices(coins: list) -> dict:
+    _COIN_PAIR = {
+        "BTC": "XBTUSDC", "ETH": "ETHUSDC", "XRP": "XRPUSDC",
+        "SOL": "SOLUSDC", "ADA": "ADAUSDC", "AVAX": "AVAXUSDC",
+        "LINK": "LINKUSDC", "DOT": "DOTUSDC", "LTC": "LTCUSDC",
+        "BCH": "BCHUSDC", "ALGO": "ALGOUSDC", "ATOM": "ATOMUSDC", "XTZ": "XTZUSDC",
+    }
+    needed = {c: _COIN_PAIR[c] for c in coins if c in _COIN_PAIR}
+    if not needed:
+        return {}
+    try:
+        r   = requests.get(f"https://api.kraken.com/0/public/Ticker?pair={','.join(needed.values())}", timeout=8)
+        res = r.json().get("result", {})
+        out = {}
+        for coin, kpair in needed.items():
+            t = res.get(kpair, {})
+            if t:
+                p, o = float(t["c"][0]), float(t["o"])
+                out[coin] = {
+                    "price":      p,
+                    "change_pct": round((p - o) / o * 100, 2) if o else 0,
+                    "high_24h":   float(t["h"][1]),
+                    "low_24h":    float(t["l"][1]),
+                    "vol_24h":    float(t["v"][1]),
+                }
+        return out
+    except Exception:
+        return {}
+
 def fetch_kraken_prices(pairs: dict) -> dict:
     """מחירים חיים מ-Kraken API פומבי. pairs = {"BTC": "XBTUSDC", ...}"""
     try:
@@ -206,52 +338,69 @@ with tab_crypto:
         trades        = crypto.get("recent_trades", [])
         params        = crypto.get("params", {})
 
-        CRYPTO_PAIRS = {"BTC": "XBTUSDC", "ETH": "ETHUSDC", "XRP": "XRPUSDC"}
+        # ── נתונים ישירות מ-Kraken ────────────────────────────────────────
+        live_balance  = kraken_get_balance()
+        live_orders   = kraken_get_open_orders()
+        avg_costs     = kraken_get_avg_costs()
+        non_stable    = [c for c in live_balance if c not in ("USDC","USD")]
+        live_prices   = kraken_get_prices(non_stable) if non_stable else {}
 
-        # רענון מחירים חיים מ-Kraken
-        if "crypto_prices" not in st.session_state or \
-           time.time() - st.session_state.get("crypto_refresh_ts", 0) > 60:
-            st.session_state.crypto_prices    = fetch_kraken_prices(CRYPTO_PAIRS)
-            st.session_state.crypto_refresh_ts = time.time()
+        usdc         = safe_float(live_balance.get("USDC", 0)) + safe_float(live_balance.get("USD", 0))
+        portfolio_usd = usdc + sum(
+            safe_float(live_balance.get(c, 0)) * live_prices.get(c, {}).get("price", 0)
+            for c in non_stable
+        )
+
+        # fallback לנתוני JSON אם Kraken לא נגיש
+        if not live_balance:
+            live_balance  = balance
+            live_orders   = open_orders
+            avg_costs     = {}
+            non_stable    = [c for c in balance if c not in ("USDC","USD")]
+            live_prices   = {s["coin"]: {"price": s["price"], "change_pct": 0, "high_24h": 0, "low_24h": 0}
+                             for s in signals}
+            usdc          = safe_float(crypto.get("usdc", 0))
+            portfolio_usd = safe_float(crypto.get("portfolio_usd", 0))
+
+        live_crypto = live_prices  # backward compat for refresh button
 
         # מחירים חיים (refresh button)
         live_crypto = st.session_state.get("crypto_prices", {})
 
-        # פוזיציות — ישירות מה-JSON (מחושב ע"י הבוט מקרקן)
-        raw_positions = crypto.get("positions", [])
+        # ── בנה פוזיציות מבאלנס חי ──────────────────────────────────────
         pos_map = {}
-        for p in raw_positions:
-            coin = p["coin"]
-            # מחיר: live מ-Kraken public עדיף על JSON
-            live_price = live_crypto.get(coin, {}).get("price", 0)
-            price_now  = live_price if live_price > 0 else safe_float(p.get("price", 0))
-            qty        = safe_float(p.get("qty", 0))
-            avg        = p.get("avg_cost")
-            val        = round(qty * price_now, 2)
-            pnl_usd    = round((price_now - avg) * qty, 2) if avg else None
-            pnl_pct    = round((price_now - avg) / avg * 100, 2) if avg else None
+        for coin, qty in live_balance.items():
+            if coin in ("USDC","USD") or safe_float(qty) < 0.00001:
+                continue
+            px     = live_prices.get(coin, {})
+            price_now = px.get("price", 0)
+            qty_f  = safe_float(qty)
+            val    = round(qty_f * price_now, 2)
+            avg    = avg_costs.get(coin)
+            pnl_usd = round((price_now - avg) * qty_f, 2) if avg else None
+            pnl_pct = round((price_now - avg) / avg * 100, 2) if avg else None
             pos_map[coin] = {
-                "coin": coin, "qty": qty, "price": price_now,
+                "coin": coin, "qty": qty_f, "price": price_now,
                 "value": val, "avg_cost": avg,
                 "pnl_usd": pnl_usd, "pnl_pct": pnl_pct,
-                "change_24h": live_crypto.get(coin, {}).get("change_pct") or safe_float(p.get("change_24h", 0)),
-                "high_24h": p.get("high_24h", 0), "low_24h": p.get("low_24h", 0),
+                "change_24h": px.get("change_pct", 0),
+                "high_24h":   px.get("high_24h", 0),
+                "low_24h":    px.get("low_24h", 0),
                 "pending_qty": 0, "pending_usd": 0,
             }
-        # הוסף ממתינות מ-open_orders
-        for o in open_orders:
-            coin = o.get("coin", "")
+        for o in live_orders:
+            coin = o.get("coin","")
             if o.get("side") != "buy" or not coin:
                 continue
             if coin not in pos_map:
                 pos_map[coin] = {
-                    "coin": coin, "qty": 0, "price": safe_float(o.get("price", 0)),
+                    "coin": coin, "qty": 0, "price": safe_float(o.get("price",0)),
                     "value": 0, "avg_cost": None, "pnl_usd": None, "pnl_pct": None,
                     "change_24h": 0, "high_24h": 0, "low_24h": 0,
                     "pending_qty": 0, "pending_usd": 0,
                 }
-            pos_map[coin]["pending_qty"] += safe_float(o.get("volume", 0))
-            pos_map[coin]["pending_usd"] += safe_float(o.get("usd", 0))
+            pos_map[coin]["pending_qty"] += safe_float(o.get("volume",0))
+            pos_map[coin]["pending_usd"] += safe_float(o.get("usd",0))
         positions = sorted(pos_map.values(), key=lambda x: x["value"] + x["pending_usd"], reverse=True)
 
         invested_usd  = sum(p["value"] + p.get("pending_usd", 0) for p in positions)
@@ -292,15 +441,10 @@ with tab_crypto:
             """.replace("{portfolio_usd:,.2f}", f"{portfolio_usd:,.2f}"), unsafe_allow_html=True)
         with hdr_r:
             st.markdown("<div style='height:20px'></div>", unsafe_allow_html=True)
-            if st.button("🔄 רענן מחירים", use_container_width=True):
-                st.session_state.crypto_prices     = fetch_kraken_prices(CRYPTO_PAIRS)
-                st.session_state.crypto_refresh_ts  = time.time()
-                for coin, data in st.session_state.crypto_prices.items():
-                    price_map[coin] = data["price"]
+            if st.button("🔄 רענן", use_container_width=True):
+                st.cache_data.clear()
                 st.rerun()
-            last_ref = st.session_state.get("crypto_refresh_ts", 0)
-            secs_ago = int(time.time() - last_ref)
-            st.caption(f"לפני {secs_ago}ש'" if secs_ago < 60 else f"לפני {secs_ago//60}ד'")
+            st.caption("live · 15ש' cache")
 
         # ── פוזיציות ─────────────────────────────────────────────────────
         if positions:
@@ -498,11 +642,11 @@ with tab_crypto:
             st.info("אין עסקאות עדיין — הבוט ימתין לסיגנל.")
 
         # ── פקודות Limit פתוחות ───────────────────────────────────────────
-        if open_orders:
+        if live_orders:
             st.markdown("---")
             st.markdown("#### ⏳ פקודות Limit ממתינות")
             oc1, oc2 = st.columns(2)
-            for idx, o in enumerate(open_orders):
+            for idx, o in enumerate(live_orders):
                 col = oc1 if idx % 2 == 0 else oc2
                 side  = o.get("side", "")
                 color = "#34d399" if side == "buy" else "#f87171"
