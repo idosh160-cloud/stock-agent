@@ -390,7 +390,9 @@ def refresh_limit_orders(balance: dict):
                 spend = min(params["MAX_TRADE_USD"], usdc_free * 0.3)
                 vol   = round(spend / support, 6)
                 if vol >= MIN_VOLUMES.get(coin, 0.0001):
-                    lp = round(support * 1.002, 4)
+                    # קרקן: BTC=1 ספרה, ETH=2, XRP=4
+                    decimals = {"BTC": 1, "ETH": 2, "XRP": 4}.get(coin, 2)
+                    lp = round(support * 1.002, decimals)
                     place_order(pair, "buy", vol, lp)
                     reserved_usdc += vol * lp
                     usdc_free     -= vol * lp
@@ -433,6 +435,8 @@ def run_cycle(auto_trade: bool = True) -> dict:
             vol    = 0
             lp     = 0
 
+            decimals = {"BTC": 1, "ETH": 2, "XRP": 4}.get(coin, 2)
+
             # אם יש פקודה פתוחה על המטבע — לא מוסיפים עוד
             if coin in open_coins:
                 action = "HOLD (pending order)"
@@ -443,10 +447,10 @@ def run_cycle(auto_trade: bool = True) -> dict:
                 if vol < MIN_VOLUMES.get(coin, 0.0001):
                     action = "HOLD"
                 else:
-                    lp = round(price * 0.998, 4)
+                    lp = round(price * 0.998, decimals)
             elif action == "SELL" and holding >= MIN_VOLUMES.get(coin, 0.0001) and daily < params["MAX_DAILY_TRADES"]:
                 vol = round(holding * 0.5, 6)
-                lp  = round(price * 1.002, 4)
+                lp  = round(price * 1.002, decimals)
             else:
                 action = "HOLD"
 
