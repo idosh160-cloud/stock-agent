@@ -129,8 +129,29 @@ def fetch_live_prices(symbols, json_fallback=None):
 # ── Kraken direct API ────────────────────────────────────────────────────
 
 def _kraken_keys():
+    # נסה st.secrets קודם (Streamlit Cloud / local secrets.toml)
     try:
-        return st.secrets["KRAKEN_API_KEY"], st.secrets["KRAKEN_PRIVATE_KEY"]
+        k = st.secrets.get("KRAKEN_API_KEY")
+        s = st.secrets.get("KRAKEN_PRIVATE_KEY")
+        if k and s:
+            return k, s
+    except Exception:
+        pass
+    # fallback — קרא ישירות מ-.env
+    env_path = os.path.join(BASE_DIR, ".env")
+    try:
+        k = s = None
+        with open(env_path, encoding="utf-8-sig") as f:
+            for line in f:
+                line = line.strip()
+                if "=" not in line or line.startswith("#"):
+                    continue
+                key, val = line.split("=", 1)
+                if key.strip() == "KRAKEN_API_KEY":
+                    k = val.strip()
+                elif key.strip() == "KRAKEN_PRIVATE_KEY":
+                    s = val.strip()
+        return k, s
     except Exception:
         return None, None
 
@@ -161,8 +182,20 @@ def _kraken_private(endpoint: str, data: dict = None) -> dict:
 @st.cache_data(ttl=30)
 def kraken_get_balance() -> dict:
     raw = _kraken_private("/0/private/Balance")
-    name_map = {"ZUSD": "USD", "XXBT": "BTC", "XETH": "ETH", "XXRP": "XRP", "USDC": "USDC", "ADA": "ADA"}
-    return {name_map.get(k, k): round(float(v), 8) for k, v in raw.items() if float(v) > 0.00001}
+    if not raw:
+        return {}
+    name_map = {
+        "ZUSD": "USD", "XXBT": "BTC", "XETH": "ETH", "XXRP": "XRP",
+        "USDC": "USDC", "ADA": "ADA", "XADA": "ADA",
+    }
+    result = {}
+    for k, v in raw.items():
+        val = float(v)
+        if val < 0.00001 or "." in k:   # דלג USD.HOLD וכד'
+            continue
+        name = name_map.get(k, k.lstrip("X"))
+        result[name] = round(val, 8)
+    return result
 
 @st.cache_data(ttl=30)
 def kraken_get_open_orders() -> list:
@@ -225,7 +258,7 @@ def kraken_get_avg_costs() -> dict:
     return {c: round(h["cost"]/h["vol"], 6) for c,h in holdings.items() if h["vol"] > 0.0001 and h["cost"] > 0}
 
 @st.cache_data(ttl=15)
-def kraken_get_prices(coins: list) -> dict:
+def kraken_get_prices(coins: tuple) -> dict:
     _COIN_PAIR = {
         "BTC": "XBTUSDC", "ETH": "ETHUSDC", "XRP": "XRPUSDC",
         "SOL": "SOLUSDC", "ADA": "ADAUSDC", "AVAX": "AVAXUSDC",
@@ -338,34 +371,32 @@ with tab_crypto:
         trades        = crypto.get("recent_trades", [])
         params        = crypto.get("params", {})
 
-        # ── נתונים ישירות מ-Kraken ────────────────────────────────────────
-        live_balance  = kraken_get_balance()
-        live_orders   = kraken_get_open_orders()
-        avg_costs     = kraken_get_avg_costs()
-        non_stable    = [c for c in live_balance if c not in ("USDC","USD")]
-        live_prices   = kraken_get_prices(non_stable) if non_stable else {}
+        # ── נתוני Kraken: private (balance/orders/avg) + public (מחירים) ──
+        # Private — balance ופקודות
+        live_balance = kraken_get_balance()
+        if live_balance:
+            live_orders = kraken_get_open_orders()
+            avg_costs   = kraken_get_avg_costs()
+        else:
+            # fallback לנתוני JSON
+            raw_bal   = crypto.get("balance", {})
+            name_map  = {"XXBT":"BTC","XETH":"ETH","XXRP":"XRP"}
+            live_balance = {name_map.get(k,k): round(float(v),8)
+                            for k,v in raw_bal.items()
+                            if float(v) > 0.00001 and "." not in k}
+            live_orders = open_orders
+            avg_costs   = {}
 
-        usdc         = safe_float(live_balance.get("USDC", 0)) + safe_float(live_balance.get("USD", 0))
+        # Public — מחירים חיים לכל מטבע בבאלנס (תמיד, ללא auth)
+        non_stable  = [c for c in live_balance if c not in ("USDC","USD")]
+        live_prices = kraken_get_prices(tuple(sorted(non_stable)))
+
+        usdc          = safe_float(live_balance.get("USDC", 0)) + safe_float(live_balance.get("USD", 0))
         portfolio_usd = usdc + sum(
             safe_float(live_balance.get(c, 0)) * live_prices.get(c, {}).get("price", 0)
             for c in non_stable
         )
-
-        # fallback לנתוני JSON אם Kraken לא נגיש
-        if not live_balance:
-            live_balance  = balance
-            live_orders   = open_orders
-            avg_costs     = {}
-            non_stable    = [c for c in balance if c not in ("USDC","USD")]
-            live_prices   = {s["coin"]: {"price": s["price"], "change_pct": 0, "high_24h": 0, "low_24h": 0}
-                             for s in signals}
-            usdc          = safe_float(crypto.get("usdc", 0))
-            portfolio_usd = safe_float(crypto.get("portfolio_usd", 0))
-
-        live_crypto = live_prices  # backward compat for refresh button
-
-        # מחירים חיים (refresh button)
-        live_crypto = st.session_state.get("crypto_prices", {})
+        live_crypto = live_prices
 
         # ── בנה פוזיציות מבאלנס חי ──────────────────────────────────────
         pos_map = {}
@@ -689,6 +720,7 @@ with tab_crypto:
                     unsafe_allow_html=True
                 )
 
+        st.caption("🤖 Claude בוחר אלטקוינים תנודתיים פעם בשעה · יעד +5% · stop -3% · $15 לעסקה")
         if open_sw:
             st.markdown("**פתוחות:**")
             sw_cols = st.columns(min(len(open_sw), 3))
@@ -743,7 +775,9 @@ with tab_crypto:
                     </div>
                     """, unsafe_allow_html=True)
         else:
-            st.caption("אין סינגים פתוחים — הסריקה הבאה תהיה בשעה הקרובה.")
+            last_scan_file = os.path.join(BASE_DIR, "last_swing_scan.txt")
+            last_scan = open(last_scan_file).read().strip() if os.path.exists(last_scan_file) else "לא רץ עדיין"
+            st.caption(f"אין פוזיציות פתוחות כרגע — סריקה אחרונה: {last_scan}")
 
         if closed_sw[:5]:
             with st.expander(f"📋 {len(closed_sw)} סינגים סגורים"):
