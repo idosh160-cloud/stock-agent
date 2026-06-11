@@ -30,26 +30,26 @@ PARAMS_FILE  = os.path.join(DIR, "crypto_params.json")
 CRYPTO_FILE  = os.path.join(DIR, "last_crypto.json")
 
 DEFAULT_PARAMS = {
-    "RSI_BUY":          38,
-    "RSI_SELL":         62,
+    "RSI_BUY":          45,
+    "RSI_SELL":         58,
     "MAX_TRADE_USD":    30,
     "MAX_DAILY_TRADES": 4,
-    "MIN_SIGNALS":      2,   # כמה אינדיקטורים חייבים להסכים לפני עסקה
+    "MIN_SIGNALS":      2,
 }
 
 PAIRS = {
-    "BTC": "XXBTZUSD",
-    "ETH": "XETHZUSD",
-    "XRP": "XXRPZUSD",
+    "BTC": "XBTUSDC",
+    "ETH": "ETHUSDC",
+    "XRP": "XRPUSDC",
 }
 
 MIN_VOLUMES = {"BTC": 0.0001, "ETH": 0.001, "XRP": 1.0}
 
 # רמות תמיכה/התנגדות ידועות לכל מטבע (מתעדכנות אוטומטית)
 SUPPORT_LEVELS = {
-    "BTC": [55000, 58000, 60000, 62000, 65000],
-    "ETH": [1400,  1500,  1600,  1700,  1800],
-    "XRP": [0.85,  0.95,  1.05,  1.20,  1.40],
+    "BTC": [88000, 90000, 92000, 95000, 98000],
+    "ETH": [2200,  2400,  2600,  2800,  3000],
+    "XRP": [2.00,  2.10,  2.20,  2.35,  2.50],
 }
 
 

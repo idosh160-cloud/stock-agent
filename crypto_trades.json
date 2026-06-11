@@ -1,0 +1,42 @@
+[
+  {
+    "date": "2026-06-11T08:59:19.778007",
+    "coin": "ETH",
+    "action": "BUY",
+    "price": 1647.49,
+    "volume": 0.01821,
+    "usd": 30.0,
+    "rsi": 44.84,
+    "buy_score": 5,
+    "sell_score": 3,
+    "reasons": [
+      "RSI 44.84 (oversold)",
+      "MACD bullish crossover",
+      "Below MA200 (downtrend)",
+      "Near support $1,645.4400",
+      "Near resistance $1,655.3400"
+    ],
+    "txid": "OWH4QO-JJXQF-UAWDRF",
+    "pnl_pct": null
+  },
+  {
+    "date": "2026-06-11T08:59:20.119771",
+    "coin": "XRP",
+    "action": "BUY",
+    "price": 1.11472,
+    "volume": 26.912588,
+    "usd": 30.0,
+    "rsi": 42.75,
+    "buy_score": 5,
+    "sell_score": 3,
+    "reasons": [
+      "RSI 42.75 (oversold)",
+      "MACD bullish crossover",
+      "Below MA200 (downtrend)",
+      "Near support $1.1095",
+      "Near resistance $1.1190"
+    ],
+    "txid": "O4S473-QUGLF-4UBRVN",
+    "pnl_pct": null
+  }
+]
