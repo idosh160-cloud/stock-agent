@@ -77,33 +77,36 @@ def load_crypto():
     except Exception:
         return None
 
-def fetch_live_prices(symbols):
-    """מחירים חיים / טרום-מסחר / סגירה אחרונה"""
+def fetch_live_prices(symbols, json_fallback=None):
+    """מחירים חיים / טרום-מסחר / סגירה אחרונה. אם yfinance נכשל — fallback מה-JSON."""
     prices = {}
+    fb = {r["symbol"]: r for r in (json_fallback or [])}
     for sym in symbols:
         try:
             t    = yf.Ticker(sym)
             info = t.info
-
-            # טרום-מסחר / אחרי-מסחר
             pre  = safe_float(info.get("preMarketPrice") or info.get("postMarketPrice"))
             reg  = safe_float(info.get("currentPrice") or info.get("regularMarketPrice"))
             prev = safe_float(info.get("previousClose") or reg)
-
             if pre > 0:
-                p        = pre
-                is_ext   = True
+                p, is_ext = pre, True
             elif reg > 0:
-                p        = reg
-                is_ext   = False
+                p, is_ext = reg, False
             else:
-                hist = t.history(period="2d")
-                p    = safe_float(hist["Close"].iloc[-1]) if len(hist) > 0 else 0
+                hist  = t.history(period="2d")
+                p     = safe_float(hist["Close"].iloc[-1]) if len(hist) > 0 else 0
                 is_ext = False
-
-            chg = round((p - prev) / prev * 100, 2) if prev else 0
-            prices[sym] = {"price": round(p, 2), "change_pct": chg, "extended": is_ext}
+            if p > 0:
+                chg = round((p - prev) / prev * 100, 2) if prev else 0
+                prices[sym] = {"price": round(p, 2), "change_pct": chg, "extended": is_ext}
+                continue
         except Exception:
+            pass
+        # fallback מה-JSON
+        if sym in fb and fb[sym].get("current_price", 0) > 0:
+            fp = safe_float(fb[sym]["current_price"])
+            prices[sym] = {"price": fp, "change_pct": safe_float(fb[sym].get("daily_change_pct", 0)), "extended": False}
+        else:
             prices[sym] = {"price": 0, "change_pct": 0, "extended": False}
     return prices
 
@@ -293,7 +296,7 @@ with tab_stocks:
 
         if "last_refresh" not in st.session_state or time.time() - st.session_state.last_refresh > REFRESH_SEC:
             with st.spinner("מרענן מחירים..."):
-                st.session_state.live_prices = fetch_live_prices(symbols)
+                st.session_state.live_prices = fetch_live_prices(symbols, us_recs)
                 st.session_state.last_refresh = time.time()
 
         live = st.session_state.get("live_prices", {})
@@ -324,7 +327,7 @@ with tab_stocks:
         col_refresh = st.columns([1, 4])[0]
         if col_refresh.button("🔄 רענן מחירים"):
             with st.spinner("מרענן..."):
-                st.session_state.live_prices = fetch_live_prices(symbols)
+                st.session_state.live_prices = fetch_live_prices(symbols, us_recs)
                 st.session_state.last_refresh = time.time()
             st.rerun()
 

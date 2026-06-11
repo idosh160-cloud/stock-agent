@@ -681,18 +681,11 @@ Return ONLY valid JSON, no markdown:
         sym = r.get("symbol", "")
         if sym in us_summary_map:
             s = us_summary_map[sym]
-            r.setdefault("shares", s.get("shares", 0))
-            r.setdefault("current_price", s.get("current_price", 0))
-            r.setdefault("current_value", s.get("current_value", 0))
-            r.setdefault("original_value", s.get("original_value", 0))
-            r.setdefault("pnl_dollars", s.get("pnl_dollars", 0))
-            r.setdefault("pnl_pct", s.get("pnl_pct", 0))
-            r.setdefault("daily_change_pct", s.get("daily_change_pct", 0))
-            # עדכן גם אם Claude שם 0
-            if r.get("current_price", 0) == 0 and s.get("current_price", 0) > 0:
-                r["current_price"] = s["current_price"]
-            if r.get("current_value", 0) == 0 and s.get("current_value", 0) > 0:
-                r["current_value"] = s["current_value"]
+            # תמיד עדכן מהנתונים האמיתיים — אל תסמוך על Claude לשדות מספריים
+            for field in ("shares", "current_price", "current_value",
+                          "original_value", "pnl_dollars", "pnl_pct", "daily_change_pct"):
+                if not r.get(field) and s.get(field):
+                    r[field] = s[field]
 
     # fallback — אם Claude לא החזיר מניות, בנה כרטיסיות בסיסיות מהנתונים
     if not analysis.get("us_recommendations"):
@@ -747,6 +740,22 @@ Return ONLY valid JSON, no markdown:
         )
     except Exception as e:
         print(f"  [History] could not save: {e}")
+
+    # מעבר אחרון — וודא שכל מחירי US הם אמיתיים (לא 0 מ-Claude)
+    us_summary_map2 = {s["symbol"]: s for s in us_summary}
+    for r in analysis.get("us_recommendations", []):
+        sym = r.get("symbol", "")
+        if sym in us_summary_map2:
+            s = us_summary_map2[sym]
+            for field in ("shares", "current_price", "current_value",
+                          "original_value", "pnl_dollars", "pnl_pct",
+                          "avg_cost", "daily_change_pct"):
+                real_val = s.get(field)
+                if real_val and not r.get(field):
+                    r[field] = real_val
+            # תמיד עדכן מחיר אם Claude שם 0
+            if not r.get("current_price") and s.get("current_price"):
+                r["current_price"] = s["current_price"]
 
     # שמור ניתוח לדשבורד
     try:
