@@ -1,22 +1,22 @@
 {
-  "timestamp": "2026-06-11T08:18:16.964229",
+  "timestamp": "2026-06-11T08:19:00.584307",
   "balance": {
     "ADA": 0.11115247,
     "USDC": 298.08060031,
     "ETH": 0.18086108,
     "XRP": 0.00417466
   },
-  "portfolio_usd": 596.57,
+  "portfolio_usd": 596.36,
   "usdc": 298.08,
   "signals": [
     {
       "coin": "BTC",
       "pair": "XXBTZUSD",
       "action": "HOLD",
-      "rsi": 50.43,
-      "macd": 125.783226,
-      "ma50": 61957.61,
-      "ma200": 62740.57,
+      "rsi": 49.88,
+      "macd": 123.734679,
+      "ma50": 61956.97,
+      "ma200": 62740.41,
       "support": 62388.2,
       "resistance": 62690.5,
       "near_support": true,
@@ -28,7 +28,7 @@
         "Near support $62,388.2000",
         "Near resistance $62,690.5000"
       ],
-      "price": 62614.4,
+      "price": 62582.3,
       "volume": 0,
       "usd_value": 0.0,
       "limit_price": 0
@@ -37,11 +37,11 @@
       "coin": "ETH",
       "pair": "XETHZUSD",
       "action": "HOLD",
-      "rsi": 46.97,
-      "macd": 3.815617,
-      "ma50": 1644.28,
-      "ma200": 1679.28,
-      "support": 1648.01,
+      "rsi": 46.44,
+      "macd": 3.74095,
+      "ma50": 1644.26,
+      "ma200": 1679.27,
+      "support": 1644.64,
       "resistance": 1654.12,
       "near_support": true,
       "buy_score": 3,
@@ -49,10 +49,10 @@
       "reasons": [
         "MACD bullish crossover",
         "Below MA200 (downtrend)",
-        "Near support $1,648.0100",
+        "Near support $1,644.6400",
         "Near resistance $1,654.1200"
       ],
-      "price": 1650.38,
+      "price": 1649.21,
       "volume": 0,
       "usd_value": 0.0,
       "limit_price": 0
@@ -61,12 +61,12 @@
       "coin": "XRP",
       "pair": "XXRPZUSD",
       "action": "HOLD",
-      "rsi": 43.32,
-      "macd": 0.003003,
+      "rsi": 43.03,
+      "macd": 0.002968,
       "ma50": 1.13,
       "ma200": 1.14,
       "support": 1.1092,
-      "resistance": 1.1179,
+      "resistance": 1.1176,
       "near_support": true,
       "buy_score": 3,
       "sell_score": 3,
@@ -74,9 +74,9 @@
         "MACD bullish crossover",
         "Below MA200 (downtrend)",
         "Near support $1.1092",
-        "Near resistance $1.1179"
+        "Near resistance $1.1176"
       ],
-      "price": 1.11671,
+      "price": 1.11617,
       "volume": 0,
       "usd_value": 0.0,
       "limit_price": 0
