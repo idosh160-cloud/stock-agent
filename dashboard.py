@@ -255,7 +255,21 @@ def kraken_get_avg_costs() -> dict:
             ratio = min(vol / h["vol"], 1.0)
             h["cost"] -= h["cost"] * ratio
             h["vol"]   = max(0.0, h["vol"] - vol)
-    return {c: round(h["cost"]/h["vol"], 6) for c,h in holdings.items() if h["vol"] > 0.0001 and h["cost"] > 0}
+    result = {c: round(h["cost"]/h["vol"], 6) for c,h in holdings.items() if h["vol"] > 0.0001 and h["cost"] > 0}
+    # מזג עם מחירים ידניים (לפוזיציות שנרכשו מחוץ לבוט)
+    manual_path = os.path.join(BASE_DIR, "crypto_manual_costs.json")
+    try:
+        with open(manual_path, encoding="utf-8") as f:
+            manual = json.load(f)
+        for coin, v in manual.items():
+            if coin.startswith("_"):
+                continue
+            avg = v.get("avg_cost", 0) if isinstance(v, dict) else float(v)
+            if avg and avg > 0 and coin not in result:
+                result[coin] = avg
+    except Exception:
+        pass
+    return result
 
 @st.cache_data(ttl=15)
 def kraken_get_prices(coins: tuple) -> dict:
