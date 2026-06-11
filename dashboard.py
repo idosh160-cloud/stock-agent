@@ -160,115 +160,266 @@ with tab_crypto:
     if crypto is None:
         st.info("אין נתוני קריפטו עדיין — הרץ את `python crypto_agent.py` פעם ראשונה.")
     else:
-        ts = crypto.get("timestamp", "")[:16].replace("T", " ")
-        balance = crypto.get("balance", {})
+        ts            = crypto.get("timestamp", "")[:16].replace("T", " ")
+        balance       = crypto.get("balance", {})
         portfolio_usd = crypto.get("portfolio_usd", 0)
-        usdc = crypto.get("usdc", 0)
-        signals = crypto.get("signals", [])
-        open_orders = crypto.get("open_orders", [])
-        trades = crypto.get("recent_trades", [])
-        params = crypto.get("params", {})
+        usdc          = crypto.get("usdc", 0)
+        signals       = crypto.get("signals", [])
+        open_orders   = crypto.get("open_orders", [])
+        trades        = crypto.get("recent_trades", [])
+        params        = crypto.get("params", {})
 
-        # ── סיכום ────────────────────────────────────────────────────────
-        st.markdown("### ₿ Crypto Portfolio")
-        mc1, mc2, mc3, mc4 = st.columns(4)
-        mc1.metric("שווי כולל", f"${portfolio_usd:,.2f}")
-        mc2.metric("USDC פנוי", f"${usdc:,.2f}")
-        mc3.metric("עסקאות היום", str(crypto.get("orders_today", 0)))
-        mc4.metric("עודכן", ts)
+        # מחיר לכל מטבע מהסיגנלים
+        price_map = {s["coin"]: s["price"] for s in signals}
 
-        st.divider()
+        # חישוב avg cost לכל מטבע מהיסטוריית עסקאות
+        def calc_avg_cost(coin, trades_list):
+            total_vol, total_cost = 0.0, 0.0
+            for t in trades_list:
+                if t.get("coin") != coin:
+                    continue
+                vol = safe_float(t.get("volume", 0))
+                price_t = safe_float(t.get("price", 0))
+                if t.get("action") == "BUY":
+                    total_vol  += vol
+                    total_cost += vol * price_t
+                elif t.get("action") == "SELL" and total_vol > 0:
+                    ratio = min(vol / total_vol, 1.0)
+                    total_cost -= total_cost * ratio
+                    total_vol  -= vol
+            return (total_cost / total_vol) if total_vol > 0.0001 else None
 
-        # ── מצב מטבעות ───────────────────────────────────────────────────
-        st.markdown("#### מצב נוכחי")
+        # פוזיציות פעילות
+        positions = []
+        for coin, qty in balance.items():
+            if coin in ("USDC", "USD") or safe_float(qty) < 0.0001:
+                continue
+            price_now = price_map.get(coin, 0)
+            val       = safe_float(qty) * price_now
+            avg       = calc_avg_cost(coin, trades)
+            pnl_usd   = (price_now - avg) * safe_float(qty) if avg else None
+            pnl_pct   = ((price_now - avg) / avg * 100) if avg else None
+            positions.append({
+                "coin": coin, "qty": safe_float(qty),
+                "price": price_now, "value": val,
+                "avg_cost": avg, "pnl_usd": pnl_usd, "pnl_pct": pnl_pct,
+            })
+        positions.sort(key=lambda x: x["value"], reverse=True)
+
+        invested_usd  = sum(p["value"] for p in positions)
+        today_str     = datetime.now().strftime("%Y-%m-%d")
+        today_pnl     = sum(safe_float(t.get("usd", 0)) * (1 if t.get("action") == "SELL" else -1)
+                            for t in trades if t.get("date", "")[:10] == today_str)
+        today_count   = sum(1 for t in trades if t.get("date", "")[:10] == today_str)
+
+        # ── כותרת ────────────────────────────────────────────────────────
+        st.markdown("""
+        <div style='background:linear-gradient(135deg,#0f172a,#1e293b);border-radius:16px;padding:20px 24px;margin-bottom:16px'>
+          <div style='font-size:13px;color:#64748b;text-transform:uppercase;letter-spacing:2px;margin-bottom:4px'>Crypto Portfolio</div>
+          <div style='display:flex;align-items:baseline;gap:12px'>
+            <span style='font-size:36px;font-weight:900;color:#f1f5f9'>${portfolio_usd:,.2f}</span>
+            <span style='font-size:14px;color:#64748b'>שווי כולל</span>
+          </div>
+        </div>
+        """.replace("{portfolio_usd:,.2f}", f"{portfolio_usd:,.2f}"), unsafe_allow_html=True)
+
+        hc1, hc2, hc3, hc4 = st.columns(4)
+        hc1.metric("מושקע במטבעות", f"${invested_usd:,.2f}")
+        hc2.metric("USDC פנוי", f"${usdc:,.2f}")
+        hc3.metric("עסקאות היום", str(today_count))
+        hc4.metric("עודכן", ts)
+
+        # ── פוזיציות ─────────────────────────────────────────────────────
+        if positions:
+            st.markdown("---")
+            st.markdown("#### 💼 פוזיציות פעילות")
+            pos_cols = st.columns(len(positions))
+            for i, p in enumerate(positions):
+                with pos_cols[i]:
+                    coin     = p["coin"]
+                    qty      = p["qty"]
+                    price_p  = p["price"]
+                    val      = p["value"]
+                    avg      = p["avg_cost"]
+                    pnl_usd  = p["pnl_usd"]
+                    pnl_pct  = p["pnl_pct"]
+                    pnl_color = "#34d399" if (pnl_usd or 0) >= 0 else "#f87171"
+                    pnl_bg    = "#064e3b" if (pnl_usd or 0) >= 0 else "#450a0a"
+
+                    coin_icons = {"BTC": "₿", "ETH": "Ξ", "XRP": "✕", "ADA": "₳"}
+                    icon = coin_icons.get(coin, "●")
+
+                    avg_str = f"<div style='display:flex;justify-content:space-between;margin-top:6px'><span style='color:#64748b;font-size:11px'>כניסה ממוצעת</span><span style='color:#94a3b8;font-size:12px'>${avg:,.4f}</span></div>" if avg else ""
+                    pnl_str = f"""
+                    <div style='background:{pnl_bg};border-radius:8px;padding:8px 12px;margin-top:10px;display:flex;justify-content:space-between;align-items:center'>
+                      <span style='color:{pnl_color};font-size:13px;font-weight:700'>{'+' if (pnl_usd or 0)>=0 else ''}${abs(pnl_usd):,.2f}</span>
+                      <span style='color:{pnl_color};font-size:12px'>{'+' if (pnl_pct or 0)>=0 else ''}{pnl_pct:.1f}%</span>
+                    </div>""" if pnl_usd is not None else ""
+
+                    st.markdown(f"""
+                    <div style='background:#1e293b;border-radius:14px;padding:18px;border:1px solid #334155'>
+                      <div style='display:flex;justify-content:space-between;align-items:center;margin-bottom:10px'>
+                        <span style='font-size:28px;font-weight:900;color:#f1f5f9'>{icon} {coin}</span>
+                        <span style='font-size:20px;font-weight:700;color:#e2e8f0'>${price_p:,.4f}</span>
+                      </div>
+                      <div style='background:#0f172a;border-radius:8px;padding:10px 12px'>
+                        <div style='display:flex;justify-content:space-between'>
+                          <span style='color:#64748b;font-size:11px'>כמות</span>
+                          <span style='color:#e2e8f0;font-size:13px;font-weight:600'>{qty:.6f} {coin}</span>
+                        </div>
+                        <div style='display:flex;justify-content:space-between;margin-top:4px'>
+                          <span style='color:#64748b;font-size:11px'>שווי</span>
+                          <span style='color:#f1f5f9;font-size:15px;font-weight:700'>${val:,.2f}</span>
+                        </div>
+                        {avg_str}
+                      </div>
+                      {pnl_str}
+                    </div>
+                    """, unsafe_allow_html=True)
+
+        # ── אנליזה לכל מטבע ──────────────────────────────────────────────
+        st.markdown("---")
+        st.markdown("#### 📊 אנליזה שוק")
         sig_cols = st.columns(len(signals)) if signals else []
         for i, s in enumerate(signals):
             with sig_cols[i]:
-                action = s["action"]
-                rsi    = s["rsi"]
-                price  = s["price"]
-                coin   = s["coin"]
-                holding = balance.get(coin, 0)
-                holding_usd = holding * price
+                action     = s["action"]
+                rsi        = s["rsi"]
+                price_s    = s["price"]
+                coin       = s["coin"]
+                buy_score  = s.get("buy_score", 0)
+                sell_score = s.get("sell_score", 0)
+                ma50       = s.get("ma50", 0)
+                ma200      = s.get("ma200", 0)
+                support    = s.get("support", 0)
+                resistance = s.get("resistance", 0)
+                reasons    = s.get("reasons", [])
 
-                rsi_color = "#f87171" if rsi < 35 else "#34d399" if rsi > 65 else "#94a3b8"
-                action_color = "#34d399" if action == "BUY" else "#f87171" if action == "SELL" else "#64748b"
-                action_bg    = "#064e3b" if action == "BUY" else "#7f1d1d" if action == "SELL" else "#1e293b"
+                rsi_pct   = min(max(rsi, 0), 100)
+                rsi_color = "#f87171" if rsi < 40 else "#34d399" if rsi > 60 else "#fbbf24"
+                action_color = "#34d399" if "BUY" in action else "#f87171" if "SELL" in action else "#64748b"
+                action_bg    = "#064e3b" if "BUY" in action else "#7f1d1d" if "SELL" in action else "#1e293b"
+                score_bars = "".join([
+                    f"<div style='width:{min(buy_score/6*100,100):.0f}%;height:4px;background:#34d399;border-radius:2px;margin-bottom:2px'></div>",
+                    f"<div style='width:{min(sell_score/6*100,100):.0f}%;height:4px;background:#f87171;border-radius:2px'></div>",
+                ])
+                reasons_html = "".join([
+                    f"<div style='font-size:10px;color:#64748b;margin:1px 0'>• {r}</div>"
+                    for r in reasons[:4]
+                ])
 
                 st.markdown(f"""
-                <div style='background:#1e293b;border-radius:12px;padding:16px;text-align:center'>
-                  <div style='font-size:24px;font-weight:900;color:#f1f5f9'>{coin}</div>
-                  <div style='font-size:20px;font-weight:700;color:#e2e8f0'>${price:,.2f}</div>
-                  <div style='margin:8px 0'>
-                    <span style='font-size:13px;color:{rsi_color};background:#0f172a;padding:4px 10px;border-radius:6px'>RSI {rsi}</span>
+                <div style='background:#1e293b;border-radius:14px;padding:16px;border:1px solid #334155'>
+                  <div style='display:flex;justify-content:space-between;align-items:center;margin-bottom:12px'>
+                    <span style='font-size:20px;font-weight:900;color:#f1f5f9'>{coin}</span>
+                    <span style='background:{action_bg};color:{action_color};padding:4px 12px;border-radius:20px;font-size:12px;font-weight:700'>{action}</span>
                   </div>
-                  <div style='background:{action_bg};color:{action_color};padding:6px 14px;border-radius:20px;font-size:14px;font-weight:700;display:inline-block'>{action}</div>
-                  {f"<div style='font-size:11px;color:#64748b;margin-top:8px'>{holding:.6f} {coin}<br>${holding_usd:.2f}</div>" if holding > 0 else ""}
+                  <div style='font-size:22px;font-weight:700;color:#e2e8f0;margin-bottom:10px'>${price_s:,.4f}</div>
+
+                  <div style='background:#0f172a;border-radius:8px;padding:10px 12px;margin-bottom:10px'>
+                    <div style='display:flex;justify-content:space-between;margin-bottom:4px'>
+                      <span style='color:#64748b;font-size:11px'>RSI</span>
+                      <span style='color:{rsi_color};font-size:13px;font-weight:700'>{rsi:.1f}</span>
+                    </div>
+                    <div style='background:#1e293b;border-radius:4px;height:6px;overflow:hidden'>
+                      <div style='width:{rsi_pct:.0f}%;height:100%;background:{rsi_color};border-radius:4px'></div>
+                    </div>
+                    <div style='display:flex;justify-content:space-between;margin-top:8px'>
+                      <span style='color:#64748b;font-size:10px'>MA50: ${ma50:,.0f}</span>
+                      <span style='color:#64748b;font-size:10px'>MA200: ${ma200:,.0f}</span>
+                    </div>
+                  </div>
+
+                  <div style='display:flex;justify-content:space-between;margin-bottom:6px'>
+                    <div style='text-align:center'>
+                      <div style='font-size:10px;color:#64748b'>ציון קנייה</div>
+                      <div style='font-size:18px;font-weight:700;color:#34d399'>{buy_score}</div>
+                    </div>
+                    <div style='text-align:center'>
+                      <div style='font-size:10px;color:#64748b'>תמיכה</div>
+                      <div style='font-size:12px;font-weight:600;color:#94a3b8'>${support:,.2f}</div>
+                    </div>
+                    <div style='text-align:center'>
+                      <div style='font-size:10px;color:#64748b'>התנגדות</div>
+                      <div style='font-size:12px;font-weight:600;color:#94a3b8'>${resistance:,.2f}</div>
+                    </div>
+                    <div style='text-align:center'>
+                      <div style='font-size:10px;color:#64748b'>ציון מכירה</div>
+                      <div style='font-size:18px;font-weight:700;color:#f87171'>{sell_score}</div>
+                    </div>
+                  </div>
+                  {score_bars}
+                  <div style='margin-top:8px'>{reasons_html}</div>
                 </div>
                 """, unsafe_allow_html=True)
 
-        st.divider()
-
-        # ── היסטוריית עסקאות ─────────────────────────────────────────────
-        st.markdown("#### עסקאות אחרונות")
+        # ── עסקאות אחרונות ────────────────────────────────────────────────
+        st.markdown("---")
+        st.markdown("#### 🔄 עסקאות אחרונות")
         if trades:
-            today_trades = [t for t in reversed(trades) if t.get("date","")[:10] == datetime.now().strftime("%Y-%m-%d")]
-            older_trades = [t for t in reversed(trades) if t not in today_trades]
-            show_trades  = today_trades + older_trades[:10]
+            all_trades = list(reversed(trades))[:15]
+            for t in all_trades:
+                action  = t.get("action", "")
+                coin    = t.get("coin", "")
+                price_t = t.get("price", 0)
+                vol     = t.get("volume", 0)
+                usd     = t.get("usd", 0)
+                rsi_t   = t.get("rsi", 0)
+                dt      = t.get("date", "")[:16].replace("T", " ")
+                pnl     = t.get("pnl_pct")
+                bscore  = t.get("buy_score", "")
+                is_today = t.get("date", "")[:10] == today_str
 
-            for t in show_trades:
-                action = t.get("action","")
-                coin   = t.get("coin","")
-                price  = t.get("price", 0)
-                vol    = t.get("volume", 0)
-                usd    = t.get("usd", 0)
-                rsi    = t.get("rsi", 0)
-                dt     = t.get("date","")[:16].replace("T"," ")
-                pnl    = t.get("pnl_pct")
-
-                icon  = "🟢" if action == "BUY" else "🔴"
-                color = "#34d399" if action == "BUY" else "#f87171"
-                pnl_str = f" · P&L {pnl:+.1f}%" if pnl is not None else ""
+                color     = "#34d399" if action == "BUY" else "#f87171"
+                bg        = "#0a1f14" if action == "BUY" else "#1f0a0a"
+                today_tag = "<span style='background:#1e3a5f;color:#93c5fd;font-size:10px;padding:2px 6px;border-radius:4px;margin-left:6px'>היום</span>" if is_today else ""
+                pnl_html  = f"<span style='color:{'#34d399' if (pnl or 0)>=0 else '#f87171'};font-size:12px;font-weight:600'>{'+' if (pnl or 0)>=0 else ''}{pnl:.1f}%</span>" if pnl is not None else ""
 
                 st.markdown(f"""
-                <div style='background:#0f172a;border-left:3px solid {color};border-radius:0 8px 8px 0;padding:10px 14px;margin-bottom:6px;display:flex;justify-content:space-between;align-items:center'>
+                <div style='background:{bg};border:1px solid {'#065f46' if action=='BUY' else '#7f1d1d'};border-radius:10px;
+                            padding:12px 16px;margin-bottom:6px;display:flex;justify-content:space-between;align-items:center'>
                   <div>
-                    <span style='color:{color};font-weight:700'>{icon} {action} {coin}</span>
-                    <span style='color:#64748b;font-size:12px;margin-left:10px'>{vol:.6f} @ ${price:,.2f}</span>
-                    {f"<span style='color:#fbbf24;font-size:12px;margin-left:8px'>{pnl_str}</span>" if pnl is not None else ""}
+                    <span style='color:{color};font-weight:800;font-size:14px'>{'▲' if action=='BUY' else '▼'} {action} {coin}</span>
+                    {today_tag}
+                    <div style='color:#94a3b8;font-size:12px;margin-top:2px'>{vol:.6f} {coin} @ ${price_t:,.4f}</div>
                   </div>
-                  <div style='color:#475569;font-size:12px'>${usd:.2f} · RSI {rsi} · {dt}</div>
+                  <div style='text-align:right'>
+                    <div style='color:#f1f5f9;font-size:15px;font-weight:700'>${usd:.2f}</div>
+                    <div style='color:#475569;font-size:11px;margin-top:2px'>RSI {rsi_t:.0f} · ציון {bscore} · {dt[11:]}</div>
+                    {pnl_html}
+                  </div>
                 </div>
                 """, unsafe_allow_html=True)
         else:
-            st.info("אין עסקאות עדיין — הבוט ימתין לסיגנל RSI.")
+            st.info("אין עסקאות עדיין — הבוט ימתין לסיגנל.")
 
-        # ── פקודות limit ממתינות ──────────────────────────────────────────
-        st.divider()
-        st.markdown("#### ⏳ פקודות Limit ממתינות")
+        # ── פקודות Limit פתוחות ───────────────────────────────────────────
         if open_orders:
-            for o in open_orders:
+            st.markdown("---")
+            st.markdown("#### ⏳ פקודות Limit ממתינות")
+            oc1, oc2 = st.columns(2)
+            for idx, o in enumerate(open_orders):
+                col = oc1 if idx % 2 == 0 else oc2
                 side  = o.get("side", "")
                 color = "#34d399" if side == "buy" else "#f87171"
-                st.markdown(f"""
-                <div style='background:#0f172a;border-left:3px solid {color};border-radius:0 8px 8px 0;
-                            padding:10px 14px;margin-bottom:6px;display:flex;justify-content:space-between;align-items:center'>
-                  <div>
-                    <span style='color:{color};font-weight:700;text-transform:uppercase'>{side}</span>
-                    <span style='color:#94a3b8;font-size:13px;margin-left:10px'>{o.get('coin','')}</span>
-                  </div>
-                  <div style='color:#e2e8f0;font-weight:600'>${o.get('price',0):,.4f}</div>
-                  <div style='color:#64748b;font-size:12px'>{o.get('volume',0):.6f} · ${o.get('usd',0):.2f}</div>
-                </div>
-                """, unsafe_allow_html=True)
-        else:
-            st.caption("אין פקודות פתוחות כרגע — הבוט ישים ברמות תמיכה בשעה הקרובה.")
+                bg    = "#0a1f14" if side == "buy" else "#1f0a0a"
+                with col:
+                    st.markdown(f"""
+                    <div style='background:{bg};border:1px solid {'#065f46' if side=='buy' else '#7f1d1d'};
+                                border-radius:10px;padding:12px 16px;margin-bottom:8px'>
+                      <div style='display:flex;justify-content:space-between;align-items:center'>
+                        <span style='color:{color};font-weight:700;text-transform:uppercase;font-size:13px'>{'▲ BUY' if side=='buy' else '▼ SELL'} {o.get('coin','')}</span>
+                        <span style='color:#f1f5f9;font-weight:700;font-size:15px'>${o.get('price',0):,.4f}</span>
+                      </div>
+                      <div style='color:#64748b;font-size:11px;margin-top:4px'>{o.get('volume',0):.6f} · ${o.get('usd',0):.2f}</div>
+                    </div>
+                    """, unsafe_allow_html=True)
 
         # ── פרמטרים ──────────────────────────────────────────────────────
-        with st.expander("⚙️ פרמטרים נוכחיים (אוטו-כוונון שבועי)"):
+        with st.expander("⚙️ פרמטרים (אוטו-כוונון שבועי)"):
             pc1, pc2, pc3, pc4 = st.columns(4)
-            pc1.metric("RSI קנייה", params.get("RSI_BUY", 32))
-            pc2.metric("RSI מכירה", params.get("RSI_SELL", 68))
+            pc1.metric("RSI קנייה", params.get("RSI_BUY", 45))
+            pc2.metric("RSI מכירה", params.get("RSI_SELL", 58))
             pc3.metric("מקס עסקה", f"${params.get('MAX_TRADE_USD', 30)}")
             pc4.metric("מקס/יום", params.get("MAX_DAILY_TRADES", 4))
 
