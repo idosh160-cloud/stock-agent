@@ -120,6 +120,108 @@ def get_balance() -> dict:
     name_map = {"ZUSD": "USD", "XXBT": "BTC", "XETH": "ETH", "XXRP": "XRP", "USDC": "USDC", "ADA": "ADA"}
     return {name_map.get(k, k): round(float(v), 8) for k, v in raw.items() if float(v) > 0}
 
+# מיפוי pair קרקן → שם מטבע (כולל פורמטים ישנים)
+_PAIR_TO_COIN = {
+    "XETHZUSD": "ETH", "ETHUSDC": "ETH", "XETHUSDC": "ETH",
+    "XXBTZUSD": "BTC", "XBTUSDC": "BTC",  "XXBTZUSD": "BTC",
+    "XXRPZUSD": "XRP", "XRPUSDC": "XRP",
+    "SOLUSDC": "SOL", "ADAUSDC": "ADA", "AVAXUSDC": "AVAX",
+    "LINKUSDC": "LINK", "DOTUSDC": "DOT", "LTCUSDC": "LTC",
+    "BCHUSDC": "BCH", "ALGOUSDC": "ALGO", "ATOMUSDC": "ATOM",
+    "XTZUSDC": "XTZ", "XADAZUSD": "ADA",
+}
+
+def _pair_to_coin(pair: str) -> str:
+    if pair in _PAIR_TO_COIN:
+        return _PAIR_TO_COIN[pair]
+    for suffix in ("USDC", "ZUSD", "USD", "EUR"):
+        if pair.endswith(suffix):
+            base = pair[:-len(suffix)].lstrip("X")
+            return {"XBT": "BTC", "ETH": "ETH", "XRP": "XRP"}.get(base, base)
+    return pair
+
+def get_avg_costs() -> dict:
+    """מחשב avg cost אמיתי מהיסטוריית עסקאות קרקן (כולל עסקאות לפני הבוט)"""
+    try:
+        data   = _request("/0/private/TradesHistory", {"trades": True}, private=True)
+        trades = data.get("trades", {})
+    except Exception as e:
+        logging.warning(f"[Kraken] TradesHistory failed: {e}")
+        return {}
+
+    holdings: dict = {}
+    for t in sorted(trades.values(), key=lambda x: float(x.get("time", 0))):
+        coin  = _pair_to_coin(t.get("pair", ""))
+        side  = t.get("type", "")
+        vol   = float(t.get("vol", 0))
+        price = float(t.get("price", 0))
+        if not coin or vol == 0:
+            continue
+        h = holdings.setdefault(coin, {"vol": 0.0, "cost": 0.0})
+        if side == "buy":
+            h["vol"]  += vol
+            h["cost"] += vol * price
+        elif side == "sell" and h["vol"] > 0:
+            ratio     = min(vol / h["vol"], 1.0)
+            h["cost"] -= h["cost"] * ratio
+            h["vol"]  -= vol
+            h["vol"]   = max(0.0, h["vol"])
+
+    result = {
+        coin: round(h["cost"] / h["vol"], 6)
+        for coin, h in holdings.items()
+        if h["vol"] > 0.0001 and h["cost"] > 0
+    }
+    # מיזוג עם עלויות ידניות (לפוזיציות שנרכשו מחוץ לבוט)
+    manual_path = os.path.join(DIR, "crypto_manual_costs.json")
+    if os.path.exists(manual_path):
+        try:
+            with open(manual_path, encoding="utf-8") as f:
+                manual = json.load(f)
+            for coin, data in manual.items():
+                if coin.startswith("_"):
+                    continue
+                avg = float(data.get("avg_cost", 0))
+                if avg > 0 and coin not in result:
+                    result[coin] = avg
+        except Exception:
+            pass
+    return result
+
+def get_live_prices_public(coins: list) -> dict:
+    """מחירים חיים מ-Kraken public API לכל מטבע"""
+    import requests as _req
+    coin_pairs = {
+        "BTC": "XBTUSDC", "ETH": "ETHUSDC", "XRP": "XRPUSDC",
+        "SOL": "SOLUSDC", "ADA": "ADAUSDC", "AVAX": "AVAXUSDC",
+        "LINK": "LINKUSDC", "DOT": "DOTUSDC", "LTC": "LTCUSDC",
+        "BCH": "BCHUSDC", "ALGO": "ALGOUSDC", "ATOM": "ATOMUSDC",
+        "XTZ": "XTZUSDC",
+    }
+    needed = {c: coin_pairs[c] for c in coins if c in coin_pairs}
+    if not needed:
+        return {}
+    try:
+        pair_str = ",".join(needed.values())
+        r   = _req.get(f"https://api.kraken.com/0/public/Ticker?pair={pair_str}", timeout=8)
+        res = r.json().get("result", {})
+        out = {}
+        for coin, kpair in needed.items():
+            t = res.get(kpair, {})
+            if t:
+                price  = float(t["c"][0])
+                open_p = float(t["o"])
+                out[coin] = {
+                    "price":      price,
+                    "change_pct": round((price - open_p) / open_p * 100, 2) if open_p else 0,
+                    "high_24h":   float(t["h"][1]),
+                    "low_24h":    float(t["l"][1]),
+                }
+        return out
+    except Exception as e:
+        logging.warning(f"[Kraken] public prices failed: {e}")
+        return {}
+
 def get_ohlc(pair: str, interval: int = 60, count: int = 210) -> list:
     data = _request(f"/0/public/OHLC?pair={pair}&interval={interval}")
     key  = list(data.keys())[0]
@@ -527,9 +629,45 @@ def run_cycle(auto_trade: bool = True) -> dict:
     except Exception:
         pass
 
+    # ── מחירים חיים + avg costs לכל מטבע בבאלנס ─────────────────────────
+    non_stable = [c for c in balance if c not in ("USDC", "USD")]
+    live_px    = get_live_prices_public(non_stable)
+    avg_costs  = get_avg_costs()
+
+    # עדכן portfolio_usd עם מחירים חיים
+    portfolio_usd = usdc
+    for coin, amt in balance.items():
+        p = live_px.get(coin, {}).get("price") or prices.get(coin, 0)
+        portfolio_usd += amt * p
+
+    # בנה positions מלא
+    positions_out = []
+    for coin in non_stable:
+        qty    = balance.get(coin, 0)
+        px_data = live_px.get(coin, {})
+        price_now = px_data.get("price", prices.get(coin, 0))
+        avg   = avg_costs.get(coin)
+        val   = round(qty * price_now, 2)
+        pnl_usd = round((price_now - avg) * qty, 2) if avg else None
+        pnl_pct = round((price_now - avg) / avg * 100, 2) if avg else None
+        positions_out.append({
+            "coin":       coin,
+            "qty":        qty,
+            "price":      price_now,
+            "value_usd":  val,
+            "avg_cost":   avg,
+            "pnl_usd":    pnl_usd,
+            "pnl_pct":    pnl_pct,
+            "change_24h": px_data.get("change_pct", 0),
+            "high_24h":   px_data.get("high_24h", 0),
+            "low_24h":    px_data.get("low_24h", 0),
+        })
+    positions_out.sort(key=lambda x: x["value_usd"], reverse=True)
+
     state = {
         "timestamp":     datetime.now().isoformat(),
         "balance":       balance,
+        "positions":     positions_out,
         "portfolio_usd": round(portfolio_usd, 2),
         "usdc":          round(usdc, 2),
         "signals":       signals,

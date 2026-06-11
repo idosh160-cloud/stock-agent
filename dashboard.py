@@ -214,58 +214,43 @@ with tab_crypto:
             st.session_state.crypto_prices    = fetch_kraken_prices(CRYPTO_PAIRS)
             st.session_state.crypto_refresh_ts = time.time()
 
-        # מחירים — Kraken live עדיפות, fallback לסיגנלים
+        # מחירים חיים (refresh button)
         live_crypto = st.session_state.get("crypto_prices", {})
-        price_map = {s["coin"]: s["price"] for s in signals}
-        for coin, data in live_crypto.items():
-            price_map[coin] = data["price"]
 
-        # חישוב avg cost לכל מטבע מהיסטוריית עסקאות
-        def calc_avg_cost(coin, trades_list):
-            total_vol, total_cost = 0.0, 0.0
-            for t in trades_list:
-                if t.get("coin") != coin:
-                    continue
-                vol = safe_float(t.get("volume", 0))
-                price_t = safe_float(t.get("price", 0))
-                if t.get("action") == "BUY":
-                    total_vol  += vol
-                    total_cost += vol * price_t
-                elif t.get("action") == "SELL" and total_vol > 0:
-                    ratio = min(vol / total_vol, 1.0)
-                    total_cost -= total_cost * ratio
-                    total_vol  -= vol
-            return (total_cost / total_vol) if total_vol > 0.0001 else None
-
-        # פוזיציות — ממשיות מהבאלנס + ממתינות מ-open_orders
+        # פוזיציות — ישירות מה-JSON (מחושב ע"י הבוט מקרקן)
+        raw_positions = crypto.get("positions", [])
         pos_map = {}
-        for coin, qty in balance.items():
-            if coin in ("USDC", "USD") or safe_float(qty) < 0.0001:
-                continue
-            price_now = price_map.get(coin, 0)
-            val       = safe_float(qty) * price_now
-            avg       = calc_avg_cost(coin, trades)
-            pnl_usd   = (price_now - avg) * safe_float(qty) if avg else None
-            pnl_pct   = ((price_now - avg) / avg * 100) if avg else None
+        for p in raw_positions:
+            coin = p["coin"]
+            # מחיר: live מ-Kraken public עדיף על JSON
+            live_price = live_crypto.get(coin, {}).get("price", 0)
+            price_now  = live_price if live_price > 0 else safe_float(p.get("price", 0))
+            qty        = safe_float(p.get("qty", 0))
+            avg        = p.get("avg_cost")
+            val        = round(qty * price_now, 2)
+            pnl_usd    = round((price_now - avg) * qty, 2) if avg else None
+            pnl_pct    = round((price_now - avg) / avg * 100, 2) if avg else None
             pos_map[coin] = {
-                "coin": coin, "qty": safe_float(qty), "price": price_now,
-                "value": val, "avg_cost": avg, "pnl_usd": pnl_usd,
-                "pnl_pct": pnl_pct, "pending_qty": 0, "pending_usd": 0,
+                "coin": coin, "qty": qty, "price": price_now,
+                "value": val, "avg_cost": avg,
+                "pnl_usd": pnl_usd, "pnl_pct": pnl_pct,
+                "change_24h": live_crypto.get(coin, {}).get("change_pct") or safe_float(p.get("change_24h", 0)),
+                "high_24h": p.get("high_24h", 0), "low_24h": p.get("low_24h", 0),
+                "pending_qty": 0, "pending_usd": 0,
             }
-        # הוסף כמויות ממתינות מ-open_orders
+        # הוסף ממתינות מ-open_orders
         for o in open_orders:
             coin = o.get("coin", "")
-            if o.get("side") != "buy":
+            if o.get("side") != "buy" or not coin:
                 continue
-            vol   = safe_float(o.get("volume", 0))
-            price_o = safe_float(o.get("price", 0))
             if coin not in pos_map:
                 pos_map[coin] = {
-                    "coin": coin, "qty": 0, "price": price_map.get(coin, price_o),
-                    "value": 0, "avg_cost": price_o, "pnl_usd": None,
-                    "pnl_pct": None, "pending_qty": 0, "pending_usd": 0,
+                    "coin": coin, "qty": 0, "price": safe_float(o.get("price", 0)),
+                    "value": 0, "avg_cost": None, "pnl_usd": None, "pnl_pct": None,
+                    "change_24h": 0, "high_24h": 0, "low_24h": 0,
+                    "pending_qty": 0, "pending_usd": 0,
                 }
-            pos_map[coin]["pending_qty"] += vol
+            pos_map[coin]["pending_qty"] += safe_float(o.get("volume", 0))
             pos_map[coin]["pending_usd"] += safe_float(o.get("usd", 0))
         positions = sorted(pos_map.values(), key=lambda x: x["value"] + x["pending_usd"], reverse=True)
 
@@ -333,10 +318,9 @@ with tab_crypto:
                     pnl_pct     = p["pnl_pct"]
                     pending_qty = p.get("pending_qty", 0)
                     pending_usd = p.get("pending_usd", 0)
-                    live_data   = live_crypto.get(coin, {})
-                    chg24       = live_data.get("change_pct", 0)
-                    high24      = live_data.get("high", 0)
-                    low24       = live_data.get("low", 0)
+                    chg24  = p.get("change_24h", 0) or 0
+                    high24 = p.get("high_24h", 0) or 0
+                    low24  = p.get("low_24h", 0) or 0
 
                     pnl_color = "#34d399" if (pnl_usd or 0) >= 0 else "#f87171"
                     pnl_bg    = "#082318" if (pnl_usd or 0) >= 0 else "#230808"
@@ -353,7 +337,9 @@ with tab_crypto:
                       </div>
                     </div>""" if pending_qty > 0 else ""
 
-                    avg_row = f"<div style='display:flex;justify-content:space-between;margin-top:5px;padding-top:5px;border-top:1px solid #1e293b'><span style='color:#475569;font-size:10px'>כניסה ממוצעת</span><span style='color:#94a3b8;font-size:11px'>${avg:,.4f}</span></div>" if avg else ""
+                    avg_val_str = f"${avg:,.4f}" if avg else "לא ידוע"
+                    avg_color   = "#94a3b8" if avg else "#475569"
+                    avg_row = f"<div style='display:flex;justify-content:space-between;margin-top:5px;padding-top:5px;border-top:1px solid #1e293b'><span style='color:#475569;font-size:10px'>כניסה ממוצעת</span><span style='color:{avg_color};font-size:11px'>{avg_val_str}</span></div>"
 
                     pnl_html = f"""
                     <div style='background:{pnl_bg};border-radius:8px;padding:8px 12px;margin-top:8px;display:flex;justify-content:space-between'>
