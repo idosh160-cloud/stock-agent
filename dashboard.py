@@ -495,9 +495,16 @@ with tab_crypto:
         if positions:
             st.markdown("---")
             st.markdown("#### 💼 פוזיציות")
-            pos_cols = st.columns(max(len(positions), 1))
+            COLS_PER_ROW = 4
+            for row_start in range(0, len(positions), COLS_PER_ROW):
+                row_items = positions[row_start:row_start + COLS_PER_ROW]
+                pos_cols = st.columns(len(row_items))
             for i, p in enumerate(positions):
-                with pos_cols[i]:
+                col_idx = i % COLS_PER_ROW
+                if col_idx == 0:
+                    row_items = positions[i:i + COLS_PER_ROW]
+                    pos_cols = st.columns(len(row_items))
+                with pos_cols[col_idx]:
                     coin        = p["coin"]
                     qty         = p["qty"]
                     price_p     = p["price"]
@@ -648,8 +655,9 @@ with tab_crypto:
 
         # ── עסקאות אחרונות ────────────────────────────────────────────────
         st.markdown("---")
-        st.markdown("#### 🔄 עסקאות אחרונות")
-        if trades:
+        tab_trades, tab_history = st.tabs(["🔄 עסקאות אחרונות", "📋 היסטוריה"])
+        with tab_trades:
+         if trades:
             all_trades = list(reversed(trades))[:15]
             for t in all_trades:
                 action  = t.get("action", "")
@@ -668,23 +676,50 @@ with tab_crypto:
                 today_tag = "<span style='background:#1e3a5f;color:#93c5fd;font-size:10px;padding:2px 6px;border-radius:4px;margin-left:6px'>היום</span>" if is_today else ""
                 pnl_html  = f"<span style='color:{'#34d399' if (pnl or 0)>=0 else '#f87171'};font-size:12px;font-weight:600'>{'+' if (pnl or 0)>=0 else ''}{pnl:.1f}%</span>" if pnl is not None else ""
 
-                st.markdown(f"""
-                <div style='background:{bg};border:1px solid {'#065f46' if action=='BUY' else '#7f1d1d'};border-radius:10px;
-                            padding:12px 16px;margin-bottom:6px;display:flex;justify-content:space-between;align-items:center'>
-                  <div>
-                    <span style='color:{color};font-weight:800;font-size:14px'>{'▲' if action=='BUY' else '▼'} {action} {coin}</span>
-                    {today_tag}
-                    <div style='color:#94a3b8;font-size:12px;margin-top:2px'>{vol:.6f} {coin} @ ${price_t:,.4f}</div>
-                  </div>
-                  <div style='text-align:right'>
-                    <div style='color:#f1f5f9;font-size:15px;font-weight:700'>${usd:.2f}</div>
-                    <div style='color:#475569;font-size:11px;margin-top:2px'>RSI {rsi_t:.0f} · ציון {bscore} · {dt[11:]}</div>
-                    {pnl_html}
-                  </div>
-                </div>
-                """, unsafe_allow_html=True)
-        else:
+                tc1, tc2 = st.columns([3, 1])
+                with tc1:
+                    st.markdown(f"""
+                    <div style='background:{bg};border:1px solid {'#065f46' if action=='BUY' else '#7f1d1d'};
+                                border-radius:10px;padding:12px 16px;margin-bottom:6px'>
+                      <span style='color:{color};font-weight:800;font-size:14px'>{'▲' if action=='BUY' else '▼'} {action} {coin}</span>
+                      {today_tag}
+                      <div style='color:#94a3b8;font-size:12px;margin-top:4px'>{vol:.6f} {coin} @ ${price_t:,.4f}</div>
+                      <div style='color:#475569;font-size:11px;margin-top:2px'>RSI {rsi_t:.0f} · ציון {bscore} · {dt[11:]}</div>
+                    </div>
+                    """, unsafe_allow_html=True)
+                with tc2:
+                    st.markdown(f"""
+                    <div style='background:{bg};border:1px solid {'#065f46' if action=='BUY' else '#7f1d1d'};
+                                border-radius:10px;padding:12px 16px;margin-bottom:6px;text-align:right'>
+                      <div style='color:#f1f5f9;font-size:15px;font-weight:700'>${usd:.2f}</div>
+                      {pnl_html}
+                    </div>
+                    """, unsafe_allow_html=True)
+         else:
             st.info("אין עסקאות עדיין — הבוט ימתין לסיגנל.")
+        with tab_history:
+            swing_closed = [t for t in load_swings() if t.get("status","").startswith("closed") or t.get("status") == "cancelled"]
+            if swing_closed:
+                for t in reversed(swing_closed[-20:]):
+                    status = t.get("status","")
+                    coin = t.get("coin","")
+                    entry = t.get("entry_price", 0)
+                    close = t.get("close_price") or t.get("current_price", 0)
+                    pnl_u = t.get("pnl_usd", 0) or 0
+                    pnl_p = t.get("pnl_pct", 0) or 0
+                    dt_c  = (t.get("date_close") or "")[:16].replace("T", " ")
+                    color = "#34d399" if status == "closed_profit" else "#f87171"
+                    icon  = "✅" if status == "closed_profit" else ("❌" if status == "closed_loss" else "⚪")
+                    st.markdown(f"""
+                    <div style='background:#0f172a;border:1px solid #1e293b;border-radius:10px;padding:12px 16px;margin-bottom:6px'>
+                      <span style='color:{color};font-weight:700'>{icon} {coin}</span>
+                      <span style='color:#475569;font-size:11px;margin-right:8px'> · {dt_c}</span>
+                      <span style='color:#94a3b8;font-size:12px'>כניסה ${entry:.4f} → סגירה ${close:.4f}</span>
+                      <span style='color:{color};font-size:13px;font-weight:700;float:left'>{'+' if pnl_u>=0 else ''}${pnl_u:.2f} ({'+' if pnl_p>=0 else ''}{pnl_p:.1f}%)</span>
+                    </div>
+                    """, unsafe_allow_html=True)
+            else:
+                st.info("אין עסקאות סגורות עדיין.")
 
         # ── פקודות Limit פתוחות ───────────────────────────────────────────
         if live_orders:
