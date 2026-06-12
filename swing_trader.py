@@ -171,6 +171,37 @@ def _load_api_key():
     except Exception:
         pass
 
+def load_performance_summary() -> str:
+    try:
+        if not os.path.exists(HISTORY_FILE):
+            return ""
+        with open(HISTORY_FILE, encoding="utf-8") as f:
+            history = json.load(f)
+        if not history:
+            return ""
+        wins = [h for h in history if h.get("pnl_usd", 0) > 0]
+        losses = [h for h in history if h.get("pnl_usd", 0) <= 0]
+        total_pnl = sum(h.get("pnl_usd", 0) for h in history)
+        win_rate = len(wins) / len(history) * 100 if history else 0
+        coin_pnl = {}
+        for h in history:
+            coin = h.get("coin", "")
+            coin_pnl[coin] = coin_pnl.get(coin, 0) + h.get("pnl_usd", 0)
+        best = sorted(coin_pnl.items(), key=lambda x: x[1], reverse=True)[:3]
+        worst = sorted(coin_pnl.items(), key=lambda x: x[1])[:3]
+        lines = [
+            f"Past performance ({len(history)} trades): win rate {win_rate:.0f}%, total P&L ${total_pnl:.2f}",
+            f"Best coins: {', '.join(f'{c}(${p:.2f})' for c,p in best)}",
+            f"Worst coins: {', '.join(f'{c}(${p:.2f})' for c,p in worst)}",
+        ]
+        recent = history[-5:]
+        recent_str = ", ".join(f"{h['coin']} {h['status']} ${h.get('pnl_usd',0):.2f}" for h in recent)
+        lines.append(f"Last 5 trades: {recent_str}")
+        return "\n".join(lines)
+    except Exception:
+        return ""
+
+
 def analyze_with_claude(candidates: list, open_coins: set, usdc: float, btc_price: float) -> dict:
     _load_api_key()
     import anthropic
@@ -182,13 +213,15 @@ def analyze_with_claude(candidates: list, open_coins: set, usdc: float, btc_pric
         for c in candidates[:15]
     ])
     skip = ", ".join(open_coins) if open_coins else "none"
+    performance = load_performance_summary()
+    perf_section = f"\n\nYour historical performance:\n{performance}" if performance else ""
 
     prompt = f"""You are an expert crypto swing trader. {datetime.now().strftime('%Y-%m-%d %H:%M')} UTC.
 
 BTC context price: ${btc_price:,.0f}
 Available USDC: ${usdc:.2f} | Trade size: ${SWING_USD} each (2x leverage = controls ${SWING_USD*2})
 Take-profit: +5% | Stop-loss: -2% (protects ~4% real capital with leverage)
-Already open positions (skip): {skip}
+Already open positions (skip): {skip}{perf_section}
 
 Altcoin candidates ranked by 24h movement:
 {rows}

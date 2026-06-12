@@ -22,9 +22,17 @@ logging.basicConfig(
 )
 
 
+def pull_from_github():
+    try:
+        subprocess.run(["git", "pull", "--ff-only"], cwd=DIR, capture_output=True, timeout=30)
+        logging.info("Git pull done")
+    except Exception as e:
+        logging.error(f"Git pull failed: {e}")
+
+
 def push_to_github():
     try:
-        for f in ["last_crypto.json", "crypto_trades.json", "crypto_params.json", "swing_trades.json"]:
+        for f in ["last_crypto.json", "crypto_trades.json", "crypto_params.json", "swing_trades.json", "swing_trades.json", "swing_history.json"]:
             subprocess.run(["git", "add", f], cwd=DIR, capture_output=True)
         has_changes = subprocess.run(
             ["git", "diff", "--cached", "--quiet"], cwd=DIR, capture_output=True
@@ -59,6 +67,7 @@ def should_tune_params() -> bool:
 
 
 def main():
+    pull_from_github()
     logging.info("Crypto Agent cycle started")
     print(f"[{datetime.now().strftime('%H:%M:%S')}] Crypto Agent מתחיל...")
 
