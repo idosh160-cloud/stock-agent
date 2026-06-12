@@ -34,7 +34,7 @@ def push_to_github():
                 ["git", "commit", "-m", f"crypto: update {datetime.now().strftime('%Y-%m-%d %H:%M')}"],
                 cwd=DIR, capture_output=True
             )
-            subprocess.run(["git", "push"], cwd=DIR, capture_output=True)
+            subprocess.run(["git", "push"], cwd=DIR, capture_output=True, timeout=30)
             logging.info("GitHub updated")
         else:
             logging.info("No changes to push")
