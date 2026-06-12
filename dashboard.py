@@ -857,7 +857,7 @@ with tab_crypto:
                                 padding:10px 14px;margin-bottom:5px;display:flex;justify-content:space-between;align-items:center'>
                       <div>
                         <span style='color:{color};font-weight:700'>{icon} {t['coin']}</span>
-                        <span style='color:#64748b;font-size:11px;margin-left:8px'>${entry:.4f} → ${close_p:.4f if close_p else 0:.4f}</span>
+                        <span style='color:#64748b;font-size:11px;margin-left:8px'>${entry:.4f} → ${(close_p or 0):.4f}</span>
                       </div>
                       <div style='text-align:right'>
                         <span style='color:{color};font-weight:700'>{'+' if pnl>=0 else ''}${pnl:.2f} ({'+' if pnl_pct>=0 else ''}{pnl_pct:.1f}%)</span>
