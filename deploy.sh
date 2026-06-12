@@ -64,7 +64,7 @@ crontab -l 2>/dev/null | grep -v "stock_agent\|kraken_bot\|swing_trader\|crypto_
 0 * * * * cd $APP_DIR && $PYTHON_BIN crypto_agent.py >> $LOG_DIR/crypto.log 2>&1
 
 # Swing trader - כל 4 שעות
-0 */4 * * * cd $APP_DIR && $PYTHON_BIN swing_trader.py >> $LOG_DIR/swing.log 2>&1
+0 */2 * * * cd $APP_DIR && $PYTHON_BIN swing_trader.py >> $LOG_DIR/swing.log 2>&1
 
 # Kraken bot (daily analysis) - כל יום ב-8 בבוקר
 0 8 * * * cd $APP_DIR && $PYTHON_BIN kraken_bot.py >> $LOG_DIR/kraken.log 2>&1
