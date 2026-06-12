@@ -157,6 +157,8 @@ def get_current_price(pair: str) -> float:
 # ── Claude analysis ───────────────────────────────────────────────────────
 
 def _load_api_key():
+    if os.environ.get("ANTHROPIC_API_KEY"):
+        return  # כבר מוגדר כמשתנה סביבה (שרת)
     env_path = os.path.join(DIR, ".env")
     try:
         with open(env_path, "r", encoding="utf-8-sig") as f:
@@ -164,8 +166,8 @@ def _load_api_key():
                 line = line.strip()
                 if "=" in line and not line.startswith("#"):
                     k, v = line.split("=", 1)
-                    if k.strip() == "ANTHROPIC_API_KEY" and v.strip():
-                        os.environ["ANTHROPIC_API_KEY"] = v.strip()
+                    if k.strip() and v.strip() and not os.environ.get(k.strip()):
+                        os.environ[k.strip()] = v.strip()
     except Exception:
         pass
 

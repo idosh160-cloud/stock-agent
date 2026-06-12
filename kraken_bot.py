@@ -9,19 +9,24 @@ import json
 import logging
 from datetime import datetime, date
 
-_env_vars = {}
-try:
-    with open(r"C:\Users\User\Documents\stock_agent\.env", "r", encoding="utf-8-sig") as _f:
-        for _line in _f:
-            _line = _line.strip()
-            if "=" in _line and not _line.startswith("#"):
-                _k, _v = _line.split("=", 1)
-                _env_vars[_k.strip()] = _v.strip()
-except Exception:
-    pass
+def _load_env():
+    """טוען מפתחות מ-.env אם קיים, אחרת משתמש במשתני סביבה"""
+    env_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env")
+    try:
+        with open(env_path, "r", encoding="utf-8-sig") as f:
+            for line in f:
+                line = line.strip()
+                if "=" in line and not line.startswith("#"):
+                    k, v = line.split("=", 1)
+                    k, v = k.strip(), v.strip()
+                    if k and v and not os.environ.get(k):
+                        os.environ[k] = v
+    except Exception:
+        pass
 
-API_KEY    = _env_vars.get("KRAKEN_API_KEY", "")
-API_SECRET = _env_vars.get("KRAKEN_PRIVATE_KEY", "")
+_load_env()
+API_KEY    = os.environ.get("KRAKEN_API_KEY", "")
+API_SECRET = os.environ.get("KRAKEN_PRIVATE_KEY", "")
 BASE_URL   = "https://api.kraken.com"
 
 DIR          = os.path.dirname(os.path.abspath(__file__))
