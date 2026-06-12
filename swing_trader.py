@@ -9,8 +9,9 @@ import logging
 import requests
 from datetime import datetime
 
-DIR        = os.path.dirname(os.path.abspath(__file__))
-SWING_FILE = os.path.join(DIR, "swing_trades.json")
+DIR          = os.path.dirname(os.path.abspath(__file__))
+SWING_FILE   = os.path.join(DIR, "swing_trades.json")
+HISTORY_FILE = os.path.join(DIR, "swing_history.json")
 
 SWING_USD       = 100    # דולר לכל עסקה (collateral — שולטים ב-$200 עם מינוף 2x)
 TARGET_PCT      = 0.05   # +5% יעד רווח
@@ -60,6 +61,43 @@ def load_swing_trades() -> list:
 def save_swing_trades(trades: list):
     with open(SWING_FILE, "w", encoding="utf-8") as f:
         json.dump(trades, f, indent=2, ensure_ascii=False)
+
+def archive_closed_trade(t: dict):
+    """מעביר עסקה סגורה לארכיון הקבוע"""
+    try:
+        history = []
+        if os.path.exists(HISTORY_FILE):
+            with open(HISTORY_FILE, encoding="utf-8") as f:
+                history = json.load(f)
+        # בדוק שלא כבר קיים (לפי txid)
+        existing_txids = {h.get("txid") for h in history}
+        if t.get("txid") in existing_txids:
+            return
+        history.append({
+            "coin":        t["coin"],
+            "pair":        t.get("pair", ""),
+            "status":      t["status"],
+            "leveraged":   t["coin"] in MARGIN_ELIGIBLE,
+            "collateral":  t.get("usd", 0),
+            "volume":      t.get("volume", 0),
+            "entry_price": t.get("entry_price", 0),
+            "close_price": t.get("close_price") or t.get("current_price", 0),
+            "target_price":t.get("target_price", 0),
+            "stop_price":  t.get("stop_price", 0),
+            "pnl_usd":     round(t.get("pnl_usd", 0) or 0, 2),
+            "pnl_pct":     round(t.get("pnl_pct", 0) or 0, 2),
+            "date_open":   t.get("date_open", ""),
+            "date_close":  t.get("date_close", ""),
+            "reasoning":   t.get("reasoning", ""),
+            "confidence":  t.get("confidence", ""),
+            "txid":        t.get("txid", ""),
+            "close_txid":  t.get("close_txid", ""),
+        })
+        with open(HISTORY_FILE, "w", encoding="utf-8") as f:
+            json.dump(history, f, indent=2, ensure_ascii=False)
+        logging.info(f"[Swing] Archived {t['coin']} → swing_history.json")
+    except Exception as e:
+        logging.warning(f"[Swing] Archive failed: {e}")
 
 
 # ── Market data ───────────────────────────────────────────────────────────
@@ -251,6 +289,7 @@ def check_open_swings(balance: dict, request_fn) -> list:
                 t["close_price"] = current
                 t["close_txid"]  = t["sell_txid"]
                 logging.info(f"[Swing] CLOSE PROFIT {coin} @ {current:.4f} (limit already placed)")
+                archive_closed_trade(t)
             else:
                 # stop-loss — בטל את ה-TP הפתוח ושים market sell
                 if t.get("sell_txid"):
@@ -281,6 +320,7 @@ def check_open_swings(balance: dict, request_fn) -> list:
                     t["close_price"] = current
                     t["close_txid"]  = txid
                     logging.info(f"[Swing] CLOSE STOP {coin} @ {current:.4f} | P&L {pnl_pct:+.1f}% | txid={txid}")
+                    archive_closed_trade(t)
                 except Exception as e:
                     logging.error(f"[Swing] stop sell failed {coin}: {e}")
 

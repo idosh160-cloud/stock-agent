@@ -73,7 +73,8 @@ def load_scan():
     except Exception:
         return None
 
-SWING_FILE = os.path.join(BASE_DIR, "swing_trades.json")
+SWING_FILE   = os.path.join(BASE_DIR, "swing_trades.json")
+HISTORY_FILE = os.path.join(BASE_DIR, "swing_history.json")
 
 def load_crypto():
     if not os.path.exists(CRYPTO_FILE):
@@ -89,6 +90,15 @@ def load_swings():
         return []
     try:
         with open(SWING_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return []
+
+def load_history():
+    if not os.path.exists(HISTORY_FILE):
+        return []
+    try:
+        with open(HISTORY_FILE, "r", encoding="utf-8") as f:
             return json.load(f)
     except Exception:
         return []
@@ -706,28 +716,63 @@ with tab_crypto:
          else:
             st.info("אין עסקאות עדיין — הבוט ימתין לסיגנל.")
         with tab_history:
-            swing_closed = [t for t in load_swings() if t.get("status","").startswith("closed") or t.get("status") == "cancelled"]
-            if swing_closed:
-                for t in reversed(swing_closed[-20:]):
-                    status = t.get("status","")
-                    coin = t.get("coin","")
-                    entry = t.get("entry_price", 0)
-                    close = t.get("close_price") or t.get("current_price", 0)
-                    pnl_u = t.get("pnl_usd", 0) or 0
-                    pnl_p = t.get("pnl_pct", 0) or 0
-                    dt_c  = (t.get("date_close") or "")[:16].replace("T", " ")
-                    color = "#34d399" if status == "closed_profit" else "#f87171"
-                    icon  = "✅" if status == "closed_profit" else ("❌" if status == "closed_loss" else "⚪")
+            history = load_history()
+            if not history:
+                st.info("אין עסקאות בארכיון עדיין.")
+            else:
+                wins   = [h for h in history if h.get("status") == "closed_profit"]
+                losses = [h for h in history if h.get("status") == "closed_loss"]
+                total_pnl = sum(h.get("pnl_usd", 0) or 0 for h in history if h.get("status","").startswith("closed"))
+                wr = round(len(wins) / max(len(wins)+len(losses), 1) * 100)
+
+                # סיכום עליון
+                hc1, hc2, hc3, hc4 = st.columns(4)
+                hc1.metric("סה\"כ עסקאות", len(history))
+                hc2.metric("Win Rate", f"{wr}%")
+                hc3.metric("רווח כולל", f"${total_pnl:+.2f}")
+                hc4.metric("✅ / ❌", f"{len(wins)} / {len(losses)}")
+
+                st.markdown("---")
+
+                for h in reversed(history):
+                    status   = h.get("status", "")
+                    coin     = h.get("coin", "")
+                    entry    = h.get("entry_price", 0)
+                    close_p  = h.get("close_price", 0) or 0
+                    pnl_u    = h.get("pnl_usd", 0) or 0
+                    pnl_p    = h.get("pnl_pct", 0) or 0
+                    collat   = h.get("collateral", 0)
+                    leveraged= h.get("leveraged", False)
+                    dt_open  = h.get("date_open", "")[:16].replace("T", " ")
+                    dt_close = h.get("date_close", "")[:16].replace("T", " ")
+                    reason   = h.get("reasoning", "")[:100]
+
+                    is_profit = status == "closed_profit"
+                    is_cancel = status == "cancelled"
+                    color  = "#34d399" if is_profit else ("#94a3b8" if is_cancel else "#f87171")
+                    bg     = "#0a1f14" if is_profit else ("#1a1a1a" if is_cancel else "#1f0a0a")
+                    border = "#065f46" if is_profit else ("#334155" if is_cancel else "#7f1d1d")
+                    icon   = "✅" if is_profit else ("⚪" if is_cancel else "❌")
+                    lev_tag = "<span style='background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:6px;font-size:10px;margin-right:4px'>2x</span>" if leveraged else ""
+
                     st.markdown(f"""
-                    <div style='background:#0f172a;border:1px solid #1e293b;border-radius:10px;padding:12px 16px;margin-bottom:6px'>
-                      <span style='color:{color};font-weight:700'>{icon} {coin}</span>
-                      <span style='color:#475569;font-size:11px;margin-right:8px'> · {dt_c}</span>
-                      <span style='color:#94a3b8;font-size:12px'>כניסה ${entry:.4f} → סגירה ${close:.4f}</span>
-                      <span style='color:{color};font-size:13px;font-weight:700;float:left'>{'+' if pnl_u>=0 else ''}${pnl_u:.2f} ({'+' if pnl_p>=0 else ''}{pnl_p:.1f}%)</span>
+                    <div style='background:{bg};border:1px solid {border};border-radius:12px;padding:14px 18px;margin-bottom:8px'>
+                      <div style='display:flex;justify-content:space-between;align-items:flex-start'>
+                        <div>
+                          <span style='color:{color};font-size:16px;font-weight:800'>{icon} {lev_tag}{coin}</span>
+                          <span style='color:#475569;font-size:11px;margin-left:10px'>${collat:.0f} collateral</span>
+                        </div>
+                        <span style='color:{color};font-size:16px;font-weight:800'>{'+' if pnl_u>=0 else ''}${pnl_u:.2f} &nbsp; {'+' if pnl_p>=0 else ''}{pnl_p:.1f}%</span>
+                      </div>
+                      <div style='display:flex;gap:24px;margin-top:8px;flex-wrap:wrap'>
+                        <div><span style='color:#475569;font-size:10px'>כניסה</span><br><span style='color:#94a3b8;font-size:12px'>${entry:.4f}</span></div>
+                        <div><span style='color:#475569;font-size:10px'>סגירה</span><br><span style='color:#94a3b8;font-size:12px'>${close_p:.4f}</span></div>
+                        <div><span style='color:#475569;font-size:10px'>נפתחה</span><br><span style='color:#94a3b8;font-size:12px'>{dt_open}</span></div>
+                        <div><span style='color:#475569;font-size:10px'>נסגרה</span><br><span style='color:#94a3b8;font-size:12px'>{dt_close or "—"}</span></div>
+                      </div>
+                      {f"<div style='color:#475569;font-size:11px;margin-top:8px;line-height:1.5'>{reason}</div>" if reason else ""}
                     </div>
                     """, unsafe_allow_html=True)
-            else:
-                st.info("אין עסקאות סגורות עדיין.")
 
         # ── פקודות Limit פתוחות ───────────────────────────────────────────
         if live_orders:
