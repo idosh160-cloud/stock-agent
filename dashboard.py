@@ -735,17 +735,17 @@ with tab_crypto:
                 st.markdown("---")
 
                 for h in reversed(history):
-                    status   = h.get("status", "")
-                    coin     = h.get("coin", "")
-                    entry    = h.get("entry_price", 0)
-                    close_p  = h.get("close_price", 0) or 0
-                    pnl_u    = h.get("pnl_usd", 0) or 0
-                    pnl_p    = h.get("pnl_pct", 0) or 0
-                    collat   = h.get("collateral", 0)
-                    leveraged= h.get("leveraged", False)
-                    dt_open  = h.get("date_open", "")[:16].replace("T", " ")
-                    dt_close = h.get("date_close", "")[:16].replace("T", " ")
-                    reason   = h.get("reasoning", "")[:100]
+                    status    = h.get("status", "")
+                    coin      = h.get("coin", "")
+                    entry     = h.get("entry_price", 0)
+                    close_p   = h.get("close_price", 0) or 0
+                    pnl_u     = h.get("pnl_usd", 0) or 0
+                    pnl_p     = h.get("pnl_pct", 0) or 0
+                    collat    = h.get("collateral", 0)
+                    leveraged = h.get("leveraged", False)
+                    dt_open   = h.get("date_open", "")[:16].replace("T", " ")
+                    dt_close  = (h.get("date_close") or "")[:16].replace("T", " ") or "—"
+                    reason    = h.get("reasoning", "")[:120]
 
                     is_profit = status == "closed_profit"
                     is_cancel = status == "cancelled"
@@ -753,26 +753,27 @@ with tab_crypto:
                     bg     = "#0a1f14" if is_profit else ("#1a1a1a" if is_cancel else "#1f0a0a")
                     border = "#065f46" if is_profit else ("#334155" if is_cancel else "#7f1d1d")
                     icon   = "✅" if is_profit else ("⚪" if is_cancel else "❌")
-                    lev_tag = "<span style='background:#1e3a5f;color:#93c5fd;padding:1px 6px;border-radius:6px;font-size:10px;margin-right:4px'>2x</span>" if leveraged else ""
+                    lev    = " 2x" if leveraged else ""
+                    pnl_sign = "+" if pnl_u >= 0 else ""
+                    reason_html = "<div style='color:#475569;font-size:11px;margin-top:8px'>" + reason + "</div>" if reason else ""
 
-                    st.markdown(f"""
-                    <div style='background:{bg};border:1px solid {border};border-radius:12px;padding:14px 18px;margin-bottom:8px'>
-                      <div style='display:flex;justify-content:space-between;align-items:flex-start'>
-                        <div>
-                          <span style='color:{color};font-size:16px;font-weight:800'>{icon} {lev_tag}{coin}</span>
-                          <span style='color:#475569;font-size:11px;margin-left:10px'>${collat:.0f} collateral</span>
-                        </div>
-                        <span style='color:{color};font-size:16px;font-weight:800'>{'+' if pnl_u>=0 else ''}${pnl_u:.2f} &nbsp; {'+' if pnl_p>=0 else ''}{pnl_p:.1f}%</span>
-                      </div>
-                      <div style='display:flex;gap:24px;margin-top:8px;flex-wrap:wrap'>
-                        <div><span style='color:#475569;font-size:10px'>כניסה</span><br><span style='color:#94a3b8;font-size:12px'>${entry:.4f}</span></div>
-                        <div><span style='color:#475569;font-size:10px'>סגירה</span><br><span style='color:#94a3b8;font-size:12px'>${close_p:.4f}</span></div>
-                        <div><span style='color:#475569;font-size:10px'>נפתחה</span><br><span style='color:#94a3b8;font-size:12px'>{dt_open}</span></div>
-                        <div><span style='color:#475569;font-size:10px'>נסגרה</span><br><span style='color:#94a3b8;font-size:12px'>{dt_close or "—"}</span></div>
-                      </div>
-                      {f"<div style='color:#475569;font-size:11px;margin-top:8px;line-height:1.5'>{reason}</div>" if reason else ""}
-                    </div>
-                    """, unsafe_allow_html=True)
+                    html = (
+                        "<div style='background:" + bg + ";border:1px solid " + border + ";border-radius:12px;padding:14px 18px;margin-bottom:8px'>"
+                        "<div style='display:flex;justify-content:space-between;align-items:center'>"
+                        "<span style='color:" + color + ";font-size:16px;font-weight:800'>" + icon + lev + " " + coin + "</span>"
+                        "<span style='color:#475569;font-size:11px'>$" + str(int(collat)) + " collateral</span>"
+                        "<span style='color:" + color + ";font-size:16px;font-weight:800'>" + pnl_sign + "$" + f"{pnl_u:.2f}" + " · " + pnl_sign + f"{pnl_p:.1f}" + "%</span>"
+                        "</div>"
+                        "<div style='display:flex;gap:20px;margin-top:10px;flex-wrap:wrap'>"
+                        "<div><div style='color:#475569;font-size:10px'>כניסה</div><div style='color:#94a3b8;font-size:12px'>$" + f"{entry:.4f}" + "</div></div>"
+                        "<div><div style='color:#475569;font-size:10px'>סגירה</div><div style='color:#94a3b8;font-size:12px'>$" + f"{close_p:.4f}" + "</div></div>"
+                        "<div><div style='color:#475569;font-size:10px'>נפתחה</div><div style='color:#94a3b8;font-size:12px'>" + dt_open + "</div></div>"
+                        "<div><div style='color:#475569;font-size:10px'>נסגרה</div><div style='color:#94a3b8;font-size:12px'>" + dt_close + "</div></div>"
+                        "</div>"
+                        + reason_html +
+                        "</div>"
+                    )
+                    st.markdown(html, unsafe_allow_html=True)
 
         # ── פקודות Limit פתוחות ───────────────────────────────────────────
         if live_orders:
