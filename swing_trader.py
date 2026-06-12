@@ -1,7 +1,7 @@
 """
 swing_trader.py — מסחר תנודתי חכם עם Claude
-כל שעה: Claude בוחר מטבעות לסיבובים קצרים ($15 לכל עסקה)
-כל 15 דק': בודק פוזיציות פתוחות — מוכר ב-+5% או עוצר ב-3%-
+כל שעה: Claude בוחר מטבעות לסיבובים קצרים ($45 לכל עסקה, מינוף 2x)
+כל 15 דק': בודק פוזיציות פתוחות — מוכר ב-+5% או עוצר ב-2%-
 """
 import os
 import json
@@ -12,15 +12,21 @@ from datetime import datetime
 DIR        = os.path.dirname(os.path.abspath(__file__))
 SWING_FILE = os.path.join(DIR, "swing_trades.json")
 
-SWING_USD       = 15     # דולר לכל עסקה
+SWING_USD       = 100    # דולר לכל עסקה (collateral — שולטים ב-$200 עם מינוף 2x)
 TARGET_PCT      = 0.05   # +5% יעד רווח
-STOP_PCT        = 0.03   # -3% עצור הפסד
-MAX_OPEN        = 3      # פוזיציות פתוחות מקסימום
-MAX_BUDGET      = 60     # תקציב מקסימלי לסינגים
+STOP_PCT        = 0.02   # -2% עצור הפסד (= ~4% על הון אמיתי עם מינוף)
+MAX_OPEN        = 6      # פוזיציות פתוחות מקסימום
+MAX_BUDGET      = 600    # תקציב מקסימלי לסווינגים
+LEVERAGE        = 2      # מינוף x2 על כל קנייה (Kraken margin)
+
+# מטבעות שקרקן מאפשר עליהם margin trading
+MARGIN_ELIGIBLE = {"ETH", "SOL", "XRP", "LTC", "BCH", "LINK", "DOT", "ADA", "AVAX", "BNB", "DOGE", "XMR", "TON"}
 
 # Pairs שאומתו ב-Kraken + מינימום נפח + דיוק מחיר
 CANDIDATES = {
+    "ETH":  {"pair": "ETHUSDC",  "min_vol": 0.004, "price_dec": 2},
     "SOL":  {"pair": "SOLUSDC",  "min_vol": 0.06,  "price_dec": 2},
+    "XRP":  {"pair": "XRPUSDC",  "min_vol": 10,    "price_dec": 4},
     "ADA":  {"pair": "ADAUSDC",  "min_vol": 20,    "price_dec": 6},
     "AVAX": {"pair": "AVAXUSDC", "min_vol": 0.5,   "price_dec": 3},
     "LINK": {"pair": "LINKUSDC", "min_vol": 0.55,  "price_dec": 5},
@@ -30,6 +36,14 @@ CANDIDATES = {
     "ALGO": {"pair": "ALGOUSDC", "min_vol": 41,    "price_dec": 5},
     "ATOM": {"pair": "ATOMUSDC", "min_vol": 2.5,   "price_dec": 4},
     "XTZ":  {"pair": "XTZUSDC",  "min_vol": 13,    "price_dec": 5},
+    "XRP":  {"pair": "XRPUSDC",  "min_vol": 10,    "price_dec": 4},
+    "BNB":  {"pair": "BNBUSDC",  "min_vol": 0.07,  "price_dec": 2},
+    "TON":  {"pair": "TONUSDC",  "min_vol": 3,     "price_dec": 4},
+    "SHIB": {"pair": "SHIBUSDC", "min_vol": 500000,"price_dec": 8},
+    "MANA": {"pair": "MANAUSDC", "min_vol": 20,    "price_dec": 5},
+    "VET":  {"pair": "VETUSDC",  "min_vol": 100,   "price_dec": 6},
+    "XMR":  {"pair": "XMRUSDC",  "min_vol": 0.05,  "price_dec": 2},
+    "DOGE": {"pair": "XDGUSDC",  "min_vol": 50,    "price_dec": 5},
 }
 
 
@@ -133,8 +147,8 @@ def analyze_with_claude(candidates: list, open_coins: set, usdc: float, btc_pric
     prompt = f"""You are an expert crypto swing trader. {datetime.now().strftime('%Y-%m-%d %H:%M')} UTC.
 
 BTC context price: ${btc_price:,.0f}
-Available USDC: ${usdc:.2f} | Trade size: $15 each
-Take-profit: +5% | Stop-loss: -3%
+Available USDC: ${usdc:.2f} | Trade size: ${SWING_USD} each (2x leverage = controls ${SWING_USD*2})
+Take-profit: +5% | Stop-loss: -2% (protects ~4% real capital with leverage)
 Already open positions (skip): {skip}
 
 Altcoin candidates ranked by 24h movement:
@@ -181,6 +195,10 @@ If nothing looks good — return picks as empty array. Better to miss a trade th
                 if part.startswith("{"):
                     raw = part
                     break
+        # חתוך כל מה שאחרי ה-} האחרון
+        last_brace = raw.rfind("}")
+        if last_brace != -1:
+            raw = raw[:last_brace+1]
         return json.loads(raw)
     except Exception as e:
         logging.error(f"[Swing] Claude error: {e}")
@@ -245,11 +263,15 @@ def check_open_swings(balance: dict, request_fn) -> list:
                     logging.warning(f"[Swing] {coin} holding {holding} below min — cannot sell")
                     continue
                 lp = round(current * 0.999, price_dec)
+                use_lev = coin in MARGIN_ELIGIBLE
                 try:
-                    res  = request_fn("/0/private/AddOrder", {
+                    stop_params = {
                         "pair": pair, "type": "sell", "ordertype": "limit",
                         "volume": f"{sell_vol:.8f}", "price": f"{lp:.{price_dec}f}",
-                    }, private=True)
+                    }
+                    if use_lev:
+                        stop_params["leverage"] = str(LEVERAGE)
+                    res  = request_fn("/0/private/AddOrder", stop_params, private=True)
                     txid = list(res.get("txid", ["?"]))[0]
                     t["status"]      = "closed_loss"
                     t["date_close"]  = datetime.now().isoformat()
@@ -277,8 +299,10 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0)
     if open_budget >= MAX_BUDGET:
         logging.info(f"[Swing] Budget ${MAX_BUDGET} reached — skipping scan")
         return trades
-    if usdc < SWING_USD + 5:
-        logging.info(f"[Swing] Low USDC ${usdc:.2f} — skipping scan")
+    # עם מרג'ין — קרקן מחשב את כל הנכסים כבטחון, לא רק USDC
+    # בדיקה מינימלית בלבד למנוע מצב קיצוני
+    if usdc < 10:
+        logging.info(f"[Swing] USDC critically low ${usdc:.2f} — skipping scan")
         return trades
 
     candidates = get_candidate_data()
@@ -320,20 +344,27 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0)
         target_p    = round(price * (1 + TARGET_PCT), price_dec)
         stop_p      = round(price * (1 - STOP_PCT),   price_dec)
         try:
-            # פקודת קנייה
-            res  = request_fn("/0/private/AddOrder", {
+            # פקודת קנייה (מינוף רק למטבעות מאושרים)
+            use_leverage = coin in MARGIN_ELIGIBLE
+            buy_params = {
                 "pair": pair, "type": "buy", "ordertype": "limit",
                 "volume": f"{vol:.8f}", "price": f"{buy_lp:.{price_dec}f}",
-            }, private=True)
+            }
+            if use_leverage:
+                buy_params["leverage"] = str(LEVERAGE)
+            res  = request_fn("/0/private/AddOrder", buy_params, private=True)
             txid = list(res.get("txid", ["?"]))[0]
 
             # פקודת מכירה ב-take-profit (מיד אחרי הקנייה)
             sell_txid = None
             try:
-                sell_res  = request_fn("/0/private/AddOrder", {
+                sell_params = {
                     "pair": pair, "type": "sell", "ordertype": "limit",
                     "volume": f"{vol:.8f}", "price": f"{target_p:.{price_dec}f}",
-                }, private=True)
+                }
+                if use_leverage:
+                    sell_params["leverage"] = str(LEVERAGE)
+                sell_res  = request_fn("/0/private/AddOrder", sell_params, private=True)
                 sell_txid = list(sell_res.get("txid", ["?"]))[0]
                 logging.info(f"[Swing] SELL-TP placed {coin} @ {target_p} txid={sell_txid}")
             except Exception as se:

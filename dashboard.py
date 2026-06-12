@@ -689,9 +689,11 @@ with tab_crypto:
         # ── פקודות Limit פתוחות ───────────────────────────────────────────
         if live_orders:
             st.markdown("---")
-            st.markdown("#### ⏳ פקודות Limit ממתינות")
+            buys  = [o for o in live_orders if o.get("side") == "buy"]
+            sells = [o for o in live_orders if o.get("side") == "sell"]
+            st.markdown(f"#### ⏳ פקודות Limit ממתינות &nbsp;<span style='color:#94a3b8;font-size:13px'>({len(buys)} קנייה · {len(sells)} מכירה)</span>", unsafe_allow_html=True)
             oc1, oc2 = st.columns(2)
-            for idx, o in enumerate(live_orders):
+            for idx, o in enumerate(sells + buys):
                 col = oc1 if idx % 2 == 0 else oc2
                 side  = o.get("side", "")
                 color = "#34d399" if side == "buy" else "#f87171"
@@ -734,7 +736,7 @@ with tab_crypto:
                     unsafe_allow_html=True
                 )
 
-        st.caption("🤖 Claude בוחר אלטקוינים תנודתיים פעם בשעה · יעד +5% · stop -3% · $15 לעסקה")
+        st.caption("🤖 Claude בוחר אלטקוינים תנודתיים פעם בשעה · יעד +5% · stop -2% · $100 לעסקה · מינוף 2x · 19 מטבעות")
         if open_sw:
             st.markdown("**פתוחות:**")
             sw_cols = st.columns(min(len(open_sw), 3))
