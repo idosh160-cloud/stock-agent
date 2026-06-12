@@ -118,7 +118,19 @@ def _request(endpoint: str, data: dict = None, private: bool = False) -> dict:
 def get_balance() -> dict:
     raw = _request("/0/private/Balance", private=True)
     name_map = {"ZUSD": "USD", "XXBT": "BTC", "XETH": "ETH", "XXRP": "XRP", "USDC": "USDC", "ADA": "ADA"}
-    return {name_map.get(k, k): round(float(v), 8) for k, v in raw.items() if float(v) > 0}
+    import re
+    result = {}
+    for k, v in raw.items():
+        if float(v) <= 0:
+            continue
+        # נרמל staking variants: ETH2.S → ETH, SOL03.S → SOL וכו'
+        normalized = re.sub(r'\d*\.S$', '', k)
+        normalized = name_map.get(normalized, normalized)
+        if normalized in result:
+            result[normalized] = round(result[normalized] + float(v), 8)
+        else:
+            result[normalized] = round(float(v), 8)
+    return result
 
 # מיפוי pair קרקן → שם מטבע (כולל פורמטים ישנים)
 _PAIR_TO_COIN = {
@@ -196,7 +208,9 @@ def get_live_prices_public(coins: list) -> dict:
         "SOL": "SOLUSDC", "ADA": "ADAUSDC", "AVAX": "AVAXUSDC",
         "LINK": "LINKUSDC", "DOT": "DOTUSDC", "LTC": "LTCUSDC",
         "BCH": "BCHUSDC", "ALGO": "ALGOUSDC", "ATOM": "ATOMUSDC",
-        "XTZ": "XTZUSDC",
+        "XTZ": "XTZUSDC", "DOGE": "XDGUSDC", "XMR": "XMRUSDC",
+        "BNB": "BNBUSDC", "TON": "TONUSDC", "SHIB": "SHIBUSDC",
+        "MANA": "MANAUSDC", "VET": "VETUSDC",
     }
     needed = {c: coin_pairs[c] for c in coins if c in coin_pairs}
     if not needed:
@@ -634,10 +648,12 @@ def run_cycle(auto_trade: bool = True) -> dict:
     live_px    = get_live_prices_public(non_stable)
     avg_costs  = get_avg_costs()
 
-    # עדכן portfolio_usd עם מחירים חיים
+    # עדכן portfolio_usd עם מחירים חיים — fallback למחיר מה-OHLC, לא 0
     portfolio_usd = usdc
     for coin, amt in balance.items():
-        p = live_px.get(coin, {}).get("price") or prices.get(coin, 0)
+        p = live_px.get(coin, {}).get("price") or prices.get(coin)
+        if not p:
+            continue  # מחיר לא ידוע — לא מוסיפים 0 לתיק
         portfolio_usd += amt * p
 
     # בנה positions מלא

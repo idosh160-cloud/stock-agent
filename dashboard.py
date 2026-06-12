@@ -181,6 +181,7 @@ def _kraken_private(endpoint: str, data: dict = None) -> dict:
 
 @st.cache_data(ttl=30)
 def kraken_get_balance() -> dict:
+    import re as _re
     raw = _kraken_private("/0/private/Balance")
     if not raw:
         return {}
@@ -191,10 +192,17 @@ def kraken_get_balance() -> dict:
     result = {}
     for k, v in raw.items():
         val = float(v)
-        if val < 0.00001 or "." in k:   # דלג USD.HOLD וכד'
+        if val < 0.00001:
             continue
-        name = name_map.get(k, k.lstrip("X"))
-        result[name] = round(val, 8)
+        # נרמל staking: ETH2.S → ETH, SOL03.S → SOL
+        normalized = _re.sub(r'\d*\.S$', '', k)
+        normalized = name_map.get(normalized, normalized.lstrip("X"))
+        if normalized in ("HOLD", "USD.HOLD"):
+            continue
+        if normalized in result:
+            result[normalized] = round(result[normalized] + val, 8)
+        else:
+            result[normalized] = round(val, 8)
     return result
 
 @st.cache_data(ttl=30)
@@ -278,6 +286,8 @@ def kraken_get_prices(coins: tuple) -> dict:
         "SOL": "SOLUSDC", "ADA": "ADAUSDC", "AVAX": "AVAXUSDC",
         "LINK": "LINKUSDC", "DOT": "DOTUSDC", "LTC": "LTCUSDC",
         "BCH": "BCHUSDC", "ALGO": "ALGOUSDC", "ATOM": "ATOMUSDC", "XTZ": "XTZUSDC",
+        "DOGE": "XDGUSDC", "XMR": "XMRUSDC", "BNB": "BNBUSDC",
+        "TON": "TONUSDC", "SHIB": "SHIBUSDC", "MANA": "MANAUSDC", "VET": "VETUSDC",
     }
     needed = {c: _COIN_PAIR[c] for c in coins if c in _COIN_PAIR}
     if not needed:
@@ -496,9 +506,7 @@ with tab_crypto:
             st.markdown("---")
             st.markdown("#### 💼 פוזיציות")
             COLS_PER_ROW = 4
-            for row_start in range(0, len(positions), COLS_PER_ROW):
-                row_items = positions[row_start:row_start + COLS_PER_ROW]
-                pos_cols = st.columns(len(row_items))
+            pos_cols = []
             for i, p in enumerate(positions):
                 col_idx = i % COLS_PER_ROW
                 if col_idx == 0:
@@ -798,10 +806,12 @@ with tab_crypto:
                     conf_colors = {"HIGH": "#064e3b", "MEDIUM": "#92400e", "LOW": "#4b5563"}
                     conf_bg = conf_colors.get(conf, "#1e293b")
 
+                    MARGIN_ELIGIBLE = {"ETH","SOL","XRP","LTC","BCH","LINK","DOT","ADA","AVAX","BNB","DOGE","XMR","TON"}
+                    lev_badge = "<span style='background:#1e3a5f;color:#93c5fd;padding:2px 7px;border-radius:8px;font-size:10px;margin-right:4px'>2x</span>" if coin in MARGIN_ELIGIBLE else ""
                     st.markdown(f"""
                     <div style='background:#1e293b;border-radius:14px;padding:16px;border:1px solid #334155;margin-bottom:8px'>
                       <div style='display:flex;justify-content:space-between;align-items:center;margin-bottom:8px'>
-                        <span style='font-size:20px;font-weight:900;color:#f1f5f9'>{coin}</span>
+                        <span style='font-size:20px;font-weight:900;color:#f1f5f9'>{lev_badge}{coin}</span>
                         <span style='background:{conf_bg};color:white;padding:2px 8px;border-radius:10px;font-size:10px'>{conf}</span>
                       </div>
                       <div style='display:flex;justify-content:space-between;margin-bottom:6px'>

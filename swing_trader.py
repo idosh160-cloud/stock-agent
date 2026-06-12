@@ -36,7 +36,6 @@ CANDIDATES = {
     "ALGO": {"pair": "ALGOUSDC", "min_vol": 41,    "price_dec": 5},
     "ATOM": {"pair": "ATOMUSDC", "min_vol": 2.5,   "price_dec": 4},
     "XTZ":  {"pair": "XTZUSDC",  "min_vol": 13,    "price_dec": 5},
-    "XRP":  {"pair": "XRPUSDC",  "min_vol": 10,    "price_dec": 4},
     "BNB":  {"pair": "BNBUSDC",  "min_vol": 0.07,  "price_dec": 2},
     "TON":  {"pair": "TONUSDC",  "min_vol": 3,     "price_dec": 4},
     "SHIB": {"pair": "SHIBUSDC", "min_vol": 500000,"price_dec": 8},
@@ -185,7 +184,7 @@ If nothing looks good — return picks as empty array. Better to miss a trade th
         client = anthropic.Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY", ""))
         msg = client.messages.create(
             model="claude-sonnet-4-6",
-            max_tokens=600,
+            max_tokens=1200,
             messages=[{"role": "user", "content": prompt}]
         )
         raw = msg.content[0].text.strip()
@@ -199,6 +198,10 @@ If nothing looks good — return picks as empty array. Better to miss a trade th
         last_brace = raw.rfind("}")
         if last_brace != -1:
             raw = raw[:last_brace+1]
+        # נסה לתקן trailing commas נפוצות
+        import re
+        raw = re.sub(r",\s*}", "}", raw)
+        raw = re.sub(r",\s*]", "]", raw)
         return json.loads(raw)
     except Exception as e:
         logging.error(f"[Swing] Claude error: {e}")
@@ -286,6 +289,14 @@ def check_open_swings(balance: dict, request_fn) -> list:
     return trades
 
 
+def get_margin_used(request_fn) -> float:
+    """מחזיר סה"כ margin בשימוש מ-Kraken (בדולרים)"""
+    try:
+        pos = request_fn("/0/private/OpenPositions", private=True)
+        return sum(float(p.get("margin", 0)) for p in pos.values())
+    except Exception:
+        return 0.0
+
 def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0) -> list:
     """נקרא כל שעה — Claude סורק ובוחר מועמדים"""
     trades      = load_swing_trades()
@@ -299,11 +310,14 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0)
     if open_budget >= MAX_BUDGET:
         logging.info(f"[Swing] Budget ${MAX_BUDGET} reached — skipping scan")
         return trades
-    # עם מרג'ין — קרקן מחשב את כל הנכסים כבטחון, לא רק USDC
-    # בדיקה מינימלית בלבד למנוע מצב קיצוני
     if usdc < 10:
         logging.info(f"[Swing] USDC critically low ${usdc:.2f} — skipping scan")
         return trades
+
+    # בדוק margin usage — אם מעל 80% מהתקרה, אל תנסה leverage
+    margin_used = get_margin_used(request_fn)
+    margin_headroom = max(0, 150 - margin_used)  # ~$150 תקרה לחשבון ~$600
+    logging.info(f"[Swing] Margin used: ${margin_used:.0f} | headroom: ${margin_headroom:.0f}")
 
     candidates = get_candidate_data()
     if not candidates:
@@ -352,7 +366,17 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0)
             }
             if use_leverage:
                 buy_params["leverage"] = str(LEVERAGE)
-            res  = request_fn("/0/private/AddOrder", buy_params, private=True)
+            try:
+                res = request_fn("/0/private/AddOrder", buy_params, private=True)
+            except Exception as margin_e:
+                if "margin" in str(margin_e).lower() and use_leverage:
+                    # מרג'ין מלא — נסה ללא מינוף
+                    logging.warning(f"[Swing] Margin full for {coin}, retrying without leverage")
+                    buy_params.pop("leverage", None)
+                    use_leverage = False
+                    res = request_fn("/0/private/AddOrder", buy_params, private=True)
+                else:
+                    raise
             txid = list(res.get("txid", ["?"]))[0]
 
             # פקודת מכירה ב-take-profit (מיד אחרי הקנייה)
@@ -364,7 +388,14 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0)
                 }
                 if use_leverage:
                     sell_params["leverage"] = str(LEVERAGE)
-                sell_res  = request_fn("/0/private/AddOrder", sell_params, private=True)
+                try:
+                    sell_res = request_fn("/0/private/AddOrder", sell_params, private=True)
+                except Exception as se2:
+                    if "margin" in str(se2).lower():
+                        sell_params.pop("leverage", None)
+                        sell_res = request_fn("/0/private/AddOrder", sell_params, private=True)
+                    else:
+                        raise
                 sell_txid = list(sell_res.get("txid", ["?"]))[0]
                 logging.info(f"[Swing] SELL-TP placed {coin} @ {target_p} txid={sell_txid}")
             except Exception as se:
