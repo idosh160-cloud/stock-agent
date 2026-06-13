@@ -79,9 +79,11 @@ HISTORY_FILE = os.path.join(BASE_DIR, "swing_history.json")
 GITHUB_REPO = "idosh160-cloud/stock-agent"
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "")
 
+@st.cache_data(ttl=60)
 def _fetch_github_json(filename):
     try:
         headers = {"Authorization": f"token {GITHUB_TOKEN}"} if GITHUB_TOKEN else {}
+        headers["Cache-Control"] = "no-cache"
         r = requests.get(
             f"https://api.github.com/repos/{GITHUB_REPO}/contents/{filename}",
             headers=headers,
