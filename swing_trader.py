@@ -418,7 +418,11 @@ def check_open_swings(balance: dict, request_fn) -> list:
         entry = t["entry_price"]
         vol   = t["volume"]
 
-        current = get_current_price(pair)
+        if t.get("is_stock") and t.get("is_futures"):
+            from kraken_futures import get_futures_price
+            current = get_futures_price(pair)
+        else:
+            current = get_current_price(pair)
         if current == 0:
             continue
 
@@ -609,48 +613,60 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0)
         target_p = round(price * (1 + target_pct), price_dec)
         stop_p   = round(price * (1 - stop_pct),   price_dec)
         try:
-            # פקודת קנייה (מינוף רק למטבעות קריפטו מאושרים — לא מניות)
-            use_leverage = (not is_stock) and (coin in MARGIN_ELIGIBLE)
-            buy_params = {
-                "pair": pair, "type": "buy", "ordertype": "limit",
-                "volume": f"{vol:.8f}", "price": f"{buy_lp:.{price_dec}f}",
-            }
-            if use_leverage:
-                buy_params["leverage"] = str(LEVERAGE)
-            try:
-                res = request_fn("/0/private/AddOrder", buy_params, private=True)
-            except Exception as margin_e:
-                if "margin" in str(margin_e).lower() and use_leverage:
-                    # מרג'ין מלא — נסה ללא מינוף
-                    logging.warning(f"[Swing] Margin full for {coin}, retrying without leverage")
-                    buy_params.pop("leverage", None)
-                    use_leverage = False
-                    res = request_fn("/0/private/AddOrder", buy_params, private=True)
-                else:
-                    raise
-            txid = list(res.get("txid", ["?"]))[0]
-
-            # פקודת מכירה ב-take-profit (מיד אחרי הקנייה)
-            sell_txid = None
-            try:
-                sell_params = {
-                    "pair": pair, "type": "sell", "ordertype": "limit",
-                    "volume": f"{vol:.8f}", "price": f"{target_p:.{price_dec}f}",
+            if is_stock:
+                # ── xStock — דרך Kraken Futures API ──────────────────────
+                from kraken_futures import place_futures_order, get_futures_balance
+                fut_balance = get_futures_balance()
+                if fut_balance < trade_usd:
+                    logging.warning(f"[Futures] Insufficient balance ${fut_balance:.2f} < ${trade_usd} for {coin}")
+                    continue
+                txid      = place_futures_order(pair, "buy",  vol, buy_lp)
+                sell_txid = None
+                try:
+                    sell_txid = place_futures_order(pair, "sell", vol, target_p)
+                except Exception as se:
+                    logging.warning(f"[Futures] TP order failed {coin}: {se}")
+            else:
+                # ── קריפטו — דרך Kraken Spot/Margin API ──────────────────
+                use_leverage = coin in MARGIN_ELIGIBLE
+                buy_params = {
+                    "pair": pair, "type": "buy", "ordertype": "limit",
+                    "volume": f"{vol:.8f}", "price": f"{buy_lp:.{price_dec}f}",
                 }
                 if use_leverage:
-                    sell_params["leverage"] = str(LEVERAGE)
+                    buy_params["leverage"] = str(LEVERAGE)
                 try:
-                    sell_res = request_fn("/0/private/AddOrder", sell_params, private=True)
-                except Exception as se2:
-                    if "margin" in str(se2).lower():
-                        sell_params.pop("leverage", None)
-                        sell_res = request_fn("/0/private/AddOrder", sell_params, private=True)
+                    res = request_fn("/0/private/AddOrder", buy_params, private=True)
+                except Exception as margin_e:
+                    if "margin" in str(margin_e).lower() and use_leverage:
+                        logging.warning(f"[Swing] Margin full for {coin}, retrying without leverage")
+                        buy_params.pop("leverage", None)
+                        use_leverage = False
+                        res = request_fn("/0/private/AddOrder", buy_params, private=True)
                     else:
                         raise
-                sell_txid = list(sell_res.get("txid", ["?"]))[0]
-                logging.info(f"[Swing] SELL-TP placed {coin} @ {target_p} txid={sell_txid}")
-            except Exception as se:
-                logging.warning(f"[Swing] sell-tp failed {coin}: {se}")
+                txid = list(res.get("txid", ["?"]))[0]
+
+                sell_txid = None
+                try:
+                    sell_params = {
+                        "pair": pair, "type": "sell", "ordertype": "limit",
+                        "volume": f"{vol:.8f}", "price": f"{target_p:.{price_dec}f}",
+                    }
+                    if use_leverage:
+                        sell_params["leverage"] = str(LEVERAGE)
+                    try:
+                        sell_res = request_fn("/0/private/AddOrder", sell_params, private=True)
+                    except Exception as se2:
+                        if "margin" in str(se2).lower():
+                            sell_params.pop("leverage", None)
+                            sell_res = request_fn("/0/private/AddOrder", sell_params, private=True)
+                        else:
+                            raise
+                    sell_txid = list(sell_res.get("txid", ["?"]))[0]
+                    logging.info(f"[Swing] SELL-TP placed {coin} @ {target_p} txid={sell_txid}")
+                except Exception as se:
+                    logging.warning(f"[Swing] sell-tp failed {coin}: {se}")
 
             trade = {
                 "coin":          coin,
