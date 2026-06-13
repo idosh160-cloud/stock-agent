@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-13T14:07:17.036528",
+  "timestamp": "2026-06-13T14:07:59.572888",
   "balance": {
     "ADA": 582.86173522,
     "ATOM": 5.0,
@@ -128,8 +128,8 @@
       "coin": "XRP",
       "pair": "XRPUSDC",
       "action": "HOLD (pending order)",
-      "rsi": 70.03,
-      "macd": 0.00163,
+      "rsi": 70.4,
+      "macd": 0.001668,
       "ma50": 1.14,
       "ma200": 1.13,
       "support": 1.1501,
@@ -138,13 +138,13 @@
       "buy_score": 4,
       "sell_score": 4,
       "reasons": [
-        "RSI 70.03 (overbought)",
+        "RSI 70.4 (overbought)",
         "MACD bullish crossover",
         "Above MA200 (uptrend)",
         "Near support $1.1501",
         "Near resistance $1.1563"
       ],
-      "price": 1.15196,
+      "price": 1.15256,
       "volume": 0,
       "usd_value": 0.0,
       "limit_price": 0
