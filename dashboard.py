@@ -425,7 +425,7 @@ with tab_crypto:
     if crypto is None:
         st.info("אין נתוני קריפטו עדיין — הרץ את `python crypto_agent.py` פעם ראשונה.")
     else:
-        ts            = crypto.get("timestamp", "")[:16].replace("T", " ")
+        ts            = datetime.now().strftime("%Y-%m-%d %H:%M")
         balance       = crypto.get("balance", {})
         portfolio_usd = crypto.get("portfolio_usd", 0)
         usdc          = crypto.get("usdc", 0)
