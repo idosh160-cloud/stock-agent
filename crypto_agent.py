@@ -32,8 +32,9 @@ def pull_from_github():
 
 def push_to_github():
     try:
-        for f in ["last_crypto.json", "crypto_trades.json", "crypto_params.json", "swing_trades.json", "swing_trades.json", "swing_history.json"]:
+        for f in ["last_crypto.json", "crypto_trades.json", "crypto_params.json", "swing_trades.json", "swing_history.json"]:
             subprocess.run(["git", "add", f], cwd=DIR, capture_output=True)
+        subprocess.run(["git", "add", "-f", "last_crypto.json"], cwd=DIR, capture_output=True)
         has_changes = subprocess.run(
             ["git", "diff", "--cached", "--quiet"], cwd=DIR, capture_output=True
         ).returncode != 0
