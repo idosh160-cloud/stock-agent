@@ -49,7 +49,11 @@ ENVFILE
     echo ""
 fi
 
-# 7. הגדרת cron jobs
+# 7. הגדרת git identity
+git config --global user.email "idosh160@gmail.com"
+git config --global user.name "idosh160-cloud"
+
+# 8. הגדרת cron jobs
 CRON_USER=$(whoami)
 PYTHON_BIN="$APP_DIR/venv/bin/python3"
 LOG_DIR="$APP_DIR/logs"
