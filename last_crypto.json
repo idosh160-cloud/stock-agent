@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-13T11:11:36.163146",
+  "timestamp": "2026-06-13T11:13:57.877247",
   "balance": {
     "ADA": 582.86173522,
     "ATOM": 5.0,
@@ -25,12 +25,12 @@
     {
       "coin": "ADA",
       "qty": 582.86173522,
-      "price": 0.173154,
-      "value_usd": 100.92,
+      "price": 0.173071,
+      "value_usd": 100.88,
       "avg_cost": 0.171428,
-      "pnl_usd": 1.01,
-      "pnl_pct": 1.01,
-      "change_24h": 2.07,
+      "pnl_usd": 0.96,
+      "pnl_pct": 0.96,
+      "change_24h": 2.02,
       "high_24h": 0.174171,
       "low_24h": 0.167784
     },
@@ -83,30 +83,30 @@
       "low_24h": 1.9336
     }
   ],
-  "portfolio_usd": 608.41,
+  "portfolio_usd": 608.36,
   "usdc": 102.13,
   "signals": [
     {
       "coin": "BTC",
       "pair": "XBTUSDC",
       "action": "HOLD (pending order)",
-      "rsi": 68.35,
-      "macd": 9.403784,
-      "ma50": 63466.07,
-      "ma200": 62378.11,
+      "rsi": 68.34,
+      "macd": 9.370599,
+      "ma50": 63466.06,
+      "ma200": 62378.1,
       "support": 63485.23,
       "resistance": 64199.01,
       "near_support": true,
       "buy_score": 4,
       "sell_score": 4,
       "reasons": [
-        "RSI 68.35 (overbought)",
+        "RSI 68.34 (overbought)",
         "MACD bullish crossover",
         "Above MA200 (uptrend)",
         "Near support $63,485.2300",
         "Near resistance $64,199.0100"
       ],
-      "price": 63904.58,
+      "price": 63904.06,
       "volume": 0,
       "usd_value": 0.0,
       "limit_price": 0
