@@ -1,7 +1,7 @@
 """
 swing_trader.py — מסחר תנודתי חכם עם Claude
-כל שעה: Claude בוחר מטבעות לסיבובים קצרים ($45 לכל עסקה, מינוף 2x)
-כל 15 דק': בודק פוזיציות פתוחות — מוכר ב-+5% או עוצר ב-2%-
+כל שעה: Claude בוחר מטבעות + xStocks לסיבובים קצרים
+כל 15 דק': בודק פוזיציות פתוחות — מוכר ב-+5% (קריפטו) / +2% (מניות) או עוצר ב-2%/-1%
 """
 import os
 import json
@@ -13,12 +13,15 @@ DIR          = os.path.dirname(os.path.abspath(__file__))
 SWING_FILE   = os.path.join(DIR, "swing_trades.json")
 HISTORY_FILE = os.path.join(DIR, "swing_history.json")
 
-SWING_USD       = 100    # דולר לכל עסקה (collateral — שולטים ב-$200 עם מינוף 2x)
-TARGET_PCT      = 0.05   # +5% יעד רווח
-STOP_PCT        = 0.02   # -2% עצור הפסד (= ~4% על הון אמיתי עם מינוף)
-MAX_OPEN        = 6      # פוזיציות פתוחות מקסימום
-MAX_BUDGET      = 600    # תקציב מקסימלי לסווינגים
-LEVERAGE        = 2      # מינוף x2 על כל קנייה (Kraken margin)
+SWING_USD         = 100    # דולר לכל עסקה קריפטו (collateral — שולטים ב-$200 עם מינוף 2x)
+SWING_USD_STOCK   = 50     # דולר לכל עסקת מניה (ללא מינוף)
+TARGET_PCT        = 0.05   # +5% יעד רווח קריפטו
+TARGET_PCT_STOCK  = 0.025  # +2.5% יעד רווח xStocks
+STOP_PCT          = 0.02   # -2% עצור הפסד קריפטו
+STOP_PCT_STOCK    = 0.01   # -1% עצור הפסד xStocks
+MAX_OPEN          = 6      # פוזיציות פתוחות מקסימום
+MAX_BUDGET        = 600    # תקציב מקסימלי לסווינגים
+LEVERAGE          = 2      # מינוף x2 על כל קנייה (Kraken margin) — לא למניות
 
 # מטבעות שקרקן מאפשר עליהם margin trading
 MARGIN_ELIGIBLE = {"ETH", "SOL", "XRP", "LTC", "BCH", "LINK", "DOT", "ADA", "AVAX", "BNB", "DOGE", "XMR", "TON"}
@@ -45,6 +48,99 @@ CANDIDATES = {
     "XMR":  {"pair": "XMRUSDC",  "min_vol": 0.05,  "price_dec": 2},
     "DOGE": {"pair": "XDGUSDC",  "min_vol": 50,    "price_dec": 5},
 }
+
+# רשימת קריפטו ידועים — כדי לסנן מניות מהם
+_KNOWN_CRYPTO = {
+    "BTC","ETH","SOL","XRP","ADA","AVAX","LINK","DOT","LTC","BCH","ALGO","ATOM",
+    "XTZ","BNB","TON","SHIB","MANA","VET","XMR","DOGE","MATIC","UNI","AAVE","CRV",
+    "MKR","COMP","SNX","YFI","SUSHI","GRT","KAVA","MINA","ANKR","OCEAN","SAND",
+    "AXS","GALA","ENJ","CHZ","RUNE","NEAR","FLOW","HBAR","EOS","XLM","TRX",
+    "THETA","NEO","WAVES","ZIL","QTUM","ONT","ZRX","BAT","OMG","KNC","BAND",
+    "STORJ","OXT","CTSI","ALICE","TLM","SXP","REEF","FIL","ICP","LUNA","LUNC",
+    "USDT","USDC","DAI","BUSD","TUSD","USDP","FRAX","ZUSD","USD","EUR","GBP",
+}
+
+
+def get_xstock_data() -> list:
+    """מושך דינמית את כל ה-xStocks הזמינים ב-Kraken ונתוני המחיר שלהם"""
+    try:
+        r = requests.get("https://api.kraken.com/0/public/AssetPairs", timeout=15)
+        all_pairs = r.json().get("result", {})
+    except Exception as e:
+        logging.error(f"[xStocks] AssetPairs fetch failed: {e}")
+        return []
+
+    # מצא pairs של מניות — base מסתיים ב-.s (Kraken xStocks convention)
+    stock_pairs = []
+    for pair_name, info in all_pairs.items():
+        base  = info.get("base", "")
+        quote = info.get("quote", "")
+        if not base.endswith(".s"):
+            continue
+        if quote not in ("USDC", "ZUSD", "USD"):
+            continue
+        ticker = base[:-2]  # הסר ".s"
+        if ticker.upper() in _KNOWN_CRYPTO:
+            continue
+        stock_pairs.append({
+            "pair":      pair_name,
+            "ticker":    ticker,
+            "quote":     quote,
+            "ordermin":  float(info.get("ordermin", 0.01)),
+            "cost_decimals": int(info.get("cost_decimals", 2)),
+            "pair_decimals": int(info.get("pair_decimals", 2)),
+        })
+
+    if not stock_pairs:
+        logging.info("[xStocks] No xStock pairs found on Kraken")
+        return []
+
+    # שלוף מחירים לכולם בבת אחת
+    pair_str = ",".join(p["pair"] for p in stock_pairs)
+    try:
+        r2 = requests.get(
+            f"https://api.kraken.com/0/public/Ticker?pair={pair_str}",
+            timeout=15
+        )
+        tickers = r2.json().get("result", {})
+    except Exception as e:
+        logging.error(f"[xStocks] Ticker fetch failed: {e}")
+        return []
+
+    out = []
+    for sp in stock_pairs:
+        t = tickers.get(sp["pair"])
+        if not t:
+            continue
+        price  = float(t["c"][0])
+        open_p = float(t["o"])
+        high   = float(t["h"][1])
+        low    = float(t["l"][1])
+        vol    = float(t["v"][1])  # volume in base asset
+        if price == 0 or open_p == 0:
+            continue
+        vol_usd = round(vol * price, 0)
+        if vol_usd < 1000:  # סנן מניות עם נפח אפסי
+            continue
+        chg = round((price - open_p) / open_p * 100, 2)
+        rng = round((high - low) / low * 100, 2) if low else 0
+        out.append({
+            "coin":        sp["ticker"],
+            "pair":        sp["pair"],
+            "price":       price,
+            "price_dec":   sp["pair_decimals"],
+            "min_vol":     sp["ordermin"],
+            "change_24h":  chg,
+            "range_24h":   rng,
+            "high_24h":    high,
+            "low_24h":     low,
+            "volume_usdc": vol_usd,
+            "is_stock":    True,
+        })
+
+    out.sort(key=lambda x: abs(x["change_24h"]), reverse=True)
+    logging.info(f"[xStocks] Found {len(out)} active xStock pairs")
+    return out
 
 
 # ── File helpers ──────────────────────────────────────────────────────────
@@ -202,47 +298,64 @@ def load_performance_summary() -> str:
         return ""
 
 
-def analyze_with_claude(candidates: list, open_coins: set, usdc: float, btc_price: float) -> dict:
+def analyze_with_claude(candidates: list, open_coins: set, usdc: float, btc_price: float, stock_candidates: list = None) -> dict:
     _load_api_key()
     import anthropic
 
-    rows = "\n".join([
-        f"  {c['coin']}: ${c['price']:.4f} | {c['change_24h']:+.1f}% | "
+    crypto_rows = "\n".join([
+        f"  [CRYPTO] {c['coin']}: ${c['price']:.4f} | {c['change_24h']:+.1f}% | "
         f"range {c['range_24h']:.1f}% | vol ${c['volume_usdc']:,.0f} | "
         f"H=${c['high_24h']:.4f} L=${c['low_24h']:.4f}"
-        for c in candidates[:15]
+        for c in candidates[:12]
     ])
+
+    stock_section = ""
+    if stock_candidates:
+        stock_rows = "\n".join([
+            f"  [STOCK] {c['coin']}: ${c['price']:.2f} | {c['change_24h']:+.1f}% | "
+            f"range {c['range_24h']:.1f}% | vol ${c['volume_usdc']:,.0f}"
+            for c in stock_candidates[:15]
+        ])
+        stock_section = f"""
+xStock candidates (tokenized stocks, spot only, no leverage):
+{stock_rows}
+Trade size for stocks: ${SWING_USD_STOCK} | Take-profit: +{TARGET_PCT_STOCK*100:.1f}% | Stop-loss: -{STOP_PCT_STOCK*100:.1f}%
+Stocks move slower than crypto — look for strong momentum days or pre/post earnings moves.
+"""
+
     skip = ", ".join(open_coins) if open_coins else "none"
     performance = load_performance_summary()
     perf_section = f"\n\nYour historical performance:\n{performance}" if performance else ""
 
-    prompt = f"""You are an expert crypto swing trader. {datetime.now().strftime('%Y-%m-%d %H:%M')} UTC.
+    prompt = f"""You are an expert swing trader covering both crypto and tokenized stocks (xStocks). {datetime.now().strftime('%Y-%m-%d %H:%M')} UTC.
 
 BTC context price: ${btc_price:,.0f}
-Available USDC: ${usdc:.2f} | Trade size: ${SWING_USD} each (2x leverage = controls ${SWING_USD*2})
-Take-profit: +5% | Stop-loss: -2% (protects ~4% real capital with leverage)
+Available USDC: ${usdc:.2f}
+Crypto trade size: ${SWING_USD} each (2x leverage = controls ${SWING_USD*2}) | Take-profit: +5% | Stop-loss: -2%
 Already open positions (skip): {skip}{perf_section}
 
-Altcoin candidates ranked by 24h movement:
-{rows}
+Crypto altcoin candidates ranked by 24h movement:
+{crypto_rows}
+{stock_section}
+Your job: Think carefully and pick 0, 1, or 2 assets for a swing trade RIGHT NOW.
+You can mix crypto and stocks — pick whatever has the best risk/reward today.
 
-Your job: Think carefully and pick 0, 1, or 2 coins for a swing trade RIGHT NOW.
 Criteria to look for:
 - Strong momentum with room to continue (not exhausted)
-- Coins near intraday low that may bounce (dip buy)
+- Assets near intraday low that may bounce (dip buy)
 - Volume confirming the move
 - Clear entry with defined risk
 
 Criteria to avoid:
-- Coins that already ran 10%+ and look extended
-- Very low volume (under $50k/day)
+- Assets that already ran 10%+ and look extended
+- Very low volume crypto (under $50k/day) or stocks (under $5k/day)
 - Choppy sideways movement
 
 Return ONLY valid JSON:
 {{
   "picks": [
     {{
-      "coin": "SOL",
+      "coin": "TSLA",
       "confidence": "HIGH",
       "reasoning": "שתי משפטים בעברית — מה בדיוק אתה רואה ולמה עכשיו"
     }}
@@ -257,7 +370,7 @@ If nothing looks good — return picks as empty array. Better to miss a trade th
         client = anthropic.Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY", ""))
         msg = client.messages.create(
             model="claude-sonnet-4-6",
-            max_tokens=1200,
+            max_tokens=1500,
             messages=[{"role": "user", "content": prompt}]
         )
         raw = msg.content[0].text.strip()
@@ -267,11 +380,9 @@ If nothing looks good — return picks as empty array. Better to miss a trade th
                 if part.startswith("{"):
                     raw = part
                     break
-        # חתוך כל מה שאחרי ה-} האחרון
         last_brace = raw.rfind("}")
         if last_brace != -1:
             raw = raw[:last_brace+1]
-        # נסה לתקן trailing commas נפוצות
         import re
         raw = re.sub(r",\s*}", "}", raw)
         raw = re.sub(r",\s*]", "]", raw)
@@ -399,7 +510,15 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0)
         logging.warning("[Swing] No candidate data available")
         return trades
 
-    analysis   = analyze_with_claude(candidates, open_coins, usdc, btc_price)
+    # שלוף xStocks דינמית
+    stock_candidates = get_xstock_data()
+
+    # בנה lookup מהיר לפי coin
+    all_candidates_map = {c["coin"]: c for c in candidates}
+    for s in stock_candidates:
+        all_candidates_map[s["coin"]] = s
+
+    analysis    = analyze_with_claude(candidates, open_coins, usdc, btc_price, stock_candidates)
     market_read = analysis.get("market_read", "")
     skip_reason = analysis.get("skip_reason", "")
     logging.info(f"[Swing] Claude: {market_read} | skipped: {skip_reason}")
@@ -410,31 +529,40 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0)
         reason = pick.get("reasoning", "")
         conf   = pick.get("confidence", "MEDIUM")
 
-        if coin in open_coins or coin not in CANDIDATES:
+        if coin in open_coins:
             continue
 
-        cfg       = CANDIDATES[coin]
-        pair      = cfg["pair"]
-        price_dec = cfg["price_dec"]
-        min_v     = cfg["min_vol"]
-
-        coin_data = next((c for c in candidates if c["coin"] == coin), None)
+        coin_data = all_candidates_map.get(coin)
         if not coin_data:
+            logging.warning(f"[Swing] Claude picked {coin} but not found in candidates — skip")
             continue
+
+        is_stock  = coin_data.get("is_stock", False)
+        pair      = coin_data["pair"]
+        price_dec = coin_data["price_dec"]
+        min_v     = coin_data["min_vol"]
+
+        # פרמטרים שונים לפי סוג
+        trade_usd  = SWING_USD_STOCK if is_stock else SWING_USD
+        target_pct = TARGET_PCT_STOCK if is_stock else TARGET_PCT
+        stop_pct   = STOP_PCT_STOCK   if is_stock else STOP_PCT
+
+        # CANDIDATES lookup לקריפטו (לmargining)
+        cfg = CANDIDATES.get(coin, {})
 
         price = coin_data["price"]
-        vol   = round(SWING_USD / price, 8)
+        vol   = round(trade_usd / price, 8)
 
         if vol < min_v:
             logging.warning(f"[Swing] {coin} vol={vol:.6f} < min={min_v} — skip")
             continue
 
-        buy_lp      = round(price * 0.999, price_dec)
-        target_p    = round(price * (1 + TARGET_PCT), price_dec)
-        stop_p      = round(price * (1 - STOP_PCT),   price_dec)
+        buy_lp   = round(price * 0.999, price_dec)
+        target_p = round(price * (1 + target_pct), price_dec)
+        stop_p   = round(price * (1 - stop_pct),   price_dec)
         try:
-            # פקודת קנייה (מינוף רק למטבעות מאושרים)
-            use_leverage = coin in MARGIN_ELIGIBLE
+            # פקודת קנייה (מינוף רק למטבעות קריפטו מאושרים — לא מניות)
+            use_leverage = (not is_stock) and (coin in MARGIN_ELIGIBLE)
             buy_params = {
                 "pair": pair, "type": "buy", "ordertype": "limit",
                 "volume": f"{vol:.8f}", "price": f"{buy_lp:.{price_dec}f}",
@@ -479,6 +607,7 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0)
             trade = {
                 "coin":          coin,
                 "pair":          pair,
+                "is_stock":      is_stock,
                 "entry_price":   price,
                 "limit_price":   buy_lp,
                 "volume":        vol,
