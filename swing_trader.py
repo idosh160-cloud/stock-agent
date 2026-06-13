@@ -14,11 +14,11 @@ SWING_FILE   = os.path.join(DIR, "swing_trades.json")
 HISTORY_FILE = os.path.join(DIR, "swing_history.json")
 
 SWING_USD         = 100    # דולר לכל עסקה קריפטו (collateral — שולטים ב-$200 עם מינוף 2x)
-SWING_USD_STOCK   = 50     # דולר לכל עסקת מניה (ללא מינוף)
+SWING_USD_STOCK   = 75     # דולר לכל עסקת מניה (ללא מינוף)
 TARGET_PCT        = 0.05   # +5% יעד רווח קריפטו
-TARGET_PCT_STOCK  = 0.025  # +2.5% יעד רווח xStocks
+TARGET_PCT_STOCK  = 0.07   # +7% יעד רווח xStocks — מניות תנודתיות יכולות לעשות הרבה יותר
 STOP_PCT          = 0.02   # -2% עצור הפסד קריפטו
-STOP_PCT_STOCK    = 0.01   # -1% עצור הפסד xStocks
+STOP_PCT_STOCK    = 0.015  # -1.5% עצור הפסד xStocks
 MAX_OPEN          = 6      # פוזיציות פתוחות מקסימום
 MAX_BUDGET        = 600    # תקציב מקסימלי לסווינגים
 LEVERAGE          = 2      # מינוף x2 על כל קנייה (Kraken margin) — לא למניות
