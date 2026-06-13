@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-13T14:07:59.572888",
+  "timestamp": "2026-06-13T14:08:20.162045",
   "balance": {
     "ADA": 582.86173522,
     "ATOM": 5.0,
@@ -49,12 +49,12 @@
     {
       "coin": "LINK",
       "qty": 1.9244018,
-      "price": 7.983,
-      "value_usd": 15.36,
+      "price": 8.0022,
+      "value_usd": 15.4,
       "avg_cost": 7.78684,
-      "pnl_usd": 0.38,
-      "pnl_pct": 2.52,
-      "change_24h": 1.5,
+      "pnl_usd": 0.41,
+      "pnl_pct": 2.77,
+      "change_24h": 1.74,
       "high_24h": 8.0663,
       "low_24h": 7.82348
     },
@@ -71,30 +71,30 @@
       "low_24h": 1.948
     }
   ],
-  "portfolio_usd": 609.52,
+  "portfolio_usd": 609.56,
   "usdc": 133.13,
   "signals": [
     {
       "coin": "BTC",
       "pair": "XBTUSDC",
       "action": "HOLD (pending order)",
-      "rsi": 68.06,
-      "macd": 36.624363,
-      "ma50": 63529.89,
-      "ma200": 62401.3,
+      "rsi": 68.24,
+      "macd": 37.163622,
+      "ma50": 63530.06,
+      "ma200": 62401.34,
       "support": 63850.3,
       "resistance": 64199.01,
       "near_support": true,
       "buy_score": 4,
       "sell_score": 4,
       "reasons": [
-        "RSI 68.06 (overbought)",
+        "RSI 68.24 (overbought)",
         "MACD bullish crossover",
         "Above MA200 (uptrend)",
         "Near support $63,850.3000",
         "Near resistance $64,199.0100"
       ],
-      "price": 64119.23,
+      "price": 64127.68,
       "volume": 0,
       "usd_value": 0.0,
       "limit_price": 0
