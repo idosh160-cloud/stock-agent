@@ -109,14 +109,10 @@ def main():
             logging.warning(f"Swing check failed: {e}")
             swing_trades = []
 
-        # ── סריקת swing חדשים — פעם בשעה ──────────────────────────────
-        swing_flag = os.path.join(DIR, "last_swing_scan.txt")
-        last_swing = open(swing_flag).read().strip() if os.path.exists(swing_flag) else ""
-        if last_swing != now_hour and usdc > 20:
+        # ── סריקת swing + רוטציה — תמיד רץ (קלוד מחליט אם לפתוח/לסגור) ──
+        if usdc > 5:
             try:
                 swing_trades = run_swing_scan(balance, usdc, _request, btc_price)
-                with open(swing_flag, "w") as f:
-                    f.write(now_hour)
                 logging.info("Swing scan completed")
             except Exception as e:
                 logging.warning(f"Swing scan failed: {e}")
