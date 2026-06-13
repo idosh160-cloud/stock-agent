@@ -62,80 +62,68 @@ _KNOWN_CRYPTO = {
 
 
 def get_xstock_data() -> list:
-    """מושך דינמית את כל ה-xStocks הזמינים ב-Kraken ונתוני המחיר שלהם"""
+    """מושך דינמית את כל ה-xStocks מ-Kraken Futures API"""
     try:
-        r = requests.get("https://api.kraken.com/0/public/AssetPairs", timeout=15)
-        all_pairs = r.json().get("result", {})
-    except Exception as e:
-        logging.error(f"[xStocks] AssetPairs fetch failed: {e}")
-        return []
-
-    # מצא pairs של מניות — base מסתיים ב-.s (Kraken xStocks convention)
-    stock_pairs = []
-    for pair_name, info in all_pairs.items():
-        base  = info.get("base", "")
-        quote = info.get("quote", "")
-        if not base.endswith(".s"):
-            continue
-        if quote not in ("USDC", "ZUSD", "USD"):
-            continue
-        ticker = base[:-2]  # הסר ".s"
-        if ticker.upper() in _KNOWN_CRYPTO:
-            continue
-        stock_pairs.append({
-            "pair":      pair_name,
-            "ticker":    ticker,
-            "quote":     quote,
-            "ordermin":  float(info.get("ordermin", 0.01)),
-            "cost_decimals": int(info.get("cost_decimals", 2)),
-            "pair_decimals": int(info.get("pair_decimals", 2)),
-        })
-
-    if not stock_pairs:
-        logging.info("[xStocks] No xStock pairs found on Kraken")
-        return []
-
-    # שלוף מחירים לכולם בבת אחת
-    pair_str = ",".join(p["pair"] for p in stock_pairs)
-    try:
-        r2 = requests.get(
-            f"https://api.kraken.com/0/public/Ticker?pair={pair_str}",
+        # שלוף רשימת instruments
+        r = requests.get(
+            "https://futures.kraken.com/derivatives/api/v3/instruments",
             timeout=15
         )
-        tickers = r2.json().get("result", {})
+        instruments = r.json().get("instruments", [])
+        # xStocks: PF_TSLAXUSD, PF_NVDAXUSD וכו' — לא קריפטו
+        xstock_symbols = [
+            i["symbol"] for i in instruments
+            if i.get("symbol", "").startswith("PF_")
+            and i.get("symbol", "").endswith("XUSD")
+            and i.get("tradeable", False)
+            and i["symbol"].replace("PF_", "").replace("XUSD", "") not in _KNOWN_CRYPTO
+        ]
+        if not xstock_symbols:
+            logging.info("[xStocks] No xStock instruments found")
+            return []
+
+        # שלוף מחירים
+        r2 = requests.get(
+            "https://futures.kraken.com/derivatives/api/v3/tickers",
+            timeout=15
+        )
+        tickers = {t["symbol"]: t for t in r2.json().get("tickers", [])}
+
     except Exception as e:
-        logging.error(f"[xStocks] Ticker fetch failed: {e}")
+        logging.error(f"[xStocks] fetch failed: {e}")
         return []
 
     out = []
-    for sp in stock_pairs:
-        t = tickers.get(sp["pair"])
+    for sym in xstock_symbols:
+        t = tickers.get(sym)
         if not t:
             continue
-        price  = float(t["c"][0])
-        open_p = float(t["o"])
-        high   = float(t["h"][1])
-        low    = float(t["l"][1])
-        vol    = float(t["v"][1])  # volume in base asset
+        price  = float(t.get("last", 0) or 0)
+        open_p = float(t.get("open24h", 0) or 0)
+        high   = float(t.get("high24h", 0) or 0)
+        low    = float(t.get("low24h", 0) or 0)
+        vol    = float(t.get("vol24h", 0) or 0)
         if price == 0 or open_p == 0:
             continue
         vol_usd = round(vol * price, 0)
-        if vol_usd < 1000:  # סנן מניות עם נפח אפסי
+        if vol_usd < 500:
             continue
-        chg = round((price - open_p) / open_p * 100, 2)
-        rng = round((high - low) / low * 100, 2) if low else 0
+        chg    = round((price - open_p) / open_p * 100, 2)
+        rng    = round((high - low) / low * 100, 2) if low else 0
+        ticker = sym.replace("PF_", "").replace("XUSD", "")
         out.append({
-            "coin":        sp["ticker"],
-            "pair":        sp["pair"],
+            "coin":        ticker,
+            "pair":        sym,
             "price":       price,
-            "price_dec":   sp["pair_decimals"],
-            "min_vol":     sp["ordermin"],
+            "price_dec":   2,
+            "min_vol":     0.001,
             "change_24h":  chg,
             "range_24h":   rng,
             "high_24h":    high,
             "low_24h":     low,
             "volume_usdc": vol_usd,
             "is_stock":    True,
+            "is_futures":  True,
         })
 
     out.sort(key=lambda x: abs(x["change_24h"]), reverse=True)
