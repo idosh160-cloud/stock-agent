@@ -298,7 +298,7 @@ def load_performance_summary() -> str:
         return ""
 
 
-def analyze_with_claude(candidates: list, open_coins: set, usdc: float, btc_price: float, stock_candidates: list = None) -> dict:
+def analyze_with_claude(candidates: list, open_coins: set, usdc: float, btc_price: float, stock_candidates: list = None, open_positions: list = None) -> dict:
     _load_api_key()
     import anthropic
 
@@ -327,12 +327,31 @@ Stocks move slower than crypto — look for strong momentum days or pre/post ear
     performance = load_performance_summary()
     perf_section = f"\n\nYour historical performance:\n{performance}" if performance else ""
 
+    # פרמטר נוסף: פוזיציות פתוחות לרוטציה
+    open_positions_rows = ""
+    if open_positions:
+        open_positions_rows = "\nCurrently open positions:\n" + "\n".join([
+            f"  {p['coin']}: entry=${p['entry_price']:.4f} now=${p.get('current_price', p['entry_price']):.4f} "
+            f"P&L={p.get('pnl_pct', 0):+.1f}% | open since {p.get('date_open','')[:10]} | "
+            f"target={p.get('target_price',0):.4f} stop={p.get('stop_price',0):.4f}"
+            for p in open_positions
+        ])
+
+    rotation_instruction = ""
+    if open_positions and len(open_positions) >= MAX_OPEN:
+        rotation_instruction = f"""
+IMPORTANT: Portfolio is FULL ({len(open_positions)}/{MAX_OPEN} positions).
+You CAN suggest closing one weak position to open a better opportunity.
+Add "close_for_rotation" field with the coin to close IF you find something significantly better.
+Only rotate if the new opportunity is clearly superior — don't churn for small differences.
+"""
+
     prompt = f"""You are an expert swing trader covering both crypto and tokenized stocks (xStocks). {datetime.now().strftime('%Y-%m-%d %H:%M')} UTC.
 
 BTC context price: ${btc_price:,.0f}
 Available USDC: ${usdc:.2f}
 Crypto trade size: ${SWING_USD} each (2x leverage = controls ${SWING_USD*2}) | Take-profit: +5% | Stop-loss: -2%
-Already open positions (skip): {skip}{perf_section}
+{open_positions_rows}{perf_section}{rotation_instruction}
 
 Crypto altcoin candidates ranked by 24h movement:
 {crypto_rows}
@@ -350,6 +369,7 @@ Criteria to avoid:
 - Assets that already ran 10%+ and look extended
 - Very low volume crypto (under $50k/day) or stocks (under $5k/day)
 - Choppy sideways movement
+- Rotating out of a position that's already profitable and moving toward target
 
 Return ONLY valid JSON:
 {{
@@ -360,6 +380,8 @@ Return ONLY valid JSON:
       "reasoning": "שתי משפטים בעברית — מה בדיוק אתה רואה ולמה עכשיו"
     }}
   ],
+  "close_for_rotation": null,
+  "rotation_reason": null,
   "market_read": "משפט אחד בעברית על מצב השוק הכללי כרגע",
   "skip_reason": "למה דחית את השאר (משפט אחד בעברית)"
 }}
@@ -491,8 +513,7 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0)
     open_budget = sum(t.get("usd", 0) for t in open_swings)
 
     if len(open_swings) >= MAX_OPEN:
-        logging.info(f"[Swing] {MAX_OPEN} positions open — skipping scan")
-        return trades
+        logging.info(f"[Swing] {MAX_OPEN} positions open — checking for rotation opportunity")
     if open_budget >= MAX_BUDGET:
         logging.info(f"[Swing] Budget ${MAX_BUDGET} reached — skipping scan")
         return trades
@@ -518,10 +539,49 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0)
     for s in stock_candidates:
         all_candidates_map[s["coin"]] = s
 
-    analysis    = analyze_with_claude(candidates, open_coins, usdc, btc_price, stock_candidates)
+    # תמיד קרא לקלוד — גם כשמלא, כדי לאפשר רוטציה
+    analysis    = analyze_with_claude(candidates, open_coins, usdc, btc_price, stock_candidates, open_swings)
     market_read = analysis.get("market_read", "")
     skip_reason = analysis.get("skip_reason", "")
     logging.info(f"[Swing] Claude: {market_read} | skipped: {skip_reason}")
+
+    # רוטציה — קלוד ביקש לסגור פוזיציה חלשה כדי לפתוח חדשה
+    close_for_rotation = analysis.get("close_for_rotation")
+    if close_for_rotation and close_for_rotation in open_coins:
+        rotation_reason = analysis.get("rotation_reason", "")
+        logging.info(f"[Swing] ROTATION: closing {close_for_rotation} — {rotation_reason}")
+        for t in trades:
+            if t.get("coin") == close_for_rotation and t.get("status") == "open":
+                current = get_current_price(t["pair"])
+                if current > 0:
+                    cfg_r     = CANDIDATES.get(close_for_rotation, all_candidates_map.get(close_for_rotation, {}))
+                    price_dec = cfg_r.get("price_dec", 4)
+                    lp        = round(current * 0.999, price_dec)
+                    use_lev   = close_for_rotation in MARGIN_ELIGIBLE and not t.get("is_stock")
+                    try:
+                        if t.get("sell_txid"):
+                            request_fn("/0/private/CancelOrder", {"txid": t["sell_txid"]}, private=True)
+                        sell_params = {
+                            "pair": t["pair"], "type": "sell", "ordertype": "limit",
+                            "volume": f"{t['volume']:.8f}", "price": f"{lp:.{price_dec}f}",
+                        }
+                        if use_lev:
+                            sell_params["leverage"] = str(LEVERAGE)
+                        res  = request_fn("/0/private/AddOrder", sell_params, private=True)
+                        txid = list(res.get("txid", ["?"]))[0]
+                        t["status"]      = "closed_loss" if current < t["entry_price"] else "closed_profit"
+                        t["date_close"]  = datetime.now().isoformat()
+                        t["close_price"] = current
+                        t["close_txid"]  = txid
+                        t["pnl_pct"]     = round((current - t["entry_price"]) / t["entry_price"] * 100, 2)
+                        t["pnl_usd"]     = round((current - t["entry_price"]) * t["volume"], 2)
+                        archive_closed_trade(t)
+                        open_coins.discard(close_for_rotation)
+                        open_swings = [s for s in open_swings if s["coin"] != close_for_rotation]
+                        logging.info(f"[Swing] Rotation close {close_for_rotation} @ {current:.4f} P&L={t['pnl_pct']:+.1f}%")
+                    except Exception as e:
+                        logging.error(f"[Swing] Rotation close failed {close_for_rotation}: {e}")
+                break
 
     slots = MAX_OPEN - len(open_swings)
     for pick in analysis.get("picks", [])[:slots]:
