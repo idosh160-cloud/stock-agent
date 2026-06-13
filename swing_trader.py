@@ -404,65 +404,78 @@ If nothing looks good — return picks as empty array. Better to miss a trade th
 
 # ── Main cycles ───────────────────────────────────────────────────────────
 
-def get_kraken_open_positions(request_fn) -> dict:
+def _pair_to_coin(pair: str) -> str:
+    """ממיר פאיר של קרקן לשם מטבע. XRPUSDC→XRP, ETHUSDC→ETH"""
+    kraken_map = {"XXBT": "BTC", "XETH": "ETH", "XXRP": "XRP", "XLTC": "LTC", "XXLM": "XLM", "XDGE": "DOGE"}
+    coin = pair.replace("USDC", "").replace("USD", "")
+    return kraken_map.get(coin, coin)
+
+
+def get_kraken_state(request_fn) -> dict:
     """
-    מושך ישירות מקרקן את כל הפוזיציות הפתוחות האמיתיות.
-    מחזיר dict של {coin: position_data}
+    קרקן הוא מקור האמת — מושך הכל בבת אחת:
+    - OpenPositions: פוזיציות מרג'ין פתוחות
+    - Balance: יתרות ספוט
+    - OpenOrders: פקודות limit פתוחות
+    מחזיר dict מאוחד עם כל המידע.
     """
+    state = {"margin_positions": {}, "balance": {}, "open_orders": {}}
     try:
         pos = request_fn("/0/private/OpenPositions", private=True)
-        result = {}
         for pid, p in pos.items():
-            pair = p.get("pair", "")
-            # זהה את המטבע מהפאיר (ETHUSDC → ETH, XRPUSDC → XRP וכו')
-            coin = pair.replace("USDC", "").replace("USD", "")
-            # תיקונים לשמות מיוחדים
-            if coin.startswith("X") and len(coin) > 3:
-                coin = coin[1:]  # XXBT → XBT, XETH → ETH
-            if coin.startswith("Z"):
-                coin = coin[1:]
-            result[coin] = {
-                "pair": pair,
-                "vol": float(p.get("vol", 0)),
-                "cost": float(p.get("cost", 0)),
+            coin = _pair_to_coin(p.get("pair", ""))
+            state["margin_positions"][coin] = {
+                "pair":   p.get("pair"),
+                "vol":    float(p.get("vol", 0)),
+                "cost":   float(p.get("cost", 0)),
                 "margin": float(p.get("margin", 0)),
-                "net": float(p.get("net", 0)),
-                "value": float(p.get("value", 0)),
+                "txid":   p.get("ordertxid", ""),
             }
-        logging.info(f"[Sync] Kraken open positions: {list(result.keys())}")
-        return result
+        logging.info(f"[Kraken] Margin positions: {list(state['margin_positions'].keys())}")
     except Exception as e:
-        logging.error(f"[Sync] OpenPositions failed: {e}")
-        return {}
+        logging.error(f"[Kraken] OpenPositions failed: {e}")
+
+    try:
+        orders = request_fn("/0/private/OpenOrders", private=True)
+        for oid, o in orders.get("open", {}).items():
+            state["open_orders"][oid] = {
+                "pair":      o.get("descr", {}).get("pair", ""),
+                "type":      o.get("descr", {}).get("type", ""),
+                "ordertype": o.get("descr", {}).get("ordertype", ""),
+                "price":     float(o.get("descr", {}).get("price", 0) or 0),
+                "vol":       float(o.get("vol", 0)),
+            }
+        logging.info(f"[Kraken] Open orders: {len(state['open_orders'])}")
+    except Exception as e:
+        logging.error(f"[Kraken] OpenOrders failed: {e}")
+
+    return state
 
 
 def sync_trades_with_kraken(trades: list, balance: dict, request_fn=None) -> tuple[list, bool]:
     """
-    מסנכרן את swing_trades.json עם המציאות האמיתית בקרקן.
-    בודק גם balance וגם OpenPositions — סוגר כל פוזיציה שלא קיימת בקרקן.
+    קרקן הוא מקור האמת.
+    כל פוזיציה ב-JSON שלא קיימת בקרקן (לא במרג'ין ולא בארנק) — נסגרת אוטומטית.
     """
     changed = False
+    if not request_fn:
+        return trades, changed
 
-    # משוך פוזיציות מרג'ין פתוחות מקרקן
-    kraken_positions = get_kraken_open_positions(request_fn) if request_fn else {}
+    kraken = get_kraken_state(request_fn)
+    margin_coins = set(kraken["margin_positions"].keys())
 
     for t in trades:
-        if t.get("status") != "open":
+        if t.get("status") != "open" or t.get("is_stock"):
             continue
-        if t.get("is_stock"):
-            continue  # Futures — נבדוק בנפרד
 
         coin    = t["coin"]
         holding = float(balance.get(coin, 0))
         min_vol = CANDIDATES.get(coin, {}).get("min_vol", 0.001)
 
-        # בדוק אם יש פוזיציה פתוחה בקרקן עבור המטבע הזה
-        in_kraken_positions = coin in kraken_positions
-        # בדוק אם יש יתרה של המטבע בארנק
+        in_margin  = coin in margin_coins
         in_balance = holding >= min_vol * 0.5
 
-        if not in_kraken_positions and not in_balance:
-            # לא קיים לא בפוזיציות ולא בארנק — נסגר מחוץ לבוט
+        if not in_margin and not in_balance:
             current = get_current_price(t["pair"])
             pnl_pct = round((current - t["entry_price"]) / t["entry_price"] * 100, 2) if current and t["entry_price"] else 0
             t["status"]      = "closed_externally"
@@ -471,7 +484,7 @@ def sync_trades_with_kraken(trades: list, balance: dict, request_fn=None) -> tup
             t["pnl_pct"]     = pnl_pct
             t["pnl_usd"]     = round(pnl_pct / 100 * t.get("usd", 0), 2)
             changed = True
-            logging.warning(f"[Sync] {coin} not found in Kraken (balance={holding:.6f}, margin_pos={in_kraken_positions}) — closed_externally | P&L≈{pnl_pct:+.1f}%")
+            logging.warning(f"[Sync] {coin} gone from Kraken → closed_externally | P&L≈{pnl_pct:+.1f}%")
             archive_closed_trade(t)
 
     return trades, changed
