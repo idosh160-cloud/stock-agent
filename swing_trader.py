@@ -404,34 +404,74 @@ If nothing looks good — return picks as empty array. Better to miss a trade th
 
 # ── Main cycles ───────────────────────────────────────────────────────────
 
-def sync_trades_with_kraken(trades: list, balance: dict) -> tuple[list, bool]:
+def get_kraken_open_positions(request_fn) -> dict:
     """
-    מסנכרן את swing_trades.json עם היתרה האמיתית בקרקן.
-    אם פוזיציה מסומנת open אבל המטבע לא קיים בארנק — סוגר אותה אוטומטית.
+    מושך ישירות מקרקן את כל הפוזיציות הפתוחות האמיתיות.
+    מחזיר dict של {coin: position_data}
+    """
+    try:
+        pos = request_fn("/0/private/OpenPositions", private=True)
+        result = {}
+        for pid, p in pos.items():
+            pair = p.get("pair", "")
+            # זהה את המטבע מהפאיר (ETHUSDC → ETH, XRPUSDC → XRP וכו')
+            coin = pair.replace("USDC", "").replace("USD", "")
+            # תיקונים לשמות מיוחדים
+            if coin.startswith("X") and len(coin) > 3:
+                coin = coin[1:]  # XXBT → XBT, XETH → ETH
+            if coin.startswith("Z"):
+                coin = coin[1:]
+            result[coin] = {
+                "pair": pair,
+                "vol": float(p.get("vol", 0)),
+                "cost": float(p.get("cost", 0)),
+                "margin": float(p.get("margin", 0)),
+                "net": float(p.get("net", 0)),
+                "value": float(p.get("value", 0)),
+            }
+        logging.info(f"[Sync] Kraken open positions: {list(result.keys())}")
+        return result
+    except Exception as e:
+        logging.error(f"[Sync] OpenPositions failed: {e}")
+        return {}
+
+
+def sync_trades_with_kraken(trades: list, balance: dict, request_fn=None) -> tuple[list, bool]:
+    """
+    מסנכרן את swing_trades.json עם המציאות האמיתית בקרקן.
+    בודק גם balance וגם OpenPositions — סוגר כל פוזיציה שלא קיימת בקרקן.
     """
     changed = False
+
+    # משוך פוזיציות מרג'ין פתוחות מקרקן
+    kraken_positions = get_kraken_open_positions(request_fn) if request_fn else {}
+
     for t in trades:
         if t.get("status") != "open":
             continue
         if t.get("is_stock"):
-            continue  # Futures — לא נבדוק לפי balance רגיל
+            continue  # Futures — נבדוק בנפרד
 
         coin    = t["coin"]
-        vol     = t.get("volume", 0)
         holding = float(balance.get(coin, 0))
         min_vol = CANDIDATES.get(coin, {}).get("min_vol", 0.001)
 
-        if holding < min_vol * 0.5:
-            # המטבע כמעט לא קיים — הפוזיציה נסגרה מחוץ לבוט
+        # בדוק אם יש פוזיציה פתוחה בקרקן עבור המטבע הזה
+        in_kraken_positions = coin in kraken_positions
+        # בדוק אם יש יתרה של המטבע בארנק
+        in_balance = holding >= min_vol * 0.5
+
+        if not in_kraken_positions and not in_balance:
+            # לא קיים לא בפוזיציות ולא בארנק — נסגר מחוץ לבוט
             current = get_current_price(t["pair"])
             pnl_pct = round((current - t["entry_price"]) / t["entry_price"] * 100, 2) if current and t["entry_price"] else 0
-            t["status"]       = "closed_externally"
-            t["date_close"]   = datetime.now().isoformat()
-            t["close_price"]  = current or t.get("current_price", t["entry_price"])
-            t["pnl_pct"]      = pnl_pct
-            t["pnl_usd"]      = round(pnl_pct / 100 * t.get("usd", 0), 2)
+            t["status"]      = "closed_externally"
+            t["date_close"]  = datetime.now().isoformat()
+            t["close_price"] = current or t.get("current_price", t["entry_price"])
+            t["pnl_pct"]     = pnl_pct
+            t["pnl_usd"]     = round(pnl_pct / 100 * t.get("usd", 0), 2)
             changed = True
-            logging.warning(f"[Sync] {coin} not in wallet (holding={holding:.6f}) — marked closed_externally | P&L≈{pnl_pct:+.1f}%")
+            logging.warning(f"[Sync] {coin} not found in Kraken (balance={holding:.6f}, margin_pos={in_kraken_positions}) — closed_externally | P&L≈{pnl_pct:+.1f}%")
             archive_closed_trade(t)
 
     return trades, changed
@@ -441,8 +481,8 @@ def check_open_swings(balance: dict, request_fn) -> list:
     """נקרא כל 15 דקות — בודק אם פוזיציות פתוחות הגיעו ליעד/stop"""
     trades  = load_swing_trades()
 
-    # סנכרון עם קרקן — סוגר אוטומטית פוזיציות שנסגרו מחוץ לבוט
-    trades, sync_changed = sync_trades_with_kraken(trades, balance)
+    # סנכרון עם קרקן — בודק balance + OpenPositions, סוגר מה שלא קיים
+    trades, sync_changed = sync_trades_with_kraken(trades, balance, request_fn)
     changed = sync_changed
 
     for t in trades:
