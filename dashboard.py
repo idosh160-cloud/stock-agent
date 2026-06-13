@@ -76,7 +76,28 @@ def load_scan():
 SWING_FILE   = os.path.join(BASE_DIR, "swing_trades.json")
 HISTORY_FILE = os.path.join(BASE_DIR, "swing_history.json")
 
+GITHUB_REPO = "idosh160-cloud/stock-agent"
+GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "")
+
+def _fetch_github_json(filename):
+    try:
+        headers = {"Authorization": f"token {GITHUB_TOKEN}"} if GITHUB_TOKEN else {}
+        r = requests.get(
+            f"https://api.github.com/repos/{GITHUB_REPO}/contents/{filename}",
+            headers=headers,
+            timeout=10
+        )
+        if r.status_code == 200:
+            import base64
+            return json.loads(base64.b64decode(r.json()["content"]).decode())
+    except Exception:
+        pass
+    return None
+
 def load_crypto():
+    data = _fetch_github_json("last_crypto.json")
+    if data:
+        return data
     if not os.path.exists(CRYPTO_FILE):
         return None
     try:
@@ -86,6 +107,9 @@ def load_crypto():
         return None
 
 def load_swings():
+    data = _fetch_github_json("swing_trades.json")
+    if data is not None:
+        return data
     if not os.path.exists(SWING_FILE):
         return []
     try:
@@ -95,6 +119,9 @@ def load_swings():
         return []
 
 def load_history():
+    data = _fetch_github_json("swing_history.json")
+    if data is not None:
+        return data
     if not os.path.exists(HISTORY_FILE):
         return []
     try:
