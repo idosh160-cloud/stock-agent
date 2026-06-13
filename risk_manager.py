@@ -11,7 +11,7 @@ DIR = os.path.dirname(os.path.abspath(__file__))
 DRAWDOWN_FILE = os.path.join(DIR, "daily_drawdown.json")
 
 # ── חוקים קשיחים ────────────────────────────────────────────────────────────
-MAX_PORTFOLIO_RISK_PCT = 0.20   # לא יותר מ-20% מהתיק בסיכון בו-זמנית
+MAX_PORTFOLIO_RISK_PCT = 1.00   # עד 100% מהתיק בסיכון
 MAX_SINGLE_ASSET_PCT   = 0.25   # לא יותר מ-25% מהתיק בנכס אחד
 MAX_DAILY_DRAWDOWN_PCT = 0.10   # kill-switch: עצור הכל אם ירדנו 10% ביום
 MIN_FREE_MARGIN_USD    = 30     # תמיד שמור $30 מרג'ין פנוי כרזרבה
