@@ -112,7 +112,7 @@ def main():
         # ── סריקת swing + רוטציה — תמיד רץ (קלוד מחליט אם לפתוח/לסגור) ──
         if usdc > 5:
             try:
-                swing_trades = run_swing_scan(balance, usdc, _request, btc_price)
+                swing_trades = run_swing_scan(balance, usdc, _request, btc_price, state["portfolio_usd"])
                 logging.info("Swing scan completed")
             except Exception as e:
                 logging.warning(f"Swing scan failed: {e}")

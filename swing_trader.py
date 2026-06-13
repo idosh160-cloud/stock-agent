@@ -21,7 +21,7 @@ STOP_PCT          = 0.02   # -2% עצור הפסד קריפטו
 STOP_PCT_STOCK    = 0.015  # -1.5% עצור הפסד xStocks
 MAX_OPEN          = 6      # פוזיציות פתוחות מקסימום
 MAX_BUDGET        = 600    # תקציב מקסימלי לסווינגים
-LEVERAGE          = 2      # מינוף x2 על כל קנייה (Kraken margin) — לא למניות
+LEVERAGE          = 5      # מינוף x5 על כל קנייה (Kraken margin) — לא למניות
 
 # מטבעות שקרקן מאפשר עליהם margin trading
 MARGIN_ELIGIBLE = {"ETH", "SOL", "XRP", "LTC", "BCH", "LINK", "DOT", "ADA", "AVAX", "BNB", "DOGE", "XMR", "TON"}
@@ -286,7 +286,7 @@ def load_performance_summary() -> str:
         return ""
 
 
-def analyze_with_claude(candidates: list, open_coins: set, usdc: float, btc_price: float, stock_candidates: list = None, open_positions: list = None) -> dict:
+def analyze_with_claude(candidates: list, open_coins: set, usdc: float, btc_price: float, stock_candidates: list = None, open_positions: list = None, portfolio_summary: str = "") -> dict:
     _load_api_key()
     import anthropic
 
@@ -338,7 +338,10 @@ Only rotate if the new opportunity is clearly superior — don't churn for small
 
 BTC context price: ${btc_price:,.0f}
 Available USDC: ${usdc:.2f}
-Crypto trade size: ${SWING_USD} each (2x leverage = controls ${SWING_USD*2}) | Take-profit: +5% | Stop-loss: -2%
+Crypto trade size: ${SWING_USD} each (5x leverage = controls ${SWING_USD*5}) | Take-profit: +5% | Stop-loss: -2%
+
+PORTFOLIO STATUS:
+{portfolio_summary}
 {open_positions_rows}{perf_section}{rotation_instruction}
 
 Crypto altcoin candidates ranked by 24h movement:
@@ -627,26 +630,36 @@ def get_margin_used(request_fn) -> float:
     except Exception:
         return 0.0
 
-def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0) -> list:
+def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0, portfolio_usd: float = 0) -> list:
     """נקרא כל שעה — Claude סורק ובוחר מועמדים"""
+    from risk_manager import (
+        get_portfolio_exposure, can_open_position, get_weakest_position,
+        build_portfolio_summary, update_drawdown, is_kill_switch_active
+    )
+
     trades      = load_swing_trades()
     open_swings = [t for t in trades if t.get("status") == "open"]
     open_coins  = {t["coin"] for t in open_swings}
-    open_budget = sum(t.get("usd", 0) for t in open_swings)
 
-    if len(open_swings) >= MAX_OPEN:
-        logging.info(f"[Swing] {MAX_OPEN} positions open — checking for rotation opportunity")
-    if open_budget >= MAX_BUDGET:
-        logging.info(f"[Swing] Budget ${MAX_BUDGET} reached — skipping scan")
+    # עדכן drawdown יומי
+    if portfolio_usd:
+        update_drawdown(portfolio_usd)
+
+    # kill-switch — אם הפסדנו יותר מדי היום, עצור הכל
+    if is_kill_switch_active(portfolio_usd):
+        logging.warning("[RiskManager] Kill switch active — skipping scan")
         return trades
+
     if usdc < 10:
         logging.info(f"[Swing] USDC critically low ${usdc:.2f} — skipping scan")
         return trades
 
-    # בדוק margin usage — אם מעל 80% מהתקרה, אל תנסה leverage
     margin_used = get_margin_used(request_fn)
-    margin_headroom = max(0, 150 - margin_used)  # ~$150 תקרה לחשבון ~$600
+    margin_headroom = max(0, 200 - margin_used)  # תקרה $200 עם x5
     logging.info(f"[Swing] Margin used: ${margin_used:.0f} | headroom: ${margin_headroom:.0f}")
+
+    # חשיפת תיק מלאה
+    exposure = get_portfolio_exposure(open_swings, portfolio_usd or (usdc + sum(t.get("usd",0) for t in open_swings)))
 
     candidates = get_candidate_data()
     if not candidates:
@@ -661,8 +674,11 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0)
     for s in stock_candidates:
         all_candidates_map[s["coin"]] = s
 
+    # בנה תמונת תיק מלאה לקלוד
+    portfolio_summary = build_portfolio_summary(exposure, open_swings, margin_used, margin_headroom)
+
     # תמיד קרא לקלוד — גם כשמלא, כדי לאפשר רוטציה
-    analysis    = analyze_with_claude(candidates, open_coins, usdc, btc_price, stock_candidates, open_swings)
+    analysis    = analyze_with_claude(candidates, open_coins, usdc, btc_price, stock_candidates, open_swings, portfolio_summary)
     market_read = analysis.get("market_read", "")
     skip_reason = analysis.get("skip_reason", "")
     logging.info(f"[Swing] Claude: {market_read} | skipped: {skip_reason}")
@@ -738,6 +754,53 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0)
         if vol < min_v:
             logging.warning(f"[Swing] {coin} vol={vol:.6f} < min={min_v} — skip")
             continue
+
+        # בדוק risk_manager לפני ביצוע
+        if not is_stock:
+            from risk_manager import can_open_position, get_weakest_position, get_portfolio_exposure
+            ok, reason = can_open_position(coin, trade_usd, margin_headroom, exposure, portfolio_usd or usdc)
+            if not ok:
+                # אם הסיבה היא מרג'ין — בדוק אם כדאי לסגור פוזיציה חלשה
+                if "מרג'ין" in reason:
+                    weakest = get_weakest_position(open_swings)
+                    if weakest and weakest.get("pnl_pct", 0) < 1.0:
+                        logging.info(f"[RiskManager] Margin full — rotating: closing {weakest['coin']} to open {coin}")
+                        # סגור את החלשה
+                        for t in trades:
+                            if t.get("coin") == weakest["coin"] and t.get("status") == "open":
+                                cur = get_current_price(t["pair"])
+                                if cur > 0:
+                                    cfg_w = CANDIDATES.get(weakest["coin"], {})
+                                    pd_w  = cfg_w.get("price_dec", 4)
+                                    lp_w  = round(cur * 0.999, pd_w)
+                                    try:
+                                        if t.get("sell_txid"):
+                                            request_fn("/0/private/CancelOrder", {"txid": t["sell_txid"]}, private=True)
+                                        sp = {"pair": t["pair"], "type": "sell", "ordertype": "limit",
+                                              "volume": f"{t['volume']:.8f}", "price": f"{lp_w:.{pd_w}f}",
+                                              "leverage": str(LEVERAGE)}
+                                        res = request_fn("/0/private/AddOrder", sp, private=True)
+                                        txid_w = list(res.get("txid", ["?"]))[0]
+                                        t["status"]     = "closed_profit" if cur >= t["entry_price"] else "closed_loss"
+                                        t["date_close"] = datetime.now().isoformat()
+                                        t["close_price"]= cur
+                                        t["close_txid"] = txid_w
+                                        t["pnl_pct"]    = round((cur - t["entry_price"]) / t["entry_price"] * 100, 2)
+                                        archive_closed_trade(t)
+                                        open_swings = [s for s in open_swings if s["coin"] != weakest["coin"]]
+                                        open_coins.discard(weakest["coin"])
+                                        exposure = get_portfolio_exposure(open_swings, portfolio_usd or usdc)
+                                        logging.info(f"[RiskManager] Closed {weakest['coin']} @ {cur:.4f} P&L={t['pnl_pct']:+.1f}%")
+                                    except Exception as re:
+                                        logging.error(f"[RiskManager] Rotation close failed: {re}")
+                                        continue
+                                break
+                    else:
+                        logging.info(f"[RiskManager] Margin full but no weak position to rotate — skip {coin}")
+                        continue
+                else:
+                    logging.info(f"[RiskManager] Blocked {coin}: {reason}")
+                    continue
 
         buy_lp   = round(price * 0.999, price_dec)
         target_p = round(price * (1 + target_pct), price_dec)
