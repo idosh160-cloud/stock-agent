@@ -58,5 +58,25 @@
     "confidence": "MEDIUM",
     "txid": "OJFYPO-F4MKC-RAMJWA",
     "close_txid": "OALWBX-XXAFY-DJMHVF"
+  },
+  {
+    "coin": "SOL",
+    "pair": "SOLUSDC",
+    "status": "closed_profit",
+    "leveraged": true,
+    "collateral": 100.0,
+    "volume": 1.48060409,
+    "entry_price": 67.54,
+    "close_price": 67.84,
+    "target_price": 70.92,
+    "stop_price": 66.19,
+    "pnl_usd": 0.44,
+    "pnl_pct": 0.44,
+    "date_open": "2026-06-12T20:42:47.712699",
+    "date_close": "2026-06-13T11:59:28.552979",
+    "reasoning": "סול מציג מומנטום חיובי של +1.1% עם נפח מסחר גבוה מאוד של $1.74M שמאשר את התנועה, והמחיר נמצא בטווח בריא עם עוד מקום לעלייה עד לשיא היומי. הכניסה כרגע קרובה לאמצע הטווח היומי עם יחס סיכוי/סיכון טוב תחת לוורג' x2.",
+    "confidence": "HIGH",
+    "txid": "OW2CTJ-625R2-25ZUYK",
+    "close_txid": "OCXZVH-FQHKB-Z5ITIL"
   }
 ]
