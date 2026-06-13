@@ -454,27 +454,26 @@ def get_kraken_state(request_fn) -> dict:
 
 def sync_trades_with_kraken(trades: list, balance: dict, request_fn=None) -> tuple[list, bool]:
     """
-    קרקן הוא מקור האמת.
-    כל פוזיציה ב-JSON שלא קיימת בקרקן (לא במרג'ין ולא בארנק) — נסגרת אוטומטית.
+    קרקן הוא מקור האמת — סנכרון דו-כיווני בכל ריצה:
+    1. פוזיציה ב-JSON כ-open אבל לא בקרקן → סוגר אוטומטית
+    2. פוזיציה בקרקן אבל ב-JSON כ-closed → פותח מחדש
     """
     changed = False
     if not request_fn:
         return trades, changed
 
-    kraken = get_kraken_state(request_fn)
+    kraken       = get_kraken_state(request_fn)
     margin_coins = set(kraken["margin_positions"].keys())
 
+    # כיוון 1: סגור מה שלא קיים בקרקן
     for t in trades:
         if t.get("status") != "open" or t.get("is_stock"):
             continue
-
         coin    = t["coin"]
         holding = float(balance.get(coin, 0))
         min_vol = CANDIDATES.get(coin, {}).get("min_vol", 0.001)
-
         in_margin  = coin in margin_coins
         in_balance = holding >= min_vol * 0.5
-
         if not in_margin and not in_balance:
             current = get_current_price(t["pair"])
             pnl_pct = round((current - t["entry_price"]) / t["entry_price"] * 100, 2) if current and t["entry_price"] else 0
@@ -486,6 +485,48 @@ def sync_trades_with_kraken(trades: list, balance: dict, request_fn=None) -> tup
             changed = True
             logging.warning(f"[Sync] {coin} gone from Kraken → closed_externally | P&L≈{pnl_pct:+.1f}%")
             archive_closed_trade(t)
+
+    # כיוון 2: פתח מחדש מה שקרקן אומר שפתוח אבל JSON לא יודע עליו
+    open_coins_in_json = {t["coin"] for t in trades if t.get("status") == "open"}
+    for coin, kpos in kraken["margin_positions"].items():
+        if coin in open_coins_in_json:
+            continue
+        # חפש רשומה קיימת בJSON (יכול להיות closed_externally בטעות)
+        existing = next((t for t in trades if t["coin"] == coin and t.get("pair") == kpos["pair"]), None)
+        if existing:
+            existing["status"]     = "open"
+            existing["date_close"] = None
+            changed = True
+            logging.warning(f"[Sync] {coin} IS open in Kraken but was closed in JSON → reopened")
+        else:
+            # פוזיציה חדשה שהבוט לא פתח — הוסף אותה
+            current = get_current_price(kpos["pair"])
+            entry   = round(kpos["cost"] / kpos["vol"], 6) if kpos["vol"] else current
+            trades.append({
+                "coin":         coin,
+                "pair":         kpos["pair"],
+                "entry_price":  entry,
+                "limit_price":  entry,
+                "volume":       kpos["vol"],
+                "usd":          round(kpos["cost"], 2),
+                "target_price": round(entry * (1 + TARGET_PCT), 6),
+                "stop_price":   round(entry * (1 - STOP_PCT), 6),
+                "date_open":    datetime.now().isoformat(),
+                "date_close":   None,
+                "status":       "open",
+                "confidence":   "MEDIUM",
+                "reasoning":    "Restored from Kraken OpenPositions",
+                "market_read":  "",
+                "current_price":current,
+                "pnl_pct":      0.0,
+                "pnl_usd":      0.0,
+                "txid":         kpos.get("txid", ""),
+                "sell_txid":    None,
+                "close_price":  None,
+                "close_txid":   None,
+            })
+            changed = True
+            logging.warning(f"[Sync] {coin} found in Kraken but missing from JSON → added")
 
     return trades, changed
 
