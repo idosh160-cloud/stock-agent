@@ -404,10 +404,46 @@ If nothing looks good — return picks as empty array. Better to miss a trade th
 
 # ── Main cycles ───────────────────────────────────────────────────────────
 
+def sync_trades_with_kraken(trades: list, balance: dict) -> tuple[list, bool]:
+    """
+    מסנכרן את swing_trades.json עם היתרה האמיתית בקרקן.
+    אם פוזיציה מסומנת open אבל המטבע לא קיים בארנק — סוגר אותה אוטומטית.
+    """
+    changed = False
+    for t in trades:
+        if t.get("status") != "open":
+            continue
+        if t.get("is_stock"):
+            continue  # Futures — לא נבדוק לפי balance רגיל
+
+        coin    = t["coin"]
+        vol     = t.get("volume", 0)
+        holding = float(balance.get(coin, 0))
+        min_vol = CANDIDATES.get(coin, {}).get("min_vol", 0.001)
+
+        if holding < min_vol * 0.5:
+            # המטבע כמעט לא קיים — הפוזיציה נסגרה מחוץ לבוט
+            current = get_current_price(t["pair"])
+            pnl_pct = round((current - t["entry_price"]) / t["entry_price"] * 100, 2) if current and t["entry_price"] else 0
+            t["status"]       = "closed_externally"
+            t["date_close"]   = datetime.now().isoformat()
+            t["close_price"]  = current or t.get("current_price", t["entry_price"])
+            t["pnl_pct"]      = pnl_pct
+            t["pnl_usd"]      = round(pnl_pct / 100 * t.get("usd", 0), 2)
+            changed = True
+            logging.warning(f"[Sync] {coin} not in wallet (holding={holding:.6f}) — marked closed_externally | P&L≈{pnl_pct:+.1f}%")
+            archive_closed_trade(t)
+
+    return trades, changed
+
+
 def check_open_swings(balance: dict, request_fn) -> list:
     """נקרא כל 15 דקות — בודק אם פוזיציות פתוחות הגיעו ליעד/stop"""
     trades  = load_swing_trades()
-    changed = False
+
+    # סנכרון עם קרקן — סוגר אוטומטית פוזיציות שנסגרו מחוץ לבוט
+    trades, sync_changed = sync_trades_with_kraken(trades, balance)
+    changed = sync_changed
 
     for t in trades:
         if t.get("status") != "open":
