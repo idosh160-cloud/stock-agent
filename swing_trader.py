@@ -154,6 +154,28 @@ def save_swing_trades(trades: list):
     with open(SWING_FILE, "w", encoding="utf-8") as f:
         json.dump(trades, f, indent=2, ensure_ascii=False)
 
+def _send_trade_alert(subject: str, body: str):
+    """שולח מייל קצר על פעולת מסחר."""
+    try:
+        import smtplib, ssl
+        from email.mime.text import MIMEText
+        sender   = os.environ.get("GMAIL_USER", "")
+        password = os.environ.get("GMAIL_APP_PASSWORD", "")
+        if not sender or not password:
+            return
+        msg = MIMEText(body, "plain", "utf-8")
+        msg["Subject"] = subject
+        msg["From"]    = sender
+        msg["To"]      = sender
+        ctx = ssl.create_default_context()
+        with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=ctx) as s:
+            s.login(sender, password)
+            s.sendmail(sender, sender, msg.as_string())
+        logging.info(f"[Alert] מייל נשלח: {subject}")
+    except Exception as e:
+        logging.warning(f"[Alert] שליחת מייל נכשלה: {e}")
+
+
 def archive_closed_trade(t: dict):
     """מעביר עסקה סגורה לארכיון הקבוע"""
     try:
@@ -581,6 +603,10 @@ def sync_trades_with_kraken(trades: list, balance: dict, request_fn=None) -> tup
             changed = True
             logging.warning(f"[Sync] {coin} gone from Kraken → closed_externally | P&L≈{pnl_pct:+.1f}%")
             archive_closed_trade(t)
+            _send_trade_alert(
+                f"⚠️ נסגר חיצונית: {coin}",
+                f"מטבע: {coin}\nקרקן סגר את הפוזיציה (target/stop הגיע)\nמחיר: ${current:.4f}\nP&L: {pnl_pct:+.1f}%"
+            )
 
     # כיוון 2: פתח מחדש מה שקרקן אומר שפתוח אבל JSON לא יודע עליו
     open_coins_in_json = {t["coin"] for t in trades if t.get("status") == "open"}
@@ -676,6 +702,10 @@ def check_open_swings(balance: dict, request_fn) -> list:
                 t["close_txid"]  = t["sell_txid"]
                 logging.info(f"[Swing] CLOSE PROFIT {coin} @ {current:.4f} (limit already placed)")
                 archive_closed_trade(t)
+                _send_trade_alert(
+                    f"✅ סגירת רווח: {coin}",
+                    f"מטבע: {coin}\nיציאה: ${current:.4f}\nכניסה: ${t['entry_price']:.4f}\nרווח: {t['pnl_pct']:+.1f}% (${t['pnl_usd']:+.2f})"
+                )
             else:
                 # stop-loss — בטל את ה-TP הפתוח ושים market sell
                 if t.get("sell_txid"):
@@ -707,6 +737,10 @@ def check_open_swings(balance: dict, request_fn) -> list:
                     t["close_txid"]  = txid
                     logging.info(f"[Swing] CLOSE STOP {coin} @ {current:.4f} | P&L {pnl_pct:+.1f}% | txid={txid}")
                     archive_closed_trade(t)
+                    _send_trade_alert(
+                        f"🔴 Stop-Loss: {coin}",
+                        f"מטבע: {coin}\nיציאה: ${current:.4f}\nכניסה: ${t['entry_price']:.4f}\nהפסד: {pnl_pct:+.1f}% (${t['pnl_usd']:+.2f})"
+                    )
                 except Exception as e:
                     logging.error(f"[Swing] stop sell failed {coin}: {e}")
 
@@ -981,6 +1015,10 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
             trades.append(trade)
             open_coins.add(coin)
             logging.info(f"[Swing] OPEN {coin} @ {price:.4f} target={target_p} stop={stop_p} | {reason[:80]}")
+            _send_trade_alert(
+                f"🟢 נפתחה פוזיציה: {coin}",
+                f"מטבע: {coin}\nכניסה: ${price:.4f}\nיעד: ${target_p:.4f} (+{TARGET_PCT*100:.0f}%)\nStop: ${stop_p:.4f} (-{STOP_PCT*100:.0f}%)\nגודל: ${trade_usd:.0f}\nסיבה: {reason[:150]}"
+            )
         except Exception as e:
             logging.error(f"[Swing] buy failed {coin}: {e}")
 
