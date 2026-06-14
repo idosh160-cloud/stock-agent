@@ -9,6 +9,14 @@ import logging
 import requests
 from datetime import datetime
 
+try:
+    import pandas as pd
+    import pandas_ta as ta
+    _PANDAS_TA_AVAILABLE = True
+except ImportError:
+    _PANDAS_TA_AVAILABLE = False
+    logging.warning("[Swing] pandas-ta not installed — indicators disabled")
+
 DIR          = os.path.dirname(os.path.abspath(__file__))
 SWING_FILE   = os.path.join(DIR, "swing_trades.json")
 HISTORY_FILE = os.path.join(DIR, "swing_history.json")
@@ -226,6 +234,79 @@ def get_candidate_data() -> list:
     return out
 
 
+def get_ohlcv(pair: str, interval: int = 60, count: int = 50) -> list:
+    """שולף נרות OHLCV מ-Kraken. interval בדקות. מחזיר רשימת [time,open,high,low,close,vol]."""
+    try:
+        r = requests.get(
+            f"https://api.kraken.com/0/public/OHLC?pair={pair}&interval={interval}",
+            timeout=10
+        )
+        result = r.json().get("result", {})
+        key = next((k for k in result if k != "last"), None)
+        if not key:
+            return []
+        candles = result[key][-count:]
+        return [[float(c[1]), float(c[2]), float(c[3]), float(c[4]), float(c[6])] for c in candles]
+    except Exception as e:
+        logging.debug(f"[Swing] OHLCV fetch failed for {pair}: {e}")
+        return []
+
+
+def get_indicators(pair: str) -> dict:
+    """מחשב RSI-14, MACD(12,26,9), Bollinger(20,2) על נרות שעתיים."""
+    if not _PANDAS_TA_AVAILABLE:
+        return {}
+    candles = get_ohlcv(pair, interval=60, count=60)
+    if len(candles) < 26:
+        return {}
+    try:
+        df = pd.DataFrame(candles, columns=["open", "high", "low", "close", "volume"])
+        rsi = ta.rsi(df["close"], length=14)
+        macd_df = ta.macd(df["close"], fast=12, slow=26, signal=9)
+        bb_df = ta.bbands(df["close"], length=20, std=2)
+
+        result = {}
+        if rsi is not None and not rsi.empty:
+            result["rsi"] = round(float(rsi.iloc[-1]), 1)
+        if macd_df is not None and not macd_df.empty:
+            cols = macd_df.columns
+            macd_val = float(macd_df[cols[0]].iloc[-1])
+            signal_val = float(macd_df[cols[2]].iloc[-1])
+            result["macd"] = round(macd_val, 6)
+            result["macd_signal"] = round(signal_val, 6)
+            result["macd_hist"] = round(macd_val - signal_val, 6)
+        if bb_df is not None and not bb_df.empty:
+            close = float(df["close"].iloc[-1])
+            upper = float(bb_df.iloc[-1, bb_df.columns.get_loc([c for c in bb_df.columns if "BBU" in c][0])])
+            lower = float(bb_df.iloc[-1, bb_df.columns.get_loc([c for c in bb_df.columns if "BBL" in c][0])])
+            mid   = float(bb_df.iloc[-1, bb_df.columns.get_loc([c for c in bb_df.columns if "BBM" in c][0])])
+            if upper != lower:
+                bb_pct = round((close - lower) / (upper - lower) * 100, 1)
+            else:
+                bb_pct = 50.0
+            result["bb_pct"] = bb_pct  # 0=ב-lower, 100=ב-upper
+            result["bb_upper"] = round(upper, 6)
+            result["bb_lower"] = round(lower, 6)
+            result["bb_mid"] = round(mid, 6)
+        return result
+    except Exception as e:
+        logging.debug(f"[Swing] indicators calc failed for {pair}: {e}")
+        return {}
+
+
+def enrich_with_indicators(candidates: list) -> list:
+    """מוסיף RSI/MACD/BB לכל מועמד. שומר על הרשימה המקורית אם pandas-ta לא זמין."""
+    if not _PANDAS_TA_AVAILABLE:
+        return candidates
+    for c in candidates:
+        try:
+            indicators = get_indicators(c["pair"])
+            c.update(indicators)
+        except Exception:
+            pass
+    return candidates
+
+
 def get_current_price(pair: str) -> float:
     try:
         r = requests.get(
@@ -290,11 +371,29 @@ def analyze_with_claude(candidates: list, open_coins: set, usdc: float, btc_pric
     _load_api_key()
     import anthropic
 
+    top_candidates = enrich_with_indicators(candidates[:12])
+
+    def _indicator_str(c: dict) -> str:
+        parts = []
+        if "rsi" in c:
+            rsi = c["rsi"]
+            rsi_note = " (oversold)" if rsi < 35 else " (overbought)" if rsi > 65 else ""
+            parts.append(f"RSI={rsi}{rsi_note}")
+        if "macd_hist" in c:
+            hist = c["macd_hist"]
+            parts.append(f"MACD_hist={'+' if hist > 0 else ''}{hist:.4f}")
+        if "bb_pct" in c:
+            bp = c["bb_pct"]
+            bb_note = " (near lower)" if bp < 20 else " (near upper)" if bp > 80 else ""
+            parts.append(f"BB%={bp}{bb_note}")
+        return " | " + " | ".join(parts) if parts else ""
+
     crypto_rows = "\n".join([
         f"  [CRYPTO] {c['coin']}: ${c['price']:.4f} | {c['change_24h']:+.1f}% | "
         f"range {c['range_24h']:.1f}% | vol ${c['volume_usdc']:,.0f} | "
         f"H=${c['high_24h']:.4f} L=${c['low_24h']:.4f}"
-        for c in candidates[:12]
+        + _indicator_str(c)
+        for c in top_candidates
     ])
 
     stock_section = ""
