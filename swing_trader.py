@@ -807,24 +807,26 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
 
     # סינון חכם — קרא לClaude רק אם יש סיגנל אמיתי
     def _should_call_claude(candidates: list, open_swings: list) -> tuple[bool, str]:
-        # תמיד קרא אם יש פוזיציות פתוחות — כדי לאפשר רוטציה
-        if open_swings:
-            return True, "יש פוזיציות פתוחות — בודק רוטציה"
-        # תנועה חזקה ב-24 שעות
-        strong_move = [c for c in candidates if abs(c.get("change_24h", 0)) >= 3.0]
+        # פוזיציה עם בעיה — P&L שלילי מעל 1% או קרובה לסטופ
+        weak = [t for t in open_swings if t.get("pnl_pct", 0) < -1.0]
+        if weak:
+            coins = ", ".join(t["coin"] for t in weak)
+            return True, f"פוזיציה חלשה: {coins}"
+        # אין פוזיציות — צריך לחפש הזדמנויות
+        if not open_swings:
+            return True, "אין פוזיציות פתוחות — סורק הזדמנויות"
+        # תנועה חזקה ב-24 שעות במטבע שלא מחזיקים
+        open_coins_set = {t["coin"] for t in open_swings}
+        strong_move = [c for c in candidates if abs(c.get("change_24h", 0)) >= 3.0 and c["coin"] not in open_coins_set]
         if strong_move:
             coins = ", ".join(c["coin"] for c in strong_move[:3])
-            return True, f"תנועה חזקה: {coins}"
-        # RSI קיצוני
-        extreme_rsi = [c for c in candidates if c.get("rsi") and (c["rsi"] < 35 or c["rsi"] > 65)]
+            return True, f"תנועה חזקה במטבע חדש: {coins}"
+        # RSI קיצוני במטבע שלא מחזיקים
+        extreme_rsi = [c for c in candidates if c.get("rsi") and (c["rsi"] < 35 or c["rsi"] > 65) and c["coin"] not in open_coins_set]
         if extreme_rsi:
             coins = ", ".join(c["coin"] for c in extreme_rsi[:3])
             return True, f"RSI קיצוני: {coins}"
-        # MACD היסטוגרם חיובי חזק
-        strong_macd = [c for c in candidates if c.get("macd_hist") and abs(c["macd_hist"]) > 0]
-        if len(strong_macd) >= 3:
-            return True, f"{len(strong_macd)} מטבעות עם MACD חיובי"
-        return False, "אין סיגנל — דולג על קריאה לClaude"
+        return False, "הכל שקט — דולג על קריאה לClaude"
 
     should_call, call_reason = _should_call_claude(candidates, open_swings)
     if not should_call:
