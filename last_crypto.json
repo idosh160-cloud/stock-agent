@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-14T06:21:11.350245",
+  "timestamp": "2026-06-14T07:00:03.981514",
   "balance": {
     "ADA": 582.86173522,
     "ATOM": 5.0,
@@ -13,38 +13,38 @@
     {
       "coin": "ETH",
       "qty": 0.19907108,
-      "price": 1680.01,
-      "value_usd": 334.44,
+      "price": 1676.22,
+      "value_usd": 333.69,
       "avg_cost": 1650.731105,
-      "pnl_usd": 5.83,
-      "pnl_pct": 1.77,
-      "change_24h": -0.08,
+      "pnl_usd": 5.07,
+      "pnl_pct": 1.54,
+      "change_24h": -0.3,
       "high_24h": 1696.79,
-      "low_24h": 1664.84
+      "low_24h": 1668.05
     },
     {
       "coin": "ADA",
       "qty": 582.86173522,
-      "price": 0.172192,
-      "value_usd": 100.36,
+      "price": 0.172157,
+      "value_usd": 100.34,
       "avg_cost": 0.171428,
-      "pnl_usd": 0.45,
-      "pnl_pct": 0.45,
-      "change_24h": 0.27,
+      "pnl_usd": 0.42,
+      "pnl_pct": 0.43,
+      "change_24h": 0.25,
       "high_24h": 0.175738,
-      "low_24h": 0.169477
+      "low_24h": 0.171406
     },
     {
       "coin": "SOL",
       "qty": 0.22928768,
-      "price": 68.38,
-      "value_usd": 15.68,
+      "price": 68.23,
+      "value_usd": 15.64,
       "avg_cost": 67.151692,
-      "pnl_usd": 0.28,
-      "pnl_pct": 1.83,
-      "change_24h": -0.81,
+      "pnl_usd": 0.25,
+      "pnl_pct": 1.61,
+      "change_24h": -1.03,
       "high_24h": 69.47,
-      "low_24h": 66.72
+      "low_24h": 66.96
     },
     {
       "coin": "LINK",
@@ -71,30 +71,30 @@
       "low_24h": 1.9349
     }
   ],
-  "portfolio_usd": 608.51,
+  "portfolio_usd": 607.7,
   "usdc": 133.02,
   "signals": [
     {
       "coin": "BTC",
       "pair": "XBTUSDC",
       "action": "HOLD (pending order)",
-      "rsi": 71.39,
-      "macd": -18.989708,
-      "ma50": 63863.65,
-      "ma200": 62632.04,
-      "support": 64345.0,
-      "resistance": 64703.66,
+      "rsi": 64.88,
+      "macd": -37.798922,
+      "ma50": 63880.31,
+      "ma200": 62647.29,
+      "support": 64199.36,
+      "resistance": 64345.0,
       "near_support": true,
       "buy_score": 3,
       "sell_score": 5,
       "reasons": [
-        "RSI 71.39 (overbought)",
+        "RSI 64.88 (overbought)",
         "MACD bearish crossover",
         "Above MA200 (uptrend)",
-        "Near support $64,345.0000",
-        "Near resistance $64,703.6600"
+        "Near support $64,199.3600",
+        "Near resistance $64,345.0000"
       ],
-      "price": 64429.68,
+      "price": 64275.37,
       "volume": 0,
       "usd_value": 0.0,
       "limit_price": 0
@@ -103,11 +103,11 @@
       "coin": "ETH",
       "pair": "ETHUSDC",
       "action": "HOLD (pending order)",
-      "rsi": 55.13,
-      "macd": -0.58239,
-      "ma50": 1672.51,
-      "ma200": 1646.07,
-      "support": 1675.05,
+      "rsi": 53.0,
+      "macd": -0.952395,
+      "ma50": 1672.7,
+      "ma200": 1646.52,
+      "support": 1671.63,
       "resistance": 1685.1,
       "near_support": true,
       "buy_score": 3,
@@ -115,10 +115,10 @@
       "reasons": [
         "MACD bearish crossover",
         "Above MA200 (uptrend)",
-        "Near support $1,675.0500",
+        "Near support $1,671.6300",
         "Near resistance $1,685.1000"
       ],
-      "price": 1680.01,
+      "price": 1676.22,
       "volume": 0,
       "usd_value": 0.0,
       "limit_price": 0
@@ -127,22 +127,22 @@
       "coin": "XRP",
       "pair": "XRPUSDC",
       "action": "HOLD (pending order)",
-      "rsi": 57.58,
-      "macd": -0.000407,
+      "rsi": 55.48,
+      "macd": -0.000806,
       "ma50": 1.14,
       "ma200": 1.13,
-      "support": 1.1501,
-      "resistance": 1.156,
+      "support": 1.1438,
+      "resistance": 1.1501,
       "near_support": true,
       "buy_score": 3,
       "sell_score": 3,
       "reasons": [
         "MACD bearish crossover",
         "Above MA200 (uptrend)",
-        "Near support $1.1501",
-        "Near resistance $1.1560"
+        "Near support $1.1438",
+        "Near resistance $1.1501"
       ],
-      "price": 1.15177,
+      "price": 1.14731,
       "volume": 0,
       "usd_value": 0.0,
       "limit_price": 0
