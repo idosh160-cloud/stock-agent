@@ -118,5 +118,25 @@
     "confidence": "MEDIUM",
     "txid": "OLVT7L-2G4KR-7IPGIA",
     "close_txid": null
+  },
+  {
+    "coin": "ADA",
+    "pair": "ADAUSDC",
+    "status": "closed_loss",
+    "leveraged": true,
+    "collateral": 100.0,
+    "volume": 582.75058275,
+    "entry_price": 0.1716,
+    "close_price": 0.166783,
+    "target_price": 0.18018,
+    "stop_price": 0.168168,
+    "pnl_usd": -2.81,
+    "pnl_pct": -2.81,
+    "date_open": "2026-06-12T21:01:13.695764",
+    "date_close": "2026-06-14T15:00:04.384712",
+    "reasoning": "ADA נסחרת קרוב לתחתית היומית עם עלייה מתונה של 0.8% ונפח מסחר גבוה של $374K המאשר עניין קונים — תנאים טובים לניסיון bounce. הטווח היומי של 3.9% נותן מקום לתנועה לכיוון +5% מבלי שהמחיר נראה מותש.",
+    "confidence": "MEDIUM",
+    "txid": "OLU23X-433XF-HJZF3C",
+    "close_txid": "O7CUOW-7JABL-A7ABN5"
   }
 ]
