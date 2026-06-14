@@ -805,7 +805,33 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
     # בנה תמונת תיק מלאה לקלוד
     portfolio_summary = build_portfolio_summary(exposure, open_swings, margin_used, margin_headroom)
 
-    # תמיד קרא לקלוד — גם כשמלא, כדי לאפשר רוטציה
+    # סינון חכם — קרא לClaude רק אם יש סיגנל אמיתי
+    def _should_call_claude(candidates: list, open_swings: list) -> tuple[bool, str]:
+        # תמיד קרא אם יש פוזיציות פתוחות — כדי לאפשר רוטציה
+        if open_swings:
+            return True, "יש פוזיציות פתוחות — בודק רוטציה"
+        # תנועה חזקה ב-24 שעות
+        strong_move = [c for c in candidates if abs(c.get("change_24h", 0)) >= 3.0]
+        if strong_move:
+            coins = ", ".join(c["coin"] for c in strong_move[:3])
+            return True, f"תנועה חזקה: {coins}"
+        # RSI קיצוני
+        extreme_rsi = [c for c in candidates if c.get("rsi") and (c["rsi"] < 35 or c["rsi"] > 65)]
+        if extreme_rsi:
+            coins = ", ".join(c["coin"] for c in extreme_rsi[:3])
+            return True, f"RSI קיצוני: {coins}"
+        # MACD היסטוגרם חיובי חזק
+        strong_macd = [c for c in candidates if c.get("macd_hist") and abs(c["macd_hist"]) > 0]
+        if len(strong_macd) >= 3:
+            return True, f"{len(strong_macd)} מטבעות עם MACD חיובי"
+        return False, "אין סיגנל — דולג על קריאה לClaude"
+
+    should_call, call_reason = _should_call_claude(candidates, open_swings)
+    if not should_call:
+        logging.info(f"[Swing] {call_reason}")
+        return trades
+
+    logging.info(f"[Swing] קורא לClaude: {call_reason}")
     analysis    = analyze_with_claude(candidates, open_coins, usdc, btc_price, stock_candidates, open_swings, portfolio_summary)
     market_read = analysis.get("market_read", "")
     skip_reason = analysis.get("skip_reason", "")
