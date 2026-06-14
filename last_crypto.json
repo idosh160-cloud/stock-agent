@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-14T07:00:03.981514",
+  "timestamp": "2026-06-14T08:00:04.175472",
   "balance": {
     "ADA": 582.86173522,
     "ATOM": 5.0,
@@ -13,50 +13,50 @@
     {
       "coin": "ETH",
       "qty": 0.19907108,
-      "price": 1676.22,
-      "value_usd": 333.69,
+      "price": 1676.21,
+      "value_usd": 333.68,
       "avg_cost": 1650.731105,
       "pnl_usd": 5.07,
       "pnl_pct": 1.54,
       "change_24h": -0.3,
       "high_24h": 1696.79,
-      "low_24h": 1668.05
+      "low_24h": 1670.94
     },
     {
       "coin": "ADA",
       "qty": 582.86173522,
-      "price": 0.172157,
-      "value_usd": 100.34,
+      "price": 0.17128,
+      "value_usd": 99.83,
       "avg_cost": 0.171428,
-      "pnl_usd": 0.42,
-      "pnl_pct": 0.43,
-      "change_24h": 0.25,
+      "pnl_usd": -0.09,
+      "pnl_pct": -0.09,
+      "change_24h": -0.26,
       "high_24h": 0.175738,
-      "low_24h": 0.171406
+      "low_24h": 0.170844
     },
     {
       "coin": "SOL",
       "qty": 0.22928768,
-      "price": 68.23,
+      "price": 68.21,
       "value_usd": 15.64,
       "avg_cost": 67.151692,
-      "pnl_usd": 0.25,
-      "pnl_pct": 1.61,
-      "change_24h": -1.03,
+      "pnl_usd": 0.24,
+      "pnl_pct": 1.58,
+      "change_24h": -1.06,
       "high_24h": 69.47,
-      "low_24h": 66.96
+      "low_24h": 67.24
     },
     {
       "coin": "LINK",
       "qty": 1.9244018,
-      "price": 7.94783,
-      "value_usd": 15.29,
+      "price": 7.90451,
+      "value_usd": 15.21,
       "avg_cost": 7.78684,
-      "pnl_usd": 0.31,
-      "pnl_pct": 2.07,
-      "change_24h": -0.33,
+      "pnl_usd": 0.23,
+      "pnl_pct": 1.51,
+      "change_24h": -0.87,
       "high_24h": 8.0663,
-      "low_24h": 7.9
+      "low_24h": 7.89
     },
     {
       "coin": "ATOM",
@@ -71,30 +71,30 @@
       "low_24h": 1.9349
     }
   ],
-  "portfolio_usd": 607.7,
+  "portfolio_usd": 607.1,
   "usdc": 133.02,
   "signals": [
     {
       "coin": "BTC",
       "pair": "XBTUSDC",
       "action": "HOLD (pending order)",
-      "rsi": 64.88,
-      "macd": -37.798922,
-      "ma50": 63880.31,
-      "ma200": 62647.29,
-      "support": 64199.36,
-      "resistance": 64345.0,
+      "rsi": 63.29,
+      "macd": -28.410301,
+      "ma50": 63913.71,
+      "ma200": 62663.7,
+      "support": 64345.0,
+      "resistance": 64703.66,
       "near_support": true,
       "buy_score": 3,
       "sell_score": 5,
       "reasons": [
-        "RSI 64.88 (overbought)",
+        "RSI 63.29 (overbought)",
         "MACD bearish crossover",
         "Above MA200 (uptrend)",
-        "Near support $64,199.3600",
-        "Near resistance $64,345.0000"
+        "Near support $64,345.0000",
+        "Near resistance $64,703.6600"
       ],
-      "price": 64275.37,
+      "price": 64422.32,
       "volume": 0,
       "usd_value": 0.0,
       "limit_price": 0
@@ -103,10 +103,10 @@
       "coin": "ETH",
       "pair": "ETHUSDC",
       "action": "HOLD (pending order)",
-      "rsi": 53.0,
-      "macd": -0.952395,
-      "ma50": 1672.7,
-      "ma200": 1646.52,
+      "rsi": 48.18,
+      "macd": -1.006877,
+      "ma50": 1673.1,
+      "ma200": 1646.93,
       "support": 1671.63,
       "resistance": 1685.1,
       "near_support": true,
@@ -118,7 +118,7 @@
         "Near support $1,671.6300",
         "Near resistance $1,685.1000"
       ],
-      "price": 1676.22,
+      "price": 1676.21,
       "volume": 0,
       "usd_value": 0.0,
       "limit_price": 0
@@ -127,12 +127,12 @@
       "coin": "XRP",
       "pair": "XRPUSDC",
       "action": "HOLD (pending order)",
-      "rsi": 55.48,
-      "macd": -0.000806,
+      "rsi": 52.81,
+      "macd": -0.000931,
       "ma50": 1.14,
       "ma200": 1.13,
       "support": 1.1438,
-      "resistance": 1.1501,
+      "resistance": 1.148,
       "near_support": true,
       "buy_score": 3,
       "sell_score": 3,
@@ -140,9 +140,9 @@
         "MACD bearish crossover",
         "Above MA200 (uptrend)",
         "Near support $1.1438",
-        "Near resistance $1.1501"
+        "Near resistance $1.1480"
       ],
-      "price": 1.14731,
+      "price": 1.14662,
       "volume": 0,
       "usd_value": 0.0,
       "limit_price": 0
