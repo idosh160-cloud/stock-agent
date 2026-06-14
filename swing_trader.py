@@ -11,11 +11,11 @@ from datetime import datetime
 
 try:
     import pandas as pd
-    import pandas_ta as ta
+    import ta as _ta_lib
     _PANDAS_TA_AVAILABLE = True
 except ImportError:
     _PANDAS_TA_AVAILABLE = False
-    logging.warning("[Swing] pandas-ta not installed — indicators disabled")
+    logging.warning("[Swing] ta library not installed — indicators disabled")
 
 DIR          = os.path.dirname(os.path.abspath(__file__))
 SWING_FILE   = os.path.join(DIR, "swing_trades.json")
@@ -261,33 +261,27 @@ def get_indicators(pair: str) -> dict:
         return {}
     try:
         df = pd.DataFrame(candles, columns=["open", "high", "low", "close", "volume"])
-        rsi = ta.rsi(df["close"], length=14)
-        macd_df = ta.macd(df["close"], fast=12, slow=26, signal=9)
-        bb_df = ta.bbands(df["close"], length=20, std=2)
-
+        close = df["close"]
         result = {}
-        if rsi is not None and not rsi.empty:
-            result["rsi"] = round(float(rsi.iloc[-1]), 1)
-        if macd_df is not None and not macd_df.empty:
-            cols = macd_df.columns
-            macd_val = float(macd_df[cols[0]].iloc[-1])
-            signal_val = float(macd_df[cols[2]].iloc[-1])
-            result["macd"] = round(macd_val, 6)
-            result["macd_signal"] = round(signal_val, 6)
-            result["macd_hist"] = round(macd_val - signal_val, 6)
-        if bb_df is not None and not bb_df.empty:
-            close = float(df["close"].iloc[-1])
-            upper = float(bb_df.iloc[-1, bb_df.columns.get_loc([c for c in bb_df.columns if "BBU" in c][0])])
-            lower = float(bb_df.iloc[-1, bb_df.columns.get_loc([c for c in bb_df.columns if "BBL" in c][0])])
-            mid   = float(bb_df.iloc[-1, bb_df.columns.get_loc([c for c in bb_df.columns if "BBM" in c][0])])
-            if upper != lower:
-                bb_pct = round((close - lower) / (upper - lower) * 100, 1)
-            else:
-                bb_pct = 50.0
-            result["bb_pct"] = bb_pct  # 0=ב-lower, 100=ב-upper
-            result["bb_upper"] = round(upper, 6)
-            result["bb_lower"] = round(lower, 6)
-            result["bb_mid"] = round(mid, 6)
+
+        rsi_series = _ta_lib.momentum.RSIIndicator(close, window=14).rsi()
+        if not rsi_series.empty:
+            result["rsi"] = round(float(rsi_series.iloc[-1]), 1)
+
+        macd_obj = _ta_lib.trend.MACD(close, window_fast=12, window_slow=26, window_sign=9)
+        macd_val = float(macd_obj.macd().iloc[-1])
+        signal_val = float(macd_obj.macd_signal().iloc[-1])
+        result["macd_hist"] = round(macd_val - signal_val, 6)
+
+        bb_obj = _ta_lib.volatility.BollingerBands(close, window=20, window_dev=2)
+        upper = float(bb_obj.bollinger_hband().iloc[-1])
+        lower = float(bb_obj.bollinger_lband().iloc[-1])
+        current = float(close.iloc[-1])
+        if upper != lower:
+            result["bb_pct"] = round((current - lower) / (upper - lower) * 100, 1)
+        else:
+            result["bb_pct"] = 50.0
+
         return result
     except Exception as e:
         logging.debug(f"[Swing] indicators calc failed for {pair}: {e}")
