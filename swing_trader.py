@@ -157,7 +157,7 @@ def save_swing_trades(trades: list):
 def _send_trade_alert(subject: str, body: str):
     """שולח מייל קצר על פעולת מסחר."""
     try:
-        import smtplib, ssl
+        import smtplib
         from email.mime.text import MIMEText
         sender   = os.environ.get("GMAIL_USER", "")
         password = os.environ.get("GMAIL_APP_PASSWORD", "")
@@ -167,8 +167,9 @@ def _send_trade_alert(subject: str, body: str):
         msg["Subject"] = subject
         msg["From"]    = sender
         msg["To"]      = sender
-        ctx = ssl.create_default_context()
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=ctx) as s:
+        with smtplib.SMTP("smtp.gmail.com", 587) as s:
+            s.ehlo()
+            s.starttls()
             s.login(sender, password)
             s.sendmail(sender, sender, msg.as_string())
         logging.info(f"[Alert] מייל נשלח: {subject}")
