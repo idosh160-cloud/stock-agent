@@ -617,6 +617,10 @@ def sync_trades_with_kraken(trades: list, balance: dict, request_fn=None) -> tup
         # חפש רשומה קיימת בJSON (יכול להיות closed_externally בטעות)
         existing = next((t for t in trades if t["coin"] == coin and t.get("pair") == kpos["pair"]), None)
         if existing:
+            # אם סגרנו אותה בכוונה (יש close_txid — פקודת מכירה עובדת בקרקן),
+            # אל תפתח מחדש. הפוזיציה בתהליך סגירה — ממתינה שה-limit יבוצע.
+            if existing.get("close_txid"):
+                continue
             existing["status"]     = "open"
             existing["date_close"] = None
             changed = True
@@ -832,6 +836,46 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
     if not should_call:
         logging.info(f"[Swing] {call_reason}")
         return trades
+
+    # בדיקת שינוי-מצב — אל תשאל את Claude שוב על מצב זהה לפעם הקודמת.
+    # בונים "תמונת מצב" גסה: מטבע ב-+3% נשאר באותה תמונה כל עוד לא קפץ מדרגה.
+    def _build_snapshot(candidates: list, open_swings: list) -> str:
+        parts = []
+        for t in sorted(open_swings, key=lambda x: x["coin"]):
+            state = "weak" if t.get("pnl_pct", 0) < -1.0 else "ok"
+            parts.append(f"P:{t['coin']}:{state}")
+        open_coins_set = {t["coin"] for t in open_swings}
+        for c in sorted(candidates, key=lambda x: x["coin"]):
+            if c["coin"] in open_coins_set:
+                continue
+            chg = c.get("change_24h", 0)
+            if abs(chg) >= 3.0:
+                parts.append(f"M:{c['coin']}:{int(chg)}")  # מדרגות של 1%
+            rsi = c.get("rsi")
+            if rsi and (rsi < 35 or rsi > 65):
+                parts.append(f"R:{c['coin']}:{int(rsi // 5 * 5)}")  # מדרגות של 5
+        return "|".join(parts)
+
+    snapshot      = _build_snapshot(candidates, open_swings)
+    snapshot_file = os.path.join(DIR, "last_claude_snapshot.txt")
+    last_snapshot = ""
+    if os.path.exists(snapshot_file):
+        try:
+            with open(snapshot_file, encoding="utf-8") as f:
+                last_snapshot = f.read().strip()
+        except Exception:
+            pass
+
+    if snapshot and snapshot == last_snapshot:
+        logging.info(f"[Swing] מצב זהה לפעם הקודמת ({call_reason}) — דולג על Claude")
+        return trades
+
+    # שמור את התמונה החדשה לפני הקריאה
+    try:
+        with open(snapshot_file, "w", encoding="utf-8") as f:
+            f.write(snapshot)
+    except Exception:
+        pass
 
     logging.info(f"[Swing] קורא לClaude: {call_reason}")
     analysis    = analyze_with_claude(candidates, open_coins, usdc, btc_price, stock_candidates, open_swings, portfolio_summary)
