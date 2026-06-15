@@ -596,18 +596,24 @@ def sync_trades_with_kraken(trades: list, balance: dict, request_fn=None) -> tup
         if not in_margin and not in_balance:
             current = get_current_price(t["pair"])
             pnl_pct = round((current - t["entry_price"]) / t["entry_price"] * 100, 2) if current and t["entry_price"] else 0
-            t["status"]      = "closed_externally"
+            t["status"]      = "closed_profit" if pnl_pct >= 0 else "closed_loss"
             t["date_close"]  = datetime.now().isoformat()
             t["close_price"] = current or t.get("current_price", t["entry_price"])
             t["pnl_pct"]     = pnl_pct
             t["pnl_usd"]     = round(pnl_pct / 100 * t.get("usd", 0), 2)
             changed = True
-            logging.warning(f"[Sync] {coin} gone from Kraken → closed_externally | P&L≈{pnl_pct:+.1f}%")
+            logging.warning(f"[Sync] {coin} נסגר בקרקן | P&L≈{pnl_pct:+.1f}%")
             archive_closed_trade(t)
-            _send_trade_alert(
-                f"⚠️ נסגר חיצונית: {coin}",
-                f"מטבע: {coin}\nקרקן סגר את הפוזיציה (target/stop הגיע)\nמחיר: ${current:.4f}\nP&L: {pnl_pct:+.1f}%"
-            )
+            if pnl_pct >= 0:
+                _send_trade_alert(
+                    f"✅ סגירת רווח: {coin}",
+                    f"מטבע: {coin}\nיציאה: ${current:.4f}\nכניסה: ${t['entry_price']:.4f}\nרווח: {pnl_pct:+.1f}% (${t['pnl_usd']:+.2f})"
+                )
+            else:
+                _send_trade_alert(
+                    f"🔴 סגירה בהפסד: {coin}",
+                    f"מטבע: {coin}\nיציאה: ${current:.4f}\nכניסה: ${t['entry_price']:.4f}\nהפסד: {pnl_pct:+.1f}% (${t['pnl_usd']:+.2f})"
+                )
 
     # כיוון 2: פתח מחדש מה שקרקן אומר שפתוח אבל JSON לא יודע עליו
     open_coins_in_json = {t["coin"] for t in trades if t.get("status") == "open"}
@@ -700,17 +706,11 @@ def check_open_swings(balance: dict, request_fn) -> list:
             price_dec = cfg.get("price_dec", 4)
 
             if reason == "profit" and t.get("sell_txid"):
-                # כבר יש limit sell פתוח — פשוט סמן כסגור
-                t["status"]      = "closed_profit"
-                t["date_close"]  = datetime.now().isoformat()
-                t["close_price"] = current
-                t["close_txid"]  = t["sell_txid"]
-                logging.info(f"[Swing] CLOSE PROFIT {coin} @ {current:.4f} (limit already placed)")
-                archive_closed_trade(t)
-                _send_trade_alert(
-                    f"✅ סגירת רווח: {coin}",
-                    f"מטבע: {coin}\nיציאה: ${current:.4f}\nכניסה: ${t['entry_price']:.4f}\nרווח: {t['pnl_pct']:+.1f}% (${t['pnl_usd']:+.2f})"
-                )
+                # יש כבר פקודת limit sell עובדת בקרקן ביעד.
+                # אל תסמן "סגור" לפי מחיר ticker — קרקן יבצע את הפקודה כשתיגע ביעד אמיתי.
+                # הסימון כסגור + המייל יקרו דרך הסנכרון (direction 1) כשהפוזיציה באמת תיעלם מקרקן.
+                logging.info(f"[Swing] {coin} ב-target ${current:.4f} — limit sell עובד בקרקן, ממתין לביצוע")
+                continue
             else:
                 # stop-loss — בטל את ה-TP הפתוח ושים market sell
                 if t.get("sell_txid"):
