@@ -466,25 +466,35 @@ Crypto altcoin candidates ranked by 24h movement:
 Your job: Think carefully and pick 0, 1, or 2 assets for a swing trade RIGHT NOW.
 You can mix crypto and stocks — pick whatever has the best risk/reward today.
 
-Criteria to look for:
-- Strong momentum with room to continue (not exhausted)
+You can go LONG or SHORT on crypto:
+- LONG ("direction":"long") — profit when price RISES. Use for momentum up / oversold bounce (RSI low, near support, MACD turning up).
+- SHORT ("direction":"short") — profit when price FALLS. Use for exhausted/overbought assets (RSI > 70, BB% near 100, ran 10%+ and stalling, MACD turning down).
+- SHORT is crypto-only (margin). Stocks (xStocks) are LONG only.
+- Default to "long" if unsure. Only short when there is a clear downside setup — a short in a rising market loses money fast.
+
+Criteria for LONG:
+- Strong upward momentum with room to continue (not exhausted)
 - Assets near intraday low that may bounce (dip buy)
 - Volume confirming the move
-- Clear entry with defined risk
 
-Criteria to avoid:
-- Assets that already ran 10%+ and look extended
+Criteria for SHORT:
+- Overbought and stalling (RSI > 70, BB% > 85) after a big run
+- MACD histogram turning negative
+- Rejection at resistance with volume
+
+Criteria to avoid (either direction):
 - Very low volume crypto (under $50k/day) or stocks (under $5k/day)
-- Choppy sideways movement
+- Choppy sideways movement with no clear edge
 - Rotating out of a position that's already profitable and moving toward target
 
 Return ONLY valid JSON:
 {{
   "picks": [
     {{
-      "coin": "TSLA",
+      "coin": "SOL",
+      "direction": "long",
       "confidence": "HIGH",
-      "reasoning": "שתי משפטים בעברית — מה בדיוק אתה רואה ולמה עכשיו"
+      "reasoning": "שתי משפטים בעברית — מה בדיוק אתה רואה, למה עכשיו, ולמה לונג/שורט"
     }}
   ],
   "close_for_rotation": null,
@@ -523,6 +533,27 @@ If nothing looks good — return picks as empty array. Better to miss a trade th
 
 # ── Main cycles ───────────────────────────────────────────────────────────
 
+def _pnl_pct(side: str, entry: float, current: float) -> float:
+    """P&L באחוזים לפי כיוון. לונג: רווח כשעולה. שורט: רווח כשיורד."""
+    if not entry or not current:
+        return 0.0
+    if side == "short":
+        return round((entry - current) / entry * 100, 2)
+    return round((current - entry) / entry * 100, 2)
+
+
+def _targets_for_side(side: str, entry: float, target_pct: float, stop_pct: float, price_dec: int) -> tuple[float, float]:
+    """מחזיר (target_price, stop_price) לפי כיוון.
+    לונג: target מעל הכניסה, stop מתחת. שורט: הפוך."""
+    if side == "short":
+        target = round(entry * (1 - target_pct), price_dec)
+        stop   = round(entry * (1 + stop_pct), price_dec)
+    else:
+        target = round(entry * (1 + target_pct), price_dec)
+        stop   = round(entry * (1 - stop_pct), price_dec)
+    return target, stop
+
+
 def _pair_to_coin(pair: str) -> str:
     """ממיר פאיר של קרקן לשם מטבע. XRPUSDC→XRP, ETHUSDC→ETH"""
     kraken_map = {"XXBT": "BTC", "XETH": "ETH", "XXRP": "XRP", "XLTC": "LTC", "XXLM": "XLM", "XDGE": "DOGE"}
@@ -543,12 +574,15 @@ def get_kraken_state(request_fn) -> dict:
         pos = request_fn("/0/private/OpenPositions", private=True)
         for pid, p in pos.items():
             coin = _pair_to_coin(p.get("pair", ""))
+            # קרקן: type="buy" → לונג | type="sell" → שורט
+            side = "short" if p.get("type") == "sell" else "long"
             state["margin_positions"][coin] = {
                 "pair":   p.get("pair"),
-                "vol":    float(p.get("vol", 0)),
-                "cost":   float(p.get("cost", 0)),
+                "vol":    abs(float(p.get("vol", 0))),
+                "cost":   abs(float(p.get("cost", 0))),
                 "margin": float(p.get("margin", 0)),
                 "txid":   p.get("ordertxid", ""),
+                "side":   side,
             }
         logging.info(f"[Kraken] Margin positions: {list(state['margin_positions'].keys())}")
     except Exception as e:
@@ -593,9 +627,11 @@ def sync_trades_with_kraken(trades: list, balance: dict, request_fn=None) -> tup
         min_vol = CANDIDATES.get(coin, {}).get("min_vol", 0.001)
         in_margin  = coin in margin_coins
         in_balance = holding >= min_vol * 0.5
-        if not in_margin and not in_balance:
+        # שורט: הפוזיציה "קיימת" רק במרג'ין, לא ב-balance (אין מטבע ביד)
+        side = t.get("side", "long")
+        if not in_margin and (side == "short" or not in_balance):
             current = get_current_price(t["pair"])
-            pnl_pct = round((current - t["entry_price"]) / t["entry_price"] * 100, 2) if current and t["entry_price"] else 0
+            pnl_pct = _pnl_pct(side, t["entry_price"], current)
             t["status"]      = "closed_profit" if pnl_pct >= 0 else "closed_loss"
             t["date_close"]  = datetime.now().isoformat()
             t["close_price"] = current or t.get("current_price", t["entry_price"])
@@ -632,23 +668,27 @@ def sync_trades_with_kraken(trades: list, balance: dict, request_fn=None) -> tup
             changed = True
             logging.warning(f"[Sync] {coin} IS open in Kraken but was closed in JSON → reopened")
         else:
-            # פוזיציה חדשה שהבוט לא פתח — הוסף אותה
-            current = get_current_price(kpos["pair"])
-            entry   = round(kpos["cost"] / kpos["vol"], 6) if kpos["vol"] else current
+            # פוזיציה חדשה שהבוט לא פתח — הוסף אותה עם הכיוון הנכון מקרקן
+            current  = get_current_price(kpos["pair"])
+            side     = kpos.get("side", "long")
+            entry    = round(kpos["cost"] / kpos["vol"], 6) if kpos["vol"] else current
+            pdec     = CANDIDATES.get(coin, {}).get("price_dec", 6)
+            target_p, stop_p = _targets_for_side(side, entry, TARGET_PCT, STOP_PCT, pdec)
             trades.append({
                 "coin":         coin,
                 "pair":         kpos["pair"],
+                "side":         side,
                 "entry_price":  entry,
                 "limit_price":  entry,
                 "volume":       kpos["vol"],
                 "usd":          round(kpos["cost"], 2),
-                "target_price": round(entry * (1 + TARGET_PCT), 6),
-                "stop_price":   round(entry * (1 - STOP_PCT), 6),
+                "target_price": target_p,
+                "stop_price":   stop_p,
                 "date_open":    datetime.now().isoformat(),
                 "date_close":   None,
                 "status":       "open",
                 "confidence":   "MEDIUM",
-                "reasoning":    "Restored from Kraken OpenPositions",
+                "reasoning":    f"Restored from Kraken OpenPositions ({side})",
                 "market_read":  "",
                 "current_price":current,
                 "pnl_pct":      0.0,
@@ -659,7 +699,7 @@ def sync_trades_with_kraken(trades: list, balance: dict, request_fn=None) -> tup
                 "close_txid":   None,
             })
             changed = True
-            logging.warning(f"[Sync] {coin} found in Kraken but missing from JSON → added")
+            logging.warning(f"[Sync] {coin} ({side}) found in Kraken but missing from JSON → added")
 
     return trades, changed
 
@@ -689,30 +729,39 @@ def check_open_swings(balance: dict, request_fn) -> list:
         if current == 0:
             continue
 
-        pnl_pct = (current - entry) / entry * 100
+        side    = t.get("side", "long")
+        pnl_pct = _pnl_pct(side, entry, current)
         t["current_price"] = round(current, 6)
-        t["pnl_pct"]       = round(pnl_pct, 2)
-        t["pnl_usd"]       = round((current - entry) * vol, 2)
+        t["pnl_pct"]       = pnl_pct
+        t["pnl_usd"]       = round((entry - current) * vol, 2) if side == "short" else round((current - entry) * vol, 2)
         changed = True
 
+        # זיהוי יעד/stop לפי כיוון.
+        # לונג: יעד מעל הכניסה, stop מתחת. שורט: יעד מתחת, stop מעל.
         reason = None
-        if current >= t["target_price"]:
-            reason = "profit"
-        elif current <= t["stop_price"]:
-            reason = "loss"
+        if side == "short":
+            if current <= t["target_price"]:
+                reason = "profit"
+            elif current >= t["stop_price"]:
+                reason = "loss"
+        else:
+            if current >= t["target_price"]:
+                reason = "profit"
+            elif current <= t["stop_price"]:
+                reason = "loss"
 
         if reason:
             cfg       = CANDIDATES.get(coin, {})
             price_dec = cfg.get("price_dec", 4)
 
             if reason == "profit" and t.get("sell_txid"):
-                # יש כבר פקודת limit sell עובדת בקרקן ביעד.
-                # אל תסמן "סגור" לפי מחיר ticker — קרקן יבצע את הפקודה כשתיגע ביעד אמיתי.
-                # הסימון כסגור + המייל יקרו דרך הסנכרון (direction 1) כשהפוזיציה באמת תיעלם מקרקן.
-                logging.info(f"[Swing] {coin} ב-target ${current:.4f} — limit sell עובד בקרקן, ממתין לביצוע")
+                # יש כבר פקודת TP עובדת בקרקן ביעד (sell ללונג / buy לשורט).
+                # אל תסמן "סגור" לפי מחיר ticker — קרקן יבצע את הפקודה ביעד אמיתי.
+                # הסימון כסגור + המייל יקרו דרך הסנכרון כשהפוזיציה באמת תיעלם מקרקן.
+                logging.info(f"[Swing] {coin} ({side}) ב-target ${current:.4f} — פקודת TP עובדת בקרקן, ממתין")
                 continue
             else:
-                # stop-loss — בטל את ה-TP הפתוח ושים market sell
+                # stop-loss — בטל את ה-TP הפתוח וסגור את הפוזיציה בכיוון ההפוך
                 if t.get("sell_txid"):
                     try:
                         request_fn("/0/private/CancelOrder", {"txid": t["sell_txid"]}, private=True)
@@ -720,17 +769,26 @@ def check_open_swings(balance: dict, request_fn) -> list:
                     except Exception as ce:
                         logging.warning(f"[Swing] cancel TP failed: {ce}")
 
-                holding  = float(balance.get(coin, 0))
-                sell_vol = min(vol, holding)
-                if sell_vol < cfg.get("min_vol", 0.01):
-                    logging.warning(f"[Swing] {coin} holding {holding} below min — cannot sell")
-                    continue
-                lp = round(current * 0.999, price_dec)
                 use_lev = coin in MARGIN_ELIGIBLE
+                if side == "short":
+                    # סגירת שורט = BUY של אותו volume, מעט מעל המחיר כדי להבטיח ביצוע
+                    close_type = "buy"
+                    close_vol  = vol
+                    lp = round(current * 1.001, price_dec)
+                else:
+                    # סגירת לונג = SELL. ללונג ממונף ה-volume הוא במרג'ין, אחרת לפי ה-holding
+                    close_type = "sell"
+                    holding    = float(balance.get(coin, 0))
+                    close_vol  = vol if use_lev else min(vol, holding)
+                    lp = round(current * 0.999, price_dec)
+
+                if close_vol < cfg.get("min_vol", 0.0000001):
+                    logging.warning(f"[Swing] {coin} volume {close_vol} below min — cannot close")
+                    continue
                 try:
                     stop_params = {
-                        "pair": pair, "type": "sell", "ordertype": "limit",
-                        "volume": f"{sell_vol:.8f}", "price": f"{lp:.{price_dec}f}",
+                        "pair": pair, "type": close_type, "ordertype": "limit",
+                        "volume": f"{close_vol:.8f}", "price": f"{lp:.{price_dec}f}",
                     }
                     if use_lev:
                         stop_params["leverage"] = str(LEVERAGE)
@@ -740,14 +798,14 @@ def check_open_swings(balance: dict, request_fn) -> list:
                     t["date_close"]  = datetime.now().isoformat()
                     t["close_price"] = current
                     t["close_txid"]  = txid
-                    logging.info(f"[Swing] CLOSE STOP {coin} @ {current:.4f} | P&L {pnl_pct:+.1f}% | txid={txid}")
+                    logging.info(f"[Swing] CLOSE STOP {coin} ({side}) @ {current:.4f} | P&L {pnl_pct:+.1f}% | {close_type} txid={txid}")
                     archive_closed_trade(t)
                     _send_trade_alert(
                         f"🔴 Stop-Loss: {coin}",
-                        f"מטבע: {coin}\nיציאה: ${current:.4f}\nכניסה: ${t['entry_price']:.4f}\nהפסד: {pnl_pct:+.1f}% (${t['pnl_usd']:+.2f})"
+                        f"מטבע: {coin} ({side})\nיציאה: ${current:.4f}\nכניסה: ${t['entry_price']:.4f}\nהפסד: {pnl_pct:+.1f}% (${t['pnl_usd']:+.2f})"
                     )
                 except Exception as e:
-                    logging.error(f"[Swing] stop sell failed {coin}: {e}")
+                    logging.error(f"[Swing] stop close failed {coin}: {e}")
 
     if changed:
         save_swing_trades(trades)
@@ -894,25 +952,28 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
                 if current > 0:
                     cfg_r     = CANDIDATES.get(close_for_rotation, all_candidates_map.get(close_for_rotation, {}))
                     price_dec = cfg_r.get("price_dec", 4)
-                    lp        = round(current * 0.999, price_dec)
-                    use_lev   = close_for_rotation in MARGIN_ELIGIBLE and not t.get("is_stock")
+                    r_side    = t.get("side", "long")
+                    close_type = "buy" if r_side == "short" else "sell"
+                    lp        = round(current * (1.001 if r_side == "short" else 0.999), price_dec)
+                    use_lev   = (r_side == "short") or (close_for_rotation in MARGIN_ELIGIBLE and not t.get("is_stock"))
                     try:
                         if t.get("sell_txid"):
                             request_fn("/0/private/CancelOrder", {"txid": t["sell_txid"]}, private=True)
                         sell_params = {
-                            "pair": t["pair"], "type": "sell", "ordertype": "limit",
+                            "pair": t["pair"], "type": close_type, "ordertype": "limit",
                             "volume": f"{t['volume']:.8f}", "price": f"{lp:.{price_dec}f}",
                         }
                         if use_lev:
                             sell_params["leverage"] = str(LEVERAGE)
                         res  = request_fn("/0/private/AddOrder", sell_params, private=True)
                         txid = list(res.get("txid", ["?"]))[0]
-                        t["status"]      = "closed_loss" if current < t["entry_price"] else "closed_profit"
+                        pnl_pct_r        = _pnl_pct(r_side, t["entry_price"], current)
+                        t["status"]      = "closed_profit" if pnl_pct_r >= 0 else "closed_loss"
                         t["date_close"]  = datetime.now().isoformat()
                         t["close_price"] = current
                         t["close_txid"]  = txid
-                        t["pnl_pct"]     = round((current - t["entry_price"]) / t["entry_price"] * 100, 2)
-                        t["pnl_usd"]     = round((current - t["entry_price"]) * t["volume"], 2)
+                        t["pnl_pct"]     = pnl_pct_r
+                        t["pnl_usd"]     = round((t["entry_price"] - current) * t["volume"], 2) if r_side == "short" else round((current - t["entry_price"]) * t["volume"], 2)
                         archive_closed_trade(t)
                         open_coins.discard(close_for_rotation)
                         open_swings = [s for s in open_swings if s["coin"] != close_for_rotation]
@@ -972,20 +1033,23 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
                                 if cur > 0:
                                     cfg_w = CANDIDATES.get(weakest["coin"], {})
                                     pd_w  = cfg_w.get("price_dec", 4)
-                                    lp_w  = round(cur * 0.999, pd_w)
+                                    w_side = t.get("side", "long")
+                                    w_close_type = "buy" if w_side == "short" else "sell"
+                                    lp_w  = round(cur * (1.001 if w_side == "short" else 0.999), pd_w)
                                     try:
                                         if t.get("sell_txid"):
                                             request_fn("/0/private/CancelOrder", {"txid": t["sell_txid"]}, private=True)
-                                        sp = {"pair": t["pair"], "type": "sell", "ordertype": "limit",
+                                        sp = {"pair": t["pair"], "type": w_close_type, "ordertype": "limit",
                                               "volume": f"{t['volume']:.8f}", "price": f"{lp_w:.{pd_w}f}",
                                               "leverage": str(LEVERAGE)}
                                         res = request_fn("/0/private/AddOrder", sp, private=True)
                                         txid_w = list(res.get("txid", ["?"]))[0]
-                                        t["status"]     = "closed_profit" if cur >= t["entry_price"] else "closed_loss"
+                                        pnl_pct_w       = _pnl_pct(w_side, t["entry_price"], cur)
+                                        t["status"]     = "closed_profit" if pnl_pct_w >= 0 else "closed_loss"
                                         t["date_close"] = datetime.now().isoformat()
                                         t["close_price"]= cur
                                         t["close_txid"] = txid_w
-                                        t["pnl_pct"]    = round((cur - t["entry_price"]) / t["entry_price"] * 100, 2)
+                                        t["pnl_pct"]    = pnl_pct_w
                                         archive_closed_trade(t)
                                         open_swings = [s for s in open_swings if s["coin"] != weakest["coin"]]
                                         open_coins.discard(weakest["coin"])
@@ -1002,18 +1066,27 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
                     logging.info(f"[RiskManager] Blocked {coin}: {reason}")
                     continue
 
-        buy_lp   = round(price * 0.999, price_dec)
-        target_p = round(price * (1 + target_pct), price_dec)
-        stop_p   = round(price * (1 - stop_pct),   price_dec)
+        # כיוון העסקה לפי בחירת Claude
+        direction = str(pick.get("direction", "long")).lower()
+        if direction not in ("long", "short"):
+            direction = "long"
+        # שורט אפשרי רק בקריפטו עם margin (חייב מינוף — אי אפשר לשרוט ספוט)
+        if direction == "short" and (is_stock or coin not in MARGIN_ELIGIBLE):
+            logging.info(f"[Swing] {coin} short לא נתמך (לא margin-eligible) — מדלג")
+            continue
+
+        target_p, stop_p = _targets_for_side(direction, price, target_pct, stop_pct, price_dec)
+        # מחיר כניסה: לונג קונה מעט מתחת, שורט מוכר מעט מעל — להבטחת ביצוע ליד השוק
+        entry_lp = round(price * (1.001 if direction == "short" else 0.999), price_dec)
         try:
             if is_stock:
-                # ── xStock — דרך Kraken Futures API ──────────────────────
+                # ── xStock — דרך Kraken Futures API (לונג בלבד) ───────────
                 from kraken_futures import place_futures_order, get_futures_balance
                 fut_balance = get_futures_balance()
                 if fut_balance < trade_usd:
                     logging.warning(f"[Futures] Insufficient balance ${fut_balance:.2f} < ${trade_usd} for {coin}")
                     continue
-                txid      = place_futures_order(pair, "buy",  vol, buy_lp)
+                txid      = place_futures_order(pair, "buy",  vol, entry_lp)
                 sell_txid = None
                 try:
                     sell_txid = place_futures_order(pair, "sell", vol, target_p)
@@ -1021,52 +1094,58 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
                     logging.warning(f"[Futures] TP order failed {coin}: {se}")
             else:
                 # ── קריפטו — דרך Kraken Spot/Margin API ──────────────────
-                use_leverage = coin in MARGIN_ELIGIBLE
-                buy_params = {
-                    "pair": pair, "type": "buy", "ordertype": "limit",
-                    "volume": f"{vol:.8f}", "price": f"{buy_lp:.{price_dec}f}",
+                # לונג: כניסה=buy, TP=sell | שורט: כניסה=sell, TP=buy
+                entry_type = "sell" if direction == "short" else "buy"
+                tp_type    = "buy"  if direction == "short" else "sell"
+                # שורט מחייב מינוף; לונג מנסה עם מינוף ונופל ל-spot אם אין
+                use_leverage = True if direction == "short" else (coin in MARGIN_ELIGIBLE)
+
+                entry_params = {
+                    "pair": pair, "type": entry_type, "ordertype": "limit",
+                    "volume": f"{vol:.8f}", "price": f"{entry_lp:.{price_dec}f}",
                 }
                 if use_leverage:
-                    buy_params["leverage"] = str(LEVERAGE)
+                    entry_params["leverage"] = str(LEVERAGE)
                 try:
-                    res = request_fn("/0/private/AddOrder", buy_params, private=True)
+                    res = request_fn("/0/private/AddOrder", entry_params, private=True)
                 except Exception as margin_e:
-                    if "margin" in str(margin_e).lower() and use_leverage:
+                    if "margin" in str(margin_e).lower() and direction == "long" and use_leverage:
                         logging.warning(f"[Swing] Margin full for {coin}, retrying without leverage")
-                        buy_params.pop("leverage", None)
+                        entry_params.pop("leverage", None)
                         use_leverage = False
-                        res = request_fn("/0/private/AddOrder", buy_params, private=True)
+                        res = request_fn("/0/private/AddOrder", entry_params, private=True)
                     else:
                         raise
                 txid = list(res.get("txid", ["?"]))[0]
 
                 sell_txid = None
                 try:
-                    sell_params = {
-                        "pair": pair, "type": "sell", "ordertype": "limit",
+                    tp_params = {
+                        "pair": pair, "type": tp_type, "ordertype": "limit",
                         "volume": f"{vol:.8f}", "price": f"{target_p:.{price_dec}f}",
                     }
                     if use_leverage:
-                        sell_params["leverage"] = str(LEVERAGE)
+                        tp_params["leverage"] = str(LEVERAGE)
                     try:
-                        sell_res = request_fn("/0/private/AddOrder", sell_params, private=True)
+                        sell_res = request_fn("/0/private/AddOrder", tp_params, private=True)
                     except Exception as se2:
-                        if "margin" in str(se2).lower():
-                            sell_params.pop("leverage", None)
-                            sell_res = request_fn("/0/private/AddOrder", sell_params, private=True)
+                        if "margin" in str(se2).lower() and direction == "long":
+                            tp_params.pop("leverage", None)
+                            sell_res = request_fn("/0/private/AddOrder", tp_params, private=True)
                         else:
                             raise
                     sell_txid = list(sell_res.get("txid", ["?"]))[0]
-                    logging.info(f"[Swing] SELL-TP placed {coin} @ {target_p} txid={sell_txid}")
+                    logging.info(f"[Swing] TP ({tp_type}) placed {coin} @ {target_p} txid={sell_txid}")
                 except Exception as se:
-                    logging.warning(f"[Swing] sell-tp failed {coin}: {se}")
+                    logging.warning(f"[Swing] tp order failed {coin}: {se}")
 
             trade = {
                 "coin":          coin,
                 "pair":          pair,
                 "is_stock":      is_stock,
+                "side":          direction,
                 "entry_price":   price,
-                "limit_price":   buy_lp,
+                "limit_price":   entry_lp,
                 "volume":        vol,
                 "usd":           round(vol * price, 2),
                 "target_price":  target_p,
@@ -1087,10 +1166,11 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
             }
             trades.append(trade)
             open_coins.add(coin)
-            logging.info(f"[Swing] OPEN {coin} @ {price:.4f} target={target_p} stop={stop_p} | {reason[:80]}")
+            logging.info(f"[Swing] OPEN {coin} ({direction}) @ {price:.4f} target={target_p} stop={stop_p} | {reason[:80]}")
+            dir_he = "שורט 📉" if direction == "short" else "לונג 📈"
             _send_trade_alert(
-                f"🟢 נפתחה פוזיציה: {coin}",
-                f"מטבע: {coin}\nכניסה: ${price:.4f}\nיעד: ${target_p:.4f} (+{TARGET_PCT*100:.0f}%)\nStop: ${stop_p:.4f} (-{STOP_PCT*100:.0f}%)\nגודל: ${trade_usd:.0f}\nסיבה: {reason[:150]}"
+                f"🟢 נפתחה פוזיציה: {coin} ({dir_he})",
+                f"מטבע: {coin}\nכיוון: {dir_he}\nכניסה: ${price:.4f}\nיעד: ${target_p:.4f}\nStop: ${stop_p:.4f}\nגודל: ${trade_usd:.0f}\nסיבה: {reason[:150]}"
             )
         except Exception as e:
             logging.error(f"[Swing] buy failed {coin}: {e}")
