@@ -853,8 +853,12 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
         return trades
 
     margin_used = get_margin_used(request_fn)
-    margin_headroom = max(0, 200 - margin_used)  # תקרה $200 עם x5
-    logging.info(f"[Swing] Margin used: ${margin_used:.0f} | headroom: ${margin_headroom:.0f}")
+    # headroom אמיתי: גם תקרת המרג'ין הסינתטית, וגם כוח הקנייה האמיתי לפי USDC פנוי.
+    # אם USDC שלילי/נמוך (פקודות פתוחות תופסות אותו) — אין באמת מקום, גם אם המרג'ין פנוי.
+    synthetic_cap   = max(0, 200 - margin_used)
+    real_buying_pwr = max(0, usdc) * LEVERAGE        # USDC פנוי × מינוף
+    margin_headroom = min(synthetic_cap, real_buying_pwr)
+    logging.info(f"[Swing] Margin used: ${margin_used:.0f} | USDC ${usdc:.0f} | headroom אמיתי: ${margin_headroom:.0f}")
 
     # חשיפת תיק מלאה
     exposure = get_portfolio_exposure(open_swings, portfolio_usd or (usdc + sum(t.get("usd",0) for t in open_swings)))
