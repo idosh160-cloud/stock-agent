@@ -445,12 +445,14 @@ Stocks move slower than crypto — look for strong momentum days or pre/post ear
         ])
 
     rotation_instruction = ""
-    if open_positions and len(open_positions) >= MAX_OPEN:
+    if open_positions:
+        full = len(open_positions) >= MAX_OPEN
         rotation_instruction = f"""
-IMPORTANT: Portfolio is FULL ({len(open_positions)}/{MAX_OPEN} positions).
-You CAN suggest closing one weak position to open a better opportunity.
-Add "close_for_rotation" field with the coin to close IF you find something significantly better.
-Only rotate if the new opportunity is clearly superior — don't churn for small differences.
+CAPITAL IS LIMITED. Before concluding "no liquidity, do nothing" — review the ENTIRE portfolio above.
+If you find a clearly better opportunity but margin/USDC is tight (see PORTFOLIO STATUS), you MAY free capital by
+closing a WEAKER open position to fund it. Set "close_for_rotation" to that coin and explain in "rotation_reason".
+Prefer rotating out of positions that are flat/negative or stalling far from target — never a winner moving toward target.
+{"Portfolio is FULL ("+str(len(open_positions))+"/"+str(MAX_OPEN)+") — you must close one to open a new trade." if full else "Only rotate if the new opportunity is clearly superior — don't churn for small differences."}
 """
 
     prompt = f"""You are an expert swing trader covering both crypto and tokenized stocks (xStocks). {datetime.now().strftime('%Y-%m-%d %H:%M')} UTC.
@@ -880,22 +882,22 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
         if weak:
             coins = ", ".join(t["coin"] for t in weak)
             return True, f"פוזיציה חלשה: {coins}"
-        # שער קיבולת — אם אין מקום/כסף לפתוח פוזיציה חדשה ואין מה לנהל, אל תקרא ל-Claude.
-        # (הזדמנות שאי אפשר לממש = בזבוז טוקנים)
-        has_capacity = len(open_swings) < MAX_OPEN and margin_headroom >= (SWING_MIN_USD / LEVERAGE)
-        if not has_capacity:
-            return False, f"מרג'ין מלא ({len(open_swings)}/{MAX_OPEN}, headroom ${margin_headroom:.0f}) ואין פוזיציה לנהל — דולג"
         # אין פוזיציות — צריך לחפש הזדמנויות
         if not open_swings:
             return True, "אין פוזיציות פתוחות — סורק הזדמנויות"
-        # תנועה חזקה ב-24 שעות במטבע שלא מחזיקים
+
+        # יש כסף פנוי לפתוח פוזיציה חדשה? אם כן — ספים רגישים. אם לא — רק סיגנל חזק ששווה רוטציה.
+        has_capacity = len(open_swings) < MAX_OPEN and margin_headroom >= (SWING_MIN_USD / LEVERAGE)
+        move_thr = 3.0 if has_capacity else 5.0   # מרג'ין מלא → רק תנועה חזקה מאוד שווה רוטציה
+        rsi_lo, rsi_hi = (35, 65) if has_capacity else (30, 70)
+
         open_coins_set = {t["coin"] for t in open_swings}
-        strong_move = [c for c in candidates if abs(c.get("change_24h", 0)) >= 3.0 and c["coin"] not in open_coins_set]
+        strong_move = [c for c in candidates if abs(c.get("change_24h", 0)) >= move_thr and c["coin"] not in open_coins_set]
         if strong_move:
             coins = ", ".join(c["coin"] for c in strong_move[:3])
-            return True, f"תנועה חזקה במטבע חדש: {coins}"
-        # RSI קיצוני במטבע שלא מחזיקים
-        extreme_rsi = [c for c in candidates if c.get("rsi") and (c["rsi"] < 35 or c["rsi"] > 65) and c["coin"] not in open_coins_set]
+            tag = "" if has_capacity else " (שקילת רוטציה — מרג'ין מלא)"
+            return True, f"תנועה חזקה במטבע חדש: {coins}{tag}"
+        extreme_rsi = [c for c in candidates if c.get("rsi") and (c["rsi"] < rsi_lo or c["rsi"] > rsi_hi) and c["coin"] not in open_coins_set]
         if extreme_rsi:
             coins = ", ".join(c["coin"] for c in extreme_rsi[:3])
             return True, f"RSI קיצוני: {coins}"
