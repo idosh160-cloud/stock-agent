@@ -178,5 +178,25 @@
     "confidence": "HIGH",
     "txid": "O5HAQO-RXP32-D3QRSH",
     "close_txid": "OQWFNL-74ETH-NTZKPL"
+  },
+  {
+    "coin": "ADA",
+    "pair": "ADAUSDC",
+    "status": "closed_loss",
+    "leveraged": true,
+    "collateral": 97.27,
+    "volume": 582.75058275,
+    "entry_price": 0.166914,
+    "close_price": 0.180728,
+    "target_price": 0.158568,
+    "stop_price": 0.170252,
+    "pnl_usd": -8.05,
+    "pnl_pct": -8.28,
+    "date_open": "2026-06-15T06:00:04.057238",
+    "date_close": "2026-06-15T06:00:04.268676",
+    "reasoning": "Restored from Kraken OpenPositions (short)",
+    "confidence": "MEDIUM",
+    "txid": "O7CUOW-7JABL-A7ABN5",
+    "close_txid": "OEGRV5-MSBZ3-YJV5H4"
   }
 ]
