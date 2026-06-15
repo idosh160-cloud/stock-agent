@@ -21,8 +21,11 @@ DIR          = os.path.dirname(os.path.abspath(__file__))
 SWING_FILE   = os.path.join(DIR, "swing_trades.json")
 HISTORY_FILE = os.path.join(DIR, "swing_history.json")
 
-SWING_USD         = 100    # דולר לכל עסקה קריפטו (collateral — שולטים ב-$200 עם מינוף 2x)
+SWING_USD         = 100    # ברירת מחדל לעסקת קריפטו אם Claude לא נתן size_pct
 SWING_USD_STOCK   = 75     # דולר לכל עסקת מניה (ללא מינוף)
+SWING_PCT_DEFAULT = 0.15   # 15% מהתיק אם אין size_pct מ-Claude
+SWING_MIN_USD     = 30     # רצפה — מגבלת קרקן
+SWING_MAX_USD     = 500    # תקרה לעסקה בודדת
 TARGET_PCT        = 0.05   # +5% יעד רווח קריפטו
 TARGET_PCT_STOCK  = 0.07   # +7% יעד רווח xStocks — מניות תנודתיות יכולות לעשות הרבה יותר
 STOP_PCT          = 0.02   # -2% עצור הפסד קריפטו
@@ -454,7 +457,9 @@ Only rotate if the new opportunity is clearly superior — don't churn for small
 
 BTC context price: ${btc_price:,.0f}
 Available USDC: ${usdc:.2f}
-Crypto trade size: ${SWING_USD} each (5x leverage = controls ${SWING_USD*5}) | Take-profit: +5% | Stop-loss: -2%
+Position sizing: YOU decide each trade's size as a % of portfolio via "size_pct" (between 5 and 25).
+Bigger size_pct for high-conviction setups, smaller for marginal ones. 5x leverage applies to crypto longs/shorts.
+Take-profit: +5% | Stop-loss: -2%
 
 PORTFOLIO STATUS:
 {portfolio_summary}
@@ -493,6 +498,7 @@ Return ONLY valid JSON:
     {{
       "coin": "SOL",
       "direction": "long",
+      "size_pct": 15,
       "confidence": "HIGH",
       "reasoning": "שתי משפטים בעברית — מה בדיוק אתה רואה, למה עכשיו, ולמה לונג/שורט"
     }}
@@ -874,6 +880,11 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
         if weak:
             coins = ", ".join(t["coin"] for t in weak)
             return True, f"פוזיציה חלשה: {coins}"
+        # שער קיבולת — אם אין מקום/כסף לפתוח פוזיציה חדשה ואין מה לנהל, אל תקרא ל-Claude.
+        # (הזדמנות שאי אפשר לממש = בזבוז טוקנים)
+        has_capacity = len(open_swings) < MAX_OPEN and margin_headroom >= (SWING_MIN_USD / LEVERAGE)
+        if not has_capacity:
+            return False, f"מרג'ין מלא ({len(open_swings)}/{MAX_OPEN}, headroom ${margin_headroom:.0f}) ואין פוזיציה לנהל — דולג"
         # אין פוזיציות — צריך לחפש הזדמנויות
         if not open_swings:
             return True, "אין פוזיציות פתוחות — סורק הזדמנויות"
@@ -1002,9 +1013,23 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
         min_v     = coin_data["min_vol"]
 
         # פרמטרים שונים לפי סוג
-        trade_usd  = SWING_USD_STOCK if is_stock else SWING_USD
         target_pct = TARGET_PCT_STOCK if is_stock else TARGET_PCT
         stop_pct   = STOP_PCT_STOCK   if is_stock else STOP_PCT
+
+        # גודל דינמי — Claude קובע size_pct (5-25% מהתיק); רצפה/תקרה כהגנה
+        if is_stock:
+            trade_usd = SWING_USD_STOCK
+        else:
+            pf = portfolio_usd or usdc or 0
+            try:
+                size_pct = float(pick.get("size_pct", SWING_PCT_DEFAULT * 100))
+            except (TypeError, ValueError):
+                size_pct = SWING_PCT_DEFAULT * 100
+            size_pct  = max(5.0, min(25.0, size_pct))   # גבולות הגנה
+            trade_usd = pf * size_pct / 100 if pf else SWING_USD
+            trade_usd = max(SWING_MIN_USD, min(SWING_MAX_USD, trade_usd))
+            trade_usd = round(trade_usd, 2)
+            logging.info(f"[Swing] {coin} size_pct={size_pct:.0f}% → ${trade_usd:.0f} (תיק ${pf:.0f})")
 
         # CANDIDATES lookup לקריפטו (לmargining)
         cfg = CANDIDATES.get(coin, {})
