@@ -198,5 +198,25 @@
     "confidence": "MEDIUM",
     "txid": "O7CUOW-7JABL-A7ABN5",
     "close_txid": "OEGRV5-MSBZ3-YJV5H4"
+  },
+  {
+    "coin": "SOL",
+    "pair": "SOLUSDC",
+    "status": "closed_loss",
+    "leveraged": true,
+    "collateral": 105.0,
+    "volume": 1.48787383,
+    "entry_price": 70.57,
+    "close_price": 71.69,
+    "target_price": 67.04,
+    "stop_price": 71.98,
+    "pnl_usd": -1.67,
+    "pnl_pct": -1.59,
+    "date_open": "2026-06-15T06:00:03.991132",
+    "date_close": "2026-06-15T11:00:18.906893",
+    "reasoning": "Restored from Kraken OpenPositions (short)",
+    "confidence": "MEDIUM",
+    "txid": "OQWFNL-74ETH-NTZKPL",
+    "close_txid": "OR63UV-5KZQP-KXGMC6"
   }
 ]
