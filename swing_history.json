@@ -258,5 +258,25 @@
     "confidence": "MEDIUM",
     "txid": "OWDSBG-AN237-KD6KY3",
     "close_txid": "OAQRXS-KS3Q3-AL2XOC"
+  },
+  {
+    "coin": "DOGE",
+    "pair": "XDGUSDC",
+    "status": "closed_profit",
+    "leveraged": true,
+    "collateral": 62.3,
+    "volume": 716.50373778,
+    "entry_price": 0.08695,
+    "close_price": 0.0874,
+    "target_price": 0.0913,
+    "stop_price": 0.08521,
+    "pnl_usd": 0.32,
+    "pnl_pct": 0.52,
+    "date_open": "2026-06-16T03:00:20.007793",
+    "date_close": "2026-06-16T04:00:03.980266",
+    "reasoning": "OK",
+    "confidence": "MEDIUM",
+    "txid": "OMQDUI-R5SO7-5KF47H",
+    "close_txid": null
   }
 ]

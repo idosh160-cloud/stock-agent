@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-16T03:00:03.827238",
+  "timestamp": "2026-06-16T04:00:03.814433",
   "balance": {
     "ADA": 582.51208488,
     "ATOM": 5.0,
@@ -12,36 +12,36 @@
     {
       "coin": "ETH",
       "qty": 0.19907108,
-      "price": 1769.51,
-      "value_usd": 352.26,
+      "price": 1779.59,
+      "value_usd": 354.26,
       "avg_cost": 1650.731105,
-      "pnl_usd": 23.65,
-      "pnl_pct": 7.2,
-      "change_24h": -1.46,
+      "pnl_usd": 25.65,
+      "pnl_pct": 7.81,
+      "change_24h": -0.89,
       "high_24h": 1848.3,
       "low_24h": 1712.13
     },
     {
       "coin": "ADA",
       "qty": 582.51208488,
-      "price": 0.176096,
-      "value_usd": 102.58,
+      "price": 0.177031,
+      "value_usd": 103.12,
       "avg_cost": 0.179502,
-      "pnl_usd": -1.98,
-      "pnl_pct": -1.9,
-      "change_24h": -1.19,
+      "pnl_usd": -1.44,
+      "pnl_pct": -1.38,
+      "change_24h": -0.66,
       "high_24h": 0.189614,
       "low_24h": 0.175835
     },
     {
       "coin": "SOL",
       "qty": 0.22928768,
-      "price": 72.96,
-      "value_usd": 16.73,
+      "price": 73.7,
+      "value_usd": 16.9,
       "avg_cost": 72.558767,
-      "pnl_usd": 0.09,
-      "pnl_pct": 0.55,
-      "change_24h": -1.33,
+      "pnl_usd": 0.26,
+      "pnl_pct": 1.57,
+      "change_24h": -0.32,
       "high_24h": 76.07,
       "low_24h": 70.78
     },
@@ -58,29 +58,29 @@
       "low_24h": 1.9422
     }
   ],
-  "portfolio_usd": 622.95,
+  "portfolio_usd": 625.67,
   "usdc": 141.66,
   "signals": [
     {
       "coin": "BTC",
       "pair": "XBTUSDC",
       "action": "HOLD (pending order)",
-      "rsi": 37.47,
-      "macd": -168.681174,
-      "ma50": 65379.43,
-      "ma200": 63568.48,
+      "rsi": 41.2,
+      "macd": -136.19205,
+      "ma50": 65419.12,
+      "ma200": 63591.5,
       "support": 65505.29,
       "resistance": 67256.08,
       "near_support": true,
       "buy_score": 5,
       "sell_score": 1,
       "reasons": [
-        "RSI 37.47 (oversold)",
+        "RSI 41.2 (oversold)",
         "MACD bearish crossover",
         "Above MA200 (uptrend)",
         "Near support $65,505.2900"
       ],
-      "price": 65718.19,
+      "price": 66095.18,
       "volume": 0,
       "usd_value": 0.0,
       "limit_price": 0
@@ -89,22 +89,22 @@
       "coin": "ETH",
       "pair": "ETHUSDC",
       "action": "HOLD (pending order)",
-      "rsi": 32.65,
-      "macd": -8.755579,
-      "ma50": 1729.96,
-      "ma200": 1679.53,
+      "rsi": 36.55,
+      "macd": -8.186295,
+      "ma50": 1732.11,
+      "ma200": 1680.34,
       "support": 1732.0,
       "resistance": 1848.3,
       "near_support": false,
       "buy_score": 3,
       "sell_score": 2,
       "reasons": [
-        "RSI 32.65 (oversold)",
+        "RSI 36.55 (oversold)",
         "MACD bearish crossover",
-        "Above MA50 ($1,729.96)",
+        "Above MA50 ($1,732.11)",
         "Above MA200 (uptrend)"
       ],
-      "price": 1769.51,
+      "price": 1779.59,
       "volume": 0,
       "usd_value": 0.0,
       "limit_price": 0
@@ -113,8 +113,8 @@
       "coin": "XRP",
       "pair": "XRPUSDC",
       "action": "HOLD (pending order)",
-      "rsi": 39.51,
-      "macd": -0.008023,
+      "rsi": 42.59,
+      "macd": -0.007202,
       "ma50": 1.19,
       "ma200": 1.15,
       "support": 1.1929,
@@ -123,12 +123,12 @@
       "buy_score": 3,
       "sell_score": 2,
       "reasons": [
-        "RSI 39.51 (oversold)",
+        "RSI 42.59 (oversold)",
         "MACD bearish crossover",
         "Above MA50 ($1.19)",
         "Above MA200 (uptrend)"
       ],
-      "price": 1.21683,
+      "price": 1.22714,
       "volume": 0,
       "usd_value": 0.0,
       "limit_price": 0
@@ -143,6 +143,22 @@
     "MIN_SIGNALS": 2
   },
   "open_orders": [
+    {
+      "txid": "OHCSGN-AMI4C-4AZ6L3",
+      "coin": "XDG",
+      "side": "sell",
+      "price": 0.0913,
+      "volume": 716.50373778,
+      "usd": 65.42
+    },
+    {
+      "txid": "OMQDUI-R5SO7-5KF47H",
+      "coin": "XDG",
+      "side": "buy",
+      "price": 0.08686,
+      "volume": 716.50373778,
+      "usd": 62.24
+    },
     {
       "txid": "O5SL7Z-E3WNG-CPNSTT",
       "coin": "ADA",
