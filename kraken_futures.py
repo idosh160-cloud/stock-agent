@@ -91,10 +91,22 @@ def _request(endpoint: str, params: dict = None, method: str = "GET") -> dict:
 
 
 def get_futures_balance() -> float:
-    """מחזיר יתרת USD זמינה ב-Futures wallet"""
+    """מחזיר margin זמין ב-Futures wallet.
+    Kraken Pro Perps משתמש בחשבון flex (multiCollateralMarginAccount):
+    הכסף יושב ב-flex.availableMargin (כל הקולטרל בשווי USD).
+    fallback לחשבון cash הישן אם flex ריק."""
     try:
         data = _request("/accounts")
         accounts = data.get("accounts", {})
+
+        # חשבון flex החדש — Kraken Pro Perps / multi-collateral
+        flex = accounts.get("flex", {})
+        if flex:
+            avail = flex.get("availableMargin")
+            if avail is not None:
+                return float(avail)
+
+        # fallback — חשבון cash הישן (legacy single-collateral)
         cash = accounts.get("cash", {})
         return float(cash.get("availableFunds", 0))
     except Exception as e:
