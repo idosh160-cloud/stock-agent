@@ -39,11 +39,14 @@ def _load_futures_keys():
     return api_key, api_secret
 
 
-def _sign(endpoint: str, post_data: str, nonce: str, secret: str) -> str:
-    message = post_data + nonce + endpoint
+def _sign(endpoint_path: str, post_data: str, nonce: str, secret: str) -> str:
+    # Kraken Futures: Authent = base64(HMAC-SHA512(base64decode(secret),
+    #                 SHA256(postData + nonce + endpointPath)))
+    # endpointPath חייב לכלול /api/v3 אבל לא /derivatives.
+    sha = hashlib.sha256((post_data + nonce + endpoint_path).encode("utf-8")).digest()
     h = hmac.new(
         base64.b64decode(secret),
-        message.encode("utf-8"),
+        sha,
         hashlib.sha512
     )
     return base64.b64encode(h.digest()).decode()
@@ -56,11 +59,13 @@ def _request(endpoint: str, params: dict = None, method: str = "GET") -> dict:
 
     nonce = str(int(time.time() * 1000))
     params = params or {}
+    # נתיב החתימה: /api/v3 + endpoint (ללא /derivatives שב-BASE_URL)
+    sign_path = f"/api/v3{endpoint}"
 
     if method == "POST":
         post_data = urlencode(params)
         url = f"{BASE_URL}{endpoint}"
-        sig = _sign(endpoint, post_data, nonce, api_secret)
+        sig = _sign(sign_path, post_data, nonce, api_secret)
         headers = {
             "APIKey": api_key,
             "Authent": sig,
@@ -71,7 +76,7 @@ def _request(endpoint: str, params: dict = None, method: str = "GET") -> dict:
     else:
         post_data = ""
         url = f"{BASE_URL}{endpoint}"
-        sig = _sign(endpoint, post_data, nonce, api_secret)
+        sig = _sign(sign_path, post_data, nonce, api_secret)
         headers = {
             "APIKey": api_key,
             "Authent": sig,
