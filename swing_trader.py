@@ -933,6 +933,8 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
     # בנה תמונת תיק מלאה לקלוד
     portfolio_summary = build_portfolio_summary(exposure, open_swings, margin_used, margin_headroom)
 
+    open_coins_set = {t["coin"] for t in open_swings}
+
     # סינון חכם — קרא לClaude רק אם יש סיגנל אמיתי
     def _should_call_claude(candidates: list, open_swings: list) -> tuple[bool, str]:
         # פוזיציה עם בעיה — P&L שלילי מעל 1% או קרובה לסטופ
