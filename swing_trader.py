@@ -222,44 +222,118 @@ def archive_closed_trade(t: dict):
 
 # ── Market data ───────────────────────────────────────────────────────────
 
-def get_candidate_data() -> list:
-    """מחזיר רשימת מטבעות עם נתוני שוק, ממוין לפי תנודתיות"""
-    pair_str = ",".join(c["pair"] for c in CANDIDATES.values())
+DYNAMIC_MIN_VOL_USD = 30000    # נפח יומי מינימלי ($) למטבע דינמי (USDC נזיל פחות מ-USD)
+DYNAMIC_MAX_CANDIDATES = 40    # כמה מטבעות מקסימום להחזיר
+
+# נרמול שמות Kraken פנימיים → שמות סטנדרטיים (עקביות עם שאר המערכת)
+_KRAKEN_COIN_NORM = {"XBT": "BTC", "XDG": "DOGE"}
+
+
+def _build_dynamic_universe() -> dict:
+    """מושך את כל זוגות ה-USDC מ-Kraken AssetPairs ובונה מפת מועמדים דינמית.
+    מחזיר {coin: {pair, price_dec, min_vol, margin}}. נופל חזרה ל-CANDIDATES אם נכשל."""
     try:
-        r = requests.get(
-            f"https://api.kraken.com/0/public/Ticker?pair={pair_str}",
-            timeout=10
-        )
-        result = r.json().get("result", {})
+        r = requests.get("https://api.kraken.com/0/public/AssetPairs", timeout=12)
+        pairs = r.json().get("result", {})
     except Exception as e:
-        logging.error(f"[Swing] ticker fetch failed: {e}")
+        logging.warning(f"[Swing] AssetPairs fetch failed: {e} — משתמש ברשימה הקבועה")
+        return {}
+
+    universe = {}
+    for _, info in pairs.items():
+        try:
+            if info.get("status") != "online":
+                continue
+            wsname = info.get("wsname", "")
+            altname = info.get("altname", "")
+            if not wsname or "/" not in wsname:
+                continue
+            base, quote = wsname.split("/")
+            if quote != "USDC":
+                continue
+            base = _KRAKEN_COIN_NORM.get(base, base)   # XBT→BTC, XDG→DOGE
+            # סנן fiat/stablecoins כבסיס
+            if base in ("USD","EUR","GBP","CHF","CAD","AUD","JPY","USDT","DAI","USDG","EURC","USDP","TUSD"):
+                continue
+            margin = bool(info.get("leverage_buy"))
+            universe[base] = {
+                "pair":      altname,
+                "price_dec": int(info.get("pair_decimals", 4)),
+                "min_vol":   float(info.get("ordermin", 0) or 0),
+                "margin":    margin,
+            }
+        except Exception:
+            continue
+    return universe
+
+
+def get_candidate_data() -> list:
+    """מחזיר רשימת מטבעות עם נתוני שוק, ממוין לפי תנודתיות.
+    דינמי — כל זוגות ה-USDC בעלי נפח גבוה ב-Kraken (לא רק 19 קבועים)."""
+    universe = _build_dynamic_universe()
+
+    # מיזוג: דינמי קודם, ואז משלימים מהרשימה הקבועה אם משהו חסר
+    merged = {}
+    for coin, cfg in CANDIDATES.items():
+        merged[coin] = {"pair": cfg["pair"], "price_dec": cfg["price_dec"],
+                        "min_vol": cfg["min_vol"], "margin": coin in MARGIN_ELIGIBLE}
+    for coin, cfg in universe.items():
+        merged[coin] = cfg
+
+    if not merged:
         return []
 
+    # עדכן את המפות הגלובליות כדי שחיפושי CANDIDATES.get(coin) ו-MARGIN_ELIGIBLE יעבדו לכל המטבעות
+    for coin, cfg in merged.items():
+        CANDIDATES[coin] = {"pair": cfg["pair"], "min_vol": cfg["min_vol"], "price_dec": cfg["price_dec"]}
+        if cfg.get("margin"):
+            MARGIN_ELIGIBLE.add(coin)
+
+    # שלוף tickers לכל הזוגות (בקבוצות כדי לא לחרוג מגודל URL)
+    pair_list = [cfg["pair"] for cfg in merged.values()]
+    result = {}
+    for i in range(0, len(pair_list), 60):
+        batch = ",".join(pair_list[i:i+60])
+        try:
+            r = requests.get(f"https://api.kraken.com/0/public/Ticker?pair={batch}", timeout=12)
+            result.update(r.json().get("result", {}))
+        except Exception as e:
+            logging.warning(f"[Swing] ticker batch failed: {e}")
+
+    # מפה הפוכה pair→coin (Kraken יכול להחזיר שם פאיר מנורמל)
+    pair_to_coin = {cfg["pair"]: coin for coin, cfg in merged.items()}
+
     out = []
-    for coin, cfg in CANDIDATES.items():
-        t = result.get(cfg["pair"])
-        if not t:
+    for kpair, t in result.items():
+        coin = pair_to_coin.get(kpair)
+        if not coin:
+            # נסה התאמה לפי altname (Kraken לפעמים מחזיר שם שונה)
+            coin = next((c for c, cfg in merged.items() if cfg["pair"] in kpair or kpair in cfg["pair"]), None)
+        if not coin:
             continue
-        price  = float(t["c"][0])
-        open_p = float(t["o"])
-        high   = float(t["h"][1])
-        low    = float(t["l"][1])
-        vol    = float(t["v"][1])
+        cfg = merged[coin]
+        try:
+            price  = float(t["c"][0]); open_p = float(t["o"])
+            high   = float(t["h"][1]); low = float(t["l"][1]); vol = float(t["v"][1])
+        except Exception:
+            continue
         if open_p == 0 or price == 0:
             continue
+        vol_usd = round(vol * price, 0)
         chg   = round((price - open_p) / open_p * 100, 2)
         rng   = round((high - low) / low * 100, 2) if low else 0
         out.append({
             "coin": coin, "pair": cfg["pair"],
-            "price": price, "price_dec": cfg["price_dec"],
-            "min_vol": cfg["min_vol"],
+            "price": price, "price_dec": cfg["price_dec"], "min_vol": cfg["min_vol"],
             "change_24h": chg, "range_24h": rng,
-            "high_24h": high, "low_24h": low,
-            "volume_usdc": round(vol * price, 0),
+            "high_24h": high, "low_24h": low, "volume_usdc": vol_usd,
         })
 
+    # סנן נפח נמוך, מיין לפי תנודתיות, החזר את הטופ
+    out = [c for c in out if c["volume_usdc"] >= DYNAMIC_MIN_VOL_USD]
     out.sort(key=lambda x: abs(x["change_24h"]), reverse=True)
-    return out
+    logging.info(f"[Swing] יקום דינמי: {len(out)} מטבעות מעל ${DYNAMIC_MIN_VOL_USD:,.0f} נפח")
+    return out[:DYNAMIC_MAX_CANDIDATES]
 
 
 def get_ohlcv(pair: str, interval: int = 60, count: int = 50) -> list:
