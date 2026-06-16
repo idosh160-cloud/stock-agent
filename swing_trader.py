@@ -365,22 +365,50 @@ def load_performance_summary() -> str:
         if not history:
             return ""
         wins = [h for h in history if h.get("pnl_usd", 0) > 0]
-        losses = [h for h in history if h.get("pnl_usd", 0) <= 0]
         total_pnl = sum(h.get("pnl_usd", 0) for h in history)
         win_rate = len(wins) / len(history) * 100 if history else 0
-        coin_pnl = {}
+
+        # per-coin stats — כל ההיסטוריה (לא נמחק), ועם דגש על האחרונות
+        coin_stats = {}
         for h in history:
             coin = h.get("coin", "")
-            coin_pnl[coin] = coin_pnl.get(coin, 0) + h.get("pnl_usd", 0)
-        best = sorted(coin_pnl.items(), key=lambda x: x[1], reverse=True)[:3]
-        worst = sorted(coin_pnl.items(), key=lambda x: x[1])[:3]
+            if not coin:
+                continue
+            s = coin_stats.setdefault(coin, {"wins": 0, "total": 0, "pnl": 0.0, "recent_pnl": 0.0, "recent_total": 0})
+            s["total"] += 1
+            s["pnl"]   += h.get("pnl_usd", 0)
+            if h.get("pnl_usd", 0) > 0:
+                s["wins"] += 1
+
+        # 30 עסקאות אחרונות — משקל גבוה יותר לאחרונות
+        recent_30 = history[-30:]
+        for h in recent_30:
+            coin = h.get("coin", "")
+            if coin in coin_stats:
+                coin_stats[coin]["recent_pnl"]   += h.get("pnl_usd", 0)
+                coin_stats[coin]["recent_total"]  += 1
+
+        # בנה שורה לכל מטבע שנסחר לפחות פעם אחת
+        coin_lines = []
+        for coin, s in sorted(coin_stats.items()):
+            wr = round(s["wins"] / s["total"] * 100) if s["total"] else 0
+            n  = s["total"]
+            reliability = "small sample" if n < 5 else "medium sample" if n < 15 else "reliable"
+            recent_note = ""
+            if s["recent_total"] > 0:
+                r_wr = round(sum(1 for h in recent_30 if h.get("coin") == coin and h.get("pnl_usd", 0) > 0) / s["recent_total"] * 100)
+                recent_note = f", last 30: {s['recent_total']} trades {r_wr}% win"
+            coin_lines.append(
+                f"  {coin}: {n} trades, {wr}% win rate, ${s['pnl']:+.2f} total ({reliability}{recent_note})"
+            )
+
         lines = [
-            f"Past performance ({len(history)} trades): win rate {win_rate:.0f}%, total P&L ${total_pnl:.2f}",
-            f"Best coins: {', '.join(f'{c}(${p:.2f})' for c,p in best)}",
-            f"Worst coins: {', '.join(f'{c}(${p:.2f})' for c,p in worst)}",
-        ]
-        recent = history[-5:]
-        recent_str = ", ".join(f"{h['coin']} {h['status']} ${h.get('pnl_usd',0):.2f}" for h in recent)
+            f"Past performance ({len(history)} trades total): win rate {win_rate:.0f}%, total P&L ${total_pnl:.2f}",
+            "Per-coin history (ALL time + recent emphasis — use as CONTEXT, not a rule. Small samples are unreliable.):",
+        ] + coin_lines
+
+        recent_5 = history[-5:]
+        recent_str = ", ".join(f"{h['coin']} {h['status']} ${h.get('pnl_usd',0):+.2f}" for h in recent_5)
         lines.append(f"Last 5 trades: {recent_str}")
         return "\n".join(lines)
     except Exception:
@@ -432,7 +460,13 @@ Stocks move slower than crypto — look for strong momentum days or pre/post ear
 
     skip = ", ".join(open_coins) if open_coins else "none"
     performance = load_performance_summary()
-    perf_section = f"\n\nYour historical performance:\n{performance}" if performance else ""
+    perf_section = (
+        f"\n\nYour historical performance (USE AS CONTEXT, NOT RULES):\n{performance}"
+        f"\nIMPORTANT: Small samples (<5 trades) are statistically meaningless — ignore them."
+        f"\nA coin with 0/3 wins may simply have had 3 bad market days. A coin with 4/5 wins isn't guaranteed."
+        f"\nIf technical signals are strong enough, enter even a historically weak coin — but require STRONGER confirmation."
+        f"\nIf signals are weak/neutral, a poor history is a valid tiebreaker to skip."
+    ) if performance else ""
 
     # פרמטר נוסף: פוזיציות פתוחות לרוטציה
     open_positions_rows = ""
