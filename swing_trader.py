@@ -895,13 +895,17 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
         move_thr = 3.0 if has_capacity else 5.0   # מרג'ין מלא → רק תנועה חזקה מאוד שווה רוטציה
         rsi_lo, rsi_hi = (35, 65) if has_capacity else (30, 70)
 
-        open_coins_set = {t["coin"] for t in open_swings}
-        strong_move = [c for c in candidates if abs(c.get("change_24h", 0)) >= move_thr and c["coin"] not in open_coins_set]
+        # רף נפח — מטבע עם נפח יומי נמוך לא ניתן לסחור בו, אז אין טעם לשאול את Claude עליו
+        # (Claude פוסל אותם ממילא — VET בנפח $563 נדחה 6 פעמים רצוף)
+        MIN_TRIGGER_VOL = 50000
+        tradeable = [c for c in candidates if c.get("volume_usdc", 0) >= MIN_TRIGGER_VOL and c["coin"] not in open_coins_set]
+
+        strong_move = [c for c in tradeable if abs(c.get("change_24h", 0)) >= move_thr]
         if strong_move:
             coins = ", ".join(c["coin"] for c in strong_move[:3])
             tag = "" if has_capacity else " (שקילת רוטציה — מרג'ין מלא)"
             return True, f"תנועה חזקה במטבע חדש: {coins}{tag}"
-        extreme_rsi = [c for c in candidates if c.get("rsi") and (c["rsi"] < rsi_lo or c["rsi"] > rsi_hi) and c["coin"] not in open_coins_set]
+        extreme_rsi = [c for c in tradeable if c.get("rsi") and (c["rsi"] < rsi_lo or c["rsi"] > rsi_hi)]
         if extreme_rsi:
             coins = ", ".join(c["coin"] for c in extreme_rsi[:3])
             return True, f"RSI קיצוני: {coins}"
