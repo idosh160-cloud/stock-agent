@@ -22,7 +22,7 @@ SWING_FILE   = os.path.join(DIR, "swing_trades.json")
 HISTORY_FILE = os.path.join(DIR, "swing_history.json")
 
 SWING_USD         = 100    # ברירת מחדל לעסקת קריפטו אם Claude לא נתן size_pct
-SWING_USD_STOCK   = 75     # דולר לכל עסקת מניה (ללא מינוף)
+SWING_USD_STOCK   = 30     # דולר לעסקת מניה — שלב הוכחה, קטן עד שיש edge
 SWING_PCT_DEFAULT = 0.15   # 15% מהתיק אם אין size_pct מ-Claude
 SWING_MIN_USD     = 30     # רצפה — מגבלת קרקן
 SWING_MAX_USD     = 500    # תקרה לעסקה בודדת
@@ -452,10 +452,15 @@ def analyze_with_claude(candidates: list, open_coins: set, usdc: float, btc_pric
             for c in stock_candidates[:15]
         ])
         stock_section = f"""
-xStock candidates (tokenized stocks, spot only, no leverage):
+xStock candidates (tokenized stocks via Kraken Futures — LONG only, leverage available):
 {stock_rows}
-Trade size for stocks: ${SWING_USD_STOCK} | Take-profit: +{TARGET_PCT_STOCK*100:.1f}% | Stop-loss: -{STOP_PCT_STOCK*100:.1f}%
-Stocks move slower than crypto — look for strong momentum days or pre/post earnings moves.
+Trade size for stocks: ${SWING_USD_STOCK} (proving phase — keep stocks small until edge is shown).
+STOCKS ARE NOT CRYPTO — trade them differently:
+- They move SLOWER and in tighter ranges. A 3% stock day is huge; a 3% crypto day is noise.
+- Use TIGHTER targets/stops: target_pct 0.03-0.07, stop_pct 0.015-0.025. Don't apply crypto's wide bands.
+- The underlying moves mostly during US market hours (≈14:30-21:00 UTC). Outside those hours xStocks drift — avoid fresh entries on thin off-hours moves.
+- Best setups: strong momentum on real volume during US hours, post-earnings drift, sector-wide moves. Avoid random off-hours wicks.
+- Only pick a stock if its setup is clearly better than the crypto options right now. Default to crypto unless a stock stands out.
 """
 
     skip = ", ".join(open_coins) if open_coins else "none"
@@ -1080,8 +1085,17 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
 
         # stop/target — Claude קובע לכל עסקה לפי תנודתיות; ברירת מחדל אם לא נתן. גבולות הגנה.
         if is_stock:
-            target_pct = TARGET_PCT_STOCK
-            stop_pct   = STOP_PCT_STOCK
+            # מניות — Claude קובע, אבל בטווח צר (מניות זזות פחות מקריפטו)
+            try:
+                stop_pct = float(pick.get("stop_pct", STOP_PCT_STOCK))
+            except (TypeError, ValueError):
+                stop_pct = STOP_PCT_STOCK
+            try:
+                target_pct = float(pick.get("target_pct", TARGET_PCT_STOCK))
+            except (TypeError, ValueError):
+                target_pct = TARGET_PCT_STOCK
+            stop_pct   = max(0.01, min(0.03, stop_pct))    # stop 1%-3%
+            target_pct = max(0.02, min(0.08, target_pct))   # target 2%-8%
         else:
             try:
                 stop_pct = float(pick.get("stop_pct", STOP_PCT))
@@ -1186,11 +1200,25 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
         try:
             if is_stock:
                 # ── xStock — דרך Kraken Futures API (לונג בלבד) ───────────
-                from kraken_futures import place_futures_order, get_futures_balance
+                from kraken_futures import (
+                    place_futures_order, get_futures_balance,
+                    transfer_spot_to_futures, MAX_TRANSFER_USD
+                )
                 fut_balance = get_futures_balance()
                 if fut_balance < trade_usd:
-                    logging.warning(f"[Futures] Insufficient balance ${fut_balance:.2f} < ${trade_usd} for {coin}")
-                    continue
+                    # אין מספיק בארנק Futures — נסה להעביר מ-Spot (עם תקרה קשיחה).
+                    # מעביר רק אם יש מספיק USDC פנוי בספוט, ולא יותר מהתקרה.
+                    shortfall = trade_usd - fut_balance
+                    to_move   = min(shortfall + 2, MAX_TRANSFER_USD, max(0, usdc) - 10)
+                    if to_move >= 10:
+                        logging.info(f"[Futures] חסר ${shortfall:.0f} ל-{coin} — מעביר ${to_move:.0f} מ-Spot")
+                        if transfer_spot_to_futures(to_move):
+                            import time as _t
+                            _t.sleep(3)  # המתנה לזיכוי ההעברה
+                            fut_balance = get_futures_balance()
+                    if fut_balance < trade_usd:
+                        logging.warning(f"[Futures] עדיין אין מספיק ${fut_balance:.2f} < ${trade_usd} ל-{coin} — מדלג")
+                        continue
                 txid      = place_futures_order(pair, "buy",  vol, entry_lp)
                 sell_txid = None
                 try:

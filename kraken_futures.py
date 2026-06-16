@@ -114,6 +114,52 @@ def get_futures_balance() -> float:
         return 0.0
 
 
+# ── העברות כספים בין ארנקים (עם תקרה קשיחה — דרישת המועצה) ──────────────
+MAX_TRANSFER_USD = 50.0   # תקרה קשיחה להעברה בודדת — הגנה מפני באג שמרוקן ארנק
+MIN_TRANSFER_USD = 10.0   # מתחת לזה לא שווה (עמלות/מינימום)
+
+
+def transfer_spot_to_futures(amount: float) -> bool:
+    """מעביר USDC מארנק Spot ל-Futures. מוגבל ל-MAX_TRANSFER_USD."""
+    amount = round(min(float(amount), MAX_TRANSFER_USD), 2)
+    if amount < MIN_TRANSFER_USD:
+        logging.info(f"[Transfer] סכום ${amount} קטן מהמינימום — מדלג")
+        return False
+    try:
+        from kraken_bot import _request as spot_request
+        res = spot_request("/0/private/WalletTransfer", {
+            "asset":  "USDC",
+            "from":   "Spot Wallet",
+            "to":     "Futures Wallet",
+            "amount": f"{amount:.2f}",
+        }, private=True)
+        refid = res.get("refid", "?")
+        logging.warning(f"[Transfer] Spot→Futures ${amount:.2f} USDC | refid={refid}")
+        return True
+    except Exception as e:
+        logging.error(f"[Transfer] Spot→Futures failed: {e}")
+        return False
+
+
+def transfer_futures_to_spot(amount: float) -> bool:
+    """מחזיר USDC מארנק Futures (flex) ל-Spot. מוגבל ל-MAX_TRANSFER_USD."""
+    amount = round(min(float(amount), MAX_TRANSFER_USD), 2)
+    if amount < MIN_TRANSFER_USD:
+        return False
+    try:
+        data = _request("/withdrawal", {
+            "currency":     "usdc",
+            "amount":       f"{amount:.2f}",
+            "sourceWallet": "flex",
+        }, method="POST")
+        uid = data.get("uid", "?")
+        logging.warning(f"[Transfer] Futures→Spot ${amount:.2f} USDC | uid={uid}")
+        return True
+    except Exception as e:
+        logging.error(f"[Transfer] Futures→Spot failed: {e}")
+        return False
+
+
 def get_futures_positions() -> list:
     """מחזיר פוזיציות פתוחות ב-Futures"""
     try:
