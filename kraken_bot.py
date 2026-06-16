@@ -37,10 +37,12 @@ CRYPTO_FILE  = os.path.join(DIR, "last_crypto.json")
 DEFAULT_PARAMS = {
     "RSI_BUY":          45,
     "RSI_SELL":         58,
-    "MAX_TRADE_USD":    30,
+    "MAX_TRADE_USD":    75,
     "MAX_DAILY_TRADES": 4,
     "MIN_SIGNALS":      2,
 }
+
+STOP_LOSS_PCT = 0.03  # -3% stop-loss על כל קנייה
 
 PAIRS = {
     "BTC": "XBTUSDC",
@@ -84,6 +86,23 @@ def load_trades() -> list:
 
 def save_trade(trade: dict):
     trades = load_trades()
+    # אם זו מכירה — חפש קנייה פתוחה ורשום P&L
+    if trade.get("action") == "SELL":
+        coin = trade["coin"]
+        for t in reversed(trades):
+            if t.get("coin") == coin and t.get("action") == "BUY" and t.get("pnl_pct") is None:
+                buy_price = t.get("price", 0)
+                sell_price = trade.get("price", 0)
+                if buy_price > 0:
+                    pnl_pct = round((sell_price - buy_price) / buy_price * 100, 2)
+                    pnl_usd = round((sell_price - buy_price) * t.get("volume", 0), 2)
+                    t["pnl_pct"] = pnl_pct
+                    t["pnl_usd"] = pnl_usd
+                    t["close_price"] = sell_price
+                    trade["pnl_pct"] = pnl_pct
+                    trade["pnl_usd"] = pnl_usd
+                    logging.info(f"[Crypto] P&L {coin}: {pnl_pct:+.2f}% (${pnl_usd:+.2f})")
+                break
     trades.append(trade)
     with open(TRADES_FILE, "w", encoding="utf-8") as f:
         json.dump(trades, f, indent=2, ensure_ascii=False)
@@ -557,6 +576,41 @@ def run_cycle(auto_trade: bool = True) -> dict:
             lp     = 0
 
             decimals = {"BTC": 1, "ETH": 2, "XRP": 4}.get(coin, 2)
+
+            # stop-loss — בדוק אם יש קנייה פתוחה שירדה מעל 3%
+            if holding >= MIN_VOLUMES.get(coin, 0.0001):
+                open_buy = next(
+                    (t for t in reversed(load_trades())
+                     if t.get("coin") == coin and t.get("action") == "BUY" and t.get("pnl_pct") is None),
+                    None
+                )
+                if open_buy and open_buy.get("price", 0) > 0:
+                    drop = (price - open_buy["price"]) / open_buy["price"]
+                    if drop <= -STOP_LOSS_PCT:
+                        sl_vol = round(holding * 0.99, 6)
+                        sl_lp  = round(price * 0.999, decimals)
+                        if sl_vol >= MIN_VOLUMES.get(coin, 0.0001):
+                            try:
+                                res   = place_order(pair, "sell", sl_vol, sl_lp)
+                                txid  = list(res.get("txid", ["?"]))[0]
+                                logging.warning(f"[StopLoss] {coin} drop={drop:.1%} → SELL @ {sl_lp} txid={txid}")
+                                save_trade({
+                                    "date": datetime.now().isoformat(), "coin": coin,
+                                    "action": "SELL", "price": price, "volume": sl_vol,
+                                    "usd": round(sl_vol * price, 2), "rsi": rsi,
+                                    "buy_score": 0, "sell_score": 0,
+                                    "reasons": [f"Stop-loss triggered ({drop:.1%})"],
+                                    "txid": txid, "pnl_pct": None,
+                                })
+                                daily += 1
+                            except Exception as e:
+                                logging.error(f"[StopLoss] failed {coin}: {e}")
+                        action = "STOP-LOSS"
+                        vol, lp = 0, 0
+                        signals.append({**{k: 0 for k in ["volume","usd_value","limit_price","buy_score","sell_score","support","resistance","ma50","ma200","macd"]},
+                                        "coin": coin, "pair": pair, "action": action, "rsi": rsi,
+                                        "near_support": False, "near_resistance": False, "reasons": [f"Stop-loss {drop:.1%}"], "price": price})
+                        continue
 
             # אם יש פקודה פתוחה על המטבע — לא מוסיפים עוד
             if coin in open_coins:
