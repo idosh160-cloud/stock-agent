@@ -22,7 +22,9 @@ SWING_FILE   = os.path.join(DIR, "swing_trades.json")
 HISTORY_FILE = os.path.join(DIR, "swing_history.json")
 
 SWING_USD         = 100    # ברירת מחדל לעסקת קריפטו אם Claude לא נתן size_pct
-SWING_USD_STOCK   = 30     # דולר לעסקת מניה — שלב הוכחה, קטן עד שיש edge
+SWING_USD_STOCK   = 30     # רצפה לעסקת מניה (נושיונל)
+SWING_MAX_STOCK_USD = 150  # תקרת נושיונל לעסקת מניה (עם מינוף = ~$50 מרג'ין)
+STOCK_LEVERAGE    = 3      # מינוף יעד על מניות (Perps) — אגרסיבי אך לא פרוע
 SWING_PCT_DEFAULT = 0.15   # 15% מהתיק אם אין size_pct מ-Claude
 SWING_MIN_USD     = 30     # רצפה — מגבלת קרקן
 SWING_MAX_USD     = 500    # תקרה לעסקה בודדת
@@ -452,15 +454,15 @@ def analyze_with_claude(candidates: list, open_coins: set, usdc: float, btc_pric
             for c in stock_candidates[:15]
         ])
         stock_section = f"""
-xStock candidates (tokenized stocks via Kraken Futures — LONG only, leverage available):
+xStock candidates (tokenized stocks via Kraken Futures Perps — LONG and SHORT, leverage available):
 {stock_rows}
-Trade size for stocks: ${SWING_USD_STOCK} (proving phase — keep stocks small until edge is shown).
-STOCKS ARE NOT CRYPTO — trade them differently:
-- They move SLOWER and in tighter ranges. A 3% stock day is huge; a 3% crypto day is noise.
-- Use TIGHTER targets/stops: target_pct 0.03-0.07, stop_pct 0.015-0.025. Don't apply crypto's wide bands.
-- The underlying moves mostly during US market hours (≈14:30-21:00 UTC). Outside those hours xStocks drift — avoid fresh entries on thin off-hours moves.
-- Best setups: strong momentum on real volume during US hours, post-earnings drift, sector-wide moves. Avoid random off-hours wicks.
-- Only pick a stock if its setup is clearly better than the crypto options right now. Default to crypto unless a stock stands out.
+Stocks are FULL citizens now — pick them whenever they're the best growth opportunity, same as crypto.
+- Size by conviction with "size_pct" (% of portfolio) just like crypto. A+ stock setup → size it up.
+- You can go LONG or SHORT on stocks (Perps). Short overbought/exhausted names, long strong momentum/dips.
+- STILL trade them stock-aware: they move SLOWER and tighter than crypto. A 3% stock day is big.
+  · Use tighter bands than crypto: target_pct 0.03-0.08, stop_pct 0.015-0.03, but keep target ≥ 2x stop.
+- The underlying moves mostly during US market hours (≈14:30-21:00 UTC). Avoid fresh entries on thin off-hours drift; favor real-volume moves during US hours, post-earnings drift, sector moves.
+- Choose stock vs crypto purely on which gives the best risk/reward for GROWTH right now.
 """
 
     skip = ", ".join(open_coins) if open_coins else "none"
@@ -519,7 +521,7 @@ You can mix crypto and stocks — pick whatever has the best risk/reward today.
 You can go LONG or SHORT on crypto:
 - LONG ("direction":"long") — profit when price RISES. Use for momentum up / oversold bounce (RSI low, near support, MACD turning up).
 - SHORT ("direction":"short") — profit when price FALLS. Use for exhausted/overbought assets (RSI > 70, BB% near 100, ran 10%+ and stalling, MACD turning down).
-- SHORT is crypto-only (margin). Stocks (xStocks) are LONG only.
+- SHORT works on BOTH crypto (margin) and stocks (Perps futures).
 - Default to "long" if unsure. Only short when there is a clear downside setup — a short in a rising market loses money fast.
 
 Criteria for LONG:
@@ -814,7 +816,36 @@ def check_open_swings(balance: dict, request_fn) -> list:
                 logging.info(f"[Swing] {coin} ({side}) ב-target ${current:.4f} — פקודת TP עובדת בקרקן, ממתין")
                 continue
             else:
-                # stop-loss — בטל את ה-TP הפתוח וסגור את הפוזיציה בכיוון ההפוך
+                # סגירה הפוכה: שורט→buy, לונג→sell
+                close_type = "buy" if side == "short" else "sell"
+                lp = round(current * (1.001 if side == "short" else 0.999), price_dec)
+
+                if t.get("is_stock") and t.get("is_futures"):
+                    # ── מניה — דרך Kraken Futures Perps ──────────────────
+                    from kraken_futures import place_futures_order, cancel_futures_order
+                    if t.get("sell_txid"):
+                        try:
+                            cancel_futures_order(t["sell_txid"])
+                            logging.info(f"[Swing] Cancelled Futures TP {t['sell_txid']} for {coin}")
+                        except Exception as ce:
+                            logging.warning(f"[Swing] cancel futures TP failed: {ce}")
+                    try:
+                        txid = place_futures_order(pair, close_type, vol, lp)
+                        t["status"]      = "closed_loss"
+                        t["date_close"]  = datetime.now().isoformat()
+                        t["close_price"] = current
+                        t["close_txid"]  = txid
+                        logging.info(f"[Swing] CLOSE STOP {coin} (מניה {side}) @ {current:.4f} | P&L {pnl_pct:+.1f}% | {close_type} txid={txid}")
+                        archive_closed_trade(t)
+                        _send_trade_alert(
+                            f"🔴 Stop-Loss: {coin} (מניה)",
+                            f"מניה: {coin} ({side})\nיציאה: ${current:.4f}\nכניסה: ${t['entry_price']:.4f}\nהפסד: {pnl_pct:+.1f}% (${t['pnl_usd']:+.2f})"
+                        )
+                    except Exception as e:
+                        logging.error(f"[Swing] stock stop close failed {coin}: {e}")
+                    continue
+
+                # ── קריפטו — דרך Spot/Margin API ─────────────────────
                 if t.get("sell_txid"):
                     try:
                         request_fn("/0/private/CancelOrder", {"txid": t["sell_txid"]}, private=True)
@@ -824,16 +855,10 @@ def check_open_swings(balance: dict, request_fn) -> list:
 
                 use_lev = coin in MARGIN_ELIGIBLE
                 if side == "short":
-                    # סגירת שורט = BUY של אותו volume, מעט מעל המחיר כדי להבטיח ביצוע
-                    close_type = "buy"
-                    close_vol  = vol
-                    lp = round(current * 1.001, price_dec)
+                    close_vol = vol
                 else:
-                    # סגירת לונג = SELL. ללונג ממונף ה-volume הוא במרג'ין, אחרת לפי ה-holding
-                    close_type = "sell"
-                    holding    = float(balance.get(coin, 0))
-                    close_vol  = vol if use_lev else min(vol, holding)
-                    lp = round(current * 0.999, price_dec)
+                    holding   = float(balance.get(coin, 0))
+                    close_vol = vol if use_lev else min(vol, holding)
 
                 if close_vol < cfg.get("min_vol", 0.0000001):
                     logging.warning(f"[Swing] {coin} volume {close_vol} below min — cannot close")
@@ -1110,7 +1135,17 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
 
         # גודל דינמי — Claude קובע size_pct (5-40% מהתיק); תקרה גדלה עם התיק
         if is_stock:
-            trade_usd = SWING_USD_STOCK
+            # מניות — גודל לפי שכנוע כמו קריפטו, נושיונל מתחת לתקרה. מינוף נותן חשיפה גדולה ממרג'ין.
+            pf = portfolio_usd or usdc or 0
+            try:
+                size_pct = float(pick.get("size_pct", 10))
+            except (TypeError, ValueError):
+                size_pct = 10
+            size_pct  = max(5.0, min(30.0, size_pct))
+            trade_usd = pf * size_pct / 100 if pf else SWING_USD_STOCK
+            trade_usd = max(SWING_USD_STOCK, min(SWING_MAX_STOCK_USD, trade_usd))
+            trade_usd = round(trade_usd, 2)
+            logging.info(f"[Swing] {coin} (מניה) size_pct={size_pct:.0f}% → נושיונל ${trade_usd:.0f} | מינוף x{STOCK_LEVERAGE} | stop -{stop_pct*100:.1f}% target +{target_pct*100:.1f}%")
         else:
             pf = portfolio_usd or usdc or 0
             try:
@@ -1189,9 +1224,9 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
         direction = str(pick.get("direction", "long")).lower()
         if direction not in ("long", "short"):
             direction = "long"
-        # שורט אפשרי רק בקריפטו עם margin (חייב מינוף — אי אפשר לשרוט ספוט)
-        if direction == "short" and (is_stock or coin not in MARGIN_ELIGIBLE):
-            logging.info(f"[Swing] {coin} short לא נתמך (לא margin-eligible) — מדלג")
+        # שורט: בקריפטו רק margin-eligible; במניות (Perps) תמיד אפשרי
+        if direction == "short" and not is_stock and coin not in MARGIN_ELIGIBLE:
+            logging.info(f"[Swing] {coin} short לא נתמך (קריפטו לא margin-eligible) — מדלג")
             continue
 
         target_p, stop_p = _targets_for_side(direction, price, target_pct, stop_pct, price_dec)
@@ -1199,30 +1234,33 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
         entry_lp = round(price * (1.001 if direction == "short" else 0.999), price_dec)
         try:
             if is_stock:
-                # ── xStock — דרך Kraken Futures API (לונג בלבד) ───────────
+                # ── xStock — דרך Kraken Futures Perps (לונג ושורט, עם מינוף) ──
                 from kraken_futures import (
                     place_futures_order, get_futures_balance,
                     transfer_spot_to_futures, MAX_TRANSFER_USD
                 )
+                # מינוף: צריך מרג'ין = נושיונל/מינוף, לא את כל הנושיונל.
+                need_margin = trade_usd / STOCK_LEVERAGE
                 fut_balance = get_futures_balance()
-                if fut_balance < trade_usd:
-                    # אין מספיק בארנק Futures — נסה להעביר מ-Spot (עם תקרה קשיחה).
-                    # מעביר רק אם יש מספיק USDC פנוי בספוט, ולא יותר מהתקרה.
-                    shortfall = trade_usd - fut_balance
+                if fut_balance < need_margin:
+                    shortfall = need_margin - fut_balance
                     to_move   = min(shortfall + 2, MAX_TRANSFER_USD, max(0, usdc) - 10)
                     if to_move >= 10:
-                        logging.info(f"[Futures] חסר ${shortfall:.0f} ל-{coin} — מעביר ${to_move:.0f} מ-Spot")
+                        logging.info(f"[Futures] חסר מרג'ין ${shortfall:.0f} ל-{coin} — מעביר ${to_move:.0f} מ-Spot")
                         if transfer_spot_to_futures(to_move):
                             import time as _t
                             _t.sleep(3)  # המתנה לזיכוי ההעברה
                             fut_balance = get_futures_balance()
-                    if fut_balance < trade_usd:
-                        logging.warning(f"[Futures] עדיין אין מספיק ${fut_balance:.2f} < ${trade_usd} ל-{coin} — מדלג")
+                    if fut_balance < need_margin:
+                        logging.warning(f"[Futures] אין מספיק מרג'ין ${fut_balance:.2f} < ${need_margin:.2f} ל-{coin} — מדלג")
                         continue
-                txid      = place_futures_order(pair, "buy",  vol, entry_lp)
+                # לונג: כניסה=buy, TP=sell | שורט: כניסה=sell, TP=buy
+                entry_side = "sell" if direction == "short" else "buy"
+                tp_side    = "buy"  if direction == "short" else "sell"
+                txid      = place_futures_order(pair, entry_side, vol, entry_lp)
                 sell_txid = None
                 try:
-                    sell_txid = place_futures_order(pair, "sell", vol, target_p)
+                    sell_txid = place_futures_order(pair, tp_side, vol, target_p)
                 except Exception as se:
                     logging.warning(f"[Futures] TP order failed {coin}: {se}")
             else:
