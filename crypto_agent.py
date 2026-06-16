@@ -127,6 +127,13 @@ def main():
         if open_sw:
             print(f"  Swings פתוחים: {len(open_sw)} — {', '.join(t['coin'] for t in open_sw)}")
 
+        # ── מייל סיכום יומי — פעם ביום ב-09:00, בלי Claude ──────────────
+        try:
+            from daily_report import send_daily_if_due
+            send_daily_if_due(state["portfolio_usd"], hour=9)
+        except Exception as e:
+            logging.warning(f"Daily report failed: {e}")
+
         push_to_github()
         logging.info(f"Cycle complete. Portfolio=${state['portfolio_usd']} orders_today={state['orders_today']} swings={len(open_sw)}")
 
