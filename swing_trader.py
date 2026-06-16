@@ -459,9 +459,13 @@ Prefer rotating out of positions that are flat/negative or stalling far from tar
 
 BTC context price: ${btc_price:,.0f}
 Available USDC: ${usdc:.2f}
-Position sizing: YOU decide each trade's size as a % of portfolio via "size_pct" (between 5 and 25).
-Bigger size_pct for high-conviction setups, smaller for marginal ones. 5x leverage applies to crypto longs/shorts.
-Take-profit: +5% | Stop-loss: -2%
+YOUR MANDATE: grow this portfolio aggressively. Safety rails (daily kill-switch, 25%/asset cap, stop on every trade) are always on — so swing for real gains, don't preserve capital timidly.
+- CONCENTRATE: back your 2-3 best setups with size, don't spread thin across 6 marginal picks. Most hours, the best move is 0-1 high-quality entries.
+- SIZE by conviction via "size_pct" (% of portfolio, 5-40). A+ setup (clear trend + volume + indicators aligned) → 30-40. Marginal → skip it.
+- SET stop/target per trade via "stop_pct" and "target_pct" (decimals). Match them to the coin's volatility, NOT a fixed rule:
+  · A fixed -2% stop on 5x gets wicked out by normal noise — give volatile coins room (stop_pct 0.03-0.05).
+  · Let winners run — on strong momentum set target_pct 0.08-0.20, not a tiny +5%. Aim for asymmetric reward:risk (target ≥ 2x stop).
+- 5x leverage applies to crypto longs/shorts.
 
 PORTFOLIO STATUS:
 {portfolio_summary}
@@ -500,7 +504,9 @@ Return ONLY valid JSON:
     {{
       "coin": "SOL",
       "direction": "long",
-      "size_pct": 15,
+      "size_pct": 30,
+      "stop_pct": 0.035,
+      "target_pct": 0.12,
       "confidence": "HIGH",
       "reasoning": "שתי משפטים בעברית — מה בדיוק אתה רואה, למה עכשיו, ולמה לונג/שורט"
     }}
@@ -839,6 +845,20 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
     open_swings = [t for t in trades if t.get("status") == "open"]
     open_coins  = {t["coin"] for t in open_swings}
 
+    # מעקב edge — האם האסטרטגיה באמת רווחית? (win-rate + תוחלת לעסקה)
+    try:
+        if os.path.exists(HISTORY_FILE):
+            with open(HISTORY_FILE, encoding="utf-8") as f:
+                _hist = json.load(f)
+            if _hist:
+                _wins = [h for h in _hist if h.get("pnl_usd", 0) > 0]
+                _wr   = len(_wins) / len(_hist) * 100
+                _tot  = sum(h.get("pnl_usd", 0) for h in _hist)
+                _exp  = _tot / len(_hist)
+                logging.info(f"[Edge] {len(_hist)} עסקאות | win-rate {_wr:.0f}% | תוחלת ${_exp:+.2f}/עסקה | סהכ ${_tot:+.2f}")
+    except Exception:
+        pass
+
     # עדכן drawdown יומי
     if portfolio_usd:
         update_drawdown(portfolio_usd)
@@ -1022,11 +1042,23 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
         price_dec = coin_data["price_dec"]
         min_v     = coin_data["min_vol"]
 
-        # פרמטרים שונים לפי סוג
-        target_pct = TARGET_PCT_STOCK if is_stock else TARGET_PCT
-        stop_pct   = STOP_PCT_STOCK   if is_stock else STOP_PCT
+        # stop/target — Claude קובע לכל עסקה לפי תנודתיות; ברירת מחדל אם לא נתן. גבולות הגנה.
+        if is_stock:
+            target_pct = TARGET_PCT_STOCK
+            stop_pct   = STOP_PCT_STOCK
+        else:
+            try:
+                stop_pct = float(pick.get("stop_pct", STOP_PCT))
+            except (TypeError, ValueError):
+                stop_pct = STOP_PCT
+            try:
+                target_pct = float(pick.get("target_pct", TARGET_PCT))
+            except (TypeError, ValueError):
+                target_pct = TARGET_PCT
+            stop_pct   = max(0.015, min(0.06, stop_pct))   # stop בין 1.5% ל-6%
+            target_pct = max(0.04,  min(0.25, target_pct))  # target בין 4% ל-25%
 
-        # גודל דינמי — Claude קובע size_pct (5-25% מהתיק); רצפה/תקרה כהגנה
+        # גודל דינמי — Claude קובע size_pct (5-40% מהתיק); תקרה גדלה עם התיק
         if is_stock:
             trade_usd = SWING_USD_STOCK
         else:
@@ -1035,11 +1067,13 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
                 size_pct = float(pick.get("size_pct", SWING_PCT_DEFAULT * 100))
             except (TypeError, ValueError):
                 size_pct = SWING_PCT_DEFAULT * 100
-            size_pct  = max(5.0, min(25.0, size_pct))   # גבולות הגנה
+            size_pct  = max(5.0, min(40.0, size_pct))   # מנדט אגרסיבי — עד 40%
+            # תקרה גדלה עם התיק (25% מהתיק), אבל לא פחות מתקרת הבסיס
+            dynamic_max = max(SWING_MAX_USD, pf * 0.25) if pf else SWING_MAX_USD
             trade_usd = pf * size_pct / 100 if pf else SWING_USD
-            trade_usd = max(SWING_MIN_USD, min(SWING_MAX_USD, trade_usd))
+            trade_usd = max(SWING_MIN_USD, min(dynamic_max, trade_usd))
             trade_usd = round(trade_usd, 2)
-            logging.info(f"[Swing] {coin} size_pct={size_pct:.0f}% → ${trade_usd:.0f} (תיק ${pf:.0f})")
+            logging.info(f"[Swing] {coin} size_pct={size_pct:.0f}% → ${trade_usd:.0f} | stop -{stop_pct*100:.1f}% target +{target_pct*100:.1f}% (תיק ${pf:.0f})")
 
         # CANDIDATES lookup לקריפטו (לmargining)
         cfg = CANDIDATES.get(coin, {})
