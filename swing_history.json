@@ -238,5 +238,25 @@
     "confidence": "MEDIUM",
     "txid": "OACTYP-MRXBJ-LJDO54",
     "close_txid": "O3AENF-SMDH2-XHD3L7"
+  },
+  {
+    "coin": "XRP",
+    "pair": "XRPUSDC",
+    "status": "closed_loss",
+    "leveraged": true,
+    "collateral": 75.67,
+    "volume": 61.11685459,
+    "entry_price": 1.23812,
+    "close_price": 1.23519,
+    "target_price": 1.3,
+    "stop_price": 1.2134,
+    "pnl_usd": -0.18,
+    "pnl_pct": -0.24,
+    "date_open": "2026-06-16T00:00:20.584174",
+    "date_close": "2026-06-16T01:00:19.128595",
+    "reasoning": "OK",
+    "confidence": "MEDIUM",
+    "txid": "OWDSBG-AN237-KD6KY3",
+    "close_txid": "OAQRXS-KS3Q3-AL2XOC"
   }
 ]
