@@ -323,5 +323,30 @@
     "entry_bb_pct": null,
     "entry_macd_hist": null,
     "entry_change_24h": null
+  },
+  {
+    "coin": "SP",
+    "pair": "PF_SPXUSD",
+    "status": "closed_externally",
+    "leveraged": false,
+    "collateral": 123.42,
+    "volume": 279.86394558,
+    "entry_price": 0.441,
+    "close_price": 0.441,
+    "target_price": 0.41,
+    "stop_price": 0.45,
+    "pnl_usd": 0,
+    "pnl_pct": 0,
+    "date_open": "2026-06-17T11:00:29.603495",
+    "date_close": "2026-06-17T17:04:59.275772",
+    "reasoning": "SP קפץ +14.5% ביום אחד עם range של 33% — זה מהלך פרבולי קלאסי שמתבקש לתיקון, והנפח של $1.35M מאשר שמדובר בתנועה אמיתית שסביר שתמצה. שורט על exhaustion אחרי pump כזה עם stop הדוק של 2.5% ויעד של 6% הוא אסימטרי ומתאים לשעות השוק הנוכחיות.",
+    "confidence": "MEDIUM",
+    "txid": "a20b4bf9-0620-4775-9fd3-7c8c44e80e26",
+    "close_txid": null,
+    "side": "short",
+    "entry_rsi": null,
+    "entry_bb_pct": null,
+    "entry_macd_hist": null,
+    "entry_change_24h": 14.46
   }
 ]
