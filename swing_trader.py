@@ -22,7 +22,7 @@ SWING_FILE   = os.path.join(DIR, "swing_trades.json")
 HISTORY_FILE = os.path.join(DIR, "swing_history.json")
 
 SWING_USD         = 100    # ברירת מחדל לעסקת קריפטו אם Claude לא נתן size_pct
-STOCK_MIN_VOL_USD = 50000  # רף נזילות למניה — מתחת לזה מלכודת ביצוע (TSLA/AAPL דלילות ב-Kraken)
+STOCK_MIN_VOL_USD = 20000  # רף נזילות למניה — מתחת לזה מלכודת ביצוע (TSLA/AAPL דלילות ב-Kraken)
 SWING_USD_STOCK   = 30     # רצפה לעסקת מניה (נושיונל)
 SWING_MAX_STOCK_USD = 150  # תקרת נושיונל לעסקת מניה (עם מינוף = ~$50 מרג'ין)
 STOCK_LEVERAGE    = 3      # מינוף יעד על מניות (Perps) — אגרסיבי אך לא פרוע
