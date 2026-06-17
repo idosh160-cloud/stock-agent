@@ -298,5 +298,30 @@
     "confidence": "MEDIUM",
     "txid": "O3OLRU-M6C3V-OMGJ6D",
     "close_txid": "OVOKTR-BMM4P-7SAH7U"
+  },
+  {
+    "coin": "SOL",
+    "pair": "SOLUSDC",
+    "status": "closed_loss",
+    "leveraged": true,
+    "collateral": 96.35,
+    "volume": 1.30892542,
+    "entry_price": 73.61,
+    "close_price": 72.08,
+    "target_price": 77.29,
+    "stop_price": 72.14,
+    "pnl_usd": -2.0,
+    "pnl_pct": -2.08,
+    "date_open": "2026-06-15T14:00:19.299350",
+    "date_close": "2026-06-17T11:00:03.678596",
+    "reasoning": "OK",
+    "confidence": "HIGH",
+    "txid": "OSSAHB-HD73I-7HLEQY",
+    "close_txid": "O3PIC3-R7U3I-HV3F3K",
+    "side": "long",
+    "entry_rsi": null,
+    "entry_bb_pct": null,
+    "entry_macd_hist": null,
+    "entry_change_24h": null
   }
 ]
