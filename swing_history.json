@@ -348,5 +348,30 @@
     "entry_bb_pct": null,
     "entry_macd_hist": null,
     "entry_change_24h": 14.46
+  },
+  {
+    "coin": "SP",
+    "pair": "PF_SPXUSD",
+    "status": "closed_externally",
+    "leveraged": false,
+    "collateral": 150.0,
+    "volume": 327.65399738,
+    "entry_price": 0.4578,
+    "close_price": 0.4578,
+    "target_price": 0.42,
+    "stop_price": 0.47,
+    "pnl_usd": 0,
+    "pnl_pct": 0,
+    "date_open": "2026-06-17T19:00:19.979977",
+    "date_close": "2026-06-17T20:00:04.358079",
+    "reasoning": "SP זינק +15.6% ביום עם טווח יומי של 30.3% — מהלך פרבולי מותש שמבקש מימוש חד; שורט על ריגרסיה לממוצע אחרי ריצה כזו הוא אחד הסטאפים הכי אסימטריים בארסנל.",
+    "confidence": "HIGH",
+    "txid": "a20bf793-a224-4c13-8701-0feb4558e13a",
+    "close_txid": null,
+    "side": "short",
+    "entry_rsi": null,
+    "entry_bb_pct": null,
+    "entry_macd_hist": null,
+    "entry_change_24h": 15.58
   }
 ]
