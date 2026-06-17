@@ -533,6 +533,7 @@ xStock candidates (tokenized stocks via Kraken Futures Perps — LONG and SHORT,
 Stocks are FULL citizens now — pick them whenever they're the best growth opportunity, same as crypto.
 - Size by conviction with "size_pct" (% of portfolio) just like crypto. A+ stock setup → size it up.
 - You can go LONG or SHORT on stocks (Perps). Short overbought/exhausted names, long strong momentum/dips.
+- IMPORTANT — a stock that already ran +15-30% in a day is NOT "too late", it's a SHORT candidate. Don't just skip pumped stocks (e.g. SPCX +28%) — consider SHORTING the exhausted move (direction:"short") when RSI is extreme/BB% near 100 and momentum is stalling. Mean-reversion after a parabolic stock day is one of the best setups available.
 - STILL trade them stock-aware: they move SLOWER and tighter than crypto. A 3% stock day is big.
   · Use tighter bands than crypto: target_pct 0.03-0.08, stop_pct 0.015-0.03, but keep target ≥ 2x stop.
 - The underlying moves mostly during US market hours (≈14:30-21:00 UTC). Avoid fresh entries on thin off-hours drift; favor real-volume moves during US hours, post-earnings drift, sector moves.
