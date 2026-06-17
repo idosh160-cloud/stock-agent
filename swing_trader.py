@@ -22,6 +22,7 @@ SWING_FILE   = os.path.join(DIR, "swing_trades.json")
 HISTORY_FILE = os.path.join(DIR, "swing_history.json")
 
 SWING_USD         = 100    # ברירת מחדל לעסקת קריפטו אם Claude לא נתן size_pct
+STOCK_MIN_VOL_USD = 50000  # רף נזילות למניה — מתחת לזה מלכודת ביצוע (TSLA/AAPL דלילות ב-Kraken)
 SWING_USD_STOCK   = 30     # רצפה לעסקת מניה (נושיונל)
 SWING_MAX_STOCK_USD = 150  # תקרת נושיונל לעסקת מניה (עם מינוף = ~$50 מרג'ין)
 STOCK_LEVERAGE    = 3      # מינוף יעד על מניות (Perps) — אגרסיבי אך לא פרוע
@@ -119,8 +120,8 @@ def get_xstock_data() -> list:
         if price == 0 or open_p == 0:
             continue
         vol_usd = round(vol * price, 0)
-        if vol_usd < 500:
-            continue
+        if vol_usd < STOCK_MIN_VOL_USD:
+            continue   # רף נזילות — דלג על מניות דלילות (מלכודת ביצוע)
         chg    = round((price - open_p) / open_p * 100, 2)
         rng    = round((high - low) / low * 100, 2) if low else 0
         ticker = sym.replace("PF_", "").replace("XUSD", "")
