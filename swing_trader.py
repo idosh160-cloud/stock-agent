@@ -864,13 +864,58 @@ def sync_trades_with_kraken(trades: list, balance: dict, request_fn=None) -> tup
     return trades, changed
 
 
+def reconcile_stock_trades(trades: list) -> tuple[list, bool]:
+    """סנכרון מניות מול Kraken Futures — מנקה רפאים.
+    מניה שמסומנת 'open' אבל אין לה פוזיציה ואין פקודה ממתינה ב-Kraken = רפאים שלא בוצע."""
+    changed = False
+    open_stocks = [t for t in trades if t.get("status") == "open" and t.get("is_stock")]
+    if not open_stocks:
+        return trades, changed
+    try:
+        from kraken_futures import get_futures_positions, cancel_futures_order, _request
+        positions = get_futures_positions()
+        pos_syms  = {p.get("symbol") for p in positions}
+        try:
+            oo = _request("/openorders").get("openOrders", [])
+        except Exception:
+            oo = []
+        order_syms = {o.get("symbol") for o in oo}
+    except Exception as e:
+        logging.warning(f"[StockSync] לא הצליח למשוך מצב Futures: {e}")
+        return trades, changed
+
+    for t in open_stocks:
+        sym = t.get("pair")
+        if sym in pos_syms:
+            continue  # פוזיציה אמיתית קיימת — תקין
+        if sym in order_syms:
+            continue  # פקודת כניסה עדיין ממתינה לביצוע — תקין
+        # אין פוזיציה ואין פקודה → רפאים (הפקודה לא בוצעה או נסגרה)
+        if t.get("sell_txid"):
+            try:
+                cancel_futures_order(t["sell_txid"])
+            except Exception:
+                pass
+        t["status"]     = "closed_externally"
+        t["date_close"] = datetime.now().isoformat()
+        t["close_price"] = t.get("entry_price")
+        t["pnl_pct"]    = 0.0
+        t["pnl_usd"]    = 0.0
+        changed = True
+        logging.warning(f"[StockSync] {t.get('coin')} (מניה) לא קיים ב-Kraken — מנקה רפאים")
+        archive_closed_trade(t)
+    return trades, changed
+
+
 def check_open_swings(balance: dict, request_fn) -> list:
     """נקרא כל 15 דקות — בודק אם פוזיציות פתוחות הגיעו ליעד/stop"""
     trades  = load_swing_trades()
 
     # סנכרון עם קרקן — בודק balance + OpenPositions, סוגר מה שלא קיים
     trades, sync_changed = sync_trades_with_kraken(trades, balance, request_fn)
-    changed = sync_changed
+    # סנכרון מניות נפרד (Futures) — מנקה רפאים
+    trades, stock_changed = reconcile_stock_trades(trades)
+    changed = sync_changed or stock_changed
 
     for t in trades:
         if t.get("status") != "open":
@@ -1341,8 +1386,9 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
             continue
 
         target_p, stop_p = _targets_for_side(direction, price, target_pct, stop_pct, price_dec)
-        # מחיר כניסה: לונג קונה מעט מתחת, שורט מוכר מעט מעל — להבטחת ביצוע ליד השוק
-        entry_lp = round(price * (1.001 if direction == "short" else 0.999), price_dec)
+        # מחיר כניסה אגרסיבי (marketable) — נכנס מיד ליד השוק:
+        # לונג קונה מעט מעל (ליד ה-ask), שורט מוכר מעט מתחת (ליד ה-bid). אחרת הפקודה לא נכנסת.
+        entry_lp = round(price * (0.998 if direction == "short" else 1.002), price_dec)
         try:
             if is_stock:
                 # ── xStock — דרך Kraken Futures Perps (לונג ושורט, עם מינוף) ──
