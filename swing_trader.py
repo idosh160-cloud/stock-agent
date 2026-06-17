@@ -212,6 +212,11 @@ def archive_closed_trade(t: dict):
             "confidence":  t.get("confidence", ""),
             "txid":        t.get("txid", ""),
             "close_txid":  t.get("close_txid", ""),
+            "side":            t.get("side", "long"),
+            "entry_rsi":       t.get("entry_rsi"),
+            "entry_bb_pct":    t.get("entry_bb_pct"),
+            "entry_macd_hist": t.get("entry_macd_hist"),
+            "entry_change_24h": t.get("entry_change_24h"),
         })
         with open(HISTORY_FILE, "w", encoding="utf-8") as f:
             json.dump(history, f, indent=2, ensure_ascii=False)
@@ -464,23 +469,48 @@ def load_performance_summary() -> str:
                 coin_stats[coin]["recent_pnl"]   += h.get("pnl_usd", 0)
                 coin_stats[coin]["recent_total"]  += 1
 
-        # בנה שורה לכל מטבע שנסחר לפחות פעם אחת
+        # בנה שורה חכמה לכל מטבע — לא רק מספר, אלא באילו *תנאים* הצלחנו/נכשלנו
+        def _avg(vals):
+            vals = [v for v in vals if v is not None]
+            return round(sum(vals) / len(vals), 1) if vals else None
+
+        def _entry_profile(rows):
+            """מתאר את תנאי הכניסה הטיפוסיים של קבוצת עסקאות (RSI, כיוון)."""
+            if not rows:
+                return ""
+            rsi = _avg([r.get("entry_rsi") for r in rows])
+            longs  = sum(1 for r in rows if r.get("side", "long") != "short")
+            shorts = len(rows) - longs
+            parts = []
+            if rsi is not None:
+                parts.append(f"avg entry RSI {rsi}")
+            if shorts:
+                parts.append(f"{longs}L/{shorts}S")
+            return (" [" + ", ".join(parts) + "]") if parts else ""
+
         coin_lines = []
-        for coin, s in sorted(coin_stats.items()):
-            wr = round(s["wins"] / s["total"] * 100) if s["total"] else 0
+        for coin, s in sorted(coin_stats.items(), key=lambda x: x[1]["pnl"]):
+            rows = [h for h in history if h.get("coin") == coin]
+            win_rows  = [h for h in rows if (h.get("pnl_usd") or 0) > 0]
+            loss_rows = [h for h in rows if (h.get("pnl_usd") or 0) <= 0]
             n  = s["total"]
-            reliability = "small sample" if n < 5 else "medium sample" if n < 15 else "reliable"
-            recent_note = ""
-            if s["recent_total"] > 0:
-                r_wr = round(sum(1 for h in recent_30 if h.get("coin") == coin and h.get("pnl_usd", 0) > 0) / s["recent_total"] * 100)
-                recent_note = f", last 30: {s['recent_total']} trades {r_wr}% win"
-            coin_lines.append(
-                f"  {coin}: {n} trades, {wr}% win rate, ${s['pnl']:+.2f} total ({reliability}{recent_note})"
-            )
+            wr = round(len(win_rows) / n * 100) if n else 0
+            reliability = "tiny sample" if n < 5 else "some data" if n < 15 else "reliable"
+            line = f"  {coin}: {n} trades, {wr}% win, ${s['pnl']:+.2f} ({reliability})"
+            # אם יש דפוס ברור — הראה את ההבדל בתנאי הכניסה בין ניצחונות להפסדים
+            if win_rows and loss_rows:
+                wp = _entry_profile(win_rows)
+                lp = _entry_profile(loss_rows)
+                if wp or lp:
+                    line += f" | wins{wp} vs losses{lp}"
+            elif loss_rows and s["pnl"] < -3:
+                lp = _entry_profile(loss_rows)
+                line += f" | only losses so far{lp} — entries may have been mistimed, NOT proof the coin is bad"
+            coin_lines.append(line)
 
         lines = [
             f"Past performance ({len(history)} trades total): win rate {win_rate:.0f}%, total P&L ${total_pnl:.2f}",
-            "Per-coin history (ALL time + recent emphasis — use as CONTEXT, not a rule. Small samples are unreliable.):",
+            "Per-coin history — READ THE PATTERN, don't blocklist. A coin that lost money may have been entered at the WRONG conditions (e.g. mid-RSI, chasing). If the CURRENT setup is different/better (e.g. now deeply oversold), it can still be a great trade. Compare the current setup to where past wins vs losses happened:",
         ] + coin_lines
 
         recent_5 = history[-5:]
@@ -1415,6 +1445,11 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
                 "sell_txid":     sell_txid,
                 "close_price":   None,
                 "close_txid":    None,
+                # תנאי כניסה — לניתוח דינמי של "באילו תנאים הצלחנו/נכשלנו" בכל מטבע
+                "entry_rsi":       coin_data.get("rsi"),
+                "entry_bb_pct":    coin_data.get("bb_pct"),
+                "entry_macd_hist": coin_data.get("macd_hist"),
+                "entry_change_24h": coin_data.get("change_24h"),
             }
             trades.append(trade)
             open_coins.add(coin)
