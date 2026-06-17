@@ -100,6 +100,16 @@ def main():
         usdc  = state["usdc"]
         btc_price = next((s["price"] for s in state["signals"] if s["coin"] == "BTC"), 0)
 
+        # הוסף את יתרת ארנק ה-Futures (flex) לשווי התיק — אחרת נראה כאילו "ירד" $52
+        try:
+            from kraken_futures import get_futures_balance
+            fut_bal = get_futures_balance()
+            if fut_bal > 0:
+                state["futures_usd"]   = round(fut_bal, 2)
+                state["portfolio_usd"] = round(state["portfolio_usd"] + fut_bal, 2)
+        except Exception as e:
+            logging.warning(f"Futures balance for portfolio failed: {e}")
+
         # ── בדיקת swing פתוחות — כל 15 דק' ──────────────────────────────
         try:
             swing_trades = check_open_swings(balance, _request)

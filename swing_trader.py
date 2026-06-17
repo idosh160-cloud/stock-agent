@@ -1139,7 +1139,10 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
                     use_lev   = (r_side == "short") or (close_for_rotation in MARGIN_ELIGIBLE and not t.get("is_stock"))
                     try:
                         if t.get("sell_txid"):
-                            request_fn("/0/private/CancelOrder", {"txid": t["sell_txid"]}, private=True)
+                            try:
+                                request_fn("/0/private/CancelOrder", {"txid": t["sell_txid"]}, private=True)
+                            except Exception as ce:
+                                logging.info(f"[Swing] TP כבר בוצע/לא קיים ({close_for_rotation}): {ce}")
                         sell_params = {
                             "pair": t["pair"], "type": close_type, "ordertype": "limit",
                             "volume": f"{t['volume']:.8f}", "price": f"{lp:.{price_dec}f}",
@@ -1266,7 +1269,10 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
                                     lp_w  = round(cur * (1.001 if w_side == "short" else 0.999), pd_w)
                                     try:
                                         if t.get("sell_txid"):
-                                            request_fn("/0/private/CancelOrder", {"txid": t["sell_txid"]}, private=True)
+                                            try:
+                                                request_fn("/0/private/CancelOrder", {"txid": t["sell_txid"]}, private=True)
+                                            except Exception as ce:
+                                                logging.info(f"[RiskManager] TP כבר בוצע/לא קיים ({weakest['coin']}): {ce}")
                                         sp = {"pair": t["pair"], "type": w_close_type, "ordertype": "limit",
                                               "volume": f"{t['volume']:.8f}", "price": f"{lp_w:.{pd_w}f}",
                                               "leverage": str(LEVERAGE)}
