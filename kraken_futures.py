@@ -196,11 +196,18 @@ def place_futures_order(symbol: str, side: str, size: float, limit_price: float)
     מחזיר order_id
     """
     try:
+        # קרקן מגדיר דיוק מקסימלי (contractValueTradePrecision) לכמות לכל מכשיר.
+        # size מגיע כתוצאה של trade_usd/price ועלול להכיל 15+ ספרות (float מלא) —
+        # שליחת כזה גודל גולמי נדחית כ-invalidSize. מעגלים ל-4 ספרות שמרניות שמתאימות
+        # לרוב מכשירי ה-xStocks (תומכים בשבר מניה).
+        size_str = f"{round(float(size), 4):.4f}".rstrip("0").rstrip(".")
+        if not size_str or size_str == "-":
+            size_str = "0"
         params = {
             "symbol": symbol,
             "side": side,
             "orderType": "lmt",
-            "size": str(size),
+            "size": size_str,
             "limitPrice": str(round(limit_price, 2)),
         }
         data = _request("/sendorder", params, method="POST")
