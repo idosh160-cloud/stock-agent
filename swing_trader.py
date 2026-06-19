@@ -1206,7 +1206,12 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
         logging.info(f"[Swing] ROTATION: closing {close_for_rotation} — {rotation_reason}")
         for t in trades:
             if t.get("coin") == close_for_rotation and t.get("status") == "open":
-                current = get_current_price(t["pair"])
+                is_fut_stock = t.get("is_stock") and t.get("is_futures")
+                if is_fut_stock:
+                    from kraken_futures import get_futures_price
+                    current = get_futures_price(t["pair"])
+                else:
+                    current = get_current_price(t["pair"])
                 if current > 0:
                     cfg_r     = CANDIDATES.get(close_for_rotation, all_candidates_map.get(close_for_rotation, {}))
                     price_dec = cfg_r.get("price_dec", 4)
@@ -1215,19 +1220,29 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
                     lp        = round(current * (1.001 if r_side == "short" else 0.999), price_dec)
                     use_lev   = (r_side == "short") or (close_for_rotation in MARGIN_ELIGIBLE and not t.get("is_stock"))
                     try:
-                        if t.get("sell_txid"):
-                            try:
-                                request_fn("/0/private/CancelOrder", {"txid": t["sell_txid"]}, private=True)
-                            except Exception as ce:
-                                logging.info(f"[Swing] TP כבר בוצע/לא קיים ({close_for_rotation}): {ce}")
-                        sell_params = {
-                            "pair": t["pair"], "type": close_type, "ordertype": "limit",
-                            "volume": f"{t['volume']:.8f}", "price": f"{lp:.{price_dec}f}",
-                        }
-                        if use_lev:
-                            sell_params["leverage"] = str(LEVERAGE)
-                        res  = request_fn("/0/private/AddOrder", sell_params, private=True)
-                        txid = list(res.get("txid", ["?"]))[0]
+                        if is_fut_stock:
+                            # ── מניה — סגירה דרך Kraken Futures Perps ──────────
+                            from kraken_futures import place_futures_order, cancel_futures_order
+                            if t.get("sell_txid"):
+                                try:
+                                    cancel_futures_order(t["sell_txid"])
+                                except Exception as ce:
+                                    logging.info(f"[Swing] TP futures כבר בוצע/לא קיים ({close_for_rotation}): {ce}")
+                            txid = place_futures_order(t["pair"], close_type, t["volume"], lp)
+                        else:
+                            if t.get("sell_txid"):
+                                try:
+                                    request_fn("/0/private/CancelOrder", {"txid": t["sell_txid"]}, private=True)
+                                except Exception as ce:
+                                    logging.info(f"[Swing] TP כבר בוצע/לא קיים ({close_for_rotation}): {ce}")
+                            sell_params = {
+                                "pair": t["pair"], "type": close_type, "ordertype": "limit",
+                                "volume": f"{t['volume']:.8f}", "price": f"{lp:.{price_dec}f}",
+                            }
+                            if use_lev:
+                                sell_params["leverage"] = str(LEVERAGE)
+                            res  = request_fn("/0/private/AddOrder", sell_params, private=True)
+                            txid = list(res.get("txid", ["?"]))[0]
                         pnl_pct_r        = _pnl_pct(r_side, t["entry_price"], current)
                         t["status"]      = "closed_profit" if pnl_pct_r >= 0 else "closed_loss"
                         t["date_close"]  = datetime.now().isoformat()
@@ -1241,6 +1256,8 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
                         logging.info(f"[Swing] Rotation close {close_for_rotation} @ {current:.4f} P&L={t['pnl_pct']:+.1f}%")
                     except Exception as e:
                         logging.error(f"[Swing] Rotation close failed {close_for_rotation}: {e}")
+                else:
+                    logging.warning(f"[Swing] Rotation close {close_for_rotation} skipped — no price (futures={is_fut_stock})")
                 break
 
     slots = MAX_OPEN - len(open_swings)
@@ -1472,6 +1489,7 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
                 "coin":          coin,
                 "pair":          pair,
                 "is_stock":      is_stock,
+                "is_futures":    is_stock,
                 "side":          direction,
                 "entry_price":   price,
                 "limit_price":   entry_lp,
