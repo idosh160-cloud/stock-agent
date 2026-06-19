@@ -196,16 +196,28 @@ def place_futures_order(symbol: str, side: str, size: float, limit_price: float)
     מחזיר order_id
     """
     try:
+        # קרקן מגדיר דיוק מקסימלי (contractValueTradePrecision) לכמות לכל מכשיר.
+        # size מגיע כתוצאה של trade_usd/price ועלול להכיל 15+ ספרות (float מלא) —
+        # שליחת כזה גודל גולמי נדחית כ-invalidSize. מעגלים ל-4 ספרות שמרניות שמתאימות
+        # לרוב מכשירי ה-xStocks (תומכים בשבר מניה).
+        size_str = f"{round(float(size), 4):.4f}".rstrip("0").rstrip(".")
+        if not size_str or size_str == "-":
+            size_str = "0"
         params = {
             "symbol": symbol,
             "side": side,
             "orderType": "lmt",
-            "size": str(size),
+            "size": size_str,
             "limitPrice": str(round(limit_price, 2)),
         }
         data = _request("/sendorder", params, method="POST")
         status = data.get("sendStatus", {})
+        order_status = status.get("status", "")
         order_id = status.get("order_id", "?")
+        # ה-API מחזיר result="success" גם כשהפקודה נדחתה בפועל (למשל margin/price) —
+        # הסטטוס האמיתי נמצא ב-sendStatus.status, ורק "placed" מציין שהפקודה אכן נכנסה לשוק.
+        if order_status != "placed":
+            raise Exception(f"Order rejected: status={order_status} | {status}")
         logging.info(f"[Futures] {side.upper()} {symbol} x{size} @ {limit_price} → {order_id}")
         return order_id
     except Exception as e:
