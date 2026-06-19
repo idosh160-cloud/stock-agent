@@ -373,5 +373,30 @@
     "entry_bb_pct": null,
     "entry_macd_hist": null,
     "entry_change_24h": 15.58
+  },
+  {
+    "coin": "SPCX",
+    "pair": "PF_SPCXXUSD",
+    "status": "closed_externally",
+    "leveraged": false,
+    "collateral": 150.0,
+    "volume": 0.82462892,
+    "entry_price": 181.9,
+    "close_price": 181.9,
+    "target_price": 170.99,
+    "stop_price": 186.45,
+    "pnl_usd": 0,
+    "pnl_pct": 0,
+    "date_open": "2026-06-19T00:00:27.915955",
+    "date_close": "2026-06-19T01:00:03.685434",
+    "reasoning": "SPCX ירד 6.2% עם טווח יומי של 13.6% ונפח עצום של $6.7M — מניה שסיימה מהלך תנועה גדול עם מומנטום שלילי ברור. בשעות האלה (מחוץ לשוק האמריקאי) הדריפט שלילי נמשך, ושורט על continuation של הירידה עם סטופ הדוק הוא סטאפ אסימטרי מצוין.",
+    "confidence": "HIGH",
+    "txid": "a20e65e5-887a-485a-ab57-1cd3e6320335",
+    "close_txid": null,
+    "side": "short",
+    "entry_rsi": null,
+    "entry_bb_pct": null,
+    "entry_macd_hist": null,
+    "entry_change_24h": -6.2
   }
 ]
