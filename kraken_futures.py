@@ -205,7 +205,12 @@ def place_futures_order(symbol: str, side: str, size: float, limit_price: float)
         }
         data = _request("/sendorder", params, method="POST")
         status = data.get("sendStatus", {})
+        order_status = status.get("status", "")
         order_id = status.get("order_id", "?")
+        # ה-API מחזיר result="success" גם כשהפקודה נדחתה בפועל (למשל margin/price) —
+        # הסטטוס האמיתי נמצא ב-sendStatus.status, ורק "placed" מציין שהפקודה אכן נכנסה לשוק.
+        if order_status != "placed":
+            raise Exception(f"Order rejected: status={order_status} | {status}")
         logging.info(f"[Futures] {side.upper()} {symbol} x{size} @ {limit_price} → {order_id}")
         return order_id
     except Exception as e:
