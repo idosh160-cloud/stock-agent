@@ -37,7 +37,9 @@
       "Near resistance $1.1190"
     ],
     "txid": "O4S473-QUGLF-4UBRVN",
-    "pnl_pct": null
+    "pnl_pct": -5.26,
+    "pnl_usd": -1.58,
+    "close_price": 1.05603
   },
   {
     "date": "2026-06-24T14:00:02.820429",
@@ -58,5 +60,22 @@
     ],
     "txid": "OLVK7J-X4KOM-5XN565",
     "pnl_pct": null
+  },
+  {
+    "date": "2026-06-24T17:00:03.537794",
+    "coin": "XRP",
+    "action": "SELL",
+    "price": 1.05603,
+    "volume": 28.269724,
+    "usd": 29.85,
+    "rsi": 23.09,
+    "buy_score": 0,
+    "sell_score": 0,
+    "reasons": [
+      "Stop-loss triggered (-5.3%)"
+    ],
+    "txid": "OIAIJT-CKIEM-VFZMRW",
+    "pnl_pct": -5.26,
+    "pnl_usd": -1.58
   }
 ]
