@@ -398,5 +398,30 @@
     "entry_bb_pct": null,
     "entry_macd_hist": null,
     "entry_change_24h": -6.2
+  },
+  {
+    "coin": "ETH",
+    "pair": "ETHUSDC",
+    "status": "closed_loss",
+    "leveraged": true,
+    "collateral": 45.0,
+    "volume": 0.02716014,
+    "entry_price": 1656.84,
+    "close_price": 1615.77,
+    "target_price": 1739.68,
+    "stop_price": 1623.7,
+    "pnl_usd": -1.12,
+    "pnl_pct": -2.48,
+    "date_open": "2026-06-11T16:51:16.842072",
+    "date_close": "2026-06-24T16:00:03.975813",
+    "reasoning": "ETH נסחרת קרוב לאמצע הטווח היומי עם מומנטום חיובי של +2.2% ונפח עסקאות ענק של 3.48 מיליון דולר שמאשר את המהלך. הכניסה עכשיו מאפשרת פוטנציאל המשך עלייה לכיוון $1,671 עם סיכון מוגדר היטב.",
+    "confidence": "HIGH",
+    "txid": "OK222I-A5VQR-7ITGEG",
+    "close_txid": "OV3EIW-AVQAV-3F7MKK",
+    "side": "long",
+    "entry_rsi": null,
+    "entry_bb_pct": null,
+    "entry_macd_hist": null,
+    "entry_change_24h": null
   }
 ]
