@@ -117,5 +117,25 @@
     ],
     "txid": "OCJKT4-TN5RG-2NAAOX",
     "pnl_pct": null
+  },
+  {
+    "date": "2026-06-25T14:00:04.362011",
+    "coin": "BTC",
+    "action": "SELL",
+    "price": 58285.27,
+    "volume": 0.000143,
+    "usd": 8.33,
+    "rsi": 26.7,
+    "buy_score": 3,
+    "sell_score": 4,
+    "reasons": [
+      "RSI 26.7 (oversold)",
+      "MACD bearish crossover",
+      "Below MA50 ($61,590.49)",
+      "Below MA200 (downtrend)",
+      "Near resistance $59,055.0100"
+    ],
+    "txid": "OUL6E6-2CZJG-T4FY6L",
+    "pnl_pct": null
   }
 ]
