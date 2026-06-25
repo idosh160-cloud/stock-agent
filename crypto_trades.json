@@ -77,5 +77,25 @@
     "txid": "OIAIJT-CKIEM-VFZMRW",
     "pnl_pct": -5.26,
     "pnl_usd": -1.58
+  },
+  {
+    "date": "2026-06-25T06:00:03.559189",
+    "coin": "BTC",
+    "action": "SELL",
+    "price": 61521.64,
+    "volume": 0.000122,
+    "usd": 7.51,
+    "rsi": 71.35,
+    "buy_score": 3,
+    "sell_score": 5,
+    "reasons": [
+      "RSI 71.35 (overbought)",
+      "MACD bullish crossover",
+      "Below MA200 (downtrend)",
+      "Near support $61,199.9900",
+      "Near resistance $61,915.0300"
+    ],
+    "txid": "OAZFR6-5W2W3-4OTCLE",
+    "pnl_pct": null
   }
 ]
