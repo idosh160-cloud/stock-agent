@@ -137,5 +137,25 @@
     ],
     "txid": "OUL6E6-2CZJG-T4FY6L",
     "pnl_pct": null
+  },
+  {
+    "date": "2026-06-25T15:00:04.543353",
+    "coin": "XRP",
+    "action": "SELL",
+    "price": 1.03311,
+    "volume": 4.596384,
+    "usd": 4.75,
+    "rsi": 33.08,
+    "buy_score": 3,
+    "sell_score": 4,
+    "reasons": [
+      "RSI 33.08 (oversold)",
+      "MACD bearish crossover",
+      "Below MA50 ($1.08)",
+      "Below MA200 (downtrend)",
+      "Near resistance $1.0456"
+    ],
+    "txid": "OBSB5U-W63OC-NHSHW5",
+    "pnl_pct": null
   }
 ]
