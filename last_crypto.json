@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-26T05:00:03.930143",
+  "timestamp": "2026-06-26T06:00:03.680199",
   "balance": {
     "ADA": 582.8714178,
     "ATOM": 5.02151479,
@@ -16,36 +16,36 @@
     {
       "coin": "ETH",
       "qty": 0.19918561,
-      "price": 1548.66,
-      "value_usd": 308.47,
+      "price": 1554.55,
+      "value_usd": 309.64,
       "avg_cost": null,
       "pnl_usd": null,
       "pnl_pct": null,
-      "change_24h": -1.14,
+      "change_24h": -0.76,
       "high_24h": 1657.34,
       "low_24h": 1511.0
     },
     {
       "coin": "ADA",
       "qty": 582.8714178,
-      "price": 0.142412,
-      "value_usd": 83.01,
+      "price": 0.142923,
+      "value_usd": 83.31,
       "avg_cost": 0.159976,
-      "pnl_usd": -10.24,
-      "pnl_pct": -10.98,
-      "change_24h": -0.99,
-      "high_24h": 0.150394,
+      "pnl_usd": -9.94,
+      "pnl_pct": -10.66,
+      "change_24h": -0.63,
+      "high_24h": 0.150308,
       "low_24h": 0.138024
     },
     {
       "coin": "SOL",
       "qty": 0.22963661,
-      "price": 68.02,
-      "value_usd": 15.62,
+      "price": 68.35,
+      "value_usd": 15.7,
       "avg_cost": 69.849384,
-      "pnl_usd": -0.42,
-      "pnl_pct": -2.62,
-      "change_24h": 0.46,
+      "pnl_usd": -0.34,
+      "pnl_pct": -2.15,
+      "change_24h": 0.95,
       "high_24h": 69.55,
       "low_24h": 64.0
     },
@@ -64,24 +64,24 @@
     {
       "coin": "BTC",
       "qty": 7.178e-05,
-      "price": 59879.28,
+      "price": 59880.72,
       "value_usd": 4.3,
       "avg_cost": null,
       "pnl_usd": null,
       "pnl_pct": null,
-      "change_24h": 0.24,
+      "change_24h": 0.25,
       "high_24h": 61885.0,
       "low_24h": 58075.89
     },
     {
       "coin": "XRP",
       "qty": 2.2981919,
-      "price": 1.02686,
-      "value_usd": 2.36,
+      "price": 1.03295,
+      "value_usd": 2.37,
       "avg_cost": 1.047855,
-      "pnl_usd": -0.05,
-      "pnl_pct": -2.0,
-      "change_24h": -1.61,
+      "pnl_usd": -0.03,
+      "pnl_pct": -1.42,
+      "change_24h": -1.02,
       "high_24h": 1.08827,
       "low_24h": 1.0088
     },
@@ -100,27 +100,27 @@
     {
       "coin": "LINK",
       "qty": 1.883e-05,
-      "price": 7.19626,
+      "price": 7.19324,
       "value_usd": 0.0,
       "avg_cost": null,
       "pnl_usd": null,
       "pnl_pct": null,
-      "change_24h": -0.44,
+      "change_24h": -0.48,
       "high_24h": 7.53799,
       "low_24h": 7.01
     }
   ],
-  "portfolio_usd": 491.04,
+  "portfolio_usd": 492.6,
   "usdc": 69.18,
   "signals": [
     {
       "coin": "BTC",
       "pair": "XBTUSDC",
       "action": "HOLD",
-      "rsi": 53.67,
-      "macd": 86.402524,
-      "ma50": 60718.38,
-      "ma200": 62856.24,
+      "rsi": 56.33,
+      "macd": 101.916584,
+      "ma50": 60661.71,
+      "ma200": 62834.18,
       "support": 59055.01,
       "resistance": 60160.37,
       "near_support": true,
@@ -132,7 +132,7 @@
         "Near support $59,055.0100",
         "Near resistance $60,160.3700"
       ],
-      "price": 59879.28,
+      "price": 59880.72,
       "volume": 0,
       "usd_value": 0.0,
       "limit_price": 0
@@ -151,37 +151,37 @@
       "coin": "ETH",
       "pair": "ETHUSDC",
       "action": "STOP-LOSS",
-      "rsi": 43.47,
+      "rsi": 48.06,
       "near_support": false,
       "near_resistance": false,
       "reasons": [
-        "Stop-loss -6.0%"
+        "Stop-loss -5.6%"
       ],
-      "price": 1548.66
+      "price": 1554.55
     },
     {
       "coin": "XRP",
       "pair": "XRPUSDC",
-      "action": "BUY",
-      "rsi": 46.45,
-      "macd": 0.000138,
+      "action": "SELL",
+      "rsi": 51.6,
+      "macd": 0.00096,
       "ma50": 1.06,
       "ma200": 1.12,
       "support": 1.0115,
       "resistance": 1.0456,
-      "near_support": true,
-      "buy_score": 4,
-      "sell_score": 1,
+      "near_support": false,
+      "buy_score": 2,
+      "sell_score": 3,
       "reasons": [
         "MACD bullish crossover",
         "Below MA50 ($1.06)",
         "Below MA200 (downtrend)",
-        "Near support $1.0115"
+        "Near resistance $1.0456"
       ],
-      "price": 1.02686,
-      "volume": 60.636221,
-      "usd_value": 62.26,
-      "limit_price": 1.0248
+      "price": 1.03295,
+      "volume": 1.149096,
+      "usd_value": 1.19,
+      "limit_price": 1.035
     }
   ],
   "orders_today": 2,
