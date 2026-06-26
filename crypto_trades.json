@@ -157,5 +157,43 @@
     ],
     "txid": "OBSB5U-W63OC-NHSHW5",
     "pnl_pct": null
+  },
+  {
+    "date": "2026-06-26T03:00:03.538825",
+    "coin": "BTC",
+    "action": "SELL",
+    "price": 58516.3,
+    "volume": 7.2e-05,
+    "usd": 4.21,
+    "rsi": 52.91,
+    "buy_score": 3,
+    "sell_score": 4,
+    "reasons": [
+      "MACD bearish crossover",
+      "Below MA50 ($60,801.13)",
+      "Below MA200 (downtrend)",
+      "Near support $58,075.8900",
+      "Near resistance $59,055.0100"
+    ],
+    "txid": "OAOS4M-EMP2Z-4V43BH",
+    "pnl_pct": null
+  },
+  {
+    "date": "2026-06-26T03:00:03.880886",
+    "coin": "XRP",
+    "action": "SELL",
+    "price": 1.0116,
+    "volume": 2.298192,
+    "usd": 2.32,
+    "rsi": 48.97,
+    "buy_score": 1,
+    "sell_score": 2,
+    "reasons": [
+      "MACD bearish crossover",
+      "Below MA50 ($1.07)",
+      "Below MA200 (downtrend)"
+    ],
+    "txid": "O3MKLY-6QXUK-MRVY74",
+    "pnl_pct": null
   }
 ]
