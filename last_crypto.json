@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-28T12:00:03.334299",
+  "timestamp": "2026-06-28T13:00:04.307209",
   "balance": {
     "ADA": 582.8714178,
     "ATOM": 5.02151479,
@@ -7,7 +7,7 @@
     "ETH": 0.19918561,
     "LINK": 1.883e-05,
     "SOL": 0.22963661,
-    "USDC": 68.63226553,
+    "USDC": 68.59125443,
     "BTC": 7.178e-05,
     "XRP": 2.2981919,
     "USD": 0.0181
@@ -16,8 +16,8 @@
     {
       "coin": "ETH",
       "qty": 0.19918561,
-      "price": 1581.49,
-      "value_usd": 315.01,
+      "price": 1581.52,
+      "value_usd": 315.02,
       "avg_cost": null,
       "pnl_usd": null,
       "pnl_pct": null,
@@ -28,24 +28,24 @@
     {
       "coin": "ADA",
       "qty": 582.8714178,
-      "price": 0.145308,
-      "value_usd": 84.7,
+      "price": 0.144745,
+      "value_usd": 84.37,
       "avg_cost": 0.159976,
-      "pnl_usd": -8.55,
-      "pnl_pct": -9.17,
-      "change_24h": -0.14,
+      "pnl_usd": -8.88,
+      "pnl_pct": -9.52,
+      "change_24h": -0.53,
       "high_24h": 0.148882,
       "low_24h": 0.143713
     },
     {
       "coin": "SOL",
       "qty": 0.22963661,
-      "price": 71.83,
+      "price": 71.82,
       "value_usd": 16.49,
       "avg_cost": 69.849384,
       "pnl_usd": 0.45,
-      "pnl_pct": 2.84,
-      "change_24h": 2.0,
+      "pnl_pct": 2.82,
+      "change_24h": 1.99,
       "high_24h": 73.07,
       "low_24h": 70.16
     },
@@ -64,24 +64,24 @@
     {
       "coin": "BTC",
       "qty": 7.178e-05,
-      "price": 60280.67,
-      "value_usd": 4.33,
+      "price": 60229.95,
+      "value_usd": 4.32,
       "avg_cost": null,
       "pnl_usd": null,
       "pnl_pct": null,
-      "change_24h": 0.54,
+      "change_24h": 0.45,
       "high_24h": 60844.45,
       "low_24h": 59701.86
     },
     {
       "coin": "XRP",
       "qty": 2.2981919,
-      "price": 1.05186,
-      "value_usd": 2.42,
+      "price": 1.05039,
+      "value_usd": 2.41,
       "avg_cost": 1.047855,
       "pnl_usd": 0.01,
-      "pnl_pct": 0.38,
-      "change_24h": 0.55,
+      "pnl_pct": 0.24,
+      "change_24h": 0.41,
       "high_24h": 1.0751,
       "low_24h": 1.04135
     },
@@ -100,39 +100,40 @@
     {
       "coin": "LINK",
       "qty": 1.883e-05,
-      "price": 7.28497,
+      "price": 7.27566,
       "value_usd": 0.0,
       "avg_cost": null,
       "pnl_usd": null,
       "pnl_pct": null,
-      "change_24h": -0.33,
+      "change_24h": -0.46,
       "high_24h": 7.48336,
       "low_24h": 7.21945
     }
   ],
-  "portfolio_usd": 499.47,
-  "usdc": 68.65,
+  "portfolio_usd": 499.1,
+  "usdc": 68.61,
   "signals": [
     {
       "coin": "BTC",
       "pair": "XBTUSDC",
       "action": "HOLD (pending order)",
-      "rsi": 53.5,
-      "macd": 12.772363,
-      "ma50": 60122.69,
-      "ma200": 61972.13,
+      "rsi": 60.36,
+      "macd": 12.232926,
+      "ma50": 60139.38,
+      "ma200": 61955.04,
       "support": 60160.37,
-      "resistance": 60489.69,
+      "resistance": 60445.49,
       "near_support": true,
       "buy_score": 3,
-      "sell_score": 3,
+      "sell_score": 5,
       "reasons": [
+        "RSI 60.36 (overbought)",
         "MACD bullish crossover",
         "Below MA200 (downtrend)",
         "Near support $60,160.3700",
-        "Near resistance $60,489.6900"
+        "Near resistance $60,445.4900"
       ],
-      "price": 60274.51,
+      "price": 60229.95,
       "volume": 0,
       "usd_value": 0.0,
       "limit_price": 0
@@ -151,20 +152,20 @@
       "coin": "ETH",
       "pair": "ETHUSDC",
       "action": "STOP-LOSS",
-      "rsi": 55.19,
+      "rsi": 63.04,
       "near_support": false,
       "near_resistance": false,
       "reasons": [
         "Stop-loss -4.0%"
       ],
-      "price": 1581.49
+      "price": 1581.99
     },
     {
       "coin": "XRP",
       "pair": "XRPUSDC",
       "action": "HOLD (pending order)",
-      "rsi": 48.9,
-      "macd": 7.9e-05,
+      "rsi": 54.62,
+      "macd": 8.9e-05,
       "ma50": 1.05,
       "ma200": 1.09,
       "support": 1.047,
@@ -178,7 +179,7 @@
         "Near support $1.0470",
         "Near resistance $1.0537"
       ],
-      "price": 1.05186,
+      "price": 1.05039,
       "volume": 0,
       "usd_value": 0.0,
       "limit_price": 0
