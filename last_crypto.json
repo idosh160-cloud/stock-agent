@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-29T14:00:04.392427",
+  "timestamp": "2026-06-29T15:00:04.303208",
   "balance": {
     "ADA": 582.8714178,
     "ATOM": 5.02151479,
@@ -16,24 +16,24 @@
     {
       "coin": "ETH",
       "qty": 0.19918561,
-      "price": 1570.89,
-      "value_usd": 312.9,
+      "price": 1570.19,
+      "value_usd": 312.76,
       "avg_cost": null,
       "pnl_usd": null,
       "pnl_pct": null,
-      "change_24h": 0.03,
+      "change_24h": -0.02,
       "high_24h": 1595.17,
       "low_24h": 1547.33
     },
     {
       "coin": "ADA",
       "qty": 582.8714178,
-      "price": 0.144346,
-      "value_usd": 84.14,
+      "price": 0.144325,
+      "value_usd": 84.12,
       "avg_cost": 0.159976,
-      "pnl_usd": -9.11,
-      "pnl_pct": -9.77,
-      "change_24h": 0.63,
+      "pnl_usd": -9.12,
+      "pnl_pct": -9.78,
+      "change_24h": 0.62,
       "high_24h": 0.146389,
       "low_24h": 0.141214
     },
@@ -52,36 +52,36 @@
     {
       "coin": "ATOM",
       "qty": 5.02151479,
-      "price": 1.53,
-      "value_usd": 7.68,
+      "price": 1.539,
+      "value_usd": 7.73,
       "avg_cost": null,
       "pnl_usd": null,
       "pnl_pct": null,
-      "change_24h": -2.4,
+      "change_24h": -1.83,
       "high_24h": 1.5786,
-      "low_24h": 1.53
+      "low_24h": 1.5273
     },
     {
       "coin": "BTC",
       "qty": 7.178e-05,
-      "price": 59497.68,
-      "value_usd": 4.27,
+      "price": 59381.73,
+      "value_usd": 4.26,
       "avg_cost": null,
       "pnl_usd": null,
       "pnl_pct": null,
-      "change_24h": -0.02,
+      "change_24h": -0.21,
       "high_24h": 60700.0,
       "low_24h": 58855.0
     },
     {
       "coin": "XRP",
       "qty": 2.2981919,
-      "price": 1.04847,
+      "price": 1.04802,
       "value_usd": 2.41,
       "avg_cost": 1.047855,
       "pnl_usd": 0.0,
-      "pnl_pct": 0.06,
-      "change_24h": 0.32,
+      "pnl_pct": 0.02,
+      "change_24h": 0.28,
       "high_24h": 1.06448,
       "low_24h": 1.0317
     },
@@ -100,27 +100,27 @@
     {
       "coin": "LINK",
       "qty": 1.883e-05,
-      "price": 7.26121,
+      "price": 7.24884,
       "value_usd": 0.0,
       "avg_cost": null,
       "pnl_usd": null,
       "pnl_pct": null,
-      "change_24h": 0.45,
+      "change_24h": 0.28,
       "high_24h": 7.39146,
       "low_24h": 7.18841
     }
   ],
-  "portfolio_usd": 496.67,
+  "portfolio_usd": 496.55,
   "usdc": 68.36,
   "signals": [
     {
       "coin": "BTC",
       "pair": "XBTUSDC",
       "action": "HOLD (pending order)",
-      "rsi": 47.92,
-      "macd": -10.680163,
-      "ma50": 59961.78,
-      "ma200": 61425.69,
+      "rsi": 49.33,
+      "macd": -34.426975,
+      "ma50": 59936.75,
+      "ma200": 61401.21,
       "support": 59055.01,
       "resistance": 59701.86,
       "near_support": true,
@@ -132,7 +132,7 @@
         "Near support $59,055.0100",
         "Near resistance $59,701.8600"
       ],
-      "price": 59511.1,
+      "price": 59381.73,
       "volume": 0,
       "usd_value": 0.0,
       "limit_price": 0
@@ -151,23 +151,23 @@
       "coin": "ETH",
       "pair": "ETHUSDC",
       "action": "STOP-LOSS",
-      "rsi": 50.22,
+      "rsi": 52.31,
       "near_support": false,
       "near_resistance": false,
       "reasons": [
-        "Stop-loss -4.6%"
+        "Stop-loss -4.7%"
       ],
-      "price": 1570.89
+      "price": 1570.19
     },
     {
       "coin": "XRP",
       "pair": "XRPUSDC",
       "action": "HOLD (pending order)",
-      "rsi": 52.22,
-      "macd": 0.000635,
+      "rsi": 56.3,
+      "macd": 0.000442,
       "ma50": 1.05,
       "ma200": 1.08,
-      "support": 1.047,
+      "support": 1.0456,
       "resistance": 1.0511,
       "near_support": true,
       "buy_score": 3,
@@ -175,10 +175,10 @@
       "reasons": [
         "MACD bullish crossover",
         "Below MA200 (downtrend)",
-        "Near support $1.0470",
+        "Near support $1.0456",
         "Near resistance $1.0511"
       ],
-      "price": 1.04847,
+      "price": 1.04802,
       "volume": 0,
       "usd_value": 0.0,
       "limit_price": 0
