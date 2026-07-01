@@ -215,5 +215,25 @@
     ],
     "txid": "OCUXNZ-DSIM6-HRBK3T",
     "pnl_pct": null
+  },
+  {
+    "date": "2026-07-01T03:00:02.849353",
+    "coin": "BTC",
+    "action": "SELL",
+    "price": 59018.99,
+    "volume": 7.1e-05,
+    "usd": 4.19,
+    "rsi": 60.17,
+    "buy_score": 3,
+    "sell_score": 5,
+    "reasons": [
+      "RSI 60.17 (overbought)",
+      "MACD bullish crossover",
+      "Below MA200 (downtrend)",
+      "Near support $58,945.7100",
+      "Near resistance $59,701.8600"
+    ],
+    "txid": "OWMTOZ-TQJOH-NIAS4W",
+    "pnl_pct": null
   }
 ]
