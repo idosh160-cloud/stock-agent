@@ -715,11 +715,18 @@ def _targets_for_side(side: str, entry: float, target_pct: float, stop_pct: floa
     return target, stop
 
 
+_COIN_ALIASES = {"XDG": "DOGE", "XBT": "BTC", "XET": "ETH"}
+
 def _pair_to_coin(pair: str) -> str:
-    """ממיר פאיר של קרקן לשם מטבע. XRPUSDC→XRP, ETHUSDC→ETH"""
-    kraken_map = {"XXBT": "BTC", "XETH": "ETH", "XXRP": "XRP", "XLTC": "LTC", "XXLM": "XLM", "XDGE": "DOGE"}
+    """ממיר פאיר של קרקן לשם מטבע. XRPUSDC→XRP, ETHUSDC→ETH, XDGUSDC→DOGE"""
+    kraken_map = {"XXBT": "BTC", "XETH": "ETH", "XXRP": "XRP", "XLTC": "LTC", "XXLM": "XLM", "XDGE": "DOGE", "XDG": "DOGE"}
     coin = pair.replace("USDC", "").replace("USD", "")
     return kraken_map.get(coin, coin)
+
+def _canonical(coin: str) -> str:
+    """נרמל שם מטבע ל-canonical לחיפוש ב-CANDIDATES/MARGIN_ELIGIBLE.
+    נדרש לרשומות ישנות שנשמרו עם שם Kraken הפנימי (XDG במקום DOGE וכו')."""
+    return _COIN_ALIASES.get(coin, coin)
 
 
 def get_kraken_state(request_fn) -> dict:
@@ -957,7 +964,7 @@ def check_open_swings(balance: dict, request_fn) -> list:
                 reason = "loss"
 
         if reason:
-            cfg       = CANDIDATES.get(coin, {})
+            cfg       = CANDIDATES.get(_canonical(coin), CANDIDATES.get(coin, {}))
             price_dec = cfg.get("price_dec", 4)
 
             if reason == "profit" and t.get("sell_txid"):
@@ -1004,7 +1011,7 @@ def check_open_swings(balance: dict, request_fn) -> list:
                     except Exception as ce:
                         logging.warning(f"[Swing] cancel TP failed: {ce}")
 
-                use_lev = coin in MARGIN_ELIGIBLE
+                use_lev = _canonical(coin) in MARGIN_ELIGIBLE
                 if side == "short":
                     close_vol = vol
                 else:
@@ -1146,6 +1153,15 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
         if extreme_rsi:
             coins = ", ".join(c["coin"] for c in extreme_rsi[:3])
             return True, f"RSI קיצוני: {coins}"
+        # מניות (xStocks) — הסינון למעלה בודק רק קריפטו; בלעדי זה סטאפ מניות
+        # בשעות המסחר בארה"ב לא מגיע לקלוד לעולם (נפח כבר סונן ב-get_xstock_data)
+        stock_movers = [
+            c for c in (stock_candidates or [])
+            if c["coin"] not in open_coins_set and abs(c.get("change_24h", 0)) >= move_thr
+        ]
+        if stock_movers:
+            coins = ", ".join(c["coin"] for c in stock_movers[:3])
+            return True, f"תנועה חזקה במניה: {coins}"
         return False, "הכל שקט — דולג על קריאה לClaude"
 
     should_call, call_reason = _should_call_claude(candidates, open_swings)
@@ -1172,7 +1188,8 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
                 parts.append(f"R:{c['coin']}:{int(rsi // 5 * 5)}")  # מדרגות של 5
         return "|".join(parts)
 
-    snapshot      = _build_snapshot(candidates, open_swings)
+    # מניות נכללות בתמונת המצב — אחרת שינוי במניה לא נחשב "מצב חדש" וקלוד לא נשאל
+    snapshot      = _build_snapshot(candidates + stock_candidates, open_swings)
     snapshot_file = os.path.join(DIR, "last_claude_snapshot.txt")
     last_snapshot = ""
     if os.path.exists(snapshot_file):
