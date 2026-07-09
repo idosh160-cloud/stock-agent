@@ -498,5 +498,30 @@
     "entry_bb_pct": 76.7,
     "entry_macd_hist": 111.193489,
     "entry_change_24h": 0.79
+  },
+  {
+    "coin": "ADA",
+    "pair": "ADAUSDC",
+    "status": "closed_loss",
+    "leveraged": true,
+    "collateral": 121.95,
+    "volume": 729.1000293,
+    "entry_price": 0.167261,
+    "close_price": 0.165235,
+    "target_price": 0.183987,
+    "stop_price": 0.160571,
+    "pnl_usd": -1.48,
+    "pnl_pct": -1.21,
+    "date_open": "2026-07-08T12:00:25.148404",
+    "date_close": "2026-07-09T17:00:36.617167",
+    "reasoning": "OK",
+    "confidence": "MEDIUM-HIGH",
+    "txid": "OJNN7K-PR5FQ-HHB3L5",
+    "close_txid": "O4GFDG-SDXV6-Z3T6CZ",
+    "side": "long",
+    "entry_rsi": 26.7,
+    "entry_bb_pct": 21.3,
+    "entry_macd_hist": -0.000203,
+    "entry_change_24h": -4.17
   }
 ]

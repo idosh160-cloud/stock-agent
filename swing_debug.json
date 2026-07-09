@@ -1,0 +1,32 @@
+{
+ "time": "2026-07-09T17:00:05",
+ "usdc": 45.62,
+ "portfolio": 594.3,
+ "margin_headroom": 228.1,
+ "open": [
+  "SOL long +7.7%",
+  "ADA long -1.2%",
+  "BTC long -0.1%",
+  "LINK long -0.3%"
+ ],
+ "stock_candidates": 21,
+ "top_stocks": [
+  "HOOD +5.6% vol=$637,647",
+  "AVA +4.4% vol=$4,458,798",
+  "GM +3.4% vol=$25,943",
+  "SN +3.0% vol=$26,614",
+  "DYD +2.8% vol=$424,717"
+ ],
+ "futures_ok": true,
+ "futures_balance": 73.26,
+ "call_reason": "פוזיציה חלשה: ADA",
+ "claude_called": true,
+ "market_read": "שוק קריפטו ניטרלי-מעורב סביב RSI 45-52, בעוד המניות הטוקנייזד מציגות מומנטום חזק יותר (HOOD, AVA).",
+ "skip_reason": "שאר המועמדים או בנפח נמוך (CC, LTC) או ניטרליים וללא אדג' ברור, ואת BTC/SOL/LINK אני כבר מחזיק.",
+ "picks": [
+  "HOOD long size=25% conf=HIGH"
+ ],
+ "order_errors": [
+  "HOOD: Order rejected: status=invalidSize | {'status': 'invalidSize', 'order_id': 'a2380e69-acbc-46b9-9832-bc7825465875', 'receivedTime': '2026-07-09T17:00:3"
+ ]
+}
