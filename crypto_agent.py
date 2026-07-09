@@ -120,7 +120,8 @@ def main():
             swing_trades = []
 
         # ── סריקת swing + רוטציה — תמיד רץ (קלוד מחליט אם לפתוח/לסגור) ──
-        if usdc > 5:
+        # גם כשה-USDC ב-Spot נמוך — כסף בארנק Futures עדיין יכול לפתוח מניות
+        if usdc > 5 or state.get("futures_usd", 0) > 10:
             try:
                 swing_trades = run_swing_scan(balance, usdc, _request, btc_price, state["portfolio_usd"])
                 logging.info("Swing scan completed")

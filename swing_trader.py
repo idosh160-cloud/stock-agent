@@ -24,7 +24,9 @@ HISTORY_FILE = os.path.join(DIR, "swing_history.json")
 SWING_USD         = 100    # ברירת מחדל לעסקת קריפטו אם Claude לא נתן size_pct
 STOCK_MIN_VOL_USD = 20000  # רף נזילות למניה — מתחת לזה מלכודת ביצוע (TSLA/AAPL דלילות ב-Kraken)
 SWING_USD_STOCK   = 30     # רצפה לעסקת מניה (נושיונל)
-SWING_MAX_STOCK_USD = 150  # תקרת נושיונל לעסקת מניה (עם מינוף = ~$50 מרג'ין)
+SWING_MAX_STOCK_USD = 450  # תקרת נושיונל לעסקת מניה (עם מינוף x3 = ~$150 מרג'ין)
+MAX_HOLD_HOURS      = 48   # סווינג שעתי/יומי — פוזיציה מעבר לזה בלי התקדמות היא הון תקוע
+STALE_EXIT_MIN_PNL  = 1.0  # מתחת ל-+1% אחרי MAX_HOLD_HOURS → סוגרים ומשחררים הון
 STOCK_LEVERAGE    = 3      # מינוף יעד על מניות (Perps) — אגרסיבי אך לא פרוע
 SWING_PCT_DEFAULT = 0.15   # 15% מהתיק אם אין size_pct מ-Claude
 SWING_MIN_USD     = 30     # רצפה — מגבלת קרקן
@@ -606,9 +608,10 @@ Prefer rotating out of positions that are flat/negative or stalling far from tar
 
 BTC context price: ${btc_price:,.0f}
 Available USDC: ${usdc:.2f}
-YOUR MANDATE: grow this portfolio aggressively. Safety rails (daily kill-switch, 25%/asset cap, stop on every trade) are always on — so swing for real gains, don't preserve capital timidly.
-- CONCENTRATE: back your 2-3 best setups with size, don't spread thin across 6 marginal picks. Most hours, the best move is 0-1 high-quality entries.
-- SIZE by conviction via "size_pct" (% of portfolio, 5-40). A+ setup (clear trend + volume + indicators aligned) → 30-40. Marginal → skip it.
+YOUR MANDATE: grow this portfolio aggressively. The owner explicitly accepts full risk on this capital — it's a dedicated aggressive-experiment budget. Safety rails (daily kill-switch at -20%, 50%/asset cap, stop on every trade) are always on — so swing for real gains, don't preserve capital timidly.
+- IDLE CASH IS A COST: if USDC is a large share of the portfolio (>40%), deploy it into the best setup available — a decent B+ entry with a proper stop beats sitting in cash waiting for perfection.
+- CONCENTRATE: back your 2-3 best setups with size, don't spread thin across 6 marginal picks.
+- SIZE by conviction via "size_pct" (% of portfolio, 10-50). A+ setup (clear trend + volume + indicators aligned) → 40-50. Decent B+ → 15-25. Truly bad → skip.
 - SET stop/target per trade via "stop_pct" and "target_pct" (decimals). Match them to the coin's volatility, NOT a fixed rule:
   · A fixed -2% stop on 5x gets wicked out by normal noise — give volatile coins room (stop_pct 0.03-0.05).
   · Let winners run — on strong momentum set target_pct 0.08-0.20, not a tiny +5%. Aim for asymmetric reward:risk (target ≥ 2x stop).
@@ -664,7 +667,7 @@ Return ONLY valid JSON:
   "skip_reason": "למה דחית את השאר (משפט אחד בעברית)"
 }}
 
-If nothing looks good — return picks as empty array. Better to miss a trade than to lose money."""
+If nothing looks tradeable at all — return picks as empty array. But remember the mandate: every trade has a stop, so a stopped-out loss is bounded and cheap, while weeks of idle cash compound to a real cost. When in doubt between a decent setup and cash — take the setup."""
 
     try:
         client = anthropic.Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY", ""))
@@ -963,6 +966,17 @@ def check_open_swings(balance: dict, request_fn) -> list:
             elif current <= t["stop_price"]:
                 reason = "loss"
 
+        # יציאת זמן — פוזיציה שעברה MAX_HOLD_HOURS בלי להגיע לשום מקום תוקעת הון
+        # שיכול לעבוד בסטאפ אחר (זה סווינג שעתי/יומי, לא buy&hold)
+        if not reason:
+            try:
+                age_h = (datetime.now() - datetime.fromisoformat(t["date_open"])).total_seconds() / 3600
+            except Exception:
+                age_h = 0
+            if age_h >= MAX_HOLD_HOURS and pnl_pct < STALE_EXIT_MIN_PNL:
+                reason = "stale"
+                logging.info(f"[Swing] {coin} פתוח {age_h:.0f} שעות עם P&L {pnl_pct:+.1f}% — יציאת זמן")
+
         if reason:
             cfg       = CANDIDATES.get(_canonical(coin), CANDIDATES.get(coin, {}))
             price_dec = cfg.get("price_dec", 4)
@@ -978,6 +992,17 @@ def check_open_swings(balance: dict, request_fn) -> list:
                 close_type = "buy" if side == "short" else "sell"
                 lp = round(current * (1.001 if side == "short" else 0.999), price_dec)
 
+                # סטטוס וכותרת מייל לפי סיבת הסגירה
+                if reason == "stale":
+                    new_status  = "closed_stale"
+                    alert_title = f"⏰ יציאת זמן (>{MAX_HOLD_HOURS}h): {coin}"
+                elif pnl_pct >= 0:
+                    new_status  = "closed_profit"
+                    alert_title = f"✅ סגירת רווח: {coin}"
+                else:
+                    new_status  = "closed_loss"
+                    alert_title = f"🔴 Stop-Loss: {coin}"
+
                 if t.get("is_stock") and t.get("is_futures"):
                     # ── מניה — דרך Kraken Futures Perps ──────────────────
                     from kraken_futures import place_futures_order, cancel_futures_order
@@ -989,15 +1014,15 @@ def check_open_swings(balance: dict, request_fn) -> list:
                             logging.warning(f"[Swing] cancel futures TP failed: {ce}")
                     try:
                         txid = place_futures_order(pair, close_type, vol, lp)
-                        t["status"]      = "closed_loss"
+                        t["status"]      = new_status
                         t["date_close"]  = datetime.now().isoformat()
                         t["close_price"] = current
                         t["close_txid"]  = txid
-                        logging.info(f"[Swing] CLOSE STOP {coin} (מניה {side}) @ {current:.4f} | P&L {pnl_pct:+.1f}% | {close_type} txid={txid}")
+                        logging.info(f"[Swing] CLOSE {reason.upper()} {coin} (מניה {side}) @ {current:.4f} | P&L {pnl_pct:+.1f}% | {close_type} txid={txid}")
                         archive_closed_trade(t)
                         _send_trade_alert(
-                            f"🔴 Stop-Loss: {coin} (מניה)",
-                            f"מניה: {coin} ({side})\nיציאה: ${current:.4f}\nכניסה: ${t['entry_price']:.4f}\nהפסד: {pnl_pct:+.1f}% (${t['pnl_usd']:+.2f})"
+                            f"{alert_title} (מניה)",
+                            f"מניה: {coin} ({side})\nיציאה: ${current:.4f}\nכניסה: ${t['entry_price']:.4f}\nP&L: {pnl_pct:+.1f}% (${t['pnl_usd']:+.2f})"
                         )
                     except Exception as e:
                         logging.error(f"[Swing] stock stop close failed {coin}: {e}")
@@ -1030,15 +1055,15 @@ def check_open_swings(balance: dict, request_fn) -> list:
                         stop_params["leverage"] = str(LEVERAGE)
                     res  = request_fn("/0/private/AddOrder", stop_params, private=True)
                     txid = list(res.get("txid", ["?"]))[0]
-                    t["status"]      = "closed_loss"
+                    t["status"]      = new_status
                     t["date_close"]  = datetime.now().isoformat()
                     t["close_price"] = current
                     t["close_txid"]  = txid
-                    logging.info(f"[Swing] CLOSE STOP {coin} ({side}) @ {current:.4f} | P&L {pnl_pct:+.1f}% | {close_type} txid={txid}")
+                    logging.info(f"[Swing] CLOSE {reason.upper()} {coin} ({side}) @ {current:.4f} | P&L {pnl_pct:+.1f}% | {close_type} txid={txid}")
                     archive_closed_trade(t)
                     _send_trade_alert(
-                        f"🔴 Stop-Loss: {coin}",
-                        f"מטבע: {coin} ({side})\nיציאה: ${current:.4f}\nכניסה: ${t['entry_price']:.4f}\nהפסד: {pnl_pct:+.1f}% (${t['pnl_usd']:+.2f})"
+                        alert_title,
+                        f"מטבע: {coin} ({side})\nיציאה: ${current:.4f}\nכניסה: ${t['entry_price']:.4f}\nP&L: {pnl_pct:+.1f}% (${t['pnl_usd']:+.2f})"
                     )
                 except Exception as e:
                     logging.error(f"[Swing] stop close failed {coin}: {e}")
@@ -1162,6 +1187,11 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
         if stock_movers:
             coins = ", ".join(c["coin"] for c in stock_movers[:3])
             return True, f"תנועה חזקה במניה: {coins}"
+        # כסף יושב — USDC נזיל שהוא נתח גדול מהתיק זו עלות אלטרנטיבית; שווה לשאול
+        # את קלוד גם בלי טריגר שוק (ה-snapshot מונע קריאות חוזרות על מצב זהה)
+        pf_ref = portfolio_usd or usdc
+        if usdc >= 50 and pf_ref and usdc / pf_ref >= 0.4 and tradeable:
+            return True, f"USDC נזיל ${usdc:.0f} ({usdc/pf_ref:.0%} מהתיק) ללא שימוש — סורק פריסה"
         return False, "הכל שקט — דולג על קריאה לClaude"
 
     should_call, call_reason = _should_call_claude(candidates, open_swings)
@@ -1329,7 +1359,7 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
                 size_pct = float(pick.get("size_pct", 10))
             except (TypeError, ValueError):
                 size_pct = 10
-            size_pct  = max(5.0, min(30.0, size_pct))
+            size_pct  = max(10.0, min(50.0, size_pct))
             trade_usd = pf * size_pct / 100 if pf else SWING_USD_STOCK
             trade_usd = max(SWING_USD_STOCK, min(SWING_MAX_STOCK_USD, trade_usd))
             trade_usd = round(trade_usd, 2)
@@ -1340,9 +1370,9 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
                 size_pct = float(pick.get("size_pct", SWING_PCT_DEFAULT * 100))
             except (TypeError, ValueError):
                 size_pct = SWING_PCT_DEFAULT * 100
-            size_pct  = max(5.0, min(40.0, size_pct))   # מנדט אגרסיבי — עד 40%
-            # תקרה גדלה עם התיק (25% מהתיק), אבל לא פחות מתקרת הבסיס
-            dynamic_max = max(SWING_MAX_USD, pf * 0.25) if pf else SWING_MAX_USD
+            size_pct  = max(10.0, min(50.0, size_pct))   # מנדט אגרסיבי — עד 50%
+            # תקרה גדלה עם התיק (50% מהתיק), אבל לא פחות מתקרת הבסיס
+            dynamic_max = max(SWING_MAX_USD, pf * 0.5) if pf else SWING_MAX_USD
             trade_usd = pf * size_pct / 100 if pf else SWING_USD
             trade_usd = max(SWING_MIN_USD, min(dynamic_max, trade_usd))
             trade_usd = round(trade_usd, 2)
