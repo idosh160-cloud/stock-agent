@@ -1,31 +1,29 @@
 {
- "time": "2026-07-09T21:00:04",
- "usdc": 43.66,
- "portfolio": 595.43,
- "margin_headroom": 218.3,
+ "time": "2026-07-09T22:00:04",
+ "usdc": 43.64,
+ "portfolio": 595.37,
+ "margin_headroom": 218.2,
  "open": [
-  "SOL long +8.4%",
-  "BTC long +0.9%",
-  "LINK long +0.7%"
+  "SOL long +8.3%",
+  "BTC long +0.8%",
+  "LINK long +0.5%"
  ],
- "stock_candidates": 20,
+ "stock_candidates": 21,
  "top_stocks": [
-  "GM +4.6% vol=$26,871",
-  "AVA +4.5% vol=$4,466,823",
-  "ST +3.3% vol=$37,934",
-  "TSLA +2.9% vol=$170,421",
+  "GM +4.6% vol=$26,886",
+  "AVA +4.0% vol=$4,482,287",
+  "ST +3.0% vol=$38,114",
+  "TSLA +2.8% vol=$168,653",
   "HOOD +2.3% vol=$665,722"
  ],
  "futures_ok": true,
  "futures_balance": 73.26,
  "call_reason": "תנועה חזקה במטבע חדש: CC",
  "claude_called": true,
- "market_read": "שוק במצב ריסק-און מתון — קריפטו ומניות ירוקים, BTC וLINK במומנטום עולה קרוב לרף עליון של הבולינגר.",
- "skip_reason": "יתר המועמדים או חלשים בנפח (CC, DOGE), נופלים על סכין (XMR), או ניטרליים/צ'ופיים ללא edge ברור; שלושת הפוזיציות הפתוחות כבר רווחיות ומתקדמות ליעד ולכן לא סוגר אף אחת.",
+ "market_read": "שוק בטון חיובי — ביטקוין וסולנה מובילים ומניות הטכנולוגיה מראות מומנטום, סביבה טובה ללונגים.",
+ "skip_reason": "האלטים הקטנים (CC, XDC) בווליום נמוך וצ'ופי, והפוזיציות הקיימות כבר תופסות את החשיפה לביטקוין/סולנה/לינק.",
  "picks": [
-  "AVA long size=18% conf=MEDIUM"
- ],
- "order_errors": [
-  "AVA: Order rejected: status=invalidSize | {'status': 'invalidSize', 'order_id': 'a2386434-e87d-4eab-a261-3c50df4660bd', 'receivedTime': '2026-07-09T21:00:3"
+  "HOOD long size=20% conf=MEDIUM",
+  "TSLA long size=15% conf=MEDIUM"
  ]
 }
