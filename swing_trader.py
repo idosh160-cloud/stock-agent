@@ -588,7 +588,7 @@ Stocks are FULL citizens now — pick them whenever they're the best growth oppo
 - IMPORTANT — a stock that already ran +15-30% in a day is NOT "too late", it's a SHORT candidate. Don't just skip pumped stocks (e.g. SPCX +28%) — consider SHORTING the exhausted move (direction:"short") when RSI is extreme/BB% near 100 and momentum is stalling. Mean-reversion after a parabolic stock day is one of the best setups available.
 - STILL trade them stock-aware: they move SLOWER and tighter than crypto. A 3% stock day is big.
   · Use tighter bands than crypto: target_pct 0.03-0.08, stop_pct 0.015-0.03, but keep target ≥ 2x stop.
-- The underlying moves mostly during US market hours (≈14:30-21:00 UTC). Avoid fresh entries on thin off-hours drift; favor real-volume moves during US hours, post-earnings drift, sector moves.
+- These tokens trade 24/7 — off-hours moves (overnight momentum, post-earnings drift, news reactions while Wall St is closed) are REAL tradeable setups, not noise. Position size is already capped to the stock's actual liquidity, so don't reject a setup just because the US market is closed. US hours give faster/deeper moves; off-hours favor continuation and drift plays (like the SPCX overnight short).
 - Choose stock vs crypto purely on which gives the best risk/reward for GROWTH right now.
 """
 
