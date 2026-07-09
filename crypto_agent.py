@@ -24,7 +24,16 @@ logging.basicConfig(
 
 def pull_from_github():
     try:
-        subprocess.run(["git", "pull", "--ff-only"], cwd=DIR, capture_output=True, timeout=30)
+        r = subprocess.run(["git", "pull", "--ff-only"], cwd=DIR, capture_output=True, timeout=30)
+        if r.returncode != 0:
+            # ההיסטוריה התפצלה (למשל מיזוג ידני ב-main בזמן שהבוט דחף) —
+            # בלי טיפול הבוט נתקע לנצח בלי עדכוני קוד. rebase; בקונפליקט המצב המקומי גובר.
+            subprocess.run(["git", "fetch", "origin", "main"], cwd=DIR, capture_output=True, timeout=30)
+            r2 = subprocess.run(["git", "rebase", "-X", "theirs", "origin/main"], cwd=DIR, capture_output=True, timeout=60)
+            if r2.returncode != 0:
+                subprocess.run(["git", "rebase", "--abort"], cwd=DIR, capture_output=True)
+                logging.error("Git pull: rebase נכשל — ממשיך על הגרסה המקומית")
+                return
         logging.info("Git pull done")
     except Exception as e:
         logging.error(f"Git pull failed: {e}")
@@ -43,7 +52,12 @@ def push_to_github():
                 ["git", "commit", "-m", f"crypto: update {datetime.now().strftime('%Y-%m-%d %H:%M')}"],
                 cwd=DIR, capture_output=True
             )
-            subprocess.run(["git", "push"], cwd=DIR, capture_output=True, timeout=30)
+            r = subprocess.run(["git", "push"], cwd=DIR, capture_output=True, timeout=30)
+            if r.returncode != 0:
+                # ה-remote התקדם בינתיים — משוך (עם rebase) ונסה שוב פעם אחת
+                logging.warning("Git push נדחה — מושך ומנסה שוב")
+                pull_from_github()
+                subprocess.run(["git", "push"], cwd=DIR, capture_output=True, timeout=30)
             logging.info("GitHub updated")
         else:
             logging.info("No changes to push")

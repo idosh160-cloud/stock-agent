@@ -672,11 +672,13 @@ If nothing looks tradeable at all — return picks as empty array. But remember 
     try:
         client = anthropic.Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY", ""))
         msg = client.messages.create(
-            model="claude-sonnet-4-6",
-            max_tokens=1500,
+            model="claude-opus-4-8",
+            max_tokens=6000,  # חשיבה אדפטיבית נכללת בתקציב — צריך מרווח מעבר ל-JSON עצמו
+            thinking={"type": "adaptive"},
             messages=[{"role": "user", "content": prompt}]
         )
-        raw = msg.content[0].text.strip()
+        # עם חשיבה מופעלת בלוק הטקסט אינו בהכרח הראשון — חפש אותו במפורש
+        raw = next((b.text for b in msg.content if b.type == "text"), "").strip()
         if "```" in raw:
             for part in raw.split("```"):
                 part = part.strip().lstrip("json").strip()
@@ -951,6 +953,19 @@ def check_open_swings(balance: dict, request_fn) -> list:
         t["pnl_pct"]       = pnl_pct
         t["pnl_usd"]       = round((entry - current) * vol, 2) if side == "short" else round((current - entry) * vol, 2)
         changed = True
+
+        # Trailing stop — נעילת רווח: ב-+4% הסטופ עולה לברייק-איבן+1%, ב-+6% עוקב 3% אחרי המחיר.
+        # הסטופ רק מתהדק לכיוון הרווח, לעולם לא מתרחב חזרה.
+        if side == "long":
+            trail = current * 0.97 if pnl_pct >= 6.0 else (entry * 1.01 if pnl_pct >= 4.0 else None)
+            if trail and trail > t["stop_price"]:
+                t["stop_price"] = round(trail, 6)
+                logging.info(f"[Swing] {coin} trailing stop → {t['stop_price']} (P&L {pnl_pct:+.1f}%)")
+        else:
+            trail = current * 1.03 if pnl_pct >= 6.0 else (entry * 0.99 if pnl_pct >= 4.0 else None)
+            if trail and trail < t["stop_price"]:
+                t["stop_price"] = round(trail, 6)
+                logging.info(f"[Swing] {coin} trailing stop → {t['stop_price']} (P&L {pnl_pct:+.1f}%)")
 
         # זיהוי יעד/stop לפי כיוון.
         # לונג: יעד מעל הכניסה, stop מתחת. שורט: יעד מתחת, stop מעל.
