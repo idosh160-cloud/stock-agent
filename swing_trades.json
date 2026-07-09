@@ -457,7 +457,7 @@
     "entry_change_24h": 0.79
   },
   {
-    "coin": "XBT",
+    "coin": "BTC",
     "pair": "XBTUSDC",
     "side": "long",
     "entry_price": 62724.660446,
@@ -470,7 +470,7 @@
     "date_close": null,
     "status": "open",
     "confidence": "MEDIUM",
-    "reasoning": "Restored from Kraken OpenPositions (long)",
+    "reasoning": "Restored from Kraken OpenPositions (long); renamed XBT->BTC (name-mismatch fix)",
     "market_read": "",
     "current_price": 62970.62,
     "pnl_pct": 0.39,

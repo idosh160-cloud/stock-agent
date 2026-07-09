@@ -20,9 +20,19 @@ except ImportError:
 DIR          = os.path.dirname(os.path.abspath(__file__))
 SWING_FILE   = os.path.join(DIR, "swing_trades.json")
 HISTORY_FILE = os.path.join(DIR, "swing_history.json")
+DEBUG_FILE   = os.path.join(DIR, "swing_debug.json")
+
+
+def _write_debug(d: dict):
+    """אבחון סריקה שנדחף לגיט כל שעה — הדרך היחידה לראות מרחוק למה הבוט החליט מה שהחליט"""
+    try:
+        with open(DEBUG_FILE, "w", encoding="utf-8") as f:
+            json.dump(d, f, indent=1, ensure_ascii=False)
+    except Exception:
+        pass
 
 SWING_USD         = 100    # ברירת מחדל לעסקת קריפטו אם Claude לא נתן size_pct
-STOCK_MIN_VOL_USD = 20000  # רף נזילות למניה — מתחת לזה מלכודת ביצוע (TSLA/AAPL דלילות ב-Kraken)
+STOCK_MIN_VOL_USD = 5000   # רף נזילות למניה — 20k סינן את רוב ה-xStocks רוב היום; הגודל מוגבל יחסית לנפח בהמשך
 SWING_USD_STOCK   = 30     # רצפה לעסקת מניה (נושיונל)
 SWING_MAX_STOCK_USD = 450  # תקרת נושיונל לעסקת מניה (עם מינוף x3 = ~$150 מרג'ין)
 MAX_HOLD_HOURS      = 48   # סווינג שעתי/יומי — פוזיציה מעבר לזה בלי התקדמות היא הון תקוע
@@ -40,10 +50,11 @@ MAX_BUDGET        = 600    # תקציב מקסימלי לסווינגים
 LEVERAGE          = 5      # מינוף x5 על כל קנייה (Kraken margin) — לא למניות
 
 # מטבעות שקרקן מאפשר עליהם margin trading
-MARGIN_ELIGIBLE = {"ETH", "SOL", "XRP", "LTC", "BCH", "LINK", "DOT", "ADA", "AVAX", "BNB", "DOGE", "XMR", "TON"}
+MARGIN_ELIGIBLE = {"BTC", "ETH", "SOL", "XRP", "LTC", "BCH", "LINK", "DOT", "ADA", "AVAX", "BNB", "DOGE", "XMR", "TON"}
 
 # Pairs שאומתו ב-Kraken + מינימום נפח + דיוק מחיר
 CANDIDATES = {
+    "BTC":  {"pair": "XBTUSDC",  "min_vol": 0.0001,"price_dec": 1},
     "ETH":  {"pair": "ETHUSDC",  "min_vol": 0.004, "price_dec": 2},
     "SOL":  {"pair": "SOLUSDC",  "min_vol": 0.06,  "price_dec": 2},
     "XRP":  {"pair": "XRPUSDC",  "min_vol": 10,    "price_dec": 4},
@@ -192,9 +203,11 @@ def archive_closed_trade(t: dict):
         if os.path.exists(HISTORY_FILE):
             with open(HISTORY_FILE, encoding="utf-8") as f:
                 history = json.load(f)
-        # בדוק שלא כבר קיים (לפי txid)
-        existing_txids = {h.get("txid") for h in history}
-        if t.get("txid") in existing_txids:
+        # בדוק שלא כבר קיים — לפי צמד (כניסה, סגירה). אותה כניסה יכולה להירשם
+        # כסגורה פעמיים (סגירת-סרק של הסנכרון ואז הסגירה האמיתית) — האמיתית
+        # חייבת להיכנס, אחרת ההיסטוריה משקרת (כך ההפסד של DOGE נרשם כרווח)
+        existing = {(h.get("txid"), h.get("close_txid")) for h in history}
+        if (t.get("txid"), t.get("close_txid")) in existing:
             return
         history.append({
             "coin":        t["coin"],
@@ -560,7 +573,13 @@ def analyze_with_claude(candidates: list, open_coins: set, usdc: float, btc_pric
             f"range {c['range_24h']:.1f}% | vol ${c['volume_usdc']:,.0f}"
             for c in stock_candidates[:15]
         ])
+        open_stock_n = len([p for p in (open_positions or []) if p.get("is_stock")])
+        stock_note = (
+            "NOTE: you currently hold ZERO stock positions — an entire asset class is unused. "
+            "During US market hours, actively look for a stock setup, don't default to crypto.\n"
+        ) if open_stock_n == 0 else ""
         stock_section = f"""
+{stock_note}
 xStock candidates (tokenized stocks via Kraken Futures Perps — LONG and SHORT, leverage available):
 {stock_rows}
 Stocks are FULL citizens now — pick them whenever they're the best growth opportunity, same as crypto.
@@ -724,7 +743,7 @@ _COIN_ALIASES = {"XDG": "DOGE", "XBT": "BTC", "XET": "ETH"}
 
 def _pair_to_coin(pair: str) -> str:
     """ממיר פאיר של קרקן לשם מטבע. XRPUSDC→XRP, ETHUSDC→ETH, XDGUSDC→DOGE"""
-    kraken_map = {"XXBT": "BTC", "XETH": "ETH", "XXRP": "XRP", "XLTC": "LTC", "XXLM": "XLM", "XDGE": "DOGE", "XDG": "DOGE"}
+    kraken_map = {"XXBT": "BTC", "XBT": "BTC", "XETH": "ETH", "XXRP": "XRP", "XLTC": "LTC", "XXLM": "XLM", "XDGE": "DOGE", "XDG": "DOGE"}
     coin = pair.replace("USDC", "").replace("USD", "")
     return kraken_map.get(coin, coin)
 
@@ -1131,13 +1150,20 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
         return trades
 
     if usdc < 10:
-        logging.info(f"[Swing] USDC critically low ${usdc:.2f} — skipping scan")
-        return trades
+        # USDC נמוך אינו סוף פסוק — כסף בארנק Futures עדיין יכול לפתוח מניות
+        try:
+            from kraken_futures import get_futures_balance as _gfb
+            _fut_bal = _gfb()
+        except Exception:
+            _fut_bal = 0.0
+        if _fut_bal < 10:
+            logging.info(f"[Swing] USDC critically low ${usdc:.2f} וגם Futures ריק — skipping scan")
+            return trades
 
     margin_used = get_margin_used(request_fn)
     # headroom אמיתי: גם תקרת המרג'ין הסינתטית, וגם כוח הקנייה האמיתי לפי USDC פנוי.
     # אם USDC שלילי/נמוך (פקודות פתוחות תופסות אותו) — אין באמת מקום, גם אם המרג'ין פנוי.
-    synthetic_cap   = max(0, 200 - margin_used)
+    synthetic_cap   = max(0, 400 - margin_used)   # הועלה מ-200 — המנדט האגרסיבי צריך מקום
     real_buying_pwr = max(0, usdc) * LEVERAGE        # USDC פנוי × מינוף
     margin_headroom = min(synthetic_cap, real_buying_pwr)
     logging.info(f"[Swing] Margin used: ${margin_used:.0f} | USDC ${usdc:.0f} | headroom אמיתי: ${margin_headroom:.0f}")
@@ -1152,6 +1178,29 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
 
     # שלוף xStocks דינמית
     stock_candidates = get_xstock_data()
+
+    # ── תצפית מרחוק — למה הבוט מחליט מה שהוא מחליט (נדחף לגיט כל שעה) ──
+    debug = {
+        "time":             datetime.now().isoformat(timespec="seconds"),
+        "usdc":             round(usdc, 2),
+        "portfolio":        round(portfolio_usd or 0, 2),
+        "margin_headroom":  round(margin_headroom, 2),
+        "open":             [f"{t['coin']} {t.get('side','?')} {t.get('pnl_pct',0):+.1f}%" for t in open_swings],
+        "stock_candidates": len(stock_candidates),
+        "top_stocks": [
+            f"{s['coin']} {s.get('change_24h',0):+.1f}% vol=${s.get('volume_usdc',0):,.0f}"
+            for s in sorted(stock_candidates, key=lambda x: -abs(x.get("change_24h", 0)))[:5]
+        ],
+    }
+    # בדיקת חיבור Futures — אם המפתחות חסרים בשרת, שום קוד לא יפתח מניות
+    try:
+        from kraken_futures import _request as _fut_req
+        _flex = _fut_req("/accounts").get("accounts", {}).get("flex", {})
+        debug["futures_ok"] = True
+        debug["futures_balance"] = round(float(_flex.get("availableMargin", 0) or 0), 2)
+    except Exception as _fe:
+        debug["futures_ok"] = False
+        debug["futures_error"] = str(_fe)[:200]
 
     # בנה lookup מהיר לפי coin
     all_candidates_map = {c["coin"]: c for c in candidates}
@@ -1194,24 +1243,28 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
             coins = ", ".join(c["coin"] for c in extreme_rsi[:3])
             return True, f"RSI קיצוני: {coins}"
         # מניות (xStocks) — הסינון למעלה בודק רק קריפטו; בלעדי זה סטאפ מניות
-        # בשעות המסחר בארה"ב לא מגיע לקלוד לעולם (נפח כבר סונן ב-get_xstock_data)
+        # בשעות המסחר בארה"ב לא מגיע לקלוד לעולם. סף נמוך מקריפטו — 3% במניה זה יום גדול
+        stock_thr = max(2.0, move_thr - 1.0)
         stock_movers = [
             c for c in (stock_candidates or [])
-            if c["coin"] not in open_coins_set and abs(c.get("change_24h", 0)) >= move_thr
+            if c["coin"] not in open_coins_set and abs(c.get("change_24h", 0)) >= stock_thr
         ]
         if stock_movers:
             coins = ", ".join(c["coin"] for c in stock_movers[:3])
             return True, f"תנועה חזקה במניה: {coins}"
-        # כסף יושב — USDC נזיל שהוא נתח גדול מהתיק זו עלות אלטרנטיבית; שווה לשאול
+        # כסף יושב — USDC נזיל שהוא נתח מהותי מהתיק זו עלות אלטרנטיבית; שווה לשאול
         # את קלוד גם בלי טריגר שוק (ה-snapshot מונע קריאות חוזרות על מצב זהה)
         pf_ref = portfolio_usd or usdc
-        if usdc >= 50 and pf_ref and usdc / pf_ref >= 0.4 and tradeable:
+        if usdc >= 25 and pf_ref and usdc / pf_ref >= 0.15 and tradeable:
             return True, f"USDC נזיל ${usdc:.0f} ({usdc/pf_ref:.0%} מהתיק) ללא שימוש — סורק פריסה"
         return False, "הכל שקט — דולג על קריאה לClaude"
 
     should_call, call_reason = _should_call_claude(candidates, open_swings)
+    debug["call_reason"] = call_reason
     if not should_call:
         logging.info(f"[Swing] {call_reason}")
+        debug["claude_called"] = False
+        _write_debug(debug)
         return trades
 
     # בדיקת שינוי-מצב — אל תשאל את Claude שוב על מצב זהה לפעם הקודמת.
@@ -1226,7 +1279,7 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
             if c["coin"] in open_coins_set:
                 continue
             chg = c.get("change_24h", 0)
-            if abs(chg) >= 3.0:
+            if abs(chg) >= (2.0 if c.get("is_stock") else 3.0):
                 parts.append(f"M:{c['coin']}:{int(chg)}")  # מדרגות של 1%
             rsi = c.get("rsi")
             if rsi and (rsi < 35 or rsi > 65):
@@ -1246,6 +1299,9 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
 
     if snapshot and snapshot == last_snapshot:
         logging.info(f"[Swing] מצב זהה לפעם הקודמת ({call_reason}) — דולג על Claude")
+        debug["claude_called"] = False
+        debug["skip"] = "snapshot זהה לקריאה הקודמת"
+        _write_debug(debug)
         return trades
 
     # שמור את התמונה החדשה לפני הקריאה
@@ -1260,6 +1316,13 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
     market_read = analysis.get("market_read", "")
     skip_reason = analysis.get("skip_reason", "")
     logging.info(f"[Swing] Claude: {market_read} | skipped: {skip_reason}")
+    debug["claude_called"] = True
+    debug["market_read"]   = market_read
+    debug["skip_reason"]   = skip_reason
+    debug["picks"] = [
+        f"{p.get('coin')} {p.get('direction','long')} size={p.get('size_pct')}% conf={p.get('confidence')}"
+        for p in analysis.get("picks", [])
+    ]
 
     # רוטציה — קלוד ביקש לסגור פוזיציה חלשה כדי לפתוח חדשה
     close_for_rotation = analysis.get("close_for_rotation")
@@ -1377,7 +1440,9 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
             size_pct  = max(10.0, min(50.0, size_pct))
             trade_usd = pf * size_pct / 100 if pf else SWING_USD_STOCK
             trade_usd = max(SWING_USD_STOCK, min(SWING_MAX_STOCK_USD, trade_usd))
-            trade_usd = round(trade_usd, 2)
+            # תקרת נזילות — לא יותר מ-10% מהנפח היומי של המניה (מלכודת ביצוע בספר דליל)
+            liq_cap   = max(SWING_USD_STOCK, coin_data.get("volume_usdc", 0) * 0.10)
+            trade_usd = round(min(trade_usd, liq_cap), 2)
             logging.info(f"[Swing] {coin} (מניה) size_pct={size_pct:.0f}% → נושיונל ${trade_usd:.0f} | מינוף x{STOCK_LEVERAGE} | stop -{stop_pct*100:.1f}% target +{target_pct*100:.1f}%")
         else:
             pf = portfolio_usd or usdc or 0
@@ -1588,6 +1653,8 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
             )
         except Exception as e:
             logging.error(f"[Swing] buy failed {coin}: {e}")
+            debug.setdefault("order_errors", []).append(f"{coin}: {str(e)[:150]}")
 
+    _write_debug(debug)
     save_swing_trades(trades)
     return trades
