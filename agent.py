@@ -632,12 +632,14 @@ Return ONLY valid JSON, no markdown:
     print("שולח ל-Claude לניתוח...")
     client = _get_client()
     message = client.messages.create(
-        model="claude-sonnet-4-5",
-        max_tokens=8000,
+        model="claude-opus-4-8",
+        max_tokens=12000,  # מרווח לחשיבה אדפטיבית + JSON
+        thinking={"type": "adaptive"},
         messages=[{"role": "user", "content": prompt}]
     )
 
-    raw = message.content[0].text
+    # עם חשיבה מופעלת בלוק הטקסט אינו בהכרח הראשון
+    raw = next((b.text for b in message.content if b.type == "text"), "")
     # נקה markdown אם יש
     if "```" in raw:
         parts = raw.split("```")

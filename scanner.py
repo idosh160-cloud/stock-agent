@@ -252,12 +252,14 @@ Return ONLY valid JSON:
 
     client = anthropic.Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY", ""))
     msg = client.messages.create(
-        model="claude-sonnet-4-5",
-        max_tokens=1500,
+        model="claude-opus-4-8",
+        max_tokens=5000,  # מרווח לחשיבה אדפטיבית + JSON
+        thinking={"type": "adaptive"},
         messages=[{"role": "user", "content": prompt}]
     )
 
-    raw = msg.content[0].text
+    # עם חשיבה מופעלת בלוק הטקסט אינו בהכרח הראשון
+    raw = next((b.text for b in msg.content if b.type == "text"), "")
     if "```" in raw:
         parts = raw.split("```")
         for part in parts:
