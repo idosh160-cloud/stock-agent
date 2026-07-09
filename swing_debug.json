@@ -1,31 +1,31 @@
 {
- "time": "2026-07-09T19:00:05",
- "usdc": 43.72,
- "portfolio": 595.75,
- "margin_headroom": 218.6,
+ "time": "2026-07-09T20:00:05",
+ "usdc": 43.69,
+ "portfolio": 594.85,
+ "margin_headroom": 218.45,
  "open": [
-  "SOL long +8.5%",
-  "BTC long +0.7%",
-  "LINK long +1.0%"
+  "SOL long +8.3%",
+  "BTC long +0.8%",
+  "LINK long +0.7%"
  ],
  "stock_candidates": 20,
  "top_stocks": [
-  "SPCX +5.1% vol=$2,256,804",
-  "AVA +4.3% vol=$4,415,005",
-  "GM +3.6% vol=$26,287",
-  "TSLA +3.4% vol=$271,022",
-  "SN +3.1% vol=$25,691"
+  "AVA +4.4% vol=$4,443,947",
+  "GM +3.9% vol=$26,524",
+  "TSLA +3.0% vol=$267,620",
+  "SPCX +2.6% vol=$2,457,765",
+  "ST +2.3% vol=$38,975"
  ],
  "futures_ok": true,
  "futures_balance": 73.26,
  "call_reason": "תנועה חזקה במטבע חדש: CC",
  "claude_called": true,
- "market_read": "שוק בסנטימנט חיובי מתון — קריפטו ומניות ירוקים אך רוב הנכסים כבר קרובים לרצועת בולינגר העליונה.",
- "skip_reason": "רוב האלטים (LINK/BTC/DOGE) כבר קרובים ל-BB עליון ומוחזקים או מנופחים, ו-SPCX לא קיצוני מספיק לשורט; מזומן פנוי הוא רק 7% אז אין צורך לפרוס בכוח.",
+ "market_read": "שוק קריפטו במצב ריסק-און מתון — BTC ו-SOL עם MACD חיובי, ומניות הצמיחה (TSLA, QQQ) מובילות את המומנטום.",
+ "skip_reason": "רוב הפוזיציות כבר פתוחות ורווחיות (SOL קרוב ליעד), CC/DOGE בנפח דק מדי, ו-XMR/ADA חלשים מכדי לתפוס סכין נופל — התיק כבר 61% חשוף אז נוספה רק פוזיציה איכותית אחת.",
  "picks": [
   "TSLA long size=18% conf=MEDIUM"
  ],
  "order_errors": [
-  "TSLA: Order rejected: status=invalidSize | {'status': 'invalidSize', 'order_id': 'a2383953-cd4c-47ac-8b44-b796997d8b61', 'receivedTime': '2026-07-09T19:00:3"
+  "TSLA: Order rejected: status=invalidSize | {'status': 'invalidSize', 'order_id': 'a2384ec9-1ce8-4ec9-ba3c-e2a7cd042d34', 'receivedTime': '2026-07-09T20:00:3"
  ]
 }
