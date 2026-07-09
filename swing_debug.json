@@ -1,32 +1,33 @@
 {
- "time": "2026-07-09T17:00:05",
- "usdc": 45.62,
- "portfolio": 594.3,
- "margin_headroom": 228.1,
+ "time": "2026-07-09T18:00:05",
+ "usdc": 43.72,
+ "portfolio": 595.11,
+ "margin_headroom": 218.6,
  "open": [
-  "SOL long +7.7%",
-  "ADA long -1.2%",
-  "BTC long -0.1%",
-  "LINK long -0.3%"
+  "SOL long +8.1%",
+  "BTC long +0.6%",
+  "LINK long +0.2%"
  ],
  "stock_candidates": 21,
  "top_stocks": [
-  "HOOD +5.6% vol=$637,647",
-  "AVA +4.4% vol=$4,458,798",
-  "GM +3.4% vol=$25,943",
-  "SN +3.0% vol=$26,614",
-  "DYD +2.8% vol=$424,717"
+  "AVA +4.9% vol=$4,492,944",
+  "HOOD +4.2% vol=$637,096",
+  "SPCX +4.1% vol=$2,226,167",
+  "GM +3.6% vol=$26,287",
+  "SN +3.5% vol=$25,620"
  ],
  "futures_ok": true,
  "futures_balance": 73.26,
- "call_reason": "פוזיציה חלשה: ADA",
+ "call_reason": "תנועה חזקה במטבע חדש: CC",
  "claude_called": true,
- "market_read": "שוק קריפטו ניטרלי-מעורב סביב RSI 45-52, בעוד המניות הטוקנייזד מציגות מומנטום חזק יותר (HOOD, AVA).",
- "skip_reason": "שאר המועמדים או בנפח נמוך (CC, LTC) או ניטרליים וללא אדג' ברור, ואת BTC/SOL/LINK אני כבר מחזיק.",
+ "market_read": "שוק בסיכון-מתון עם מומנטום חיובי, מניות ה-xStocks מובילות את התנועה בשעות המסחר בארה\"ב.",
+ "skip_reason": "CC ו-DOGE עם ווליום נמוך מדי וקרוב לרצועה העליונה, ADA/XDC חלשים, והפוזיציות הפתוחות כבר עובדות לכיוון היעד.",
  "picks": [
-  "HOOD long size=25% conf=HIGH"
+  "HOOD long size=20% conf=HIGH",
+  "AVA long size=15% conf=MEDIUM"
  ],
  "order_errors": [
-  "HOOD: Order rejected: status=invalidSize | {'status': 'invalidSize', 'order_id': 'a2380e69-acbc-46b9-9832-bc7825465875', 'receivedTime': '2026-07-09T17:00:3"
+  "HOOD: Order rejected: status=invalidSize | {'status': 'invalidSize', 'order_id': 'a23823de-aa57-4bb2-9d79-d5e789662d43', 'receivedTime': '2026-07-09T18:00:3",
+  "AVA: Order rejected: status=invalidSize | {'status': 'invalidSize', 'order_id': 'a23823de-e611-4dc5-899a-da61f41c5318', 'receivedTime': '2026-07-09T18:00:3"
  ]
 }
