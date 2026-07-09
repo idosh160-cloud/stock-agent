@@ -1464,6 +1464,22 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
         price = coin_data["price"]
         vol   = round(trade_usd / price, 8)
 
+        if is_stock and vol < 1:
+            # חלק ממכשירי המניות דורשים חוזים שלמים (precision 0) — שבר חוזה נדחה כ-invalidSize.
+            # אם המחיר סביר, קופצים לחוזה שלם אחד; אחרת אין דרך לסחור במניה הזו בגודל שנבחר.
+            try:
+                from kraken_futures import get_size_precision
+                if get_size_precision(pair) == 0:
+                    if price <= SWING_MAX_STOCK_USD and price <= trade_usd * 2.5:
+                        logging.info(f"[Swing] {coin} דורש חוזים שלמים — מעגל לחוזה 1 (נושיונל ${price:.0f})")
+                        vol, trade_usd = 1.0, round(price, 2)
+                    else:
+                        logging.warning(f"[Swing] {coin} חוזה שלם ${price:.0f} גדול מדי — מדלג")
+                        debug.setdefault("order_errors", []).append(f"{coin}: whole-contract ${price:.0f} exceeds size limits")
+                        continue
+            except Exception:
+                pass
+
         if vol < min_v:
             logging.warning(f"[Swing] {coin} vol={vol:.6f} < min={min_v} — skip")
             continue

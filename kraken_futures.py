@@ -186,6 +186,27 @@ def get_futures_price(symbol: str) -> float:
     return 0.0
 
 
+_SIZE_PREC_CACHE = None
+
+
+def get_size_precision(symbol: str) -> int:
+    """דיוק הכמות המותר למכשיר (contractValueTradePrecision) — שליחת יותר
+    ספרות מזה נדחית ע"י קרקן כ-invalidSize. 0 = חוזים שלמים בלבד.
+    נשלף פעם אחת מ-/instruments (endpoint ציבורי) ונשמר בקאש לתהליך."""
+    global _SIZE_PREC_CACHE
+    if _SIZE_PREC_CACHE is None:
+        try:
+            r = requests.get(f"{BASE_URL}/instruments", timeout=15)
+            _SIZE_PREC_CACHE = {
+                i.get("symbol"): int(i.get("contractValueTradePrecision", 0))
+                for i in r.json().get("instruments", [])
+            }
+        except Exception as e:
+            logging.warning(f"[Futures] instruments fetch failed: {e}")
+            _SIZE_PREC_CACHE = {}
+    return _SIZE_PREC_CACHE.get(symbol, 0)
+
+
 def place_futures_order(symbol: str, side: str, size: float, limit_price: float) -> str:
     """
     מבצע פקודת קנייה/מכירה ב-Futures
@@ -196,13 +217,14 @@ def place_futures_order(symbol: str, side: str, size: float, limit_price: float)
     מחזיר order_id
     """
     try:
-        # קרקן מגדיר דיוק מקסימלי (contractValueTradePrecision) לכמות לכל מכשיר.
-        # size מגיע כתוצאה של trade_usd/price ועלול להכיל 15+ ספרות (float מלא) —
-        # שליחת כזה גודל גולמי נדחית כ-invalidSize. מעגלים ל-4 ספרות שמרניות שמתאימות
-        # לרוב מכשירי ה-xStocks (תומכים בשבר מניה).
-        size_str = f"{round(float(size), 4):.4f}".rstrip("0").rstrip(".")
-        if not size_str or size_str == "-":
-            size_str = "0"
+        # עיגול הכמות לדיוק האמיתי של המכשיר, כלפי מטה (לא לחרוג מהמרג'ין).
+        # עיגול-ניחוש ל-4 ספרות נכשל ב-invalidSize על מכשירים של חוזים שלמים (AVA, SPCX).
+        prec   = get_size_precision(symbol)
+        factor = 10 ** prec
+        size_q = int(float(size) * factor) / factor
+        if size_q <= 0:
+            raise Exception(f"size {size} rounds to 0 at precision {prec} (min tradeable = {1/factor})")
+        size_str = f"{size_q:.{prec}f}" if prec > 0 else str(int(size_q))
         params = {
             "symbol": symbol,
             "side": side,
