@@ -1,33 +1,31 @@
 {
- "time": "2026-07-09T18:00:05",
+ "time": "2026-07-09T19:00:05",
  "usdc": 43.72,
- "portfolio": 595.11,
+ "portfolio": 595.75,
  "margin_headroom": 218.6,
  "open": [
-  "SOL long +8.1%",
-  "BTC long +0.6%",
-  "LINK long +0.2%"
+  "SOL long +8.5%",
+  "BTC long +0.7%",
+  "LINK long +1.0%"
  ],
- "stock_candidates": 21,
+ "stock_candidates": 20,
  "top_stocks": [
-  "AVA +4.9% vol=$4,492,944",
-  "HOOD +4.2% vol=$637,096",
-  "SPCX +4.1% vol=$2,226,167",
+  "SPCX +5.1% vol=$2,256,804",
+  "AVA +4.3% vol=$4,415,005",
   "GM +3.6% vol=$26,287",
-  "SN +3.5% vol=$25,620"
+  "TSLA +3.4% vol=$271,022",
+  "SN +3.1% vol=$25,691"
  ],
  "futures_ok": true,
  "futures_balance": 73.26,
  "call_reason": "תנועה חזקה במטבע חדש: CC",
  "claude_called": true,
- "market_read": "שוק בסיכון-מתון עם מומנטום חיובי, מניות ה-xStocks מובילות את התנועה בשעות המסחר בארה\"ב.",
- "skip_reason": "CC ו-DOGE עם ווליום נמוך מדי וקרוב לרצועה העליונה, ADA/XDC חלשים, והפוזיציות הפתוחות כבר עובדות לכיוון היעד.",
+ "market_read": "שוק בסנטימנט חיובי מתון — קריפטו ומניות ירוקים אך רוב הנכסים כבר קרובים לרצועת בולינגר העליונה.",
+ "skip_reason": "רוב האלטים (LINK/BTC/DOGE) כבר קרובים ל-BB עליון ומוחזקים או מנופחים, ו-SPCX לא קיצוני מספיק לשורט; מזומן פנוי הוא רק 7% אז אין צורך לפרוס בכוח.",
  "picks": [
-  "HOOD long size=20% conf=HIGH",
-  "AVA long size=15% conf=MEDIUM"
+  "TSLA long size=18% conf=MEDIUM"
  ],
  "order_errors": [
-  "HOOD: Order rejected: status=invalidSize | {'status': 'invalidSize', 'order_id': 'a23823de-aa57-4bb2-9d79-d5e789662d43', 'receivedTime': '2026-07-09T18:00:3",
-  "AVA: Order rejected: status=invalidSize | {'status': 'invalidSize', 'order_id': 'a23823de-e611-4dc5-899a-da61f41c5318', 'receivedTime': '2026-07-09T18:00:3"
+  "TSLA: Order rejected: status=invalidSize | {'status': 'invalidSize', 'order_id': 'a2383953-cd4c-47ac-8b44-b796997d8b61', 'receivedTime': '2026-07-09T19:00:3"
  ]
 }
