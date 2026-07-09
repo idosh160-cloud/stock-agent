@@ -1,31 +1,31 @@
 {
- "time": "2026-07-09T20:00:05",
- "usdc": 43.69,
- "portfolio": 594.85,
- "margin_headroom": 218.45,
+ "time": "2026-07-09T21:00:04",
+ "usdc": 43.66,
+ "portfolio": 595.43,
+ "margin_headroom": 218.3,
  "open": [
-  "SOL long +8.3%",
-  "BTC long +0.8%",
+  "SOL long +8.4%",
+  "BTC long +0.9%",
   "LINK long +0.7%"
  ],
  "stock_candidates": 20,
  "top_stocks": [
-  "AVA +4.4% vol=$4,443,947",
-  "GM +3.9% vol=$26,524",
-  "TSLA +3.0% vol=$267,620",
-  "SPCX +2.6% vol=$2,457,765",
-  "ST +2.3% vol=$38,975"
+  "GM +4.6% vol=$26,871",
+  "AVA +4.5% vol=$4,466,823",
+  "ST +3.3% vol=$37,934",
+  "TSLA +2.9% vol=$170,421",
+  "HOOD +2.3% vol=$665,722"
  ],
  "futures_ok": true,
  "futures_balance": 73.26,
  "call_reason": "תנועה חזקה במטבע חדש: CC",
  "claude_called": true,
- "market_read": "שוק קריפטו במצב ריסק-און מתון — BTC ו-SOL עם MACD חיובי, ומניות הצמיחה (TSLA, QQQ) מובילות את המומנטום.",
- "skip_reason": "רוב הפוזיציות כבר פתוחות ורווחיות (SOL קרוב ליעד), CC/DOGE בנפח דק מדי, ו-XMR/ADA חלשים מכדי לתפוס סכין נופל — התיק כבר 61% חשוף אז נוספה רק פוזיציה איכותית אחת.",
+ "market_read": "שוק במצב ריסק-און מתון — קריפטו ומניות ירוקים, BTC וLINK במומנטום עולה קרוב לרף עליון של הבולינגר.",
+ "skip_reason": "יתר המועמדים או חלשים בנפח (CC, DOGE), נופלים על סכין (XMR), או ניטרליים/צ'ופיים ללא edge ברור; שלושת הפוזיציות הפתוחות כבר רווחיות ומתקדמות ליעד ולכן לא סוגר אף אחת.",
  "picks": [
-  "TSLA long size=18% conf=MEDIUM"
+  "AVA long size=18% conf=MEDIUM"
  ],
  "order_errors": [
-  "TSLA: Order rejected: status=invalidSize | {'status': 'invalidSize', 'order_id': 'a2384ec9-1ce8-4ec9-ba3c-e2a7cd042d34', 'receivedTime': '2026-07-09T20:00:3"
+  "AVA: Order rejected: status=invalidSize | {'status': 'invalidSize', 'order_id': 'a2386434-e87d-4eab-a261-3c50df4660bd', 'receivedTime': '2026-07-09T21:00:3"
  ]
 }
