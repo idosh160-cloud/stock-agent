@@ -1,37 +1,37 @@
 {
- "time": "2026-07-10T20:00:05",
- "usdc": 124.22,
- "portfolio": 574.03,
+ "time": "2026-07-10T21:00:04",
+ "usdc": 124.18,
+ "portfolio": 566.04,
  "margin_headroom": 324.25,
  "open": [
-  "SOL long +8.1%",
-  "BTC long +1.9%",
-  "LINK long +2.9%",
-  "TSLA long +1.2%",
-  "AVA long +1.0%"
+  "SOL long +8.0%",
+  "BTC long +1.7%",
+  "LINK long +2.5%",
+  "TSLA long +0.8%",
+  "AVA long +0.9%",
+  "NVDA long -0.1%"
  ],
  "stock_candidates": 22,
  "top_stocks": [
-  "CV +6.1% vol=$17,904",
-  "CRCL +5.3% vol=$2,936,208",
-  "SPCX -4.3% vol=$1,625,197",
-  "DYD -4.3% vol=$181,812",
-  "SN +4.1% vol=$99,481"
+  "CV +5.8% vol=$17,389",
+  "DYD -5.5% vol=$171,431",
+  "CRCL +4.7% vol=$2,932,775",
+  "SN +4.7% vol=$101,145",
+  "SPCX -4.3% vol=$1,662,236"
  ],
  "futures_ok": true,
- "futures_balance": 59.64,
+ "futures_balance": 52.19,
  "unallocated_spot": [
   "ETH $357"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: DOT",
  "claude_called": true,
- "market_read": "שוק ריסק-און מתון — קריפטו ומניות בירוק קל, מובילים בודדים עם מומנטום נקי אך רוב האלטים ניטרליים.",
- "skip_reason": "פוזיציות פתוחות כולן ברווח ומתקדמות ליעד אז לא נוגעים; XMR קרוב מדי לרצועה עליונה, ETH הפרוק שומר על מומנטום סביר ולכן נשאר כמות שהוא; שאר המועמדים ניטרליים/נמוכי נפח.",
+ "market_read": "שוק קריפטו במצב ריבאונד מתון וברוד — רוב המטבעות RSI 53-59 עם מומנטום עולה חלש, ללא אקסטרים לשורט.",
+ "skip_reason": "DOT ו-LTC נראו חזק בתנועה אך עם MACD שלילי (מומנטום דועך), CRCL/HOOD היסטוריה גרועה, ואת ETH הספוט אני משאיר כי הוא עצמו במגמת ריבאונד וה-USDC הפנוי מספיק לפריסת XMR ללא צורך לשחרר הון.",
  "picks": [
-  "DOT long size=25% conf=MEDIUM",
-  "NVDA long size=25% conf=MEDIUM"
+  "XMR long size=22% conf=MEDIUM"
  ],
  "skips": [
-  "DOT: risk_manager — חשיפה כוללת תגיע ל-119% > מקסימום 100%"
+  "XMR: risk_manager — חשיפה כוללת תגיע ל-143% > מקסימום 100%"
  ]
 }
