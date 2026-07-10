@@ -1,35 +1,37 @@
 {
- "time": "2026-07-10T18:00:05",
+ "time": "2026-07-10T19:00:06",
  "usdc": 124.24,
- "portfolio": 566.66,
+ "portfolio": 564.14,
  "margin_headroom": 324.25,
  "open": [
-  "SOL long +7.6%",
+  "SOL long +7.4%",
   "BTC long +1.7%",
-  "LINK long +2.8%",
+  "LINK long +2.2%",
   "TSLA long +1.2%",
-  "AVA long +0.8%",
-  "CRCL long -1.8%"
+  "AVA long +0.6%"
  ],
- "stock_candidates": 23,
+ "stock_candidates": 22,
  "top_stocks": [
-  "CV +6.1% vol=$18,024",
-  "CRCL +4.0% vol=$2,818,852",
-  "NVDA +3.4% vol=$443,241",
-  "DYD -3.2% vol=$174,988",
+  "CV +6.1% vol=$17,995",
+  "DYD -4.0% vol=$176,347",
+  "SN +3.7% vol=$99,326",
+  "NVDA +3.5% vol=$439,111",
   "IOT -3.2% vol=$12,441"
  ],
  "futures_ok": true,
- "futures_balance": 53.23,
+ "futures_balance": 51.38,
  "unallocated_spot": [
   "ETH $356"
  ],
- "call_reason": "פוזיציה חלשה: CRCL",
+ "call_reason": "תנועה חזקה במניה: CV, DYD, SN",
  "claude_called": true,
- "market_read": "השוק בנטייה חיובית מתונה — אלטים ומניות עולים בעדינות, מומנטום קונה שולט.",
- "skip_reason": "DOT מעניין אך נפח מתחת ל-$50K, CRCL כבר בפוזיציה קרוב לסטופ ואשאיר לסטופ לטפל, ואת ETH אני משאיר כי הוא עדיין אחזקה סבירה עם USDC פנוי מספיק לעסקאות החדשות.",
+ "market_read": "שוק במצב risk-on מתון — קריפטו יציב עם BTC סביב 63.8K ומניות טק (NVDA) מובילות במומנטום חיובי.",
+ "skip_reason": "שאר המועמדים חלשים או ניטרליים (RSI ~50, MACD שלילי) — SOL כבר בפוזיציה רווחית קרוב לסטופ, והפוזיציות הפתוחות מתקדמות ליעד ולא רוטציה.",
  "picks": [
-  "NVDA long size=32% conf=MEDIUM",
-  "XMR long size=15% conf=MEDIUM"
+  "NVDA long size=30% conf=HIGH",
+  "XMR long size=20% conf=MEDIUM"
+ ],
+ "order_errors": [
+  "liq ETH: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
