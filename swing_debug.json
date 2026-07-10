@@ -1,30 +1,29 @@
 {
- "time": "2026-07-10T00:00:05",
- "usdc": 43.62,
- "portfolio": 583.51,
- "margin_headroom": 218.1,
+ "time": "2026-07-10T01:00:05",
+ "usdc": 43.58,
+ "portfolio": 581.48,
+ "margin_headroom": 217.9,
  "open": [
   "SOL long +8.3%",
-  "BTC long +0.8%",
-  "LINK long -0.0%",
+  "BTC long +0.6%",
+  "LINK long -0.1%",
   "HOOD long +0.2%",
-  "TSLA long +0.2%"
+  "TSLA long +0.2%",
+  "AVA long +0.0%"
  ],
- "stock_candidates": 21,
+ "stock_candidates": 20,
  "top_stocks": [
-  "GM +5.1% vol=$26,728",
-  "DYD -4.4% vol=$313,754",
-  "AVA +3.2% vol=$4,476,832",
-  "TSLA +3.0% vol=$166,615",
-  "IM -2.8% vol=$6,133"
+  "DYD -4.6% vol=$287,959",
+  "GM +4.0% vol=$19,115",
+  "AVA +3.6% vol=$4,435,715",
+  "TSLA +2.8% vol=$162,869",
+  "HOOD +2.5% vol=$667,188"
  ],
  "futures_ok": true,
- "futures_balance": 62.46,
- "call_reason": "תנועה חזקה במטבע חדש: CC",
+ "futures_balance": 60.88,
+ "call_reason": "תנועה חזקה במניה: DYD",
  "claude_called": true,
- "market_read": "שוק ניטרלי-חיובי, רוב הנכסים סביב RSI 50 ללא כיוון חד; המומנטום מרוכז בכמה מניות עם נפח.",
- "skip_reason": "התיק כבר חשוף ב-98% והמזומן הפנוי קטן; רוב המועמדים דשדוש ניטרלי (RSI~50, MACD שטוח) ללא edge ברור, אז לא מוסיפים סיכון מיותר.",
- "picks": [
-  "AVA long size=15% conf=MEDIUM"
- ]
+ "market_read": "שוק קריפטו דשדוש רחב עם RSI ניטרלי (44-55) ותנועה מינימלית; אין מומנטום ברור לאף כיוון כרגע.",
+ "skip_reason": "התיק מלא (6/6) וחשיפה 113%, כל הפוזיציות טריות וקרובות לכניסה או ברווח (SOL +8.3% בדרך ליעד); אף מועמד חדש לא מציג setup חזק דיו כדי להצדיק סגירת פוזיציה קיימת, ורק $43 מזומן פנוי — עדיף להחזיק ולתת ל-SOL לרוץ ליעד.",
+ "picks": []
 }
