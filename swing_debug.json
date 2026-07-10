@@ -1,35 +1,35 @@
 {
- "time": "2026-07-10T16:00:07",
- "usdc": 124.29,
- "portfolio": 569.78,
+ "time": "2026-07-10T17:00:05",
+ "usdc": 124.26,
+ "portfolio": 572.3,
  "margin_headroom": 324.25,
  "open": [
   "SOL long +8.4%",
-  "BTC long +2.0%",
-  "LINK long +2.4%",
-  "TSLA long +0.7%",
-  "AVA long +1.0%",
-  "CRCL long -0.3%"
+  "BTC long +2.2%",
+  "LINK long +3.1%",
+  "TSLA long +2.0%",
+  "AVA long +1.1%",
+  "CRCL long -0.1%"
  ],
- "stock_candidates": 24,
+ "stock_candidates": 23,
  "top_stocks": [
-  "CV +7.3% vol=$14,588",
-  "SN +4.6% vol=$75,298",
-  "HOOD -3.9% vol=$655,168",
-  "CRCL +3.5% vol=$2,567,792",
-  "GM +3.5% vol=$12,796"
+  "CV +6.1% vol=$18,024",
+  "CRCL +5.7% vol=$2,812,164",
+  "SN +4.3% vol=$81,665",
+  "GM +3.8% vol=$12,779",
+  "NVDA +3.6% vol=$458,821"
  ],
  "futures_ok": true,
- "futures_balance": 55.64,
+ "futures_balance": 56.89,
  "unallocated_spot": [
-  "ETH $357"
+  "ETH $358"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: XMR",
+ "call_reason": "תנועה חזקה במניה: CV, SN, GM",
  "claude_called": true,
- "market_read": "שוק בריסק-און מתון — קריפטו וגם מניות ירוקים, מומנטום כללי חיובי ללא סימני התשה קיצוניים.",
- "skip_reason": "מחזיק כבר 6 פוזיציות רווחיות שמתקדמות ליעד; ETH ספוט הוא החזקה חזקה במומנטום חיובי אז משאיר אותה, ושאר המועמדים (XMR מתוח בקצה BB, TON/LTC נפח נמוך) לא מציעים יחס סיכוי/סיכון טוב יותר מ-NVDA ו-DOT.",
+ "market_read": "שוק ריסק-און רחב — קריפטו ומניות טכנולוגיה עולים יחד, מומנטום חיובי ללא סימני מיצוי.",
+ "skip_reason": "DOT ו-XMR קרובים לקצה עליון של הבולינגר (RSI/BB גבוהים) — סיכון היפוך, מעדיף מנהיגי מומנטום נקיים; שאר המניות בווליום נמוך או ללא כיוון ברור.",
  "picks": [
-  "NVDA long size=30% conf=MEDIUM",
-  "DOT long size=18% conf=MEDIUM"
+  "NVDA long size=30% conf=HIGH",
+  "ETH long size=22% conf=MEDIUM"
  ]
 }
