@@ -1,42 +1,37 @@
 {
- "time": "2026-07-10T22:00:04",
+ "time": "2026-07-10T23:00:05",
  "usdc": 124.16,
- "portfolio": 566.87,
+ "portfolio": 567.08,
  "margin_headroom": 324.25,
  "open": [
-  "SOL long +8.2%",
-  "BTC long +2.0%",
-  "LINK long +2.7%",
+  "SOL long +8.4%",
+  "BTC long +2.2%",
+  "LINK long +3.0%",
   "TSLA long +0.8%",
   "AVA long +1.1%",
-  "NVDA long -0.3%"
+  "NVDA long -0.2%"
  ],
  "stock_candidates": 22,
  "top_stocks": [
-  "CV +5.8% vol=$17,389",
-  "CRCL +4.9% vol=$2,932,711",
-  "SN +4.8% vol=$104,291",
-  "DYD -4.0% vol=$177,543",
-  "SPCX -3.8% vol=$1,657,390"
+  "CV +5.1% vol=$17,374",
+  "SN +5.1% vol=$104,159",
+  "CRCL +4.0% vol=$2,941,104",
+  "SPCX -4.0% vol=$1,636,870",
+  "DYD -3.8% vol=$181,078"
  ],
  "futures_ok": true,
- "futures_balance": 52.12,
+ "futures_balance": 52.2,
  "unallocated_spot": [
   "ETH $358"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: DOT",
  "claude_called": true,
- "market_read": "שוק קריפטו במגמת עלייה מתונה ומדודה, RSI אמצעי רוחבי ללא סטאפים קיצוניים — סביבת המשך זהירה ולא היפוך.",
- "skip_reason": "DOT רץ +7.2% אך ה-MACD כבר שלילי (סימן מיצוי), והמניות (CRCL/SPCX) תנודתיות מדי או עם היסטוריית הפסד — העדפתי מומנטום קריפטו נקי יותר.",
+ "market_read": "שוק מעורב וללא כיוון חד — היסטוגרמות MACD שליליות כמעט בכל הנכסים מרמזות על דעיכת מומנטום, אבל אין מכירה ברורה.",
+ "skip_reason": "רוב המועמדים ניטרליים (RSI 50-58, MACD שלילי) או בנפח נמוך מדי; ETH הספוט נשאר כי הוא עדיין במומנטום חיובי ומהווה את האחזקה הפאסיבית הכי איכותית, ושאר הפוזיציות כבר פתוחות ומתקדמות ליעד.",
  "picks": [
-  "LTC long size=25% conf=MEDIUM",
-  "XMR long size=20% conf=MEDIUM"
- ],
- "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)"
+  "DOT long size=25% conf=MEDIUM"
  ],
  "skips": [
-  "LTC: risk_manager — חשיפה כוללת תגיע ל-146% > מקסימום 100%",
-  "XMR: risk_manager — חשיפה כוללת תגיע ל-141% > מקסימום 100%"
+  "DOT: risk_manager — חשיפה כוללת תגיע ל-146% > מקסימום 100%"
  ]
 }
