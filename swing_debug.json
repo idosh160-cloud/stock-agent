@@ -1,35 +1,35 @@
 {
- "time": "2026-07-10T17:00:05",
- "usdc": 124.26,
- "portfolio": 572.3,
+ "time": "2026-07-10T18:00:05",
+ "usdc": 124.24,
+ "portfolio": 566.66,
  "margin_headroom": 324.25,
  "open": [
-  "SOL long +8.4%",
-  "BTC long +2.2%",
-  "LINK long +3.1%",
-  "TSLA long +2.0%",
-  "AVA long +1.1%",
-  "CRCL long -0.1%"
+  "SOL long +7.6%",
+  "BTC long +1.7%",
+  "LINK long +2.8%",
+  "TSLA long +1.2%",
+  "AVA long +0.8%",
+  "CRCL long -1.8%"
  ],
  "stock_candidates": 23,
  "top_stocks": [
   "CV +6.1% vol=$18,024",
-  "CRCL +5.7% vol=$2,812,164",
-  "SN +4.3% vol=$81,665",
-  "GM +3.8% vol=$12,779",
-  "NVDA +3.6% vol=$458,821"
+  "CRCL +4.0% vol=$2,818,852",
+  "NVDA +3.4% vol=$443,241",
+  "DYD -3.2% vol=$174,988",
+  "IOT -3.2% vol=$12,441"
  ],
  "futures_ok": true,
- "futures_balance": 56.89,
+ "futures_balance": 53.23,
  "unallocated_spot": [
-  "ETH $358"
+  "ETH $356"
  ],
- "call_reason": "תנועה חזקה במניה: CV, SN, GM",
+ "call_reason": "פוזיציה חלשה: CRCL",
  "claude_called": true,
- "market_read": "שוק ריסק-און רחב — קריפטו ומניות טכנולוגיה עולים יחד, מומנטום חיובי ללא סימני מיצוי.",
- "skip_reason": "DOT ו-XMR קרובים לקצה עליון של הבולינגר (RSI/BB גבוהים) — סיכון היפוך, מעדיף מנהיגי מומנטום נקיים; שאר המניות בווליום נמוך או ללא כיוון ברור.",
+ "market_read": "השוק בנטייה חיובית מתונה — אלטים ומניות עולים בעדינות, מומנטום קונה שולט.",
+ "skip_reason": "DOT מעניין אך נפח מתחת ל-$50K, CRCL כבר בפוזיציה קרוב לסטופ ואשאיר לסטופ לטפל, ואת ETH אני משאיר כי הוא עדיין אחזקה סבירה עם USDC פנוי מספיק לעסקאות החדשות.",
  "picks": [
-  "NVDA long size=30% conf=HIGH",
-  "ETH long size=22% conf=MEDIUM"
+  "NVDA long size=32% conf=MEDIUM",
+  "XMR long size=15% conf=MEDIUM"
  ]
 }
