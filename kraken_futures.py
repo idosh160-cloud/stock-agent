@@ -207,13 +207,13 @@ def get_size_precision(symbol: str) -> int:
     return _SIZE_PREC_CACHE.get(symbol, 0)
 
 
-def place_futures_order(symbol: str, side: str, size: float, limit_price: float) -> str:
+def place_futures_order(symbol: str, side: str, size: float, limit_price: float,
+                        order_type: str = "lmt", reduce_only: bool = False) -> str:
     """
     מבצע פקודת קנייה/מכירה ב-Futures
-    symbol: PF_TSLAXUSD
-    side: buy / sell
-    size: כמות חוזים
-    limit_price: מחיר limit
+    symbol: PF_TSLAXUSD | side: buy/sell | size: כמות חוזים | limit_price: מחיר (מתעלמים ב-mkt)
+    order_type: "lmt" או "mkt" — סגירות סטופ חייבות mkt (ביצוע ודאי, לא limit שנשאר תלוי)
+    reduce_only: True לסגירות — מבטיח שהפקודה רק מקטינה פוזיציה, לעולם לא פותחת שורט בטעות
     מחזיר order_id
     """
     try:
@@ -228,10 +228,13 @@ def place_futures_order(symbol: str, side: str, size: float, limit_price: float)
         params = {
             "symbol": symbol,
             "side": side,
-            "orderType": "lmt",
+            "orderType": order_type,
             "size": size_str,
-            "limitPrice": str(round(limit_price, 2)),
         }
+        if order_type == "lmt":
+            params["limitPrice"] = str(round(limit_price, 2))
+        if reduce_only:
+            params["reduceOnly"] = "true"
         data = _request("/sendorder", params, method="POST")
         status = data.get("sendStatus", {})
         order_status = status.get("status", "")

@@ -942,6 +942,10 @@ def reconcile_stock_trades(trades: list) -> tuple[list, bool]:
         sym = str(p.get("symbol", ""))
         if not sym.startswith("PF_") or sym in tracked_syms:
             continue
+        if sym in order_syms:
+            # יש פקודה תלויה על הסימבול (למשל סגירה שטרם התמלאה) — לא לאמץ מחדש!
+            # אימוץ כזה יצר היום רשומת MSTR כפולה עם סגירה כפולה ומייל כפול.
+            continue
         ticker = sym.replace("PF_", "").replace("XUSD", "")
         if ticker in _KNOWN_CRYPTO:
             continue  # רק xStocks — קריפטו perps לא מנוהל כאן
@@ -1107,7 +1111,8 @@ def check_open_swings(balance: dict, request_fn) -> list:
                         except Exception as ce:
                             logging.warning(f"[Swing] cancel futures TP failed: {ce}")
                     try:
-                        txid = place_futures_order(pair, close_type, vol, lp)
+                        # mkt + reduceOnly: ביצוע ודאי, ולעולם לא פותח פוזיציה הפוכה בטעות
+                        txid = place_futures_order(pair, close_type, vol, lp, order_type="mkt", reduce_only=True)
                         t["status"]      = new_status
                         t["date_close"]  = datetime.now().isoformat()
                         t["close_price"] = current
@@ -1261,6 +1266,14 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
     except Exception as _fe:
         debug["futures_ok"] = False
         debug["futures_error"] = str(_fe)[:200]
+
+    # תחזוקת float בארנק Futures — שכניסת מניה לא תיפול על העברה נקודתית
+    try:
+        if debug.get("futures_ok") and debug.get("futures_balance", 0) < 40 and usdc > 60:
+            from kraken_futures import transfer_spot_to_futures
+            debug["futures_float_topup"] = bool(transfer_spot_to_futures(50))
+    except Exception as _te:
+        debug["futures_float_topup"] = f"failed: {str(_te)[:80]}"
 
     # בנה lookup מהיר לפי coin
     all_candidates_map = {c["coin"]: c for c in candidates}
@@ -1435,7 +1448,7 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
                                     cancel_futures_order(t["sell_txid"])
                                 except Exception as ce:
                                     logging.info(f"[Swing] TP futures כבר בוצע/לא קיים ({close_for_rotation}): {ce}")
-                            txid = place_futures_order(t["pair"], close_type, t["volume"], lp)
+                            txid = place_futures_order(t["pair"], close_type, t["volume"], lp, order_type="mkt", reduce_only=True)
                         else:
                             if t.get("sell_txid"):
                                 try:
@@ -1485,10 +1498,26 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
             volq = min(round(l_usd / hold["price"], 8), hold["qty"])
             if volq < cfg_l.get("min_vol", 0.0000001):
                 continue
-            res    = request_fn("/0/private/AddOrder", {
-                "pair": pair_l, "type": "sell", "ordertype": "limit",
-                "volume": f"{volq:.8f}", "price": f"{lp:.{pd_l}f}",
-            }, private=True)
+            # קרקן נועל חלק מהספוט כבטוחה למינוף → "Insufficient funds" גם כשה-balance מראה מספיק.
+            # מנסים בחצאים — מוכרים כמה שקרקן משחרר במקום להיכשל על הכל.
+            res, min_v_l = None, cfg_l.get("min_vol", 0.0000001)
+            for attempt_vol in (volq, round(volq / 2, 8), round(volq / 4, 8)):
+                if attempt_vol < min_v_l:
+                    break
+                try:
+                    res = request_fn("/0/private/AddOrder", {
+                        "pair": pair_l, "type": "sell", "ordertype": "limit",
+                        "volume": f"{attempt_vol:.8f}", "price": f"{lp:.{pd_l}f}",
+                    }, private=True)
+                    volq, l_usd = attempt_vol, round(attempt_vol * hold["price"], 2)
+                    break
+                except Exception as le:
+                    if "insufficient" not in str(le).lower():
+                        raise
+                    logging.info(f"[Swing] liquidate {l_coin}: {attempt_vol} נדחה (בטוחה נעולה) — מנסה חצי")
+            if res is None:
+                debug.setdefault("order_errors", []).append(f"liq {l_coin}: all sizes rejected (margin collateral lock)")
+                continue
             txid_l = list(res.get("txid", ["?"]))[0]
             l_reason = str(liq.get("reason", ""))[:150]
             logging.warning(f"[Swing] LIQUIDATE spot {l_coin} ${l_usd:.0f} (vol {volq}) txid={txid_l} | {l_reason}")
@@ -1513,6 +1542,7 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
         coin_data = all_candidates_map.get(coin)
         if not coin_data:
             logging.warning(f"[Swing] Claude picked {coin} but not found in candidates — skip")
+            debug.setdefault("skips", []).append(f"{coin}: not in candidates map")
             continue
 
         is_stock  = coin_data.get("is_stock", False)
@@ -1598,6 +1628,7 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
 
         if vol < min_v:
             logging.warning(f"[Swing] {coin} vol={vol:.6f} < min={min_v} — skip")
+            debug.setdefault("skips", []).append(f"{coin}: vol {vol:.4f} < min {min_v}")
             continue
 
         # בדוק risk_manager לפני ביצוע
@@ -1605,6 +1636,7 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
             from risk_manager import can_open_position, get_weakest_position, get_portfolio_exposure
             ok, reason = can_open_position(coin, trade_usd, margin_headroom, exposure, portfolio_usd or usdc)
             if not ok:
+                debug.setdefault("skips", []).append(f"{coin}: risk_manager — {reason[:80]}")
                 # אם הסיבה היא מרג'ין — בדוק אם כדאי לסגור פוזיציה חלשה
                 if "מרג'ין" in reason:
                     weakest = get_weakest_position(open_swings)
@@ -1681,12 +1713,15 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
                     to_move   = min(shortfall + 2, MAX_TRANSFER_USD, max(0, usdc) - 10)
                     if to_move >= 10:
                         logging.info(f"[Futures] חסר מרג'ין ${shortfall:.0f} ל-{coin} — מעביר ${to_move:.0f} מ-Spot")
-                        if transfer_spot_to_futures(to_move):
+                        transferred = transfer_spot_to_futures(to_move)
+                        debug.setdefault("transfers", []).append(f"{coin}: moved ${to_move:.0f} → {'OK' if transferred else 'FAILED'}")
+                        if transferred:
                             import time as _t
                             _t.sleep(3)  # המתנה לזיכוי ההעברה
                             fut_balance = get_futures_balance()
                     if fut_balance < need_margin:
                         logging.warning(f"[Futures] אין מספיק מרג'ין ${fut_balance:.2f} < ${need_margin:.2f} ל-{coin} — מדלג")
+                        debug.setdefault("skips", []).append(f"{coin}: margin ${fut_balance:.0f} < needed ${need_margin:.0f} (after transfer attempt)")
                         continue
                 # לונג: כניסה=buy, TP=sell | שורט: כניסה=sell, TP=buy
                 entry_side = "sell" if direction == "short" else "buy"

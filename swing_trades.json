@@ -659,31 +659,5 @@
     "entry_bb_pct": null,
     "entry_macd_hist": null,
     "entry_change_24h": 5.59
-  },
-  {
-    "coin": "MSTR",
-    "pair": "PF_MSTRXUSD",
-    "is_stock": true,
-    "is_futures": true,
-    "side": "long",
-    "entry_price": 98.83,
-    "limit_price": 98.83,
-    "volume": 1.69,
-    "usd": 167.02,
-    "target_price": 105.75,
-    "stop_price": 97.35,
-    "date_open": "2026-07-10T16:00:04.484409",
-    "date_close": "2026-07-10T16:00:05.439847",
-    "status": "closed_loss",
-    "confidence": "MEDIUM",
-    "reasoning": "Adopted from Kraken Futures — untracked position (partial fill?)",
-    "market_read": "",
-    "current_price": 94.3,
-    "pnl_pct": -4.58,
-    "pnl_usd": -7.66,
-    "txid": "",
-    "sell_txid": null,
-    "close_price": 94.3,
-    "close_txid": "a239fbc0-a41b-41e3-a560-ff7b9c91c3e9"
   }
 ]
