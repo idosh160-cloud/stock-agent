@@ -548,5 +548,30 @@
     "entry_bb_pct": null,
     "entry_macd_hist": null,
     "entry_change_24h": 2.32
+  },
+  {
+    "coin": "MSTR",
+    "pair": "PF_MSTRXUSD",
+    "status": "closed_loss",
+    "leveraged": false,
+    "collateral": 167.38,
+    "volume": 1.695846,
+    "entry_price": 98.7,
+    "close_price": 96.0,
+    "target_price": 104.62,
+    "stop_price": 96.23,
+    "pnl_usd": -4.58,
+    "pnl_pct": -2.74,
+    "date_open": "2026-07-10T10:00:53.896000",
+    "date_close": "2026-07-10T15:00:08.986361",
+    "reasoning": "BTC פורץ עם MACD חזק ו-RSI 72, ו-MSTR הוא מנוף על BTC עם נפח מסחר גבוה (+2.9%). לונג ממונף כדי לתפוס המשך תנופה, סטופ הדוק ברמת מניה.",
+    "confidence": "MEDIUM",
+    "txid": "a2397b4b-7dc5-465c-bcb3-2e78b9a10f26",
+    "close_txid": "a239e650-e650-4241-acd3-db639c5d7916",
+    "side": "long",
+    "entry_rsi": null,
+    "entry_bb_pct": null,
+    "entry_macd_hist": null,
+    "entry_change_24h": 2.94
   }
 ]
