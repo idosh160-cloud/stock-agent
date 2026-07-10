@@ -642,7 +642,7 @@ the best place for the money right now, leave it and say so in skip_reason.
 BTC context price: ${btc_price:,.0f}
 Available USDC: ${usdc:.2f}
 YOUR MANDATE: grow this portfolio aggressively. The owner explicitly accepts full risk on this capital — it's a dedicated aggressive-experiment budget. Safety rails (daily kill-switch at -20%, 50%/asset cap, stop on every trade) are always on — so swing for real gains, don't preserve capital timidly.
-- IDLE CASH IS A COST: if USDC is a large share of the portfolio (>40%), deploy it into the best setup available — a decent B+ entry with a proper stop beats sitting in cash waiting for perfection.
+- FULLY INVESTED, ALWAYS: the owner's explicit doctrine is that USDC is a conversion medium, NOT a position. Any USDC above a ~$15 fee buffer should be working in a trade. If you're holding cash, your job this cycle is to find its best home — a decent B+ setup with a proper stop ALWAYS beats cash. "Waiting for a better entry" is a position choice you must justify in skip_reason, not a default.
 - CONCENTRATE: back your 2-3 best setups with size, don't spread thin across 6 marginal picks.
 - SIZE by conviction via "size_pct" (% of portfolio, 10-50). A+ setup (clear trend + volume + indicators aligned) → 40-50. Decent B+ → 15-25. Truly bad → skip.
 - SET stop/target per trade via "stop_pct" and "target_pct" (decimals). Match them to the coin's volatility, NOT a fixed rule:
@@ -1290,11 +1290,10 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
         if stock_movers:
             coins = ", ".join(c["coin"] for c in stock_movers[:3])
             return True, f"תנועה חזקה במניה: {coins}"
-        # כסף יושב — USDC נזיל שהוא נתח מהותי מהתיק זו עלות אלטרנטיבית; שווה לשאול
-        # את קלוד גם בלי טריגר שוק (ה-snapshot מונע קריאות חוזרות על מצב זהה)
-        pf_ref = portfolio_usd or usdc
-        if usdc >= 30 and pf_ref and usdc / pf_ref >= 0.10 and tradeable:
-            return True, f"USDC נזיל ${usdc:.0f} ({usdc/pf_ref:.0%} מהתיק) ללא שימוש — סורק פריסה"
+        # דוקטרינת תיק-מושקע-תמיד: USDC הוא צינור המרה, לא עמדה. כל סכום שאפשר
+        # לפתוח בו עסקה (מעל מינימום קרקן) מפעיל סריקה — ה-snapshot מונע ספam
+        if usdc >= SWING_MIN_USD and tradeable and len(open_swings) < MAX_OPEN:
+            return True, f"USDC ${usdc:.0f} לא מושקע — מחפש לו בית (תיק מושקע תמיד)"
         return False, "הכל שקט — דולג על קריאה לClaude"
 
     should_call, call_reason = _should_call_claude(candidates, open_swings)
