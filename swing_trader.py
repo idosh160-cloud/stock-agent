@@ -608,7 +608,7 @@ Stocks are FULL citizens now — pick them whenever they're the best growth oppo
     open_positions_rows = ""
     if open_positions:
         open_positions_rows = "\nCurrently open positions:\n" + "\n".join([
-            f"  {p['coin']}: entry=${p['entry_price']:.4f} now=${p.get('current_price', p['entry_price']):.4f} "
+            f"  {p['coin']}: SIZE=${p.get('usd',0):.0f} | entry=${p['entry_price']:.4f} now=${p.get('current_price', p['entry_price']):.4f} "
             f"P&L={p.get('pnl_pct', 0):+.1f}% | open since {p.get('date_open','')[:10]} | "
             f"target={p.get('target_price',0):.4f} stop={p.get('stop_price',0):.4f}"
             for p in open_positions
@@ -622,6 +622,10 @@ CAPITAL IS LIMITED. Before concluding "no liquidity, do nothing" — review the 
 If you find a clearly better opportunity but margin/USDC is tight (see PORTFOLIO STATUS), you MAY free capital by
 closing a WEAKER open position to fund it. Set "close_for_rotation" to that coin and explain in "rotation_reason".
 Prefer rotating out of positions that are flat/negative or stalling far from target — never a winner moving toward target.
+TINY POSITIONS ARE DEAD WEIGHT: a position sized under ~$50 barely moves the portfolio even when it wins big. If you
+still believe in the trade, REBUILD it at proper size: set "close_for_rotation" to that coin AND pick the SAME coin in
+"picks" with a real size_pct — the close and the re-entry happen in the same cycle. If you no longer believe in it,
+close it and put the capital elsewhere.
 {"Portfolio is FULL ("+str(len(open_positions))+"/"+str(MAX_OPEN)+") — you must close one to open a new trade." if full else "Only rotate if the new opportunity is clearly superior — don't churn for small differences."}
 """
 
@@ -912,12 +916,12 @@ def sync_trades_with_kraken(trades: list, balance: dict, request_fn=None) -> tup
 
 
 def reconcile_stock_trades(trades: list) -> tuple[list, bool]:
-    """סנכרון מניות מול Kraken Futures — מנקה רפאים.
-    מניה שמסומנת 'open' אבל אין לה פוזיציה ואין פקודה ממתינה ב-Kraken = רפאים שלא בוצע."""
+    """סנכרון מניות מול Kraken Futures — דו-כיווני:
+    1) רשומה 'open' בלי פוזיציה ובלי פקודה בקרקן = רפאים → נסגרת.
+    2) גודל הרשומה מסונכרן לגודל האמיתי בקרקן (מילוי חלקי!).
+    3) פוזיציה אמיתית בקרקן בלי רשומה = יתומה → מאומצת לניהול (סטופ/יעד/מעקב)."""
     changed = False
     open_stocks = [t for t in trades if t.get("status") == "open" and t.get("is_stock")]
-    if not open_stocks:
-        return trades, changed
     try:
         from kraken_futures import get_futures_positions, cancel_futures_order, _request
         positions = get_futures_positions()
@@ -931,10 +935,51 @@ def reconcile_stock_trades(trades: list) -> tuple[list, bool]:
         logging.warning(f"[StockSync] לא הצליח למשוך מצב Futures: {e}")
         return trades, changed
 
+    # ── כיוון 3: אימוץ פוזיציות יתומות — קיימות בקרקן, לא מנוהלות אצלנו ──
+    # (מילוי חלקי ישן, פקודה ששרדה ניקוי רפאים וכו'. בלי זה הן בלי סטופ לנצח.)
+    tracked_syms = {t.get("pair") for t in open_stocks}
+    for p in positions:
+        sym = str(p.get("symbol", ""))
+        if not sym.startswith("PF_") or sym in tracked_syms:
+            continue
+        ticker = sym.replace("PF_", "").replace("XUSD", "")
+        if ticker in _KNOWN_CRYPTO:
+            continue  # רק xStocks — קריפטו perps לא מנוהל כאן
+        p_size  = abs(float(p.get("size", 0) or 0))
+        p_price = float(p.get("price", 0) or 0)
+        if p_size <= 0 or p_price <= 0:
+            continue
+        p_side = "short" if str(p.get("side", "")).lower() == "short" else "long"
+        tgt, stp = _targets_for_side(p_side, p_price, TARGET_PCT_STOCK, STOP_PCT_STOCK, 2)
+        trades.append({
+            "coin": ticker, "pair": sym, "is_stock": True, "is_futures": True,
+            "side": p_side, "entry_price": p_price, "limit_price": p_price,
+            "volume": p_size, "usd": round(p_size * p_price, 2),
+            "target_price": tgt, "stop_price": stp,
+            "date_open": datetime.now().isoformat(), "date_close": None,
+            "status": "open", "confidence": "MEDIUM",
+            "reasoning": "Adopted from Kraken Futures — untracked position (partial fill?)",
+            "market_read": "", "current_price": p_price,
+            "pnl_pct": 0.0, "pnl_usd": 0.0,
+            "txid": "", "sell_txid": None, "close_price": None, "close_txid": None,
+        })
+        changed = True
+        logging.warning(f"[StockSync] {ticker} ({p_side}, {p_size}x${p_price}) קיים בקרקן ללא רשומה → אומץ לניהול")
+
     for t in open_stocks:
         sym = t.get("pair")
         if sym in pos_syms:
-            continue  # פוזיציה אמיתית קיימת — תקין
+            # פוזיציה קיימת — סנכרן גודל אמיתי (מילוי חלקי משאיר רשומה מנופחת)
+            kp = next((p for p in positions if p.get("symbol") == sym), None)
+            if kp:
+                real = abs(float(kp.get("size", 0) or 0))
+                rec  = float(t.get("volume", 0) or 0)
+                if real > 0 and rec > 0 and abs(real - rec) > max(1e-6, 0.02 * rec):
+                    logging.warning(f"[StockSync] {t.get('coin')} רשום {rec} אבל בקרקן {real} — מסנכרן גודל")
+                    t["volume"] = real
+                    t["usd"]    = round(real * float(t.get("entry_price", 0) or 0), 2)
+                    changed = True
+            continue
         if sym in order_syms:
             continue  # פקודת כניסה עדיין ממתינה לביצוע — תקין
         # אין פוזיציה ואין פקודה → רפאים (הפקודה לא בוצעה או נסגרה)
