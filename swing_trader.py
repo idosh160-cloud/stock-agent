@@ -45,7 +45,7 @@ TARGET_PCT        = 0.05   # +5% יעד רווח קריפטו
 TARGET_PCT_STOCK  = 0.07   # +7% יעד רווח xStocks — מניות תנודתיות יכולות לעשות הרבה יותר
 STOP_PCT          = 0.02   # -2% עצור הפסד קריפטו
 STOP_PCT_STOCK    = 0.015  # -1.5% עצור הפסד xStocks
-MAX_OPEN          = 6      # פוזיציות פתוחות מקסימום
+MAX_OPEN          = 8      # פוזיציות פתוחות מקסימום — הועלה מ-6, התיק היה תקוע "מלא" לילה שלם
 MAX_BUDGET        = 600    # תקציב מקסימלי לסווינגים
 LEVERAGE          = 5      # מינוף x5 על כל קנייה (Kraken margin) — לא למניות
 
@@ -537,7 +537,7 @@ def load_performance_summary() -> str:
         return ""
 
 
-def analyze_with_claude(candidates: list, open_coins: set, usdc: float, btc_price: float, stock_candidates: list = None, open_positions: list = None, portfolio_summary: str = "") -> dict:
+def analyze_with_claude(candidates: list, open_coins: set, usdc: float, btc_price: float, stock_candidates: list = None, open_positions: list = None, portfolio_summary: str = "", spot_holdings: list = None) -> dict:
     _load_api_key()
     import anthropic
 
@@ -583,7 +583,9 @@ def analyze_with_claude(candidates: list, open_coins: set, usdc: float, btc_pric
 xStock candidates (tokenized stocks via Kraken Futures Perps — LONG and SHORT, leverage available):
 {stock_rows}
 Stocks are FULL citizens now — pick them whenever they're the best growth opportunity, same as crypto.
-- Size by conviction with "size_pct" (% of portfolio) just like crypto. A+ stock setup → size it up.
+- Size by conviction with "size_pct" (% of portfolio NOTIONAL) just like crypto. DO THE LEVERAGE MATH: stocks run
+  on 3x leverage, so a 30% notional position ties up only ~10% of the portfolio as margin. Sizing a stock at 15%
+  notional (~5% margin) is timid — MEDIUM+ conviction deserves 25-40% notional. Sub-$100 positions barely move the needle.
 - You can go LONG or SHORT on stocks (Perps). Short overbought/exhausted names, long strong momentum/dips.
 - IMPORTANT — a stock that already ran +15-30% in a day is NOT "too late", it's a SHORT candidate. Don't just skip pumped stocks (e.g. SPCX +28%) — consider SHORTING the exhausted move (direction:"short") when RSI is extreme/BB% near 100 and momentum is stalling. Mean-reversion after a parabolic stock day is one of the best setups available.
 - STILL trade them stock-aware: they move SLOWER and tighter than crypto. A 3% stock day is big.
@@ -623,6 +625,18 @@ Prefer rotating out of positions that are flat/negative or stalling far from tar
 {"Portfolio is FULL ("+str(len(open_positions))+"/"+str(MAX_OPEN)+") — you must close one to open a new trade." if full else "Only rotate if the new opportunity is clearly superior — don't churn for small differences."}
 """
 
+    spot_section = ""
+    if spot_holdings:
+        spot_rows = "\n".join(f"  {s['coin']}: ${s['usd']:.0f}" for s in spot_holdings)
+        spot_section = f"""
+UNALLOCATED SPOT HOLDINGS — owned outright, NOT part of any managed swing position (no stop, no target, just parked):
+{spot_rows}
+This is reallocatable capital. A large passive holding should either be your highest-conviction idea or be partially
+rotated into better setups — crypto OR stocks. To free capital, set "liquidate_spot": [{{"coin": "ETH", "usd": 150, "reason": "..."}}]
+— it sells that much into USDC (available for entries next cycle). Max 2 liquidations, max $300 each. If a holding IS
+the best place for the money right now, leave it and say so in skip_reason.
+"""
+
     prompt = f"""You are an expert swing trader covering both crypto and tokenized stocks (xStocks). {datetime.now().strftime('%Y-%m-%d %H:%M')} UTC.
 
 BTC context price: ${btc_price:,.0f}
@@ -638,7 +652,7 @@ YOUR MANDATE: grow this portfolio aggressively. The owner explicitly accepts ful
 
 PORTFOLIO STATUS:
 {portfolio_summary}
-{open_positions_rows}{perf_section}{rotation_instruction}
+{open_positions_rows}{spot_section}{perf_section}{rotation_instruction}
 
 Crypto altcoin candidates ranked by 24h movement:
 {crypto_rows}
@@ -681,6 +695,7 @@ Return ONLY valid JSON:
     }}
   ],
   "close_for_rotation": null,
+  "liquidate_spot": [],
   "rotation_reason": null,
   "market_read": "משפט אחד בעברית על מצב השוק הכללי כרגע",
   "skip_reason": "למה דחית את השאר (משפט אחד בעברית)"
@@ -1210,6 +1225,29 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
     # בנה תמונת תיק מלאה לקלוד
     portfolio_summary = build_portfolio_summary(exposure, open_swings, margin_used, margin_headroom)
 
+    # ── הון ספוט לא מנוהל — מועמד להצרחה (למשל ETH של האסטרטגיה היומית) ──
+    # פוזיציות ה-swing ממונפות/Futures ולא יושבות ב-balance; מה שכן — הון חונה.
+    spot_holdings = []
+    try:
+        swing_spot_coins = {t["coin"] for t in open_swings if not t.get("is_stock")}
+        for b_coin, b_qty in (balance or {}).items():
+            if b_coin in ("USDC", "USD", "ZUSD", "EUR") or float(b_qty) <= 0:
+                continue
+            if b_coin in swing_spot_coins:
+                continue  # ליתר ביטחון — לא מציעים למכור מטבע עם פוזיציית swing חיה
+            cd = all_candidates_map.get(b_coin)
+            px = cd["price"] if cd else 0
+            if not px:
+                pair_g = CANDIDATES.get(b_coin, {}).get("pair")
+                px = get_current_price(pair_g) if pair_g else 0
+            val = float(b_qty) * px
+            if val >= 25:
+                spot_holdings.append({"coin": b_coin, "qty": float(b_qty), "usd": round(val, 2), "price": px})
+        spot_holdings.sort(key=lambda s: -s["usd"])
+    except Exception as e:
+        logging.warning(f"[Swing] spot holdings calc failed: {e}")
+    debug["unallocated_spot"] = [f"{s['coin']} ${s['usd']:.0f}" for s in spot_holdings]
+
     open_coins_set = {t["coin"] for t in open_swings}
 
     # סינון חכם — קרא לClaude רק אם יש סיגנל אמיתי
@@ -1255,7 +1293,7 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
         # כסף יושב — USDC נזיל שהוא נתח מהותי מהתיק זו עלות אלטרנטיבית; שווה לשאול
         # את קלוד גם בלי טריגר שוק (ה-snapshot מונע קריאות חוזרות על מצב זהה)
         pf_ref = portfolio_usd or usdc
-        if usdc >= 25 and pf_ref and usdc / pf_ref >= 0.15 and tradeable:
+        if usdc >= 30 and pf_ref and usdc / pf_ref >= 0.10 and tradeable:
             return True, f"USDC נזיל ${usdc:.0f} ({usdc/pf_ref:.0%} מהתיק) ללא שימוש — סורק פריסה"
         return False, "הכל שקט — דולג על קריאה לClaude"
 
@@ -1312,7 +1350,7 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
         pass
 
     logging.info(f"[Swing] קורא לClaude: {call_reason}")
-    analysis    = analyze_with_claude(candidates, open_coins, usdc, btc_price, stock_candidates, open_swings, portfolio_summary)
+    analysis    = analyze_with_claude(candidates, open_coins, usdc, btc_price, stock_candidates, open_swings, portfolio_summary, spot_holdings)
     market_read = analysis.get("market_read", "")
     skip_reason = analysis.get("skip_reason", "")
     logging.info(f"[Swing] Claude: {market_read} | skipped: {skip_reason}")
@@ -1385,6 +1423,40 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
                     logging.warning(f"[Swing] Rotation close {close_for_rotation} skipped — no price (futures={is_fut_stock})")
                 break
 
+    # ── הצרחת הון — קלוד ביקש לממש החזקת ספוט לא מנוהלת לטובת סטאפים טובים יותר ──
+    for liq in (analysis.get("liquidate_spot") or [])[:2]:
+        try:
+            l_coin = str(liq.get("coin", ""))
+            l_usd  = float(liq.get("usd", 0))
+            hold   = next((s for s in spot_holdings if s["coin"] == l_coin), None)
+            if not hold or l_usd < 25:
+                continue
+            l_usd  = min(l_usd, 300.0, hold["usd"])
+            cfg_l  = CANDIDATES.get(l_coin, {})
+            pair_l = cfg_l.get("pair") or all_candidates_map.get(l_coin, {}).get("pair")
+            if not pair_l or not hold["price"]:
+                continue
+            pd_l = cfg_l.get("price_dec", all_candidates_map.get(l_coin, {}).get("price_dec", 4))
+            lp   = round(hold["price"] * 0.999, pd_l)   # marketable — מתבצע מיד ליד השוק
+            volq = min(round(l_usd / hold["price"], 8), hold["qty"])
+            if volq < cfg_l.get("min_vol", 0.0000001):
+                continue
+            res    = request_fn("/0/private/AddOrder", {
+                "pair": pair_l, "type": "sell", "ordertype": "limit",
+                "volume": f"{volq:.8f}", "price": f"{lp:.{pd_l}f}",
+            }, private=True)
+            txid_l = list(res.get("txid", ["?"]))[0]
+            l_reason = str(liq.get("reason", ""))[:150]
+            logging.warning(f"[Swing] LIQUIDATE spot {l_coin} ${l_usd:.0f} (vol {volq}) txid={txid_l} | {l_reason}")
+            debug.setdefault("liquidations", []).append(f"{l_coin} ${l_usd:.0f}")
+            _send_trade_alert(
+                f"🔄 הצרחת הון: מכירת {l_coin}",
+                f"מומשו ${l_usd:.0f} מהחזקת ספוט ב-{l_coin} לשחרור הון לעסקאות טובות יותר.\nסיבה: {l_reason}"
+            )
+        except Exception as e:
+            logging.error(f"[Swing] liquidate_spot failed {liq}: {e}")
+            debug.setdefault("order_errors", []).append(f"liq {liq.get('coin')}: {str(e)[:100]}")
+
     slots = MAX_OPEN - len(open_swings)
     for pick in analysis.get("picks", [])[:slots]:
         coin   = pick.get("coin", "")
@@ -1434,9 +1506,9 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
             # מניות — גודל לפי שכנוע כמו קריפטו, נושיונל מתחת לתקרה. מינוף נותן חשיפה גדולה ממרג'ין.
             pf = portfolio_usd or usdc or 0
             try:
-                size_pct = float(pick.get("size_pct", 10))
+                size_pct = float(pick.get("size_pct", 20))
             except (TypeError, ValueError):
-                size_pct = 10
+                size_pct = 20
             size_pct  = max(10.0, min(50.0, size_pct))
             trade_usd = pf * size_pct / 100 if pf else SWING_USD_STOCK
             trade_usd = max(SWING_USD_STOCK, min(SWING_MAX_STOCK_USD, trade_usd))
