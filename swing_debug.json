@@ -1,29 +1,39 @@
 {
- "time": "2026-07-10T09:00:04",
- "usdc": 43.43,
- "portfolio": 593.09,
- "margin_headroom": 217.15,
+ "time": "2026-07-10T10:00:05",
+ "usdc": 43.41,
+ "portfolio": 597.77,
+ "margin_headroom": 217.05,
  "open": [
   "SOL long +9.9%",
-  "BTC long +2.4%",
-  "LINK long +3.1%",
-  "HOOD long +1.5%",
+  "BTC long +2.6%",
+  "LINK long +3.3%",
+  "HOOD long +2.7%",
   "TSLA long -0.4%",
-  "AVA long +1.5%"
+  "AVA long +1.2%"
  ],
  "stock_candidates": 23,
  "top_stocks": [
-  "GM +5.8% vol=$14,156",
-  "SP +4.3% vol=$89,094",
-  "CV +3.2% vol=$10,568",
-  "OPENAI +2.9% vol=$13,275",
-  "SN -2.5% vol=$45,898"
+  "GM +5.6% vol=$14,171",
+  "SP +5.2% vol=$91,074",
+  "CV +4.0% vol=$10,439",
+  "ANTHROPIC -3.9% vol=$10,377",
+  "HOOD +3.0% vol=$684,502"
  ],
  "futures_ok": true,
- "futures_balance": 63.01,
- "call_reason": "תנועה חזקה במניה: GM, SP",
+ "futures_balance": 65.37,
+ "unallocated_spot": [
+  "ETH $357",
+  "ADA $98"
+ ],
+ "call_reason": "תנועה חזקה במניה: GM, SP, CV",
  "claude_called": true,
- "market_read": "השוק כולו בתנועת עלייה מתונה אך ברובו overbought (RSI 65-69, BB קרוב לעליון) — סיכון גבוה לכניסות לונג חדשות עכשיו.",
- "skip_reason": "התיק מלא (6/6) עם חמש פוזיציות רווחיות שמתקדמות ליעד; אין setup חדש שמצדיק לסגור מנצח, וכל המועמדים החדשים כבר extended/overbought ללא יתרון risk/reward מובהק.",
- "picks": []
+ "market_read": "שוק בראלי רחב אך מותש — רוב הנכסים RSI 70+ ו-BB בקצה העליון, אז מעדיפים נכסים עם מקום להמשך ולא לרדוף את הקיצוניים.",
+ "skip_reason": "LINK/ETH/BTC/XRP/DOGE כבר overbought עם BB~90 ו-RSI 70+, סיכון היפוך גבוה מדי לכניסה חדשה; פוזיציות פתוחות רווחיות נשארות לרוץ ליעד.",
+ "picks": [
+  "XMR long size=20% conf=MEDIUM",
+  "MSTR long size=28% conf=MEDIUM"
+ ],
+ "order_errors": [
+  "liq ETH: Kraken: ['EOrder:Insufficient funds']"
+ ]
 }
