@@ -1,37 +1,42 @@
 {
- "time": "2026-07-10T21:00:04",
- "usdc": 124.18,
- "portfolio": 566.04,
+ "time": "2026-07-10T22:00:04",
+ "usdc": 124.16,
+ "portfolio": 566.87,
  "margin_headroom": 324.25,
  "open": [
-  "SOL long +8.0%",
-  "BTC long +1.7%",
-  "LINK long +2.5%",
+  "SOL long +8.2%",
+  "BTC long +2.0%",
+  "LINK long +2.7%",
   "TSLA long +0.8%",
-  "AVA long +0.9%",
-  "NVDA long -0.1%"
+  "AVA long +1.1%",
+  "NVDA long -0.3%"
  ],
  "stock_candidates": 22,
  "top_stocks": [
   "CV +5.8% vol=$17,389",
-  "DYD -5.5% vol=$171,431",
-  "CRCL +4.7% vol=$2,932,775",
-  "SN +4.7% vol=$101,145",
-  "SPCX -4.3% vol=$1,662,236"
+  "CRCL +4.9% vol=$2,932,711",
+  "SN +4.8% vol=$104,291",
+  "DYD -4.0% vol=$177,543",
+  "SPCX -3.8% vol=$1,657,390"
  ],
  "futures_ok": true,
- "futures_balance": 52.19,
+ "futures_balance": 52.12,
  "unallocated_spot": [
-  "ETH $357"
+  "ETH $358"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: DOT",
  "claude_called": true,
- "market_read": "שוק קריפטו במצב ריבאונד מתון וברוד — רוב המטבעות RSI 53-59 עם מומנטום עולה חלש, ללא אקסטרים לשורט.",
- "skip_reason": "DOT ו-LTC נראו חזק בתנועה אך עם MACD שלילי (מומנטום דועך), CRCL/HOOD היסטוריה גרועה, ואת ETH הספוט אני משאיר כי הוא עצמו במגמת ריבאונד וה-USDC הפנוי מספיק לפריסת XMR ללא צורך לשחרר הון.",
+ "market_read": "שוק קריפטו במגמת עלייה מתונה ומדודה, RSI אמצעי רוחבי ללא סטאפים קיצוניים — סביבת המשך זהירה ולא היפוך.",
+ "skip_reason": "DOT רץ +7.2% אך ה-MACD כבר שלילי (סימן מיצוי), והמניות (CRCL/SPCX) תנודתיות מדי או עם היסטוריית הפסד — העדפתי מומנטום קריפטו נקי יותר.",
  "picks": [
-  "XMR long size=22% conf=MEDIUM"
+  "LTC long size=25% conf=MEDIUM",
+  "XMR long size=20% conf=MEDIUM"
+ ],
+ "order_errors": [
+  "liq ETH: all sizes rejected (margin collateral lock)"
  ],
  "skips": [
-  "XMR: risk_manager — חשיפה כוללת תגיע ל-143% > מקסימום 100%"
+  "LTC: risk_manager — חשיפה כוללת תגיע ל-146% > מקסימום 100%",
+  "XMR: risk_manager — חשיפה כוללת תגיע ל-141% > מקסימום 100%"
  ]
 }
