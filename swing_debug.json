@@ -1,37 +1,37 @@
 {
- "time": "2026-07-10T19:00:06",
- "usdc": 124.24,
- "portfolio": 564.14,
+ "time": "2026-07-10T20:00:05",
+ "usdc": 124.22,
+ "portfolio": 574.03,
  "margin_headroom": 324.25,
  "open": [
-  "SOL long +7.4%",
-  "BTC long +1.7%",
-  "LINK long +2.2%",
+  "SOL long +8.1%",
+  "BTC long +1.9%",
+  "LINK long +2.9%",
   "TSLA long +1.2%",
-  "AVA long +0.6%"
+  "AVA long +1.0%"
  ],
  "stock_candidates": 22,
  "top_stocks": [
-  "CV +6.1% vol=$17,995",
-  "DYD -4.0% vol=$176,347",
-  "SN +3.7% vol=$99,326",
-  "NVDA +3.5% vol=$439,111",
-  "IOT -3.2% vol=$12,441"
+  "CV +6.1% vol=$17,904",
+  "CRCL +5.3% vol=$2,936,208",
+  "SPCX -4.3% vol=$1,625,197",
+  "DYD -4.3% vol=$181,812",
+  "SN +4.1% vol=$99,481"
  ],
  "futures_ok": true,
- "futures_balance": 51.38,
+ "futures_balance": 59.64,
  "unallocated_spot": [
-  "ETH $356"
+  "ETH $357"
  ],
- "call_reason": "תנועה חזקה במניה: CV, DYD, SN",
+ "call_reason": "תנועה חזקה במטבע חדש: DOT",
  "claude_called": true,
- "market_read": "שוק במצב risk-on מתון — קריפטו יציב עם BTC סביב 63.8K ומניות טק (NVDA) מובילות במומנטום חיובי.",
- "skip_reason": "שאר המועמדים חלשים או ניטרליים (RSI ~50, MACD שלילי) — SOL כבר בפוזיציה רווחית קרוב לסטופ, והפוזיציות הפתוחות מתקדמות ליעד ולא רוטציה.",
+ "market_read": "שוק ריסק-און מתון — קריפטו ומניות בירוק קל, מובילים בודדים עם מומנטום נקי אך רוב האלטים ניטרליים.",
+ "skip_reason": "פוזיציות פתוחות כולן ברווח ומתקדמות ליעד אז לא נוגעים; XMR קרוב מדי לרצועה עליונה, ETH הפרוק שומר על מומנטום סביר ולכן נשאר כמות שהוא; שאר המועמדים ניטרליים/נמוכי נפח.",
  "picks": [
-  "NVDA long size=30% conf=HIGH",
-  "XMR long size=20% conf=MEDIUM"
+  "DOT long size=25% conf=MEDIUM",
+  "NVDA long size=25% conf=MEDIUM"
  ],
- "order_errors": [
-  "liq ETH: Kraken: ['EOrder:Insufficient funds']"
+ "skips": [
+  "DOT: risk_manager — חשיפה כוללת תגיע ל-119% > מקסימום 100%"
  ]
 }
