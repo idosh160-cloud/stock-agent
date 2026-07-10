@@ -1,29 +1,29 @@
 {
- "time": "2026-07-10T08:00:05",
- "usdc": 43.46,
- "portfolio": 589.36,
- "margin_headroom": 217.3,
+ "time": "2026-07-10T09:00:04",
+ "usdc": 43.43,
+ "portfolio": 593.09,
+ "margin_headroom": 217.15,
  "open": [
-  "SOL long +9.4%",
-  "BTC long +2.0%",
-  "LINK long +2.2%",
-  "HOOD long +1.1%",
-  "TSLA long +0.0%",
-  "AVA long +1.1%"
+  "SOL long +9.9%",
+  "BTC long +2.4%",
+  "LINK long +3.1%",
+  "HOOD long +1.5%",
+  "TSLA long -0.4%",
+  "AVA long +1.5%"
  ],
- "stock_candidates": 22,
+ "stock_candidates": 23,
  "top_stocks": [
-  "GM +5.8% vol=$20,418",
-  "CV +4.9% vol=$12,569",
-  "SP +2.9% vol=$85,390",
+  "GM +5.8% vol=$14,156",
+  "SP +4.3% vol=$89,094",
+  "CV +3.2% vol=$10,568",
   "OPENAI +2.9% vol=$13,275",
-  "TSLA +2.4% vol=$163,560"
+  "SN -2.5% vol=$45,898"
  ],
  "futures_ok": true,
- "futures_balance": 62.29,
- "call_reason": "תנועה חזקה במניה: GM, CV",
+ "futures_balance": 63.01,
+ "call_reason": "תנועה חזקה במניה: GM, SP",
  "claude_called": true,
- "market_read": "שוק קריפטו במומנטום עולה מתון עם RSI באזור 58-66, אין קיצוניות שמצדיקה שורט, והתיק כבר חשוף מלא לעליות.",
- "skip_reason": "התיק מלא (6/6) וכל הפוזיציות ירוקות ומתקדמות לעבר היעד — אין מועמד חדש חזק מספיק (A+) שמצדיק סגירת מנצח כמו SOL שכבר 85% ליעד, ולכן עדיף להחזיק ולתת לרווחים לרוץ.",
+ "market_read": "השוק כולו בתנועת עלייה מתונה אך ברובו overbought (RSI 65-69, BB קרוב לעליון) — סיכון גבוה לכניסות לונג חדשות עכשיו.",
+ "skip_reason": "התיק מלא (6/6) עם חמש פוזיציות רווחיות שמתקדמות ליעד; אין setup חדש שמצדיק לסגור מנצח, וכל המועמדים החדשים כבר extended/overbought ללא יתרון risk/reward מובהק.",
  "picks": []
 }
