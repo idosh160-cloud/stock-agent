@@ -1,40 +1,36 @@
 {
- "time": "2026-07-10T12:00:05",
- "usdc": 43.39,
- "portfolio": 590.69,
- "margin_headroom": 216.95,
+ "time": "2026-07-10T13:00:06",
+ "usdc": 140.71,
+ "portfolio": 587.16,
+ "margin_headroom": 324.25,
  "open": [
-  "SOL long +10.1%",
-  "BTC long +2.7%",
-  "LINK long +3.2%",
-  "HOOD long +3.0%",
+  "SOL long +9.4%",
+  "BTC long +2.5%",
+  "LINK long +2.8%",
+  "HOOD long +3.5%",
   "TSLA long +0.6%",
-  "AVA long +1.0%",
-  "MSTR long -0.2%"
+  "AVA long +0.9%",
+  "MSTR long +0.3%"
  ],
  "stock_candidates": 24,
  "top_stocks": [
-  "CRCL +10.7% vol=$1,023,068",
-  "CV +9.4% vol=$11,102",
-  "GM +5.1% vol=$18,520",
-  "SP +4.2% vol=$88,938",
-  "HOOD +4.1% vol=$689,381"
+  "CV +11.2% vol=$13,235",
+  "CRCL +10.3% vol=$1,154,829",
+  "GM +6.0% vol=$18,260",
+  "HOOD +5.0% vol=$693,085",
+  "MSTR +4.9% vol=$600,057"
  ],
  "futures_ok": true,
- "futures_balance": 57.01,
+ "futures_balance": 55.9,
  "unallocated_spot": [
-  "ETH $359",
-  "ADA $98"
+  "ETH $357"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: ETH",
+ "call_reason": "תנועה חזקה במניה: CV, CRCL, GM",
  "claude_called": true,
- "market_read": "שוק ריסק-און רחב, קריפטו ומניות עולים יחד, אך רבים כבר קנויים יתר (RSI>70) ולכן מעדיף מומנטום מניות טרי.",
- "skip_reason": "ETH/BTC/DOT/LINK כבר קנויים יתר וקרובים לרצועה העליונה — סיכון/סיכוי חלש לכניסה חדשה, והפוזיציות הקיימות בקריפטו כבר תופסות את החשיפה.",
+ "market_read": "שוק רחב במצב risk-on — קריפטו ומניות ירוקים לרוחב, מומנטום חיובי אך חלק מהמובילים מתקרבים ל-overbought.",
+ "skip_reason": "DOT/ETH/BTC כבר overbought (RSI 67-72) ולא ארצה לרדוף; רוב האלטים בנפח נמוך או choppy, ואת ETH הספוט משאיר כי הוא עדיין במומנטום חיובי ותופס את חשיפת הקריפטו הליבתית.",
  "picks": [
-  "CRCL long size=30% conf=HIGH",
-  "GM long size=18% conf=MEDIUM"
- ],
- "liquidations": [
-  "ADA $98"
+  "CRCL long size=30% conf=MEDIUM",
+  "LTC long size=18% conf=MEDIUM"
  ]
 }
