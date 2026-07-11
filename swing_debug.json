@@ -1,38 +1,38 @@
 {
- "time": "2026-07-11T04:00:05",
- "usdc": 124.06,
- "portfolio": 560.27,
+ "time": "2026-07-11T05:00:04",
+ "usdc": 124.03,
+ "portfolio": 560.47,
  "margin_headroom": 324.25,
  "open": [
-  "SOL long +7.9%",
+  "SOL long +7.8%",
   "BTC long +2.2%",
   "LINK long +3.5%",
   "TSLA long +0.8%",
   "AVA long +0.7%",
-  "NVDA long -0.4%",
-  "CRCL long +0.3%"
+  "NVDA long -0.5%",
+  "CRCL long -0.4%"
  ],
  "stock_candidates": 23,
  "top_stocks": [
+  "DYD -5.4% vol=$180,622",
   "HOOD -4.5% vol=$795,960",
-  "CRCL +4.1% vol=$2,959,458",
+  "SN +4.1% vol=$133,565",
   "SP -4.1% vol=$141,548",
-  "DYD -4.0% vol=$164,887",
-  "SN +3.8% vol=$130,623"
+  "GM -4.0% vol=$11,093"
  ],
  "futures_ok": true,
- "futures_balance": 45.08,
+ "futures_balance": 45.51,
  "unallocated_spot": [
   "ETH $358"
  ],
- "call_reason": "תנועה חזקה במניה: HOOD, SP, DYD",
+ "call_reason": "תנועה חזקה במניה: DYD, HOOD, SN",
  "claude_called": true,
- "market_read": "שוק מעורב בקונסולידציה — הקריפטו רובו RSI אמצע, המניות עם תנועות נקודתיות (CRCL/NVDA למעלה, HOOD/SPCX למטה), אין מגמה חדה כללית.",
- "skip_reason": "התיק כבר בחשיפה 144% עם 7 פוזיציות מנצחות שנעות לעבר היעד — אין צורך להוסיף לסיכון; שאר המועמדים (DOT/AVAX/CC) בנפח נמוך מדי או מבנה נייטרלי, ו-ETH הספוט נשאר כהחזקה פסיבית מכיוון שאין setup עדיף לרוטציה מיידית.",
+ "market_read": "שוק קריפטו רך וצ'ופי — MACD שלילי כמעט בכל המטבעות, בלי מומנטום ברור, כך שהעדפה לסטאפ ספציפי על מניה נזילה.",
+ "skip_reason": "רוב האלטים ניטרליים/דשדוש בלי אדג', שאר הפוזיציות כבר פתוחות ומתקדמות ליעד, ו-ETH הספוט נשאר כאחזקה חזקה — לא מוכר עכשיו.",
  "picks": [
-  "XRP long size=18% conf=MEDIUM"
+  "HOOD long size=25% conf=MEDIUM"
  ],
  "skips": [
-  "XRP: risk_manager — חשיפה כוללת תגיע ל-162% > מקסימום 100%"
+  "HOOD: margin $45 < needed $47 (after transfer attempt)"
  ]
 }
