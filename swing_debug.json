@@ -1,38 +1,39 @@
 {
- "time": "2026-07-11T10:00:05",
+ "time": "2026-07-11T11:00:05",
  "usdc": 123.93,
- "portfolio": 560.57,
+ "portfolio": 560.65,
  "margin_headroom": 324.25,
  "open": [
-  "SOL long +7.9%",
-  "BTC long +2.2%",
-  "LINK long +3.2%",
+  "SOL long +8.2%",
+  "BTC long +2.3%",
+  "LINK long +3.4%",
   "TSLA long +0.8%",
-  "AVA long +0.2%",
-  "NVDA long -0.5%",
-  "CRCL long +0.2%"
+  "AVA long +0.5%",
+  "NVDA long +0.2%",
+  "CRCL long +0.2%",
+  "MSTR short -0.8%"
  ],
- "stock_candidates": 22,
+ "stock_candidates": 21,
  "top_stocks": [
-  "IOT +7.8% vol=$15,997",
-  "HOOD -6.3% vol=$796,839",
-  "SP -4.8% vol=$140,892",
-  "NVDA +4.1% vol=$429,837",
-  "SN +4.0% vol=$132,156"
+  "HOOD -6.1% vol=$795,314",
+  "IOT +6.0% vol=$14,596",
+  "CRCL -4.6% vol=$2,576,383",
+  "NVDA +4.4% vol=$432,551",
+  "SN +4.3% vol=$141,564"
  ],
  "futures_ok": true,
- "futures_balance": 45.94,
+ "futures_balance": 45.44,
  "unallocated_spot": [
   "ETH $358"
  ],
- "call_reason": "תנועה חזקה במניה: IOT, HOOD, SP",
+ "call_reason": "תנועה חזקה במניה: HOOD, IOT, SN",
  "claude_called": true,
- "market_read": "שוק מעורב וצידי בקריפטו, עם תנופה סלקטיבית במניות (NVDA למעלה, HOOD למטה) — עדיף לבחור סטאפים ממוקדים עם וולום.",
- "skip_reason": "רוב האלטים בעלי וולום נמוך מ-50k או ניטרליים (RSI ~50, MACD שטוח); הפוזיציות הקיימות כבר תופסות את החשיפה בקריפטו ולא רוצים לפזר דק על סטאפים בינוניים.",
+ "market_read": "שוק קריפטו במצב ניטרלי-חיובי עם RSI באמצע הטווח ברוב הנכסים, ומניות טק (NVDA) חזקות בעוד CRCL/HOOD נופלות בחדות.",
+ "skip_reason": "רוב הפוזיציות הפתוחות כבר עובדות לכיוון היעד ולכן לא נוגעים בהן; שאר המועמדים (DOGE overbought, LTC נפח נמוך, ETH MACD שלילי) חלשים מדי, ואת ETH הספוט משאירים כהחזקת ליבה.",
  "picks": [
-  "NVDA long size=20% conf=MEDIUM"
+  "XRP long size=20% conf=MEDIUM"
  ],
- "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)"
+ "skips": [
+  "XRP: risk_manager — חשיפה כוללת תגיע ל-193% > מקסימום 100%"
  ]
 }
