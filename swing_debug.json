@@ -1,39 +1,38 @@
 {
- "time": "2026-07-11T15:00:05",
- "usdc": 123.86,
- "portfolio": 569.4,
+ "time": "2026-07-11T16:00:05",
+ "usdc": 123.83,
+ "portfolio": 569.1,
  "margin_headroom": 324.25,
  "open": [
-  "SOL long +8.9%",
-  "BTC long +2.5%",
+  "SOL long +8.7%",
+  "BTC long +2.2%",
   "LINK long +4.1%",
   "TSLA long +0.8%",
   "AVA long +1.1%",
   "NVDA long -0.6%",
-  "CRCL long +0.3%"
+  "CRCL long +0.2%"
  ],
  "stock_candidates": 20,
  "top_stocks": [
-  "ST +2.3% vol=$67,151",
-  "MSTR +2.2% vol=$46,385",
-  "CV -2.1% vol=$7,815",
-  "CF +1.7% vol=$11,152",
-  "DYD -1.7% vol=$184,612"
+  "CF +3.2% vol=$12,150",
+  "IM -2.3% vol=$38,340",
+  "SPCX -2.2% vol=$573,551",
+  "DYD -2.1% vol=$180,125",
+  "ST +1.8% vol=$65,382"
  ],
  "futures_ok": true,
- "futures_balance": 51.54,
+ "futures_balance": 50.59,
  "unallocated_spot": [
-  "ETH $361"
+  "ETH $362"
  ],
- "call_reason": "תנועה חזקה במניה: ST, MSTR, CV",
+ "call_reason": "תנועה חזקה במטבע חדש: ADA",
  "claude_called": true,
- "market_read": "שוק ריסק-און רחב — קריפטו ירוק כמעט לרוחב, RSI מוגברים אך המומנטום עדיין נמשך ולא ממוצה.",
- "skip_reason": "DOGE/ADA/USDE בקנייתיתר ותנודה קטנה ללא יתרון, LTC מתחת לסף וולום, והפוזיציות הפתוחות כבר מכסות רוב הסקטורים החזקים; ETH ספוט נשאר כי הוא מוביל המומנטום.",
+ "market_read": "שוק קריפטו בטון עולה מתון — אלטקוינים כמו ETH/XRP/SOL קרובים לרצועות עליונות בעוד BTC דשדוש.",
+ "skip_reason": "ADA/DOGE/USDE כבר overbought עם נפח דל וטווח קטן; המניות בדשדוש ללא קצה ברור, ו-ETH כבר מוחזק כאחזקת ספוט גדולה אז מיציתי את החשיפה אליו.",
  "picks": [
-  "XRP long size=25% conf=MEDIUM",
-  "ETH long size=18% conf=MEDIUM"
+  "XRP long size=22% conf=MEDIUM"
  ],
  "skips": [
-  "XRP: risk_manager — חשיפה כוללת תגיע ל-167% > מקסימום 100%"
+  "XRP: risk_manager — חשיפה כוללת תגיע ל-164% > מקסימום 100%"
  ]
 }
