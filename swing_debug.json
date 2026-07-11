@@ -1,35 +1,35 @@
 {
- "time": "2026-07-11T12:00:05",
- "usdc": 123.91,
- "portfolio": 567.72,
+ "time": "2026-07-11T13:00:04",
+ "usdc": 123.88,
+ "portfolio": 568.19,
  "margin_headroom": 324.25,
  "open": [
-  "SOL long +8.3%",
+  "SOL long +8.2%",
   "BTC long +2.3%",
-  "LINK long +3.5%",
+  "LINK long +3.9%",
   "TSLA long +0.8%",
-  "AVA long +0.6%",
+  "AVA long +1.0%",
   "NVDA long +0.2%",
   "CRCL long +0.1%"
  ],
- "stock_candidates": 21,
+ "stock_candidates": 20,
  "top_stocks": [
-  "HOOD -6.1% vol=$793,637",
-  "CRCL -6.0% vol=$2,560,933",
-  "CV -5.4% vol=$11,770",
-  "NVDA +4.9% vol=$424,503",
-  "SP -4.8% vol=$139,155"
+  "CRCL -5.9% vol=$2,424,588",
+  "HOOD -5.8% vol=$800,045",
+  "CV -4.1% vol=$9,940",
+  "IOT +4.0% vol=$13,532",
+  "NVDA +3.6% vol=$417,760"
  ],
  "futures_ok": true,
- "futures_balance": 52.13,
+ "futures_balance": 52.68,
  "unallocated_spot": [
   "ETH $359"
  ],
- "call_reason": "תנועה חזקה במניה: HOOD, CV, SP",
+ "call_reason": "תנועה חזקה במניה: HOOD, CV, IOT",
  "claude_called": true,
- "market_read": "שוק מעורב-חיובי: קריפטו בקונסולידציה עם RSI אמצעי, בעוד NVDA בולטת בעליות והמניות הפיננסיות (CRCL/HOOD) נמכרות בחדות.",
- "skip_reason": "רוב מועמדי הקריפטו (ADA/DOGE/XRP) בטווח RSI אמצעי-גבוה עם מומנטום חלש ואין קצה ברור; LTC וCC בווליום נמוך מדי; הפוזיציות הרווחיות הקיימות (SOL/LINK/BTC) כבר נעות ליעד ואין סיבה להוסיף אליהן, ואת יתרת המזומן אני מפנה לחשיפת המומנטום החזקה ביותר.",
+ "market_read": "שוק קריפטו דשדושי — רוב המטבעות באמצע ה-RSI וקרוב לרצועת בולינגר העליונה ללא מגמה ברורה, מניות מעורבות עם CRCL/HOOD בנפילה חדה.",
+ "skip_reason": "רוב המועמדים באמצע ה-RSI או overbought ליד רצועה עליונה ללא edge; ETH נשאר כאחזקת ליבה כי אין סטאפ עדיף לרוטציה, ושורטים על HOOD/CRCL מסוכנים אחרי נפילה של 6% בגלל סיכון תיקון מעלה.",
  "picks": [
-  "NVDA long size=20% conf=MEDIUM"
+  "SOL long size=20% conf=MEDIUM"
  ]
 }
