@@ -1,12 +1,12 @@
 {
- "time": "2026-07-11T18:00:04",
+ "time": "2026-07-11T19:00:05",
  "usdc": 123.78,
- "portfolio": 571.94,
+ "portfolio": 572.65,
  "margin_headroom": 324.25,
  "open": [
-  "SOL long +8.2%",
+  "SOL long +8.3%",
   "BTC long +2.5%",
-  "LINK long +5.0%",
+  "LINK long +4.8%",
   "TSLA long +0.5%",
   "AVA long +1.2%",
   "NVDA long -0.9%",
@@ -14,22 +14,25 @@
  ],
  "stock_candidates": 19,
  "top_stocks": [
-  "CF +4.1% vol=$11,470",
-  "ST +2.8% vol=$73,493",
-  "SP +2.2% vol=$83,163",
-  "SPCX -1.9% vol=$432,607",
-  "MSTR +1.6% vol=$21,311"
+  "CF +5.8% vol=$12,832",
+  "MSTR +3.3% vol=$21,776",
+  "CRCL +2.4% vol=$61,988",
+  "ST +2.1% vol=$73,156",
+  "SP +1.6% vol=$78,672"
  ],
  "futures_ok": true,
- "futures_balance": 51.48,
+ "futures_balance": 51.87,
  "unallocated_spot": [
-  "ETH $363"
+  "ETH $364"
  ],
- "call_reason": "תנועה חזקה במניה: CF, ST, SP",
+ "call_reason": "תנועה חזקה במניה: CF, MSTR, ST",
  "claude_called": true,
- "market_read": "השוק הקריפטו כולו בראלי חזק אך רוב המטבעות בקנייתיתר קיצונית (RSI 65-75, BB מעל 100), מה שמסוכן לכניסות לונג חדשות.",
- "skip_reason": "רוב המועמדים (ADA, LINK, ETH, XRP, DOGE) בקנייתיתר קיצונית ולכן כניסת לונג היא רדיפה, BNB/XMR עם ווליום נמוך מדי או MACD שלילי, וה-ETH הספוט כבר עובד היטב במגמה חזקה ולכן משאיר אותו כמקום הטוב ביותר לאותו הון.",
+ "market_read": "שוק קריפטו במגמת עלייה רחבה אך רוב הנכסים בקנייתיתר (RSI>65, BB קרוב ל-100), מה שמגביל כניסות לונג חדשות.",
+ "skip_reason": "רוב המטבעות (ETH, XRP, ADA, LINK) בקנייתיתר קיצונית וקרוב לרצועה העליונה — סיכון/סיכוי גרוע לכניסה חדשה; ETH הפרוק ממשיך לרוץ עם מומנטום חזק אז משאירים אותו, והפוזיציות הפתוחות כבר מתקדמות לעבר היעד.",
  "picks": [
-  "SOL long size=20% conf=MEDIUM"
+  "BNB long size=20% conf=MEDIUM"
+ ],
+ "skips": [
+  "BNB: risk_manager — חשיפה כוללת תגיע ל-161% > מקסימום 100%"
  ]
 }
