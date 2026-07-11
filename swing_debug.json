@@ -1,35 +1,38 @@
 {
- "time": "2026-07-11T06:00:05",
+ "time": "2026-07-11T07:00:05",
  "usdc": 124.01,
- "portfolio": 561.35,
+ "portfolio": 561.66,
  "margin_headroom": 324.25,
  "open": [
-  "SOL long +8.1%",
-  "BTC long +2.2%",
-  "LINK long +3.6%",
-  "TSLA long +0.8%",
-  "AVA long +0.5%",
-  "NVDA long -0.5%",
-  "CRCL long +0.5%"
+  "SOL long +8.3%",
+  "BTC long +2.3%",
+  "LINK long +3.7%",
+  "TSLA long +1.0%",
+  "AVA long +0.4%",
+  "NVDA long +0.5%",
+  "CRCL long +0.8%"
  ],
  "stock_candidates": 23,
  "top_stocks": [
-  "CRCL +4.8% vol=$2,967,917",
-  "DYD -4.5% vol=$183,154",
-  "HOOD -4.4% vol=$795,931",
-  "SP -4.3% vol=$141,143",
-  "GM -4.0% vol=$11,035"
+  "SN +5.7% vol=$127,765",
+  "CRCL +5.3% vol=$2,976,404",
+  "NVDA +5.2% vol=$435,536",
+  "HOOD -4.2% vol=$797,727",
+  "GM -3.8% vol=$8,451"
  ],
  "futures_ok": true,
- "futures_balance": 45.83,
+ "futures_balance": 46.15,
  "unallocated_spot": [
   "ETH $358"
  ],
- "call_reason": "תנועה חזקה במניה: DYD, HOOD, SP",
+ "call_reason": "תנועה חזקה במניה: SN, HOOD, GM",
  "claude_called": true,
- "market_read": "שוק קריפטו שטוח ומדשדש (BTC/ETH ללא כיוון, MACD שלילי קל) — המומנטום היחיד הבולט הוא במניות מתנודדות כמו CRCL.",
- "skip_reason": "רוב מועמדי הקריפטו ב-RSI ניטרלי ללא אדג' (XRP/ADA/DOT), ו-AVAX האטרקטיבי טכנית נפסל בגלל נפח נמוך מ-$50k; שאר ההון כבר עובד ב-7 פוזיציות פתוחות ו-ETH ספוט מוחזק כפוזיציה ניטרלית סבירה.",
+ "market_read": "השוק הקריפטו נע בטווח צר סביב הבולינגר העליון עם RSI בינוני ומומנטום חלש, בעוד המניות (NVDA, CRCL) מובילות בעליות היום.",
+ "skip_reason": "רוב מטבעות הקריפטו תקועים במרכז/עליון הטווח ללא edge ברור, LTC ו־CC בעלי נפח נמוך מדי, והתיק כבר חשוף 144% עם 7 פוזיציות ירוקות שלא כדאי לדלל.",
  "picks": [
-  "CRCL long size=20% conf=MEDIUM"
+  "NVDA long size=20% conf=MEDIUM"
+ ],
+ "order_errors": [
+  "liq ETH: all sizes rejected (margin collateral lock)"
  ]
 }
