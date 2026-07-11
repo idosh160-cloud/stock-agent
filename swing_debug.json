@@ -1,39 +1,38 @@
 {
- "time": "2026-07-11T20:00:05",
- "usdc": 123.76,
- "portfolio": 572.17,
+ "time": "2026-07-11T21:00:05",
+ "usdc": 123.72,
+ "portfolio": 572.23,
  "margin_headroom": 324.25,
  "open": [
-  "SOL long +8.3%",
-  "BTC long +2.4%",
-  "LINK long +4.5%",
-  "TSLA long +0.9%",
+  "SOL long +8.4%",
+  "BTC long +2.6%",
+  "LINK long +4.6%",
+  "TSLA long +1.1%",
   "AVA long +1.1%",
   "NVDA long -0.9%",
   "CRCL long +0.1%"
  ],
- "stock_candidates": 19,
+ "stock_candidates": 18,
  "top_stocks": [
-  "CF +4.4% vol=$12,523",
-  "MSTR +2.4% vol=$17,329",
-  "CV +1.9% vol=$5,127",
-  "ZR -1.8% vol=$9,089",
-  "ST +1.7% vol=$76,402"
+  "CF +5.5% vol=$10,079",
+  "CV +2.4% vol=$5,087",
+  "MSTR +2.4% vol=$16,455",
+  "ST +2.1% vol=$77,338",
+  "ZR -1.6% vol=$8,984"
  ],
  "futures_ok": true,
- "futures_balance": 51.77,
+ "futures_balance": 51.58,
  "unallocated_spot": [
-  "ETH $363"
+  "ETH $364"
  ],
- "call_reason": "תנועה חזקה במניה: CF, MSTR",
+ "call_reason": "תנועה חזקה במניה: CF, CV, MSTR",
  "claude_called": true,
- "market_read": "השוק בהתאוששות רחבה אך רוב האלטים (ADA, DOGE, ETH, LTC) כבר בקנייתיתר עם BB קרוב לרצועה העליונה — סיכון לתיקון, לכן בוחרים רק בשמות שעדיין לא תשושים.",
- "skip_reason": "רוב המועמדים בקנייתיתר או בנפח נמוך מדי (BNB, LTC), מניות ה-xStocks חסרות אינדיקטורים ברורים, ואת ETH ה-spot משאירים כי המומנטום שלו חזק ומהווה החזקה איכותית.",
+ "market_read": "שוק קריפטו במומנטום עולה רחב אך רבים מהמטבעות מתוחים ליד ה-BB העליון (BTC 97%, ETH 87%), כך שמרווח ההמשך מוגבל.",
+ "skip_reason": "רוב המועמדים קנויי-יתר ומתוחים (BTC/ETH/LTC ליד רצועה עליונה) או בעלי נפח נמוך מדי; הפוזיציות הפתוחות כבר רווחיות ונעות ליעד ולא נוגעים בהן, ו-ETH הספוט הוא אחזקה חזקה עם MACD חיובי ששווה להשאיר.",
  "picks": [
-  "XMR long size=30% conf=MEDIUM",
-  "XRP long size=20% conf=MEDIUM"
+  "XRP long size=22% conf=MEDIUM"
  ],
  "skips": [
-  "XMR: risk_manager — חשיפה כוללת תגיע ל-171% > מקסימום 100%"
+  "XRP: risk_manager — חשיפה כוללת תגיע ל-163% > מקסימום 100%"
  ]
 }
