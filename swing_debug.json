@@ -1,39 +1,35 @@
 {
- "time": "2026-07-11T08:00:05",
- "usdc": 123.99,
- "portfolio": 561.12,
+ "time": "2026-07-11T09:00:05",
+ "usdc": 123.95,
+ "portfolio": 561.92,
  "margin_headroom": 324.25,
  "open": [
-  "SOL long +8.1%",
-  "BTC long +2.2%",
-  "LINK long +3.4%",
-  "TSLA long +1.0%",
+  "SOL long +8.4%",
+  "BTC long +2.4%",
+  "LINK long +3.6%",
+  "TSLA long +0.8%",
   "AVA long +0.5%",
-  "NVDA long +0.5%",
-  "CRCL long +1.1%"
+  "NVDA long +0.2%",
+  "CRCL long +0.2%"
  ],
- "stock_candidates": 23,
+ "stock_candidates": 22,
  "top_stocks": [
-  "IOT +7.6% vol=$14,819",
-  "CRCL +5.5% vol=$2,984,038",
-  "SN +5.1% vol=$131,394",
-  "NVDA +5.1% vol=$433,285",
-  "HOOD -4.2% vol=$797,727"
+  "IOT +7.8% vol=$15,997",
+  "HOOD -5.0% vol=$797,686",
+  "NVDA +4.8% vol=$432,511",
+  "SN +4.7% vol=$130,285",
+  "DYD -4.6% vol=$205,447"
  ],
  "futures_ok": true,
- "futures_balance": 45.63,
+ "futures_balance": 46.08,
  "unallocated_spot": [
-  "ETH $358"
+  "ETH $359"
  ],
- "call_reason": "תנועה חזקה במניה: IOT, SN, HOOD",
+ "call_reason": "תנועה חזקה במניה: IOT, HOOD, SN",
  "claude_called": true,
- "market_read": "שוק מעורב — קריפטו ברובו צ'ופי סביב RSI אמצעי, בעוד מניות הטכנולוגיה (NVDA, CRCL) מובילות עם מומנטום עולה חזק.",
- "skip_reason": "רוב מטבעות הקריפטו (SOL, LINK, XRP, DOGE) בטווח RSI ניטרלי ללא אדג' ברור, ו-CC/ADA בעלי נזילות/היסטוריה חלשה — עדיף לרכז הון במומנטום המניות.",
+ "market_read": "שוק קריפטו נייטרלי-עייף (רוב המטבעות RSI אמצעי וקרוב לפס בולינגר עליון, MACD מתקרר), בעוד המומנטום האמיתי היום נמצא במניות טכנולוגיה חזקות כמו NVDA.",
+ "skip_reason": "רוב מועמדי הקריפטו תקועים באמצע טווח או קרובים לפס עליון בלי אישור נפח (LTC נפח מתחת ל-$50k, CC דליל), ואין setup קריפטו עדיף על תוספת למנצח הקיים; ETH נשאר כי אין הזדמנות ברורה טובה יותר להעביר אליה כרגע.",
  "picks": [
-  "NVDA long size=25% conf=HIGH",
-  "LTC long size=22% conf=MEDIUM"
- ],
- "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)"
+  "NVDA long size=25% conf=MEDIUM"
  ]
 }
