@@ -1,39 +1,38 @@
 {
- "time": "2026-07-11T22:00:05",
+ "time": "2026-07-11T23:00:05",
  "usdc": 123.7,
- "portfolio": 571.18,
+ "portfolio": 568.32,
  "margin_headroom": 324.25,
  "open": [
-  "SOL long +8.6%",
-  "BTC long +2.6%",
-  "LINK long +4.3%",
+  "SOL long +8.0%",
+  "BTC long +2.3%",
+  "LINK long +3.6%",
   "TSLA long +1.1%",
-  "AVA long +0.9%",
-  "NVDA long -0.7%",
+  "AVA long +0.0%",
+  "NVDA long -0.6%",
   "CRCL long +0.1%"
  ],
  "stock_candidates": 19,
  "top_stocks": [
-  "CF +5.2% vol=$10,115",
-  "DYD -2.7% vol=$164,583",
-  "MSTR +2.4% vol=$16,455",
-  "ST +2.1% vol=$77,338",
-  "IM -1.8% vol=$36,866"
+  "CF +4.2% vol=$10,053",
+  "DYD -2.3% vol=$173,951",
+  "IM -2.2% vol=$38,850",
+  "MSTR +1.3% vol=$16,388",
+  "CV +1.2% vol=$6,929"
  ],
  "futures_ok": true,
- "futures_balance": 50.79,
+ "futures_balance": 50.17,
  "unallocated_spot": [
-  "ETH $364"
+  "ETH $361"
  ],
- "call_reason": "תנועה חזקה במניה: CF, DYD, MSTR",
+ "call_reason": "תנועה חזקה במניה: CF, DYD, IM",
  "claude_called": true,
- "market_read": "שוק קריפטו ירוק רחב ותאבון סיכון, רוב הנכסים קרובים לבולינגר העליון — מגמת עלייה נמשכת אך מותחת.",
- "skip_reason": "מזומן פנוי ($123) מופנה לשתי כניסות מומנטום נקיות; שאר המועמדים או מותשים (ETH RSI 71), נזילות נמוכה (רוב המניות), או חופפים לפוזיציות קיימות; ETH הספוט נשאר כי הוא מוחזק כבר ומזומן זמין ללא צורך במימוש.",
+ "market_read": "שוק צ'ופי — רוב המטבעות RSI 45-55 עם MACD שלילי קל, אין מגמה ברורה, הפוזיציות הפתוחות ירוקות ומתקדמות ליעד.",
+ "skip_reason": "רוב המועמדים תקועים באמצע הטווח בלי אדג' ברור וללא נפח, וה-ETH הספוט הוא ההחזקה הגדולה שאשאיר כליבה כי אין אלטרנטיבה חזקה מספיק להצדיק מכירה בשוק חסר מגמה.",
  "picks": [
-  "BNB long size=25% conf=MEDIUM",
-  "XMR long size=20% conf=MEDIUM"
+  "XMR long size=22% conf=MEDIUM"
  ],
  "skips": [
-  "BNB: risk_manager — חשיפה כוללת תגיע ל-166% > מקסימום 100%"
+  "XMR: risk_manager — חשיפה כוללת תגיע ל-164% > מקסימום 100%"
  ]
 }
