@@ -1,39 +1,39 @@
 {
- "time": "2026-07-11T14:00:05",
+ "time": "2026-07-11T15:00:05",
  "usdc": 123.86,
- "portfolio": 568.39,
+ "portfolio": 569.4,
  "margin_headroom": 324.25,
  "open": [
-  "SOL long +8.4%",
-  "BTC long +2.4%",
-  "LINK long +4.0%",
+  "SOL long +8.9%",
+  "BTC long +2.5%",
+  "LINK long +4.1%",
   "TSLA long +0.8%",
-  "AVA long +0.9%",
-  "NVDA long +0.1%",
+  "AVA long +1.1%",
+  "NVDA long -0.6%",
   "CRCL long +0.3%"
  ],
  "stock_candidates": 20,
  "top_stocks": [
-  "IOT +4.6% vol=$12,511",
-  "DYD -2.3% vol=$212,428",
-  "NVDA +2.2% vol=$337,094",
-  "IM -2.0% vol=$18,266",
-  "CV -2.0% vol=$9,744"
+  "ST +2.3% vol=$67,151",
+  "MSTR +2.2% vol=$46,385",
+  "CV -2.1% vol=$7,815",
+  "CF +1.7% vol=$11,152",
+  "DYD -1.7% vol=$184,612"
  ],
  "futures_ok": true,
- "futures_balance": 52.3,
+ "futures_balance": 51.54,
  "unallocated_spot": [
-  "ETH $359"
+  "ETH $361"
  ],
- "call_reason": "תנועה חזקה במניה: IOT, DYD, IM",
+ "call_reason": "תנועה חזקה במניה: ST, MSTR, CV",
  "claude_called": true,
- "market_read": "שוק קריפטו ומניות במגמת עלייה מתונה, רוב הנכסים סמוך לפסגת ה-BB עם RSI בינוני — סביבה של המשכיות ולא של תיקון חד.",
- "skip_reason": "רוב הנכסים תקועים סמוך לפסגת ה-BB עם MACD דועך (ETH, DOGE, LINK) ולכן פחות אטרקטיביים; השארתי את ETH הפרוס כי אין setup חד יותר להצדיק מכירתו, וניצלתי את ה-USDC הפנוי לשני הסטאפים החזקים ביותר.",
+ "market_read": "שוק ריסק-און רחב — קריפטו ירוק כמעט לרוחב, RSI מוגברים אך המומנטום עדיין נמשך ולא ממוצה.",
+ "skip_reason": "DOGE/ADA/USDE בקנייתיתר ותנודה קטנה ללא יתרון, LTC מתחת לסף וולום, והפוזיציות הפתוחות כבר מכסות רוב הסקטורים החזקים; ETH ספוט נשאר כי הוא מוביל המומנטום.",
  "picks": [
-  "XRP long size=22% conf=MEDIUM",
-  "HOOD long size=28% conf=MEDIUM"
+  "XRP long size=25% conf=MEDIUM",
+  "ETH long size=18% conf=MEDIUM"
  ],
  "skips": [
-  "XRP: risk_manager — חשיפה כוללת תגיע ל-164% > מקסימום 100%"
+  "XRP: risk_manager — חשיפה כוללת תגיע ל-167% > מקסימום 100%"
  ]
 }
