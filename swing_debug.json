@@ -1,42 +1,37 @@
 {
- "time": "2026-07-11T00:00:04",
- "usdc": 124.14,
- "portfolio": 567.13,
+ "time": "2026-07-11T01:00:04",
+ "usdc": 124.11,
+ "portfolio": 566.18,
  "margin_headroom": 324.25,
  "open": [
-  "SOL long +8.3%",
-  "BTC long +2.3%",
-  "LINK long +3.1%",
+  "SOL long +8.0%",
+  "BTC long +2.2%",
+  "LINK long +3.2%",
   "TSLA long +0.8%",
-  "AVA long +0.9%",
+  "AVA long +0.8%",
   "NVDA long -0.2%"
  ],
- "stock_candidates": 22,
+ "stock_candidates": 23,
  "top_stocks": [
-  "SN +6.2% vol=$100,646",
+  "SN +6.6% vol=$102,039",
   "CV +5.1% vol=$17,374",
   "CRCL +4.1% vol=$2,943,135",
-  "SPCX -4.0% vol=$1,639,612",
+  "DYD -3.7% vol=$180,823",
   "NVDA +3.5% vol=$435,394"
  ],
  "futures_ok": true,
- "futures_balance": 52.07,
+ "futures_balance": 51.73,
  "unallocated_spot": [
-  "ETH $358"
+  "ETH $357"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: DOT",
+ "call_reason": "תנועה חזקה במניה: SN, CV, CRCL",
  "claude_called": true,
- "market_read": "שוק קריפטו במגמת עלייה מתונה עם רוטציה לאלטים בינוניים; אין פאניקה, מומנטום סלקטיבי.",
- "skip_reason": "DOT נמתח כבר +7.2% עם MACD שלילי ונפח דל (מיצוי), CRCL/HOOD תנודתיים עם היסטוריית הפסד, ושאר המטבעות דשדוש ללא edge ברור.",
+ "market_read": "שוק חלש וצ'ופי — רוב הקריפטו עם RSI באזור 45-58 ו-MACD שלילי, אין מגמה ברורה חזקה כרגע.",
+ "skip_reason": "רוב המועמדים דוחפים בלי אישור נפח או עם MACD שלילי; שש הפוזיציות הקיימות ירוקות ומתקדמות ליעד אז אין סיבה לרוטציה, ו-ETH הספוט נשאר כי הוא כבר החזקה איכותית.",
  "picks": [
-  "XMR long size=24% conf=MEDIUM",
-  "LTC long size=20% conf=MEDIUM"
- ],
- "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)"
+  "XMR long size=20% conf=MEDIUM"
  ],
  "skips": [
-  "XMR: risk_manager — חשיפה כוללת תגיע ל-145% > מקסימום 100%",
-  "LTC: risk_manager — חשיפה כוללת תגיע ל-141% > מקסימום 100%"
+  "XMR: risk_manager — חשיפה כוללת תגיע ל-141% > מקסימום 100%"
  ]
 }
