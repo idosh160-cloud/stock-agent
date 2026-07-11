@@ -1,38 +1,39 @@
 {
- "time": "2026-07-11T19:00:05",
- "usdc": 123.78,
- "portfolio": 572.65,
+ "time": "2026-07-11T20:00:05",
+ "usdc": 123.76,
+ "portfolio": 572.17,
  "margin_headroom": 324.25,
  "open": [
   "SOL long +8.3%",
-  "BTC long +2.5%",
-  "LINK long +4.8%",
-  "TSLA long +0.5%",
-  "AVA long +1.2%",
+  "BTC long +2.4%",
+  "LINK long +4.5%",
+  "TSLA long +0.9%",
+  "AVA long +1.1%",
   "NVDA long -0.9%",
   "CRCL long +0.1%"
  ],
  "stock_candidates": 19,
  "top_stocks": [
-  "CF +5.8% vol=$12,832",
-  "MSTR +3.3% vol=$21,776",
-  "CRCL +2.4% vol=$61,988",
-  "ST +2.1% vol=$73,156",
-  "SP +1.6% vol=$78,672"
+  "CF +4.4% vol=$12,523",
+  "MSTR +2.4% vol=$17,329",
+  "CV +1.9% vol=$5,127",
+  "ZR -1.8% vol=$9,089",
+  "ST +1.7% vol=$76,402"
  ],
  "futures_ok": true,
- "futures_balance": 51.87,
+ "futures_balance": 51.77,
  "unallocated_spot": [
-  "ETH $364"
+  "ETH $363"
  ],
- "call_reason": "תנועה חזקה במניה: CF, MSTR, ST",
+ "call_reason": "תנועה חזקה במניה: CF, MSTR",
  "claude_called": true,
- "market_read": "שוק קריפטו במגמת עלייה רחבה אך רוב הנכסים בקנייתיתר (RSI>65, BB קרוב ל-100), מה שמגביל כניסות לונג חדשות.",
- "skip_reason": "רוב המטבעות (ETH, XRP, ADA, LINK) בקנייתיתר קיצונית וקרוב לרצועה העליונה — סיכון/סיכוי גרוע לכניסה חדשה; ETH הפרוק ממשיך לרוץ עם מומנטום חזק אז משאירים אותו, והפוזיציות הפתוחות כבר מתקדמות לעבר היעד.",
+ "market_read": "השוק בהתאוששות רחבה אך רוב האלטים (ADA, DOGE, ETH, LTC) כבר בקנייתיתר עם BB קרוב לרצועה העליונה — סיכון לתיקון, לכן בוחרים רק בשמות שעדיין לא תשושים.",
+ "skip_reason": "רוב המועמדים בקנייתיתר או בנפח נמוך מדי (BNB, LTC), מניות ה-xStocks חסרות אינדיקטורים ברורים, ואת ETH ה-spot משאירים כי המומנטום שלו חזק ומהווה החזקה איכותית.",
  "picks": [
-  "BNB long size=20% conf=MEDIUM"
+  "XMR long size=30% conf=MEDIUM",
+  "XRP long size=20% conf=MEDIUM"
  ],
  "skips": [
-  "BNB: risk_manager — חשיפה כוללת תגיע ל-161% > מקסימום 100%"
+  "XMR: risk_manager — חשיפה כוללת תגיע ל-171% > מקסימום 100%"
  ]
 }
