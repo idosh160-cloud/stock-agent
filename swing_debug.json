@@ -1,38 +1,35 @@
 {
- "time": "2026-07-11T17:00:04",
- "usdc": 123.8,
- "portfolio": 571.22,
+ "time": "2026-07-11T18:00:04",
+ "usdc": 123.78,
+ "portfolio": 571.94,
  "margin_headroom": 324.25,
  "open": [
-  "SOL long +8.1%",
-  "BTC long +2.3%",
-  "LINK long +4.2%",
-  "TSLA long +0.8%",
-  "AVA long +0.9%",
+  "SOL long +8.2%",
+  "BTC long +2.5%",
+  "LINK long +5.0%",
+  "TSLA long +0.5%",
+  "AVA long +1.2%",
   "NVDA long -0.9%",
-  "CRCL long +0.3%"
+  "CRCL long +0.1%"
  ],
  "stock_candidates": 19,
  "top_stocks": [
-  "CF +3.4% vol=$12,172",
-  "ST +2.4% vol=$67,188",
-  "DYD -2.4% vol=$160,966",
-  "SPCX -2.0% vol=$483,802",
-  "IM -2.0% vol=$37,295"
+  "CF +4.1% vol=$11,470",
+  "ST +2.8% vol=$73,493",
+  "SP +2.2% vol=$83,163",
+  "SPCX -1.9% vol=$432,607",
+  "MSTR +1.6% vol=$21,311"
  ],
  "futures_ok": true,
- "futures_balance": 51.13,
+ "futures_balance": 51.48,
  "unallocated_spot": [
   "ETH $363"
  ],
- "call_reason": "תנועה חזקה במניה: CF, ST, DYD",
+ "call_reason": "תנועה חזקה במניה: CF, ST, SP",
  "claude_called": true,
- "market_read": "שוק קריפטו במגמת עלייה רחבה, רוב הנכסים קרובים ל-BB עליון ורבים מוכרי-יתר — עדיין ריצה חיובית אך זהירות נדרשת מרדיפה.",
- "skip_reason": "רוב המטבעות (ETH, ADA, LINK) כבר מוכרי-יתר וקרובים ל-BB עליון = סיכון רדיפה; ETH ספוט הוא ההחזקה החזקה ביותר במומנטום ולכן נשאר; XMR בנפח נמוך ובמגמה שלילית — נדחה.",
+ "market_read": "השוק הקריפטו כולו בראלי חזק אך רוב המטבעות בקנייתיתר קיצונית (RSI 65-75, BB מעל 100), מה שמסוכן לכניסות לונג חדשות.",
+ "skip_reason": "רוב המועמדים (ADA, LINK, ETH, XRP, DOGE) בקנייתיתר קיצונית ולכן כניסת לונג היא רדיפה, BNB/XMR עם ווליום נמוך מדי או MACD שלילי, וה-ETH הספוט כבר עובד היטב במגמה חזקה ולכן משאיר אותו כמקום הטוב ביותר לאותו הון.",
  "picks": [
-  "XRP long size=22% conf=MEDIUM"
- ],
- "skips": [
-  "XRP: risk_manager — חשיפה כוללת תגיע ל-163% > מקסימום 100%"
+  "SOL long size=20% conf=MEDIUM"
  ]
 }
