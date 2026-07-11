@@ -1,37 +1,42 @@
 {
- "time": "2026-07-10T23:00:05",
- "usdc": 124.16,
- "portfolio": 567.08,
+ "time": "2026-07-11T00:00:04",
+ "usdc": 124.14,
+ "portfolio": 567.13,
  "margin_headroom": 324.25,
  "open": [
-  "SOL long +8.4%",
-  "BTC long +2.2%",
-  "LINK long +3.0%",
+  "SOL long +8.3%",
+  "BTC long +2.3%",
+  "LINK long +3.1%",
   "TSLA long +0.8%",
-  "AVA long +1.1%",
+  "AVA long +0.9%",
   "NVDA long -0.2%"
  ],
  "stock_candidates": 22,
  "top_stocks": [
+  "SN +6.2% vol=$100,646",
   "CV +5.1% vol=$17,374",
-  "SN +5.1% vol=$104,159",
-  "CRCL +4.0% vol=$2,941,104",
-  "SPCX -4.0% vol=$1,636,870",
-  "DYD -3.8% vol=$181,078"
+  "CRCL +4.1% vol=$2,943,135",
+  "SPCX -4.0% vol=$1,639,612",
+  "NVDA +3.5% vol=$435,394"
  ],
  "futures_ok": true,
- "futures_balance": 52.2,
+ "futures_balance": 52.07,
  "unallocated_spot": [
   "ETH $358"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: DOT",
  "claude_called": true,
- "market_read": "שוק מעורב וללא כיוון חד — היסטוגרמות MACD שליליות כמעט בכל הנכסים מרמזות על דעיכת מומנטום, אבל אין מכירה ברורה.",
- "skip_reason": "רוב המועמדים ניטרליים (RSI 50-58, MACD שלילי) או בנפח נמוך מדי; ETH הספוט נשאר כי הוא עדיין במומנטום חיובי ומהווה את האחזקה הפאסיבית הכי איכותית, ושאר הפוזיציות כבר פתוחות ומתקדמות ליעד.",
+ "market_read": "שוק קריפטו במגמת עלייה מתונה עם רוטציה לאלטים בינוניים; אין פאניקה, מומנטום סלקטיבי.",
+ "skip_reason": "DOT נמתח כבר +7.2% עם MACD שלילי ונפח דל (מיצוי), CRCL/HOOD תנודתיים עם היסטוריית הפסד, ושאר המטבעות דשדוש ללא edge ברור.",
  "picks": [
-  "DOT long size=25% conf=MEDIUM"
+  "XMR long size=24% conf=MEDIUM",
+  "LTC long size=20% conf=MEDIUM"
+ ],
+ "order_errors": [
+  "liq ETH: all sizes rejected (margin collateral lock)"
  ],
  "skips": [
-  "DOT: risk_manager — חשיפה כוללת תגיע ל-146% > מקסימום 100%"
+  "XMR: risk_manager — חשיפה כוללת תגיע ל-145% > מקסימום 100%",
+  "LTC: risk_manager — חשיפה כוללת תגיע ל-141% > מקסימום 100%"
  ]
 }
