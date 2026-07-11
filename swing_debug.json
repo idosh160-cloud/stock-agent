@@ -1,38 +1,38 @@
 {
- "time": "2026-07-11T16:00:05",
- "usdc": 123.83,
- "portfolio": 569.1,
+ "time": "2026-07-11T17:00:04",
+ "usdc": 123.8,
+ "portfolio": 571.22,
  "margin_headroom": 324.25,
  "open": [
-  "SOL long +8.7%",
-  "BTC long +2.2%",
-  "LINK long +4.1%",
+  "SOL long +8.1%",
+  "BTC long +2.3%",
+  "LINK long +4.2%",
   "TSLA long +0.8%",
-  "AVA long +1.1%",
-  "NVDA long -0.6%",
-  "CRCL long +0.2%"
+  "AVA long +0.9%",
+  "NVDA long -0.9%",
+  "CRCL long +0.3%"
  ],
- "stock_candidates": 20,
+ "stock_candidates": 19,
  "top_stocks": [
-  "CF +3.2% vol=$12,150",
-  "IM -2.3% vol=$38,340",
-  "SPCX -2.2% vol=$573,551",
-  "DYD -2.1% vol=$180,125",
-  "ST +1.8% vol=$65,382"
+  "CF +3.4% vol=$12,172",
+  "ST +2.4% vol=$67,188",
+  "DYD -2.4% vol=$160,966",
+  "SPCX -2.0% vol=$483,802",
+  "IM -2.0% vol=$37,295"
  ],
  "futures_ok": true,
- "futures_balance": 50.59,
+ "futures_balance": 51.13,
  "unallocated_spot": [
-  "ETH $362"
+  "ETH $363"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: ADA",
+ "call_reason": "תנועה חזקה במניה: CF, ST, DYD",
  "claude_called": true,
- "market_read": "שוק קריפטו בטון עולה מתון — אלטקוינים כמו ETH/XRP/SOL קרובים לרצועות עליונות בעוד BTC דשדוש.",
- "skip_reason": "ADA/DOGE/USDE כבר overbought עם נפח דל וטווח קטן; המניות בדשדוש ללא קצה ברור, ו-ETH כבר מוחזק כאחזקת ספוט גדולה אז מיציתי את החשיפה אליו.",
+ "market_read": "שוק קריפטו במגמת עלייה רחבה, רוב הנכסים קרובים ל-BB עליון ורבים מוכרי-יתר — עדיין ריצה חיובית אך זהירות נדרשת מרדיפה.",
+ "skip_reason": "רוב המטבעות (ETH, ADA, LINK) כבר מוכרי-יתר וקרובים ל-BB עליון = סיכון רדיפה; ETH ספוט הוא ההחזקה החזקה ביותר במומנטום ולכן נשאר; XMR בנפח נמוך ובמגמה שלילית — נדחה.",
  "picks": [
   "XRP long size=22% conf=MEDIUM"
  ],
  "skips": [
-  "XRP: risk_manager — חשיפה כוללת תגיע ל-164% > מקסימום 100%"
+  "XRP: risk_manager — חשיפה כוללת תגיע ל-163% > מקסימום 100%"
  ]
 }
