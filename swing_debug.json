@@ -1,40 +1,37 @@
 {
- "time": "2026-07-12T01:00:07",
+ "time": "2026-07-12T02:00:04",
  "usdc": 129.57,
- "portfolio": 568.38,
+ "portfolio": 574.91,
  "margin_headroom": 339.64,
  "open": [
-  "BTC long +1.7%",
-  "LINK long +1.8%",
-  "NVDA long -0.6%",
+  "BTC long +2.2%",
+  "LINK long +3.1%",
+  "NVDA long -1.2%",
   "CRCL long -0.1%"
  ],
  "stock_candidates": 19,
  "top_stocks": [
-  "AVA -4.2% vol=$1,199,797",
   "IOT -4.0% vol=$5,995",
-  "IM -3.3% vol=$46,792",
-  "CF +2.9% vol=$8,849",
-  "DYD -2.4% vol=$169,395"
+  "AVA -2.9% vol=$1,318,316",
+  "SN +2.7% vol=$104,769",
+  "IM -2.4% vol=$48,529",
+  "DYD -1.6% vol=$169,214"
  ],
  "futures_ok": true,
- "futures_balance": 51.51,
+ "futures_balance": 52.61,
  "unallocated_spot": [
-  "ETH $357"
+  "ETH $360"
  ],
- "call_reason": "תנועה חזקה במניה: AVA, IOT, IM",
+ "call_reason": "פוזיציה חלשה: NVDA",
  "claude_called": true,
- "market_read": "השוק כולו במצב מכירת יתר קצר-טווח (רוב האלטים RSI מתחת ל-32) — סביבה לבאונס סלקטיבי, לא לשורטים.",
- "skip_reason": "דחיתי את ADA/DOGE (וולום נמוך מדי או היסטוריה חלשה) ואת המניות שכבר מוחזקות; התרכזתי בשני סטאפים אוברסולד עם הנזילות הטובה ביותר.",
+ "market_read": "שוק קריפטו דשדושי-אובר-סולד — רוב האלטים ליד תחתית הבולינגר עם RSI סביב 38-40, מצב אידיאלי לריבאונדים סלקטיביים.",
+ "skip_reason": "דחיתי את יתר המועמדים בגלל נפח נמוך מדי (BNB, DOGE, LTC) או היסטוריה חלשה (ADA), והשארתי את ETH הספוט כי הוא ניטרלי (RSI 51.9) ואין יתרון מיידי; מיקדתי את המזומן ב-SOL ו-XRP שהם ההזדמנויות הטובות ביותר.",
  "picks": [
   "SOL long size=35% conf=HIGH",
   "XRP long size=20% conf=MEDIUM"
  ],
- "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)"
- ],
  "skips": [
-  "SOL: risk_manager — חשיפה כוללת תגיע ל-122% > מקסימום 100%",
-  "XRP: risk_manager — חשיפה כוללת תגיע ל-107% > מקסימום 100%"
+  "SOL: risk_manager — חשיפה כוללת תגיע ל-121% > מקסימום 100%",
+  "XRP: risk_manager — חשיפה כוללת תגיע ל-106% > מקסימום 100%"
  ]
 }
