@@ -1,41 +1,40 @@
 {
- "time": "2026-07-12T00:00:09",
- "usdc": 123.68,
- "portfolio": 559.93,
+ "time": "2026-07-12T01:00:07",
+ "usdc": 129.57,
+ "portfolio": 568.38,
  "margin_headroom": 339.64,
  "open": [
   "BTC long +1.7%",
-  "LINK long +2.4%",
-  "AVA long -1.9%",
+  "LINK long +1.8%",
   "NVDA long -0.6%",
-  "CRCL long +0.1%"
+  "CRCL long -0.1%"
  ],
  "stock_candidates": 19,
  "top_stocks": [
-  "CF +3.5% vol=$9,053",
-  "IOT -3.1% vol=$6,036",
-  "IM -3.1% vol=$43,285",
-  "AVA -2.8% vol=$983,678",
-  "DYD -2.7% vol=$178,632"
+  "AVA -4.2% vol=$1,199,797",
+  "IOT -4.0% vol=$5,995",
+  "IM -3.3% vol=$46,792",
+  "CF +2.9% vol=$8,849",
+  "DYD -2.4% vol=$169,395"
  ],
  "futures_ok": true,
- "futures_balance": 51.03,
+ "futures_balance": 51.51,
  "unallocated_spot": [
   "ETH $357"
  ],
- "call_reason": "פוזיציה חלשה: AVA",
+ "call_reason": "תנועה חזקה במניה: AVA, IOT, IM",
  "claude_called": true,
- "market_read": "שוק הקריפטו במצב חולשה כללי אך רבים מהנכסים עמוק ב-oversold ליד תמיכה — סביבה של ריבאונדים סלקטיביים ולא רכישה רחבה.",
- "skip_reason": "רוב שאר המועמדים או בעלי וולום נמוך מדי (CC, BNB, LTC) או במצב ניטרלי/choppy ללא edge ברור, והמניות זזות איטי מדי מכדי להצדיק תעדוף על פני הריבאונדים ב-SOL ו-XRP.",
+ "market_read": "השוק כולו במצב מכירת יתר קצר-טווח (רוב האלטים RSI מתחת ל-32) — סביבה לבאונס סלקטיבי, לא לשורטים.",
+ "skip_reason": "דחיתי את ADA/DOGE (וולום נמוך מדי או היסטוריה חלשה) ואת המניות שכבר מוחזקות; התרכזתי בשני סטאפים אוברסולד עם הנזילות הטובה ביותר.",
  "picks": [
-  "SOL long size=32% conf=HIGH",
-  "XRP long size=18% conf=MEDIUM"
+  "SOL long size=35% conf=HIGH",
+  "XRP long size=20% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)"
  ],
  "skips": [
-  "SOL: risk_manager — חשיפה כוללת תגיע ל-136% > מקסימום 100%",
-  "XRP: risk_manager — חשיפה כוללת תגיע ל-122% > מקסימום 100%"
+  "SOL: risk_manager — חשיפה כוללת תגיע ל-122% > מקסימום 100%",
+  "XRP: risk_manager — חשיפה כוללת תגיע ל-107% > מקסימום 100%"
  ]
 }

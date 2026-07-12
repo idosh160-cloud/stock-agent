@@ -673,5 +673,30 @@
     "entry_bb_pct": null,
     "entry_macd_hist": null,
     "entry_change_24h": 2.75
+  },
+  {
+    "coin": "AVA",
+    "pair": "PF_AVAXUSD",
+    "status": "closed_loss",
+    "leveraged": false,
+    "collateral": 87.53,
+    "volume": 13.1111444,
+    "entry_price": 6.676,
+    "close_price": 6.451,
+    "target_price": 7.08,
+    "stop_price": 6.51,
+    "pnl_usd": -2.95,
+    "pnl_pct": -3.37,
+    "date_open": "2026-07-10T00:00:33.875892",
+    "date_close": "2026-07-12T01:00:04.574321",
+    "reasoning": "AVA עולה 3.2% עם הנפח הגבוה ביותר בין המניות ($4.4M) — מומנטום נקי עם אישור נפח, כניסת המשך לונג. גודל צנוע כי התיק כבר חשוף כמעט במלואו.",
+    "confidence": "MEDIUM",
+    "txid": "a238a499-51c2-4bc0-b58e-b0ab8326f9a1",
+    "close_txid": "a23cbfd9-be6d-44e8-947e-bc3d5c610541",
+    "side": "long",
+    "entry_rsi": null,
+    "entry_bb_pct": null,
+    "entry_macd_hist": null,
+    "entry_change_24h": 3.18
   }
 ]
