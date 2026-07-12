@@ -1,36 +1,37 @@
 {
- "time": "2026-07-12T13:00:05",
+ "time": "2026-07-12T14:00:05",
  "usdc": 128.23,
- "portfolio": 574.36,
+ "portfolio": 575.2,
  "margin_headroom": 317.26,
  "open": [
   "BTC long +2.0%",
   "LINK long +4.2%",
-  "NVDA long -0.5%",
+  "NVDA long +0.2%",
   "CRCL long -0.1%",
-  "SOL long +0.4%"
+  "SOL long +0.3%"
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "ANTHROPIC -7.6% vol=$11,241",
-  "AVA -4.5% vol=$2,605,107",
-  "DYD +3.5% vol=$152,366",
-  "ZR -2.6% vol=$7,884",
-  "IM -2.4% vol=$47,240"
+  "ANTHROPIC -10.8% vol=$8,993",
+  "AVA -4.4% vol=$2,667,447",
+  "ZR -2.3% vol=$7,953",
+  "DYD +2.2% vol=$161,764",
+  "SN +1.8% vol=$83,391"
  ],
  "futures_ok": true,
- "futures_balance": 53.5,
+ "futures_balance": 54.52,
  "unallocated_spot": [
   "ETH $360"
  ],
- "call_reason": "תנועה חזקה במניה: ANTHROPIC, AVA, DYD",
+ "call_reason": "תנועה חזקה במניה: ANTHROPIC, AVA, ZR",
  "claude_called": true,
- "market_read": "השוק בכללי נייטרלי-חיובי עם BTC יציב מעל 64K, רוב האלטקוינים בתנועה מתונה ללא קיצוניות ברורה לשורט או לונג אגרסיבי.",
- "skip_reason": "רוב המטבעות האחרים או overbought בלי אישור נפח (XMR, BNB קרוב לגבול הנפח), או נייטרליים מדי (ADA, DOT, LTC), והמניות חסרות נתוני RSI ברורים לכיוון מסחר בטוח; ETH הפסיבי נשאר כי המומנטום שלו נייטרלי-שלילי כרגע ולא כדאי להוסיף אליו אך גם לא דחוף לסגור.",
+ "market_read": "השוק הכללי נייטרלי עם BTC יציב סביב 64K, יש הזדמנויות ספציפיות של מיין-ריברסל בקוינים קטנים יותר מאשר טרנד רחב אחיד.",
+ "skip_reason": "שאר המטבעות והמניות מוצגים בנפח מסחר נמוך מדי (BNB, XMR מתחת ל-50K) או ללא נתוני RSI/BB אמינים (AVA, ANTHROPIC) כדי להצדיק כניסה חדשה מעבר לפוזיציות הקיימות שכבר בדרך ליעד.",
  "picks": [
-  "BCH long size=22% conf=MEDIUM"
+  "CC short size=20% conf=MEDIUM",
+  "DOT long size=15% conf=MEDIUM"
  ],
  "order_errors": [
-  "BCH: Kraken: ['EOrder:Insufficient funds']"
+  "DOT: Kraken: ['EOrder:Invalid leverage']"
  ]
 }
