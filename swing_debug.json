@@ -1,30 +1,30 @@
 {
- "time": "2026-07-12T22:00:05",
+ "time": "2026-07-12T23:00:05",
  "usdc": 121.81,
- "portfolio": 576.04,
+ "portfolio": 574.72,
  "margin_headroom": 312.78,
  "open": [
   "BTC long +1.8%",
-  "LINK long +4.0%",
+  "LINK long +3.3%",
   "CRCL long +0.6%",
-  "SOL long +0.3%",
-  "ETH long -0.6%"
+  "SOL long -0.2%",
+  "ETH long -0.9%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "ANTHROPIC -10.8% vol=$8,993",
-  "AVA -4.5% vol=$3,040,385",
-  "SN +3.3% vol=$86,765",
-  "CV +3.1% vol=$16,064",
-  "DYD +1.9% vol=$176,156"
+  "ANTHROPIC -7.6% vol=$8,732",
+  "SN +6.0% vol=$94,895",
+  "AVA -4.1% vol=$2,997,148",
+  "DYD +2.0% vol=$168,186",
+  "CV +1.7% vol=$18,340"
  ],
  "futures_ok": true,
- "futures_balance": 60.83,
+ "futures_balance": 60.74,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במניה: ANTHROPIC, AVA, SN",
+ "call_reason": "תנועה חזקה במניה: ANTHROPIC, SN, AVA",
  "claude_called": true,
- "market_read": "השוק נסחר בטווח צר עם רוב המטבעות ניטרליים-מעט שליליים, אך כמה שמות מציגים oversold ברור עם נפח סביר לכניסה.",
- "skip_reason": "ADA/CC/LTC נראים דומים אך עם נפח נמוך יותר או היסטוריה חלשה יותר בלי שיפור טכני משמעותי, ומניות ה-xStock הזמינות חסרות מומנטום או נפח ברור לכיוון מסחר.",
+ "market_read": "השוק הכללי רגוע יחסית עם BTC כמעט שטוח, אבל כמה אלטים נמצאים באזור oversold ברור שמציע כניסה טובה.",
+ "skip_reason": "ADA ו-DOGE oversold גם הם אך עם היסטוריית הפסדים משמעותית או נפח נמוך מדי, ומניות ה-xStocks היום לא מציגות סטאפ ברור מספיק לטרייד חדש.",
  "picks": [
   "XRP long size=20% conf=MEDIUM"
  ],
