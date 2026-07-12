@@ -1,35 +1,32 @@
 {
- "time": "2026-07-12T18:00:05",
+ "time": "2026-07-12T19:00:05",
  "usdc": 121.89,
- "portfolio": 571.47,
+ "portfolio": 572.38,
  "margin_headroom": 312.78,
  "open": [
-  "BTC long +2.1%",
+  "BTC long +2.2%",
   "LINK long +3.9%",
   "NVDA long +1.0%",
   "CRCL long +0.6%",
-  "SOL long +0.6%",
-  "ETH long -0.1%"
+  "SOL long +0.9%",
+  "ETH long +0.1%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
   "ANTHROPIC -10.8% vol=$8,993",
-  "SN +5.6% vol=$80,776",
-  "AVA -4.9% vol=$2,846,920",
-  "DYD +2.6% vol=$196,729",
-  "NVDA +1.7% vol=$33,584"
+  "SN +5.8% vol=$80,554",
+  "AVA -4.3% vol=$2,873,592",
+  "DYD +2.8% vol=$200,736",
+  "CV -2.3% vol=$15,791"
  ],
  "futures_ok": true,
- "futures_balance": 54.42,
+ "futures_balance": 54.67,
  "unallocated_spot": [],
  "call_reason": "תנועה חזקה במניה: ANTHROPIC, SN, AVA",
  "claude_called": true,
- "market_read": "השוק הכללי יציב עם BTC ליד 64K וללא כיוון חד, אבל כמה אלטקוינים מציגים תנאי oversold ברורים לניתור טכני קצר.",
- "skip_reason": "שאר המועמדים (ADA, ETH, SOL) כבר לא בקצה קיצוני של RSI או שכבר פתוחים בפוזיציה קיימת, ומניות כמו ANTHROPIC/AVA סובלות מנפח נמוך או חוסר אינדיקטורים ברורים לכיוון.",
+ "market_read": "השוק במגמת עלייה מתונה עם BTC מוביל ברוגע יחסי בעוד אלטים ומניות מציגים תנודתיות ללא כיוון ברור.",
+ "skip_reason": "שאר המועמדים (DOT,BNB) בעלי נפח מסחר נמוך מדי, ומניות הפני חדשות דלילות מדי בנזילות כדי להצדיק פתיחת פוזיציה חדשה מעבר לפוזיציות הקיימות.",
  "picks": [
-  "DOT long size=20% conf=MEDIUM"
- ],
- "order_errors": [
-  "DOT: Kraken: ['EOrder:Invalid leverage']"
+  "BTC long size=20% conf=MEDIUM"
  ]
 }
