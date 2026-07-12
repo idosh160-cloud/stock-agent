@@ -1,37 +1,28 @@
 {
- "time": "2026-07-12T10:00:04",
+ "time": "2026-07-12T11:00:05",
  "usdc": 129.45,
- "portfolio": 573.9,
+ "portfolio": 573.57,
  "margin_headroom": 339.64,
  "open": [
-  "BTC long +1.9%",
-  "LINK long +3.9%",
-  "NVDA long +0.2%",
+  "BTC long +1.8%",
+  "LINK long +3.8%",
+  "NVDA long +0.0%",
   "CRCL long -0.1%"
  ],
  "stock_candidates": 17,
  "top_stocks": [
   "ANTHROPIC -7.6% vol=$11,241",
-  "AVA -4.2% vol=$2,580,864",
-  "DYD +2.7% vol=$131,048",
-  "ZR -2.6% vol=$7,884",
-  "IM -2.4% vol=$51,146"
+  "AVA -4.5% vol=$2,595,987",
+  "IM -2.8% vol=$48,325",
+  "DYD +2.6% vol=$132,179",
+  "ZR -2.6% vol=$7,884"
  ],
  "futures_ok": true,
- "futures_balance": 52.82,
+ "futures_balance": 53.03,
  "unallocated_spot": [
   "ETH $359"
  ],
- "call_reason": "תנועה חזקה במניה: ANTHROPIC, AVA, DYD",
- "claude_called": true,
- "market_read": "השוק הרחב שקט יחסית עם BTC בטווח צר, אבל יש הזדמנויות ברורות באלטים - XMR במומנטום עולה ו-DOT ב-oversold לריבאונד.",
- "skip_reason": "ETH הפאסיבי נשאר כפי שהוא כי הסיגנלים שם נייטרליים-שליליים (MACD שלילי חזק) ולא מצדיקים הוספה או מכירה כרגע; שאר המועמדים (ADA, DOGE, XRP, LTC) חלשים או ללא מומנטום ברור.",
- "picks": [
-  "XMR long size=25% conf=HIGH",
-  "DOT long size=18% conf=MEDIUM"
- ],
- "order_errors": [
-  "XMR: Kraken: ['EOrder:Insufficient funds']",
-  "DOT: Kraken: ['EOrder:Invalid leverage']"
- ]
+ "call_reason": "תנועה חזקה במניה: ANTHROPIC, AVA, IM",
+ "claude_called": false,
+ "skip": "snapshot זהה לקריאה הקודמת"
 }
