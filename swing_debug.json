@@ -1,32 +1,37 @@
 {
- "time": "2026-07-12T19:00:05",
- "usdc": 121.89,
- "portfolio": 572.38,
+ "time": "2026-07-12T20:00:05",
+ "usdc": 121.87,
+ "portfolio": 572.56,
  "margin_headroom": 312.78,
  "open": [
-  "BTC long +2.2%",
-  "LINK long +3.9%",
+  "BTC long +2.4%",
+  "LINK long +4.5%",
   "NVDA long +1.0%",
   "CRCL long +0.6%",
-  "SOL long +0.9%",
-  "ETH long +0.1%"
+  "SOL long +1.0%",
+  "ETH long +0.0%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
   "ANTHROPIC -10.8% vol=$8,993",
-  "SN +5.8% vol=$80,554",
-  "AVA -4.3% vol=$2,873,592",
-  "DYD +2.8% vol=$200,736",
-  "CV -2.3% vol=$15,791"
+  "SN +4.7% vol=$86,888",
+  "AVA -4.2% vol=$2,901,916",
+  "DYD +2.1% vol=$199,678",
+  "NVDA +1.7% vol=$33,584"
  ],
  "futures_ok": true,
- "futures_balance": 54.67,
+ "futures_balance": 54.85,
  "unallocated_spot": [],
  "call_reason": "תנועה חזקה במניה: ANTHROPIC, SN, AVA",
  "claude_called": true,
- "market_read": "השוק במגמת עלייה מתונה עם BTC מוביל ברוגע יחסי בעוד אלטים ומניות מציגים תנודתיות ללא כיוון ברור.",
- "skip_reason": "שאר המועמדים (DOT,BNB) בעלי נפח מסחר נמוך מדי, ומניות הפני חדשות דלילות מדי בנזילות כדי להצדיק פתיחת פוזיציה חדשה מעבר לפוזיציות הקיימות.",
+ "market_read": "השוק הכללי חיובי בעדינות עם BTC ורוב האלטים במגמת עלייה מתונה תוך RSI לא קיצוני, מה שמאפשר כניסות מומנטום נוספות בלי לרדוף אחרי מהלכים שמוצו.",
+ "skip_reason": "שאר הצמדים/מניות או ללא נזילות מספקת (ANTHROPIC, SN) או ללא איתות טכני ברור (CC, ADA, ETH/LINK/BTC כבר מוחזקים ומתקדמים יפה ליעד).",
  "picks": [
-  "BTC long size=20% conf=MEDIUM"
+  "BNB long size=20% conf=MEDIUM",
+  "DOT long size=15% conf=MEDIUM"
+ ],
+ "order_errors": [
+  "BNB: Kraken: ['EOrder:Insufficient funds']",
+  "DOT: Kraken: ['EOrder:Invalid leverage']"
  ]
 }
