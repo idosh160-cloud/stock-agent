@@ -1,28 +1,35 @@
 {
- "time": "2026-07-12T11:00:05",
- "usdc": 129.45,
- "portfolio": 573.57,
+ "time": "2026-07-12T12:00:05",
+ "usdc": 129.43,
+ "portfolio": 574.83,
  "margin_headroom": 339.64,
  "open": [
-  "BTC long +1.8%",
-  "LINK long +3.8%",
-  "NVDA long +0.0%",
+  "BTC long +2.0%",
+  "LINK long +3.9%",
+  "NVDA long -0.5%",
   "CRCL long -0.1%"
  ],
  "stock_candidates": 17,
  "top_stocks": [
   "ANTHROPIC -7.6% vol=$11,241",
-  "AVA -4.5% vol=$2,595,987",
-  "IM -2.8% vol=$48,325",
-  "DYD +2.6% vol=$132,179",
-  "ZR -2.6% vol=$7,884"
+  "AVA -4.3% vol=$2,582,186",
+  "DYD +3.5% vol=$131,227",
+  "ZR -2.6% vol=$7,884",
+  "SN +1.9% vol=$87,505"
  ],
  "futures_ok": true,
- "futures_balance": 53.03,
+ "futures_balance": 53.45,
  "unallocated_spot": [
   "ETH $359"
  ],
- "call_reason": "תנועה חזקה במניה: ANTHROPIC, AVA, IM",
- "claude_called": false,
- "skip": "snapshot זהה לקריאה הקודמת"
+ "call_reason": "תנועה חזקה במניה: ANTHROPIC, AVA, DYD",
+ "claude_called": true,
+ "market_read": "השוק בטווח נייטרלי-מעורב, BTC מתקרר אחרי עלייה חדה, ואלטים כמו SOL מראים סימני התאוששות מוקדמים בלי היות oversold קיצוני.",
+ "skip_reason": "XMR ו-BNB מעניינים אך נפח המסחר שלהם נמוך מדי לביטחון בכניסה גדולה, ו-ADA למרות RSI נמוך יחסית עדיין לא oversold מספיק לאור ההיסטוריה החלשה שלו; מניות ה-xStocks (ANTHROPIC, AVA) חסרות נתוני RSI ברורים לקביעת exhaustion אמיתי.",
+ "picks": [
+  "SOL long size=30% conf=MEDIUM"
+ ],
+ "order_errors": [
+  "liq ETH: all sizes rejected (margin collateral lock)"
+ ]
 }
