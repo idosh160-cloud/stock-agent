@@ -1,35 +1,34 @@
 {
- "time": "2026-07-12T14:00:05",
+ "time": "2026-07-12T15:00:05",
  "usdc": 128.23,
- "portfolio": 575.2,
+ "portfolio": 578.55,
  "margin_headroom": 317.26,
  "open": [
-  "BTC long +2.0%",
-  "LINK long +4.2%",
-  "NVDA long +0.2%",
-  "CRCL long -0.1%",
-  "SOL long +0.3%"
+  "BTC long +2.3%",
+  "LINK long +4.7%",
+  "NVDA long +0.4%",
+  "CRCL long +0.6%",
+  "SOL long +0.9%"
  ],
- "stock_candidates": 17,
+ "stock_candidates": 16,
  "top_stocks": [
   "ANTHROPIC -10.8% vol=$8,993",
-  "AVA -4.4% vol=$2,667,447",
-  "ZR -2.3% vol=$7,953",
-  "DYD +2.2% vol=$161,764",
-  "SN +1.8% vol=$83,391"
+  "AVA -4.5% vol=$2,714,276",
+  "DYD +3.6% vol=$167,259",
+  "SN +2.0% vol=$81,852",
+  "IM -1.5% vol=$23,885"
  ],
  "futures_ok": true,
- "futures_balance": 54.52,
+ "futures_balance": 54.82,
  "unallocated_spot": [
-  "ETH $360"
+  "ETH $363"
  ],
- "call_reason": "תנועה חזקה במניה: ANTHROPIC, AVA, ZR",
+ "call_reason": "תנועה חזקה במניה: ANTHROPIC, AVA, DYD",
  "claude_called": true,
- "market_read": "השוק הכללי נייטרלי עם BTC יציב סביב 64K, יש הזדמנויות ספציפיות של מיין-ריברסל בקוינים קטנים יותר מאשר טרנד רחב אחיד.",
- "skip_reason": "שאר המטבעות והמניות מוצגים בנפח מסחר נמוך מדי (BNB, XMR מתחת ל-50K) או ללא נתוני RSI/BB אמינים (AVA, ANTHROPIC) כדי להצדיק כניסה חדשה מעבר לפוזיציות הקיימות שכבר בדרך ליעד.",
+ "market_read": "השוק הכללי חיובי בקריפטו עם מומנטום עולה ב-BTC/ETH/LINK, אבל רוב הנכסים הגדולים כבר קרובים לרוויה עליונה ומחפשים המשך זהיר.",
+ "skip_reason": "ETH הפאסיבי ממשיך לנוע חיובי עם MACD חזק ו-RSI לא קיצוני, לכן משאיר אותו כפוזיציה עצמאית ולא מגייס ממנו כרגע; שאר המועמדים (LINK, ETH, BNB, CC) כבר קרובים ל-BB עליון עם RSI מוגזם - לא כדאי להיכנס לונג נוסף שם, וגם אין נפח מספיק ב-ANTHROPIC לשורט.",
  "picks": [
-  "CC short size=20% conf=MEDIUM",
-  "DOT long size=15% conf=MEDIUM"
+  "DOT long size=20% conf=MEDIUM"
  ],
  "order_errors": [
   "DOT: Kraken: ['EOrder:Invalid leverage']"
