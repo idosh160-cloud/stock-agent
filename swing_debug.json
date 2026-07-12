@@ -1,37 +1,31 @@
 {
- "time": "2026-07-12T20:00:05",
- "usdc": 121.87,
- "portfolio": 572.56,
+ "time": "2026-07-12T21:00:06",
+ "usdc": 121.81,
+ "portfolio": 571.98,
  "margin_headroom": 312.78,
  "open": [
-  "BTC long +2.4%",
-  "LINK long +4.5%",
-  "NVDA long +1.0%",
+  "BTC long +2.3%",
+  "LINK long +4.6%",
   "CRCL long +0.6%",
-  "SOL long +1.0%",
+  "SOL long +0.8%",
   "ETH long +0.0%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
   "ANTHROPIC -10.8% vol=$8,993",
-  "SN +4.7% vol=$86,888",
-  "AVA -4.2% vol=$2,901,916",
-  "DYD +2.1% vol=$199,678",
-  "NVDA +1.7% vol=$33,584"
+  "AVA -4.3% vol=$2,942,895",
+  "SN +4.1% vol=$86,839",
+  "DYD +2.6% vol=$186,956",
+  "CV +1.8% vol=$18,217"
  ],
  "futures_ok": true,
- "futures_balance": 54.85,
+ "futures_balance": 61.2,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במניה: ANTHROPIC, SN, AVA",
+ "call_reason": "תנועה חזקה במניה: ANTHROPIC, AVA, SN",
  "claude_called": true,
- "market_read": "השוק הכללי חיובי בעדינות עם BTC ורוב האלטים במגמת עלייה מתונה תוך RSI לא קיצוני, מה שמאפשר כניסות מומנטום נוספות בלי לרדוף אחרי מהלכים שמוצו.",
- "skip_reason": "שאר הצמדים/מניות או ללא נזילות מספקת (ANTHROPIC, SN) או ללא איתות טכני ברור (CC, ADA, ETH/LINK/BTC כבר מוחזקים ומתקדמים יפה ליעד).",
+ "market_read": "השוק בעלייה מתונה עם ביטקוין מוביל מומנטום חזק בעוד רוב האלטקוינים והמניות בטווח ניטרלי-חלש ללא איתות ברור.",
+ "skip_reason": "ADA ו-LTC נמצאים במגמה חלשה עם RSI לא קיצוני מספיק, ומניות כמו ANTHROPIC ו-AVA סובלות מווליום נמוך או חוסר אישור טכני ברור - לא מצדיק פוזיציה חדשה מעבר לתוספת על BTC.",
  "picks": [
-  "BNB long size=20% conf=MEDIUM",
-  "DOT long size=15% conf=MEDIUM"
- ],
- "order_errors": [
-  "BNB: Kraken: ['EOrder:Insufficient funds']",
-  "DOT: Kraken: ['EOrder:Invalid leverage']"
+  "BTC long size=20% conf=MEDIUM"
  ]
 }
