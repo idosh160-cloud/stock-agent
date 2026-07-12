@@ -1,35 +1,35 @@
 {
- "time": "2026-07-12T17:00:05",
+ "time": "2026-07-12T18:00:05",
  "usdc": 121.89,
- "portfolio": 572.43,
+ "portfolio": 571.47,
  "margin_headroom": 312.78,
  "open": [
-  "BTC long +2.3%",
-  "LINK long +4.5%",
+  "BTC long +2.1%",
+  "LINK long +3.9%",
   "NVDA long +1.0%",
   "CRCL long +0.6%",
-  "SOL long +0.9%",
-  "ETH long +0.0%"
+  "SOL long +0.6%",
+  "ETH long -0.1%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
   "ANTHROPIC -10.8% vol=$8,993",
-  "AVA -4.8% vol=$2,811,010",
-  "DYD +3.6% vol=$179,090",
-  "SN +2.9% vol=$76,910",
-  "NVDA +1.9% vol=$33,604"
+  "SN +5.6% vol=$80,776",
+  "AVA -4.9% vol=$2,846,920",
+  "DYD +2.6% vol=$196,729",
+  "NVDA +1.7% vol=$33,584"
  ],
  "futures_ok": true,
- "futures_balance": 54.71,
+ "futures_balance": 54.42,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במניה: ANTHROPIC, AVA, DYD",
+ "call_reason": "תנועה חזקה במניה: ANTHROPIC, SN, AVA",
  "claude_called": true,
- "market_read": "השוק בסך הכל חיובי מתון עם רוב הקריפטו במגמת עלייה קלה ללא קיצוניות בקנייה יתר, מה שמאפשר כניסות לונג סבירות.",
- "skip_reason": "DOT נפחו נמוך מדי (מתחת ל-50k) למרות שהוא oversold, ומניות כמו ANTHROPIC סובלות מנפח מסחר זעום מדי לביצוע עסקה בטוחה.",
+ "market_read": "השוק הכללי יציב עם BTC ליד 64K וללא כיוון חד, אבל כמה אלטקוינים מציגים תנאי oversold ברורים לניתור טכני קצר.",
+ "skip_reason": "שאר המועמדים (ADA, ETH, SOL) כבר לא בקצה קיצוני של RSI או שכבר פתוחים בפוזיציה קיימת, ומניות כמו ANTHROPIC/AVA סובלות מנפח נמוך או חוסר אינדיקטורים ברורים לכיוון.",
  "picks": [
-  "BNB long size=20% conf=MEDIUM"
+  "DOT long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "BNB: Kraken: ['EOrder:Insufficient funds']"
+  "DOT: Kraken: ['EOrder:Invalid leverage']"
  ]
 }
