@@ -1,37 +1,37 @@
 {
- "time": "2026-07-12T03:00:04",
- "usdc": 129.57,
- "portfolio": 574.67,
+ "time": "2026-07-12T04:00:04",
+ "usdc": 129.55,
+ "portfolio": 576.77,
  "margin_headroom": 339.64,
  "open": [
-  "BTC long +2.1%",
-  "LINK long +3.2%",
+  "BTC long +2.3%",
+  "LINK long +3.9%",
   "NVDA long -1.2%",
   "CRCL long -0.1%"
  ],
  "stock_candidates": 18,
  "top_stocks": [
-  "SN +5.6% vol=$105,377",
+  "SN +7.0% vol=$105,954",
   "IOT -4.0% vol=$5,995",
-  "AVA -3.4% vol=$1,273,939",
-  "IM -1.6% vol=$48,712",
-  "CF +1.4% vol=$9,597"
+  "AVA -3.0% vol=$1,278,123",
+  "CF +2.8% vol=$9,912",
+  "CV +1.2% vol=$9,859"
  ],
  "futures_ok": true,
- "futures_balance": 52.76,
+ "futures_balance": 53.53,
  "unallocated_spot": [
-  "ETH $360"
+  "ETH $361"
  ],
  "call_reason": "פוזיציה חלשה: NVDA",
  "claude_called": true,
- "market_read": "שוק קריפטו כללי חלש-ניטרלי, רוב המטבעות קרובים לתחתית הבולינגר — סביבה טובה לקניית דיפים סלקטיביים ולא למומנטום עולה.",
- "skip_reason": "ETH ניטרלי (RSI 50, MACD מעט שלילי) אך מהווה החזקה סבירה — לא מספיק חלש כדי לחסל וגם לא סטאפ מספיק חזק לתגבור; שאר המניות (NVDA/CRCL/BTC/LINK) כבר בפוזיציה, ומועמדים כמו XMR קרוב לפסגה ו-ADA היסטוריה חלשה נדחו לטובת ה-oversold החזקים יותר.",
+ "market_read": "השוק ניטרלי-חיובי, ביטקוין יציב ואלטים אוברסולד נמוכים בטווח — סביבה טובה לקניות דיפ סלקטיביות.",
+ "skip_reason": "פוזיציות BTC/LINK רצות לעבר היעד ולא נוגעים בהן; XMR אוברקנוט (RSI 71) עם וולום דק מדי לשורט בטוח; מזומן פנוי ($129) מופנה לשני הדיפים החזקים ביותר במקום להישאר בצד; ETH נשאר כאחזקת ליבה.",
  "picks": [
-  "SOL long size=32% conf=HIGH",
+  "SOL long size=35% conf=HIGH",
   "XRP long size=20% conf=MEDIUM"
  ],
  "skips": [
-  "SOL: risk_manager — חשיפה כוללת תגיע ל-118% > מקסימום 100%",
+  "SOL: risk_manager — חשיפה כוללת תגיע ל-121% > מקסימום 100%",
   "XRP: risk_manager — חשיפה כוללת תגיע ל-106% > מקסימום 100%"
  ]
 }
