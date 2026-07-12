@@ -1,31 +1,34 @@
 {
- "time": "2026-07-12T21:00:06",
+ "time": "2026-07-12T22:00:05",
  "usdc": 121.81,
- "portfolio": 571.98,
+ "portfolio": 576.04,
  "margin_headroom": 312.78,
  "open": [
-  "BTC long +2.3%",
-  "LINK long +4.6%",
+  "BTC long +1.8%",
+  "LINK long +4.0%",
   "CRCL long +0.6%",
-  "SOL long +0.8%",
-  "ETH long +0.0%"
+  "SOL long +0.3%",
+  "ETH long -0.6%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
   "ANTHROPIC -10.8% vol=$8,993",
-  "AVA -4.3% vol=$2,942,895",
-  "SN +4.1% vol=$86,839",
-  "DYD +2.6% vol=$186,956",
-  "CV +1.8% vol=$18,217"
+  "AVA -4.5% vol=$3,040,385",
+  "SN +3.3% vol=$86,765",
+  "CV +3.1% vol=$16,064",
+  "DYD +1.9% vol=$176,156"
  ],
  "futures_ok": true,
- "futures_balance": 61.2,
+ "futures_balance": 60.83,
  "unallocated_spot": [],
  "call_reason": "תנועה חזקה במניה: ANTHROPIC, AVA, SN",
  "claude_called": true,
- "market_read": "השוק בעלייה מתונה עם ביטקוין מוביל מומנטום חזק בעוד רוב האלטקוינים והמניות בטווח ניטרלי-חלש ללא איתות ברור.",
- "skip_reason": "ADA ו-LTC נמצאים במגמה חלשה עם RSI לא קיצוני מספיק, ומניות כמו ANTHROPIC ו-AVA סובלות מווליום נמוך או חוסר אישור טכני ברור - לא מצדיק פוזיציה חדשה מעבר לתוספת על BTC.",
+ "market_read": "השוק נסחר בטווח צר עם רוב המטבעות ניטרליים-מעט שליליים, אך כמה שמות מציגים oversold ברור עם נפח סביר לכניסה.",
+ "skip_reason": "ADA/CC/LTC נראים דומים אך עם נפח נמוך יותר או היסטוריה חלשה יותר בלי שיפור טכני משמעותי, ומניות ה-xStock הזמינות חסרות מומנטום או נפח ברור לכיוון מסחר.",
  "picks": [
-  "BTC long size=20% conf=MEDIUM"
+  "XRP long size=20% conf=MEDIUM"
+ ],
+ "order_errors": [
+  "XRP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
