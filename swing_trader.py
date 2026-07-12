@@ -33,13 +33,13 @@ def _write_debug(d: dict):
 
 SWING_USD         = 100    # ברירת מחדל לעסקת קריפטו אם Claude לא נתן size_pct
 STOCK_MIN_VOL_USD = 5000   # רף נזילות למניה — 20k סינן את רוב ה-xStocks רוב היום; הגודל מוגבל יחסית לנפח בהמשך
-SWING_USD_STOCK   = 30     # רצפה לעסקת מניה (נושיונל)
+SWING_USD_STOCK   = 100    # רצפה לעסקת מניה (נושיונל) — פוזיציות מתחת ל-$100 לא מזיזות את המחט
 SWING_MAX_STOCK_USD = 450  # תקרת נושיונל לעסקת מניה (עם מינוף x3 = ~$150 מרג'ין)
 MAX_HOLD_HOURS      = 48   # סווינג שעתי/יומי — פוזיציה מעבר לזה בלי התקדמות היא הון תקוע
 STALE_EXIT_MIN_PNL  = 1.0  # מתחת ל-+1% אחרי MAX_HOLD_HOURS → סוגרים ומשחררים הון
 STOCK_LEVERAGE    = 3      # מינוף יעד על מניות (Perps) — אגרסיבי אך לא פרוע
 SWING_PCT_DEFAULT = 0.15   # 15% מהתיק אם אין size_pct מ-Claude
-SWING_MIN_USD     = 30     # רצפה — מגבלת קרקן
+SWING_MIN_USD     = 100    # רצפת גודל פוזיציה — הבעלים לא רוצה עסקאות קטנות שלא משנות כלום
 SWING_MAX_USD     = 500    # תקרה לעסקה בודדת
 TARGET_PCT        = 0.05   # +5% יעד רווח קריפטו
 TARGET_PCT_STOCK  = 0.07   # +7% יעד רווח xStocks — מניות תנודתיות יכולות לעשות הרבה יותר
@@ -541,7 +541,7 @@ def analyze_with_claude(candidates: list, open_coins: set, usdc: float, btc_pric
     _load_api_key()
     import anthropic
 
-    top_candidates = enrich_with_indicators(candidates[:12])
+    top_candidates = enrich_with_indicators(candidates[:10])
 
     def _indicator_str(c: dict) -> str:
         parts = []
@@ -571,7 +571,7 @@ def analyze_with_claude(candidates: list, open_coins: set, usdc: float, btc_pric
         stock_rows = "\n".join([
             f"  [STOCK] {c['coin']}: ${c['price']:.2f} | {c['change_24h']:+.1f}% | "
             f"range {c['range_24h']:.1f}% | vol ${c['volume_usdc']:,.0f}"
-            for c in stock_candidates[:15]
+            for c in stock_candidates[:10]
         ])
         open_stock_n = len([p for p in (open_positions or []) if p.get("is_stock")])
         stock_note = (
@@ -622,7 +622,7 @@ CAPITAL IS LIMITED. Before concluding "no liquidity, do nothing" — review the 
 If you find a clearly better opportunity but margin/USDC is tight (see PORTFOLIO STATUS), you MAY free capital by
 closing a WEAKER open position to fund it. Set "close_for_rotation" to that coin and explain in "rotation_reason".
 Prefer rotating out of positions that are flat/negative or stalling far from target — never a winner moving toward target.
-TINY POSITIONS ARE DEAD WEIGHT: a position sized under ~$50 barely moves the portfolio even when it wins big. If you
+TINY POSITIONS ARE DEAD WEIGHT: a position sized under ~$100 barely moves the portfolio even when it wins big. If you
 still believe in the trade, REBUILD it at proper size: set "close_for_rotation" to that coin AND pick the SAME coin in
 "picks" with a real size_pct — the close and the re-entry happen in the same cycle. If you no longer believe in it,
 close it and put the capital elsewhere.
@@ -639,6 +639,8 @@ This is reallocatable capital. A large passive holding should either be your hig
 rotated into better setups — crypto OR stocks. To free capital, set "liquidate_spot": [{{"coin": "ETH", "usd": 150, "reason": "..."}}]
 — it sells that much into USDC (available for entries next cycle). Max 2 liquidations, max $300 each. If a holding IS
 the best place for the money right now, leave it and say so in skip_reason.
+NOTE: while leveraged positions are open, Kraken may lock spot as collateral — a liquidation can be rejected or only
+partially fill. If a liquidation keeps failing, don't repeat it every cycle; work with the free USDC instead.
 """
 
     prompt = f"""You are an expert swing trader covering both crypto and tokenized stocks (xStocks). {datetime.now().strftime('%Y-%m-%d %H:%M')} UTC.
@@ -713,6 +715,7 @@ If nothing looks tradeable at all — return picks as empty array. But remember 
             model="claude-opus-4-8",
             max_tokens=6000,  # חשיבה אדפטיבית נכללת בתקציב — צריך מרווח מעבר ל-JSON עצמו
             thinking={"type": "adaptive"},
+            output_config={"effort": "medium"},  # הקריאה רצה כל שעה — medium חוסך ~חצי מטוקני החשיבה ($25/M)
             messages=[{"role": "user", "content": prompt}]
         )
         # עם חשיבה מופעלת בלוק הטקסט אינו בהכרח הראשון — חפש אותו במפורש
@@ -1350,7 +1353,7 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
             return True, f"תנועה חזקה במניה: {coins}"
         # דוקטרינת תיק-מושקע-תמיד: USDC הוא צינור המרה, לא עמדה. כל סכום שאפשר
         # לפתוח בו עסקה (מעל מינימום קרקן) מפעיל סריקה — ה-snapshot מונע ספam
-        if usdc >= SWING_MIN_USD and tradeable and len(open_swings) < MAX_OPEN:
+        if usdc >= 30 and tradeable and len(open_swings) < MAX_OPEN:
             return True, f"USDC ${usdc:.0f} לא מושקע — מחפש לו בית (תיק מושקע תמיד)"
         return False, "הכל שקט — דולג על קריאה לClaude"
 

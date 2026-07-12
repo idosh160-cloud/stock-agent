@@ -11,7 +11,8 @@ DIR = os.path.dirname(os.path.abspath(__file__))
 DRAWDOWN_FILE = os.path.join(DIR, "daily_drawdown.json")
 
 # ── חוקים קשיחים (מנדט אגרסיבי — הבעלים אישר סיכון מלא של התיק) ─────────────
-MAX_PORTFOLIO_RISK_PCT = 1.00   # עד 100% מהתיק בסיכון
+MAX_PORTFOLIO_RISK_PCT = 3.00   # תקרת נושיונל: 300% מההון. החשיפה נמדדת בנושיונל (כולל מינוף),
+                                # אז 100% אסר מתמטית על שימוש במינוף — קלוד נחסם לילה שלם על SOL/XRP
 MAX_SINGLE_ASSET_PCT   = 0.50   # עד 50% מהתיק בנכס אחד — ריכוז בסטאפים הכי טובים
 MAX_DAILY_DRAWDOWN_PCT = 0.20   # kill-switch: עצור הכל אם ירדנו 20% ביום (הגנת קטסטרופה בלבד)
 MIN_FREE_MARGIN_USD    = 15     # רזרבת מרג'ין מינימלית
