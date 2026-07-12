@@ -1,38 +1,41 @@
 {
- "time": "2026-07-11T23:00:05",
- "usdc": 123.7,
- "portfolio": 568.32,
- "margin_headroom": 324.25,
+ "time": "2026-07-12T00:00:09",
+ "usdc": 123.68,
+ "portfolio": 559.93,
+ "margin_headroom": 339.64,
  "open": [
-  "SOL long +8.0%",
-  "BTC long +2.3%",
-  "LINK long +3.6%",
-  "TSLA long +1.1%",
-  "AVA long +0.0%",
+  "BTC long +1.7%",
+  "LINK long +2.4%",
+  "AVA long -1.9%",
   "NVDA long -0.6%",
   "CRCL long +0.1%"
  ],
  "stock_candidates": 19,
  "top_stocks": [
-  "CF +4.2% vol=$10,053",
-  "DYD -2.3% vol=$173,951",
-  "IM -2.2% vol=$38,850",
-  "MSTR +1.3% vol=$16,388",
-  "CV +1.2% vol=$6,929"
+  "CF +3.5% vol=$9,053",
+  "IOT -3.1% vol=$6,036",
+  "IM -3.1% vol=$43,285",
+  "AVA -2.8% vol=$983,678",
+  "DYD -2.7% vol=$178,632"
  ],
  "futures_ok": true,
- "futures_balance": 50.17,
+ "futures_balance": 51.03,
  "unallocated_spot": [
-  "ETH $361"
+  "ETH $357"
  ],
- "call_reason": "תנועה חזקה במניה: CF, DYD, IM",
+ "call_reason": "פוזיציה חלשה: AVA",
  "claude_called": true,
- "market_read": "שוק צ'ופי — רוב המטבעות RSI 45-55 עם MACD שלילי קל, אין מגמה ברורה, הפוזיציות הפתוחות ירוקות ומתקדמות ליעד.",
- "skip_reason": "רוב המועמדים תקועים באמצע הטווח בלי אדג' ברור וללא נפח, וה-ETH הספוט הוא ההחזקה הגדולה שאשאיר כליבה כי אין אלטרנטיבה חזקה מספיק להצדיק מכירה בשוק חסר מגמה.",
+ "market_read": "שוק הקריפטו במצב חולשה כללי אך רבים מהנכסים עמוק ב-oversold ליד תמיכה — סביבה של ריבאונדים סלקטיביים ולא רכישה רחבה.",
+ "skip_reason": "רוב שאר המועמדים או בעלי וולום נמוך מדי (CC, BNB, LTC) או במצב ניטרלי/choppy ללא edge ברור, והמניות זזות איטי מדי מכדי להצדיק תעדוף על פני הריבאונדים ב-SOL ו-XRP.",
  "picks": [
-  "XMR long size=22% conf=MEDIUM"
+  "SOL long size=32% conf=HIGH",
+  "XRP long size=18% conf=MEDIUM"
+ ],
+ "order_errors": [
+  "liq ETH: all sizes rejected (margin collateral lock)"
  ],
  "skips": [
-  "XMR: risk_manager — חשיפה כוללת תגיע ל-164% > מקסימום 100%"
+  "SOL: risk_manager — חשיפה כוללת תגיע ל-136% > מקסימום 100%",
+  "XRP: risk_manager — חשיפה כוללת תגיע ל-122% > מקסימום 100%"
  ]
 }
