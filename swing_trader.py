@@ -712,10 +712,10 @@ If nothing looks tradeable at all — return picks as empty array. But remember 
     try:
         client = anthropic.Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY", ""))
         msg = client.messages.create(
-            model="claude-opus-4-8",
+            model="claude-sonnet-5",  # הקריאה השעתית — Sonnet 5 קרוב ל-Opus במשימה מובנית כזו, בשליש עלות
             max_tokens=6000,  # חשיבה אדפטיבית נכללת בתקציב — צריך מרווח מעבר ל-JSON עצמו
             thinking={"type": "adaptive"},
-            output_config={"effort": "medium"},  # הקריאה רצה כל שעה — medium חוסך ~חצי מטוקני החשיבה ($25/M)
+            output_config={"effort": "medium"},
             messages=[{"role": "user", "content": prompt}]
         )
         # עם חשיבה מופעלת בלוק הטקסט אינו בהכרח הראשון — חפש אותו במפורש
@@ -1311,7 +1311,19 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
 
     open_coins_set = {t["coin"] for t in open_swings}
 
-    # סינון חכם — קרא לClaude רק אם יש סיגנל אמיתי
+    # סינון חכם — קרא לClaude רק אם יש סיגנל אמיתי.
+    # קצב דו-שלבי: טריגרים חזקים (הגנה/תנועה) → כל שעה; חלשים (מזומן/RSI) → לכל היותר כל שעתיים.
+    def _claude_cooldown_ok(seconds: int = 7000) -> bool:
+        try:
+            ts_f = os.path.join(DIR, "last_claude_call.txt")
+            if not os.path.exists(ts_f):
+                return True
+            with open(ts_f) as f:
+                age = (datetime.now() - datetime.fromisoformat(f.read().strip())).total_seconds()
+            return age >= seconds
+        except Exception:
+            return True
+
     def _should_call_claude(candidates: list, open_swings: list) -> tuple[bool, str]:
         # פוזיציה עם בעיה — P&L שלילי מעל 1% או קרובה לסטופ
         weak = [t for t in open_swings if t.get("pnl_pct", 0) < -1.0]
@@ -1339,6 +1351,8 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
             return True, f"תנועה חזקה במטבע חדש: {coins}{tag}"
         extreme_rsi = [c for c in tradeable if c.get("rsi") and (c["rsi"] < rsi_lo or c["rsi"] > rsi_hi)]
         if extreme_rsi:
+            if not _claude_cooldown_ok():
+                return False, "RSI קיצוני אבל בקירור דו-שעתי (טריגר חלש)"
             coins = ", ".join(c["coin"] for c in extreme_rsi[:3])
             return True, f"RSI קיצוני: {coins}"
         # מניות (xStocks) — הסינון למעלה בודק רק קריפטו; בלעדי זה סטאפ מניות
@@ -1352,8 +1366,10 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
             coins = ", ".join(c["coin"] for c in stock_movers[:3])
             return True, f"תנועה חזקה במניה: {coins}"
         # דוקטרינת תיק-מושקע-תמיד: USDC הוא צינור המרה, לא עמדה. כל סכום שאפשר
-        # לפתוח בו עסקה (מעל מינימום קרקן) מפעיל סריקה — ה-snapshot מונע ספam
+        # לפתוח בו עסקה מפעיל סריקה — אבל כטריגר חלש, לכל היותר אחת לשעתיים
         if usdc >= 30 and tradeable and len(open_swings) < MAX_OPEN:
+            if not _claude_cooldown_ok():
+                return False, f"USDC ${usdc:.0f} ממתין אבל בקירור דו-שעתי (טריגר חלש)"
             return True, f"USDC ${usdc:.0f} לא מושקע — מחפש לו בית (תיק מושקע תמיד)"
         return False, "הכל שקט — דולג על קריאה לClaude"
 
@@ -1410,6 +1426,11 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
         pass
 
     logging.info(f"[Swing] קורא לClaude: {call_reason}")
+    try:
+        with open(os.path.join(DIR, "last_claude_call.txt"), "w") as f:
+            f.write(datetime.now().isoformat())
+    except Exception:
+        pass
     analysis    = analyze_with_claude(candidates, open_coins, usdc, btc_price, stock_candidates, open_swings, portfolio_summary, spot_holdings)
     market_read = analysis.get("market_read", "")
     skip_reason = analysis.get("skip_reason", "")
