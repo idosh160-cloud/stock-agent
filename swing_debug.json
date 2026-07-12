@@ -1,37 +1,40 @@
 {
- "time": "2026-07-12T06:00:04",
+ "time": "2026-07-12T07:00:04",
  "usdc": 129.52,
- "portfolio": 575.03,
+ "portfolio": 572.58,
  "margin_headroom": 339.64,
  "open": [
-  "BTC long +1.9%",
-  "LINK long +3.5%",
-  "NVDA long -0.3%",
+  "BTC long +1.6%",
+  "LINK long +2.7%",
+  "NVDA long +0.1%",
   "CRCL long -0.1%"
  ],
  "stock_candidates": 18,
  "top_stocks": [
-  "SN +5.3% vol=$106,139",
-  "IOT -4.0% vol=$5,995",
-  "AVA -3.8% vol=$1,677,113",
-  "DYD +3.4% vol=$146,353",
-  "ST +2.6% vol=$72,812"
+  "AVA -5.2% vol=$2,238,880",
+  "SN +5.0% vol=$107,320",
+  "IOT -4.7% vol=$5,021",
+  "DYD +2.8% vol=$135,570",
+  "ST +2.4% vol=$74,044"
  ],
  "futures_ok": true,
- "futures_balance": 53.7,
+ "futures_balance": 52.94,
  "unallocated_spot": [
-  "ETH $359"
+  "ETH $358"
  ],
- "call_reason": "תנועה חזקה במניה: SN, IOT, AVA",
+ "call_reason": "תנועה חזקה במניה: AVA, SN, IOT",
  "claude_called": true,
- "market_read": "שוק קריפטו בהתקררות/דחיסה עם כמה נכסים אוברסולד ליד תמיכות — סביבה טובה לקנות דיפים סלקטיביים.",
- "skip_reason": "דחיתי את ADA (היסטוריה חלשה), BNB/LTC (וולום נמוך), ואת המניות (טווחים צרים ללא אדג' ברור); את ETH הספוט אני משאיר כי ה-USDC מספיק למימון הכניסות החדשות.",
+ "market_read": "השוק בסנטימנט risk-off עם ביטקוין וכל האלטים ליד תחתית הבולינגר — סביבה קלאסית לקניית דיפים אוברסולד סלקטיביים.",
+ "skip_reason": "ADA/DOT/DOGE אוברסולד אך עם וולום נמוך או היסטוריה חלשה; מניות (NVDA/CRCL) כבר בפוזיציה; ETH מוחזק חלקית ורצוי לגלגל חלקו.",
  "picks": [
-  "SOL long size=40% conf=HIGH",
+  "SOL long size=35% conf=HIGH",
   "XRP long size=20% conf=MEDIUM"
  ],
+ "order_errors": [
+  "liq ETH: all sizes rejected (margin collateral lock)"
+ ],
  "skips": [
-  "SOL: risk_manager — חשיפה כוללת תגיע ל-126% > מקסימום 100%",
-  "XRP: risk_manager — חשיפה כוללת תגיע ל-106% > מקסימום 100%"
+  "SOL: risk_manager — חשיפה כוללת תגיע ל-122% > מקסימום 100%",
+  "XRP: risk_manager — חשיפה כוללת תגיע ל-107% > מקסימום 100%"
  ]
 }
