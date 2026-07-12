@@ -1,33 +1,35 @@
 {
- "time": "2026-07-12T16:00:05",
- "usdc": 128.2,
- "portfolio": 578.56,
- "margin_headroom": 317.26,
+ "time": "2026-07-12T17:00:05",
+ "usdc": 121.89,
+ "portfolio": 572.43,
+ "margin_headroom": 312.78,
  "open": [
   "BTC long +2.3%",
-  "LINK long +4.3%",
+  "LINK long +4.5%",
   "NVDA long +1.0%",
   "CRCL long +0.6%",
-  "SOL long +0.8%"
+  "SOL long +0.9%",
+  "ETH long +0.0%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
   "ANTHROPIC -10.8% vol=$8,993",
-  "AVA -4.6% vol=$2,749,247",
-  "SN +3.4% vol=$76,354",
-  "DYD +3.2% vol=$162,136",
-  "NVDA +1.9% vol=$33,535"
+  "AVA -4.8% vol=$2,811,010",
+  "DYD +3.6% vol=$179,090",
+  "SN +2.9% vol=$76,910",
+  "NVDA +1.9% vol=$33,604"
  ],
  "futures_ok": true,
- "futures_balance": 54.68,
- "unallocated_spot": [
-  "ETH $363"
- ],
- "call_reason": "תנועה חזקה במניה: ANTHROPIC, AVA, SN",
+ "futures_balance": 54.71,
+ "unallocated_spot": [],
+ "call_reason": "תנועה חזקה במניה: ANTHROPIC, AVA, DYD",
  "claude_called": true,
- "market_read": "שוק קריפטו כללי בסנטימנט חיובי מתון עם BTC ו-ETH מובילים במומנטום, סטוקים ברובם רגועים ללא סטאפים חדים.",
- "skip_reason": "שאר המטבעות או דלילי ווליום (DOT, BNB) או overbought בלי אישור חד (CC), והפוזיציות הקיימות כבר בדרך ליעד כך שלא נוגע בהן.",
+ "market_read": "השוק בסך הכל חיובי מתון עם רוב הקריפטו במגמת עלייה קלה ללא קיצוניות בקנייה יתר, מה שמאפשר כניסות לונג סבירות.",
+ "skip_reason": "DOT נפחו נמוך מדי (מתחת ל-50k) למרות שהוא oversold, ומניות כמו ANTHROPIC סובלות מנפח מסחר זעום מדי לביצוע עסקה בטוחה.",
  "picks": [
-  "ETH long size=20% conf=HIGH"
+  "BNB long size=20% conf=MEDIUM"
+ ],
+ "order_errors": [
+  "BNB: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
