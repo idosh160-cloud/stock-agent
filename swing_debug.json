@@ -1,37 +1,40 @@
 {
- "time": "2026-07-12T04:00:04",
- "usdc": 129.55,
- "portfolio": 576.77,
+ "time": "2026-07-12T05:00:04",
+ "usdc": 129.52,
+ "portfolio": 575.73,
  "margin_headroom": 339.64,
  "open": [
-  "BTC long +2.3%",
-  "LINK long +3.9%",
+  "BTC long +2.0%",
+  "LINK long +3.8%",
   "NVDA long -1.2%",
   "CRCL long -0.1%"
  ],
  "stock_candidates": 18,
  "top_stocks": [
-  "SN +7.0% vol=$105,954",
+  "SN +6.3% vol=$106,380",
+  "AVA -4.3% vol=$1,563,847",
   "IOT -4.0% vol=$5,995",
-  "AVA -3.0% vol=$1,278,123",
-  "CF +2.8% vol=$9,912",
-  "CV +1.2% vol=$9,859"
+  "DYD +2.0% vol=$146,212",
+  "ST +2.0% vol=$72,250"
  ],
  "futures_ok": true,
- "futures_balance": 53.53,
+ "futures_balance": 53.77,
  "unallocated_spot": [
-  "ETH $361"
+  "ETH $360"
  ],
  "call_reason": "פוזיציה חלשה: NVDA",
  "claude_called": true,
- "market_read": "השוק ניטרלי-חיובי, ביטקוין יציב ואלטים אוברסולד נמוכים בטווח — סביבה טובה לקניות דיפ סלקטיביות.",
- "skip_reason": "פוזיציות BTC/LINK רצות לעבר היעד ולא נוגעים בהן; XMR אוברקנוט (RSI 71) עם וולום דק מדי לשורט בטוח; מזומן פנוי ($129) מופנה לשני הדיפים החזקים ביותר במקום להישאר בצד; ETH נשאר כאחזקת ליבה.",
+ "market_read": "שוק הקריפטו במצב תיקון — רוב האלטים אוברסולד סמוך לתחתית ה-BB, רק XMR מראה מומנטום עולה אמיתי.",
+ "skip_reason": "BTC/ETH/ADA/XRP/LTC עם MACD שלילי ותנועה צירית ללא אדג' ברור; מניות ה-xStocks בנפח נמוך מדי או תקועות ללא כיוון.",
  "picks": [
-  "SOL long size=35% conf=HIGH",
-  "XRP long size=20% conf=MEDIUM"
+  "SOL long size=30% conf=MEDIUM",
+  "XMR long size=22% conf=MEDIUM"
+ ],
+ "order_errors": [
+  "liq ETH: all sizes rejected (margin collateral lock)"
  ],
  "skips": [
-  "SOL: risk_manager — חשיפה כוללת תגיע ל-121% > מקסימום 100%",
-  "XRP: risk_manager — חשיפה כוללת תגיע ל-106% > מקסימום 100%"
+  "SOL: risk_manager — חשיפה כוללת תגיע ל-116% > מקסימום 100%",
+  "XMR: risk_manager — חשיפה כוללת תגיע ל-108% > מקסימום 100%"
  ]
 }
