@@ -1,40 +1,35 @@
 {
- "time": "2026-07-12T08:00:04",
- "usdc": 129.49,
- "portfolio": 572.94,
+ "time": "2026-07-12T09:00:05",
+ "usdc": 129.45,
+ "portfolio": 574.82,
  "margin_headroom": 339.64,
  "open": [
-  "BTC long +1.8%",
-  "LINK long +3.3%",
+  "BTC long +2.0%",
+  "LINK long +3.8%",
   "NVDA long +0.1%",
   "CRCL long -0.1%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "AVA -5.0% vol=$2,396,602",
-  "SN +3.9% vol=$116,484",
-  "DYD +3.6% vol=$146,662",
-  "ZR -1.9% vol=$7,896",
-  "IM -1.5% vol=$52,648"
+  "AVA -4.7% vol=$2,519,921",
+  "DYD +3.5% vol=$137,019",
+  "SN +3.5% vol=$113,525",
+  "ZR -2.6% vol=$7,884",
+  "IM -1.6% vol=$51,130"
  ],
  "futures_ok": true,
- "futures_balance": 52.58,
+ "futures_balance": 53.15,
  "unallocated_spot": [
-  "ETH $358"
+  "ETH $360"
  ],
- "call_reason": "תנועה חזקה במניה: AVA, SN, DYD",
+ "call_reason": "תנועה חזקה במניה: AVA, DYD, SN",
  "claude_called": true,
- "market_read": "השוק הרחב רך — BTC ורוב האלטים עם MACD שלילי ו-RSI נמוך, כלומר סביבה של מכירת יתר שמזמינה ריבאונדים סלקטיביים ולא רדיפת מומנטום.",
- "skip_reason": "DOT/ADA/DOGE oversold אך עם וולום נמוך יחסית וללא אישור היפוך; המניות שטוחות/דקות נזילות ולכן ללא edge ברור, מעדיף לרכז בשני ריבאונדים הנזילים ביותר.",
+ "market_read": "שוק קריפטו מעורב-חלש — BTC ניטרלי סביב $64K, רוב האלטים תשושים או בטווח דשדוש ללא כיוון ברור.",
+ "skip_reason": "רוב המועמדים דשדוש/מומנטום שלילי (ETH MACD שלילי, DOT/XRP/LTC נזילות נמוכה או ללא אישור); ETH הספוט נשאר כי אין עדיפה מובהקת להחלפה, והפוזיציות הפתוחות רווחיות ומתקדמות ליעד.",
  "picks": [
-  "SOL long size=30% conf=MEDIUM",
-  "XRP long size=20% conf=MEDIUM"
+  "XMR long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)"
- ],
- "skips": [
-  "SOL: risk_manager — חשיפה כוללת תגיע ל-117% > מקסימום 100%",
-  "XRP: risk_manager — חשיפה כוללת תגיע ל-107% > מקסימום 100%"
+  "XMR: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
