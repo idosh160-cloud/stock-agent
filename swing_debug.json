@@ -1,40 +1,40 @@
 {
- "time": "2026-07-12T07:00:04",
- "usdc": 129.52,
- "portfolio": 572.58,
+ "time": "2026-07-12T08:00:04",
+ "usdc": 129.49,
+ "portfolio": 572.94,
  "margin_headroom": 339.64,
  "open": [
-  "BTC long +1.6%",
-  "LINK long +2.7%",
+  "BTC long +1.8%",
+  "LINK long +3.3%",
   "NVDA long +0.1%",
   "CRCL long -0.1%"
  ],
- "stock_candidates": 18,
+ "stock_candidates": 16,
  "top_stocks": [
-  "AVA -5.2% vol=$2,238,880",
-  "SN +5.0% vol=$107,320",
-  "IOT -4.7% vol=$5,021",
-  "DYD +2.8% vol=$135,570",
-  "ST +2.4% vol=$74,044"
+  "AVA -5.0% vol=$2,396,602",
+  "SN +3.9% vol=$116,484",
+  "DYD +3.6% vol=$146,662",
+  "ZR -1.9% vol=$7,896",
+  "IM -1.5% vol=$52,648"
  ],
  "futures_ok": true,
- "futures_balance": 52.94,
+ "futures_balance": 52.58,
  "unallocated_spot": [
   "ETH $358"
  ],
- "call_reason": "תנועה חזקה במניה: AVA, SN, IOT",
+ "call_reason": "תנועה חזקה במניה: AVA, SN, DYD",
  "claude_called": true,
- "market_read": "השוק בסנטימנט risk-off עם ביטקוין וכל האלטים ליד תחתית הבולינגר — סביבה קלאסית לקניית דיפים אוברסולד סלקטיביים.",
- "skip_reason": "ADA/DOT/DOGE אוברסולד אך עם וולום נמוך או היסטוריה חלשה; מניות (NVDA/CRCL) כבר בפוזיציה; ETH מוחזק חלקית ורצוי לגלגל חלקו.",
+ "market_read": "השוק הרחב רך — BTC ורוב האלטים עם MACD שלילי ו-RSI נמוך, כלומר סביבה של מכירת יתר שמזמינה ריבאונדים סלקטיביים ולא רדיפת מומנטום.",
+ "skip_reason": "DOT/ADA/DOGE oversold אך עם וולום נמוך יחסית וללא אישור היפוך; המניות שטוחות/דקות נזילות ולכן ללא edge ברור, מעדיף לרכז בשני ריבאונדים הנזילים ביותר.",
  "picks": [
-  "SOL long size=35% conf=HIGH",
+  "SOL long size=30% conf=MEDIUM",
   "XRP long size=20% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)"
  ],
  "skips": [
-  "SOL: risk_manager — חשיפה כוללת תגיע ל-122% > מקסימום 100%",
+  "SOL: risk_manager — חשיפה כוללת תגיע ל-117% > מקסימום 100%",
   "XRP: risk_manager — חשיפה כוללת תגיע ל-107% > מקסימום 100%"
  ]
 }
