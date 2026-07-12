@@ -1,35 +1,37 @@
 {
- "time": "2026-07-12T09:00:05",
+ "time": "2026-07-12T10:00:04",
  "usdc": 129.45,
- "portfolio": 574.82,
+ "portfolio": 573.9,
  "margin_headroom": 339.64,
  "open": [
-  "BTC long +2.0%",
-  "LINK long +3.8%",
-  "NVDA long +0.1%",
+  "BTC long +1.9%",
+  "LINK long +3.9%",
+  "NVDA long +0.2%",
   "CRCL long -0.1%"
  ],
- "stock_candidates": 16,
+ "stock_candidates": 17,
  "top_stocks": [
-  "AVA -4.7% vol=$2,519,921",
-  "DYD +3.5% vol=$137,019",
-  "SN +3.5% vol=$113,525",
+  "ANTHROPIC -7.6% vol=$11,241",
+  "AVA -4.2% vol=$2,580,864",
+  "DYD +2.7% vol=$131,048",
   "ZR -2.6% vol=$7,884",
-  "IM -1.6% vol=$51,130"
+  "IM -2.4% vol=$51,146"
  ],
  "futures_ok": true,
- "futures_balance": 53.15,
+ "futures_balance": 52.82,
  "unallocated_spot": [
-  "ETH $360"
+  "ETH $359"
  ],
- "call_reason": "תנועה חזקה במניה: AVA, DYD, SN",
+ "call_reason": "תנועה חזקה במניה: ANTHROPIC, AVA, DYD",
  "claude_called": true,
- "market_read": "שוק קריפטו מעורב-חלש — BTC ניטרלי סביב $64K, רוב האלטים תשושים או בטווח דשדוש ללא כיוון ברור.",
- "skip_reason": "רוב המועמדים דשדוש/מומנטום שלילי (ETH MACD שלילי, DOT/XRP/LTC נזילות נמוכה או ללא אישור); ETH הספוט נשאר כי אין עדיפה מובהקת להחלפה, והפוזיציות הפתוחות רווחיות ומתקדמות ליעד.",
+ "market_read": "השוק הרחב שקט יחסית עם BTC בטווח צר, אבל יש הזדמנויות ברורות באלטים - XMR במומנטום עולה ו-DOT ב-oversold לריבאונד.",
+ "skip_reason": "ETH הפאסיבי נשאר כפי שהוא כי הסיגנלים שם נייטרליים-שליליים (MACD שלילי חזק) ולא מצדיקים הוספה או מכירה כרגע; שאר המועמדים (ADA, DOGE, XRP, LTC) חלשים או ללא מומנטום ברור.",
  "picks": [
-  "XMR long size=20% conf=MEDIUM"
+  "XMR long size=25% conf=HIGH",
+  "DOT long size=18% conf=MEDIUM"
  ],
  "order_errors": [
-  "XMR: Kraken: ['EOrder:Insufficient funds']"
+  "XMR: Kraken: ['EOrder:Insufficient funds']",
+  "DOT: Kraken: ['EOrder:Invalid leverage']"
  ]
 }
