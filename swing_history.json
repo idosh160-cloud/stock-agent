@@ -873,5 +873,30 @@
     "entry_bb_pct": null,
     "entry_macd_hist": null,
     "entry_change_24h": null
+  },
+  {
+    "coin": "AVA",
+    "pair": "PF_AVAXUSD",
+    "status": "closed_loss",
+    "leveraged": false,
+    "collateral": 123.17,
+    "volume": 18.86506356,
+    "entry_price": 6.529,
+    "close_price": 6.388,
+    "target_price": 6.92,
+    "stop_price": 6.4,
+    "pnl_usd": -2.66,
+    "pnl_pct": -2.16,
+    "date_open": "2026-07-13T09:00:35.324017",
+    "date_close": "2026-07-13T22:00:04.142676",
+    "reasoning": "AVA עולה +2.1% עם נפח מסחר עצום של $2M שמאשש את התנועה, זה מציג מומנטום חיובי ברור בזמן שרוב הקריפטו יורד. נכנס לונג עם סטופ צמוד יחסית כי זו מניה עם תנודתיות נמוכה יותר, וזה המקום הכי טוב כרגע להזרים את המזומן הפנוי.",
+    "confidence": "MEDIUM",
+    "txid": "a23f6ead-c5aa-4f62-a4a6-a55f2a207d0a",
+    "close_txid": "a2408571-76af-44e8-9a59-214fff098250",
+    "side": "long",
+    "entry_rsi": null,
+    "entry_bb_pct": null,
+    "entry_macd_hist": null,
+    "entry_change_24h": 2.08
   }
 ]
