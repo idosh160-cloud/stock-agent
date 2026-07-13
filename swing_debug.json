@@ -1,30 +1,33 @@
 {
- "time": "2026-07-13T07:00:05",
- "usdc": 121.63,
- "portfolio": 557.39,
+ "time": "2026-07-13T08:00:04",
+ "usdc": 121.61,
+ "portfolio": 559.41,
  "margin_headroom": 312.78,
  "open": [
-  "BTC long +0.1%",
-  "LINK long +2.9%",
-  "SOL long -0.7%",
-  "ETH long -2.4%"
+  "BTC long +0.4%",
+  "LINK long +3.3%",
+  "SOL long -0.6%",
+  "ETH long -1.9%"
  ],
  "stock_candidates": 18,
  "top_stocks": [
-  "ST -7.1% vol=$52,457",
-  "ANTHROPIC -6.6% vol=$8,413",
-  "SN -5.9% vol=$75,664",
-  "DYD -3.4% vol=$223,692",
-  "CRCL -3.2% vol=$20,411"
+  "ST -6.3% vol=$49,274",
+  "ANTHROPIC -6.1% vol=$8,413",
+  "DYD -3.9% vol=$217,459",
+  "SN -3.8% vol=$60,872",
+  "CF -3.4% vol=$10,267"
  ],
  "futures_ok": true,
- "futures_balance": 49.37,
+ "futures_balance": 49.38,
  "unallocated_spot": [],
  "call_reason": "פוזיציה חלשה: ETH",
  "claude_called": true,
- "market_read": "השוק הכולל במגמת ירידה קלה עם כמה נכסים ב-oversold ברור (BTC, ETH, BNB), מה שמעיד על הזדמנויות ריבאונד קצרות טווח.",
- "skip_reason": "ETH ו-SOL כבר בפוזיציות פתוחות ולא הראו שיפור מהותי מספיק לרוטציה; BNB ו-DOT בנפח מסחר נמוך מדי לכניסה בטוחה; מניות ה-xStocks כרגע חסרות מומנטום ברור מספיק ביחס ל-BTC.",
+ "market_read": "השוק הקריפטו במגמת ירידה קלה ורוב המטבעות נסחרים באזור נמוך-ניטרלי של RSI, מה שמצביע על הזדמנויות דיפ ולא על מגמת שורט ברורה.",
+ "skip_reason": "BTC/ETH/SOL/LINK כבר מוחזקים בגודל משמעותי אז לא מגדילים שם; מניות ה-xStocks חסרות אינדיקטורים ברורים (RSI) ונפח נמוך מדי כדי להצדיק כניסה כרגע.",
  "picks": [
-  "BTC long size=18% conf=MEDIUM"
+  "ADA long size=18% conf=MEDIUM"
+ ],
+ "order_errors": [
+  "ADA: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
