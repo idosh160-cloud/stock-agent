@@ -1,34 +1,31 @@
 {
- "time": "2026-07-13T14:00:10",
+ "time": "2026-07-13T15:00:06",
  "usdc": 121.46,
- "portfolio": 553.61,
+ "portfolio": 557.85,
  "margin_headroom": 312.78,
  "open": [
-  "BTC long -0.7%",
-  "LINK long +2.3%",
-  "SOL long -1.9%",
-  "ETH long -2.7%",
-  "AVA long +0.4%"
+  "BTC long +0.0%",
+  "LINK long +3.1%",
+  "SOL long -1.0%",
+  "ETH long -2.2%",
+  "AVA long +1.9%"
  ],
- "stock_candidates": 11,
+ "stock_candidates": 12,
  "top_stocks": [
-  "CRCL -5.2% vol=$22,434",
-  "MSTR -4.5% vol=$160,793",
-  "SPCX -3.6% vol=$890,097",
-  "AAPL +2.5% vol=$20,460",
-  "GLD -2.0% vol=$19,456"
+  "OPENAI -12.9% vol=$6,782",
+  "MSTR -4.9% vol=$521,090",
+  "SPCX -4.4% vol=$1,744,303",
+  "TSLA -3.6% vol=$9,489",
+  "GLD -2.9% vol=$20,373"
  ],
  "futures_ok": true,
- "futures_balance": 47.31,
+ "futures_balance": 49.21,
  "unallocated_spot": [],
- "call_reason": "פוזיציה חלשה: SOL, ETH",
+ "call_reason": "פוזיציה חלשה: ETH",
  "claude_called": true,
- "market_read": "כל השוק בקריפטו במגמת ירידה קלה עם RSI נמוך בכל הלוחות - תמונה של oversold רוחבי שמזמין קניות זהירות בדיפ.",
- "skip_reason": "ADA למרות oversold נמוך יותר בהיסטוריה עם 14% win rate בתנאים דומים, ומטבעות נמוכי נפח כמו LTC/BNB לא מספקים ביטחון מספיק; מניות אין overbought ברור לשורט כרגע.",
+ "market_read": "השוק הקריפטו כולו באדום עדין עם RSI ניטרלי-שלילי (37-48) ו-MACD שלילי ברוב המטבעות, בלי סטאפים חדים לונג או שורט מלבד המשך מגמה חלשה.",
+ "skip_reason": "רוב מטבעות הקריפטו נמצאים באזור RSI ניטרלי (37-48) בלי איתות ברור לקנייה או שורט, והמניות חסרות אינדיקטורים טכניים (RSI/MACD) לביסוס כניסה בטוחה.",
  "picks": [
-  "XRP long size=20% conf=MEDIUM"
- ],
- "order_errors": [
-  "XRP: Kraken: ['EOrder:Insufficient funds']"
+  "LINK long size=20% conf=MEDIUM"
  ]
 }
