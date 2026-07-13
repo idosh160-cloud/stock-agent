@@ -1,30 +1,30 @@
 {
- "time": "2026-07-13T13:00:15",
+ "time": "2026-07-13T14:00:10",
  "usdc": 121.46,
- "portfolio": 554.73,
+ "portfolio": 553.61,
  "margin_headroom": 312.78,
  "open": [
-  "BTC long -0.2%",
-  "LINK long +2.2%",
-  "SOL long -1.4%",
+  "BTC long -0.7%",
+  "LINK long +2.3%",
+  "SOL long -1.9%",
   "ETH long -2.7%",
-  "AVA long +1.1%"
+  "AVA long +0.4%"
  ],
- "stock_candidates": 10,
+ "stock_candidates": 11,
  "top_stocks": [
-  "MSTR -4.4% vol=$93,231",
-  "CRCL -3.5% vol=$21,574",
-  "SPCX -1.6% vol=$593,284",
-  "NVDA -1.6% vol=$42,250",
-  "GLD -1.4% vol=$19,564"
+  "CRCL -5.2% vol=$22,434",
+  "MSTR -4.5% vol=$160,793",
+  "SPCX -3.6% vol=$890,097",
+  "AAPL +2.5% vol=$20,460",
+  "GLD -2.0% vol=$19,456"
  ],
  "futures_ok": true,
- "futures_balance": 48.19,
+ "futures_balance": 47.31,
  "unallocated_spot": [],
  "call_reason": "פוזיציה חלשה: SOL, ETH",
  "claude_called": true,
- "market_read": "השוק כרגע במגמת ירידה קלה עם הרבה נכסים ב-oversold, מה שיוצר הזדמנויות ריבאונד סלקטיביות.",
- "skip_reason": "ADA ו-DOGE נדחו בגלל נפח נמוך והיסטוריה חלשה בתנאים דומים, ו-BNB/LTC נפח מסחר נמוך מדי לביטחון בכניסה.",
+ "market_read": "כל השוק בקריפטו במגמת ירידה קלה עם RSI נמוך בכל הלוחות - תמונה של oversold רוחבי שמזמין קניות זהירות בדיפ.",
+ "skip_reason": "ADA למרות oversold נמוך יותר בהיסטוריה עם 14% win rate בתנאים דומים, ומטבעות נמוכי נפח כמו LTC/BNB לא מספקים ביטחון מספיק; מניות אין overbought ברור לשורט כרגע.",
  "picks": [
   "XRP long size=20% conf=MEDIUM"
  ],
