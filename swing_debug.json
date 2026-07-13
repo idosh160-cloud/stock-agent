@@ -1,33 +1,33 @@
 {
- "time": "2026-07-13T19:00:07",
- "usdc": 118.39,
- "portfolio": 546.78,
+ "time": "2026-07-13T20:00:05",
+ "usdc": 116.27,
+ "portfolio": 547.39,
  "margin_headroom": 362.04,
  "open": [
-  "SOL long -2.6%",
-  "AVA long -1.4%"
+  "SOL long -2.2%",
+  "AVA long -0.9%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
   "OPENAI -13.4% vol=$9,171",
-  "CRCL -5.8% vol=$336,016",
-  "SPCX -5.6% vol=$2,138,012",
-  "CF -4.6% vol=$11,287",
-  "TSLA -3.9% vol=$22,911"
+  "CRCL -5.6% vol=$756,160",
+  "SPCX -4.6% vol=$2,216,847",
+  "CF -4.6% vol=$10,941",
+  "TSLA -4.2% vol=$25,713"
  ],
  "futures_ok": true,
- "futures_balance": 45.11,
+ "futures_balance": 45.72,
  "unallocated_spot": [
-  "ETH $352"
+  "ETH $354"
  ],
- "call_reason": "פוזיציה חלשה: SOL, AVA",
+ "call_reason": "פוזיציה חלשה: SOL",
  "claude_called": true,
- "market_read": "כל השוק הקריפטו נמצא במכירה חדה ורוב המטבעות oversold בו-זמנית, מה שמעיד על תיקון רחב ולא על קריסת מגמה ספציפית.",
- "skip_reason": "שאר המועמדים (BTC, XMR, LTC) דומים ב-RSI אך עם נפח מסחר נמוך יותר או תזמון פחות ברור; ETH המוחזק כספוט נשאר כפי שהוא כי הוא כבר חשוף לאותה מגמת oversold בלי תוספת סיכון מיותרת.",
+ "market_read": "השוק כולו באדום מתון עם RSI באזור 37-45 ברוב המטבעות - ירידה טכנית ולא קריסה, מתאים לכניסות דיפ-באיי זהירות ולא לשורטים.",
+ "skip_reason": "BTC/ETH/SOL כבר בפוזיציה או לא מספיק oversold ביחס ל-ADA; מניות ה-xStock חסרות נתוני RSI ברורים והנפח בחלקן נמוך מדי (OPENAI) לכניסה בטוחה.",
  "picks": [
-  "XRP long size=25% conf=MEDIUM-HIGH"
+  "ADA long size=25% conf=MEDIUM"
  ],
  "order_errors": [
-  "XRP: Kraken: ['EOrder:Insufficient funds']"
+  "ADA: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
