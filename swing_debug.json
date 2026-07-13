@@ -1,32 +1,37 @@
 {
- "time": "2026-07-13T01:00:04",
+ "time": "2026-07-13T02:00:06",
  "usdc": 121.72,
- "portfolio": 577.68,
+ "portfolio": 553.92,
  "margin_headroom": 312.78,
  "open": [
-  "BTC long +2.1%",
-  "LINK long +4.7%",
-  "CRCL long -1.5%",
-  "SOL long +0.8%",
-  "ETH long +0.3%"
+  "BTC long +1.1%",
+  "LINK long +3.2%",
+  "CRCL long -2.4%",
+  "SOL long -0.8%",
+  "ETH long -0.8%",
+  "SN long -0.7%"
  ],
- "stock_candidates": 17,
+ "stock_candidates": 18,
  "top_stocks": [
   "ANTHROPIC -7.6% vol=$8,732",
-  "SN +5.0% vol=$87,775",
-  "ST -2.4% vol=$44,704",
-  "DYD +2.0% vol=$166,063",
-  "CF +1.8% vol=$16,031"
+  "ST -4.9% vol=$48,152",
+  "SN +3.2% vol=$87,591",
+  "CRCL -3.0% vol=$10,897",
+  "SPCX -2.0% vol=$179,670"
  ],
  "futures_ok": true,
- "futures_balance": 59.37,
+ "futures_balance": 45.4,
  "unallocated_spot": [],
  "call_reason": "פוזיציה חלשה: CRCL",
  "claude_called": true,
- "market_read": "השוק הקריפטו נסחר בטווח צר עם רוב הפוזיציות הקיימות בכיוון חיובי אך לא באות התלהבות חדשה, לכן מפנה מזומן פנוי למניות טוקניות עם מומנטום ונפח טובים.",
- "skip_reason": "הקריפטו החדש (LTC, ADA, CC) נמצא קרוב לרצועה תחתונה עם MACD שלילי - לא איתות קנייה ברור, ואילו הנכסים הפתוחים כבר קרובים למגבלת המשקל שלהם.",
+ "market_read": "השוק הקריפטו במגמת ירידה קלה עם כמה נכסים ב-oversold ברור, מתאים לפוזיציות long על ריבאונד עם סיכון מוגדר.",
+ "skip_reason": "שאר המועמדים (DOT, BNB, BCH, DOGE, LINK, ETH) חסרי נפח מספיק או ללא איתות ברור מספיק, והמניות הזמינות רדופות ע'י תנודתיות נמוכה או נפח דל מדי לכניסה כרגע.",
  "picks": [
-  "SN long size=25% conf=MEDIUM",
-  "DYD long size=20% conf=MEDIUM"
+  "XRP long size=25% conf=MEDIUM",
+  "ADA long size=15% conf=MEDIUM"
+ ],
+ "order_errors": [
+  "XRP: Kraken: ['EOrder:Insufficient funds']",
+  "ADA: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
