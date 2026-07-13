@@ -1,34 +1,34 @@
 {
- "time": "2026-07-12T23:00:05",
- "usdc": 121.81,
- "portfolio": 574.72,
+ "time": "2026-07-13T00:00:05",
+ "usdc": 121.78,
+ "portfolio": 575.1,
  "margin_headroom": 312.78,
  "open": [
-  "BTC long +1.8%",
-  "LINK long +3.3%",
-  "CRCL long +0.6%",
-  "SOL long -0.2%",
-  "ETH long -0.9%"
+  "BTC long +1.6%",
+  "LINK long +3.5%",
+  "CRCL long +0.1%",
+  "SOL long +0.0%",
+  "ETH long -0.8%"
  ],
- "stock_candidates": 16,
+ "stock_candidates": 17,
  "top_stocks": [
+  "SN +8.3% vol=$89,647",
   "ANTHROPIC -7.6% vol=$8,732",
-  "SN +6.0% vol=$94,895",
-  "AVA -4.1% vol=$2,997,148",
-  "DYD +2.0% vol=$168,186",
-  "CV +1.7% vol=$18,340"
+  "DYD +3.1% vol=$160,899",
+  "CV +2.2% vol=$12,687",
+  "AVA -2.0% vol=$2,789,941"
  ],
  "futures_ok": true,
- "futures_balance": 60.74,
+ "futures_balance": 60.7,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במניה: ANTHROPIC, SN, AVA",
+ "call_reason": "תנועה חזקה במניה: SN, ANTHROPIC, DYD",
  "claude_called": true,
- "market_read": "השוק הכללי רגוע יחסית עם BTC כמעט שטוח, אבל כמה אלטים נמצאים באזור oversold ברור שמציע כניסה טובה.",
- "skip_reason": "ADA ו-DOGE oversold גם הם אך עם היסטוריית הפסדים משמעותית או נפח נמוך מדי, ומניות ה-xStocks היום לא מציגות סטאפ ברור מספיק לטרייד חדש.",
+ "market_read": "השוק הכללי בקונסולידציה עם רוב הקריפטו ב-RSI נמוך-בינוני, אין מגמת מומנטום חזקה חדשה מלבד תיקונים אפשריים במטבעות oversold.",
+ "skip_reason": "ADA נדחה כי היסטוריית כניסות דומות ב-RSI~32 הניבה 86% הפסדים, CC נפח נמוך מדי, BCH ו-DOT ללא איתות ברור מספיק מול LTC.",
  "picks": [
-  "XRP long size=20% conf=MEDIUM"
+  "LTC long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "XRP: Kraken: ['EOrder:Insufficient funds']"
+  "LTC: Kraken: ['EOrder:Invalid leverage']"
  ]
 }
