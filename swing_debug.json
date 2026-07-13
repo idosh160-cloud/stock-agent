@@ -1,31 +1,34 @@
 {
- "time": "2026-07-13T15:00:06",
- "usdc": 121.46,
- "portfolio": 557.85,
+ "time": "2026-07-13T16:00:05",
+ "usdc": 121.43,
+ "portfolio": 554.94,
  "margin_headroom": 312.78,
  "open": [
-  "BTC long +0.0%",
-  "LINK long +3.1%",
-  "SOL long -1.0%",
-  "ETH long -2.2%",
-  "AVA long +1.9%"
+  "BTC long -0.2%",
+  "LINK long +2.7%",
+  "SOL long -1.4%",
+  "ETH long -2.4%",
+  "AVA long +0.4%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "OPENAI -12.9% vol=$6,782",
-  "MSTR -4.9% vol=$521,090",
-  "SPCX -4.4% vol=$1,744,303",
-  "TSLA -3.6% vol=$9,489",
-  "GLD -2.9% vol=$20,373"
+  "OPENAI -13.2% vol=$8,569",
+  "CRCL -4.5% vol=$302,874",
+  "SPCX -4.3% vol=$1,893,387",
+  "CF -3.4% vol=$11,821",
+  "MSTR -3.3% vol=$1,077,221"
  ],
  "futures_ok": true,
- "futures_balance": 49.21,
+ "futures_balance": 47.37,
  "unallocated_spot": [],
- "call_reason": "פוזיציה חלשה: ETH",
+ "call_reason": "פוזיציה חלשה: SOL, ETH",
  "claude_called": true,
- "market_read": "השוק הקריפטו כולו באדום עדין עם RSI ניטרלי-שלילי (37-48) ו-MACD שלילי ברוב המטבעות, בלי סטאפים חדים לונג או שורט מלבד המשך מגמה חלשה.",
- "skip_reason": "רוב מטבעות הקריפטו נמצאים באזור RSI ניטרלי (37-48) בלי איתות ברור לקנייה או שורט, והמניות חסרות אינדיקטורים טכניים (RSI/MACD) לביסוס כניסה בטוחה.",
+ "market_read": "השוק כולו במגמת ירידה קלה עם RSI נמוכים ברוב המטבעות אך ללא היפוך מומנטום ברור עדיין.",
+ "skip_reason": "ADA ו-BTC נראים דומים אך עם היסטוריה שלילית בתנאים דומים; מניות ה-xStocks חסרות נתוני RSI/MACD כדי לאשש כניסה, לכן נשארתי עם קריפטו עם אינדיקטורים ברורים.",
  "picks": [
-  "LINK long size=20% conf=MEDIUM"
+  "XMR long size=22% conf=MEDIUM"
+ ],
+ "order_errors": [
+  "XMR: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
