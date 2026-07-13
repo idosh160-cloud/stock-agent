@@ -1,31 +1,31 @@
 {
- "time": "2026-07-13T05:00:04",
+ "time": "2026-07-13T06:00:04",
  "usdc": 121.63,
- "portfolio": 557.61,
+ "portfolio": 558.36,
  "margin_headroom": 312.78,
  "open": [
-  "BTC long -0.1%",
-  "LINK long +2.4%",
-  "SOL long -1.2%",
-  "ETH long -2.3%"
+  "BTC long +0.1%",
+  "LINK long +2.8%",
+  "SOL long -0.6%",
+  "ETH long -2.1%"
  ],
  "stock_candidates": 18,
  "top_stocks": [
-  "ST -8.2% vol=$46,512",
-  "ANTHROPIC -6.6% vol=$8,841",
-  "SN -4.2% vol=$77,175",
-  "CRCL -3.9% vol=$17,899",
-  "MSTR -3.3% vol=$42,212"
+  "ANTHROPIC -6.6% vol=$8,413",
+  "ST -6.3% vol=$53,446",
+  "SN -5.2% vol=$77,590",
+  "DYD -3.9% vol=$222,021",
+  "CRCL -3.4% vol=$19,138"
  ],
  "futures_ok": true,
  "futures_balance": 49.38,
  "unallocated_spot": [],
- "call_reason": "פוזיציה חלשה: SOL, ETH",
+ "call_reason": "פוזיציה חלשה: ETH",
  "claude_called": true,
- "market_read": "כל השוק הקריפטו במצב oversold חד עם ירידות של 1-3% ו-RSI נמוך בכל המטבעות, מה שמרמז על תיקון טכני ולא קריסה מגמתית.",
- "skip_reason": "דחיתי את BTC/ETH/SOL/LINK הנוספים כי כבר יש חשיפה גדולה אליהם בתיק, ואת המניות (ST, ANTHROPIC) כי חסר נתון RSI ונזילות נמוכה מדי להערכת סיכון-סיכוי מדויקת.",
+ "market_read": "השוק בירידה קלה כללית עם כמעט כל הקריפטו באזור oversold ליד תחתית הבולינגר, מה שמרמז על הזדמנות ריבאונד קצרת-טווח.",
+ "skip_reason": "BTC/ETH כבר בתיק ולא כדאי להגדיל חשיפה קיימת; ADA/DOGE/BCH נפח נמוך יותר או היסטוריה חלשה יותר יחסית ל-XRP; מניות ללא נפח מספק כרגע מחוץ לשעות המסחר האמריקאי.",
  "picks": [
-  "XRP long size=20% conf=MEDIUM"
+  "XRP long size=25% conf=MEDIUM"
  ],
  "order_errors": [
   "XRP: Kraken: ['EOrder:Insufficient funds']"
