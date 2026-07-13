@@ -1,33 +1,30 @@
 {
- "time": "2026-07-13T06:00:04",
+ "time": "2026-07-13T07:00:05",
  "usdc": 121.63,
- "portfolio": 558.36,
+ "portfolio": 557.39,
  "margin_headroom": 312.78,
  "open": [
   "BTC long +0.1%",
-  "LINK long +2.8%",
-  "SOL long -0.6%",
-  "ETH long -2.1%"
+  "LINK long +2.9%",
+  "SOL long -0.7%",
+  "ETH long -2.4%"
  ],
  "stock_candidates": 18,
  "top_stocks": [
+  "ST -7.1% vol=$52,457",
   "ANTHROPIC -6.6% vol=$8,413",
-  "ST -6.3% vol=$53,446",
-  "SN -5.2% vol=$77,590",
-  "DYD -3.9% vol=$222,021",
-  "CRCL -3.4% vol=$19,138"
+  "SN -5.9% vol=$75,664",
+  "DYD -3.4% vol=$223,692",
+  "CRCL -3.2% vol=$20,411"
  ],
  "futures_ok": true,
- "futures_balance": 49.38,
+ "futures_balance": 49.37,
  "unallocated_spot": [],
  "call_reason": "פוזיציה חלשה: ETH",
  "claude_called": true,
- "market_read": "השוק בירידה קלה כללית עם כמעט כל הקריפטו באזור oversold ליד תחתית הבולינגר, מה שמרמז על הזדמנות ריבאונד קצרת-טווח.",
- "skip_reason": "BTC/ETH כבר בתיק ולא כדאי להגדיל חשיפה קיימת; ADA/DOGE/BCH נפח נמוך יותר או היסטוריה חלשה יותר יחסית ל-XRP; מניות ללא נפח מספק כרגע מחוץ לשעות המסחר האמריקאי.",
+ "market_read": "השוק הכולל במגמת ירידה קלה עם כמה נכסים ב-oversold ברור (BTC, ETH, BNB), מה שמעיד על הזדמנויות ריבאונד קצרות טווח.",
+ "skip_reason": "ETH ו-SOL כבר בפוזיציות פתוחות ולא הראו שיפור מהותי מספיק לרוטציה; BNB ו-DOT בנפח מסחר נמוך מדי לכניסה בטוחה; מניות ה-xStocks כרגע חסרות מומנטום ברור מספיק ביחס ל-BTC.",
  "picks": [
-  "XRP long size=25% conf=MEDIUM"
- ],
- "order_errors": [
-  "XRP: Kraken: ['EOrder:Insufficient funds']"
+  "BTC long size=18% conf=MEDIUM"
  ]
 }
