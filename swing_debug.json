@@ -1,34 +1,32 @@
 {
- "time": "2026-07-13T00:00:05",
- "usdc": 121.78,
- "portfolio": 575.1,
+ "time": "2026-07-13T01:00:04",
+ "usdc": 121.72,
+ "portfolio": 577.68,
  "margin_headroom": 312.78,
  "open": [
-  "BTC long +1.6%",
-  "LINK long +3.5%",
-  "CRCL long +0.1%",
-  "SOL long +0.0%",
-  "ETH long -0.8%"
+  "BTC long +2.1%",
+  "LINK long +4.7%",
+  "CRCL long -1.5%",
+  "SOL long +0.8%",
+  "ETH long +0.3%"
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "SN +8.3% vol=$89,647",
   "ANTHROPIC -7.6% vol=$8,732",
-  "DYD +3.1% vol=$160,899",
-  "CV +2.2% vol=$12,687",
-  "AVA -2.0% vol=$2,789,941"
+  "SN +5.0% vol=$87,775",
+  "ST -2.4% vol=$44,704",
+  "DYD +2.0% vol=$166,063",
+  "CF +1.8% vol=$16,031"
  ],
  "futures_ok": true,
- "futures_balance": 60.7,
+ "futures_balance": 59.37,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במניה: SN, ANTHROPIC, DYD",
+ "call_reason": "פוזיציה חלשה: CRCL",
  "claude_called": true,
- "market_read": "השוק הכללי בקונסולידציה עם רוב הקריפטו ב-RSI נמוך-בינוני, אין מגמת מומנטום חזקה חדשה מלבד תיקונים אפשריים במטבעות oversold.",
- "skip_reason": "ADA נדחה כי היסטוריית כניסות דומות ב-RSI~32 הניבה 86% הפסדים, CC נפח נמוך מדי, BCH ו-DOT ללא איתות ברור מספיק מול LTC.",
+ "market_read": "השוק הקריפטו נסחר בטווח צר עם רוב הפוזיציות הקיימות בכיוון חיובי אך לא באות התלהבות חדשה, לכן מפנה מזומן פנוי למניות טוקניות עם מומנטום ונפח טובים.",
+ "skip_reason": "הקריפטו החדש (LTC, ADA, CC) נמצא קרוב לרצועה תחתונה עם MACD שלילי - לא איתות קנייה ברור, ואילו הנכסים הפתוחים כבר קרובים למגבלת המשקל שלהם.",
  "picks": [
-  "LTC long size=20% conf=MEDIUM"
- ],
- "order_errors": [
-  "LTC: Kraken: ['EOrder:Invalid leverage']"
+  "SN long size=25% conf=MEDIUM",
+  "DYD long size=20% conf=MEDIUM"
  ]
 }
