@@ -91,14 +91,16 @@ _KNOWN_CRYPTO = {
 
 
 def _is_xstock(sym: str) -> bool:
-    """האם סימבול Futures הוא מניה טוקנית אמיתית (PF_TSLAXUSD) ולא פרפ קריפטו.
+    """האם סימבול Futures הוא טוקן-מניה אמיתי (PF_TSLAXUSD, טיקר הטוקן TSLAx) ולא פרפ קריפטו.
     מלכודת: פרפ של קריפטו שנגמר ב-X נראה זהה — PF_AVAXUSD זה AVAX/USD, לא 'מניית AVA'!
-    (כך הבוט קנה GMX בתור 'מניית GM' ו-AVAX בתור 'מניית AVA'.)"""
+    (כך הבוט קנה GMX בתור 'מניית GM' ו-AVAX בתור 'מניית AVA'.)
+    בודקים רק את הבסיס המלא: בטוקן-מניה הבסיס תמיד נושא X נוסף (CVXX=שברון-טוקן),
+    בעוד שפרפ קריפטו הבסיס הוא שם המטבע עצמו (CVX=Convex) — כך מניה שהטיקר שלה
+    במקרה זהה לשם קריפטו (שברון) לא נפסלת בטעות."""
     if not (sym.startswith("PF_") and sym.endswith("XUSD")):
         return False
-    base   = sym[3:-3]    # PF_AVAXUSD → AVAX | PF_TSLAXUSD → TSLAX
-    ticker = base[:-1]    # TSLAX → TSLA
-    return base not in _KNOWN_CRYPTO and ticker not in _KNOWN_CRYPTO
+    base = sym[3:-3]    # PF_AVAXUSD → AVAX | PF_TSLAXUSD → TSLAX
+    return base not in _KNOWN_CRYPTO
 
 
 def get_xstock_data() -> list:
