@@ -85,7 +85,20 @@ _KNOWN_CRYPTO = {
     "THETA","NEO","WAVES","ZIL","QTUM","ONT","ZRX","BAT","OMG","KNC","BAND",
     "STORJ","OXT","CTSI","ALICE","TLM","SXP","REEF","FIL","ICP","LUNA","LUNC",
     "USDT","USDC","DAI","BUSD","TUSD","USDP","FRAX","ZUSD","USD","EUR","GBP",
+    # טוקנים שנגמרים ב-X — הסיומת שלהם מתנגשת עם תבנית ה-xStock (TICKER+X+USD)
+    "GMX","DYDX","CVX","STX","SPX","IMX","WAX","ICX","POLYX","OKX",
 }
+
+
+def _is_xstock(sym: str) -> bool:
+    """האם סימבול Futures הוא מניה טוקנית אמיתית (PF_TSLAXUSD) ולא פרפ קריפטו.
+    מלכודת: פרפ של קריפטו שנגמר ב-X נראה זהה — PF_AVAXUSD זה AVAX/USD, לא 'מניית AVA'!
+    (כך הבוט קנה GMX בתור 'מניית GM' ו-AVAX בתור 'מניית AVA'.)"""
+    if not (sym.startswith("PF_") and sym.endswith("XUSD")):
+        return False
+    base   = sym[3:-3]    # PF_AVAXUSD → AVAX | PF_TSLAXUSD → TSLAX
+    ticker = base[:-1]    # TSLAX → TSLA
+    return base not in _KNOWN_CRYPTO and ticker not in _KNOWN_CRYPTO
 
 
 def get_xstock_data() -> list:
@@ -100,10 +113,7 @@ def get_xstock_data() -> list:
         # xStocks: PF_TSLAXUSD, PF_NVDAXUSD וכו' — לא קריפטו
         xstock_symbols = [
             i["symbol"] for i in instruments
-            if i.get("symbol", "").startswith("PF_")
-            and i.get("symbol", "").endswith("XUSD")
-            and i.get("tradeable", False)
-            and i["symbol"].replace("PF_", "").replace("XUSD", "") not in _KNOWN_CRYPTO
+            if i.get("tradeable", False) and _is_xstock(i.get("symbol", ""))
         ]
         if not xstock_symbols:
             logging.info("[xStocks] No xStock instruments found")
@@ -949,9 +959,9 @@ def reconcile_stock_trades(trades: list) -> tuple[list, bool]:
             # יש פקודה תלויה על הסימבול (למשל סגירה שטרם התמלאה) — לא לאמץ מחדש!
             # אימוץ כזה יצר היום רשומת MSTR כפולה עם סגירה כפולה ומייל כפול.
             continue
-        ticker = sym.replace("PF_", "").replace("XUSD", "")
-        if ticker in _KNOWN_CRYPTO:
-            continue  # רק xStocks — קריפטו perps לא מנוהל כאן
+        if not _is_xstock(sym):
+            continue  # רק xStocks אמיתיים — פרפ קריפטו (גם כזה שמתחזה: PF_AVAXUSD) לא מנוהל כאן
+        ticker = sym[3:-4]  # PF_TSLAXUSD → TSLA
         p_size  = abs(float(p.get("size", 0) or 0))
         p_price = float(p.get("price", 0) or 0)
         if p_size <= 0 or p_price <= 0:
