@@ -1,35 +1,33 @@
 {
- "time": "2026-07-13T03:00:04",
- "usdc": 121.72,
- "portfolio": 556.98,
+ "time": "2026-07-13T04:00:08",
+ "usdc": 121.7,
+ "portfolio": 546.5,
  "margin_headroom": 312.78,
  "open": [
-  "BTC long +1.0%",
-  "LINK long +3.2%",
-  "CRCL long -1.8%",
-  "SOL long -0.5%",
-  "ETH long -0.8%",
-  "SN long -2.2%"
+  "BTC long +0.1%",
+  "LINK long +2.5%",
+  "SOL long -1.3%",
+  "ETH long -2.2%"
  ],
  "stock_candidates": 18,
  "top_stocks": [
+  "ST -8.1% vol=$48,188",
+  "SN -7.6% vol=$79,976",
   "ANTHROPIC -7.6% vol=$8,732",
-  "ST -5.5% vol=$49,494",
-  "CRCL -2.3% vol=$12,287",
-  "SPCX -1.7% vol=$220,544",
-  "CF +1.3% vol=$15,445"
+  "MSTR -3.7% vol=$21,199",
+  "CRCL -3.5% vol=$12,257"
  ],
  "futures_ok": true,
- "futures_balance": 42.83,
+ "futures_balance": 49.38,
  "unallocated_spot": [],
- "call_reason": "פוזיציה חלשה: CRCL, SN",
+ "call_reason": "פוזיציה חלשה: SOL, ETH",
  "claude_called": true,
- "market_read": "השוק הקריפטו במגמת ירידה קלה עם רוב המטבעות באזור oversold, מה שמייצר הזדמנויות ריבאונד קצרות טווח.",
- "skip_reason": "שאר המועמדים (ADA, LTC, DOT) מציגים תמונה דומה אך עם נפח נמוך יותר או היסטוריה חלשה יותר, ולכן רוכזתי בהזדמנות הטובה ביותר בלבד.",
+ "market_read": "כל השוק הקריפטו במצב oversold רחב עם RSI נמוך בכל המטבעות הגדולים, מה שמרמז על תיקון קרוב או המשך ירידה זמנית לפני התאוששות.",
+ "skip_reason": "שאר הקריפטו (BTC, ETH, SOL, LINK) כבר בפוזיציות פתוחות, ו-DOT/BCH/LTC סובלים מנפח נמוך יותר או סיגנל חלש יותר ביחס ל-ADA.",
  "picks": [
-  "XRP long size=20% conf=MEDIUM"
+  "ADA long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "XRP: Kraken: ['EOrder:Insufficient funds']"
+  "ADA: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
