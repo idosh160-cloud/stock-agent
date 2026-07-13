@@ -1,34 +1,34 @@
 {
- "time": "2026-07-13T17:00:05",
+ "time": "2026-07-13T18:00:07",
  "usdc": 121.37,
- "portfolio": 552.69,
- "margin_headroom": 312.78,
+ "portfolio": 547.48,
+ "margin_headroom": 338.08,
  "open": [
-  "BTC long -0.8%",
-  "LINK long +2.3%",
-  "SOL long -2.1%",
-  "ETH long -2.7%",
-  "AVA long -0.4%"
+  "BTC long -1.4%",
+  "SOL long -3.0%",
+  "AVA long -1.5%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
   "OPENAI -13.4% vol=$9,171",
-  "CRCL -5.8% vol=$335,608",
-  "SPCX -5.0% vol=$1,898,493",
-  "MSTR -4.2% vol=$1,576,707",
-  "TSLA -3.7% vol=$16,562"
+  "CF -5.9% vol=$11,176",
+  "SPCX -5.7% vol=$2,070,384",
+  "CRCL -5.4% vol=$337,173",
+  "MSTR -4.3% vol=$1,576,866"
  ],
  "futures_ok": true,
- "futures_balance": 46.42,
- "unallocated_spot": [],
- "call_reason": "פוזיציה חלשה: SOL, ETH",
+ "futures_balance": 45.04,
+ "unallocated_spot": [
+  "ETH $349"
+ ],
+ "call_reason": "פוזיציה חלשה: BTC, SOL, AVA",
  "claude_called": true,
- "market_read": "השוק כולו במגמת מכירה קלה עם רוב המטבעות ב-RSI נמוך וקרוב לתחתית הרצועה, מה שמעיד על מכירת יתר טכנית לפני ריבאונד אפשרי.",
- "skip_reason": "שאר המועמדים (ADA, DOGE, LTC, XMR) בעלי נפח מסחר נמוך יחסית או היסטוריית הפסדים בתנאי RSI דומים, והמניות חסרות אינדיקטורים טכניים מספקים להצדקת כניסה כרגע.",
+ "market_read": "כל השוק הקריפטו נמצא בירידה מתואמת של כ-3% עם RSI נמוך בכל המטבעות המרכזיים, מה שמעיד על תיקון רחב ולא על חולשה ספציפית של מטבע בודד.",
+ "skip_reason": "BTC/SOL/ETH כבר בפוזיציות קיימות שליליות אז לא מכפילים חשיפה מתואמת נוספת; סטוקים כרגע ללא סיגנל ברור לשורט או לונג חזק מספיק.",
  "picks": [
-  "XRP long size=20% conf=MEDIUM"
+  "ADA long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "XRP: Kraken: ['EOrder:Insufficient funds']"
+  "ADA: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
