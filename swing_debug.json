@@ -1,34 +1,34 @@
 {
- "time": "2026-07-13T11:00:08",
- "usdc": 121.55,
- "portfolio": 556.96,
+ "time": "2026-07-13T12:00:06",
+ "usdc": 121.52,
+ "portfolio": 557.62,
  "margin_headroom": 312.78,
  "open": [
   "BTC long +0.2%",
   "LINK long +2.9%",
-  "SOL long -0.8%",
-  "ETH long -2.3%",
-  "AVA long +1.5%"
+  "SOL long -0.7%",
+  "ETH long -2.2%",
+  "AVA long +1.8%"
  ],
  "stock_candidates": 18,
  "top_stocks": [
-  "ST -5.7% vol=$49,302",
-  "MSTR -4.0% vol=$42,275",
-  "AVA +3.5% vol=$3,163,575",
-  "DYD -3.2% vol=$225,289",
-  "CRCL -2.2% vol=$21,815"
+  "ST -5.8% vol=$50,273",
+  "DYD -4.3% vol=$227,131",
+  "MSTR -3.4% vol=$49,256",
+  "AVA +3.4% vol=$3,493,069",
+  "SN -3.3% vol=$81,312"
  ],
  "futures_ok": true,
- "futures_balance": 48.73,
+ "futures_balance": 49.05,
  "unallocated_spot": [],
  "call_reason": "פוזיציה חלשה: ETH",
  "claude_called": true,
- "market_read": "השוק הקריפטו כולו במגמת ירידה קלה עם RSI נמוך ברוב המטבעות, מה שיוצר הזדמנויות ריבאונד סלקטיביות אבל בלי מומנטום חזק לעליות גדולות.",
- "skip_reason": "שאר המטבעות והמניות נמצאים באזור ניטרלי או ללא נפח מספיק כדי להצדיק פוזיציה חדשה מעבר לפוזיציות הקיימות.",
+ "market_read": "השוק הקריפטו כולו באדום קל עם RSI נמוכים ברוב המטבעות, מצביע על תיקון זמני ולא קריסה - הזדמנות לכניסות oversold סלקטיביות.",
+ "skip_reason": "שאר המטבעות (ADA, DOT, ETH, BTC) כבר בפוזיציות פתוחות או שהמומנטום חלש מדי/ללא אישור ווליום מספיק לכניסה חדשה.",
  "picks": [
-  "ADA long size=22% conf=MEDIUM"
+  "LTC long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "ADA: Kraken: ['EOrder:Insufficient funds']"
+  "LTC: Kraken: ['EOrder:Invalid leverage']"
  ]
 }
