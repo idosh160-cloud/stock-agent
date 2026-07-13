@@ -1,34 +1,33 @@
 {
- "time": "2026-07-13T18:00:07",
- "usdc": 121.37,
- "portfolio": 547.48,
- "margin_headroom": 338.08,
+ "time": "2026-07-13T19:00:07",
+ "usdc": 118.39,
+ "portfolio": 546.78,
+ "margin_headroom": 362.04,
  "open": [
-  "BTC long -1.4%",
-  "SOL long -3.0%",
-  "AVA long -1.5%"
+  "SOL long -2.6%",
+  "AVA long -1.4%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
   "OPENAI -13.4% vol=$9,171",
-  "CF -5.9% vol=$11,176",
-  "SPCX -5.7% vol=$2,070,384",
-  "CRCL -5.4% vol=$337,173",
-  "MSTR -4.3% vol=$1,576,866"
+  "CRCL -5.8% vol=$336,016",
+  "SPCX -5.6% vol=$2,138,012",
+  "CF -4.6% vol=$11,287",
+  "TSLA -3.9% vol=$22,911"
  ],
  "futures_ok": true,
- "futures_balance": 45.04,
+ "futures_balance": 45.11,
  "unallocated_spot": [
-  "ETH $349"
+  "ETH $352"
  ],
- "call_reason": "פוזיציה חלשה: BTC, SOL, AVA",
+ "call_reason": "פוזיציה חלשה: SOL, AVA",
  "claude_called": true,
- "market_read": "כל השוק הקריפטו נמצא בירידה מתואמת של כ-3% עם RSI נמוך בכל המטבעות המרכזיים, מה שמעיד על תיקון רחב ולא על חולשה ספציפית של מטבע בודד.",
- "skip_reason": "BTC/SOL/ETH כבר בפוזיציות קיימות שליליות אז לא מכפילים חשיפה מתואמת נוספת; סטוקים כרגע ללא סיגנל ברור לשורט או לונג חזק מספיק.",
+ "market_read": "כל השוק הקריפטו נמצא במכירה חדה ורוב המטבעות oversold בו-זמנית, מה שמעיד על תיקון רחב ולא על קריסת מגמה ספציפית.",
+ "skip_reason": "שאר המועמדים (BTC, XMR, LTC) דומים ב-RSI אך עם נפח מסחר נמוך יותר או תזמון פחות ברור; ETH המוחזק כספוט נשאר כפי שהוא כי הוא כבר חשוף לאותה מגמת oversold בלי תוספת סיכון מיותרת.",
  "picks": [
-  "ADA long size=20% conf=MEDIUM"
+  "XRP long size=25% conf=MEDIUM-HIGH"
  ],
  "order_errors": [
-  "ADA: Kraken: ['EOrder:Insufficient funds']"
+  "XRP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }

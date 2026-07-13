@@ -848,5 +848,30 @@
     "entry_bb_pct": 88.0,
     "entry_macd_hist": 1.680398,
     "entry_change_24h": 1.82
+  },
+  {
+    "coin": "BTC",
+    "pair": "XBTUSDC",
+    "status": "closed_stale",
+    "leveraged": true,
+    "collateral": 119.8,
+    "volume": 0.00190986,
+    "entry_price": 62724.660446,
+    "close_price": 61987.42,
+    "target_price": 65860.893468,
+    "stop_price": 61470.167237,
+    "pnl_usd": -1.41,
+    "pnl_pct": -1.18,
+    "date_open": "2026-07-09T12:00:06.095490",
+    "date_close": "2026-07-13T19:00:05.200266",
+    "reasoning": "Restored from Kraken OpenPositions (long); renamed XBT->BTC (name-mismatch fix)",
+    "confidence": "MEDIUM",
+    "txid": "OONX6G-M7AEG-UGEBYR",
+    "close_txid": "OA7SYX-NFATY-MJ37TA",
+    "side": "long",
+    "entry_rsi": null,
+    "entry_bb_pct": null,
+    "entry_macd_hist": null,
+    "entry_change_24h": null
   }
 ]
