@@ -1,34 +1,34 @@
 {
- "time": "2026-07-13T12:00:06",
- "usdc": 121.52,
- "portfolio": 557.62,
+ "time": "2026-07-13T13:00:15",
+ "usdc": 121.46,
+ "portfolio": 554.73,
  "margin_headroom": 312.78,
  "open": [
-  "BTC long +0.2%",
-  "LINK long +2.9%",
-  "SOL long -0.7%",
-  "ETH long -2.2%",
-  "AVA long +1.8%"
+  "BTC long -0.2%",
+  "LINK long +2.2%",
+  "SOL long -1.4%",
+  "ETH long -2.7%",
+  "AVA long +1.1%"
  ],
- "stock_candidates": 18,
+ "stock_candidates": 10,
  "top_stocks": [
-  "ST -5.8% vol=$50,273",
-  "DYD -4.3% vol=$227,131",
-  "MSTR -3.4% vol=$49,256",
-  "AVA +3.4% vol=$3,493,069",
-  "SN -3.3% vol=$81,312"
+  "MSTR -4.4% vol=$93,231",
+  "CRCL -3.5% vol=$21,574",
+  "SPCX -1.6% vol=$593,284",
+  "NVDA -1.6% vol=$42,250",
+  "GLD -1.4% vol=$19,564"
  ],
  "futures_ok": true,
- "futures_balance": 49.05,
+ "futures_balance": 48.19,
  "unallocated_spot": [],
- "call_reason": "פוזיציה חלשה: ETH",
+ "call_reason": "פוזיציה חלשה: SOL, ETH",
  "claude_called": true,
- "market_read": "השוק הקריפטו כולו באדום קל עם RSI נמוכים ברוב המטבעות, מצביע על תיקון זמני ולא קריסה - הזדמנות לכניסות oversold סלקטיביות.",
- "skip_reason": "שאר המטבעות (ADA, DOT, ETH, BTC) כבר בפוזיציות פתוחות או שהמומנטום חלש מדי/ללא אישור ווליום מספיק לכניסה חדשה.",
+ "market_read": "השוק כרגע במגמת ירידה קלה עם הרבה נכסים ב-oversold, מה שיוצר הזדמנויות ריבאונד סלקטיביות.",
+ "skip_reason": "ADA ו-DOGE נדחו בגלל נפח נמוך והיסטוריה חלשה בתנאים דומים, ו-BNB/LTC נפח מסחר נמוך מדי לביטחון בכניסה.",
  "picks": [
-  "LTC long size=20% conf=MEDIUM"
+  "XRP long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "LTC: Kraken: ['EOrder:Invalid leverage']"
+  "XRP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
