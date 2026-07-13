@@ -1,34 +1,33 @@
 {
- "time": "2026-07-13T22:00:05",
- "usdc": 116.24,
- "portfolio": 543.17,
- "margin_headroom": 362.04,
+ "time": "2026-07-13T23:00:04",
+ "usdc": 115.39,
+ "portfolio": 543.69,
+ "margin_headroom": 334.88,
  "open": [
-  "SOL long -3.2%"
+  "SOL long -3.1%",
+  "BTC long -0.3%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
   "OPENAI -13.4% vol=$9,171",
-  "CRCL -5.3% vol=$774,404",
-  "CF -5.3% vol=$18,659",
-  "SPCX -4.8% vol=$2,334,408",
-  "MSTR -4.6% vol=$1,919,027"
+  "CRCL -5.5% vol=$773,775",
+  "CF -5.2% vol=$21,711",
+  "SPCX -4.8% vol=$2,340,813",
+  "MSTR -4.8% vol=$1,918,824"
  ],
  "futures_ok": true,
  "futures_balance": 46.56,
  "unallocated_spot": [
-  "ETH $351"
+  "ETH $350"
  ],
  "call_reason": "פוזיציה חלשה: SOL",
  "claude_called": true,
- "market_read": "שוק הקריפטו כולו נפל יחד ל-oversold ברוב המטבעות המרכזיים, מה שמצביע על הזדמנות ריבאונד רחבה ולא על חולשה ספציפית של נכס אחד.",
- "skip_reason": "שאר המטבעות (LINK, LTC, XMR, DOGE) לא הראו RSI קיצוני מספיק או נפח מסחר גבוה דיו כדי להצדיק כניסה נוספת; מניות ה-xStocks לא הציגו סטאפ ברור של short/long כרגע.",
+ "market_read": "כל השוק הקריפטו נמצא במצב oversold עם ירידות של 2-3% ב-24 שעות אחרונות, מה שמצביע על הזדמנות ריבאונד קצרת טווח.",
+ "skip_reason": "שאר המטבעות (BTC, SOL, ETH) כבר מוחזקים או פחות אטרקטיביים יחסית ל-ADA מבחינת יחס סיכוי-סיכון; מניות ה-xStock אינן מציגות איתותי RSI/BB ברורים לשורט או לונג כרגע.",
  "picks": [
-  "BTC long size=25% conf=MEDIUM",
   "ADA long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
   "ADA: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
