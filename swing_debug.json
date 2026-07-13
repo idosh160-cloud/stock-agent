@@ -1,30 +1,31 @@
 {
- "time": "2026-07-13T09:00:06",
+ "time": "2026-07-13T10:00:05",
  "usdc": 121.55,
- "portfolio": 559.85,
+ "portfolio": 558.43,
  "margin_headroom": 312.78,
  "open": [
-  "BTC long +0.7%",
-  "LINK long +3.6%",
-  "SOL long -0.2%",
-  "ETH long -1.7%"
+  "BTC long +0.5%",
+  "LINK long +3.5%",
+  "SOL long -0.4%",
+  "ETH long -2.0%",
+  "AVA long +1.6%"
  ],
  "stock_candidates": 18,
  "top_stocks": [
-  "ANTHROPIC -7.0% vol=$8,432",
-  "ST -4.6% vol=$48,175",
-  "DYD -4.1% vol=$215,210",
-  "MSTR -3.3% vol=$41,704",
-  "SN -2.5% vol=$69,173"
+  "ST -5.3% vol=$47,827",
+  "AVA +3.5% vol=$2,759,257",
+  "DYD -3.4% vol=$218,062",
+  "SN -2.7% vol=$72,690",
+  "MSTR -2.6% vol=$41,585"
  ],
  "futures_ok": true,
- "futures_balance": 49.38,
+ "futures_balance": 48.8,
  "unallocated_spot": [],
  "call_reason": "פוזיציה חלשה: ETH",
  "claude_called": true,
- "market_read": "השוק בקריפטו חלש היום עם רוב המטבעות במגמת ירידה קלה ו-RSI נמוך-בינוני ללא היפוך ברור, בעוד AVA מציגה מומנטום חיובי עם נפח חריג.",
- "skip_reason": "ADA נראית oversold אך ההיסטוריה מראה שכניסות ב-RSI דומה הפסידו בעבר וה-MACD עדיין שטוח-שלילי; שאר הקריפטו וה-DOT/BTC/ETH נמצאים באמצע הטווח ללא איתות ברור, וסטוקים כמו NVDA/TSLA/MSTR בנפח נמוך מדי או ללא מגמה מובהקת לשורט/לונג.",
+ "market_read": "השוק הרחב חלש היום עם RSI נמוך ו-MACD שלילי ברוב הקריפטו, אבל AVA בולטת בחוזק יחסי מובהק.",
+ "skip_reason": "ADA ו-DOT נראים oversold אך עם MACD שטוח ונפח נמוך/היסטוריה חלשה — לא מספיק חזק כדי להצדיק פוזיציה חדשה מעבר להוספה ל-AVA.",
  "picks": [
-  "AVA long size=22% conf=MEDIUM"
+  "AVA long size=20% conf=MEDIUM"
  ]
 }
