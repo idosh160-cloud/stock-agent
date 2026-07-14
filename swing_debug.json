@@ -1,29 +1,31 @@
 {
- "time": "2026-07-14T15:00:05",
- "usdc": 111.93,
- "portfolio": 562.07,
+ "time": "2026-07-14T16:00:06",
+ "usdc": 111.92,
+ "portfolio": 557.25,
  "margin_headroom": 352.26,
  "open": [
-  "BTC long +3.6%",
-  "ETH long +4.5%",
-  "MSTR long +0.5%"
+  "BTC long +4.4%",
+  "ETH long +4.2%",
+  "MSTR long +1.9%",
+  "CRCL long +2.2%"
  ],
- "stock_candidates": 12,
+ "stock_candidates": 11,
  "top_stocks": [
-  "OPENAI +14.6% vol=$6,284",
-  "CRCL -5.0% vol=$829,660",
-  "MSTR +4.6% vol=$1,568,721",
-  "CF +3.8% vol=$102,265",
-  "GLD +1.7% vol=$21,275"
+  "MSTR +7.2% vol=$1,018,235",
+  "CF +5.7% vol=$100,635",
+  "GLD +2.0% vol=$21,255",
+  "SPCX +1.9% vol=$2,225,223",
+  "CRCL -1.5% vol=$1,205,493"
  ],
  "futures_ok": true,
- "futures_balance": 42.68,
+ "futures_balance": 39.09,
+ "futures_float_topup": false,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במטבע חדש: LINK, ADA, DOGE",
+ "call_reason": "תנועה חזקה במטבע חדש: ADA, LINK, DOGE",
  "claude_called": true,
- "market_read": "כל הקריפטו הגדול (BTC, ETH, LINK, ADA, DOGE, XRP, SOL) נמצא באזור overbought קיצוני עם BB% מעל 100 - לא זמן להוסיף לונג חדש בקריפטו, וגם לא בטוח לשורט נגד מומנטום חזק כל כך.",
- "skip_reason": "דחיתי את כל מועמדי הקריפטו כי כולם overbought בצורה קיצונית (RSI 70-82) אחרי ריצה חדה, מה שהופך לונג נוסף למרדף מסוכן ושורט מסוכן נגד מומנטום עולה חזק; מניות אחרות (SPCX, HOOD, NVDA) שטוחות מדי בלי סיגנל ברור.",
+ "market_read": "כל השוק הקריפטו רץ חזק היום (BTC/ETH/ADA וכו') אבל כמעט כולם overbought בקיצון (RSI 70-78, BB%~100), כך שרוב ההזדמנויות הן המשך מגמה עם סיכון גבוה למיצוי ולא שורט בטוח נגד המגמה החזקה.",
+ "skip_reason": "שאר הקריפטו (BTC, ETH, ADA, DOGE, XRP, LTC) קיצוניים מדי ב-RSI ו-BB% לכניסה חדשה כלונג בטוח, ומסוכן לשורט נגד מגמה חזקה כללית; המניות (MSTR, CRCL כבר פתוחות, שאר הטיקרים תנועה חלשה מדי או נזילות נמוכה) לא מציעות יתרון ברור יותר מ-SOL.",
  "picks": [
-  "CRCL long size=20% conf=MEDIUM"
+  "SOL long size=20% conf=MEDIUM"
  ]
 }
