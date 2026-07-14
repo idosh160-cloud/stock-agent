@@ -1,33 +1,36 @@
 {
- "time": "2026-07-14T00:00:05",
- "usdc": 115.39,
- "portfolio": 547.66,
+ "time": "2026-07-14T01:00:04",
+ "usdc": 115.36,
+ "portfolio": 549.55,
  "margin_headroom": 334.88,
  "open": [
-  "SOL long -2.5%",
-  "BTC long +0.4%"
+  "SOL long -2.0%",
+  "BTC long +0.7%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
   "OPENAI -13.4% vol=$9,171",
-  "CRCL -5.8% vol=$769,722",
-  "SPCX -5.7% vol=$2,327,054",
-  "CF -5.1% vol=$42,164",
-  "MSTR -4.3% vol=$1,929,601"
+  "SPCX -5.0% vol=$2,331,938",
+  "CRCL -4.4% vol=$769,962",
+  "CF -3.3% vol=$44,623",
+  "NVDA -2.6% vol=$115,784"
  ],
  "futures_ok": true,
  "futures_balance": 46.56,
  "unallocated_spot": [
-  "ETH $354"
+  "ETH $356"
  ],
  "call_reason": "פוזיציה חלשה: SOL",
  "claude_called": true,
- "market_read": "השוק הכללי בירידה מתונה עם ביטקוין יציב ואלטקוינים ברובם ב-RSI ניטרלי עד oversold, מה שמעדיף כניסות דיפ-בי סלקטיביות על פני מומנטום.",
- "skip_reason": "SOL ו-BTC כבר פתוחות ומתפתחות כרגיל כך שאין צורך לגעת בהן; המניות (OPENAI, SPCX, MSTR) נמצאות בירידות חדות אך עם נפח דל או תזמון לא ברור לשורט נוסף כרגע; ETH ה-spot נשאר כהחזקת core כי אין סיגנל טכני חד לרוטציה שלו.",
+ "market_read": "השוק הכללי בקריפטו נייטרלי-חיובי מתון עם כמה נכסים בקיצון תחתון שמזמינים ריבאונד, בעוד שהמניות בסלאף רחב ללא סימני היפוך ברורים.",
+ "skip_reason": "המניות ברובן ירדו בלי סיגנלים טכניים מלאים (חסר RSI/MACD) - מסוכן לפתוח שורט/לונג בלי אינדיקציה ברורה; שאר הקריפטו (BTC, SOL, ETH, XRP, ADA) ניטרליים ללא edge משמעותי כרגע.",
  "picks": [
-  "CC long size=20% conf=MEDIUM"
+  "CC long size=22% conf=MEDIUM",
+  "LTC long size=22% conf=MEDIUM"
  ],
  "order_errors": [
-  "CC: Kraken: ['EOrder:Insufficient funds']"
+  "liq ETH: all sizes rejected (margin collateral lock)",
+  "CC: Kraken: ['EOrder:Insufficient funds']",
+  "LTC: Kraken: ['EOrder:Invalid leverage']"
  ]
 }
