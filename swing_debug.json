@@ -1,19 +1,19 @@
 {
- "time": "2026-07-14T07:00:05",
+ "time": "2026-07-14T08:00:05",
  "usdc": 115.25,
- "portfolio": 548.78,
+ "portfolio": 548.3,
  "margin_headroom": 334.88,
  "open": [
-  "SOL long -2.3%",
-  "BTC long +0.8%"
+  "SOL long -2.6%",
+  "BTC long +0.7%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "CRCL -4.1% vol=$753,231",
-  "SPCX -3.7% vol=$2,150,125",
-  "CF +2.9% vol=$45,364",
-  "TSLA -2.4% vol=$30,416",
-  "GLD -1.4% vol=$11,328"
+  "CRCL -4.1% vol=$754,020",
+  "SPCX -3.8% vol=$2,134,606",
+  "CF +3.2% vol=$52,642",
+  "TSLA -2.5% vol=$30,780",
+  "OPENAI -1.1% vol=$11,865"
  ],
  "futures_ok": true,
  "futures_balance": 46.56,
@@ -22,12 +22,9 @@
  ],
  "call_reason": "פוזיציה חלשה: SOL",
  "claude_called": true,
- "market_read": "השוק הכללי נייטרלי-חיובי עם BTC ורוב האלטים באמצע הטווח, אין מומנטום חד בשום כיוון מלבד CC שנמצא ב-oversold ברור.",
- "skip_reason": "שאר המטבעות (ADA, XMR, LINK, ETH, SOL, XRP) נמצאים ב-RSI ניטרלי 47-53 בלי אות ברור לכיוון, והמניות חסרות נתוני RSI/MACD כדי לבסס כניסה בביטחון - נשארים בצד עד שיתפתח סיגנל חד יותר; ETH הספוט נשאר כפוזיציה פסיבית כי אין כרגע הזדמנות טובה משמעותית יותר להזיז אליה הון.",
+ "market_read": "השוק הקריפטו נייטרלי-חיובי בלי איתותים קיצוניים חוץ מ-BTC שמראה מומנטום טוב, והמניות הטוקניזציה חסרות סימנים ברורים כרגע.",
+ "skip_reason": "XMR קרוב לרצועה עליונה אבל עם MACD חיובי חזק - לא שורט בטוח; CC ו-ADA שקטים מדי בנפח ובאיתותים; המניות (CRCL, SPCX) כבר ירדו חזק בלי איתות טכני ברור לכיוון, לכן מדלג עליהן הפעם.",
  "picks": [
-  "CC long size=30% conf=MEDIUM"
- ],
- "order_errors": [
-  "CC: Kraken: ['EOrder:Insufficient funds']"
+  "BTC long size=20% conf=MEDIUM"
  ]
 }
