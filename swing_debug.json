@@ -1,37 +1,37 @@
 {
- "time": "2026-07-14T20:00:06",
- "usdc": 110.29,
- "portfolio": 552.36,
+ "time": "2026-07-14T21:00:05",
+ "usdc": 110.27,
+ "portfolio": 551.77,
  "margin_headroom": 320.09,
  "open": [
   "BTC long +4.0%",
-  "ETH long +4.3%",
-  "MSTR long +2.4%",
-  "CRCL long +2.0%",
+  "ETH long +4.2%",
+  "MSTR long +1.9%",
+  "CRCL long +3.0%",
   "SOL long -0.3%",
   "NVDA long +0.4%",
-  "ADA long +0.1%"
+  "ADA long -0.1%"
  ],
  "stock_candidates": 11,
  "top_stocks": [
-  "MSTR +6.4% vol=$159,799",
-  "NVDA +4.0% vol=$372,585",
-  "CF +3.4% vol=$100,558",
+  "MSTR +6.2% vol=$265,867",
+  "CF +4.3% vol=$94,958",
+  "NVDA +3.6% vol=$361,334",
   "HOOD +2.9% vol=$493,192",
-  "SPCX -1.9% vol=$2,491,718"
+  "GLD +1.8% vol=$22,614"
  ],
  "futures_ok": true,
- "futures_balance": 35.34,
+ "futures_balance": 35.1,
  "futures_float_topup": false,
  "unallocated_spot": [],
  "call_reason": "תנועה חזקה במטבע חדש: LINK, XRP, LTC",
  "claude_called": true,
- "market_read": "השוק במגמת עלייה חזקה עם רוב הקריפטו הגדול קנוי יתר (RSI>70), מה שיוצר הזדמנויות שורט על המטבעות הכי מוצפים בעוד הפוזיציות הקיימות ברות מומנטום עדיין רצות לכיוון היעד.",
- "skip_reason": "שאר המטבעות הקריפטו (BTC, ETH, LINK, LTC, DOGE) כבר קנויי יתר או כבר מוחזקים בתיק, והמניות (MSTR, NVDA, CRCL) כבר בפוזיציה פתוחה ונעות לכיוון היעד - אין הצדקה לרוטציה או כניסה נוספת.",
+ "market_read": "רוב הקריפטו הראשי (BTC, ETH, LINK, XRP, LTC) נמצא ב-RSI קיצוני מעל 70 אחרי ריצה חדה, כך שכניסות לונג חדשות בהן מסוכנות, ואילו מניות כמו HOOD מציעות מומנטום טרי עם נפח בריא.",
+ "skip_reason": "דחיתי לונגים נוספים בביטקוין/את'ריום/לינק/XRP/LTC כי הם overbought עם BB% מעל 75-84 וסיכון לתיקון חד; XMR ו-CC דחויים על נפח מסחר נמוך מדי לביטחון בכניסה.",
  "picks": [
-  "XRP short size=22% conf=HIGH"
+  "HOOD long size=20% conf=MEDIUM"
  ],
- "order_errors": [
-  "XRP: Kraken: ['EOrder:Insufficient initial margin']"
+ "skips": [
+  "HOOD: margin $35 < needed $37 (after transfer attempt)"
  ]
 }
