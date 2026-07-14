@@ -1,19 +1,19 @@
 {
- "time": "2026-07-14T03:00:05",
+ "time": "2026-07-14T04:00:04",
  "usdc": 115.32,
- "portfolio": 548.66,
+ "portfolio": 548.82,
  "margin_headroom": 334.88,
  "open": [
-  "SOL long -2.4%",
-  "BTC long +0.7%"
+  "SOL long -2.3%",
+  "BTC long +0.8%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
   "OPENAI -13.4% vol=$9,171",
-  "SPCX -3.7% vol=$2,212,493",
-  "CRCL -3.5% vol=$756,861",
-  "CF -2.2% vol=$45,115",
-  "GLD -2.1% vol=$29,629"
+  "CRCL -3.8% vol=$755,490",
+  "SPCX -3.8% vol=$2,234,469",
+  "NVDA -1.8% vol=$112,606",
+  "GLD -1.7% vol=$20,466"
  ],
  "futures_ok": true,
  "futures_balance": 46.56,
@@ -22,12 +22,14 @@
  ],
  "call_reason": "פוזיציה חלשה: SOL",
  "claude_called": true,
- "market_read": "השוק הכללי נייטרלי-חלש עם BTC ו-ETH נסחרים באמצע הטווח בלי מומנטום ברור, אז מחפשים הזדמנויות ספציפיות באלטקוינים.",
- "skip_reason": "BTC/SOL כבר בפוזיציות פתוחות ולא כדאי להוסיף; שאר המועמדים (ADA, LINK, DOGE) נייטרליים ללא איתות ברור, וה-ETH הספוט נשאר כאחזקה פסיבית שמניבה חשיפה סבירה לשוק.",
+ "market_read": "השוק הכללי נסחר בטווח צר עם BTC סביב 62.5K ורוב האלטים בתנועה נייטרלית עד מעט שלילית, מה שמותיר הזדמנויות ממוקדות ב-oversold coins בלבד.",
+ "skip_reason": "שאר המטבעות (ETH, BTC, SOL, LINK, XRP, LTC, DOGE, XMR) נמצאים באזור נייטרלי (RSI 40-55) בלי איתות ברור, והמניות מציגות תנודות קטנות או נפח נמוך שלא מצדיקים כניסה חדשה כרגע.",
  "picks": [
-  "CC long size=20% conf=MEDIUM"
+  "CC long size=25% conf=MEDIUM",
+  "ADA long size=15% conf=MEDIUM"
  ],
  "order_errors": [
-  "CC: Kraken: ['EOrder:Insufficient funds']"
+  "CC: Kraken: ['EOrder:Insufficient funds']",
+  "ADA: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
