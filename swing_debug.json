@@ -1,19 +1,19 @@
 {
- "time": "2026-07-14T01:00:04",
+ "time": "2026-07-14T02:00:04",
  "usdc": 115.36,
- "portfolio": 549.55,
+ "portfolio": 549.37,
  "margin_headroom": 334.88,
  "open": [
-  "SOL long -2.0%",
+  "SOL long -2.1%",
   "BTC long +0.7%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
   "OPENAI -13.4% vol=$9,171",
-  "SPCX -5.0% vol=$2,331,938",
-  "CRCL -4.4% vol=$769,962",
-  "CF -3.3% vol=$44,623",
-  "NVDA -2.6% vol=$115,784"
+  "SPCX -3.2% vol=$2,264,010",
+  "CRCL -2.9% vol=$762,542",
+  "GLD -2.1% vol=$29,629",
+  "CF -1.6% vol=$44,307"
  ],
  "futures_ok": true,
  "futures_balance": 46.56,
@@ -22,15 +22,13 @@
  ],
  "call_reason": "פוזיציה חלשה: SOL",
  "claude_called": true,
- "market_read": "השוק הכללי בקריפטו נייטרלי-חיובי מתון עם כמה נכסים בקיצון תחתון שמזמינים ריבאונד, בעוד שהמניות בסלאף רחב ללא סימני היפוך ברורים.",
- "skip_reason": "המניות ברובן ירדו בלי סיגנלים טכניים מלאים (חסר RSI/MACD) - מסוכן לפתוח שורט/לונג בלי אינדיקציה ברורה; שאר הקריפטו (BTC, SOL, ETH, XRP, ADA) ניטרליים ללא edge משמעותי כרגע.",
+ "market_read": "השוק בטווח נייטרלי-חלש עם RSI ממוצע סביב 45-50 בכל הקריפטו הראשי, ללא מומנטום חד בשום כיוון כרגע.",
+ "skip_reason": "BTC ו-SOL כבר פתוחים ולא בשלים לרוטציה כי הם לא הפסדים חדים; שאר המועמדים (LINK, ETH, XMR, DOGE) נייטרליים מדי (RSI 45-52, BB% אמצע) בלי אות כניסה ברור, והמניות (OPENAI, SPCX, CRCL) חסרות RSI/מומנטום ברור או נזילות נמוכה מדי לפוזיציה משמעותית.",
  "picks": [
-  "CC long size=22% conf=MEDIUM",
-  "LTC long size=22% conf=MEDIUM"
+  "ADA long size=20% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "CC: Kraken: ['EOrder:Insufficient funds']",
-  "LTC: Kraken: ['EOrder:Invalid leverage']"
+  "ADA: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
