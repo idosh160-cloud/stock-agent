@@ -1,32 +1,31 @@
 {
- "time": "2026-07-14T12:00:05",
- "usdc": 113.26,
- "portfolio": 549.87,
- "margin_headroom": 329.89,
+ "time": "2026-07-14T13:00:06",
+ "usdc": 113.23,
+ "portfolio": 562.75,
+ "margin_headroom": 352.26,
  "open": [
-  "SOL long -2.0%",
-  "BTC long +1.2%",
-  "ETH long -0.1%"
+  "BTC long +3.0%",
+  "ETH long +3.4%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "OPENAI +14.8% vol=$10,454",
-  "CRCL -4.6% vol=$754,708",
-  "SPCX -3.5% vol=$2,208,216",
-  "CF +3.1% vol=$75,240",
-  "TSLA -2.0% vol=$38,046"
+  "OPENAI +14.3% vol=$9,734",
+  "MSTR +3.9% vol=$1,984,456",
+  "CF +3.1% vol=$92,306",
+  "CRCL -2.6% vol=$773,077",
+  "SPCX -2.4% vol=$2,263,400"
  ],
  "futures_ok": true,
  "futures_balance": 46.56,
  "unallocated_spot": [],
- "call_reason": "פוזיציה חלשה: SOL",
+ "call_reason": "תנועה חזקה במטבע חדש: LINK, ADA",
  "claude_called": true,
- "market_read": "השוק הקריפטו כרגע במגמת עלייה מתונה עם רוב הנכסים קרובים לרצועה העליונה אך ללא קיצון קנייה ברור, מה שתומך בהמשכי מומנטום זהירים.",
- "skip_reason": "שאר המועמדים בקריפטו או במניות מציגים אינדיקטורים ניטרליים, נפח נמוך מדי, או חוסר מידע טכני מספק (כמו SPCX/CRCL ללא RSI) כדי להצדיק פוזיציה חדשה.",
+ "market_read": "השוק הקריפטו הרחב במגמת עלייה חזקה אך רוב המטבעות כבר בקנייתיתר קיצוני (RSI 65-79), מה שהופך שורט מסוכן ולונג על המובילים למאוחר מדי.",
+ "skip_reason": "BTC/ETH/LINK/ADA/SOL/LTC/XRP/DOGE כולם RSI מעל 65 עם BB% קרוב ל-110-120 - כניסה עכשיו היא רדיפה אחרי המהלך; המניות הטוקניזציה חסרות נזילות מספקת (OPENAI) או טכניקה ברורה (CRCL/SPCX) כדי להצדיק סיכון.",
  "picks": [
-  "LINK long size=22% conf=MEDIUM"
+  "XMR long size=25% conf=MEDIUM"
  ],
  "order_errors": [
-  "LINK: Kraken: ['EOrder:Insufficient funds']"
+  "XMR: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
