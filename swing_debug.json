@@ -1,30 +1,32 @@
 {
- "time": "2026-07-14T11:00:04",
- "usdc": 115.19,
- "portfolio": 552.19,
- "margin_headroom": 334.88,
+ "time": "2026-07-14T12:00:05",
+ "usdc": 113.26,
+ "portfolio": 549.87,
+ "margin_headroom": 329.89,
  "open": [
-  "SOL long -1.9%",
-  "BTC long +1.1%"
+  "SOL long -2.0%",
+  "BTC long +1.2%",
+  "ETH long -0.1%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
   "OPENAI +14.8% vol=$10,454",
-  "CRCL -5.0% vol=$755,025",
-  "SPCX -4.1% vol=$2,154,971",
-  "CF +3.2% vol=$75,142",
-  "TSLA -2.4% vol=$33,979"
+  "CRCL -4.6% vol=$754,708",
+  "SPCX -3.5% vol=$2,208,216",
+  "CF +3.1% vol=$75,240",
+  "TSLA -2.0% vol=$38,046"
  ],
  "futures_ok": true,
  "futures_balance": 46.56,
- "unallocated_spot": [
-  "ETH $358"
- ],
+ "unallocated_spot": [],
  "call_reason": "פוזיציה חלשה: SOL",
  "claude_called": true,
- "market_read": "השוק נסחר ברוגע עם מגמה עולה מתונה בביטקוין ואיתריום, ללא איתותי קיצון ברוב המטבעות והמניות.",
- "skip_reason": "שאר המטבעות (ADA, LINK, XMR, LTC) נסחרים ב-RSI נייטרלי ללא איתות ברור, והמניות לא מציגות הזדמנות מובהקת ללונג או שורט כרגע.",
+ "market_read": "השוק הקריפטו כרגע במגמת עלייה מתונה עם רוב הנכסים קרובים לרצועה העליונה אך ללא קיצון קנייה ברור, מה שתומך בהמשכי מומנטום זהירים.",
+ "skip_reason": "שאר המועמדים בקריפטו או במניות מציגים אינדיקטורים ניטרליים, נפח נמוך מדי, או חוסר מידע טכני מספק (כמו SPCX/CRCL ללא RSI) כדי להצדיק פוזיציה חדשה.",
  "picks": [
-  "ETH long size=22% conf=MEDIUM"
+  "LINK long size=22% conf=MEDIUM"
+ ],
+ "order_errors": [
+  "LINK: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
