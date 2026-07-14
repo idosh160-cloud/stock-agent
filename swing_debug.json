@@ -1,37 +1,35 @@
 {
- "time": "2026-07-14T22:00:05",
- "usdc": 110.27,
- "portfolio": 552.19,
+ "time": "2026-07-14T23:00:04",
+ "usdc": 110.24,
+ "portfolio": 554.25,
  "margin_headroom": 320.09,
  "open": [
-  "BTC long +4.2%",
-  "ETH long +4.3%",
-  "MSTR long +2.2%",
+  "BTC long +4.5%",
+  "ETH long +4.6%",
+  "MSTR long +3.2%",
   "CRCL long +3.0%",
-  "SOL long -0.2%",
+  "SOL long +0.3%",
   "NVDA long +0.3%",
-  "ADA long +0.7%"
+  "ADA long +1.1%"
  ],
  "stock_candidates": 11,
  "top_stocks": [
-  "MSTR +6.9% vol=$356,654",
-  "CF +4.7% vol=$91,611",
-  "HOOD +4.3% vol=$499,646",
+  "MSTR +8.0% vol=$572,344",
+  "CF +5.2% vol=$88,216",
+  "HOOD +4.5% vol=$507,207",
   "NVDA +3.9% vol=$365,900",
   "GLD +1.8% vol=$22,614"
  ],
  "futures_ok": true,
- "futures_balance": 35.26,
+ "futures_balance": 36.09,
  "futures_float_topup": false,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במטבע חדש: LINK, XRP, CC",
+ "call_reason": "תנועה חזקה במטבע חדש: CC, LINK, XRP",
  "claude_called": true,
- "market_read": "השוק במגמת עלייה כללית חזקה אך רוב הקריפטו כבר overbought (RSI 65-76), כך שהזדמנויות כניסה חדשות בקריפטו מוגבלות והמניות מציעות סחורה טרייה יותר.",
- "skip_reason": "כל מטבעות הקריפטו המובילים (BTC, ETH, LINK, XRP, DOGE, LTC, CC) נמצאים ב-RSI מעל 65 ו-BB% מעל 70 - כניסה חדשה שם היא רדיפה אחרי המחיר ולא כניסה טובה; ADA/SOL/XMR כבר מוחזקים או שוליים מדי.",
+ "market_read": "השוק כרגע נמצא במגמת עלייה כללית עם רוב הנכסים בקנייתיתר, כך שהעדפה היא להצטרף למומנטום החזק ביותר ולא לשורט מוקדם מדי.",
+ "skip_reason": "רוב מטבעות הקריפטו האלטרנטיביים נמצאים ב-RSI קיצוני מעל 70 עם BB% גבוה מדי, מה שהופך כניסה לונג מסוכנת ושורט מוקדם ללא היפוך ברור ב-MACD.",
  "picks": [
-  "HOOD long size=20% conf=MEDIUM"
- ],
- "skips": [
-  "HOOD: margin $35 < needed $37 (after transfer attempt)"
+  "MSTR long size=25% conf=HIGH",
+  "LINK long size=15% conf=MEDIUM"
  ]
 }
