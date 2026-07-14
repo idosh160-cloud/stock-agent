@@ -1,19 +1,19 @@
 {
- "time": "2026-07-14T09:00:04",
+ "time": "2026-07-14T10:00:04",
  "usdc": 115.23,
- "portfolio": 549.28,
+ "portfolio": 549.3,
  "margin_headroom": 334.88,
  "open": [
-  "SOL long -2.3%",
-  "BTC long +1.0%"
+  "SOL long -2.4%",
+  "BTC long +0.9%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "OPENAI +14.8% vol=$10,630",
-  "CRCL -4.3% vol=$759,797",
-  "SPCX -3.5% vol=$2,222,600",
-  "CF +2.8% vol=$57,476",
-  "TSLA -2.6% vol=$33,515"
+  "OPENAI +14.8% vol=$10,454",
+  "CRCL -4.3% vol=$760,914",
+  "CF +3.8% vol=$70,120",
+  "SPCX -3.6% vol=$2,255,383",
+  "TSLA -2.4% vol=$33,979"
  ],
  "futures_ok": true,
  "futures_balance": 46.56,
@@ -22,14 +22,13 @@
  ],
  "call_reason": "פוזיציה חלשה: SOL",
  "claude_called": true,
- "market_read": "השוק הכללי נייטרלי-חיובי עם BTC יציב סביב 62.6K ורוב האלטים בטווח צר, כך שהזדמנויות הן ספציפיות למטבע ולא מגמת שוק רחבה.",
- "skip_reason": "מניות עם ווליום נמוך (OPENAI) או ללא סיגנל טכני ברור (CRCL, SPCX) נפסלו, ו-ETH הפאסיבי נשאר כפי שהוא כי אין סיגנל חזק מספיק להזזה כרגע.",
+ "market_read": "השוק הכולל נייטרלי-חיובי עם BTC ו-ETH מובילים ברוגע יחסי, ללא הזדמנויות אקסטרימיות בקריפטו או במניות כרגע.",
+ "skip_reason": "שאר המטבעות (ADA, XRP, LINK, LTC) נייטרליים מדי ללא איתות ברור, ומניות ה-xStocks חסרות נתוני RSI/BB לאישור כניסה, ולכן דילגתי עליהן הפעם.",
  "picks": [
-  "XMR long size=25% conf=MEDIUM",
-  "CC long size=20% conf=MEDIUM"
+  "ETH long size=25% conf=MEDIUM"
  ],
  "order_errors": [
-  "XMR: Kraken: ['EOrder:Insufficient funds']",
-  "CC: Kraken: ['EOrder:Insufficient funds']"
+  "liq ETH: all sizes rejected (margin collateral lock)",
+  "ETH: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
