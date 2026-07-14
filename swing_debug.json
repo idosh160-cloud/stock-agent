@@ -1,31 +1,32 @@
 {
- "time": "2026-07-14T16:00:06",
- "usdc": 111.92,
- "portfolio": 557.25,
- "margin_headroom": 352.26,
+ "time": "2026-07-14T17:00:05",
+ "usdc": 111.01,
+ "portfolio": 555.46,
+ "margin_headroom": 342.16,
  "open": [
-  "BTC long +4.4%",
-  "ETH long +4.2%",
-  "MSTR long +1.9%",
-  "CRCL long +2.2%"
+  "BTC long +4.3%",
+  "ETH long +4.1%",
+  "MSTR long +0.7%",
+  "CRCL long +2.4%",
+  "SOL long -0.2%"
  ],
  "stock_candidates": 11,
  "top_stocks": [
-  "MSTR +7.2% vol=$1,018,235",
   "CF +5.7% vol=$100,635",
-  "GLD +2.0% vol=$21,255",
-  "SPCX +1.9% vol=$2,225,223",
-  "CRCL -1.5% vol=$1,205,493"
+  "MSTR +4.9% vol=$472,109",
+  "NVDA +3.4% vol=$211,239",
+  "GLD +1.7% vol=$21,492",
+  "HOOD +1.5% vol=$233,613"
  ],
  "futures_ok": true,
- "futures_balance": 39.09,
+ "futures_balance": 38.48,
  "futures_float_topup": false,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במטבע חדש: ADA, LINK, DOGE",
+ "call_reason": "תנועה חזקה במטבע חדש: ADA, LINK, XRP",
  "claude_called": true,
- "market_read": "כל השוק הקריפטו רץ חזק היום (BTC/ETH/ADA וכו') אבל כמעט כולם overbought בקיצון (RSI 70-78, BB%~100), כך שרוב ההזדמנויות הן המשך מגמה עם סיכון גבוה למיצוי ולא שורט בטוח נגד המגמה החזקה.",
- "skip_reason": "שאר הקריפטו (BTC, ETH, ADA, DOGE, XRP, LTC) קיצוניים מדי ב-RSI ו-BB% לכניסה חדשה כלונג בטוח, ומסוכן לשורט נגד מגמה חזקה כללית; המניות (MSTR, CRCL כבר פתוחות, שאר הטיקרים תנועה חלשה מדי או נזילות נמוכה) לא מציעות יתרון ברור יותר מ-SOL.",
+ "market_read": "כל המובילים בקריפטו (BTC, ETH, ADA, XRP) נמצאים ב-RSI מעל 70 וקרוב לרצועה העליונה — שוק קריפטו רותח ומוצה, לכן עדיף לגוון לכיוון מניה עם מומנטום בריא ולא רדוף עוד לונג קריפטו כאן.",
+ "skip_reason": "דחיתי שורטים על ADA/XRP/BTC/ETH כי כל השוק במגמת עלייה חזקה יחד וסיכון לסקוויז גבוה, ודחיתי הוספת קריפטו נוסף כי הפוזיציות הקיימות (BTC, ETH, SOL) כבר מכסות את החשיפה הזו.",
  "picks": [
-  "SOL long size=20% conf=MEDIUM"
+  "NVDA long size=20% conf=MEDIUM"
  ]
 }
