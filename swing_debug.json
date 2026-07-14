@@ -1,36 +1,37 @@
 {
- "time": "2026-07-14T18:00:06",
- "usdc": 111.01,
- "portfolio": 550.58,
+ "time": "2026-07-14T19:00:05",
+ "usdc": 110.99,
+ "portfolio": 551.81,
  "margin_headroom": 342.16,
  "open": [
-  "BTC long +4.1%",
-  "ETH long +4.0%",
-  "MSTR long +0.3%",
-  "CRCL long +3.3%",
-  "SOL long -0.3%",
-  "NVDA long +0.2%"
+  "BTC long +4.0%",
+  "ETH long +4.2%",
+  "MSTR long +1.5%",
+  "CRCL long +2.7%",
+  "SOL long -0.1%",
+  "NVDA long +0.7%"
  ],
  "stock_candidates": 11,
  "top_stocks": [
-  "MSTR +5.0% vol=$462,129",
-  "CF +4.8% vol=$101,026",
-  "NVDA +3.5% vol=$215,797",
-  "HOOD +2.5% vol=$415,480",
-  "GLD +1.4% vol=$21,560"
+  "MSTR +5.4% vol=$372,369",
+  "NVDA +4.3% vol=$386,159",
+  "CF +4.0% vol=$100,817",
+  "HOOD +2.1% vol=$516,833",
+  "QQQ +1.1% vol=$23,165"
  ],
  "futures_ok": true,
- "futures_balance": 33.97,
+ "futures_balance": 34.33,
  "futures_float_topup": false,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במטבע חדש: LINK, ADA, XRP",
+ "call_reason": "תנועה חזקה במטבע חדש: LINK, XRP, ADA",
  "claude_called": true,
- "market_read": "השוק כרגע ברובו overbought בקריפטו (BTC, ETH, SOL, DOGE, LINK כולם RSI>70 עם BB% קרוב לעליון), אז עדיף להימנע מלונגים נוספים שם ולחפש הזדמנות נקייה יותר במניות.",
- "skip_reason": "רוב מטבעות הקריפטו ברשימה נמצאים ב-RSI קיצוני (70+) אחרי ריצה חדה — כניסת לונג חדשה שם היא כניסה מאוחרת מדי, ו-ADA/DOGE/LINK עם היסטוריה חלשה לא מספקים אישור חזק מספיק לשורט או לונג כרגע.",
+ "market_read": "השוק ברובו overbought עם BTC/ETH/SOL קרובים לשיאים, אז עדיף לחפש הזדמנויות שוליות פחות מתוחות או שורט על הקיצוניים ביותר.",
+ "skip_reason": "רוב שאר המועמדים (BTC, ETH, SOL, LTC, DOGE) כבר עמוק ב-overbought עם BB% מעל 80 - מסוכן לרדוף לונג נוסף שם; DOT/CC בעלי נפח נמוך מדי לביטחון.",
  "picks": [
-  "HOOD long size=22% conf=MEDIUM"
+  "ADA long size=20% conf=MEDIUM",
+  "XRP short size=15% conf=MEDIUM"
  ],
- "skips": [
-  "HOOD: margin $34 < needed $40 (after transfer attempt)"
+ "order_errors": [
+  "XRP: Kraken: ['EOrder:Insufficient initial margin']"
  ]
 }
