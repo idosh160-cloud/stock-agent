@@ -1,31 +1,28 @@
 {
- "time": "2026-07-14T13:00:06",
- "usdc": 113.23,
- "portfolio": 562.75,
+ "time": "2026-07-14T14:00:04",
+ "usdc": 111.96,
+ "portfolio": 563.78,
  "margin_headroom": 352.26,
  "open": [
-  "BTC long +3.0%",
-  "ETH long +3.4%"
+  "BTC long +2.9%",
+  "ETH long +4.0%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
   "OPENAI +14.3% vol=$9,734",
-  "MSTR +3.9% vol=$1,984,456",
-  "CF +3.1% vol=$92,306",
-  "CRCL -2.6% vol=$773,077",
-  "SPCX -2.4% vol=$2,263,400"
+  "MSTR +4.7% vol=$1,934,481",
+  "CRCL -4.4% vol=$759,745",
+  "CF +4.2% vol=$101,503",
+  "AAPL -2.4% vol=$10,288"
  ],
  "futures_ok": true,
  "futures_balance": 46.56,
  "unallocated_spot": [],
  "call_reason": "תנועה חזקה במטבע חדש: LINK, ADA",
  "claude_called": true,
- "market_read": "השוק הקריפטו הרחב במגמת עלייה חזקה אך רוב המטבעות כבר בקנייתיתר קיצוני (RSI 65-79), מה שהופך שורט מסוכן ולונג על המובילים למאוחר מדי.",
- "skip_reason": "BTC/ETH/LINK/ADA/SOL/LTC/XRP/DOGE כולם RSI מעל 65 עם BB% קרוב ל-110-120 - כניסה עכשיו היא רדיפה אחרי המהלך; המניות הטוקניזציה חסרות נזילות מספקת (OPENAI) או טכניקה ברורה (CRCL/SPCX) כדי להצדיק סיכון.",
+ "market_read": "השוק הקריפטו כולו overbought (RSI מעל 70 ברוב המטבעות) על גל עליות חזק, כך ששורט מסוכן וארוך על מטבע נוסף מכביד על מתאם התיק.",
+ "skip_reason": "כל מועמדי הקריפטו overbought בצורה קיצונית (RSI 66-80, BB% מעל 105) — כניסה ללונג כרוכה בסיכון תיקון מיידי, ושורט נגד מגמת שוק עולה מסוכן; המניות הרגילות (AAPL, NVDA, GLD) שקטות מדי בנפח/תנודה.",
  "picks": [
-  "XMR long size=25% conf=MEDIUM"
- ],
- "order_errors": [
-  "XMR: Kraken: ['EOrder:Insufficient funds']"
+  "MSTR long size=20% conf=MEDIUM"
  ]
 }
