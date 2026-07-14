@@ -1,34 +1,30 @@
 {
- "time": "2026-07-14T10:00:04",
- "usdc": 115.23,
- "portfolio": 549.3,
+ "time": "2026-07-14T11:00:04",
+ "usdc": 115.19,
+ "portfolio": 552.19,
  "margin_headroom": 334.88,
  "open": [
-  "SOL long -2.4%",
-  "BTC long +0.9%"
+  "SOL long -1.9%",
+  "BTC long +1.1%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
   "OPENAI +14.8% vol=$10,454",
-  "CRCL -4.3% vol=$760,914",
-  "CF +3.8% vol=$70,120",
-  "SPCX -3.6% vol=$2,255,383",
+  "CRCL -5.0% vol=$755,025",
+  "SPCX -4.1% vol=$2,154,971",
+  "CF +3.2% vol=$75,142",
   "TSLA -2.4% vol=$33,979"
  ],
  "futures_ok": true,
  "futures_balance": 46.56,
  "unallocated_spot": [
-  "ETH $356"
+  "ETH $358"
  ],
  "call_reason": "פוזיציה חלשה: SOL",
  "claude_called": true,
- "market_read": "השוק הכולל נייטרלי-חיובי עם BTC ו-ETH מובילים ברוגע יחסי, ללא הזדמנויות אקסטרימיות בקריפטו או במניות כרגע.",
- "skip_reason": "שאר המטבעות (ADA, XRP, LINK, LTC) נייטרליים מדי ללא איתות ברור, ומניות ה-xStocks חסרות נתוני RSI/BB לאישור כניסה, ולכן דילגתי עליהן הפעם.",
+ "market_read": "השוק נסחר ברוגע עם מגמה עולה מתונה בביטקוין ואיתריום, ללא איתותי קיצון ברוב המטבעות והמניות.",
+ "skip_reason": "שאר המטבעות (ADA, LINK, XMR, LTC) נסחרים ב-RSI נייטרלי ללא איתות ברור, והמניות לא מציגות הזדמנות מובהקת ללונג או שורט כרגע.",
  "picks": [
-  "ETH long size=25% conf=MEDIUM"
- ],
- "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "ETH: Kraken: ['EOrder:Insufficient funds']"
+  "ETH long size=22% conf=MEDIUM"
  ]
 }
