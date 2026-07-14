@@ -1,19 +1,19 @@
 {
- "time": "2026-07-14T05:00:04",
+ "time": "2026-07-14T06:00:04",
  "usdc": 115.29,
- "portfolio": 549.36,
+ "portfolio": 549.68,
  "margin_headroom": 334.88,
  "open": [
-  "SOL long -2.3%",
-  "BTC long +1.1%"
+  "SOL long -2.0%",
+  "BTC long +1.0%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "OPENAI -13.4% vol=$9,171",
-  "SPCX -3.5% vol=$2,244,116",
-  "CRCL -3.1% vol=$756,230",
-  "GLD -2.1% vol=$20,463",
-  "NVDA -1.8% vol=$112,606"
+  "SPCX -3.6% vol=$2,146,566",
+  "CF +3.0% vol=$45,920",
+  "CRCL -2.9% vol=$759,133",
+  "NVDA -2.1% vol=$109,752",
+  "TSLA -1.7% vol=$31,086"
  ],
  "futures_ok": true,
  "futures_balance": 46.56,
@@ -22,12 +22,15 @@
  ],
  "call_reason": "פוזיציה חלשה: SOL",
  "claude_called": true,
- "market_read": "השוק נסחר בטווח צר עם רוב הנכסים ניטרליים (RSI סביב 45-55), אין מומנטום חזק ברור בביטקוין או באלטים המובילים.",
- "skip_reason": "שאר המועמדים (BTC, ETH, SOL, LINK) ניטרליים ללא edge ברור, וה-ETH הספוט נשאר כפי שהוא כי אין סיבה חזקה יותר לסובב אותו כרגע.",
+ "market_read": "השוק הרחב יציב עם עלייה מתונה בביטקוין ואיתותים מעורבים באלטקוינים - יש הזדמנויות ממוקדות ולא טרנד גורף.",
+ "skip_reason": "שאר המטבעות (ADA, LTC, ETH, BTC, SOL) קרובים מדי לגבול העליון של ה-BB או כבר בפוזיציה פתוחה, והמניות חסרות אינדיקטורים טכניים מספקים כרגע לכניסה בטוחה.",
  "picks": [
-  "CC long size=20% conf=MEDIUM"
+  "LINK long size=25% conf=MEDIUM",
+  "CC long size=15% conf=MEDIUM"
  ],
  "order_errors": [
+  "liq ETH: all sizes rejected (margin collateral lock)",
+  "LINK: Kraken: ['EOrder:Insufficient funds']",
   "CC: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
