@@ -1,35 +1,35 @@
 {
- "time": "2026-07-14T19:00:05",
- "usdc": 110.99,
- "portfolio": 551.81,
- "margin_headroom": 342.16,
+ "time": "2026-07-14T20:00:06",
+ "usdc": 110.29,
+ "portfolio": 552.36,
+ "margin_headroom": 320.09,
  "open": [
   "BTC long +4.0%",
-  "ETH long +4.2%",
-  "MSTR long +1.5%",
-  "CRCL long +2.7%",
-  "SOL long -0.1%",
-  "NVDA long +0.7%"
+  "ETH long +4.3%",
+  "MSTR long +2.4%",
+  "CRCL long +2.0%",
+  "SOL long -0.3%",
+  "NVDA long +0.4%",
+  "ADA long +0.1%"
  ],
  "stock_candidates": 11,
  "top_stocks": [
-  "MSTR +5.4% vol=$372,369",
-  "NVDA +4.3% vol=$386,159",
-  "CF +4.0% vol=$100,817",
-  "HOOD +2.1% vol=$516,833",
-  "QQQ +1.1% vol=$23,165"
+  "MSTR +6.4% vol=$159,799",
+  "NVDA +4.0% vol=$372,585",
+  "CF +3.4% vol=$100,558",
+  "HOOD +2.9% vol=$493,192",
+  "SPCX -1.9% vol=$2,491,718"
  ],
  "futures_ok": true,
- "futures_balance": 34.33,
+ "futures_balance": 35.34,
  "futures_float_topup": false,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במטבע חדש: LINK, XRP, ADA",
+ "call_reason": "תנועה חזקה במטבע חדש: LINK, XRP, LTC",
  "claude_called": true,
- "market_read": "השוק ברובו overbought עם BTC/ETH/SOL קרובים לשיאים, אז עדיף לחפש הזדמנויות שוליות פחות מתוחות או שורט על הקיצוניים ביותר.",
- "skip_reason": "רוב שאר המועמדים (BTC, ETH, SOL, LTC, DOGE) כבר עמוק ב-overbought עם BB% מעל 80 - מסוכן לרדוף לונג נוסף שם; DOT/CC בעלי נפח נמוך מדי לביטחון.",
+ "market_read": "השוק במגמת עלייה חזקה עם רוב הקריפטו הגדול קנוי יתר (RSI>70), מה שיוצר הזדמנויות שורט על המטבעות הכי מוצפים בעוד הפוזיציות הקיימות ברות מומנטום עדיין רצות לכיוון היעד.",
+ "skip_reason": "שאר המטבעות הקריפטו (BTC, ETH, LINK, LTC, DOGE) כבר קנויי יתר או כבר מוחזקים בתיק, והמניות (MSTR, NVDA, CRCL) כבר בפוזיציה פתוחה ונעות לכיוון היעד - אין הצדקה לרוטציה או כניסה נוספת.",
  "picks": [
-  "ADA long size=20% conf=MEDIUM",
-  "XRP short size=15% conf=MEDIUM"
+  "XRP short size=22% conf=HIGH"
  ],
  "order_errors": [
   "XRP: Kraken: ['EOrder:Insufficient initial margin']"
