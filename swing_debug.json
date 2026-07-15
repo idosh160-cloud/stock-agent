@@ -1,33 +1,30 @@
 {
- "time": "2026-07-15T17:00:05",
+ "time": "2026-07-15T18:00:06",
  "usdc": 109.95,
- "portfolio": 568.42,
+ "portfolio": 546.66,
  "margin_headroom": 320.09,
  "open": [
-  "BTC long +4.9%",
-  "ETH long +6.7%",
-  "MSTR long +1.9%",
-  "SOL long +0.3%",
-  "NVDA long -1.8%",
-  "ADA long +0.1%"
+  "BTC long +4.8%",
+  "ETH long +7.1%",
+  "MSTR long +3.2%",
+  "SOL long +0.5%",
+  "NVDA long -0.7%",
+  "ADA long +1.0%",
+  "CRCL long +1.1%",
+  "ANTHROPIC short +0.2%"
  ],
  "stock_candidates": 14,
  "top_stocks": [
-  "ANTHROPIC +16.6% vol=$42,680",
-  "AAPL +4.0% vol=$21,858",
-  "GOOGL +3.8% vol=$238,956",
-  "SPCX -3.2% vol=$2,397,713",
-  "CRCL +2.5% vol=$2,510,393"
+  "ANTHROPIC +16.4% vol=$42,661",
+  "AAPL +4.0% vol=$22,114",
+  "CRCL +3.3% vol=$2,148,625",
+  "GOOGL +3.3% vol=$250,461",
+  "HOOD +2.2% vol=$449,107"
  ],
  "futures_ok": true,
- "futures_balance": 42.98,
+ "futures_balance": 19.53,
+ "futures_float_topup": false,
  "unallocated_spot": [],
- "call_reason": "פוזיציה חלשה: NVDA",
- "claude_called": true,
- "market_read": "השוק הקריפטו נסחר בטווח נייטרלי-שורי מתון בעוד שהמניות המוטבעות מראות תנועות קיצוניות שמצדיקות מסחר בשני הכיוונים.",
- "skip_reason": "שאר המועמדים בקריפטו (ETH, SOL, ADA, LINK) כבר מוחזקים בתיק או מציגים איתותים מעורבים ללא יתרון ברור, ומניות כמו SPCX/HOOD/NVDA חופפות לפוזיציות קיימות או חסרות איתות טכני מובהק.",
- "picks": [
-  "CRCL long size=22% conf=MEDIUM",
-  "ANTHROPIC short size=15% conf=MEDIUM"
- ]
+ "call_reason": "הכל שקט — דולג על קריאה לClaude",
+ "claude_called": false
 }
