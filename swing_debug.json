@@ -1,30 +1,35 @@
 {
- "time": "2026-07-15T20:00:06",
- "usdc": 109.88,
- "portfolio": 547.2,
+ "time": "2026-07-15T21:00:05",
+ "usdc": 109.87,
+ "portfolio": 548.46,
  "margin_headroom": 320.09,
  "open": [
   "BTC long +4.7%",
   "ETH long +6.9%",
-  "MSTR long +1.8%",
-  "SOL long -0.3%",
-  "NVDA long +0.7%",
-  "ADA long +0.2%",
-  "CRCL long +1.3%",
+  "MSTR long +2.2%",
+  "SOL long -0.0%",
+  "NVDA long +0.6%",
+  "ADA long +0.8%",
+  "CRCL long +1.7%",
   "ANTHROPIC short +0.2%"
  ],
  "stock_candidates": 15,
  "top_stocks": [
   "ANTHROPIC +16.4% vol=$42,661",
-  "AAPL +3.9% vol=$24,741",
-  "CRCL +3.6% vol=$2,113,757",
-  "GOOGL +3.5% vol=$302,428",
-  "IOT -2.5% vol=$6,355"
+  "AAPL +4.1% vol=$26,849",
+  "CRCL +3.9% vol=$2,089,532",
+  "GOOGL +3.4% vol=$306,353",
+  "IOT -2.6% vol=$6,827"
  ],
  "futures_ok": true,
- "futures_balance": 21.31,
+ "futures_balance": 22.39,
  "futures_float_topup": false,
  "unallocated_spot": [],
- "call_reason": "הכל שקט — דולג על קריאה לClaude",
- "claude_called": false
+ "call_reason": "תנועה חזקה במניה: AAPL",
+ "claude_called": true,
+ "market_read": "השוק הכללי בסנטימנט חיובי מתון עם BTC יציב סביב 65K וקריפטו רוב הקנדידטים בתחום נייטרלי-חופר, בעוד מניות טכנולוגיה כמו GOOGL מציגות מומנטום ברור.",
+ "skip_reason": "שאר מטבעות הקריפטו (LINK, PENGU, ADA וכו') נמצאים באזור נייטרלי עם MACD שלילי או נפח נמוך - אין קונפירמציה חזקה מספיק להצדיק פוזיציה נוספת מעבר לפוזיציות הקיימות שכבר בדרך למטרה.",
+ "picks": [
+  "GOOGL long size=30% conf=MEDIUM"
+ ]
 }
