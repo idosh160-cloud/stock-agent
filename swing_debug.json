@@ -1,37 +1,40 @@
 {
- "time": "2026-07-15T03:00:05",
- "usdc": 110.16,
- "portfolio": 550.33,
+ "time": "2026-07-15T04:00:05",
+ "usdc": 110.13,
+ "portfolio": 555.02,
  "margin_headroom": 320.09,
  "open": [
-  "BTC long +3.9%",
-  "ETH long +3.6%",
-  "MSTR long +2.2%",
-  "CRCL long +3.4%",
-  "SOL long -0.1%",
+  "BTC long +4.4%",
+  "ETH long +4.2%",
+  "MSTR long +2.5%",
+  "CRCL long +4.0%",
+  "SOL long +0.5%",
   "NVDA long +0.6%",
-  "ADA long -0.3%"
+  "ADA long +0.5%"
  ],
  "stock_candidates": 11,
  "top_stocks": [
-  "MSTR +6.5% vol=$717,554",
-  "CF +4.5% vol=$63,472",
-  "NVDA +4.3% vol=$363,857",
+  "MSTR +6.1% vol=$722,052",
+  "CF +5.3% vol=$64,056",
   "HOOD +3.3% vol=$516,875",
-  "CRCL +2.5% vol=$1,470,995"
+  "NVDA +3.2% vol=$363,838",
+  "CRCL +1.7% vol=$1,485,576"
  ],
  "futures_ok": true,
- "futures_balance": 35.96,
+ "futures_balance": 38.16,
  "futures_float_topup": false,
  "unallocated_spot": [],
  "call_reason": "תנועה חזקה במניה: CF, HOOD",
  "claude_called": true,
- "market_read": "השוק הכללי נסחר בטווח צר עם BTC וETH במגמת עלייה מתונה אך לא אקסטרימית, כשרוב הפוזיציות הקיימות בתיק מתקדמות בהדרגה לעבר היעדים.",
- "skip_reason": "שאר המטבעות והמניות נמצאים באמצע טווח (RSI 50-65) ללא איתות ברור לכיוון אחד, ו-CC למרות ה-RSI הקיצוני נסחר בנפח נמוך מדי כדי להצדיק שורט בטוח.",
+ "market_read": "השוק הכללי במגמת עלייה מתונה עם רוב הפוזיציות הקיימות ברווח קטן ומתקדמות לעבר היעד, אין איתות ברור לרוטציה.",
+ "skip_reason": "שאר המטבעות (BTC/ETH/LINK) קרובים ל-overbought אך לא בקיצוניות מספקת לשורט, וה-altcoins בעלי נפח נמוך מדי או ללא איתות ברור - עדיף לרכז את המזומן הפנוי ב-HOOD.",
  "picks": [
-  "BCH long size=20% conf=MEDIUM"
+  "HOOD long size=30% conf=MEDIUM"
  ],
- "order_errors": [
-  "BCH: Kraken: ['EOrder:Insufficient funds']"
+ "transfers": [
+  "HOOD: moved $19 → FAILED"
+ ],
+ "skips": [
+  "HOOD: margin $38 < needed $56 (after transfer attempt)"
  ]
 }
