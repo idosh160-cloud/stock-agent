@@ -1,37 +1,37 @@
 {
- "time": "2026-07-15T11:00:06",
- "usdc": 110.0,
- "portfolio": 552.8,
+ "time": "2026-07-15T12:00:06",
+ "usdc": 109.97,
+ "portfolio": 554.28,
  "margin_headroom": 320.09,
  "open": [
-  "BTC long +4.2%",
-  "ETH long +4.3%",
-  "MSTR long +2.5%",
-  "CRCL long +3.5%",
-  "SOL long -0.1%",
-  "NVDA long +0.1%",
-  "ADA long +0.8%"
+  "BTC long +4.3%",
+  "ETH long +4.7%",
+  "MSTR long +2.3%",
+  "CRCL long +3.6%",
+  "SOL long +0.1%",
+  "NVDA long +0.3%",
+  "ADA long +0.9%"
  ],
  "stock_candidates": 13,
  "top_stocks": [
-  "ANTHROPIC +30.6% vol=$44,711",
-  "MSTR +5.7% vol=$720,042",
-  "HOOD +4.3% vol=$488,801",
-  "CRCL +2.7% vol=$1,477,810",
-  "NVDA +2.2% vol=$372,094"
+  "ANTHROPIC +24.0% vol=$44,267",
+  "MSTR +5.8% vol=$714,665",
+  "HOOD +4.1% vol=$488,156",
+  "NVDA +2.7% vol=$372,304",
+  "CRCL +2.6% vol=$1,477,679"
  ],
  "futures_ok": true,
- "futures_balance": 35.84,
+ "futures_balance": 36.02,
  "futures_float_topup": false,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במטבע חדש: PENGU",
+ "call_reason": "תנועה חזקה במניה: ANTHROPIC, HOOD, FLU",
  "claude_called": true,
- "market_read": "השוק הרחב נסחר בטווח ניטרלי-חיובי עם רוב הפוזיציות הקיימות בפרופיט קטן ומתקדמות לעבר היעד, אין איתות חד לרוטציה.",
- "skip_reason": "שאר המועמדים (ADA, SOL, ETH, BTC, DOGE, CC, PENGU) נמצאים באזור ניטרלי או ללא איתות ברור לכיוון, ולכן לא הוספתי חשיפה נוספת מעבר ל-XMR.",
+ "market_read": "השוק הכללי רגוע יחסית עם רוב הפוזיציות הקיימות ברווח קל ותנועה לכיוון היעד, אין כאן קטסטרופה אבל גם אין מומנטום פראי שדורש שינוי גדול בתיק.",
+ "skip_reason": "שאר הקנדידטים (BTC, SOL, ADA, XRP) כבר מוחזקים בתיק וקרובים לניטרלי או לא מציעים סטאפ חדש משמעותי, וה-stocks הרגילים (SPY, QQQ, NVDA, CRCL, MSTR) כבר בתיק או ללא איתות ברור מספיק להצדיק סיבוב.",
  "picks": [
-  "XMR long size=20% conf=MEDIUM"
+  "LINK short size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "XMR: Kraken: ['EOrder:Insufficient funds']"
+  "LINK: Kraken: ['EOrder:Insufficient initial margin']"
  ]
 }
