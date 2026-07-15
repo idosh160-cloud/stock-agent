@@ -1,41 +1,35 @@
 {
- "time": "2026-07-15T13:00:05",
+ "time": "2026-07-15T14:00:06",
  "usdc": 109.95,
- "portfolio": 565.85,
+ "portfolio": 571.23,
  "margin_headroom": 320.09,
  "open": [
   "BTC long +5.0%",
-  "ETH long +7.1%",
-  "MSTR long +3.8%",
-  "CRCL long +4.3%",
-  "SOL long +1.1%",
-  "NVDA long +0.4%",
-  "ADA long +2.2%"
+  "ETH long +7.0%",
+  "MSTR long +1.4%",
+  "SOL long +0.8%",
+  "NVDA long +0.2%",
+  "ADA long +1.8%"
  ],
- "stock_candidates": 13,
+ "stock_candidates": 14,
  "top_stocks": [
-  "ANTHROPIC +24.0% vol=$44,267",
-  "MSTR +4.0% vol=$796,187",
-  "HOOD +2.9% vol=$493,298",
-  "NVDA +2.4% vol=$372,894",
-  "SPCX -1.8% vol=$2,392,221"
+  "ANTHROPIC +24.6% vol=$44,156",
+  "CRCL +6.6% vol=$2,588,438",
+  "FLU +3.5% vol=$6,887",
+  "GOOGL +2.7% vol=$137,377",
+  "NVDA +2.7% vol=$440,330"
  ],
  "futures_ok": true,
- "futures_balance": 38.76,
- "futures_float_topup": false,
+ "futures_balance": 44.88,
  "unallocated_spot": [],
  "call_reason": "תנועה חזקה במטבע חדש: PENGU",
  "claude_called": true,
- "market_read": "השוק הכללי נמצא במגמת עלייה חזקה עם כמה נכסים קיצוניים בקניית יתר, מה שיוצר הזדמנויות שורט טובות יותר מלונג חדש כרגע.",
- "skip_reason": "שאר המועמדים (TON, XMR, CC) עם נפח מסחר נמוך מדי או תנועה דשדשנית ללא יתרון ברור, ולכן דולגו.",
+ "market_read": "השוק הקריפטו רוב במגמת עלייה מתונה עם כמה נכסים בקנייתיתר (ETH, LINK, XRP), בעוד מניית ANTHROPIC מציגה ריצה פרבולית קיצונית שמזמינה שורט מיצוי.",
+ "skip_reason": "שאר הקריפטו נמצא בקנייתיתר מובהק (ETH, LINK, XRP, ADA) או בנפח נמוך מדי (TON, PENGU, CC) ולא מספק יחס סיכוי/סיכון ברור, ולכן דילגתי עליהם לטובת סטאפ השורט האיכותי היחיד שנמצא.",
  "picks": [
-  "ANTHROPIC short size=25% conf=MEDIUM",
-  "LINK short size=15% conf=MEDIUM"
- ],
- "transfers": [
-  "ANTHROPIC: moved $10 → FAILED"
+  "ANTHROPIC short size=25% conf=MEDIUM"
  ],
  "skips": [
-  "ANTHROPIC: margin $39 < needed $47 (after transfer attempt)"
+  "ANTHROPIC: margin $45 < needed $48 (after transfer attempt)"
  ]
 }

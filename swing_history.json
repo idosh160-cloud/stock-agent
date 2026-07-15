@@ -923,5 +923,30 @@
     "entry_bb_pct": 42.5,
     "entry_macd_hist": 0.037457,
     "entry_change_24h": 0.16
+  },
+  {
+    "coin": "CRCL",
+    "pair": "PF_CRCLXUSD",
+    "status": "closed_externally",
+    "leveraged": false,
+    "collateral": 112.41,
+    "volume": 1.83376835,
+    "entry_price": 61.3,
+    "close_price": 61.3,
+    "target_price": 64.98,
+    "stop_price": 61.913,
+    "pnl_usd": 0,
+    "pnl_pct": 0,
+    "date_open": "2026-07-14T15:00:34.717330",
+    "date_close": "2026-07-15T14:00:05.031272",
+    "reasoning": "CRCL ירדה 5% עם נפח מסחר גבוה ($830K) - נראית כמו ירידה חדה מדי שמבשילה לתיקון טכני. אין לי סיגנל RSI חד אך המומנטום השלילי החד מצדיק כניסה קטנה עם סטופ צמוד לפי מתודולוגיית מניות.",
+    "confidence": "MEDIUM",
+    "txid": "a241f267-cd73-4404-9aff-475befc670c8",
+    "close_txid": null,
+    "side": "long",
+    "entry_rsi": null,
+    "entry_bb_pct": null,
+    "entry_macd_hist": null,
+    "entry_change_24h": -5.05
   }
 ]
