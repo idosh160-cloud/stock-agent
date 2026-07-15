@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-15T10:00:03.678763",
+  "timestamp": "2026-07-15T11:00:04.461268",
   "balance": {
     "ADA": 0.01036605,
     "ATOM": 5.04631408,
@@ -7,7 +7,7 @@
     "ETH": 0.19930845,
     "LINK": 1.883e-05,
     "SOL": 0.22997544,
-    "USDC": 110.01320098,
+    "USDC": 109.98604098,
     "BTC": 7.078e-05,
     "XRP": 2.2982796,
     "USD": 0.0181
@@ -16,74 +16,74 @@
     {
       "coin": "ETH",
       "qty": 0.19930845,
-      "price": 1879.11,
-      "value_usd": 374.52,
+      "price": 1877.0,
+      "value_usd": 374.1,
       "avg_cost": 1796.35,
-      "pnl_usd": 16.49,
-      "pnl_pct": 4.61,
-      "change_24h": -0.58,
+      "pnl_usd": 16.07,
+      "pnl_pct": 4.49,
+      "change_24h": -0.7,
       "high_24h": 1895.3,
-      "low_24h": 1784.59
+      "low_24h": 1792.46
     },
     {
       "coin": "SOL",
       "qty": 0.22997544,
-      "price": 77.45,
-      "value_usd": 17.81,
+      "price": 77.31,
+      "value_usd": 17.78,
       "avg_cost": 77.36,
-      "pnl_usd": 0.02,
-      "pnl_pct": 0.12,
-      "change_24h": -0.53,
+      "pnl_usd": -0.01,
+      "pnl_pct": -0.06,
+      "change_24h": -0.71,
       "high_24h": 78.66,
-      "low_24h": 74.91
+      "low_24h": 75.16
     },
     {
       "coin": "ATOM",
       "qty": 5.04631408,
-      "price": 1.561,
-      "value_usd": 7.88,
+      "price": 1.5718,
+      "value_usd": 7.93,
       "avg_cost": null,
       "pnl_usd": null,
       "pnl_pct": null,
-      "change_24h": -0.17,
-      "high_24h": 1.5702,
-      "low_24h": 1.5208
+      "change_24h": 0.52,
+      "high_24h": 1.5749,
+      "low_24h": 1.5282
     },
     {
       "coin": "BTC",
       "qty": 7.078e-05,
-      "price": 64642.55,
-      "value_usd": 4.58,
+      "price": 64599.48,
+      "value_usd": 4.57,
       "avg_cost": 62046.585551,
       "pnl_usd": 0.18,
-      "pnl_pct": 4.18,
-      "change_24h": -0.53,
+      "pnl_pct": 4.11,
+      "change_24h": -0.6,
       "high_24h": 65222.0,
-      "low_24h": 62551.22
+      "low_24h": 62666.81
     },
     {
       "coin": "XRP",
       "qty": 2.2982796,
-      "price": 1.10795,
+      "price": 1.10763,
       "value_usd": 2.55,
       "avg_cost": 1.047855,
       "pnl_usd": 0.14,
-      "pnl_pct": 5.74,
-      "change_24h": -0.34,
+      "pnl_pct": 5.7,
+      "change_24h": -0.37,
       "high_24h": 1.12031,
-      "low_24h": 1.0676
+      "low_24h": 1.06878
     },
     {
       "coin": "ADA",
       "qty": 0.01036605,
-      "price": 0.164095,
+      "price": 0.164432,
       "value_usd": 0.0,
       "avg_cost": 0.163185,
       "pnl_usd": 0.0,
-      "pnl_pct": 0.56,
-      "change_24h": -0.92,
+      "pnl_pct": 0.76,
+      "change_24h": -0.71,
       "high_24h": 0.167781,
-      "low_24h": 0.158102
+      "low_24h": 0.158362
     },
     {
       "coin": "BABY",
@@ -100,27 +100,27 @@
     {
       "coin": "LINK",
       "qty": 1.883e-05,
-      "price": 8.36206,
+      "price": 8.33577,
       "value_usd": 0.0,
       "avg_cost": null,
       "pnl_usd": null,
       "pnl_pct": null,
-      "change_24h": 0.12,
+      "change_24h": -0.19,
       "high_24h": 8.4323,
-      "low_24h": 7.92419
+      "low_24h": 7.94291
     }
   ],
-  "portfolio_usd": 517.37,
-  "usdc": 110.03,
+  "portfolio_usd": 516.94,
+  "usdc": 110.0,
   "signals": [
     {
       "coin": "BTC",
       "pair": "XBTUSDC",
       "action": "HOLD (pending order)",
-      "rsi": 52.54,
-      "macd": -75.287208,
-      "ma50": 63443.04,
-      "ma200": 63430.82,
+      "rsi": 49.72,
+      "macd": -82.610913,
+      "ma50": 63473.08,
+      "ma200": 63437.95,
       "support": 64458.63,
       "resistance": 64897.47,
       "near_support": true,
@@ -132,7 +132,7 @@
         "Near support $64,458.6300",
         "Near resistance $64,897.4700"
       ],
-      "price": 64642.55,
+      "price": 64605.16,
       "volume": 0,
       "usd_value": 0.0,
       "limit_price": 0
@@ -141,10 +141,10 @@
       "coin": "ETH",
       "pair": "ETHUSDC",
       "action": "HOLD (pending order)",
-      "rsi": 52.43,
-      "macd": -3.042921,
-      "ma50": 1822.25,
-      "ma200": 1789.29,
+      "rsi": 51.05,
+      "macd": -3.23387,
+      "ma50": 1824.05,
+      "ma200": 1789.81,
       "support": 1863.96,
       "resistance": 1886.0,
       "near_support": true,
@@ -152,12 +152,12 @@
       "sell_score": 4,
       "reasons": [
         "MACD bearish crossover",
-        "Above MA50 ($1,822.25)",
+        "Above MA50 ($1,824.05)",
         "Above MA200 (uptrend)",
         "Near support $1,863.9600",
         "Near resistance $1,886.0000"
       ],
-      "price": 1879.11,
+      "price": 1876.73,
       "volume": 0,
       "usd_value": 0.0,
       "limit_price": 0
@@ -166,12 +166,12 @@
       "coin": "XRP",
       "pair": "XRPUSDC",
       "action": "HOLD (pending order)",
-      "rsi": 47.26,
-      "macd": -0.000978,
+      "rsi": 50.43,
+      "macd": -0.000996,
       "ma50": 1.09,
       "ma200": 1.1,
       "support": 1.1036,
-      "resistance": 1.1172,
+      "resistance": 1.109,
       "near_support": true,
       "buy_score": 3,
       "sell_score": 4,
@@ -180,9 +180,9 @@
         "Above MA50 ($1.09)",
         "Above MA200 (uptrend)",
         "Near support $1.1036",
-        "Near resistance $1.1172"
+        "Near resistance $1.1090"
       ],
-      "price": 1.10795,
+      "price": 1.10763,
       "volume": 0,
       "usd_value": 0.0,
       "limit_price": 0
