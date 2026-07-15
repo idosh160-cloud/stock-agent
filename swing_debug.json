@@ -1,40 +1,37 @@
 {
- "time": "2026-07-15T06:00:04",
- "usdc": 110.11,
- "portfolio": 555.62,
+ "time": "2026-07-15T07:00:05",
+ "usdc": 110.08,
+ "portfolio": 554.21,
  "margin_headroom": 320.09,
  "open": [
-  "BTC long +4.6%",
-  "ETH long +4.6%",
-  "MSTR long +2.1%",
+  "BTC long +4.5%",
+  "ETH long +4.3%",
+  "MSTR long +3.0%",
   "CRCL long +4.4%",
-  "SOL long +1.2%",
+  "SOL long +0.7%",
   "NVDA long +0.8%",
-  "ADA long +0.1%"
+  "ADA long +0.9%"
  ],
- "stock_candidates": 11,
+ "stock_candidates": 12,
  "top_stocks": [
-  "MSTR +5.4% vol=$708,295",
-  "CF +3.5% vol=$65,552",
-  "NVDA +3.4% vol=$375,360",
-  "HOOD +3.0% vol=$486,823",
-  "CRCL +2.1% vol=$1,490,191"
+  "ANTHROPIC -13.1% vol=$6,502",
+  "MSTR +5.9% vol=$719,069",
+  "NVDA +3.8% vol=$375,311",
+  "CF +3.6% vol=$65,825",
+  "HOOD +3.3% vol=$488,112"
  ],
  "futures_ok": true,
- "futures_balance": 37.51,
+ "futures_balance": 37.45,
  "futures_float_topup": false,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במניה: CF, HOOD",
+ "call_reason": "תנועה חזקה במטבע חדש: CC",
  "claude_called": true,
- "market_read": "השוק בעליות מתונות עם כמה נכסים בקנייתי-יתר (SOL, LINK, XMR), אבל מומנטום מניות כמו HOOD עדיין נראה בריא ולא מוגזם.",
- "skip_reason": "SOL/ETH/LINK/XMR כבר overbought עם BB% גבוה ולא מציעים כניסה חדשה נקייה; CC נפח דליל מדי לשורט אמין; שאר הפוזיציות הקיימות מתקדמות יפה ליעד ואין סיבה לסובב אותן.",
+ "market_read": "השוק הכללי במגמת עלייה מתונה עם כמה נכסים שנראים גמורים מבחינת מומנטום קצר טווח, כמו LINK.",
+ "skip_reason": "שאר המועמדים בקריפטו (DOT, CC, LTC, DOGE, XRP, ADA) נראים ניטרליים או בנפח מסחר נמוך מדי, והמניות (ANTHROPIC, HOOD) חסרות אינדיקטורים ברורים לכניסה איכותית כרגע.",
  "picks": [
-  "HOOD long size=25% conf=MEDIUM"
+  "LINK short size=25% conf=MEDIUM"
  ],
- "transfers": [
-  "HOOD: moved $11 → FAILED"
- ],
- "skips": [
-  "HOOD: margin $38 < needed $46 (after transfer attempt)"
+ "order_errors": [
+  "LINK: Kraken: ['EOrder:Insufficient initial margin']"
  ]
 }
