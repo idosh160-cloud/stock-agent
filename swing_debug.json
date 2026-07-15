@@ -1,35 +1,37 @@
 {
- "time": "2026-07-15T15:00:05",
- "usdc": 110.0,
- "portfolio": 573.09,
+ "time": "2026-07-15T16:00:05",
+ "usdc": 109.96,
+ "portfolio": 571.26,
  "margin_headroom": 320.09,
  "open": [
   "BTC long +5.4%",
   "ETH long +7.4%",
-  "MSTR long +2.9%",
-  "SOL long +0.9%",
-  "NVDA long -0.3%",
-  "ADA long +2.0%"
+  "MSTR long +2.6%",
+  "SOL long +0.8%",
+  "NVDA long -1.0%",
+  "ADA long +1.5%"
  ],
  "stock_candidates": 14,
  "top_stocks": [
-  "ANTHROPIC +24.5% vol=$44,604",
-  "CRCL +7.3% vol=$2,900,531",
-  "SPCX -3.4% vol=$2,086,455",
-  "AAPL +2.9% vol=$19,423",
-  "HOOD +1.9% vol=$500,034"
+  "ANTHROPIC +24.4% vol=$44,652",
+  "SPCX -4.3% vol=$1,863,889",
+  "AAPL +4.2% vol=$20,961",
+  "GOOGL +3.8% vol=$180,372",
+  "HOOD +3.2% vol=$508,542"
  ],
  "futures_ok": true,
- "futures_balance": 44.61,
+ "futures_balance": 43.16,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במטבע חדש: PENGU",
+ "call_reason": "פוזיציה חלשה: NVDA",
  "claude_called": true,
- "market_read": "השוק הכללי חם עם רוב הקריפטו והמניות ב-overbought, כדאי לתפוס הזדמנויות שורט על מטבעות שמיצו את התנועה במקום להוסיף עוד לונגים על נכסים שכבר קרובים ליעד.",
- "skip_reason": "ETH, BTC, LINK, PENGU כולם overbought אך בעלי היסטוריה חלשה או נפח נמוך מדי לביטחון גבוה; TON נראה טוב לבאונס אך נפח ($30K) נמוך מדי לביטחון; מניות (ANTHROPIC, CRCL) חסרות אינדיקטורים טכניים ברורים לכניסה מבוססת.",
+ "market_read": "השוק בכללי overbought ברוב הקריפטו הגדול (BTC, ETH, XRP) אחרי ריצה חזקה, אז יש הזדמנויות גם בשורט על שמות מוגזמים וגם בלונג על שמות שעוד לא מוצו.",
+ "skip_reason": "BTC/ETH/XRP/BTC כבר מוחזקים או overbought מדי לכניסה חדשה, ומניות כמו ANTHROPIC ו-SPCX חסרות נתוני אינדיקטורים ברורים או נזילות דלה מדי לסייז ראוי.",
  "picks": [
-  "XRP short size=30% conf=MEDIUM"
+  "LINK short size=20% conf=MEDIUM",
+  "PENGU long size=15% conf=MEDIUM"
  ],
  "order_errors": [
-  "XRP: Kraken: ['EOrder:Insufficient initial margin']"
+  "LINK: Kraken: ['EOrder:Insufficient initial margin']",
+  "PENGU: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
