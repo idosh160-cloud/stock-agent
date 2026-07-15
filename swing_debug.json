@@ -1,37 +1,34 @@
 {
- "time": "2026-07-15T07:00:05",
- "usdc": 110.08,
- "portfolio": 554.21,
+ "time": "2026-07-15T08:00:06",
+ "usdc": 110.05,
+ "portfolio": 551.83,
  "margin_headroom": 320.09,
  "open": [
-  "BTC long +4.5%",
-  "ETH long +4.3%",
-  "MSTR long +3.0%",
-  "CRCL long +4.4%",
-  "SOL long +0.7%",
+  "BTC long +4.0%",
+  "ETH long +4.0%",
+  "MSTR long +1.9%",
+  "CRCL long +3.6%",
+  "SOL long +0.1%",
   "NVDA long +0.8%",
-  "ADA long +0.9%"
+  "ADA long +0.0%"
  ],
- "stock_candidates": 12,
+ "stock_candidates": 13,
  "top_stocks": [
-  "ANTHROPIC -13.1% vol=$6,502",
-  "MSTR +5.9% vol=$719,069",
-  "NVDA +3.8% vol=$375,311",
-  "CF +3.6% vol=$65,825",
-  "HOOD +3.3% vol=$488,112"
+  "ANTHROPIC +18.0% vol=$44,888",
+  "MSTR +5.3% vol=$716,218",
+  "HOOD +4.1% vol=$486,919",
+  "NVDA +3.4% vol=$375,067",
+  "CF +3.0% vol=$58,227"
  ],
  "futures_ok": true,
- "futures_balance": 37.45,
+ "futures_balance": 36.47,
  "futures_float_topup": false,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במטבע חדש: CC",
+ "call_reason": "תנועה חזקה במניה: ANTHROPIC, HOOD, CF",
  "claude_called": true,
- "market_read": "השוק הכללי במגמת עלייה מתונה עם כמה נכסים שנראים גמורים מבחינת מומנטום קצר טווח, כמו LINK.",
- "skip_reason": "שאר המועמדים בקריפטו (DOT, CC, LTC, DOGE, XRP, ADA) נראים ניטרליים או בנפח מסחר נמוך מדי, והמניות (ANTHROPIC, HOOD) חסרות אינדיקטורים ברורים לכניסה איכותית כרגע.",
+ "market_read": "השוק הכללי במגמת דשדוש עם BTC ו-ETH ליד אמצע הטווח, אין מומנטום ברור לכיוון אחד אבל כמה אלטקוינים מציגים איתותי מיצוי קיצוניים.",
+ "skip_reason": "שאר המועמדים (BNB, XMR, LTC) נמצאים באמצע הטווח בלי איתות ברור או עם נפח מסחר נמוך מדי, ולכן לא מצדיקים כניסה חדשה מעבר לפוזיציה הקיימת.",
  "picks": [
-  "LINK short size=25% conf=MEDIUM"
- ],
- "order_errors": [
-  "LINK: Kraken: ['EOrder:Insufficient initial margin']"
+  "CC short size=20% conf=MEDIUM"
  ]
 }
