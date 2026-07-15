@@ -1,40 +1,30 @@
 {
- "time": "2026-07-15T01:00:05",
+ "time": "2026-07-15T02:00:05",
  "usdc": 110.19,
- "portfolio": 554.42,
+ "portfolio": 551.71,
  "margin_headroom": 320.09,
  "open": [
-  "BTC long +4.5%",
-  "ETH long +4.6%",
-  "MSTR long +3.9%",
+  "BTC long +4.2%",
+  "ETH long +3.9%",
+  "MSTR long +2.3%",
   "CRCL long +3.3%",
-  "SOL long +0.3%",
+  "SOL long +0.1%",
   "NVDA long +0.3%",
-  "ADA long +0.7%"
+  "ADA long +0.2%"
  ],
  "stock_candidates": 11,
  "top_stocks": [
-  "MSTR +7.0% vol=$729,922",
-  "CF +5.2% vol=$64,605",
-  "HOOD +3.7% vol=$518,810",
-  "NVDA +3.1% vol=$363,670",
-  "CRCL +1.6% vol=$1,463,821"
+  "MSTR +6.0% vol=$720,516",
+  "CF +5.2% vol=$64,630",
+  "NVDA +4.0% vol=$362,881",
+  "HOOD +3.3% vol=$516,953",
+  "QQQ +1.6% vol=$20,193"
  ],
  "futures_ok": true,
- "futures_balance": 36.38,
+ "futures_balance": 36.1,
  "futures_float_topup": false,
  "unallocated_spot": [],
  "call_reason": "תנועה חזקה במניה: CF, HOOD",
- "claude_called": true,
- "market_read": "שוק הקריפטו במגמת עלייה אך רוב הנכסים הגדולים (BTC, ETH, SOL) כבר overbought ומיצו טווח קצר, בעוד מניות ה-xStocks עדיין מציעות כניסה נקייה עם נפח תומך.",
- "skip_reason": "BTC/ETH/SOL/LTC כבר overbought (RSI>70) וגם כבר מוחזקים בתיק - אין הצדקה להוסיף חשיפה; XMR ו-CC נפח מסחר נמוך מדי לביטחון בכניסה.",
- "picks": [
-  "HOOD long size=25% conf=MEDIUM"
- ],
- "transfers": [
-  "HOOD: moved $12 → FAILED"
- ],
- "skips": [
-  "HOOD: margin $36 < needed $46 (after transfer attempt)"
- ]
+ "claude_called": false,
+ "skip": "snapshot זהה לקריאה הקודמת"
 }
