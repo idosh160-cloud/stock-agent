@@ -1,34 +1,37 @@
 {
- "time": "2026-07-15T08:00:06",
- "usdc": 110.05,
- "portfolio": 551.83,
+ "time": "2026-07-15T09:00:06",
+ "usdc": 110.03,
+ "portfolio": 553.48,
  "margin_headroom": 320.09,
  "open": [
-  "BTC long +4.0%",
-  "ETH long +4.0%",
+  "BTC long +4.3%",
+  "ETH long +4.4%",
   "MSTR long +1.9%",
-  "CRCL long +3.6%",
-  "SOL long +0.1%",
-  "NVDA long +0.8%",
-  "ADA long +0.0%"
+  "CRCL long +4.0%",
+  "SOL long +0.2%",
+  "NVDA long +0.1%",
+  "ADA long +0.3%"
  ],
  "stock_candidates": 13,
  "top_stocks": [
   "ANTHROPIC +18.0% vol=$44,888",
-  "MSTR +5.3% vol=$716,218",
+  "MSTR +5.3% vol=$715,697",
   "HOOD +4.1% vol=$486,919",
-  "NVDA +3.4% vol=$375,067",
-  "CF +3.0% vol=$58,227"
+  "NVDA +3.1% vol=$376,212",
+  "CRCL +2.0% vol=$1,485,653"
  ],
  "futures_ok": true,
- "futures_balance": 36.47,
+ "futures_balance": 36.11,
  "futures_float_topup": false,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במניה: ANTHROPIC, HOOD, CF",
+ "call_reason": "תנועה חזקה במניה: ANTHROPIC, HOOD",
  "claude_called": true,
- "market_read": "השוק הכללי במגמת דשדוש עם BTC ו-ETH ליד אמצע הטווח, אין מומנטום ברור לכיוון אחד אבל כמה אלטקוינים מציגים איתותי מיצוי קיצוניים.",
- "skip_reason": "שאר המועמדים (BNB, XMR, LTC) נמצאים באמצע הטווח בלי איתות ברור או עם נפח מסחר נמוך מדי, ולכן לא מצדיקים כניסה חדשה מעבר לפוזיציה הקיימת.",
+ "market_read": "השוק הכללי נסחר בסטגנציה עם BTC וETH קרובים לאמצע הטווח, אבל כמה אלטים הראו סימני מיצוי בקצה העליון של הבולינגר.",
+ "skip_reason": "שאר המועמדים (CC, ANTHROPIC) סובלים מנפח מסחר נמוך מדי או תנודתיות קיצונית שלא מצדיקה כניסה חדשה, ושאר הפוזיציות הפתוחות כבר בכיוון הנכון ולא דורשות רוטציה.",
  "picks": [
-  "CC short size=20% conf=MEDIUM"
+  "LINK short size=22% conf=MEDIUM"
+ ],
+ "order_errors": [
+  "LINK: Kraken: ['EOrder:Insufficient initial margin']"
  ]
 }
