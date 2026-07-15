@@ -1,40 +1,40 @@
 {
- "time": "2026-07-15T04:00:05",
- "usdc": 110.13,
- "portfolio": 555.02,
+ "time": "2026-07-15T05:00:05",
+ "usdc": 110.11,
+ "portfolio": 554.18,
  "margin_headroom": 320.09,
  "open": [
-  "BTC long +4.4%",
-  "ETH long +4.2%",
-  "MSTR long +2.5%",
-  "CRCL long +4.0%",
-  "SOL long +0.5%",
+  "BTC long +4.3%",
+  "ETH long +4.3%",
+  "MSTR long +2.0%",
+  "CRCL long +4.4%",
+  "SOL long +0.8%",
   "NVDA long +0.6%",
-  "ADA long +0.5%"
+  "ADA long +0.2%"
  ],
  "stock_candidates": 11,
  "top_stocks": [
-  "MSTR +6.1% vol=$722,052",
-  "CF +5.3% vol=$64,056",
-  "HOOD +3.3% vol=$516,875",
-  "NVDA +3.2% vol=$363,838",
-  "CRCL +1.7% vol=$1,485,576"
+  "MSTR +5.0% vol=$706,792",
+  "CF +4.0% vol=$63,716",
+  "NVDA +3.2% vol=$373,442",
+  "HOOD +3.0% vol=$486,823",
+  "CRCL +1.8% vol=$1,491,587"
  ],
  "futures_ok": true,
- "futures_balance": 38.16,
+ "futures_balance": 37.29,
  "futures_float_topup": false,
  "unallocated_spot": [],
  "call_reason": "תנועה חזקה במניה: CF, HOOD",
  "claude_called": true,
- "market_read": "השוק הכללי במגמת עלייה מתונה עם רוב הפוזיציות הקיימות ברווח קטן ומתקדמות לעבר היעד, אין איתות ברור לרוטציה.",
- "skip_reason": "שאר המטבעות (BTC/ETH/LINK) קרובים ל-overbought אך לא בקיצוניות מספקת לשורט, וה-altcoins בעלי נפח נמוך מדי או ללא איתות ברור - עדיף לרכז את המזומן הפנוי ב-HOOD.",
+ "market_read": "השוק הכללי חיובי אך BTC ו-ETH מתחילים להיראות overbought עם MACD שלילי, בעוד מניות טוקניזציה כמו HOOD מראות תנופה טרייה עם ווליום תומך.",
+ "skip_reason": "שאר המועמדים או overbought קיצוני עם ווליום נמוך (CC), או ניטרליים ללא edge ברור (LTC, ADA, XRP, LINK) — לא הצדיקו כניסה חדשה מול הפוזיציה הקיימת.",
  "picks": [
-  "HOOD long size=30% conf=MEDIUM"
+  "HOOD long size=25% conf=MEDIUM"
  ],
  "transfers": [
-  "HOOD: moved $19 → FAILED"
+  "HOOD: moved $10 → FAILED"
  ],
  "skips": [
-  "HOOD: margin $38 < needed $56 (after transfer attempt)"
+  "HOOD: margin $38 < needed $46 (after transfer attempt)"
  ]
 }
