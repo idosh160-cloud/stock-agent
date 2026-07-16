@@ -1,38 +1,38 @@
 {
- "time": "2026-07-16T09:00:05",
+ "time": "2026-07-16T10:00:05",
  "usdc": 109.63,
- "portfolio": 538.38,
+ "portfolio": 537.67,
  "api_billing_blocked": false,
  "margin_headroom": 320.09,
  "open": [
-  "BTC long +3.3%",
-  "ETH long +4.8%",
-  "MSTR long +0.0%",
-  "SOL long -1.7%",
-  "NVDA long -0.7%",
-  "ADA long -0.6%",
+  "BTC long +3.2%",
+  "ETH long +4.7%",
+  "MSTR long -0.0%",
+  "SOL long -1.8%",
+  "NVDA long -0.3%",
+  "ADA long -0.9%",
   "CRCL long -0.2%"
  ],
  "stock_candidates": 13,
  "top_stocks": [
-  "GOOGL +5.0% vol=$367,946",
-  "AAPL +2.7% vol=$15,996",
-  "MSTR -2.4% vol=$413,154",
+  "GOOGL +5.5% vol=$373,459",
+  "AAPL +3.0% vol=$15,672",
+  "MSTR -2.3% vol=$417,476",
   "IOT -2.3% vol=$6,160",
-  "SPCX -1.6% vol=$1,974,335"
+  "CRCL +1.5% vol=$2,067,651"
  ],
  "futures_ok": true,
- "futures_balance": 20.57,
+ "futures_balance": 20.22,
  "futures_float_topup": false,
  "unallocated_spot": [],
  "call_reason": "פוזיציה חלשה: SOL",
  "claude_called": true,
- "market_read": "השוק הקריפטו כללי נמצא בירידה קלה עם RSI נמוך ברוב המטבעות, אך XMR מראה חוזק יחסי ומומנטום חיובי שמצדיק כניסה נקודתית.",
- "skip_reason": "שאר המועמדים (PENGU, CC, DOGE, LTC) נסחרים בנפח נמוך מדי או ניטרליים ללא יתרון ברור, ומניות כמו GOOGL כבר עלו חדות היום ללא אישור RSI לכניסה בטוחה.",
+ "market_read": "השוק הקריפטו כרגע במגמת תיקון קלה עם רוב המטבעות קרוב לתחתית הרצועה ו-RSI נמוך-בינוני, מרמז על הזדמנות קנייה סלקטיבית ולא על מגמת ירידה חדה.",
+ "skip_reason": "שאר המועמדים (BTC, ETH, SOL, ADA, DOGE) כבר מוחזקים בתיק או בעלי נפח/מומנטום חלש מדי להצדיק פוזיציה נוספת; מניות כמו GOOGL רצו חזק מדי בלי אישור נפח ברור לכניסה נוספת.",
  "picks": [
-  "XMR long size=25% conf=MEDIUM"
+  "LINK long size=22% conf=MEDIUM"
  ],
  "order_errors": [
-  "XMR: Kraken: ['EOrder:Insufficient funds']"
+  "LINK: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
