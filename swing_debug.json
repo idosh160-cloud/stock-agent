@@ -1,36 +1,34 @@
 {
- "time": "2026-07-16T14:00:07",
- "usdc": 111.85,
- "portfolio": 534.54,
+ "time": "2026-07-16T15:00:08",
+ "usdc": 111.82,
+ "portfolio": 539.82,
  "api_billing_blocked": false,
  "margin_headroom": 325.51,
  "open": [
-  "BTC long +3.7%",
-  "MSTR long -0.8%",
-  "SOL long -1.4%",
-  "NVDA long -1.6%",
-  "ADA long +0.4%"
+  "BTC long +4.0%",
+  "SOL long -1.2%",
+  "ADA long +0.2%"
  ],
  "stock_candidates": 13,
  "top_stocks": [
-  "CRCL -3.9% vol=$1,005,351",
-  "TSLA -3.3% vol=$170,388",
-  "MSTR -2.9% vol=$273,650",
-  "AAPL +2.8% vol=$32,609",
-  "IOT -2.3% vol=$6,160"
+  "MSTR -4.2% vol=$271,567",
+  "CRCL -3.9% vol=$610,003",
+  "IOT -2.3% vol=$6,160",
+  "AAPL +2.0% vol=$33,691",
+  "NVDA -1.7% vol=$289,192"
  ],
  "futures_ok": true,
- "futures_balance": 21.62,
+ "futures_balance": 31.51,
  "futures_float_topup": false,
  "unallocated_spot": [
   "ETH $375"
  ],
- "call_reason": "פוזיציה חלשה: SOL, NVDA",
+ "call_reason": "פוזיציה חלשה: SOL",
  "claude_called": true,
- "market_read": "השוק הכללי רגוע-שלילי מעט עם BTC ואלטים בטריטוריה נייטרלית-שלילית ללא מגמה חדה בשני הכיוונים.",
- "skip_reason": "שאר המועמדים (SOL, LINK, DOGE, ADA) נמצאים באמצע הטווח ללא איתות ברור, והמניות הטוקניזציה לא מציגות RSI/MACD כדי לאשש כניסה כרגע.",
+ "market_read": "השוק הכללי נסחר בטווח צר עם רוב המטבעות בסביבת RSI ניטרלי, אין סיגנל חזק לשורט על נכס מוגזם כרגע.",
+ "skip_reason": "המניות והמטבעות האחרים נמצאים באזור ניטרלי ללא איתות ברור, אז מרוכז את ה-USDC הפנוי בפוזיציית ETH התומכת בהחזקה הקיימת.",
  "picks": [
-  "ETH long size=20% conf=MEDIUM"
+  "ETH long size=25% conf=MEDIUM"
  ],
  "order_errors": [
   "ETH: Kraken: ['EOrder:Insufficient funds']"
