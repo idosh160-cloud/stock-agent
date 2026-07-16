@@ -1073,5 +1073,30 @@
     "entry_bb_pct": null,
     "entry_macd_hist": null,
     "entry_change_24h": 3.37
+  },
+  {
+    "coin": "SOL",
+    "pair": "SOLUSDC",
+    "status": "closed_stale",
+    "leveraged": true,
+    "collateral": 111.45,
+    "volume": 1.44048081,
+    "entry_price": 77.37,
+    "close_price": 76.24,
+    "target_price": 85.11,
+    "stop_price": 74.28,
+    "pnl_usd": -1.63,
+    "pnl_pct": -1.46,
+    "date_open": "2026-07-14T16:00:39.637898",
+    "date_close": "2026-07-16T17:00:04.460440",
+    "reasoning": "OK",
+    "confidence": "MEDIUM",
+    "txid": "OWBXRF-XAWKH-6SQWJK",
+    "close_txid": "ONTAFW-SNYJP-WWN2XM",
+    "side": "long",
+    "entry_rsi": 69.6,
+    "entry_bb_pct": 97.1,
+    "entry_macd_hist": 0.321543,
+    "entry_change_24h": 3.31
   }
 ]

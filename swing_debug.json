@@ -1,38 +1,30 @@
 {
- "time": "2026-07-16T16:00:05",
- "usdc": 111.8,
- "portfolio": 550.8,
+ "time": "2026-07-16T17:00:06",
+ "usdc": 111.78,
+ "portfolio": 550.1,
  "api_billing_blocked": false,
- "margin_headroom": 325.51,
+ "margin_headroom": 335.66,
  "open": [
-  "BTC long +4.3%",
-  "SOL long -1.0%",
-  "ADA long +0.2%"
+  "BTC long +3.9%",
+  "ADA long +0.1%"
  ],
  "stock_candidates": 13,
  "top_stocks": [
-  "HOOD -4.7% vol=$386,055",
-  "MSTR -3.4% vol=$267,045",
-  "CRCL -2.4% vol=$579,476",
-  "AAPL +1.7% vol=$33,259",
+  "MSTR -4.2% vol=$152,114",
+  "HOOD -4.1% vol=$243,858",
+  "CRCL -3.5% vol=$276,366",
+  "TSLA -2.3% vol=$112,566",
   "GLD -1.5% vol=$18,491"
  ],
  "futures_ok": true,
  "futures_balance": 31.52,
  "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $375"
+  "ETH $374"
  ],
- "call_reason": "פוזיציה חלשה: SOL",
+ "call_reason": "תנועה חזקה במניה: MSTR, HOOD, CRCL",
  "claude_called": true,
- "market_read": "השוק הכללי מעורב - ביטקוין יציב, אלטקוינים מציגים מומנטום חיובי מתון בלי קיצוניות, מניות מציגות ירידות חדות שדורשות אישור נוסף לפני שורט.",
- "skip_reason": "ETH ו-ADA/SOL הקיימים נשארים ללא שינוי כי הם בטווח סביר לתחזית; המניות (HOOD, MSTR, CRCL) ירדו חזק אך בלי נתוני RSI/BB ברורים אין אישור מספיק לשורט כרגע.",
- "picks": [
-  "DOT long size=25% conf=MEDIUM",
-  "XMR long size=20% conf=MEDIUM"
- ],
- "order_errors": [
-  "DOT: Kraken: ['EOrder:Invalid leverage']",
-  "XMR: Kraken: ['EOrder:Insufficient funds']"
- ]
+ "market_read": "",
+ "skip_reason": "Expecting ',' delimiter: line 10 column 291 (char 461)",
+ "picks": []
 }
