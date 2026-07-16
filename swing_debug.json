@@ -1,41 +1,38 @@
 {
- "time": "2026-07-16T11:00:05",
- "usdc": 109.6,
- "portfolio": 539.54,
+ "time": "2026-07-16T12:00:06",
+ "usdc": 109.56,
+ "portfolio": 538.15,
  "api_billing_blocked": false,
  "margin_headroom": 320.09,
  "open": [
   "BTC long +3.5%",
-  "ETH long +4.9%",
-  "MSTR long +0.0%",
-  "SOL long -1.6%",
-  "NVDA long -0.3%",
-  "ADA long -0.6%",
+  "ETH long +4.8%",
+  "MSTR long -0.1%",
+  "SOL long -1.5%",
+  "NVDA long -0.7%",
+  "ADA long -0.4%",
   "CRCL long -0.2%"
  ],
  "stock_candidates": 13,
  "top_stocks": [
-  "GOOGL +5.3% vol=$372,922",
+  "GOOGL +4.8% vol=$374,134",
   "AAPL +3.2% vol=$15,448",
   "IOT -2.3% vol=$6,160",
-  "MSTR -2.2% vol=$420,390",
-  "CRCL +1.4% vol=$2,070,863"
+  "MSTR -2.2% vol=$428,409",
+  "SPCX -1.4% vol=$1,975,751"
  ],
  "futures_ok": true,
- "futures_balance": 21.2,
+ "futures_balance": 20.55,
  "futures_float_topup": false,
  "unallocated_spot": [],
  "call_reason": "פוזיציה חלשה: SOL",
  "claude_called": true,
- "market_read": "השוק הקריפטו כולו במגמת ירידה קלה עם MACD שלילי כמעט בכל המטבעות, בעוד שחלק מהמניות הטוקניזציה (GOOGL) מראות מומנטום עולה אמיתי עם נפח.",
- "skip_reason": "דילגתי על קריפטו נוסף כי כל המועמדים (ADA, ETH, SOL, LINK, LTC, DOGE) נמצאים במגמת ירידה עם MACD שלילי ולא נותנים אישור כניסה ברור, ואני כבר מוחזק בהם בפוזיציות קיימות.",
+ "market_read": "השוק הקריפטו כרגע במגמת תיקון קלה כלפי מטה עם רוב המטבעות קרובים לתחתית הרצועה, בעוד מניות כמו GOOGL מראות מומנטום חיובי חזק.",
+ "skip_reason": "שאר המועמדים בקריפטו (ADA, SOL, ETH, DOGE) כבר מוחזקים בתיק או בעלי נפח נמוך מדי; המניות המוחזקות (MSTR, NVDA, CRCL) קרובות לפלאט ולא מצדיקות תוספת/רוטציה כרגע.",
  "picks": [
-  "GOOGL long size=30% conf=MEDIUM"
+  "LINK long size=22% conf=MEDIUM"
  ],
- "transfers": [
-  "GOOGL: moved $35 → FAILED"
- ],
- "skips": [
-  "GOOGL: margin $21 < needed $54 (after transfer attempt)"
+ "order_errors": [
+  "LINK: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
