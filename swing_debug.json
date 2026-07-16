@@ -1,35 +1,38 @@
 {
- "time": "2026-07-16T21:00:04",
- "usdc": 108.24,
- "portfolio": 544.98,
+ "time": "2026-07-16T22:00:04",
+ "usdc": 108.23,
+ "portfolio": 546.47,
  "api_billing_blocked": false,
  "margin_headroom": 342.37,
  "open": [
-  "BTC long +3.3%",
-  "SOL long +0.0%"
+  "BTC long +3.4%",
+  "SOL long +0.1%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "HOOD -8.2% vol=$223,015",
-  "CRCL -7.2% vol=$170,512",
-  "MSTR -3.9% vol=$174,766",
-  "GOOGL -3.9% vol=$267,250",
-  "SPCX -3.0% vol=$2,231,237"
+  "HOOD -8.3% vol=$222,222",
+  "CRCL -6.7% vol=$170,500",
+  "GOOGL -4.0% vol=$264,296",
+  "MSTR -3.5% vol=$179,731",
+  "SPCX -2.7% vol=$2,273,425"
  ],
  "futures_ok": true,
- "futures_balance": 31.52,
+ "futures_balance": 31.51,
  "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $373"
+  "ETH $374"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: CC",
  "claude_called": true,
- "market_read": "השוק הקריפטו נסחר בטווח שלילי קל עם כמה נכסים באזור מכירת יתר, אין מגמה חד-משמעית חזקה כרגע.",
- "skip_reason": "שאר המועמדים או נמוכי נפח מדי (CC), או קרובים לתחום הניטרלי ללא איתות ברור (ADA, DOGE, LINK), ומניות ה-xStocks כרגע לא מציגות סטאפ קיצוני מספיק לשורט/לונג ברור.",
+ "market_read": "השוק הכללי רגוע יחסית עם BTC מתקרב 44 RSI ו-altcoins מפוצלים בין oversold למומנטום חיובי מוגבל.",
+ "skip_reason": "שאר המטבעות והמניות נמצאים באזור ניטרלי או עם נפח נמוך מדי שלא מצדיק סיכון, כולל HOOD/CRCL עם היסטוריה שלילית וחוסר אישור טכני ברור.",
  "picks": [
-  "XRP long size=25% conf=MEDIUM"
+  "CC long size=20% conf=MEDIUM",
+  "XMR long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "XRP: Kraken: ['EOrder:Insufficient funds']"
+  "liq ETH: all sizes rejected (margin collateral lock)",
+  "CC: Kraken: ['EOrder:Insufficient funds']",
+  "XMR: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
