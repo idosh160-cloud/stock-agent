@@ -1,33 +1,33 @@
 {
- "time": "2026-07-16T20:00:06",
- "usdc": 109.85,
- "portfolio": 547.35,
+ "time": "2026-07-16T21:00:04",
+ "usdc": 108.24,
+ "portfolio": 544.98,
  "api_billing_blocked": false,
- "margin_headroom": 357.73,
+ "margin_headroom": 342.37,
  "open": [
-  "BTC long +3.5%"
+  "BTC long +3.3%",
+  "SOL long +0.0%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "HOOD -8.7% vol=$202,183",
-  "CRCL -7.4% vol=$217,339",
-  "GOOGL -4.6% vol=$269,335",
-  "SPCX -3.1% vol=$2,166,249",
-  "NVDA -3.0% vol=$270,941"
+  "HOOD -8.2% vol=$223,015",
+  "CRCL -7.2% vol=$170,512",
+  "MSTR -3.9% vol=$174,766",
+  "GOOGL -3.9% vol=$267,250",
+  "SPCX -3.0% vol=$2,231,237"
  ],
  "futures_ok": true,
  "futures_balance": 31.52,
  "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $374"
+  "ETH $373"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: CC",
  "claude_called": true,
- "market_read": "השוק בקריפטו נמצא בתיקון קל אחרי עליות, עם כמה נכסים במצב oversold שמציעים הזדמנויות ריבאונד תוך שמירה על מגמה כללית עולה.",
- "skip_reason": "המניות (HOOD, CRCL) נפלו חד אך ללא נתוני RSI/מומנטום ברורים לכיוון קצר, לכן דילגתי; ETH הספוט נשאר כפי שהוא כי המחיר הנוכחי לא מציע יתרון ברור על פני SOL/XRP הנוכחיים.",
+ "market_read": "השוק הקריפטו נסחר בטווח שלילי קל עם כמה נכסים באזור מכירת יתר, אין מגמה חד-משמעית חזקה כרגע.",
+ "skip_reason": "שאר המועמדים או נמוכי נפח מדי (CC), או קרובים לתחום הניטרלי ללא איתות ברור (ADA, DOGE, LINK), ומניות ה-xStocks כרגע לא מציגות סטאפ קיצוני מספיק לשורט/לונג ברור.",
  "picks": [
-  "SOL long size=25% conf=MEDIUM",
-  "XRP long size=20% conf=MEDIUM"
+  "XRP long size=25% conf=MEDIUM"
  ],
  "order_errors": [
   "XRP: Kraken: ['EOrder:Insufficient funds']"
