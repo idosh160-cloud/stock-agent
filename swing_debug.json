@@ -1,30 +1,42 @@
 {
- "time": "2026-07-16T06:00:05",
- "usdc": 109.71,
- "portfolio": 548.13,
+ "time": "2026-07-16T07:00:05",
+ "usdc": 109.68,
+ "portfolio": 546.48,
  "margin_headroom": 320.09,
  "open": [
-  "BTC long +4.6%",
-  "ETH long +7.0%",
-  "MSTR long +2.4%",
-  "SOL long +0.1%",
-  "NVDA long +0.1%",
-  "ADA long +0.7%",
+  "BTC long +4.4%",
+  "ETH long +6.8%",
+  "MSTR long +1.8%",
+  "SOL long -0.1%",
+  "NVDA long +0.8%",
+  "ADA long +0.5%",
   "CRCL long +1.2%",
   "ANTHROPIC short +22.5%"
  ],
  "stock_candidates": 14,
  "top_stocks": [
-  "ANTHROPIC -9.6% vol=$33,152",
-  "AAPL +3.9% vol=$19,815",
-  "GOOGL +3.7% vol=$322,080",
+  "GOOGL +4.1% vol=$363,235",
+  "AAPL +3.7% vol=$19,257",
+  "ANTHROPIC +3.5% vol=$28,428",
   "CRCL +3.0% vol=$2,099,057",
-  "CF +2.5% vol=$13,331"
+  "CF +2.8% vol=$13,939"
  ],
  "futures_ok": true,
- "futures_balance": 21.79,
+ "futures_balance": 20.84,
  "futures_float_topup": false,
  "unallocated_spot": [],
- "call_reason": "הכל שקט — דולג על קריאה לClaude",
- "claude_called": false
+ "call_reason": "תנועה חזקה במניה: GOOGL",
+ "claude_called": true,
+ "market_read": "השוק נמצא במגמת עלייה כללית עם מניות טק ומטבעות מובילים מראים מומנטום חיובי ללא סימני מיצוי ברורים.",
+ "skip_reason": "שאר המועמדים בקריפטו (CC, PENGU, DOT) מציגים RSI נמוך-בינוני עם MACD שלילי ונפח מסחר חלש - אין אישור ברור למהלך, ו-BNB קרוב לרוויה עליונה בלי סימן היפוך ברור לשורט.",
+ "picks": [
+  "GOOGL long size=25% conf=HIGH",
+  "XMR long size=20% conf=MEDIUM"
+ ],
+ "transfers": [
+  "GOOGL: moved $23 → FAILED"
+ ],
+ "skips": [
+  "GOOGL: margin $25 < needed $46 (after transfer attempt)"
+ ]
 }
