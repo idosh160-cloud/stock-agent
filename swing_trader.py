@@ -549,6 +549,45 @@ def load_performance_summary() -> str:
         return ""
 
 
+API_BILLING_FLAG = os.path.join(DIR, "api_billing_alert.json")
+_BILLING_SIGNALS = ("credit balance", "insufficient_quota", "billing", "quota")
+
+
+def _check_api_billing_alert(exc: Exception):
+    """זיהוי ספציפי לאזילת קרדיט במפתח ה-API של הבוט (לא קשור לטוקני קלוד-קוד של
+    המשתמש — זה מפתח נפרד ב-.env). שולח מייל התראה פעם אחת, לא כל שעה מחדש."""
+    msg = str(exc).lower()
+    if not any(sig in msg for sig in _BILLING_SIGNALS):
+        return  # שגיאה אחרת (רשת, timeout וכו') — לא billing, לא מתריעים
+    if os.path.exists(API_BILLING_FLAG):
+        return  # כבר התרענו, לא לשלוח כל שעה
+    try:
+        with open(API_BILLING_FLAG, "w") as f:
+            json.dump({"since": datetime.now().isoformat(), "error": str(exc)[:300]}, f)
+    except Exception:
+        pass
+    logging.warning(f"[Billing] קרדיט API אזל — הבוט ימשיך לנהל פוזיציות פתוחות (סטופ/יעד) אך לא יפתח חדשות")
+    _send_trade_alert(
+        "🔴 קרדיט Claude API אזל",
+        "הקריאות לקלוד להחלטות מסחר נכשלות — כנראה קרדיט API אזל (זה מפתח נפרד מהמנוי שלך ל-Claude Code).\n"
+        "פוזיציות פתוחות ממשיכות להיות מנוהלות (סטופ/יעד/trailing) כרגיל — רק כניסות חדשות נעצרות.\n"
+        f"שגיאה: {str(exc)[:200]}\n\nמלא קרדיט בקונסולת Anthropic ותקבל מייל 'התאוששנו' כשזה יחזור לעבוד."
+    )
+
+
+def _clear_api_billing_alert():
+    if os.path.exists(API_BILLING_FLAG):
+        try:
+            os.remove(API_BILLING_FLAG)
+        except Exception:
+            pass
+        logging.info("[Billing] קריאת API הצליחה מחדש — הבוט התאושש")
+        _send_trade_alert(
+            "✅ קלוד חזר לעבוד",
+            "הקרדיט מולא בהצלחה — הבוט חזר לקבל החלטות מסחר חדשות כרגיל."
+        )
+
+
 def analyze_with_claude(candidates: list, open_coins: set, usdc: float, btc_price: float, stock_candidates: list = None, open_positions: list = None, portfolio_summary: str = "", spot_holdings: list = None) -> dict:
     _load_api_key()
     import anthropic
@@ -730,6 +769,7 @@ If nothing looks tradeable at all — return picks as empty array. But remember 
             output_config={"effort": "medium"},
             messages=[{"role": "user", "content": prompt}]
         )
+        _clear_api_billing_alert()  # הקריאה הצליחה — אם היינו במצב "חסום", עכשיו התאוששנו
         # עם חשיבה מופעלת בלוק הטקסט אינו בהכרח הראשון — חפש אותו במפורש
         raw = next((b.text for b in msg.content if b.type == "text"), "").strip()
         if "```" in raw:
@@ -747,6 +787,7 @@ If nothing looks tradeable at all — return picks as empty array. But remember 
         return json.loads(raw)
     except Exception as e:
         logging.error(f"[Swing] Claude error: {e}")
+        _check_api_billing_alert(e)
         return {"picks": [], "market_read": "", "skip_reason": str(e)}
 
 
@@ -1264,6 +1305,7 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
         "time":             datetime.now().isoformat(timespec="seconds"),
         "usdc":             round(usdc, 2),
         "portfolio":        round(portfolio_usd or 0, 2),
+        "api_billing_blocked": os.path.exists(API_BILLING_FLAG),
         "margin_headroom":  round(margin_headroom, 2),
         "open":             [f"{t['coin']} {t.get('side','?')} {t.get('pnl_pct',0):+.1f}%" for t in open_swings],
         "stock_candidates": len(stock_candidates),
