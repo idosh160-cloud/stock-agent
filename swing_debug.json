@@ -1,35 +1,30 @@
 {
- "time": "2026-07-16T18:00:05",
- "usdc": 109.9,
- "portfolio": 545.94,
+ "time": "2026-07-16T19:00:04",
+ "usdc": 109.87,
+ "portfolio": 547.52,
  "api_billing_blocked": false,
  "margin_headroom": 335.66,
  "open": [
-  "BTC long +3.2%",
-  "ADA long -0.6%"
+  "BTC long +3.5%",
+  "ADA long -0.9%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "CRCL -5.3% vol=$264,464",
-  "MSTR -4.4% vol=$150,563",
-  "HOOD -4.4% vol=$242,564",
-  "SPCX -3.4% vol=$2,039,140",
-  "TSLA -2.8% vol=$142,603"
+  "HOOD -7.0% vol=$235,353",
+  "CRCL -5.0% vol=$261,293",
+  "GOOGL -3.7% vol=$174,228",
+  "SPCX -2.3% vol=$2,010,312",
+  "GLD -2.2% vol=$18,620"
  ],
  "futures_ok": true,
  "futures_balance": 31.51,
  "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $372"
+  "ETH $374"
  ],
- "call_reason": "תנועה חזקה במניה: CRCL, MSTR, HOOD",
+ "call_reason": "תנועה חזקה במטבע חדש: CC",
  "claude_called": true,
- "market_read": "כל השוק הקריפטו במגמת תיקון קל של 1-3% אחרי עלייה, עם כמה מטבעות נכנסים לאזור oversold שמזמן ריבאונד טקטי.",
- "skip_reason": "ETH ו-SOL אכן oversold אך ה-MACD histogram שלהם שלילי וחד יותר מלינק, מה שמעיד על מומנטום שלילי ממושך יותר; שאר המניות/מטבעות ללא אות ברור מספיק לכניסה כרגע.",
- "picks": [
-  "LINK long size=20% conf=MEDIUM"
- ],
- "order_errors": [
-  "LINK: Kraken: ['EOrder:Insufficient funds']"
- ]
+ "market_read": "",
+ "skip_reason": "Error code: 529 - {'type': 'error', 'error': {'type': 'overloaded_error', 'message': 'Overloaded'}, 'request_id': 'req_011Cd6FYksAjJUKr3RuiTXnn'}",
+ "picks": []
 }
