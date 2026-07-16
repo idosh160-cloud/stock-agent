@@ -1,35 +1,30 @@
 {
- "time": "2026-07-15T23:00:04",
- "usdc": 109.84,
- "portfolio": 549.29,
+ "time": "2026-07-16T00:00:05",
+ "usdc": 109.8,
+ "portfolio": 546.96,
  "margin_headroom": 320.09,
  "open": [
-  "BTC long +4.5%",
-  "ETH long +6.9%",
-  "MSTR long +1.7%",
-  "SOL long +0.1%",
+  "BTC long +4.3%",
+  "ETH long +6.6%",
+  "MSTR long +1.9%",
+  "SOL long -0.1%",
   "NVDA long +0.1%",
-  "ADA long +1.1%",
-  "CRCL long +2.0%",
+  "ADA long +1.2%",
+  "CRCL long +1.8%",
   "ANTHROPIC short +0.2%"
  ],
- "stock_candidates": 15,
+ "stock_candidates": 14,
  "top_stocks": [
   "ANTHROPIC +16.4% vol=$42,661",
-  "CRCL +4.6% vol=$2,064,937",
-  "AAPL +3.8% vol=$19,151",
-  "GOOGL +3.5% vol=$309,917",
-  "IOT -2.6% vol=$6,827"
+  "CRCL +4.3% vol=$2,070,186",
+  "AAPL +3.8% vol=$19,346",
+  "GOOGL +3.2% vol=$314,549",
+  "IOT -2.2% vol=$6,300"
  ],
  "futures_ok": true,
- "futures_balance": 23.18,
+ "futures_balance": 22.07,
  "futures_float_topup": false,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במטבע חדש: PENGU (שקילת רוטציה — מרג'ין מלא)",
- "claude_called": true,
- "market_read": "השוק הכללי חיובי בזהירות - BTC וETH ממשיכים מגמת עלייה, מניות טוקניזציה מציגות מומנטום חיובי ללא סימני היפוך ברורים.",
- "skip_reason": "שאר המועמדים בקריפטו (PENGU, LINK) עם נפח נמוך או סתירה בין מחיר ל-MACD, ומניות כמו AAPL/SPCX חסרות נפח או סיגנל ברור - לא מספיק חד לכניסה נוספת.",
- "picks": [
-  "GOOGL long size=28% conf=MEDIUM"
- ]
+ "call_reason": "הכל שקט — דולג על קריאה לClaude",
+ "claude_called": false
 }
