@@ -1,38 +1,35 @@
 {
- "time": "2026-07-16T22:00:04",
- "usdc": 108.23,
- "portfolio": 546.47,
+ "time": "2026-07-16T23:00:04",
+ "usdc": 108.2,
+ "portfolio": 544.18,
  "api_billing_blocked": false,
  "margin_headroom": 342.37,
  "open": [
-  "BTC long +3.4%",
-  "SOL long +0.1%"
+  "BTC long +3.1%",
+  "SOL long -0.7%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "HOOD -8.3% vol=$222,222",
-  "CRCL -6.7% vol=$170,500",
-  "GOOGL -4.0% vol=$264,296",
-  "MSTR -3.5% vol=$179,731",
-  "SPCX -2.7% vol=$2,273,425"
+  "HOOD -8.8% vol=$214,661",
+  "CRCL -7.5% vol=$176,706",
+  "SPCX -6.4% vol=$3,102,084",
+  "GOOGL -4.1% vol=$264,865",
+  "MSTR -3.8% vol=$179,170"
  ],
  "futures_ok": true,
  "futures_balance": 31.51,
  "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $374"
+  "ETH $372"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: CC",
  "claude_called": true,
- "market_read": "השוק הכללי רגוע יחסית עם BTC מתקרב 44 RSI ו-altcoins מפוצלים בין oversold למומנטום חיובי מוגבל.",
- "skip_reason": "שאר המטבעות והמניות נמצאים באזור ניטרלי או עם נפח נמוך מדי שלא מצדיק סיכון, כולל HOOD/CRCL עם היסטוריה שלילית וחוסר אישור טכני ברור.",
+ "market_read": "השוק הקריפטו במגמת ירידה קלה ורוב המטבעות באזור מכירת יתר קרוב לתחתית הבולינגר, מה שיוצר הזדמנויות ריבאונד קצרות טווח.",
+ "skip_reason": "שאר המטבעות (ADA, CC, DOGE) דומים אך עם נפח נמוך יותר או היסטוריה חלשה יותר בלי שיפור ברור בתנאים; מניות לא מציעות כרגע יתרון ברור מעל קריפטו.",
  "picks": [
-  "CC long size=20% conf=MEDIUM",
-  "XMR long size=20% conf=MEDIUM"
+  "XRP long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "CC: Kraken: ['EOrder:Insufficient funds']",
-  "XMR: Kraken: ['EOrder:Insufficient funds']"
+  "XRP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
