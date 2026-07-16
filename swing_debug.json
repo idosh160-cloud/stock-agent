@@ -1,30 +1,35 @@
 {
- "time": "2026-07-16T19:00:04",
- "usdc": 109.87,
- "portfolio": 547.52,
+ "time": "2026-07-16T20:00:06",
+ "usdc": 109.85,
+ "portfolio": 547.35,
  "api_billing_blocked": false,
- "margin_headroom": 335.66,
+ "margin_headroom": 357.73,
  "open": [
-  "BTC long +3.5%",
-  "ADA long -0.9%"
+  "BTC long +3.5%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "HOOD -7.0% vol=$235,353",
-  "CRCL -5.0% vol=$261,293",
-  "GOOGL -3.7% vol=$174,228",
-  "SPCX -2.3% vol=$2,010,312",
-  "GLD -2.2% vol=$18,620"
+  "HOOD -8.7% vol=$202,183",
+  "CRCL -7.4% vol=$217,339",
+  "GOOGL -4.6% vol=$269,335",
+  "SPCX -3.1% vol=$2,166,249",
+  "NVDA -3.0% vol=$270,941"
  ],
  "futures_ok": true,
- "futures_balance": 31.51,
+ "futures_balance": 31.52,
  "futures_float_topup": false,
  "unallocated_spot": [
   "ETH $374"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: CC",
  "claude_called": true,
- "market_read": "",
- "skip_reason": "Error code: 529 - {'type': 'error', 'error': {'type': 'overloaded_error', 'message': 'Overloaded'}, 'request_id': 'req_011Cd6FYksAjJUKr3RuiTXnn'}",
- "picks": []
+ "market_read": "השוק בקריפטו נמצא בתיקון קל אחרי עליות, עם כמה נכסים במצב oversold שמציעים הזדמנויות ריבאונד תוך שמירה על מגמה כללית עולה.",
+ "skip_reason": "המניות (HOOD, CRCL) נפלו חד אך ללא נתוני RSI/מומנטום ברורים לכיוון קצר, לכן דילגתי; ETH הספוט נשאר כפי שהוא כי המחיר הנוכחי לא מציע יתרון ברור על פני SOL/XRP הנוכחיים.",
+ "picks": [
+  "SOL long size=25% conf=MEDIUM",
+  "XRP long size=20% conf=MEDIUM"
+ ],
+ "order_errors": [
+  "XRP: Kraken: ['EOrder:Insufficient funds']"
+ ]
 }
