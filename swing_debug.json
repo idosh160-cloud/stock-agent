@@ -1,36 +1,38 @@
 {
- "time": "2026-07-16T15:00:08",
- "usdc": 111.82,
- "portfolio": 539.82,
+ "time": "2026-07-16T16:00:05",
+ "usdc": 111.8,
+ "portfolio": 550.8,
  "api_billing_blocked": false,
  "margin_headroom": 325.51,
  "open": [
-  "BTC long +4.0%",
-  "SOL long -1.2%",
+  "BTC long +4.3%",
+  "SOL long -1.0%",
   "ADA long +0.2%"
  ],
  "stock_candidates": 13,
  "top_stocks": [
-  "MSTR -4.2% vol=$271,567",
-  "CRCL -3.9% vol=$610,003",
-  "IOT -2.3% vol=$6,160",
-  "AAPL +2.0% vol=$33,691",
-  "NVDA -1.7% vol=$289,192"
+  "HOOD -4.7% vol=$386,055",
+  "MSTR -3.4% vol=$267,045",
+  "CRCL -2.4% vol=$579,476",
+  "AAPL +1.7% vol=$33,259",
+  "GLD -1.5% vol=$18,491"
  ],
  "futures_ok": true,
- "futures_balance": 31.51,
+ "futures_balance": 31.52,
  "futures_float_topup": false,
  "unallocated_spot": [
   "ETH $375"
  ],
  "call_reason": "פוזיציה חלשה: SOL",
  "claude_called": true,
- "market_read": "השוק הכללי נסחר בטווח צר עם רוב המטבעות בסביבת RSI ניטרלי, אין סיגנל חזק לשורט על נכס מוגזם כרגע.",
- "skip_reason": "המניות והמטבעות האחרים נמצאים באזור ניטרלי ללא איתות ברור, אז מרוכז את ה-USDC הפנוי בפוזיציית ETH התומכת בהחזקה הקיימת.",
+ "market_read": "השוק הכללי מעורב - ביטקוין יציב, אלטקוינים מציגים מומנטום חיובי מתון בלי קיצוניות, מניות מציגות ירידות חדות שדורשות אישור נוסף לפני שורט.",
+ "skip_reason": "ETH ו-ADA/SOL הקיימים נשארים ללא שינוי כי הם בטווח סביר לתחזית; המניות (HOOD, MSTR, CRCL) ירדו חזק אך בלי נתוני RSI/BB ברורים אין אישור מספיק לשורט כרגע.",
  "picks": [
-  "ETH long size=25% conf=MEDIUM"
+  "DOT long size=25% conf=MEDIUM",
+  "XMR long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "ETH: Kraken: ['EOrder:Insufficient funds']"
+  "DOT: Kraken: ['EOrder:Invalid leverage']",
+  "XMR: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
