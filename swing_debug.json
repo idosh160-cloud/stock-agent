@@ -1,21 +1,21 @@
 {
- "time": "2026-07-17T10:00:04",
- "usdc": 107.9,
- "portfolio": 536.76,
+ "time": "2026-07-17T11:00:04",
+ "usdc": 107.86,
+ "portfolio": 537.22,
  "api_billing_blocked": false,
  "margin_headroom": 338.8,
  "open": [
-  "BTC long +1.5%",
-  "SOL long -1.6%",
-  "ETH long -0.8%"
+  "BTC long +1.8%",
+  "SOL long -1.3%",
+  "ETH long -0.7%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "HOOD -10.4% vol=$168,502",
-  "GOOGL -7.5% vol=$222,948",
-  "CRCL -7.1% vol=$122,192",
-  "SPCX -6.7% vol=$3,484,835",
-  "MSTR -4.0% vol=$105,975"
+  "HOOD -10.1% vol=$167,607",
+  "GOOGL -7.4% vol=$222,924",
+  "CRCL -6.1% vol=$119,185",
+  "SPCX -6.1% vol=$3,487,652",
+  "MSTR -4.1% vol=$103,625"
  ],
  "futures_ok": true,
  "futures_balance": 31.52,
@@ -23,12 +23,12 @@
  "unallocated_spot": [],
  "call_reason": "פוזיציה חלשה: SOL",
  "claude_called": true,
- "market_read": "השוק הקריפטו הכללי נמצא בתיקון קל עם כמה נכסים באזור oversold מובהק, מה שיוצר הזדמנויות ריבאונד קצרות טווח.",
- "skip_reason": "שאר המועמדים (BTC, ETH, SOL, LINK) כבר מוחזקים בתיק או שהאיתותים שלהם חלשים/סותרים מדי ביחס ל-XMR שמציג את התמונה הכי ברורה של oversold עם נפח תומך.",
+ "market_read": "השוק בקירור כללי עם רוב הקריפטו ב-RSI נמוך-בינוני, אין מומנטום חד לאף כיוון אז עדיף להיכנס בזהירות לדיפים איכותיים.",
+ "skip_reason": "BTC/ETH/SOL כבר פתוחים ולא מזיזים כספי פנוי; XMR נראה מפתה אבל MACD עדיין שלילי חזק - סיכון סכין נופלת גבוה מדי; מניות ללא אינדיקטורים ברורים כרגע כך שקריפטו עם RSI מדוד עדיף.",
  "picks": [
-  "XMR long size=20% conf=MEDIUM"
+  "LINK long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "XMR: Kraken: ['EOrder:Insufficient funds']"
+  "LINK: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
