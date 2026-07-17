@@ -1,36 +1,34 @@
 {
- "time": "2026-07-17T19:00:05",
+ "time": "2026-07-17T20:00:05",
  "usdc": 107.74,
- "portfolio": 539.54,
+ "portfolio": 538.71,
  "api_billing_blocked": false,
  "margin_headroom": 338.8,
  "open": [
-  "BTC long +3.5%",
-  "SOL long -0.6%",
-  "ETH long -0.2%"
+  "BTC long +3.4%",
+  "SOL long -0.8%",
+  "ETH long -0.4%"
  ],
  "stock_candidates": 13,
  "top_stocks": [
-  "OPENAI -7.3% vol=$19,253",
-  "SPCX -4.6% vol=$3,950,850",
+  "OPENAI -7.0% vol=$20,815",
+  "SPCX -5.5% vol=$3,997,659",
+  "HOOD -5.1% vol=$213,152",
   "CF +3.3% vol=$36,027",
-  "HOOD -3.2% vol=$94,700",
-  "GOOGL -3.1% vol=$133,352"
+  "GOOGL -3.2% vol=$34,492"
  ],
  "futures_ok": true,
  "futures_balance": 31.53,
  "futures_float_topup": false,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במניה: OPENAI, SPCX, CF",
+ "call_reason": "תנועה חזקה במטבע חדש: ADA",
  "claude_called": true,
- "market_read": "השוק הרחב (BTC) נמצא באזור overbought עם BB% כמעט 100, אז עדיף לחפש הזדמנויות באלטים שעדיין לא מוצו במקום להוסיף לפוזיציות קיימות שכבר קרובות ליעד או overbought.",
- "skip_reason": "ADA, XRP, DOGE ו-BTC כולם קרובים לרצועה העליונה (BB%>90) ונראים exhausted לכניסה לונג חדשה; המניות שנבדקו (OPENAI, HOOD, SPCX) חסרות נפח מספק או תבנית ברורה מספיק להצדיק פוזיציה חדשה כרגע.",
+ "market_read": "השוק הכללי נייטרלי עד חיובי בקריפטו עם BTC יציב, אבל רוב האלטים ללא מומנטום ברור מלבד ADA.",
+ "skip_reason": "שאר המועמדים בקריפטו חלשים בנפח או ניטרליים מבחינת RSI/MACD, והמניות חסרות נתוני RSI/BB אמינים לכניסה בטוחה כרגע.",
  "picks": [
-  "CC long size=28% conf=MEDIUM",
-  "XMR long size=22% conf=MEDIUM"
+  "ADA long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "CC: Kraken: ['EOrder:Insufficient funds']",
-  "XMR: Kraken: ['EOrder:Insufficient funds']"
+  "ADA: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
