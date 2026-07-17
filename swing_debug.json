@@ -1,34 +1,38 @@
 {
- "time": "2026-07-17T20:00:05",
- "usdc": 107.74,
- "portfolio": 538.71,
+ "time": "2026-07-17T21:00:05",
+ "usdc": 107.72,
+ "portfolio": 538.44,
  "api_billing_blocked": false,
  "margin_headroom": 338.8,
  "open": [
-  "BTC long +3.4%",
-  "SOL long -0.8%",
+  "BTC long +3.3%",
+  "SOL long -0.9%",
   "ETH long -0.4%"
  ],
  "stock_candidates": 13,
  "top_stocks": [
-  "OPENAI -7.0% vol=$20,815",
-  "SPCX -5.5% vol=$3,997,659",
-  "HOOD -5.1% vol=$213,152",
-  "CF +3.3% vol=$36,027",
-  "GOOGL -3.2% vol=$34,492"
+  "SPCX -5.8% vol=$3,961,606",
+  "HOOD -5.5% vol=$313,320",
+  "OPENAI -5.3% vol=$17,489",
+  "CF +4.1% vol=$35,725",
+  "GOOGL -3.7% vol=$34,471"
  ],
  "futures_ok": true,
  "futures_balance": 31.53,
  "futures_float_topup": false,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במטבע חדש: ADA",
+ "call_reason": "תנועה חזקה במניה: SPCX, HOOD, OPENAI",
  "claude_called": true,
- "market_read": "השוק הכללי נייטרלי עד חיובי בקריפטו עם BTC יציב, אבל רוב האלטים ללא מומנטום ברור מלבד ADA.",
- "skip_reason": "שאר המועמדים בקריפטו חלשים בנפח או ניטרליים מבחינת RSI/MACD, והמניות חסרות נתוני RSI/BB אמינים לכניסה בטוחה כרגע.",
+ "market_read": "ביטקוין ואיתו הסקטור הקריפטו נמצאים במומנטום חיובי קרוב לשיא הטווח, בעוד המניות עברו יום מכירות חד אך MSTR מראה חוזק יחסי כמניה קשורת ביטקוין.",
+ "skip_reason": "שאר המועמדים בקריפטו נמוכי נפח או ללא איתות ברור, והמניות שירדו חזק (SPCX, HOOD, OPENAI) חסרות נתוני RSI לאישור מהלך היפוך או המשך.",
  "picks": [
-  "ADA long size=20% conf=MEDIUM"
+  "ADA long size=25% conf=MEDIUM",
+  "MSTR long size=20% conf=MEDIUM"
  ],
  "order_errors": [
   "ADA: Kraken: ['EOrder:Insufficient funds']"
+ ],
+ "skips": [
+  "MSTR: margin $32 < needed $36 (after transfer attempt)"
  ]
 }
