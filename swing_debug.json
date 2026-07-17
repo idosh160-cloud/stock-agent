@@ -1,33 +1,33 @@
 {
- "time": "2026-07-16T23:00:04",
+ "time": "2026-07-17T00:00:04",
  "usdc": 108.2,
- "portfolio": 544.18,
+ "portfolio": 543.25,
  "api_billing_blocked": false,
  "margin_headroom": 342.37,
  "open": [
-  "BTC long +3.1%",
+  "BTC long +2.8%",
   "SOL long -0.7%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "HOOD -8.8% vol=$214,661",
-  "CRCL -7.5% vol=$176,706",
-  "SPCX -6.4% vol=$3,102,084",
-  "GOOGL -4.1% vol=$264,865",
-  "MSTR -3.8% vol=$179,170"
+  "HOOD -9.6% vol=$212,953",
+  "CRCL -8.6% vol=$168,277",
+  "SPCX -6.5% vol=$3,270,557",
+  "MSTR -5.2% vol=$182,548",
+  "GOOGL -3.8% vol=$260,370"
  ],
  "futures_ok": true,
- "futures_balance": 31.51,
+ "futures_balance": 31.52,
  "futures_float_topup": false,
  "unallocated_spot": [
   "ETH $372"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: CC",
+ "call_reason": "תנועה חזקה במטבע חדש: CC, PENGU",
  "claude_called": true,
- "market_read": "השוק הקריפטו במגמת ירידה קלה ורוב המטבעות באזור מכירת יתר קרוב לתחתית הבולינגר, מה שיוצר הזדמנויות ריבאונד קצרות טווח.",
- "skip_reason": "שאר המטבעות (ADA, CC, DOGE) דומים אך עם נפח נמוך יותר או היסטוריה חלשה יותר בלי שיפור ברור בתנאים; מניות לא מציעות כרגע יתרון ברור מעל קריפטו.",
+ "market_read": "השוק הקריפטו כולו במגמת ירידה קלה עם רוב המטבעות ב-RSI נמוך, מה שיוצר הזדמנויות דיפ-קניה זהירות אך לא מגמה חזקה ברורה כלפי מעלה.",
+ "skip_reason": "ETH המוחזק בספוט נשאר כפי שהוא כי הוא oversold (RSI 34.8) וטוב כהחזקה פסיבית; שאר המועמדים (CC, PENGU, DOGE) נפח מסחר נמוך מדי או חסרי בידול מספיק מול הפוזיציות הפתוחות ב-SOL/BTC.",
  "picks": [
-  "XRP long size=20% conf=MEDIUM"
+  "XRP long size=22% conf=MEDIUM"
  ],
  "order_errors": [
   "XRP: Kraken: ['EOrder:Insufficient funds']"
