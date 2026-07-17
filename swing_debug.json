@@ -1,30 +1,30 @@
 {
- "time": "2026-07-17T08:00:04",
- "usdc": 107.92,
- "portfolio": 535.34,
+ "time": "2026-07-17T09:00:05",
+ "usdc": 107.9,
+ "portfolio": 535.71,
  "api_billing_blocked": false,
  "margin_headroom": 338.8,
  "open": [
-  "BTC long +1.2%",
-  "SOL long -1.6%",
-  "ETH long -1.2%"
+  "BTC long +1.3%",
+  "SOL long -1.7%",
+  "ETH long -1.1%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "HOOD -9.6% vol=$161,801",
-  "SPCX -7.8% vol=$3,416,718",
-  "CRCL -6.4% vol=$124,861",
-  "MSTR -6.0% vol=$155,824",
-  "GOOGL -5.7% vol=$227,451"
+  "HOOD -10.4% vol=$168,502",
+  "CRCL -8.6% vol=$120,184",
+  "GOOGL -8.1% vol=$225,253",
+  "SPCX -7.9% vol=$3,424,421",
+  "MSTR -5.5% vol=$108,949"
  ],
  "futures_ok": true,
- "futures_balance": 31.52,
+ "futures_balance": 31.51,
  "futures_float_topup": false,
  "unallocated_spot": [],
  "call_reason": "פוזיציה חלשה: SOL, ETH",
  "claude_called": true,
- "market_read": "השוק כולו במצב oversold חד (BTC, ETH, SOL, LINK כולם קרוב לתחתית הבולינגר) אחרי ירידה כללית, מה שמרמז על הזדמנות ריבאונד טווח קצר.",
- "skip_reason": "BTC/ETH/SOL כבר בפוזיציות פתוחות ולא כדאי להגדיל ריכוזיות מעבר לזה; מניות כרגע לא מציגות סטאפ ברור מספיק מול העלות והספרד.",
+ "market_read": "השוק הקריפטו כולו במגמת ירידה קלה עם רוב הנכסים oversold, מה שיוצר הזדמנויות לונג בנקודות תמיכה אך דורש זהירות בגודל הפוזיציה.",
+ "skip_reason": "BTC, ETH ו-SOL כבר בפוזיציות פתוחות; שאר המועמדים (XMR, DOGE, LTC) חלשים יותר מבחינת ווליום או סטטיסטיקה היסטורית, והמניות כרגע לא מציגות סטאפ ברור מספיק לעומת LINK.",
  "picks": [
   "LINK long size=20% conf=MEDIUM"
  ],
