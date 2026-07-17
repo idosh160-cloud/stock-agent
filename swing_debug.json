@@ -1,21 +1,21 @@
 {
- "time": "2026-07-17T11:00:04",
+ "time": "2026-07-17T12:00:04",
  "usdc": 107.86,
- "portfolio": 537.22,
+ "portfolio": 537.63,
  "api_billing_blocked": false,
  "margin_headroom": 338.8,
  "open": [
-  "BTC long +1.8%",
+  "BTC long +2.0%",
   "SOL long -1.3%",
-  "ETH long -0.7%"
+  "ETH long -0.6%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "HOOD -10.1% vol=$167,607",
-  "GOOGL -7.4% vol=$222,924",
+  "HOOD -10.0% vol=$158,029",
+  "SPCX -7.0% vol=$3,543,196",
+  "GOOGL -6.5% vol=$220,299",
   "CRCL -6.1% vol=$119,185",
-  "SPCX -6.1% vol=$3,487,652",
-  "MSTR -4.1% vol=$103,625"
+  "NVDA -3.3% vol=$445,037"
  ],
  "futures_ok": true,
  "futures_balance": 31.52,
@@ -23,12 +23,12 @@
  "unallocated_spot": [],
  "call_reason": "פוזיציה חלשה: SOL",
  "claude_called": true,
- "market_read": "השוק בקירור כללי עם רוב הקריפטו ב-RSI נמוך-בינוני, אין מומנטום חד לאף כיוון אז עדיף להיכנס בזהירות לדיפים איכותיים.",
- "skip_reason": "BTC/ETH/SOL כבר פתוחים ולא מזיזים כספי פנוי; XMR נראה מפתה אבל MACD עדיין שלילי חזק - סיכון סכין נופלת גבוה מדי; מניות ללא אינדיקטורים ברורים כרגע כך שקריפטו עם RSI מדוד עדיף.",
+ "market_read": "השוק הכללי במגמת קונסולידציה עם BTC ו-ETH ליד אמצע הטווח, ורוב האלטקוינים במצב oversold קל שמאפשר כניסות למהלכי תיקון.",
+ "skip_reason": "שאר המועמדים או overbought (XDC), נפח נמוך מדי, או ללא סיגנל ברור לכיוון חד; המניות שירדו חזק (HOOD, SPCX) עדיין לא מראות סימני מיצוי מובהקים לשורט.",
  "picks": [
-  "LINK long size=20% conf=MEDIUM"
+  "XMR long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "LINK: Kraken: ['EOrder:Insufficient funds']"
+  "XMR: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
