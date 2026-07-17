@@ -1,20 +1,20 @@
 {
- "time": "2026-07-17T00:00:04",
- "usdc": 108.2,
- "portfolio": 543.25,
+ "time": "2026-07-17T01:00:04",
+ "usdc": 108.18,
+ "portfolio": 543.47,
  "api_billing_blocked": false,
  "margin_headroom": 342.37,
  "open": [
-  "BTC long +2.8%",
-  "SOL long -0.7%"
+  "BTC long +2.9%",
+  "SOL long -0.4%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "HOOD -9.6% vol=$212,953",
-  "CRCL -8.6% vol=$168,277",
-  "SPCX -6.5% vol=$3,270,557",
-  "MSTR -5.2% vol=$182,548",
-  "GOOGL -3.8% vol=$260,370"
+  "HOOD -9.5% vol=$178,478",
+  "CRCL -7.4% vol=$139,696",
+  "SPCX -6.2% vol=$3,279,400",
+  "MSTR -4.5% vol=$179,737",
+  "GOOGL -4.1% vol=$255,725"
  ],
  "futures_ok": true,
  "futures_balance": 31.52,
@@ -22,12 +22,12 @@
  "unallocated_spot": [
   "ETH $372"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: CC, PENGU",
+ "call_reason": "תנועה חזקה במניה: HOOD, CRCL, SPCX",
  "claude_called": true,
- "market_read": "השוק הקריפטו כולו במגמת ירידה קלה עם רוב המטבעות ב-RSI נמוך, מה שיוצר הזדמנויות דיפ-קניה זהירות אך לא מגמה חזקה ברורה כלפי מעלה.",
- "skip_reason": "ETH המוחזק בספוט נשאר כפי שהוא כי הוא oversold (RSI 34.8) וטוב כהחזקה פסיבית; שאר המועמדים (CC, PENGU, DOGE) נפח מסחר נמוך מדי או חסרי בידול מספיק מול הפוזיציות הפתוחות ב-SOL/BTC.",
+ "market_read": "השוק הקריפטו נסחר בטווח צר עם רוב המטבעות ב-RSI ניטרלי-נמוך, ומצביע על הזדמנויות ריבאונד נקודתיות ולא על מגמה ברורה חזקה.",
+ "skip_reason": "שאר המטבעות (DOGE, PENGU, CC) עם נפח מסחר נמוך מדי או סיגנלים חלשים מדי, והמניות חסרות נתוני RSI ברורים לביסוס פוזיציית שורט/לונג בטוחה כרגע.",
  "picks": [
-  "XRP long size=22% conf=MEDIUM"
+  "XRP long size=30% conf=MEDIUM"
  ],
  "order_errors": [
   "XRP: Kraken: ['EOrder:Insufficient funds']"
