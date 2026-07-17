@@ -1,34 +1,34 @@
 {
- "time": "2026-07-17T09:00:05",
+ "time": "2026-07-17T10:00:04",
  "usdc": 107.9,
- "portfolio": 535.71,
+ "portfolio": 536.76,
  "api_billing_blocked": false,
  "margin_headroom": 338.8,
  "open": [
-  "BTC long +1.3%",
-  "SOL long -1.7%",
-  "ETH long -1.1%"
+  "BTC long +1.5%",
+  "SOL long -1.6%",
+  "ETH long -0.8%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
   "HOOD -10.4% vol=$168,502",
-  "CRCL -8.6% vol=$120,184",
-  "GOOGL -8.1% vol=$225,253",
-  "SPCX -7.9% vol=$3,424,421",
-  "MSTR -5.5% vol=$108,949"
+  "GOOGL -7.5% vol=$222,948",
+  "CRCL -7.1% vol=$122,192",
+  "SPCX -6.7% vol=$3,484,835",
+  "MSTR -4.0% vol=$105,975"
  ],
  "futures_ok": true,
- "futures_balance": 31.51,
+ "futures_balance": 31.52,
  "futures_float_topup": false,
  "unallocated_spot": [],
- "call_reason": "פוזיציה חלשה: SOL, ETH",
+ "call_reason": "פוזיציה חלשה: SOL",
  "claude_called": true,
- "market_read": "השוק הקריפטו כולו במגמת ירידה קלה עם רוב הנכסים oversold, מה שיוצר הזדמנויות לונג בנקודות תמיכה אך דורש זהירות בגודל הפוזיציה.",
- "skip_reason": "BTC, ETH ו-SOL כבר בפוזיציות פתוחות; שאר המועמדים (XMR, DOGE, LTC) חלשים יותר מבחינת ווליום או סטטיסטיקה היסטורית, והמניות כרגע לא מציגות סטאפ ברור מספיק לעומת LINK.",
+ "market_read": "השוק הקריפטו הכללי נמצא בתיקון קל עם כמה נכסים באזור oversold מובהק, מה שיוצר הזדמנויות ריבאונד קצרות טווח.",
+ "skip_reason": "שאר המועמדים (BTC, ETH, SOL, LINK) כבר מוחזקים בתיק או שהאיתותים שלהם חלשים/סותרים מדי ביחס ל-XMR שמציג את התמונה הכי ברורה של oversold עם נפח תומך.",
  "picks": [
-  "LINK long size=20% conf=MEDIUM"
+  "XMR long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "LINK: Kraken: ['EOrder:Insufficient funds']"
+  "XMR: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
