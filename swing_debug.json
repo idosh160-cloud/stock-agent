@@ -1,21 +1,21 @@
 {
- "time": "2026-07-17T14:00:05",
- "usdc": 107.84,
- "portfolio": 534.39,
+ "time": "2026-07-17T15:00:05",
+ "usdc": 107.8,
+ "portfolio": 534.04,
  "api_billing_blocked": false,
  "margin_headroom": 338.8,
  "open": [
-  "BTC long +1.7%",
-  "SOL long -2.0%",
-  "ETH long -1.5%"
+  "BTC long +1.8%",
+  "SOL long -1.9%",
+  "ETH long -1.6%"
  ],
  "stock_candidates": 13,
  "top_stocks": [
-  "HOOD -13.0% vol=$171,930",
-  "GOOGL -7.7% vol=$143,278",
-  "SPCX -7.7% vol=$3,381,316",
+  "HOOD -9.3% vol=$112,641",
+  "SPCX -7.6% vol=$3,341,791",
   "OPENAI -7.5% vol=$13,684",
-  "CRCL -5.3% vol=$115,930"
+  "GOOGL -6.9% vol=$145,243",
+  "CRCL -3.7% vol=$118,300"
  ],
  "futures_ok": true,
  "futures_balance": 31.53,
@@ -23,14 +23,12 @@
  "unallocated_spot": [],
  "call_reason": "פוזיציה חלשה: SOL, ETH",
  "claude_called": true,
- "market_read": "השוק הקריפטו נמצא בתיקון קל עם כמה אלטים oversold שמציגים הזדמנויות ריבאונד, בעוד BTC נסחר ניטרלי-עצבני.",
- "skip_reason": "שאר המועמדים (DOT, PENGU, CC, מניות ה-xStock) חסרים נפח מספק, אינדיקטורים ברורים או שהם כבר בפוזיציה פתוחה - מעדיף לרכז ב-2 סטאפים ברורים.",
+ "market_read": "השוק בקריפטו בתיקון קל עם כמה נכסים oversold כמו ETH, SOL ו-LINK, בזמן שהמניות הטוקניזיות חוו ירידות חדות בלי סיגנלים טכניים ברורים לכניסה.",
+ "skip_reason": "שאר המניות (HOOD, SPCX, GOOGL) חסרות נתוני RSI/MACD לאישור כיוון ברור, ומטבעות כמו XMR ו-PENGU מציגים מומנטום שלילי חד או ווליום נמוך שלא מצדיק כניסה כרגע.",
  "picks": [
-  "LINK long size=40% conf=HIGH",
-  "XMR long size=20% conf=MEDIUM"
+  "LINK long size=25% conf=MEDIUM"
  ],
  "order_errors": [
-  "LINK: Kraken: ['EOrder:Insufficient funds']",
-  "XMR: Kraken: ['EOrder:Insufficient funds']"
+  "LINK: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
