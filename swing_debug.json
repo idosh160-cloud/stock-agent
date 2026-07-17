@@ -1,35 +1,32 @@
 {
- "time": "2026-07-17T01:00:04",
- "usdc": 108.18,
- "portfolio": 543.47,
+ "time": "2026-07-17T02:00:04",
+ "usdc": 108.16,
+ "portfolio": 540.39,
  "api_billing_blocked": false,
  "margin_headroom": 342.37,
  "open": [
-  "BTC long +2.9%",
-  "SOL long -0.4%"
+  "BTC long +2.4%",
+  "SOL long -1.0%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "HOOD -9.5% vol=$178,478",
-  "CRCL -7.4% vol=$139,696",
-  "SPCX -6.2% vol=$3,279,400",
-  "MSTR -4.5% vol=$179,737",
-  "GOOGL -4.1% vol=$255,725"
+  "HOOD -9.5% vol=$178,401",
+  "CRCL -8.2% vol=$124,736",
+  "SPCX -6.6% vol=$3,258,136",
+  "MSTR -5.0% vol=$176,470",
+  "GOOGL -5.0% vol=$259,465"
  ],
  "futures_ok": true,
  "futures_balance": 31.52,
  "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $372"
+  "ETH $369"
  ],
  "call_reason": "תנועה חזקה במניה: HOOD, CRCL, SPCX",
  "claude_called": true,
- "market_read": "השוק הקריפטו נסחר בטווח צר עם רוב המטבעות ב-RSI ניטרלי-נמוך, ומצביע על הזדמנויות ריבאונד נקודתיות ולא על מגמה ברורה חזקה.",
- "skip_reason": "שאר המטבעות (DOGE, PENGU, CC) עם נפח מסחר נמוך מדי או סיגנלים חלשים מדי, והמניות חסרות נתוני RSI ברורים לביסוס פוזיציית שורט/לונג בטוחה כרגע.",
+ "market_read": "השוק הקריפטו כרגע במצב oversold כללי (BTC, ETH, SOL כולם ליד תחתית הבולינגר) מה שמרמז על הזדמנות ריבאונד קצרת טווח.",
+ "skip_reason": "BTC ו-SOL כבר פתוחים בפוזיציות קיימות אז לא מכפיל חשיפה; ADA/LINK עם RSI פחות קיצוני ו/או היסטוריה חלשה לא מספיק חזקים מול ETH.",
  "picks": [
-  "XRP long size=30% conf=MEDIUM"
- ],
- "order_errors": [
-  "XRP: Kraken: ['EOrder:Insufficient funds']"
+  "ETH long size=20% conf=MEDIUM"
  ]
 }
