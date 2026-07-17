@@ -1,34 +1,34 @@
 {
- "time": "2026-07-17T16:00:05",
- "usdc": 107.8,
- "portfolio": 535.85,
+ "time": "2026-07-17T17:00:04",
+ "usdc": 107.78,
+ "portfolio": 537.2,
  "api_billing_blocked": false,
  "margin_headroom": 338.8,
  "open": [
-  "BTC long +2.2%",
-  "SOL long -1.4%",
-  "ETH long -1.1%"
+  "BTC long +2.5%",
+  "SOL long -1.1%",
+  "ETH long -0.8%"
  ],
  "stock_candidates": 13,
  "top_stocks": [
-  "HOOD -7.7% vol=$91,625",
   "OPENAI -7.5% vol=$13,684",
-  "SPCX -7.1% vol=$3,705,581",
-  "GOOGL -6.2% vol=$146,996",
-  "CRCL -4.2% vol=$278,848"
+  "GOOGL -6.1% vol=$146,515",
+  "SPCX -5.5% vol=$3,961,036",
+  "HOOD -3.6% vol=$95,152",
+  "CF +2.8% vol=$27,997"
  ],
  "futures_ok": true,
  "futures_balance": 31.53,
  "futures_float_topup": false,
  "unallocated_spot": [],
- "call_reason": "פוזיציה חלשה: SOL, ETH",
+ "call_reason": "פוזיציה חלשה: SOL",
  "claude_called": true,
- "market_read": "השוק הקריפטו כרגע בתיקון קל עם כמה נכסים oversold שמציעים הזדמנויות ריבאונד, בעוד המניות הטוקניזציה נמצאות בירידה חדה בלי אישור מומנטום ברור.",
- "skip_reason": "שאר המטבעות והמניות מציגים איתותים מעורבים או נפח נמוך מכדי להצדיק כניסה נוספת מעבר לפוזיציות הקיימות.",
+ "market_read": "השוק הרחב (BTC/ETH/SOL) נסחר בטווח ניטרלי-חלש בלי מומנטום ברור, אז מחפשים הזדמנות ספציפית באלטקוין oversold ולא מוסיפים לפוזיציות קיימות שנמצאות בסטגנציה.",
+ "skip_reason": "ADA ו-XDC קרובים לאיזור overbought/BB עליון בלי נפח מספיק חזק לשורט ברור, XMR ו-LINK/DOT ניטרליים בלי אינדיקציה חדה, והמניות (SPCX/GOOGL/HOOD) חסרות נתוני RSI לאישור טכני ברור כרגע.",
  "picks": [
-  "LINK long size=20% conf=MEDIUM"
+  "CC long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "LINK: Kraken: ['EOrder:Insufficient funds']"
+  "CC: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
