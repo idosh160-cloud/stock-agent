@@ -1,19 +1,19 @@
 {
- "time": "2026-07-17T21:00:05",
+ "time": "2026-07-17T22:00:04",
  "usdc": 107.72,
- "portfolio": 538.44,
+ "portfolio": 538.32,
  "api_billing_blocked": false,
  "margin_headroom": 338.8,
  "open": [
   "BTC long +3.3%",
-  "SOL long -0.9%",
-  "ETH long -0.4%"
+  "SOL long -1.0%",
+  "ETH long -0.5%"
  ],
  "stock_candidates": 13,
  "top_stocks": [
-  "SPCX -5.8% vol=$3,961,606",
-  "HOOD -5.5% vol=$313,320",
-  "OPENAI -5.3% vol=$17,489",
+  "SPCX -6.3% vol=$3,947,852",
+  "HOOD -5.3% vol=$330,157",
+  "OPENAI -5.0% vol=$17,571",
   "CF +4.1% vol=$35,725",
   "GOOGL -3.7% vol=$34,471"
  ],
@@ -21,18 +21,16 @@
  "futures_balance": 31.53,
  "futures_float_topup": false,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במניה: SPCX, HOOD, OPENAI",
+ "call_reason": "תנועה חזקה במטבע חדש: ADA",
  "claude_called": true,
- "market_read": "ביטקוין ואיתו הסקטור הקריפטו נמצאים במומנטום חיובי קרוב לשיא הטווח, בעוד המניות עברו יום מכירות חד אך MSTR מראה חוזק יחסי כמניה קשורת ביטקוין.",
- "skip_reason": "שאר המועמדים בקריפטו נמוכי נפח או ללא איתות ברור, והמניות שירדו חזק (SPCX, HOOD, OPENAI) חסרות נתוני RSI לאישור מהלך היפוך או המשך.",
+ "market_read": "השוק הכללי חיובי בזהירות עם BTC וכמה אלטים מראים מומנטום עולה בלי סימני מיצוי ברור.",
+ "skip_reason": "ADA ו-DOGE כבר קרובים לגבול עליון של Bollinger (BB%>84) ולכן הסיכון-סיכוי פחות אטרקטיבי כרגע; מניות ה-xStock חסרות אינדיקטורים טכניים מלאים לביסוס כניסה בטוחה.",
  "picks": [
-  "ADA long size=25% conf=MEDIUM",
-  "MSTR long size=20% conf=MEDIUM"
+  "XMR long size=25% conf=MEDIUM",
+  "LINK long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "ADA: Kraken: ['EOrder:Insufficient funds']"
- ],
- "skips": [
-  "MSTR: margin $32 < needed $36 (after transfer attempt)"
+  "XMR: Kraken: ['EOrder:Insufficient funds']",
+  "LINK: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
