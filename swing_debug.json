@@ -1,30 +1,30 @@
 {
- "time": "2026-07-17T07:00:04",
+ "time": "2026-07-17T08:00:04",
  "usdc": 107.92,
- "portfolio": 536.28,
+ "portfolio": 535.34,
  "api_billing_blocked": false,
  "margin_headroom": 338.8,
  "open": [
-  "BTC long +1.4%",
+  "BTC long +1.2%",
   "SOL long -1.6%",
-  "ETH long -1.0%"
+  "ETH long -1.2%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "HOOD -10.2% vol=$162,520",
-  "CRCL -8.3% vol=$124,722",
-  "SPCX -7.9% vol=$3,411,165",
-  "GOOGL -6.2% vol=$227,945",
-  "MSTR -5.3% vol=$162,409"
+  "HOOD -9.6% vol=$161,801",
+  "SPCX -7.8% vol=$3,416,718",
+  "CRCL -6.4% vol=$124,861",
+  "MSTR -6.0% vol=$155,824",
+  "GOOGL -5.7% vol=$227,451"
  ],
  "futures_ok": true,
  "futures_balance": 31.52,
  "futures_float_topup": false,
  "unallocated_spot": [],
- "call_reason": "פוזיציה חלשה: SOL",
+ "call_reason": "פוזיציה חלשה: SOL, ETH",
  "claude_called": true,
- "market_read": "השוק הקריפטו כולו במצב oversold חד עם BTC, ETH, SOL ו-LINK קרובים לרצועה תחתונה - סביבה טובה לכניסות לונג סלקטיביות.",
- "skip_reason": "PENGU/XDC/DOT/DOGE/ADA/CC נראים ניטרליים או חלשים מדי מבחינת מומנטום, ומניות ה-xStocks כרגע מחוץ לשעות המסחר עם תנועות חדות מדי לשורט בטוח - מעדיף להתמקד ב-LINK כהזדמנות הברורה ביותר.",
+ "market_read": "השוק כולו במצב oversold חד (BTC, ETH, SOL, LINK כולם קרוב לתחתית הבולינגר) אחרי ירידה כללית, מה שמרמז על הזדמנות ריבאונד טווח קצר.",
+ "skip_reason": "BTC/ETH/SOL כבר בפוזיציות פתוחות ולא כדאי להגדיל ריכוזיות מעבר לזה; מניות כרגע לא מציגות סטאפ ברור מספיק מול העלות והספרד.",
  "picks": [
   "LINK long size=20% conf=MEDIUM"
  ],
