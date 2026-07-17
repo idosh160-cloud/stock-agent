@@ -1,34 +1,29 @@
 {
- "time": "2026-07-17T17:00:04",
+ "time": "2026-07-17T18:00:05",
  "usdc": 107.78,
- "portfolio": 537.2,
+ "portfolio": 538.78,
  "api_billing_blocked": false,
  "margin_headroom": 338.8,
  "open": [
-  "BTC long +2.5%",
-  "SOL long -1.1%",
-  "ETH long -0.8%"
+  "BTC long +3.2%",
+  "SOL long -0.8%",
+  "ETH long -0.3%"
  ],
  "stock_candidates": 13,
  "top_stocks": [
   "OPENAI -7.5% vol=$13,684",
-  "GOOGL -6.1% vol=$146,515",
-  "SPCX -5.5% vol=$3,961,036",
+  "GOOGL -6.8% vol=$148,917",
+  "SPCX -4.5% vol=$3,966,979",
   "HOOD -3.6% vol=$95,152",
-  "CF +2.8% vol=$27,997"
+  "CF +2.8% vol=$24,548"
  ],
  "futures_ok": true,
  "futures_balance": 31.53,
  "futures_float_topup": false,
  "unallocated_spot": [],
- "call_reason": "פוזיציה חלשה: SOL",
+ "call_reason": "תנועה חזקה במניה: OPENAI, GOOGL, SPCX",
  "claude_called": true,
- "market_read": "השוק הרחב (BTC/ETH/SOL) נסחר בטווח ניטרלי-חלש בלי מומנטום ברור, אז מחפשים הזדמנות ספציפית באלטקוין oversold ולא מוסיפים לפוזיציות קיימות שנמצאות בסטגנציה.",
- "skip_reason": "ADA ו-XDC קרובים לאיזור overbought/BB עליון בלי נפח מספיק חזק לשורט ברור, XMR ו-LINK/DOT ניטרליים בלי אינדיקציה חדה, והמניות (SPCX/GOOGL/HOOD) חסרות נתוני RSI לאישור טכני ברור כרגע.",
- "picks": [
-  "CC long size=20% conf=MEDIUM"
- ],
- "order_errors": [
-  "CC: Kraken: ['EOrder:Insufficient funds']"
- ]
+ "market_read": "",
+ "skip_reason": "Expecting ',' delimiter: line 10 column 204 (char 373)",
+ "picks": []
 }
