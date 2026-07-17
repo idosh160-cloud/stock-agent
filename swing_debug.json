@@ -1,21 +1,21 @@
 {
- "time": "2026-07-17T04:00:04",
- "usdc": 107.98,
- "portfolio": 540.55,
+ "time": "2026-07-17T05:00:04",
+ "usdc": 107.96,
+ "portfolio": 539.96,
  "api_billing_blocked": false,
  "margin_headroom": 338.8,
  "open": [
-  "BTC long +2.4%",
+  "BTC long +2.3%",
   "SOL long -0.8%",
-  "ETH long +0.1%"
+  "ETH long -0.1%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "HOOD -9.3% vol=$176,556",
-  "CRCL -9.2% vol=$122,577",
-  "SPCX -7.1% vol=$3,310,834",
-  "GOOGL -5.8% vol=$262,165",
-  "MSTR -5.0% vol=$172,871"
+  "HOOD -10.2% vol=$174,531",
+  "CRCL -9.1% vol=$122,386",
+  "SPCX -7.6% vol=$3,309,155",
+  "GOOGL -6.7% vol=$260,607",
+  "MSTR -6.0% vol=$172,365"
  ],
  "futures_ok": true,
  "futures_balance": 31.52,
@@ -23,8 +23,8 @@
  "unallocated_spot": [],
  "call_reason": "תנועה חזקה במטבע חדש: PENGU",
  "claude_called": true,
- "market_read": "BTC ו-ETH נמצאים באזור oversold חד אך עדיין ללא אישור היפוך ברור, בעוד LINK מציג תמונה טכנית נקייה יותר לכניסה.",
- "skip_reason": "PENGU/XDC/LTC כבר קרובים לרצועה עליונה ומיצו את התנועה, והמניות (HOOD/CRCL/SPCX) נראות תנודתיות מדי בלי אישור RSI ברור לשורט נקי כרגע.",
+ "market_read": "השוק בתיקון רחב עם BTC ו-ETH ב-oversold, מה שיוצר הזדמנות זהירה לקנייה סלקטיבית באלטים איכותיים כמו LINK.",
+ "skip_reason": "שאר המטבעות והמניות נמצאים באזור נייטרלי או ללא נפח מספיק ליצירת יתרון סטטיסטי ברור, ומניות ה-xStock חסרות אינדיקטורים ברורים כרגע לכניסה בטוחה.",
  "picks": [
   "LINK long size=20% conf=MEDIUM"
  ],
