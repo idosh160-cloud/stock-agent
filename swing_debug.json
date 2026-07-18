@@ -1,34 +1,34 @@
 {
- "time": "2026-07-18T05:00:04",
+ "time": "2026-07-18T06:00:04",
  "usdc": 107.59,
- "portfolio": 538.63,
+ "portfolio": 538.78,
  "api_billing_blocked": false,
  "margin_headroom": 338.8,
  "open": [
-  "BTC long +3.1%",
-  "SOL long -0.9%",
-  "ETH long -0.3%"
+  "BTC long +3.0%",
+  "SOL long -1.2%",
+  "ETH long -0.2%"
  ],
  "stock_candidates": 13,
  "top_stocks": [
-  "MSTR +3.0% vol=$134,995",
-  "HOOD -2.4% vol=$334,012",
+  "MSTR +4.3% vol=$136,354",
+  "HOOD -3.0% vol=$335,025",
+  "CRCL +2.2% vol=$259,735",
   "CF +2.1% vol=$40,525",
-  "CRCL +1.8% vol=$260,404",
-  "GOOGL -1.2% vol=$23,095"
+  "GOOGL -1.2% vol=$18,259"
  ],
  "futures_ok": true,
  "futures_balance": 31.53,
  "futures_float_topup": false,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במניה: MSTR, HOOD, CF",
+ "call_reason": "פוזיציה חלשה: SOL",
  "claude_called": true,
- "market_read": "השוק נסחר בטווח צר עם BTC יציב סביב 64K ורוב האלטקוינים ניטרליים, אך CC מציג הזדמנות oversold ברורה.",
- "skip_reason": "שאר המועמדים (LTC, PENGU, MSTR) כבר קרובים לאזורי overbought או חסרי מומנטום ברור, ולכן לא מצדיקים כניסה נוספת כרגע.",
+ "market_read": "השוק הקריפטו נסחר בטווח צר עם BTC יציב מעל 63.9K, אין תנועה חדה בשוק הכללי אך יש הזדמנויות ספציפיות במטבעות עם מומנטום.",
+ "skip_reason": "שאר המועמדים (PENGU, DOGE, XMR, DOT, ADA) נמצאים באמצע טווח ללא איתות ברור, והמניות אינן מציגות סטאפ חד יותר מ-LTC כרגע.",
  "picks": [
-  "CC long size=20% conf=MEDIUM"
+  "LTC long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "CC: Kraken: ['EOrder:Insufficient funds']"
+  "LTC: Kraken: ['EOrder:Invalid leverage']"
  ]
 }
