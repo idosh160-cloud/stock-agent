@@ -1,21 +1,21 @@
 {
- "time": "2026-07-18T10:00:05",
- "usdc": 107.53,
- "portfolio": 538.47,
+ "time": "2026-07-18T11:00:05",
+ "usdc": 107.49,
+ "portfolio": 538.58,
  "api_billing_blocked": false,
  "margin_headroom": 338.8,
  "open": [
   "BTC long +3.1%",
-  "SOL long -1.3%",
+  "SOL long -1.2%",
   "ETH long -0.3%"
  ],
  "stock_candidates": 13,
  "top_stocks": [
-  "MSTR +2.8% vol=$154,878",
+  "MSTR +3.1% vol=$156,334",
+  "CRCL +1.9% vol=$246,915",
   "HOOD -1.5% vol=$330,016",
-  "GLD +1.1% vol=$344,115",
-  "OPENAI -1.1% vol=$17,148",
-  "CRCL +1.0% vol=$247,266"
+  "SPCX -1.4% vol=$2,649,435",
+  "CF +1.1% vol=$28,851"
  ],
  "futures_ok": true,
  "futures_balance": 31.53,
@@ -23,19 +23,12 @@
  "unallocated_spot": [],
  "call_reason": "פוזיציה חלשה: SOL",
  "claude_called": true,
- "market_read": "השוק הקריפטו נייטרלי-מעורב עם רוב המטבעות באמצע הטווח, בעוד מניות מסוימות כמו MSTR מראות מומנטום חיובי ברור.",
- "skip_reason": "שאר המטבעות (BTC, ETH, SOL) כבר בפוזיציה קיימת או ללא סיגנל חד, ומניות כמו HOOD/SPCX נראות תשושות מדי לכניסה לונג.",
+ "market_read": "השוק הכללי רגוע יחסית עם BTC יציב סביב 64K וסימנים מעורבים באלטקוינים, אך CC מציג הזדמנות דיפ ברורה.",
+ "skip_reason": "שאר המועמדים (ADA, XRP, DOGE, LTC) נסחרים ב-RSI ניטרלי ללא איתות ברור, והמניות שנבדקו כבר רצו או חסרות נפח מספק לכניסה איכותית כרגע.",
  "picks": [
-  "XRP long size=20% conf=MEDIUM",
-  "MSTR long size=25% conf=MEDIUM"
+  "CC long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "XRP: Kraken: ['EOrder:Insufficient funds']"
- ],
- "transfers": [
-  "MSTR: moved $15 → FAILED"
- ],
- "skips": [
-  "MSTR: margin $32 < needed $45 (after transfer attempt)"
+  "CC: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
