@@ -1,34 +1,34 @@
 {
- "time": "2026-07-18T16:00:05",
- "usdc": 107.43,
- "portfolio": 538.26,
+ "time": "2026-07-18T17:00:04",
+ "usdc": 107.41,
+ "portfolio": 538.7,
  "api_billing_blocked": false,
  "margin_headroom": 338.8,
  "open": [
-  "BTC long +3.3%",
-  "SOL long -1.1%",
-  "ETH long -0.3%"
+  "BTC long +3.6%",
+  "SOL long -0.8%",
+  "ETH long -0.2%"
  ],
- "stock_candidates": 13,
+ "stock_candidates": 12,
  "top_stocks": [
-  "OPENAI -2.6% vol=$7,400",
-  "HOOD -2.5% vol=$307,573",
-  "NVDA -1.6% vol=$17,547",
-  "SPCX +1.1% vol=$1,180,551",
-  "AAPL +0.8% vol=$20,844"
+  "OPENAI -2.6% vol=$8,390",
+  "CRCL -2.6% vol=$12,120",
+  "AAPL +0.7% vol=$13,128",
+  "SPCX +0.6% vol=$915,781",
+  "QQQ -0.6% vol=$43,105"
  ],
  "futures_ok": true,
  "futures_balance": 31.53,
  "futures_float_topup": false,
  "unallocated_spot": [],
- "call_reason": "פוזיציה חלשה: SOL",
+ "call_reason": "תנועה חזקה במטבע חדש: LTC",
  "claude_called": true,
- "market_read": "BTC וETH נסחרים בטווח יציב עם מומנטום חיובי מתון, האלטקוינים מציגים תמונה מעורבת ללא מגמה ברורה חזקה מאוד.",
- "skip_reason": "LTC ו-XMR קרובים לרצועה עליונה אך MACD עדיין חיובי כך שקיצור מוקדם מדי מסוכן; מניות ה-xStocks חסרות נתוני RSI/MACD לאישור טכני כך שנדחו הפעם.",
+ "market_read": "השוק הכללי רגוע יחסית עם BTC וETH ליד שיאי טווח, ומטבעות כמו LTC ו-BTC כבר קנויי יתר בעוד LINK מציע כניסה נקייה יותר.",
+ "skip_reason": "LTC/XMR/BTC קנויי יתר מדי לכניסת לונג חדשה, ADA ו-CC נזילות נמוכה מדי או סיגנל מעורב, והמניות הזמינות שקטות מדי היום ללא סיגנל ברור לכיוון.",
  "picks": [
-  "ADA long size=20% conf=MEDIUM"
+  "LINK long size=22% conf=MEDIUM"
  ],
  "order_errors": [
-  "ADA: Kraken: ['EOrder:Insufficient funds']"
+  "LINK: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
