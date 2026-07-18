@@ -1,21 +1,21 @@
 {
- "time": "2026-07-18T08:00:04",
- "usdc": 107.55,
- "portfolio": 538.43,
+ "time": "2026-07-18T09:00:04",
+ "usdc": 107.53,
+ "portfolio": 539.09,
  "api_billing_blocked": false,
  "margin_headroom": 338.8,
  "open": [
   "BTC long +3.1%",
   "SOL long -1.1%",
-  "ETH long -0.3%"
+  "ETH long -0.2%"
  ],
  "stock_candidates": 13,
  "top_stocks": [
-  "MSTR +4.0% vol=$135,217",
-  "HOOD -3.0% vol=$339,377",
-  "CRCL +2.2% vol=$251,297",
-  "CF +2.2% vol=$38,127",
-  "OPENAI -1.5% vol=$17,460"
+  "MSTR +3.3% vol=$138,263",
+  "HOOD -1.5% vol=$330,016",
+  "CF -1.3% vol=$34,936",
+  "CRCL +1.3% vol=$250,848",
+  "TSLA -1.2% vol=$42,803"
  ],
  "futures_ok": true,
  "futures_balance": 31.53,
@@ -23,11 +23,11 @@
  "unallocated_spot": [],
  "call_reason": "פוזיציה חלשה: SOL",
  "claude_called": true,
- "market_read": "השוק הכללי רגוע יחסית עם BTC ו-ETH בטווח אמצע, אבל יש הזדמנויות ספציפיות במניות ובאלטים קטנים.",
- "skip_reason": "שאר המועמדים בקריפטו ובמניות נמצאים באזור ניטרלי (RSI 45-65) ללא איתות ברור או נפח חלש מדי לסחר.",
+ "market_read": "השוק הקריפטו רגוע יחסית עם BTC יציב מעל 63.9K, ומניות מראות תנועות סלקטיביות עם MSTR מוביל מומנטום.",
+ "skip_reason": "שאר המועמדים (ADA, ETH, LTC, XMR ועוד) נעים בטווח צר וללא איתות ברור, ולכן לא מספקים יתרון מספיק לכניסה כרגע.",
  "picks": [
   "MSTR long size=30% conf=MEDIUM",
-  "CC long size=20% conf=MEDIUM"
+  "CC long size=18% conf=MEDIUM"
  ],
  "transfers": [
   "MSTR: moved $24 → FAILED"
