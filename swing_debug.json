@@ -1,30 +1,30 @@
 {
- "time": "2026-07-18T03:00:04",
+ "time": "2026-07-18T04:00:04",
  "usdc": 107.62,
- "portfolio": 538.17,
+ "portfolio": 538.87,
  "api_billing_blocked": false,
  "margin_headroom": 338.8,
  "open": [
   "BTC long +3.1%",
-  "SOL long -0.8%",
-  "ETH long -0.5%"
+  "SOL long -0.6%",
+  "ETH long -0.3%"
  ],
  "stock_candidates": 13,
  "top_stocks": [
-  "OPENAI -5.0% vol=$17,571",
-  "HOOD -4.5% vol=$334,206",
-  "MSTR +2.0% vol=$134,633",
-  "CF +1.7% vol=$38,550",
-  "CRCL +1.2% vol=$258,950"
+  "HOOD -3.6% vol=$334,204",
+  "MSTR +3.2% vol=$136,343",
+  "CF +2.9% vol=$40,573",
+  "CRCL +1.8% vol=$260,404",
+  "SPCX -1.1% vol=$2,820,244"
  ],
  "futures_ok": true,
  "futures_balance": 31.53,
  "futures_float_topup": false,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במניה: OPENAI, HOOD, MSTR",
+ "call_reason": "תנועה חזקה במניה: HOOD, MSTR, CF",
  "claude_called": true,
- "market_read": "השוק הכללי רגוע יחסית עם BTC יציב מעל 63.9K וסיגנלים מעורבים באלטקוינים, אין מומנטום חזק חד-כיווני.",
- "skip_reason": "ADA ו-LTC קרובים ל-overbought אך לא קיצוניים מספיק לשורט בטוח, ומניות כרגע ללא סטאפ ברור בשעה זו של הלילה.",
+ "market_read": "השוק הכללי רגוע עם BTC/ETH בטווח אמצע-חיובי ללא סיגנל חד, ומרבית האלטים במגמה ניטרלית עד חיובית קלה.",
+ "skip_reason": "שאר המועמדים (LTC, ADA, SOL, MSTR) כבר קרובים לרוויה עליונה או חסרי אות ברור, ולכן לא מספקים יחס סיכוי/סיכון עדיף על CC.",
  "picks": [
   "CC long size=20% conf=MEDIUM"
  ],
