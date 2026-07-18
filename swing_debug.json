@@ -1,21 +1,21 @@
 {
- "time": "2026-07-18T18:00:04",
- "usdc": 107.41,
- "portfolio": 540.13,
+ "time": "2026-07-18T19:00:05",
+ "usdc": 107.37,
+ "portfolio": 541.02,
  "api_billing_blocked": false,
  "margin_headroom": 338.8,
  "open": [
-  "BTC long +3.9%",
-  "SOL long -0.6%",
-  "ETH long +0.1%"
+  "BTC long +4.0%",
+  "SOL long -0.7%",
+  "ETH long +0.4%"
  ],
- "stock_candidates": 11,
+ "stock_candidates": 10,
  "top_stocks": [
-  "OPENAI -2.6% vol=$8,390",
-  "CF -1.1% vol=$18,171",
-  "SPCX +0.8% vol=$643,101",
+  "SPCX +1.9% vol=$664,549",
+  "MSTR +0.7% vol=$87,693",
   "TSLA +0.6% vol=$18,931",
-  "HOOD -0.6% vol=$279,046"
+  "HOOD -0.3% vol=$280,107",
+  "QQQ -0.2% vol=$20,712"
  ],
  "futures_ok": true,
  "futures_balance": 31.53,
@@ -23,12 +23,19 @@
  "unallocated_spot": [],
  "call_reason": "תנועה חזקה במטבע חדש: LTC",
  "claude_called": true,
- "market_read": "השוק הקריפטו במגמת עלייה מתונה עם BTC ו-ETH קרובים לרוויה, ולכן עדיף לחפש מטבע עם מומנטום דומה אך פחות קיצוני.",
- "skip_reason": "LTC ו-BTC נראים overbought מדי עם MACD עדיין חיובי חזק - שורט מוקדם מדי; שאר המטבעות (CC, ADA, XRP) חסרי כיוון ברור או נפח נמוך מדי.",
+ "market_read": "השוק הכללי נמצא במגמת עלייה מתונה עם קריפטו גדול (BTC, ETH) בקניית יתר קלה, מה שיוצר הזדמנויות גם ללונג ממשיך וגם לשורט מיצוי במטבעות שרצו חזק כמו LTC.",
+ "skip_reason": "BTC/ETH/SOL כבר פוזיציות פתוחות ומתקדמות לכיוון היעד כך שאין צורך לגעת בהן; שאר המועמדים (CC, ADA, DOGE, BNB, XMR) נמצאים באזור ניטרלי ללא איתות ברור מספיק לכניסה חדשה.",
  "picks": [
-  "BNB long size=20% conf=MEDIUM"
+  "LTC short size=20% conf=MEDIUM",
+  "SPCX long size=25% conf=MEDIUM"
  ],
  "order_errors": [
-  "BNB: Kraken: ['EOrder:Insufficient funds']"
+  "LTC: Kraken: ['EOrder:Invalid leverage']"
+ ],
+ "transfers": [
+  "SPCX: moved $16 → FAILED"
+ ],
+ "skips": [
+  "SPCX: margin $32 < needed $45 (after transfer attempt)"
  ]
 }
