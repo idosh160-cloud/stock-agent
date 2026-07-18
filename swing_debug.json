@@ -1,7 +1,7 @@
 {
- "time": "2026-07-18T15:00:05",
+ "time": "2026-07-18T16:00:05",
  "usdc": 107.43,
- "portfolio": 538.49,
+ "portfolio": 538.26,
  "api_billing_blocked": false,
  "margin_headroom": 338.8,
  "open": [
@@ -11,17 +11,24 @@
  ],
  "stock_candidates": 13,
  "top_stocks": [
+  "OPENAI -2.6% vol=$7,400",
   "HOOD -2.5% vol=$307,573",
-  "CRCL +1.9% vol=$186,018",
-  "SPCX +1.6% vol=$1,727,884",
-  "NVDA -1.5% vol=$19,609",
-  "CF +0.9% vol=$23,708"
+  "NVDA -1.6% vol=$17,547",
+  "SPCX +1.1% vol=$1,180,551",
+  "AAPL +0.8% vol=$20,844"
  ],
  "futures_ok": true,
  "futures_balance": 31.53,
  "futures_float_topup": false,
  "unallocated_spot": [],
  "call_reason": "פוזיציה חלשה: SOL",
- "claude_called": false,
- "skip": "snapshot זהה לקריאה הקודמת"
+ "claude_called": true,
+ "market_read": "BTC וETH נסחרים בטווח יציב עם מומנטום חיובי מתון, האלטקוינים מציגים תמונה מעורבת ללא מגמה ברורה חזקה מאוד.",
+ "skip_reason": "LTC ו-XMR קרובים לרצועה עליונה אך MACD עדיין חיובי כך שקיצור מוקדם מדי מסוכן; מניות ה-xStocks חסרות נתוני RSI/MACD לאישור טכני כך שנדחו הפעם.",
+ "picks": [
+  "ADA long size=20% conf=MEDIUM"
+ ],
+ "order_errors": [
+  "ADA: Kraken: ['EOrder:Insufficient funds']"
+ ]
 }
