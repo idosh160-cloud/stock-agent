@@ -1,21 +1,21 @@
 {
- "time": "2026-07-18T17:00:04",
+ "time": "2026-07-18T18:00:04",
  "usdc": 107.41,
- "portfolio": 538.7,
+ "portfolio": 540.13,
  "api_billing_blocked": false,
  "margin_headroom": 338.8,
  "open": [
-  "BTC long +3.6%",
-  "SOL long -0.8%",
-  "ETH long -0.2%"
+  "BTC long +3.9%",
+  "SOL long -0.6%",
+  "ETH long +0.1%"
  ],
- "stock_candidates": 12,
+ "stock_candidates": 11,
  "top_stocks": [
   "OPENAI -2.6% vol=$8,390",
-  "CRCL -2.6% vol=$12,120",
-  "AAPL +0.7% vol=$13,128",
-  "SPCX +0.6% vol=$915,781",
-  "QQQ -0.6% vol=$43,105"
+  "CF -1.1% vol=$18,171",
+  "SPCX +0.8% vol=$643,101",
+  "TSLA +0.6% vol=$18,931",
+  "HOOD -0.6% vol=$279,046"
  ],
  "futures_ok": true,
  "futures_balance": 31.53,
@@ -23,12 +23,12 @@
  "unallocated_spot": [],
  "call_reason": "תנועה חזקה במטבע חדש: LTC",
  "claude_called": true,
- "market_read": "השוק הכללי רגוע יחסית עם BTC וETH ליד שיאי טווח, ומטבעות כמו LTC ו-BTC כבר קנויי יתר בעוד LINK מציע כניסה נקייה יותר.",
- "skip_reason": "LTC/XMR/BTC קנויי יתר מדי לכניסת לונג חדשה, ADA ו-CC נזילות נמוכה מדי או סיגנל מעורב, והמניות הזמינות שקטות מדי היום ללא סיגנל ברור לכיוון.",
+ "market_read": "השוק הקריפטו במגמת עלייה מתונה עם BTC ו-ETH קרובים לרוויה, ולכן עדיף לחפש מטבע עם מומנטום דומה אך פחות קיצוני.",
+ "skip_reason": "LTC ו-BTC נראים overbought מדי עם MACD עדיין חיובי חזק - שורט מוקדם מדי; שאר המטבעות (CC, ADA, XRP) חסרי כיוון ברור או נפח נמוך מדי.",
  "picks": [
-  "LINK long size=22% conf=MEDIUM"
+  "BNB long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "LINK: Kraken: ['EOrder:Insufficient funds']"
+  "BNB: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
