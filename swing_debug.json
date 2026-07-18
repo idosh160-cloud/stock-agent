@@ -1,34 +1,27 @@
 {
- "time": "2026-07-18T14:00:04",
- "usdc": 107.47,
- "portfolio": 537.76,
+ "time": "2026-07-18T15:00:05",
+ "usdc": 107.43,
+ "portfolio": 538.49,
  "api_billing_blocked": false,
  "margin_headroom": 338.8,
  "open": [
   "BTC long +3.3%",
-  "SOL long -1.4%",
-  "ETH long -0.5%"
+  "SOL long -1.1%",
+  "ETH long -0.3%"
  ],
  "stock_candidates": 13,
  "top_stocks": [
-  "HOOD -2.1% vol=$307,554",
-  "CRCL +1.3% vol=$210,324",
-  "NVDA -1.0% vol=$53,503",
-  "MSTR +0.8% vol=$156,724",
-  "OPENAI -0.8% vol=$7,032"
+  "HOOD -2.5% vol=$307,573",
+  "CRCL +1.9% vol=$186,018",
+  "SPCX +1.6% vol=$1,727,884",
+  "NVDA -1.5% vol=$19,609",
+  "CF +0.9% vol=$23,708"
  ],
  "futures_ok": true,
  "futures_balance": 31.53,
  "futures_float_topup": false,
  "unallocated_spot": [],
  "call_reason": "פוזיציה חלשה: SOL",
- "claude_called": true,
- "market_read": "השוק הקריפטו כללי יציב עם BTC במגמת עלייה מתונה, ומטבעות בודדים כמו LTC ו-BNB מראים מומנטום חיובי בעוד שאחרים כמו SOL ו-ADA עדיין בתחתית טווח.",
- "skip_reason": "שאר המועמדים או בהיסטוריה שלילית ללא שיפור טכני משמעותי (ADA, CRCL, HOOD) או נייטרליים מדי (XMR, LINK, BNB בעוצמה נמוכה יחסית) כדי להצדיק כניסה נוספת מעבר לפוזיציה הקיימת.",
- "picks": [
-  "LTC long size=20% conf=MEDIUM"
- ],
- "order_errors": [
-  "LTC: Kraken: ['EOrder:Invalid leverage']"
- ]
+ "claude_called": false,
+ "skip": "snapshot זהה לקריאה הקודמת"
 }
