@@ -1,7 +1,7 @@
 {
- "time": "2026-07-18T07:00:04",
+ "time": "2026-07-18T08:00:04",
  "usdc": 107.55,
- "portfolio": 538.57,
+ "portfolio": 538.43,
  "api_billing_blocked": false,
  "margin_headroom": 338.8,
  "open": [
@@ -11,17 +11,31 @@
  ],
  "stock_candidates": 13,
  "top_stocks": [
-  "MSTR +4.3% vol=$136,925",
-  "HOOD -3.3% vol=$336,124",
-  "CRCL +2.3% vol=$251,561",
-  "CF +2.1% vol=$40,525",
-  "GOOGL -1.2% vol=$18,259"
+  "MSTR +4.0% vol=$135,217",
+  "HOOD -3.0% vol=$339,377",
+  "CRCL +2.2% vol=$251,297",
+  "CF +2.2% vol=$38,127",
+  "OPENAI -1.5% vol=$17,460"
  ],
  "futures_ok": true,
  "futures_balance": 31.53,
  "futures_float_topup": false,
  "unallocated_spot": [],
  "call_reason": "פוזיציה חלשה: SOL",
- "claude_called": false,
- "skip": "snapshot זהה לקריאה הקודמת"
+ "claude_called": true,
+ "market_read": "השוק הכללי רגוע יחסית עם BTC ו-ETH בטווח אמצע, אבל יש הזדמנויות ספציפיות במניות ובאלטים קטנים.",
+ "skip_reason": "שאר המועמדים בקריפטו ובמניות נמצאים באזור ניטרלי (RSI 45-65) ללא איתות ברור או נפח חלש מדי לסחר.",
+ "picks": [
+  "MSTR long size=30% conf=MEDIUM",
+  "CC long size=20% conf=MEDIUM"
+ ],
+ "transfers": [
+  "MSTR: moved $24 → FAILED"
+ ],
+ "skips": [
+  "MSTR: margin $32 < needed $54 (after transfer attempt)"
+ ],
+ "order_errors": [
+  "CC: Kraken: ['EOrder:Insufficient funds']"
+ ]
 }
