@@ -1,34 +1,38 @@
 {
- "time": "2026-07-18T00:00:05",
- "usdc": 107.68,
- "portfolio": 538.26,
+ "time": "2026-07-18T01:00:04",
+ "usdc": 107.66,
+ "portfolio": 537.92,
  "api_billing_blocked": false,
  "margin_headroom": 338.8,
  "open": [
   "BTC long +3.0%",
-  "SOL long -1.1%",
-  "ETH long -0.4%"
+  "SOL long -0.9%",
+  "ETH long -0.5%"
  ],
  "stock_candidates": 13,
  "top_stocks": [
   "OPENAI -5.0% vol=$17,571",
-  "HOOD -3.3% vol=$331,364",
-  "GOOGL -2.8% vol=$34,672",
-  "MSTR +2.6% vol=$134,910",
-  "SPCX -2.2% vol=$2,878,363"
+  "HOOD -3.4% vol=$334,378",
+  "MSTR +2.3% vol=$134,639",
+  "GOOGL -1.9% vol=$34,478",
+  "CF +1.7% vol=$38,550"
  ],
  "futures_ok": true,
  "futures_balance": 31.53,
  "futures_float_topup": false,
  "unallocated_spot": [],
- "call_reason": "פוזיציה חלשה: SOL",
+ "call_reason": "תנועה חזקה במניה: OPENAI, HOOD, MSTR",
  "claude_called": true,
- "market_read": "השוק הקריפטו נסחר בטווח צר עם BTC יציב ואלטים מראים חוזק סלקטיבי כמו ADA ו-XMR.",
- "skip_reason": "שאר המועמדים או חלשים בנפח, ניטרליים ב-RSI, או שמדובר בעמדות פתוחות שכבר בכיוון נכון ואין צורך לסובב אותן.",
+ "market_read": "השוק הכללי רגוע יחסית עם קריפטו בטווח צר ומרבית המניות בירידה קלה, כך שמחפשים חוזק יחסי נקודתי במקום מגמה רחבה.",
+ "skip_reason": "ADA/LINK קרובים לרמת oversold אבל לא מספיק קיצוניים לשורט ברור, ושאר המניות (OPENAI, HOOD, SPCX) בירידה חדה מדי בלי סימן היפוך ברור - מעדיף לחכות.",
  "picks": [
-  "ADA long size=20% conf=MEDIUM"
+  "XMR long size=25% conf=MEDIUM",
+  "MSTR long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "ADA: Kraken: ['EOrder:Insufficient funds']"
+  "XMR: Kraken: ['EOrder:Insufficient funds']"
+ ],
+ "skips": [
+  "MSTR: margin $32 < needed $36 (after transfer attempt)"
  ]
 }
