@@ -1,40 +1,25 @@
 {
- "time": "2026-07-18T21:00:06",
- "usdc": 107.35,
- "portfolio": 541.07,
+ "time": "2026-07-18T22:00:05",
+ "usdc": 90.44,
+ "portfolio": 540.52,
  "api_billing_blocked": false,
  "margin_headroom": 354.23,
  "open": [
-  "BTC long +4.3%",
-  "ETH long +0.4%"
+  "BTC long +4.4%",
+  "ETH long +0.6%"
  ],
- "stock_candidates": 10,
+ "stock_candidates": 11,
  "top_stocks": [
-  "SPCX +3.5% vol=$191,606",
-  "SPY +0.6% vol=$282,298",
-  "MSTR +0.5% vol=$55,004",
-  "HOOD -0.4% vol=$28,535",
-  "TSLA +0.3% vol=$18,897"
+  "SPCX +3.4% vol=$463,725",
+  "MSTR +0.6% vol=$56,252",
+  "HOOD -0.4% vol=$11,905",
+  "AAPL -0.3% vol=$12,932",
+  "TSLA +0.3% vol=$19,160"
  ],
  "futures_ok": true,
- "futures_balance": 31.54,
- "futures_float_topup": false,
+ "futures_balance": 47.01,
  "unallocated_spot": [],
  "call_reason": "תנועה חזקה במטבע חדש: LTC",
- "claude_called": true,
- "market_read": "BTC ו-ETH נמצאים באזור overbought עם BB% קרוב ל-100 אז לא מוסיפים שם, אבל השוק הכללי עדיין חיובי ומאפשר סטאפים נקודתיים במקומות אחרים.",
- "skip_reason": "BTC/ETH/LINK/SOL/XRP קרובים לרוויה עליונה (BB%>90, RSI>60) ולא נותנים יחס סיכוי/סיכון טוב ללונג נוסף, ו-LTC אמנם במומנטום אך כבר overbought (RSI=66) בלי אישור ברור לשורט.",
- "picks": [
-  "CC long size=18% conf=MEDIUM",
-  "SPCX long size=25% conf=MEDIUM"
- ],
- "order_errors": [
-  "CC: Kraken: ['EOrder:Insufficient funds']"
- ],
- "transfers": [
-  "SPCX: moved $16 → OK"
- ],
- "skips": [
-  "SPCX: margin $32 < needed $45 (after transfer attempt)"
- ]
+ "claude_called": false,
+ "skip": "snapshot זהה לקריאה הקודמת"
 }
