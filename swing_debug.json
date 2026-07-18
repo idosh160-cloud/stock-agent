@@ -1,21 +1,20 @@
 {
- "time": "2026-07-18T20:00:04",
- "usdc": 107.37,
- "portfolio": 541.3,
+ "time": "2026-07-18T21:00:06",
+ "usdc": 107.35,
+ "portfolio": 541.07,
  "api_billing_blocked": false,
- "margin_headroom": 338.8,
+ "margin_headroom": 354.23,
  "open": [
-  "BTC long +4.0%",
-  "SOL long -0.5%",
+  "BTC long +4.3%",
   "ETH long +0.4%"
  ],
  "stock_candidates": 10,
  "top_stocks": [
-  "SPCX +3.1% vol=$216,281",
-  "MSTR +0.8% vol=$92,873",
-  "TSLA +0.6% vol=$18,931",
-  "HOOD -0.5% vol=$149,247",
-  "AAPL -0.2% vol=$13,008"
+  "SPCX +3.5% vol=$191,606",
+  "SPY +0.6% vol=$282,298",
+  "MSTR +0.5% vol=$55,004",
+  "HOOD -0.4% vol=$28,535",
+  "TSLA +0.3% vol=$18,897"
  ],
  "futures_ok": true,
  "futures_balance": 31.54,
@@ -23,12 +22,19 @@
  "unallocated_spot": [],
  "call_reason": "תנועה חזקה במטבע חדש: LTC",
  "claude_called": true,
- "market_read": "השוק הקריפטו בעליה כללית עם BTC ו-ETH בקרבת שיא אך overbought, ואילטים כמו LTC ו-XMR עדיין מראים מומנטום המשכי.",
- "skip_reason": "BTC ו-ETH כבר overbought מדי לפוזיציה חדשה ואני כבר מחזיק בהם, המניות היום שקטות מדי (נפח נמוך, טווח צר) כדי להצדיק כניסה חדשה.",
+ "market_read": "BTC ו-ETH נמצאים באזור overbought עם BB% קרוב ל-100 אז לא מוסיפים שם, אבל השוק הכללי עדיין חיובי ומאפשר סטאפים נקודתיים במקומות אחרים.",
+ "skip_reason": "BTC/ETH/LINK/SOL/XRP קרובים לרוויה עליונה (BB%>90, RSI>60) ולא נותנים יחס סיכוי/סיכון טוב ללונג נוסף, ו-LTC אמנם במומנטום אך כבר overbought (RSI=66) בלי אישור ברור לשורט.",
  "picks": [
-  "LTC long size=25% conf=MEDIUM"
+  "CC long size=18% conf=MEDIUM",
+  "SPCX long size=25% conf=MEDIUM"
  ],
  "order_errors": [
-  "LTC: Kraken: ['EOrder:Invalid leverage']"
+  "CC: Kraken: ['EOrder:Insufficient funds']"
+ ],
+ "transfers": [
+  "SPCX: moved $16 → OK"
+ ],
+ "skips": [
+  "SPCX: margin $32 < needed $45 (after transfer attempt)"
  ]
 }

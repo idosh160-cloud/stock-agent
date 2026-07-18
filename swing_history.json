@@ -1123,5 +1123,30 @@
     "entry_bb_pct": 73.4,
     "entry_macd_hist": 0.000478,
     "entry_change_24h": 3.98
+  },
+  {
+    "coin": "SOL",
+    "pair": "SOLUSDC",
+    "status": "closed_stale",
+    "leveraged": true,
+    "collateral": 136.84,
+    "volume": 1.80599182,
+    "entry_price": 75.77,
+    "close_price": 75.44,
+    "target_price": 84.86,
+    "stop_price": 72.74,
+    "pnl_usd": -0.6,
+    "pnl_pct": -0.44,
+    "date_open": "2026-07-16T20:00:40.979432",
+    "date_close": "2026-07-18T21:00:04.424134",
+    "reasoning": "OK",
+    "confidence": "MEDIUM",
+    "txid": "OCAWIX-EHARK-ZLIJGC",
+    "close_txid": "OK47ES-GM6DI-EBFHOD",
+    "side": "long",
+    "entry_rsi": 39.0,
+    "entry_bb_pct": 22.4,
+    "entry_macd_hist": -0.051299,
+    "entry_change_24h": -1.95
   }
 ]
