@@ -1,19 +1,19 @@
 {
- "time": "2026-07-18T06:00:04",
- "usdc": 107.59,
- "portfolio": 538.78,
+ "time": "2026-07-18T07:00:04",
+ "usdc": 107.55,
+ "portfolio": 538.57,
  "api_billing_blocked": false,
  "margin_headroom": 338.8,
  "open": [
-  "BTC long +3.0%",
-  "SOL long -1.2%",
-  "ETH long -0.2%"
+  "BTC long +3.1%",
+  "SOL long -1.1%",
+  "ETH long -0.3%"
  ],
  "stock_candidates": 13,
  "top_stocks": [
-  "MSTR +4.3% vol=$136,354",
-  "HOOD -3.0% vol=$335,025",
-  "CRCL +2.2% vol=$259,735",
+  "MSTR +4.3% vol=$136,925",
+  "HOOD -3.3% vol=$336,124",
+  "CRCL +2.3% vol=$251,561",
   "CF +2.1% vol=$40,525",
   "GOOGL -1.2% vol=$18,259"
  ],
@@ -22,13 +22,6 @@
  "futures_float_topup": false,
  "unallocated_spot": [],
  "call_reason": "פוזיציה חלשה: SOL",
- "claude_called": true,
- "market_read": "השוק הקריפטו נסחר בטווח צר עם BTC יציב מעל 63.9K, אין תנועה חדה בשוק הכללי אך יש הזדמנויות ספציפיות במטבעות עם מומנטום.",
- "skip_reason": "שאר המועמדים (PENGU, DOGE, XMR, DOT, ADA) נמצאים באמצע טווח ללא איתות ברור, והמניות אינן מציגות סטאפ חד יותר מ-LTC כרגע.",
- "picks": [
-  "LTC long size=20% conf=MEDIUM"
- ],
- "order_errors": [
-  "LTC: Kraken: ['EOrder:Invalid leverage']"
- ]
+ "claude_called": false,
+ "skip": "snapshot זהה לקריאה הקודמת"
 }
