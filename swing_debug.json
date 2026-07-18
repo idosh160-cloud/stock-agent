@@ -1,21 +1,21 @@
 {
- "time": "2026-07-17T23:00:05",
+ "time": "2026-07-18T00:00:05",
  "usdc": 107.68,
- "portfolio": 537.77,
+ "portfolio": 538.26,
  "api_billing_blocked": false,
  "margin_headroom": 338.8,
  "open": [
-  "BTC long +3.1%",
-  "SOL long -1.0%",
-  "ETH long -0.6%"
+  "BTC long +3.0%",
+  "SOL long -1.1%",
+  "ETH long -0.4%"
  ],
  "stock_candidates": 13,
  "top_stocks": [
   "OPENAI -5.0% vol=$17,571",
-  "HOOD -4.0% vol=$329,958",
-  "GOOGL -3.6% vol=$34,427",
-  "CF +2.9% vol=$36,678",
-  "MSTR +2.7% vol=$138,586"
+  "HOOD -3.3% vol=$331,364",
+  "GOOGL -2.8% vol=$34,672",
+  "MSTR +2.6% vol=$134,910",
+  "SPCX -2.2% vol=$2,878,363"
  ],
  "futures_ok": true,
  "futures_balance": 31.53,
@@ -23,12 +23,12 @@
  "unallocated_spot": [],
  "call_reason": "פוזיציה חלשה: SOL",
  "claude_called": true,
- "market_read": "השוק במגמה מעורבת עם BTC יציב ואלטקוינים מציגים תנודתיות נמוכה-בינונית ללא מגמה ברורה חזקה.",
- "skip_reason": "שאר המטבעות מציגים RSI ניטרלי או נפח נמוך מדי, ADA קרוב לאזור קנוי יתר (BB%78) ומניות אינן מציגות הזדמנות ברורה מספיק כרגע.",
+ "market_read": "השוק הקריפטו נסחר בטווח צר עם BTC יציב ואלטים מראים חוזק סלקטיבי כמו ADA ו-XMR.",
+ "skip_reason": "שאר המועמדים או חלשים בנפח, ניטרליים ב-RSI, או שמדובר בעמדות פתוחות שכבר בכיוון נכון ואין צורך לסובב אותן.",
  "picks": [
-  "XMR long size=20% conf=MEDIUM"
+  "ADA long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "XMR: Kraken: ['EOrder:Insufficient funds']"
+  "ADA: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
