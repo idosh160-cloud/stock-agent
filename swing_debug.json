@@ -1,32 +1,33 @@
 {
- "time": "2026-07-19T06:00:04",
- "usdc": 89.36,
- "portfolio": 540.86,
+ "time": "2026-07-19T07:00:05",
+ "usdc": 89.33,
+ "portfolio": 541.04,
  "api_billing_blocked": false,
  "margin_headroom": 348.11,
  "open": [
   "BTC long +4.3%",
-  "SOL long +0.1%"
+  "SOL long +0.3%"
  ],
- "stock_candidates": 9,
+ "stock_candidates": 8,
  "top_stocks": [
-  "SPCX +3.3% vol=$486,424",
-  "OPENAI -2.0% vol=$90,510",
-  "MSTR +2.0% vol=$52,971",
-  "TSLA +0.2% vol=$16,683",
-  "GOOGL -0.1% vol=$6,456"
+  "SPCX +2.9% vol=$480,534",
+  "MSTR +1.6% vol=$53,974",
+  "OPENAI -1.6% vol=$116,212",
+  "TSLA +0.4% vol=$11,723",
+  "SPY -0.2% vol=$302,409"
  ],
  "futures_ok": true,
  "futures_balance": 47.01,
  "unallocated_spot": [
-  "ETH $372"
+  "ETH $373"
  ],
  "call_reason": "תנועה חזקה במניה: SPCX",
  "claude_called": true,
- "market_read": "השוק הקריפטו נמצא במגמת עלייה מתונה עם BTC ו-ETH overbought אבל אלטקוינים כמו XRP עדיין מראים מקום לתנועה.",
- "skip_reason": "BTC ו-ETH overbought מדי לכניסה נוספת לונג, ו-SOL כבר בפוזיציה קיימת שמתקדמת יפה - אין צורך לכפול חשיפה.",
+ "market_read": "השוק כללית ניטרלי עם מגמה עדינה כלפי מעלה, BTC ו-ETH קרובים לאזור overbought כך שעדיף להימנע מהם ולחפש הזדמנויות בנכסים פחות נסחרים.",
+ "skip_reason": "BTC/ETH/SOL כבר overbought ומוחזקים או קרובים לתשישות, XMR ו-CC בעלי נפח נמוך מדי, ADA ו-BNB ניטרליים ללא איתות ברור.",
  "picks": [
-  "XRP long size=20% conf=MEDIUM"
+  "XRP long size=20% conf=MEDIUM",
+  "SPCX long size=25% conf=MEDIUM"
  ],
  "order_errors": [
   "XRP: Kraken: ['EOrder:Insufficient funds']"
