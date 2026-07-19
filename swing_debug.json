@@ -1,36 +1,28 @@
 {
- "time": "2026-07-19T14:00:05",
- "usdc": 89.25,
- "portfolio": 526.69,
+ "time": "2026-07-19T15:00:05",
+ "usdc": 89.23,
+ "portfolio": 527.19,
  "api_billing_blocked": false,
  "margin_headroom": 348.11,
  "open": [
-  "BTC long +3.9%",
-  "SOL long +0.3%",
+  "BTC long +4.1%",
+  "SOL long +0.7%",
   "SPCX long -1.0%"
  ],
  "stock_candidates": 6,
  "top_stocks": [
-  "SPCX +1.4% vol=$482,416",
-  "MSTR +0.7% vol=$43,285",
-  "OPENAI +0.4% vol=$156,646",
-  "NVDA +0.3% vol=$30,560",
-  "SPY -0.3% vol=$313,935"
+  "OPENAI +1.7% vol=$174,752",
+  "SPCX +1.3% vol=$484,171",
+  "MSTR +1.1% vol=$44,103",
+  "SPY -0.3% vol=$314,208",
+  "NVDA +0.1% vol=$30,154"
  ],
  "futures_ok": true,
- "futures_balance": 32.24,
+ "futures_balance": 32.16,
  "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $373"
+  "ETH $374"
  ],
- "call_reason": "USDC $89 לא מושקע — מחפש לו בית (תיק מושקע תמיד)",
- "claude_called": true,
- "market_read": "BTC ואלטים נעים בטווח צר עם חוסר כיוון ברור, אבל LTC מציג סימני מיצוי ברורים מול שאר השוק.",
- "skip_reason": "שאר המטבעות (ADA, XRP, LINK, BNB, XMR) נעים בטווח ניטרלי ללא איתות ברור, ו-ETH הספוט הגדול נשאר מוחזק כי הוא לא בקיצון קנייה/מכירה שמצדיק סגירה.",
- "picks": [
-  "LTC short size=25% conf=MEDIUM"
- ],
- "order_errors": [
-  "LTC: Kraken: ['EOrder:Invalid leverage']"
- ]
+ "call_reason": "USDC $89 ממתין אבל בקירור דו-שעתי (טריגר חלש)",
+ "claude_called": false
 }
