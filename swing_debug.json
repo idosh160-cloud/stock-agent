@@ -1,20 +1,20 @@
 {
- "time": "2026-07-19T02:00:04",
- "usdc": 90.4,
- "portfolio": 540.03,
+ "time": "2026-07-19T03:00:04",
+ "usdc": 90.36,
+ "portfolio": 542.58,
  "api_billing_blocked": false,
  "margin_headroom": 354.23,
  "open": [
-  "BTC long +4.4%",
-  "ETH long +0.5%"
+  "BTC long +4.5%",
+  "ETH long +1.1%"
  ],
- "stock_candidates": 10,
+ "stock_candidates": 9,
  "top_stocks": [
-  "SPCX +2.4% vol=$477,537",
-  "MSTR +1.0% vol=$59,219",
-  "OPENAI -1.0% vol=$49,749",
+  "SPCX +2.4% vol=$478,334",
+  "OPENAI -1.6% vol=$67,239",
+  "MSTR +1.4% vol=$59,939",
   "HOOD -0.4% vol=$7,066",
-  "QQQ -0.2% vol=$5,391"
+  "GOOGL -0.1% vol=$6,671"
  ],
  "futures_ok": true,
  "futures_balance": 47.01,
