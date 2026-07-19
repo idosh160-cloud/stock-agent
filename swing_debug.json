@@ -1,24 +1,24 @@
 {
- "time": "2026-07-19T17:00:05",
+ "time": "2026-07-19T18:00:04",
  "usdc": 89.2,
- "portfolio": 525.26,
+ "portfolio": 525.51,
  "api_billing_blocked": false,
  "margin_headroom": 348.11,
  "open": [
   "BTC long +4.0%",
-  "SOL long +0.0%",
-  "SPCX long -1.1%"
+  "SOL long +0.1%",
+  "SPCX long -1.0%"
  ],
- "stock_candidates": 6,
+ "stock_candidates": 7,
  "top_stocks": [
   "OPENAI +1.6% vol=$189,513",
-  "SPCX +0.5% vol=$487,504",
-  "SPY -0.2% vol=$316,637",
-  "NVDA +0.2% vol=$30,292",
-  "TSLA -0.1% vol=$29,454"
+  "SPCX +0.7% vol=$484,696",
+  "CF +0.4% vol=$7,413",
+  "MSTR -0.4% vol=$46,606",
+  "SPY -0.3% vol=$293,640"
  ],
  "futures_ok": true,
- "futures_balance": 32.03,
+ "futures_balance": 32.04,
  "futures_float_topup": false,
  "unallocated_spot": [
   "ETH $372"
