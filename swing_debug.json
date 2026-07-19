@@ -1,36 +1,29 @@
 {
- "time": "2026-07-19T16:00:05",
- "usdc": 89.23,
- "portfolio": 526.32,
+ "time": "2026-07-19T17:00:05",
+ "usdc": 89.2,
+ "portfolio": 525.26,
  "api_billing_blocked": false,
  "margin_headroom": 348.11,
  "open": [
-  "BTC long +4.1%",
-  "SOL long +0.4%",
-  "SPCX long -1.0%"
+  "BTC long +4.0%",
+  "SOL long +0.0%",
+  "SPCX long -1.1%"
  ],
  "stock_candidates": 6,
  "top_stocks": [
-  "OPENAI +1.9% vol=$190,521",
-  "SPCX +0.9% vol=$485,083",
-  "MSTR +0.3% vol=$43,471",
-  "NVDA +0.2% vol=$30,294",
-  "SPY -0.1% vol=$313,319"
+  "OPENAI +1.6% vol=$189,513",
+  "SPCX +0.5% vol=$487,504",
+  "SPY -0.2% vol=$316,637",
+  "NVDA +0.2% vol=$30,292",
+  "TSLA -0.1% vol=$29,454"
  ],
  "futures_ok": true,
- "futures_balance": 32.05,
+ "futures_balance": 32.03,
  "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $373"
+  "ETH $372"
  ],
  "call_reason": "פוזיציה חלשה: SPCX",
- "claude_called": true,
- "market_read": "השוק הכללי נייטרלי עד חיובי קלות, ביטקוין מתייצב סביב 64.5K בלי מגמה חדה, והזדמנויות הבולטות ביותר הן במניה בקאונטר-טרנד ובמטבע נסחר יתר על המידה שנמכר.",
- "skip_reason": "שאר המטבעות והמניות נמצאים באזור נייטרלי (RSI 50-60, BB% אמצעי) ללא אות ברור לכיוון, ולכן לא הוצדק לפתוח בהם פוזיציה נוספת מעבר ל-XMR.",
- "picks": [
-  "XMR long size=20% conf=MEDIUM"
- ],
- "order_errors": [
-  "XMR: Kraken: ['EOrder:Insufficient funds']"
- ]
+ "claude_called": false,
+ "skip": "snapshot זהה לקריאה הקודמת"
 }
