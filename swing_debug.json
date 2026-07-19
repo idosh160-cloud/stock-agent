@@ -1,35 +1,28 @@
 {
- "time": "2026-07-19T07:00:05",
+ "time": "2026-07-19T08:00:05",
  "usdc": 89.33,
- "portfolio": 541.04,
+ "portfolio": 527.76,
  "api_billing_blocked": false,
  "margin_headroom": 348.11,
  "open": [
   "BTC long +4.3%",
-  "SOL long +0.3%"
+  "SOL long +0.3%",
+  "SPCX long +0.1%"
  ],
  "stock_candidates": 8,
  "top_stocks": [
-  "SPCX +2.9% vol=$480,534",
-  "MSTR +1.6% vol=$53,974",
-  "OPENAI -1.6% vol=$116,212",
-  "TSLA +0.4% vol=$11,723",
-  "SPY -0.2% vol=$302,409"
+  "SPCX +3.0% vol=$488,761",
+  "MSTR +1.7% vol=$53,067",
+  "OPENAI +0.3% vol=$123,935",
+  "SPY -0.2% vol=$305,022",
+  "GLD -0.1% vol=$76,356"
  ],
  "futures_ok": true,
- "futures_balance": 47.01,
+ "futures_balance": 33.75,
+ "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $373"
+  "ETH $372"
  ],
- "call_reason": "תנועה חזקה במניה: SPCX",
- "claude_called": true,
- "market_read": "השוק כללית ניטרלי עם מגמה עדינה כלפי מעלה, BTC ו-ETH קרובים לאזור overbought כך שעדיף להימנע מהם ולחפש הזדמנויות בנכסים פחות נסחרים.",
- "skip_reason": "BTC/ETH/SOL כבר overbought ומוחזקים או קרובים לתשישות, XMR ו-CC בעלי נפח נמוך מדי, ADA ו-BNB ניטרליים ללא איתות ברור.",
- "picks": [
-  "XRP long size=20% conf=MEDIUM",
-  "SPCX long size=25% conf=MEDIUM"
- ],
- "order_errors": [
-  "XRP: Kraken: ['EOrder:Insufficient funds']"
- ]
+ "call_reason": "USDC $89 ממתין אבל בקירור דו-שעתי (טריגר חלש)",
+ "claude_called": false
 }
