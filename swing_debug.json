@@ -1,32 +1,32 @@
 {
- "time": "2026-07-19T00:00:04",
+ "time": "2026-07-19T01:00:04",
  "usdc": 90.4,
- "portfolio": 540.72,
+ "portfolio": 540.33,
  "api_billing_blocked": false,
  "margin_headroom": 354.23,
  "open": [
-  "BTC long +4.5%",
-  "ETH long +0.7%"
+  "BTC long +4.4%",
+  "ETH long +0.6%"
  ],
- "stock_candidates": 11,
+ "stock_candidates": 10,
  "top_stocks": [
-  "SPCX +2.4% vol=$484,993",
-  "OPENAI -1.0% vol=$10,261",
-  "MSTR +0.4% vol=$58,856",
-  "CRCL +0.3% vol=$10,569",
-  "HOOD -0.3% vol=$10,468"
+  "SPCX +2.4% vol=$476,651",
+  "MSTR +1.1% vol=$59,206",
+  "OPENAI -1.0% vol=$30,495",
+  "HOOD -0.4% vol=$7,066",
+  "AAPL -0.3% vol=$13,628"
  ],
  "futures_ok": true,
  "futures_balance": 47.01,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במטבע חדש: LTC",
+ "call_reason": "תנועה חזקה במניה: SPCX",
  "claude_called": true,
- "market_read": "BTC ו-ETH נמצאים באזור אובר-בוט קיצוני (RSI 78.9 ו-69.4), כך שהעדפתי לא להוסיף עליהם ולפזר סיכון לכיוון אלטקוין עם מומנטום בריא יותר.",
- "skip_reason": "BTC ו-ETH כבר פוזיציות פתוחות ואובר-בוט מדי להוספה; שאר המטבעות (DOGE, XRP, ADA, LINK) נעים בטווח צר ללא איתות ברור, והמניות חסרות נתוני RSI/BB לאישור טכני חזק מספיק.",
+ "market_read": "BTC ו-ETH נראים overbought (RSI מעל 65-75) כך שלא מוסיפים שם, אבל XRP מציע כניסה סבירה עם מומנטום מתון ונפח מסחר גבוה.",
+ "skip_reason": "BTC/ETH כבר מוחזקים ו-overbought, שאר האלטקוינים חלשים או בנפח נמוך מדי, והמניות לא מציגות סטאפ ברור מספיק כרגע (SPCX/MSTR עם תנועה קטנה שלא מצדיקה כניסה חדשה).",
  "picks": [
-  "LTC long size=20% conf=MEDIUM"
+  "XRP long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "LTC: Kraken: ['EOrder:Invalid leverage']"
+  "XRP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
