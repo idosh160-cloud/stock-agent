@@ -1,32 +1,25 @@
 {
- "time": "2026-07-19T01:00:04",
+ "time": "2026-07-19T02:00:04",
  "usdc": 90.4,
- "portfolio": 540.33,
+ "portfolio": 540.03,
  "api_billing_blocked": false,
  "margin_headroom": 354.23,
  "open": [
   "BTC long +4.4%",
-  "ETH long +0.6%"
+  "ETH long +0.5%"
  ],
  "stock_candidates": 10,
  "top_stocks": [
-  "SPCX +2.4% vol=$476,651",
-  "MSTR +1.1% vol=$59,206",
-  "OPENAI -1.0% vol=$30,495",
+  "SPCX +2.4% vol=$477,537",
+  "MSTR +1.0% vol=$59,219",
+  "OPENAI -1.0% vol=$49,749",
   "HOOD -0.4% vol=$7,066",
-  "AAPL -0.3% vol=$13,628"
+  "QQQ -0.2% vol=$5,391"
  ],
  "futures_ok": true,
  "futures_balance": 47.01,
  "unallocated_spot": [],
  "call_reason": "תנועה חזקה במניה: SPCX",
- "claude_called": true,
- "market_read": "BTC ו-ETH נראים overbought (RSI מעל 65-75) כך שלא מוסיפים שם, אבל XRP מציע כניסה סבירה עם מומנטום מתון ונפח מסחר גבוה.",
- "skip_reason": "BTC/ETH כבר מוחזקים ו-overbought, שאר האלטקוינים חלשים או בנפח נמוך מדי, והמניות לא מציגות סטאפ ברור מספיק כרגע (SPCX/MSTR עם תנועה קטנה שלא מצדיקה כניסה חדשה).",
- "picks": [
-  "XRP long size=20% conf=MEDIUM"
- ],
- "order_errors": [
-  "XRP: Kraken: ['EOrder:Insufficient funds']"
- ]
+ "claude_called": false,
+ "skip": "snapshot זהה לקריאה הקודמת"
 }
