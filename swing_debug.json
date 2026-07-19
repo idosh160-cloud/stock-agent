@@ -1,28 +1,36 @@
 {
- "time": "2026-07-19T08:00:05",
- "usdc": 89.33,
- "portfolio": 527.76,
+ "time": "2026-07-19T09:00:05",
+ "usdc": 89.31,
+ "portfolio": 528.26,
  "api_billing_blocked": false,
  "margin_headroom": 348.11,
  "open": [
   "BTC long +4.3%",
-  "SOL long +0.3%",
-  "SPCX long +0.1%"
+  "SOL long +0.5%",
+  "SPCX long -0.1%"
  ],
  "stock_candidates": 8,
  "top_stocks": [
-  "SPCX +3.0% vol=$488,761",
-  "MSTR +1.7% vol=$53,067",
-  "OPENAI +0.3% vol=$123,935",
-  "SPY -0.2% vol=$305,022",
-  "GLD -0.1% vol=$76,356"
+  "SPCX +2.8% vol=$484,219",
+  "MSTR +1.2% vol=$47,494",
+  "OPENAI +0.8% vol=$142,164",
+  "TSLA +0.2% vol=$14,514",
+  "NVDA +0.1% vol=$11,398"
  ],
  "futures_ok": true,
- "futures_balance": 33.75,
+ "futures_balance": 33.42,
  "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $372"
+  "ETH $373"
  ],
- "call_reason": "USDC $89 ממתין אבל בקירור דו-שעתי (טריגר חלש)",
- "claude_called": false
+ "call_reason": "USDC $89 לא מושקע — מחפש לו בית (תיק מושקע תמיד)",
+ "claude_called": true,
+ "market_read": "השוק במגמת עלייה מתונה עם כמה נכסים (SOL, ETH, XMR) כבר overbought וקרובים למיצוי, בעוד XRP ו-LINK עדיין באזור נייטרלי עם מקום לעלות.",
+ "skip_reason": "SOL/ETH/XMR overbought מדי לכניסת לונג ולא נראים תשושים מספיק לשורט; ADA/BNB/LTC נייטרליים ללא edge ברור; מניות ללא איתות RSI חד כרגע.",
+ "picks": [
+  "XRP long size=20% conf=MEDIUM"
+ ],
+ "order_errors": [
+  "XRP: Kraken: ['EOrder:Insufficient funds']"
+ ]
 }
