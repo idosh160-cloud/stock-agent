@@ -1,25 +1,32 @@
 {
- "time": "2026-07-18T23:00:05",
+ "time": "2026-07-19T00:00:04",
  "usdc": 90.4,
- "portfolio": 540.94,
+ "portfolio": 540.72,
  "api_billing_blocked": false,
  "margin_headroom": 354.23,
  "open": [
-  "BTC long +4.4%",
+  "BTC long +4.5%",
   "ETH long +0.7%"
  ],
- "stock_candidates": 12,
+ "stock_candidates": 11,
  "top_stocks": [
-  "SPCX +3.0% vol=$475,457",
+  "SPCX +2.4% vol=$484,993",
   "OPENAI -1.0% vol=$10,261",
-  "CF +0.6% vol=$5,907",
-  "HOOD -0.4% vol=$11,905",
-  "MSTR +0.3% vol=$59,677"
+  "MSTR +0.4% vol=$58,856",
+  "CRCL +0.3% vol=$10,569",
+  "HOOD -0.3% vol=$10,468"
  ],
  "futures_ok": true,
  "futures_balance": 47.01,
  "unallocated_spot": [],
  "call_reason": "תנועה חזקה במטבע חדש: LTC",
- "claude_called": false,
- "skip": "snapshot זהה לקריאה הקודמת"
+ "claude_called": true,
+ "market_read": "BTC ו-ETH נמצאים באזור אובר-בוט קיצוני (RSI 78.9 ו-69.4), כך שהעדפתי לא להוסיף עליהם ולפזר סיכון לכיוון אלטקוין עם מומנטום בריא יותר.",
+ "skip_reason": "BTC ו-ETH כבר פוזיציות פתוחות ואובר-בוט מדי להוספה; שאר המטבעות (DOGE, XRP, ADA, LINK) נעים בטווח צר ללא איתות ברור, והמניות חסרות נתוני RSI/BB לאישור טכני חזק מספיק.",
+ "picks": [
+  "LTC long size=20% conf=MEDIUM"
+ ],
+ "order_errors": [
+  "LTC: Kraken: ['EOrder:Invalid leverage']"
+ ]
 }
