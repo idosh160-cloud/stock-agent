@@ -1,36 +1,28 @@
 {
- "time": "2026-07-19T19:00:05",
+ "time": "2026-07-19T20:00:06",
  "usdc": 89.17,
- "portfolio": 524.4,
+ "portfolio": 524.91,
  "api_billing_blocked": false,
  "margin_headroom": 348.11,
  "open": [
   "BTC long +3.8%",
-  "SOL long -0.2%",
-  "SPCX long -0.8%"
+  "SOL long -0.1%",
+  "SPCX long -0.7%"
  ],
  "stock_candidates": 7,
  "top_stocks": [
-  "CF -2.3% vol=$10,568",
-  "MSTR -1.0% vol=$44,254",
-  "OPENAI +0.8% vol=$211,155",
-  "SPY -0.3% vol=$295,086",
-  "SPCX -0.2% vol=$474,047"
+  "CF -1.9% vol=$11,484",
+  "MSTR -1.1% vol=$39,938",
+  "OPENAI +0.9% vol=$226,317",
+  "SPCX +0.3% vol=$469,595",
+  "SPY -0.3% vol=$295,476"
  ],
  "futures_ok": true,
- "futures_balance": 32.42,
+ "futures_balance": 32.63,
  "futures_float_topup": false,
  "unallocated_spot": [
   "ETH $371"
  ],
- "call_reason": "תנועה חזקה במניה: CF",
- "claude_called": true,
- "market_read": "השוק בתנועה צידית עם BTC וסולנה קרובים לתחתית הטווח, ומספר אלטקוינים מציגים oversold קל שיכול להוליד תגובת תיקון קצרה.",
- "skip_reason": "ETH הספוט נשאר כאחזקה פסיבית כי אין כרגע הזדמנות ברורה יותר להעביר אליה הון, ומניות ה-xStocks לא מציגות היום איתות קיצון ברור לשורט או לונג חזק.",
- "picks": [
-  "DOGE long size=20% conf=MEDIUM"
- ],
- "order_errors": [
-  "DOGE: Kraken: ['EOrder:Insufficient funds']"
- ]
+ "call_reason": "USDC $89 ממתין אבל בקירור דו-שעתי (טריגר חלש)",
+ "claude_called": false
 }
