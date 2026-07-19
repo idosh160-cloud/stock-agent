@@ -1,29 +1,33 @@
 {
- "time": "2026-07-19T11:00:05",
+ "time": "2026-07-19T12:00:05",
  "usdc": 89.28,
- "portfolio": 526.95,
+ "portfolio": 526.29,
  "api_billing_blocked": false,
  "margin_headroom": 348.11,
  "open": [
-  "BTC long +4.1%",
-  "SOL long +0.5%",
-  "SPCX long -0.8%"
+  "BTC long +3.9%",
+  "SOL long +0.2%",
+  "SPCX long -1.2%"
  ],
- "stock_candidates": 7,
+ "stock_candidates": 6,
  "top_stocks": [
-  "MSTR +1.6% vol=$31,420",
-  "SPCX +1.4% vol=$515,579",
-  "OPENAI +0.6% vol=$146,475",
-  "TSLA +0.2% vol=$22,369",
-  "GOOGL +0.2% vol=$6,418"
+  "SPCX +1.0% vol=$491,428",
+  "MSTR +1.0% vol=$40,730",
+  "OPENAI +0.6% vol=$147,867",
+  "SPY +0.2% vol=$314,591",
+  "NVDA +0.1% vol=$30,393"
  ],
  "futures_ok": true,
- "futures_balance": 32.41,
+ "futures_balance": 31.97,
  "futures_float_topup": false,
  "unallocated_spot": [
   "ETH $373"
  ],
- "call_reason": "USDC $89 לא מושקע — מחפש לו בית (תיק מושקע תמיד)",
- "claude_called": false,
- "skip": "snapshot זהה לקריאה הקודמת"
+ "call_reason": "פוזיציה חלשה: SPCX",
+ "claude_called": true,
+ "market_read": "השוק הכללי רגוע יחסית עם BTC בתחתית טווח קצר, ואילו SOL ו-ETH נסחרים באזור אמצע-עליון של הטווח שלהם ללא איתות ברור.",
+ "skip_reason": "SOL ו-ETH כבר בפוזיציות/מוחזקים בגודל מספק ואינם מציעים כניסה חדשה ברורה; ADA ו-LTC עם איתותים מעורבים ונפח נמוך יחסית, לא מצדיקים כניסה חדשה; מניות ה-xStocks חסרות נתוני RSI/מומנטום ברורים לכניסה כרגע.",
+ "picks": [
+  "BTC long size=18% conf=MEDIUM"
+ ]
 }
