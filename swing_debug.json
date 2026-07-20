@@ -1,35 +1,34 @@
 {
- "time": "2026-07-20T10:00:05",
- "usdc": 88.99,
- "portfolio": 535.61,
+ "time": "2026-07-20T11:00:05",
+ "usdc": 88.97,
+ "portfolio": 536.57,
  "api_billing_blocked": false,
  "margin_headroom": 348.11,
  "open": [
-  "BTC long +3.4%",
-  "SOL long +0.7%"
+  "BTC long +3.6%",
+  "SOL long +0.6%"
  ],
  "stock_candidates": 10,
  "top_stocks": [
-  "OPENAI -7.1% vol=$160,209",
-  "CF -3.6% vol=$16,797",
-  "SPCX -1.8% vol=$152,429",
-  "MSTR -1.4% vol=$98,707",
-  "NVDA +0.6% vol=$45,109"
+  "OPENAI -6.7% vol=$158,619",
+  "CF -4.0% vol=$16,696",
+  "SPCX -1.2% vol=$151,271",
+  "MSTR -1.2% vol=$96,669",
+  "NVDA +0.8% vol=$25,237"
  ],
  "futures_ok": true,
- "futures_balance": 43.19,
+ "futures_balance": 43.18,
  "unallocated_spot": [
-  "ETH $371"
+  "ETH $372"
  ],
  "call_reason": "תנועה חזקה במניה: OPENAI, CF",
  "claude_called": true,
- "market_read": "השוק הכללי רגוע עם BTC ורוב האלטים בטריטוריה נייטרלית-שלילית קלה, אין מומנטום חזק ברור מלבד כמה מצבי oversold נקודתיים.",
- "skip_reason": "שאר המועמדים (ADA, BTC, ETH, XRP וכו') נמצאים באזור RSI ניטרלי ללא איתות ברור, ומניות ה-xStocks חסרות נתוני RSI/מומנטום מספיקים להצדיק כניסה כרגע.",
+ "market_read": "השוק הכללי רגוע יחסית עם BTC וETH בטווח ניטרלי (RSI סביב 50), אין מומנטום חזק בשום כיוון מלבד אותות עומק מקומיים כמו CC.",
+ "skip_reason": "שאר המטבעות והמניות נמצאים באזור ניטרלי (RSI 40-55, BB% אמצעי) ללא אות ברור לכיוון, לכן לא נכנסתי אליהם כדי לשמור על ריכוז בהזדמנות האיכותית ביותר.",
  "picks": [
-  "CC long size=25% conf=MEDIUM"
+  "CC long size=15% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
   "CC: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
