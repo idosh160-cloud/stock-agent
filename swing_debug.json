@@ -1,35 +1,37 @@
 {
- "time": "2026-07-20T06:00:04",
- "usdc": 89.05,
- "portfolio": 533.97,
+ "time": "2026-07-20T07:00:04",
+ "usdc": 89.02,
+ "portfolio": 532.49,
  "api_billing_blocked": false,
  "margin_headroom": 348.11,
  "open": [
-  "BTC long +3.4%",
-  "SOL long +0.0%"
+  "BTC long +3.0%",
+  "SOL long -0.4%"
  ],
  "stock_candidates": 8,
  "top_stocks": [
-  "OPENAI -4.3% vol=$211,637",
-  "CF -3.9% vol=$17,163",
-  "SPCX -3.0% vol=$190,566",
-  "MSTR -1.1% vol=$97,828",
+  "OPENAI -6.6% vol=$183,351",
+  "CF -3.5% vol=$17,077",
+  "SPCX -2.5% vol=$199,158",
+  "MSTR -1.5% vol=$95,380",
   "TSLA -0.4% vol=$34,611"
  ],
  "futures_ok": true,
  "futures_balance": 43.19,
  "unallocated_spot": [
-  "ETH $370"
+  "ETH $369"
  ],
  "call_reason": "תנועה חזקה במניה: OPENAI, CF, SPCX",
  "claude_called": true,
- "market_read": "השוק הקריפטו כולו במגמת ירידה קלה עם RSI נמוך ברוב המטבעות, מה שמצביע על הזדמנויות ריבאונד סלקטיביות ולא על מומנטום חזק בכיוון אחד.",
- "skip_reason": "שאר המטבעות (BTC, ETH, XRP וכו') נמצאים במגמת ירידה עדינה בלי אישור נפח חזק או תבנית ברורה, ומניות ה-xStocks לא מציגות סטאפ קיצוני מספיק לשורט/לונג ברור כרגע.",
+ "market_read": "השוק בקורקציה קלה עם BTC ואלטים רבים בקנייה עודפת יתר (oversold), מה שנותן הזדמנויות לונג על בסיס תיקון טכני קצר טווח.",
+ "skip_reason": "דחיתי סטוקים כי אין סטאפ ברור מספיק בשעות אלה ומרווחי המסחר צרים מדי לתגמול-סיכון טוב, ו-BTC/SOL הקיימים בפורטפוליו כבר בגודל מכובד כך שלא הגדלתי אותם.",
  "picks": [
-  "ADA long size=25% conf=MEDIUM"
+  "ETH long size=22% conf=MEDIUM",
+  "ADA long size=15% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
+  "ETH: Kraken: ['EOrder:Insufficient funds']",
   "ADA: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
