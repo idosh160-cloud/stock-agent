@@ -1,36 +1,29 @@
 {
- "time": "2026-07-19T23:00:04",
+ "time": "2026-07-20T00:00:04",
  "usdc": 89.12,
- "portfolio": 525.97,
+ "portfolio": 525.57,
  "api_billing_blocked": false,
  "margin_headroom": 348.11,
  "open": [
-  "BTC long +4.2%",
-  "SOL long +0.2%",
-  "SPCX long -1.2%"
+  "BTC long +4.3%",
+  "SOL long +0.6%",
+  "SPCX long -1.1%"
  ],
  "stock_candidates": 8,
  "top_stocks": [
-  "CF -1.7% vol=$13,162",
-  "MSTR -0.8% vol=$35,268",
+  "CF -1.5% vol=$14,035",
   "NVDA +0.4% vol=$51,217",
-  "OPENAI -0.4% vol=$262,148",
-  "QQQ +0.4% vol=$11,516"
+  "QQQ +0.3% vol=$12,720",
+  "TSLA +0.3% vol=$30,066",
+  "SPCX -0.3% vol=$173,264"
  ],
  "futures_ok": true,
- "futures_balance": 31.96,
+ "futures_balance": 31.01,
  "futures_float_topup": false,
  "unallocated_spot": [
   "ETH $373"
  ],
  "call_reason": "פוזיציה חלשה: SPCX",
- "claude_called": true,
- "market_read": "השוק הכללי רגוע עם מומנטום חיובי מתון בביטקוין ואלטקוינים בודדים, ללא סטאפים קיצוניים לשורט כרגע.",
- "skip_reason": "BNB ו-LINK קרובים לאזור עליון אך ה-MACD עדיין חיובי כך שקיצור מוקדם מדי; מניות ה-xStocks שקטות מדי היום ללא סטאפ ברור.",
- "picks": [
-  "CC long size=15% conf=MEDIUM"
- ],
- "order_errors": [
-  "CC: Kraken: ['EOrder:Insufficient funds']"
- ]
+ "claude_called": false,
+ "skip": "snapshot זהה לקריאה הקודמת"
 }
