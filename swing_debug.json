@@ -1,25 +1,25 @@
 {
- "time": "2026-07-20T03:00:04",
+ "time": "2026-07-20T04:00:04",
  "usdc": 89.07,
- "portfolio": 538.95,
+ "portfolio": 539.09,
  "api_billing_blocked": false,
  "margin_headroom": 348.11,
  "open": [
   "BTC long +4.5%",
-  "SOL long +1.4%"
+  "SOL long +1.1%"
  ],
  "stock_candidates": 8,
  "top_stocks": [
-  "CF -3.0% vol=$14,031",
-  "SPCX -2.5% vol=$188,026",
+  "CF -2.6% vol=$13,943",
+  "SPCX -2.2% vol=$190,544",
+  "OPENAI -0.9% vol=$221,598",
   "QQQ +0.7% vol=$74,803",
-  "OPENAI -0.4% vol=$214,717",
-  "MSTR -0.4% vol=$34,837"
+  "MSTR -0.6% vol=$36,001"
  ],
  "futures_ok": true,
  "futures_balance": 43.19,
  "unallocated_spot": [
-  "ETH $374"
+  "ETH $375"
  ],
  "call_reason": "תנועה חזקה במניה: CF, SPCX",
  "claude_called": false,
