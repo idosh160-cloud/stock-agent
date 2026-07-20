@@ -1,34 +1,31 @@
 {
- "time": "2026-07-20T13:00:05",
+ "time": "2026-07-20T14:00:05",
  "usdc": 88.94,
- "portfolio": 537.77,
+ "portfolio": 535.21,
  "api_billing_blocked": false,
  "margin_headroom": 348.11,
  "open": [
-  "BTC long +4.2%",
-  "SOL long +1.1%"
+  "BTC long +3.7%",
+  "SOL long +0.5%"
  ],
- "stock_candidates": 11,
+ "stock_candidates": 13,
  "top_stocks": [
-  "OPENAI -5.0% vol=$160,426",
-  "HOOD +2.8% vol=$6,511",
-  "CF -2.4% vol=$17,303",
-  "SPCX -1.9% vol=$166,016",
-  "NVDA +1.4% vol=$36,199"
+  "OPENAI -7.7% vol=$148,519",
+  "SPCX -5.7% vol=$630,688",
+  "CF -3.5% vol=$17,560",
+  "GOOGL +2.8% vol=$5,626",
+  "NVDA +2.1% vol=$92,914"
  ],
  "futures_ok": true,
  "futures_balance": 43.18,
  "unallocated_spot": [
-  "ETH $373"
+  "ETH $371"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: CC",
+ "call_reason": "תנועה חזקה במניה: OPENAI, SPCX, CF",
  "claude_called": true,
- "market_read": "השוק הכללי נייטרלי-חיובי עם BTC ו-SOL בתנועה מתונה כלפי מעלה, ורוב האלטים באמצע הטווח ללא מומנטום קיצוני.",
- "skip_reason": "שאר המטבעות/מניות נמצאים באמצע טווח RSI ללא איתות ברור לכיוון, לכן דילגתי עליהם ושמרתי על ריכוז בהזדמנות הכי ברורה.",
+ "market_read": "השוק הכללי נייטרלי-חיובי מעט, קריפטו נסחר בטווח צר בלי מומנטום ברור אבל מניות טכנולוגיה מציגות חוזק יחסי.",
+ "skip_reason": "מטבעות האלט (ADA, XMR, LTC) נמצאים במגמת ירידה עם MACD שלילי ובלי סיבה טכנית ברורה להיפוך, ו-BTC/SOL הקיימים כבר בפוזיציה טובה שמתקדמת למטרה - אין צורך לגעת בהם; ה-USDC הפנוי מוקצה למניית NVDA כהזדמנות הטובה ביותר כרגע.",
  "picks": [
-  "CC long size=20% conf=MEDIUM"
- ],
- "order_errors": [
-  "CC: Kraken: ['EOrder:Insufficient funds']"
+  "NVDA long size=22% conf=MEDIUM"
  ]
 }
