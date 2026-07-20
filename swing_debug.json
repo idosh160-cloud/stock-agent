@@ -1,31 +1,35 @@
 {
- "time": "2026-07-20T14:00:05",
- "usdc": 88.94,
- "portfolio": 535.21,
+ "time": "2026-07-20T15:00:05",
+ "usdc": 88.92,
+ "portfolio": 547.87,
  "api_billing_blocked": false,
  "margin_headroom": 348.11,
  "open": [
-  "BTC long +3.7%",
-  "SOL long +0.5%"
+  "BTC long +3.8%",
+  "SOL long +0.2%",
+  "NVDA long -0.8%"
  ],
  "stock_candidates": 13,
  "top_stocks": [
-  "OPENAI -7.7% vol=$148,519",
-  "SPCX -5.7% vol=$630,688",
-  "CF -3.5% vol=$17,560",
-  "GOOGL +2.8% vol=$5,626",
-  "NVDA +2.1% vol=$92,914"
+  "OPENAI -8.1% vol=$133,300",
+  "SPCX -4.8% vol=$775,620",
+  "CF -4.2% vol=$17,652",
+  "GOOGL +3.1% vol=$5,694",
+  "TSLA -2.1% vol=$215,951"
  ],
  "futures_ok": true,
- "futures_balance": 43.18,
+ "futures_balance": 54.65,
  "unallocated_spot": [
-  "ETH $371"
+  "ETH $372"
  ],
  "call_reason": "תנועה חזקה במניה: OPENAI, SPCX, CF",
  "claude_called": true,
- "market_read": "השוק הכללי נייטרלי-חיובי מעט, קריפטו נסחר בטווח צר בלי מומנטום ברור אבל מניות טכנולוגיה מציגות חוזק יחסי.",
- "skip_reason": "מטבעות האלט (ADA, XMR, LTC) נמצאים במגמת ירידה עם MACD שלילי ובלי סיבה טכנית ברורה להיפוך, ו-BTC/SOL הקיימים כבר בפוזיציה טובה שמתקדמת למטרה - אין צורך לגעת בהם; ה-USDC הפנוי מוקצה למניית NVDA כהזדמנות הטובה ביותר כרגע.",
+ "market_read": "השוק הכללי רגוע עם BTC יציב מעל 64 אלף וברוב האלטים תיקון קל בלי מומנטום ברור לכיוון אחד.",
+ "skip_reason": "שאר המטבעות והמניות נמצאים באזור ניטרלי (RSI 40-55) בלי איתות ברור, ו-TON למרות שהוא oversold סובל מנפח מסחר נמוך מדי לכניסה בטוחה.",
  "picks": [
-  "NVDA long size=22% conf=MEDIUM"
+  "CC long size=20% conf=MEDIUM"
+ ],
+ "order_errors": [
+  "CC: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
