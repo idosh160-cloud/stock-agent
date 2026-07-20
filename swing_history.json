@@ -1223,5 +1223,30 @@
     "entry_bb_pct": null,
     "entry_macd_hist": null,
     "entry_change_24h": 4.25
+  },
+  {
+    "coin": "NVDA",
+    "pair": "PF_NVDAXUSD",
+    "status": "closed_loss",
+    "leveraged": false,
+    "collateral": 117.75,
+    "volume": 0.56886806,
+    "entry_price": 206.99,
+    "close_price": 202.71,
+    "target_price": 219.41,
+    "stop_price": 202.85,
+    "pnl_usd": -2.43,
+    "pnl_pct": -2.07,
+    "date_open": "2026-07-20T14:00:38.523602",
+    "date_close": "2026-07-20T21:00:04.232525",
+    "reasoning": "NVDA עולה +2.1% עם נזילות טובה וסמוך לשיא הטווח היומי, מומנטום חיובי בשוק המניות הטכנולוגי (QQQ, GOOGL גם עולים) מחזק את התמונה. נכנס לונג עם סטופ צמוד יחסית ומטרה סימטרית לפי תנודתיות המניה.",
+    "confidence": "MEDIUM",
+    "txid": "a24deee0-13d6-4bf2-9d15-bec056c625b9",
+    "close_txid": "a24e84e0-01aa-4a2b-b132-bcaaa4ca96c9",
+    "side": "long",
+    "entry_rsi": null,
+    "entry_bb_pct": null,
+    "entry_macd_hist": null,
+    "entry_change_24h": 2.09
   }
 ]

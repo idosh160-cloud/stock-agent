@@ -1,35 +1,34 @@
 {
- "time": "2026-07-20T20:00:08",
- "usdc": 87.41,
- "portfolio": 540.01,
+ "time": "2026-07-20T21:00:06",
+ "usdc": 87.4,
+ "portfolio": 546.77,
  "api_billing_blocked": false,
  "margin_headroom": 344.71,
  "open": [
-  "BTC long +5.0%",
-  "SOL long +2.3%",
-  "NVDA long -1.7%",
+  "BTC long +5.3%",
+  "SOL long +2.6%",
   "CRCL short +1.6%",
-  "ETH long +0.0%"
+  "ETH long +0.3%"
  ],
  "stock_candidates": 13,
  "top_stocks": [
-  "OPENAI -9.5% vol=$82,219",
+  "OPENAI -9.3% vol=$80,790",
   "CRCL +6.6% vol=$525,843",
-  "SPCX -6.3% vol=$1,113,745",
-  "MSTR +3.0% vol=$136,644",
-  "TSLA -2.9% vol=$323,886"
+  "SPCX -6.0% vol=$1,138,333",
+  "MSTR +3.4% vol=$134,670",
+  "TSLA -2.9% vol=$331,499"
  ],
  "futures_ok": true,
- "futures_balance": 47.66,
+ "futures_balance": 52.84,
  "unallocated_spot": [],
- "call_reason": "פוזיציה חלשה: NVDA",
+ "call_reason": "תנועה חזקה במניה: OPENAI, SPCX, MSTR",
  "claude_called": true,
- "market_read": "השוק הכללי נייטרלי-חיובי עם BTC וETH מציגים מומנטום עולה מתון בזמן שכמה אלטקוינים מציגים איתותי oversold קלים.",
- "skip_reason": "שאר המועמדים בקריפטו קרובים לרצועה העליונה (BB%>80) ולכן מסוכנים ללונג נוסף, והמניות עם נתוני RSI/BB חסרים או היסטוריה שלילית לא מספקות ביטחון מספיק לפוזיציה חדשה מעבר לזו שנבחרה.",
+ "market_read": "השוק בכללותו במגמת עלייה מתונה עם רוב הנכסים ב-RSI בינוני-גבוה, לא קיצוני מספיק לשורט אגרסיבי.",
+ "skip_reason": "ADA ו-SOL קרובים לרוויה יתרה (RSI/BB גבוהים) אך MACD עדיין חיובי כך שסיכון שורט גבוה מדי; מטבעות בנפח נמוך כמו XDC ו-PENGU לא עומדים בסף הנזילות הנדרש.",
  "picks": [
-  "CC long size=15% conf=MEDIUM"
+  "LINK long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "CC: Kraken: ['EOrder:Insufficient funds']"
+  "LINK: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
