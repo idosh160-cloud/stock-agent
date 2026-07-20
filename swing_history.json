@@ -1198,5 +1198,30 @@
     "entry_bb_pct": null,
     "entry_macd_hist": null,
     "entry_change_24h": 2.86
+  },
+  {
+    "coin": "MSTR",
+    "pair": "PF_MSTRXUSD",
+    "status": "closed_loss",
+    "leveraged": false,
+    "collateral": 139.0,
+    "volume": 1.40120968,
+    "entry_price": 99.2,
+    "close_price": 96.94,
+    "target_price": 105.15,
+    "stop_price": 97.22,
+    "pnl_usd": -3.17,
+    "pnl_pct": -2.28,
+    "date_open": "2026-07-20T16:00:51.223835",
+    "date_close": "2026-07-20T20:00:05.398642",
+    "reasoning": "MSTR עולה 4.2% עם נפח סביר ומתואם לביטקוין שנמצא במגמת עלייה חזקה עם MACD חיובי מאוד; מומנטום המשך צפוי כל עוד BTC שומר על הפריצה.",
+    "confidence": "MEDIUM",
+    "txid": "a24e19dd-c6a1-4398-b951-d17bc2cf4091",
+    "close_txid": "a24e6f6c-9d92-448f-8133-6a9a65a483b5",
+    "side": "long",
+    "entry_rsi": null,
+    "entry_bb_pct": null,
+    "entry_macd_hist": null,
+    "entry_change_24h": 4.25
   }
 ]

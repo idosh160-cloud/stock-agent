@@ -1,34 +1,35 @@
 {
- "time": "2026-07-20T19:00:05",
- "usdc": 88.86,
- "portfolio": 541.1,
+ "time": "2026-07-20T20:00:08",
+ "usdc": 87.41,
+ "portfolio": 540.01,
  "api_billing_blocked": false,
- "margin_headroom": 348.11,
+ "margin_headroom": 344.71,
  "open": [
-  "BTC long +5.1%",
+  "BTC long +5.0%",
   "SOL long +2.3%",
   "NVDA long -1.7%",
-  "MSTR long -1.2%",
-  "CRCL short +1.4%"
+  "CRCL short +1.6%",
+  "ETH long +0.0%"
  ],
  "stock_candidates": 13,
  "top_stocks": [
-  "OPENAI -9.4% vol=$95,710",
-  "CRCL +6.7% vol=$284,930",
-  "SPCX -4.8% vol=$1,099,403",
-  "MSTR +3.1% vol=$137,580",
-  "AAPL -2.9% vol=$19,693"
+  "OPENAI -9.5% vol=$82,219",
+  "CRCL +6.6% vol=$525,843",
+  "SPCX -6.3% vol=$1,113,745",
+  "MSTR +3.0% vol=$136,644",
+  "TSLA -2.9% vol=$323,886"
  ],
  "futures_ok": true,
- "futures_balance": 41.36,
- "unallocated_spot": [
-  "ETH $378"
- ],
- "call_reason": "פוזיציה חלשה: NVDA, MSTR",
+ "futures_balance": 47.66,
+ "unallocated_spot": [],
+ "call_reason": "פוזיציה חלשה: NVDA",
  "claude_called": true,
- "market_read": "השוק בעלייה מתונה עם רוב המטבעות קרוב לרצועה העליונה, אין הזדמנות שורט ברורה כרגע ומעט קונים חדשים לקנייה עמוקה.",
- "skip_reason": "SOL/XRP/ADA/LINK כבר קרובים לרוויה (BB%>85) ולא מספיק שוליים לכניסה חדשה; XDC אטרקטיבי אך נפח נמוך מדי; המניות ללא סיגנל ברור מספיק לגודל משמעותי כרגע.",
+ "market_read": "השוק הכללי נייטרלי-חיובי עם BTC וETH מציגים מומנטום עולה מתון בזמן שכמה אלטקוינים מציגים איתותי oversold קלים.",
+ "skip_reason": "שאר המועמדים בקריפטו קרובים לרצועה העליונה (BB%>80) ולכן מסוכנים ללונג נוסף, והמניות עם נתוני RSI/BB חסרים או היסטוריה שלילית לא מספקות ביטחון מספיק לפוזיציה חדשה מעבר לזו שנבחרה.",
  "picks": [
-  "ETH long size=20% conf=MEDIUM"
+  "CC long size=15% conf=MEDIUM"
+ ],
+ "order_errors": [
+  "CC: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
