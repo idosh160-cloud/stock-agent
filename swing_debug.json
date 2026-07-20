@@ -1,34 +1,35 @@
 {
- "time": "2026-07-20T09:00:05",
+ "time": "2026-07-20T10:00:05",
  "usdc": 88.99,
- "portfolio": 534.57,
+ "portfolio": 535.61,
  "api_billing_blocked": false,
  "margin_headroom": 348.11,
  "open": [
-  "BTC long +3.1%",
-  "SOL long +0.3%"
+  "BTC long +3.4%",
+  "SOL long +0.7%"
  ],
- "stock_candidates": 9,
+ "stock_candidates": 10,
  "top_stocks": [
-  "OPENAI -5.2% vol=$164,451",
-  "CF -3.5% vol=$16,817",
-  "SPCX -2.1% vol=$192,068",
-  "MSTR -1.0% vol=$98,727",
+  "OPENAI -7.1% vol=$160,209",
+  "CF -3.6% vol=$16,797",
+  "SPCX -1.8% vol=$152,429",
+  "MSTR -1.4% vol=$98,707",
   "NVDA +0.6% vol=$45,109"
  ],
  "futures_ok": true,
  "futures_balance": 43.19,
  "unallocated_spot": [
-  "ETH $370"
+  "ETH $371"
  ],
- "call_reason": "תנועה חזקה במניה: OPENAI, CF, SPCX",
+ "call_reason": "תנועה חזקה במניה: OPENAI, CF",
  "claude_called": true,
- "market_read": "השוק הכללי במגמת ירידה קלה עם רוב המטבעות קרוב לתחתית הבולינגר ו-RSI נמוך, מה שמרמז על הזדמנויות ריבאונד קצרות טווח.",
- "skip_reason": "TON נראה מעניין אך הווליום נמוך מדי ($38K) לביטחון גבוה, ומניות אינן מציגות הזדמנות ברורה כרגע בשעות אלו.",
+ "market_read": "השוק הכללי רגוע עם BTC ורוב האלטים בטריטוריה נייטרלית-שלילית קלה, אין מומנטום חזק ברור מלבד כמה מצבי oversold נקודתיים.",
+ "skip_reason": "שאר המועמדים (ADA, BTC, ETH, XRP וכו') נמצאים באזור RSI ניטרלי ללא איתות ברור, ומניות ה-xStocks חסרות נתוני RSI/מומנטום מספיקים להצדיק כניסה כרגע.",
  "picks": [
-  "ADA long size=20% conf=MEDIUM"
+  "CC long size=25% conf=MEDIUM"
  ],
  "order_errors": [
-  "ADA: Kraken: ['EOrder:Insufficient funds']"
+  "liq ETH: all sizes rejected (margin collateral lock)",
+  "CC: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
