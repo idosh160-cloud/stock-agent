@@ -1,29 +1,31 @@
 {
- "time": "2026-07-20T00:00:04",
- "usdc": 89.12,
- "portfolio": 525.57,
+ "time": "2026-07-20T01:00:06",
+ "usdc": 89.1,
+ "portfolio": 524.31,
  "api_billing_blocked": false,
  "margin_headroom": 348.11,
  "open": [
-  "BTC long +4.3%",
-  "SOL long +0.6%",
-  "SPCX long -1.1%"
+  "BTC long +4.0%",
+  "SOL long +0.9%"
  ],
  "stock_candidates": 8,
  "top_stocks": [
+  "SPCX -2.0% vol=$180,991",
   "CF -1.5% vol=$14,035",
-  "NVDA +0.4% vol=$51,217",
-  "QQQ +0.3% vol=$12,720",
-  "TSLA +0.3% vol=$30,066",
-  "SPCX -0.3% vol=$173,264"
+  "MSTR -0.6% vol=$35,132",
+  "OPENAI -0.5% vol=$252,625",
+  "QQQ +0.5% vol=$54,979"
  ],
  "futures_ok": true,
- "futures_balance": 31.01,
- "futures_float_topup": false,
+ "futures_balance": 43.19,
  "unallocated_spot": [
   "ETH $373"
  ],
- "call_reason": "פוזיציה חלשה: SPCX",
- "claude_called": false,
- "skip": "snapshot זהה לקריאה הקודמת"
+ "call_reason": "USDC $89 לא מושקע — מחפש לו בית (תיק מושקע תמיד)",
+ "claude_called": true,
+ "market_read": "השוק הכללי רגוע יחסית עם BTC בטווח צר, רוב האלטים באמצע הטווח ללא מגמה חזקה ברורה מלבד CC שנראה מוצה כלפי מעלה.",
+ "skip_reason": "ETH הספוט נשאר כפי שהוא כי אין כרגע הזדמנות טובה יותר ברורה להעברה, ורוב שאר המועמדים (LINK, SOL, BTC) כבר בפוזיציות פתוחות או ללא איתות ברור מספיק לכניסה חדשה.",
+ "picks": [
+  "CC short size=20% conf=MEDIUM"
+ ]
 }

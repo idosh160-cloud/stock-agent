@@ -1173,5 +1173,30 @@
     "entry_bb_pct": -0.0,
     "entry_macd_hist": -2.515565,
     "entry_change_24h": -0.74
+  },
+  {
+    "coin": "SPCX",
+    "pair": "PF_SPCXXUSD",
+    "status": "closed_loss",
+    "leveraged": false,
+    "collateral": 135.26,
+    "volume": 1.04909641,
+    "entry_price": 128.93,
+    "close_price": 125.82,
+    "target_price": 135.38,
+    "stop_price": 126.35,
+    "pnl_usd": -3.26,
+    "pnl_pct": -2.41,
+    "date_open": "2026-07-19T07:00:36.742887",
+    "date_close": "2026-07-20T01:00:04.538654",
+    "reasoning": "SPCX עולה +2.9% עם נפח מסחר גבוה משמעותית מהממוצע, מומנטום חיובי נמשך ללא סימני תשישות ברורים. פותח חשיפה למניה כדי לגוון מחוץ לקריפטו כפי שהמנדט דורש.",
+    "confidence": "MEDIUM",
+    "txid": "a24b55ad-465e-4352-9087-4502700e8f51",
+    "close_txid": "a24cd7b9-30fb-41ee-99ad-52facb984043",
+    "side": "long",
+    "entry_rsi": null,
+    "entry_bb_pct": null,
+    "entry_macd_hist": null,
+    "entry_change_24h": 2.86
   }
 ]
