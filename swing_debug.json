@@ -1,32 +1,32 @@
 {
- "time": "2026-07-20T21:00:06",
+ "time": "2026-07-20T22:00:05",
  "usdc": 87.4,
- "portfolio": 546.77,
+ "portfolio": 549.65,
  "api_billing_blocked": false,
  "margin_headroom": 344.71,
  "open": [
-  "BTC long +5.3%",
-  "SOL long +2.6%",
-  "CRCL short +1.6%",
-  "ETH long +0.3%"
+  "BTC long +5.2%",
+  "SOL long +2.4%",
+  "CRCL short -0.3%",
+  "ETH long +0.2%"
  ],
  "stock_candidates": 13,
  "top_stocks": [
-  "OPENAI -9.3% vol=$80,790",
-  "CRCL +6.6% vol=$525,843",
-  "SPCX -6.0% vol=$1,138,333",
-  "MSTR +3.4% vol=$134,670",
-  "TSLA -2.9% vol=$331,499"
+  "CRCL +8.7% vol=$556,198",
+  "OPENAI -8.6% vol=$58,114",
+  "SPCX -6.2% vol=$1,159,324",
+  "MSTR +3.7% vol=$140,083",
+  "TSLA -2.8% vol=$332,359"
  ],
  "futures_ok": true,
- "futures_balance": 52.84,
+ "futures_balance": 50.46,
  "unallocated_spot": [],
  "call_reason": "תנועה חזקה במניה: OPENAI, SPCX, MSTR",
  "claude_called": true,
- "market_read": "השוק בכללותו במגמת עלייה מתונה עם רוב הנכסים ב-RSI בינוני-גבוה, לא קיצוני מספיק לשורט אגרסיבי.",
- "skip_reason": "ADA ו-SOL קרובים לרוויה יתרה (RSI/BB גבוהים) אך MACD עדיין חיובי כך שסיכון שורט גבוה מדי; מטבעות בנפח נמוך כמו XDC ו-PENGU לא עומדים בסף הנזילות הנדרש.",
+ "market_read": "השוק הקריפטו כללי במגמת עלייה מתונה עם רוב המטבעות ב-RSI 55-65 בלי סימני מיצוי קיצוני.",
+ "skip_reason": "רוב המועמדים האחרים או קרובים לתקרת קניית יתר בלי סיגנל שורט ברור, או בעלי נפח מסחר נמוך מדי - LINK מציע יחס סיכוי/סיכון עדיף כרגע.",
  "picks": [
-  "LINK long size=20% conf=MEDIUM"
+  "LINK long size=22% conf=MEDIUM"
  ],
  "order_errors": [
   "LINK: Kraken: ['EOrder:Insufficient funds']"
