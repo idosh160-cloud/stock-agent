@@ -1,34 +1,35 @@
 {
- "time": "2026-07-20T17:00:05",
+ "time": "2026-07-20T18:00:05",
  "usdc": 88.89,
- "portfolio": 547.34,
+ "portfolio": 549.53,
  "api_billing_blocked": false,
  "margin_headroom": 348.11,
  "open": [
-  "BTC long +5.5%",
-  "SOL long +2.3%",
-  "NVDA long -1.4%",
-  "MSTR long +0.6%"
+  "BTC long +5.7%",
+  "SOL long +2.4%",
+  "NVDA long -1.6%",
+  "MSTR long +0.4%"
  ],
  "stock_candidates": 13,
  "top_stocks": [
   "OPENAI -9.6% vol=$116,721",
-  "CRCL +7.2% vol=$233,659",
-  "MSTR +4.9% vol=$126,725",
-  "SPCX -3.3% vol=$1,071,976",
-  "CF -3.3% vol=$17,929"
+  "CRCL +8.5% vol=$281,084",
+  "MSTR +5.0% vol=$121,898",
+  "SPCX -3.9% vol=$1,097,728",
+  "AAPL -2.9% vol=$19,693"
  ],
  "futures_ok": true,
- "futures_balance": 47.53,
+ "futures_balance": 47.79,
  "unallocated_spot": [
-  "ETH $378"
+  "ETH $380"
  ],
  "call_reason": "פוזיציה חלשה: NVDA",
  "claude_called": true,
- "market_read": "השוק בקריפטו במגמת עלייה כללית עם BTC/ETH/SOL קרובים ל-BB עליון אך לא בקיצון RSI, מה שתומך בהמשך מומנטום ולא בהיפוך מיידי.",
- "skip_reason": "PENGU ו-XRP קרובים לרוויית קנייה אך הנפח נמוך או המומנטום עדיין חיובי מדי לשורט אמין; מניות ה-xStock לא מציגות סטאפ ברור יותר טוב מ-ETH הקיים.",
+ "market_read": "השוק הקריפטו כללי במגמת עלייה חזקה עם BTC ו-ETH ליד השיא, בעוד חלק מהמניות המסומנות (CRCL) הראו ריצה פרבולית שמבשילה לתיקון.",
+ "skip_reason": "שאר המועמדים (LINK, XRP, SOL, BTC) כבר קרובים לרוויה או כבר בפוזיציה קיימת שמתקדמת יפה לעבר היעד, ולכן לא נוספת חשיפה נוספת אליהם.",
  "picks": [
-  "ETH long size=30% conf=HIGH"
+  "ETH long size=25% conf=HIGH",
+  "CRCL short size=20% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
