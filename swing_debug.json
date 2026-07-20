@@ -1,34 +1,39 @@
 {
- "time": "2026-07-20T11:00:05",
+ "time": "2026-07-20T12:00:05",
  "usdc": 88.97,
- "portfolio": 536.57,
+ "portfolio": 541.61,
  "api_billing_blocked": false,
  "margin_headroom": 348.11,
  "open": [
-  "BTC long +3.6%",
-  "SOL long +0.6%"
+  "BTC long +4.7%",
+  "SOL long +1.6%"
  ],
- "stock_candidates": 10,
+ "stock_candidates": 11,
  "top_stocks": [
-  "OPENAI -6.7% vol=$158,619",
-  "CF -4.0% vol=$16,696",
-  "SPCX -1.2% vol=$151,271",
-  "MSTR -1.2% vol=$96,669",
-  "NVDA +0.8% vol=$25,237"
+  "OPENAI -6.9% vol=$157,280",
+  "CF -3.1% vol=$16,676",
+  "HOOD +2.5% vol=$6,966",
+  "NVDA +1.3% vol=$25,970",
+  "CRCL +1.1% vol=$7,235"
  ],
  "futures_ok": true,
  "futures_balance": 43.18,
  "unallocated_spot": [
-  "ETH $372"
+  "ETH $377"
  ],
- "call_reason": "תנועה חזקה במניה: OPENAI, CF",
+ "call_reason": "תנועה חזקה במניה: OPENAI, CF, HOOD",
  "claude_called": true,
- "market_read": "השוק הכללי רגוע יחסית עם BTC וETH בטווח ניטרלי (RSI סביב 50), אין מומנטום חזק בשום כיוון מלבד אותות עומק מקומיים כמו CC.",
- "skip_reason": "שאר המטבעות והמניות נמצאים באזור ניטרלי (RSI 40-55, BB% אמצעי) ללא אות ברור לכיוון, לכן לא נכנסתי אליהם כדי לשמור על ריכוז בהזדמנות האיכותית ביותר.",
+ "market_read": "השוק הכללי חיובי אך רוב הקריפטו קרוב לרמות אוברבוט, כך שההזדמנויות הטובות ביותר כרגע הן ריבאונד באלטים חלשים ומניות שנפלו חזק.",
+ "skip_reason": "BTC ו-SOL כבר בפוזיציות רווחיות שמתקדמות ליעד ולא נוגעים בהן; שאר הקריפטו (AVAX, LINK, ETH, DOGE, XRP) קרובים לרמות אוברבוט עם BB% מעל 90 ולא מציעים יחס סיכון-סיכוי טוב ללונג חדש.",
  "picks": [
-  "CC long size=15% conf=MEDIUM"
+  "CC long size=20% conf=MEDIUM",
+  "OPENAI long size=25% conf=MEDIUM"
  ],
  "order_errors": [
+  "liq ETH: all sizes rejected (margin collateral lock)",
   "CC: Kraken: ['EOrder:Insufficient funds']"
+ ],
+ "skips": [
+  "OPENAI: margin $43 < needed $45 (after transfer attempt)"
  ]
 }
