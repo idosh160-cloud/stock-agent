@@ -1,37 +1,37 @@
 {
- "time": "2026-07-20T16:00:05",
- "usdc": 88.92,
- "portfolio": 556.02,
+ "time": "2026-07-20T17:00:05",
+ "usdc": 88.89,
+ "portfolio": 547.34,
  "api_billing_blocked": false,
  "margin_headroom": 348.11,
  "open": [
-  "BTC long +5.7%",
-  "SOL long +2.4%",
-  "NVDA long -0.6%"
+  "BTC long +5.5%",
+  "SOL long +2.3%",
+  "NVDA long -1.4%",
+  "MSTR long +0.6%"
  ],
  "stock_candidates": 13,
  "top_stocks": [
-  "OPENAI -8.7% vol=$117,637",
-  "CRCL +6.2% vol=$199,318",
-  "MSTR +4.2% vol=$118,936",
-  "SPCX -3.2% vol=$880,314",
-  "CF -3.0% vol=$17,873"
+  "OPENAI -9.6% vol=$116,721",
+  "CRCL +7.2% vol=$233,659",
+  "MSTR +4.9% vol=$126,725",
+  "SPCX -3.3% vol=$1,071,976",
+  "CF -3.3% vol=$17,929"
  ],
  "futures_ok": true,
- "futures_balance": 55.27,
+ "futures_balance": 47.53,
  "unallocated_spot": [
-  "ETH $379"
+  "ETH $378"
  ],
- "call_reason": "תנועה חזקה במניה: OPENAI, CRCL, MSTR",
+ "call_reason": "פוזיציה חלשה: NVDA",
  "claude_called": true,
- "market_read": "השוק בעליית מומנטום כללית עם BTC, ETH ו-SOL קרובים לרוויה עליונה אך עדיין מתקדמים, כך שהעדפה היא לונגים על מומנטום חדש ולא צ'ייסינג המובילים הקיימים.",
- "skip_reason": "BTC, ETH, SOL ו-XRP כולם ב-RSI מעל 60 ו-BB% קרוב ל-100-110 — כניסה נוספת עליהם כרגע היא chasing; מדלגים על OPENAI/SPCX בגלל תזוזה שלילית לא ברורה וללא סיגנל שורט חד.",
+ "market_read": "השוק בקריפטו במגמת עלייה כללית עם BTC/ETH/SOL קרובים ל-BB עליון אך לא בקיצון RSI, מה שתומך בהמשך מומנטום ולא בהיפוך מיידי.",
+ "skip_reason": "PENGU ו-XRP קרובים לרוויית קנייה אך הנפח נמוך או המומנטום עדיין חיובי מדי לשורט אמין; מניות ה-xStock לא מציגות סטאפ ברור יותר טוב מ-ETH הקיים.",
  "picks": [
-  "MSTR long size=25% conf=MEDIUM",
-  "LINK long size=15% conf=MEDIUM"
+  "ETH long size=30% conf=HIGH"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "LINK: Kraken: ['EOrder:Insufficient funds']"
+  "ETH: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
