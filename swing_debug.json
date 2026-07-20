@@ -1,34 +1,27 @@
 {
- "time": "2026-07-20T02:00:04",
- "usdc": 89.1,
- "portfolio": 536.77,
+ "time": "2026-07-20T03:00:04",
+ "usdc": 89.07,
+ "portfolio": 538.95,
  "api_billing_blocked": false,
  "margin_headroom": 348.11,
  "open": [
-  "BTC long +4.1%",
-  "SOL long +0.7%"
+  "BTC long +4.5%",
+  "SOL long +1.4%"
  ],
  "stock_candidates": 8,
  "top_stocks": [
-  "CF -2.7% vol=$13,991",
-  "SPCX -2.3% vol=$188,513",
-  "QQQ +0.5% vol=$72,421",
-  "TSLA -0.4% vol=$32,178",
-  "OPENAI -0.3% vol=$230,573"
+  "CF -3.0% vol=$14,031",
+  "SPCX -2.5% vol=$188,026",
+  "QQQ +0.7% vol=$74,803",
+  "OPENAI -0.4% vol=$214,717",
+  "MSTR -0.4% vol=$34,837"
  ],
  "futures_ok": true,
  "futures_balance": 43.19,
  "unallocated_spot": [
-  "ETH $372"
+  "ETH $374"
  ],
  "call_reason": "תנועה חזקה במניה: CF, SPCX",
- "claude_called": true,
- "market_read": "השוק הכללי רגוע יחסית עם BTC וה-altcoins נעים בטווח צר ללא טרנד חד, אבל CC מראה מומנטום חיובי מתמשך עם נפח תומך.",
- "skip_reason": "ADA נדחה למרות ה-RSI הנמוך כי היסטוריית המסחר בו גרועה בדיוק בתנאי RSI דומים; LINK ו-PENGU כבר קרובים מדי לגבול העליון של ה-BB ומסוכנים לכניסה לונג; מניות ה-xStocks לא מציגות סטאפ ברור כרגע.",
- "picks": [
-  "CC long size=20% conf=MEDIUM"
- ],
- "order_errors": [
-  "CC: Kraken: ['EOrder:Insufficient funds']"
- ]
+ "claude_called": false,
+ "skip": "snapshot זהה לקריאה הקודמת"
 }
