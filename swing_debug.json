@@ -1,27 +1,35 @@
 {
- "time": "2026-07-20T05:00:04",
+ "time": "2026-07-20T06:00:04",
  "usdc": 89.05,
- "portfolio": 536.8,
+ "portfolio": 533.97,
  "api_billing_blocked": false,
  "margin_headroom": 348.11,
  "open": [
-  "BTC long +4.0%",
-  "SOL long +0.8%"
+  "BTC long +3.4%",
+  "SOL long +0.0%"
  ],
  "stock_candidates": 8,
  "top_stocks": [
-  "CF -2.6% vol=$14,380",
-  "SPCX -2.6% vol=$190,324",
-  "MSTR -0.8% vol=$36,461",
-  "OPENAI -0.7% vol=$215,986",
-  "QQQ +0.7% vol=$74,803"
+  "OPENAI -4.3% vol=$211,637",
+  "CF -3.9% vol=$17,163",
+  "SPCX -3.0% vol=$190,566",
+  "MSTR -1.1% vol=$97,828",
+  "TSLA -0.4% vol=$34,611"
  ],
  "futures_ok": true,
  "futures_balance": 43.19,
  "unallocated_spot": [
-  "ETH $372"
+  "ETH $370"
  ],
- "call_reason": "תנועה חזקה במניה: CF, SPCX",
- "claude_called": false,
- "skip": "snapshot זהה לקריאה הקודמת"
+ "call_reason": "תנועה חזקה במניה: OPENAI, CF, SPCX",
+ "claude_called": true,
+ "market_read": "השוק הקריפטו כולו במגמת ירידה קלה עם RSI נמוך ברוב המטבעות, מה שמצביע על הזדמנויות ריבאונד סלקטיביות ולא על מומנטום חזק בכיוון אחד.",
+ "skip_reason": "שאר המטבעות (BTC, ETH, XRP וכו') נמצאים במגמת ירידה עדינה בלי אישור נפח חזק או תבנית ברורה, ומניות ה-xStocks לא מציגות סטאפ קיצוני מספיק לשורט/לונג ברור כרגע.",
+ "picks": [
+  "ADA long size=25% conf=MEDIUM"
+ ],
+ "order_errors": [
+  "liq ETH: all sizes rejected (margin collateral lock)",
+  "ADA: Kraken: ['EOrder:Insufficient funds']"
+ ]
 }
