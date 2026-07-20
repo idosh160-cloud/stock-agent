@@ -1,34 +1,34 @@
 {
- "time": "2026-07-20T08:00:05",
- "usdc": 89.02,
- "portfolio": 535.56,
+ "time": "2026-07-20T09:00:05",
+ "usdc": 88.99,
+ "portfolio": 534.57,
  "api_billing_blocked": false,
  "margin_headroom": 348.11,
  "open": [
-  "BTC long +3.5%",
-  "SOL long +0.4%"
+  "BTC long +3.1%",
+  "SOL long +0.3%"
  ],
  "stock_candidates": 9,
  "top_stocks": [
-  "OPENAI -5.2% vol=$179,832",
-  "CF -3.2% vol=$17,058",
-  "SPCX -1.9% vol=$195,153",
+  "OPENAI -5.2% vol=$164,451",
+  "CF -3.5% vol=$16,817",
+  "SPCX -2.1% vol=$192,068",
   "MSTR -1.0% vol=$98,727",
-  "NVDA +0.8% vol=$45,230"
+  "NVDA +0.6% vol=$45,109"
  ],
  "futures_ok": true,
  "futures_balance": 43.19,
  "unallocated_spot": [
-  "ETH $371"
+  "ETH $370"
  ],
- "call_reason": "תנועה חזקה במניה: OPENAI, CF",
+ "call_reason": "תנועה חזקה במניה: OPENAI, CF, SPCX",
  "claude_called": true,
- "market_read": "השוק הקריפטו נסחר בטווח צר עם רוב הנכסים ליד תחתית הבולינגר, מצב ניטרלי עם הטיה קלה לתיקון טכני.",
- "skip_reason": "ADA ו-DOGE מציגים תבנית דומה לעסקאות מפסידות בעבר (RSI סביב 40), ו-BTC/ETH/SOL כבר בפוזיציות פתוחות; המניות ללא סיגנל ברור מספיק לכניסה עכשווית.",
+ "market_read": "השוק הכללי במגמת ירידה קלה עם רוב המטבעות קרוב לתחתית הבולינגר ו-RSI נמוך, מה שמרמז על הזדמנויות ריבאונד קצרות טווח.",
+ "skip_reason": "TON נראה מעניין אך הווליום נמוך מדי ($38K) לביטחון גבוה, ומניות אינן מציגות הזדמנות ברורה כרגע בשעות אלו.",
  "picks": [
-  "CC long size=15% conf=MEDIUM"
+  "ADA long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "CC: Kraken: ['EOrder:Insufficient funds']"
+  "ADA: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
