@@ -1,34 +1,34 @@
 {
- "time": "2026-07-21T03:00:04",
- "usdc": 87.32,
- "portfolio": 549.55,
+ "time": "2026-07-21T04:00:04",
+ "usdc": 87.3,
+ "portfolio": 553.56,
  "api_billing_blocked": false,
  "margin_headroom": 344.71,
  "open": [
-  "BTC long +5.4%",
-  "SOL long +2.8%",
-  "ETH long +1.0%",
-  "CRCL long -1.2%"
+  "BTC long +5.7%",
+  "SOL long +3.0%",
+  "ETH long +1.5%",
+  "CRCL long +0.5%"
  ],
  "stock_candidates": 14,
  "top_stocks": [
-  "OPENAI -9.7% vol=$28,749",
-  "CRCL +8.2% vol=$738,493",
+  "OPENAI -11.1% vol=$10,271",
+  "CRCL +10.0% vol=$774,282",
   "ANTHROPIC +5.7% vol=$7,306",
-  "SPCX -3.5% vol=$1,196,126",
-  "MSTR +2.9% vol=$146,860"
+  "MSTR +3.6% vol=$149,394",
+  "SPCX -3.4% vol=$1,198,645"
  ],
  "futures_ok": true,
- "futures_balance": 47.46,
+ "futures_balance": 49.48,
  "unallocated_spot": [],
- "call_reason": "פוזיציה חלשה: CRCL",
+ "call_reason": "תנועה חזקה במניה: OPENAI, ANTHROPIC, MSTR",
  "claude_called": true,
- "market_read": "השוק במגמת עלייה מתונה עם רוב הנכסים הגדולים ב-RSI בינוני-גבוה בלי סימני מיצוי חד.",
- "skip_reason": "XMR ו-OPENAI נפסלו בגלל נפח מסחר נמוך מדי לביצוע פוזיציה משמעותית, ושאר המועמדים או קרובים לאקסטרים או כבר מוחזקים בתיק.",
+ "market_read": "השוק הכללי חיובי בעדינות עם רוב הקוינים ב-RSI גבוה, מה שמעדיף פוזיציות שורט על נכסים שמוצו את התנועה.",
+ "skip_reason": "שאר המועמדים (ADA, ETH, XRP) גם עמוסי RSI אך עם נפח מסחר גבוה יותר ומיקום קיים כבר בפורטפוליו - מעדיף לא להכפיל חשיפה לאותם כיוונים.",
  "picks": [
-  "XRP long size=20% conf=MEDIUM"
+  "XMR short size=30% conf=MEDIUM"
  ],
  "order_errors": [
-  "XRP: Kraken: ['EOrder:Insufficient funds']"
+  "XMR: Kraken: ['EOrder:Margin trading in asset is restricted']"
  ]
 }
