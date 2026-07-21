@@ -1,34 +1,34 @@
 {
- "time": "2026-07-21T00:00:04",
- "usdc": 87.36,
- "portfolio": 547.41,
+ "time": "2026-07-21T01:00:04",
+ "usdc": 87.34,
+ "portfolio": 550.83,
  "api_billing_blocked": false,
  "margin_headroom": 344.71,
  "open": [
-  "BTC long +5.2%",
-  "SOL long +2.5%",
-  "ETH long +0.3%",
-  "CRCL long -0.3%"
+  "BTC long +5.7%",
+  "SOL long +2.9%",
+  "ETH long +0.9%",
+  "CRCL long +0.2%"
  ],
  "stock_candidates": 14,
  "top_stocks": [
-  "CRCL +8.2% vol=$735,235",
+  "CRCL +10.1% vol=$739,238",
   "OPENAI -8.1% vol=$33,096",
   "ANTHROPIC +5.7% vol=$7,306",
-  "SPCX -4.8% vol=$1,183,049",
-  "TSLA -3.8% vol=$336,291"
+  "SPCX -3.7% vol=$1,197,953",
+  "MSTR +3.2% vol=$139,335"
  ],
  "futures_ok": true,
- "futures_balance": 47.88,
+ "futures_balance": 49.14,
  "unallocated_spot": [],
  "call_reason": "תנועה חזקה במניה: OPENAI, ANTHROPIC, SPCX",
  "claude_called": true,
- "market_read": "השוק במגמת עלייה מתונה כללית עם BTC יציב מעל 65 אלף ורוב הקוינים באזור RSI 55-65 בלי קיצוניות.",
- "skip_reason": "שאר המועמדים (ADA, DOT) קרובים לאזור עליון של BB ומסוכנים לשורט/לונג כרגע, וה-CRCL, SPCX ומניות אחרות אינם מציגים סטאפ חד יותר מהפוזיציות הקיימות.",
+ "market_read": "השוק הקריפטו כולו נמצא באזור overbought עם RSI 60-68 ו-BB% גבוה כמעט בכל המטבעות, מה שמעיד על שוק עולה אך מתוח שדורש זהירות בכניסות חדשות ללונג.",
+ "skip_reason": "רוב מועמדי הקריפטו האחרים (BTC, ETH, SOL, LINK, PENGU) נמצאים כבר בפוזיציות פתוחות או שהמומנטום שלהם עדיין חיובי מדי לשורט; מניות ה-xStocks חסרות אינדיקטורים טכניים (RSI/MACD) לאישור כיוון ברור.",
  "picks": [
-  "LINK long size=15% conf=MEDIUM"
+  "ADA short size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "LINK: Kraken: ['EOrder:Insufficient funds']"
+  "ADA: Kraken: ['EOrder:Insufficient initial margin']"
  ]
 }
