@@ -1,34 +1,34 @@
 {
- "time": "2026-07-21T05:00:05",
+ "time": "2026-07-21T06:00:04",
  "usdc": 87.29,
- "portfolio": 552.29,
+ "portfolio": 554.27,
  "api_billing_blocked": false,
  "margin_headroom": 344.71,
  "open": [
-  "BTC long +5.5%",
-  "SOL long +2.9%",
-  "ETH long +1.4%",
-  "CRCL long +1.1%"
+  "BTC long +5.9%",
+  "SOL long +3.3%",
+  "ETH long +1.7%",
+  "CRCL long +0.2%"
  ],
- "stock_candidates": 14,
+ "stock_candidates": 12,
  "top_stocks": [
-  "CRCL +11.9% vol=$783,733",
-  "OPENAI -11.5% vol=$8,974",
-  "ANTHROPIC +5.7% vol=$7,306",
-  "MSTR +3.9% vol=$148,853",
-  "SPCX -3.3% vol=$1,202,302"
+  "CRCL +11.2% vol=$778,850",
+  "MSTR +4.8% vol=$84,671",
+  "SPCX -3.0% vol=$1,200,310",
+  "GOOGL +2.2% vol=$11,034",
+  "TSLA -1.8% vol=$372,728"
  ],
  "futures_ok": true,
- "futures_balance": 48.77,
+ "futures_balance": 49.45,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במניה: OPENAI, ANTHROPIC, MSTR",
+ "call_reason": "תנועה חזקה במטבע חדש: ADA",
  "claude_called": true,
- "market_read": "השוק הכללי חיובי בעדינות עם רוב המטבעות והמניות בקרבת עליון ה-BB, כלומר מעט הזדמנויות long נקיות מלבד דיפים ממוקדים כמו XDC.",
- "skip_reason": "רוב המועמדים (LINK, ADA, XRP, ETH, CRCL) כבר overbought או כבר בפוזיציה קיימת שמתקדמת ליעד, אז לא כדאי לכפול חשיפה; המניות שקטות מדי היום ללא סטאפ ברור לשורט או לונג.",
+ "market_read": "השוק הכללי במגמת עלייה מתונה עם הרבה מטבעות בקנייה מוגזמת, כך שהזדמנות הטובה ביותר כרגע היא שורט על ADA שהגיע למיצוי קיצוני ולא לונג נוסף על נכסים מתוחים.",
+ "skip_reason": "שאר המטבעות (DOT, LINK, XRP) גם overbought אבל ה-MACD שלהם עדיין עולה חזק או שהנפח נמוך מדי, ומניות כמו MSTR/SPCX חסרות אינדיקטורים ברורים לכיוון מסחר נקי, אז דילגתי עליהם.",
  "picks": [
-  "XDC long size=15% conf=MEDIUM"
+  "ADA short size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "XDC: Kraken: ['EOrder:Insufficient funds']"
+  "ADA: Kraken: ['EOrder:Insufficient initial margin']"
  ]
 }
