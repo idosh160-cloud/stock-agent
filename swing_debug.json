@@ -1,32 +1,31 @@
 {
- "time": "2026-07-20T23:00:04",
- "usdc": 87.37,
- "portfolio": 548.13,
+ "time": "2026-07-21T00:00:04",
+ "usdc": 87.36,
+ "portfolio": 547.41,
  "api_billing_blocked": false,
  "margin_headroom": 344.71,
  "open": [
-  "BTC long +5.0%",
-  "SOL long +2.0%",
-  "CRCL short -0.6%",
-  "ETH long -0.1%"
+  "BTC long +5.2%",
+  "SOL long +2.5%",
+  "ETH long +0.3%",
+  "CRCL long -0.3%"
  ],
- "stock_candidates": 13,
+ "stock_candidates": 14,
  "top_stocks": [
-  "OPENAI -9.0% vol=$39,745",
-  "CRCL +8.6% vol=$722,137",
-  "SPCX -5.4% vol=$1,160,867",
-  "TSLA -3.8% vol=$336,335",
-  "CF -3.0% vol=$11,207"
+  "CRCL +8.2% vol=$735,235",
+  "OPENAI -8.1% vol=$33,096",
+  "ANTHROPIC +5.7% vol=$7,306",
+  "SPCX -4.8% vol=$1,183,049",
+  "TSLA -3.8% vol=$336,291"
  ],
  "futures_ok": true,
- "futures_balance": 50.47,
+ "futures_balance": 47.88,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במניה: OPENAI, SPCX, TSLA",
+ "call_reason": "תנועה חזקה במניה: OPENAI, ANTHROPIC, SPCX",
  "claude_called": true,
- "market_read": "השוק הקריפטו יציב עם מומנטום מתון עולה ב-BTC/SOL/ETH, ו-CRCL מציגה פריצה חזקה שדורשת היפוך כיוון מיידי.",
- "skip_reason": "שאר המועמדים (ADA, AVAX, TON, XDC, PENGU, CC) מציגים נפח נמוך או איתותים ניטרליים ללא יתרון ברור, ומניות כמו SPCX/MSTR/TSLA לא מציגות סטאפ אסימטרי מספיק כרגע.",
+ "market_read": "השוק במגמת עלייה מתונה כללית עם BTC יציב מעל 65 אלף ורוב הקוינים באזור RSI 55-65 בלי קיצוניות.",
+ "skip_reason": "שאר המועמדים (ADA, DOT) קרובים לאזור עליון של BB ומסוכנים לשורט/לונג כרגע, וה-CRCL, SPCX ומניות אחרות אינם מציגים סטאפ חד יותר מהפוזיציות הקיימות.",
  "picks": [
-  "CRCL long size=25% conf=MEDIUM",
   "LINK long size=15% conf=MEDIUM"
  ],
  "order_errors": [
