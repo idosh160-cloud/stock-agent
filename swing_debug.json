@@ -1,34 +1,34 @@
 {
- "time": "2026-07-21T22:00:04",
- "usdc": 94.1,
- "portfolio": 568.44,
+ "time": "2026-07-21T23:00:04",
+ "usdc": 94.09,
+ "portfolio": 567.45,
  "api_billing_blocked": false,
  "margin_headroom": 368.41,
  "open": [
-  "BTC long +7.0%",
-  "SOL long +2.9%",
-  "ETH long +1.4%",
-  "HOOD long +0.3%"
+  "BTC long +6.8%",
+  "SOL long +2.8%",
+  "ETH long +1.2%",
+  "HOOD long +0.6%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "HOOD +7.3% vol=$107,471",
-  "CRCL +6.4% vol=$1,162,769",
-  "SPCX +4.3% vol=$1,758,801",
+  "HOOD +7.6% vol=$107,801",
+  "CRCL +5.3% vol=$978,090",
+  "SPCX +3.5% vol=$1,749,479",
   "MSTR +3.2% vol=$85,031",
-  "NVDA +2.3% vol=$205,458"
+  "NVDA +2.3% vol=$159,142"
  ],
  "futures_ok": true,
- "futures_balance": 57.98,
+ "futures_balance": 57.81,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במטבע חדש: XMR, XRP",
+ "call_reason": "תנועה חזקה במטבע חדש: XMR",
  "claude_called": true,
- "market_read": "השוק בסך הכל חיובי עם BTC ואלטים עולים בנחת, אבל כמה מטבעות כבר overbought ולא שווה לרדוף אחריהם.",
- "skip_reason": "TON ו-XMR קנויים יתר אך ה-MACD עדיין חיובי חזק כך שהשורט מוקדם מדי; שאר המניות/מטבעות ללא איתות ברור או נפח נמוך מדי.",
+ "market_read": "שוק הקריפטו הכללי חיובי מתון (BTC+1.6%) אבל כמה אלטים כמו XMR ו-TON נכנסו לאזור overbought קיצוני שמצדיק תגובת מיין-ריברסל.",
+ "skip_reason": "שאר המועמדים (TON, XDC, XRP, DOT, ADA, DOGE, LTC) נמצאים באזור ניטרלי או ללא נפח מספק/מומנטום ברור, ולכן לא מספקים יחס סיכוי-סיכון מספיק חד כרגע.",
  "picks": [
-  "XRP long size=25% conf=MEDIUM"
+  "XMR short size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "XRP: Kraken: ['EOrder:Insufficient funds']"
+  "XMR: Kraken: ['EOrder:Margin trading in asset is restricted']"
  ]
 }
