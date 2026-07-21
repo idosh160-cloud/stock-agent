@@ -1,34 +1,34 @@
 {
- "time": "2026-07-21T07:00:05",
- "usdc": 94.22,
- "portfolio": 562.91,
+ "time": "2026-07-21T08:00:04",
+ "usdc": 94.21,
+ "portfolio": 563.32,
  "api_billing_blocked": false,
  "margin_headroom": 368.41,
  "open": [
-  "BTC long +6.2%",
-  "SOL long +3.6%",
+  "BTC long +6.7%",
+  "SOL long +3.5%",
   "ETH long +1.9%",
-  "CRCL long +1.0%"
+  "CRCL long +1.2%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "CRCL +12.0% vol=$873,628",
-  "MSTR +7.1% vol=$89,018",
-  "SPCX -3.4% vol=$1,170,031",
-  "GOOGL +2.5% vol=$22,393",
-  "AAPL -2.0% vol=$30,062"
+  "CRCL +11.1% vol=$883,648",
+  "MSTR +6.7% vol=$86,788",
+  "SPCX -3.2% vol=$1,184,948",
+  "HOOD -3.0% vol=$8,205",
+  "GOOGL +2.4% vol=$25,658"
  ],
  "futures_ok": true,
- "futures_balance": 50.11,
+ "futures_balance": 50.69,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במטבע חדש: ADA",
+ "call_reason": "תנועה חזקה במטבע חדש: ADA, DOT",
  "claude_called": true,
- "market_read": "שוק הקריפטו במגמת עלייה כללית אך כמה אלטים נכנסו לאזור overbought קיצוני שמזמין תיקון קצר טווח.",
- "skip_reason": "שאר המועמדים (ADA, XRP, ETH, SOL) גם overbought אך כבר יש חשיפה קיימת אליהם בתיק, ומניות ה-xStock לא מציגות סטאפ ברור מספיק מול DOT.",
+ "market_read": "השוק בכללותו במגמת עלייה עם BTC/ETH ליד שיא, אבל כמה אלטים כבר overbought ומציעים הזדמנות שורט למחזור חוזר.",
+ "skip_reason": "שאר הקנדידטים בקריפטו כבר overbought בלי סיגנל חד או נפח נמוך, והמניות ברובן שקטות מדי או שכבר יש חשיפה מספקת אליהן דרך CRCL הקיים.",
  "picks": [
-  "DOT short size=20% conf=MEDIUM"
+  "ADA short size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "DOT: Kraken: ['EOrder:Invalid leverage']"
+  "ADA: Kraken: ['EOrder:Insufficient initial margin']"
  ]
 }
