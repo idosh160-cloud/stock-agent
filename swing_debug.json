@@ -1,36 +1,34 @@
 {
- "time": "2026-07-21T11:00:05",
- "usdc": 94.19,
- "portfolio": 564.18,
+ "time": "2026-07-21T12:00:06",
+ "usdc": 94.18,
+ "portfolio": 564.58,
  "api_billing_blocked": false,
  "margin_headroom": 368.41,
  "open": [
-  "BTC long +6.7%",
-  "SOL long +3.0%",
+  "BTC long +6.9%",
+  "SOL long +3.3%",
   "ETH long +1.9%",
-  "CRCL long +2.5%"
+  "CRCL long +2.2%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "CRCL +12.2% vol=$939,756",
-  "MSTR +6.1% vol=$87,070",
-  "SPCX -3.1% vol=$1,259,062",
-  "AAPL -2.2% vol=$29,763",
-  "GOOGL +1.7% vol=$49,668"
+  "CRCL +11.2% vol=$941,333",
+  "MSTR +4.5% vol=$75,740",
+  "SPCX -3.4% vol=$1,247,572",
+  "AAPL -1.9% vol=$28,380",
+  "TSLA -1.6% vol=$436,468"
  ],
  "futures_ok": true,
  "futures_balance": 51.77,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במטבע חדש: DOT",
+ "call_reason": "תנועה חזקה במניה: MSTR, SPCX",
  "claude_called": true,
- "market_read": "השוק הכרוני נמצא במגמת עלייה כללית עם רוב הנכסים ב-overbought בינוני, כדאי לתפוס עוד מומנטום לפני שהוא מתמצה ולא לרדוף אחרי מהלכים קיצוניים.",
- "skip_reason": "DOT/BCH/XDC נראים overbought מדי או עם נפח נמוך מדי לשורט אמין, ומניות ה-xStocks חסרות אינדיקטורים ברורים מספיק (RSI/BB) כדי להצדיק כניסה מול הפוזיציות הקיימות שכבר מתקדמות יפה ליעד.",
+ "market_read": "השוק הכללי בעודף קנייה קל (BTC, ADA, XRP, DOT כולם RSI מעל 65) אבל עדיין במגמת עלייה בריאה ללא סימני היפוך ברורים.",
+ "skip_reason": "רוב המועמדים הקריפטו כבר overbought (BTC, XRP, ADA, DOT, DOGE) עם BB% קרוב ל-90 - לא כדאי לפתוח לונג חדש שם ואין סימן ברור להיפוך לשורט; המניות (CRCL, MSTR) כבר מוחזקות או נטולות נזילות מספקת.",
  "picks": [
-  "XRP long size=22% conf=MEDIUM",
-  "DOGE long size=15% conf=MEDIUM"
+  "XMR long size=18% conf=MEDIUM"
  ],
  "order_errors": [
-  "XRP: Kraken: ['EOrder:Insufficient funds']",
-  "DOGE: Kraken: ['EOrder:Insufficient funds']"
+  "XMR: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
