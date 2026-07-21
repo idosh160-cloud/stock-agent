@@ -1,34 +1,34 @@
 {
- "time": "2026-07-21T18:00:05",
+ "time": "2026-07-21T19:00:04",
  "usdc": 94.13,
- "portfolio": 568.13,
+ "portfolio": 569.3,
  "api_billing_blocked": false,
  "margin_headroom": 368.41,
  "open": [
-  "BTC long +6.7%",
-  "SOL long +2.4%",
-  "ETH long +1.1%",
-  "CRCL short -0.1%"
+  "BTC long +6.9%",
+  "SOL long +2.5%",
+  "ETH long +1.2%",
+  "CRCL short +1.0%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "HOOD +6.8% vol=$35,911",
-  "CRCL +5.5% vol=$1,160,769",
-  "SPCX +3.9% vol=$1,531,615",
-  "QQQ +1.9% vol=$37,119",
-  "TSLA +1.9% vol=$282,795"
+  "HOOD +6.9% vol=$95,856",
+  "CRCL +6.6% vol=$1,272,208",
+  "TSLA +2.4% vol=$285,184",
+  "MSTR +2.2% vol=$80,143",
+  "CF +2.1% vol=$13,160"
  ],
  "futures_ok": true,
- "futures_balance": 58.76,
+ "futures_balance": 59.73,
  "unallocated_spot": [],
  "call_reason": "תנועה חזקה במטבע חדש: XRP",
  "claude_called": true,
- "market_read": "השוק הכללי במגמת עלייה מתונה עם כמה נכסים בקנייה יתר (XRP, TON) שמסוכן לשורט נגד המומנטום החזק שלהם.",
- "skip_reason": "XRP/TON overbought אך המומנטום עדיין חזק מדי לשורט, ו-HOOD/DOT/XDC בעלי נפח מסחר נמוך מדי או תנועה לא מספיק מוגדרת לכניסה איכותית.",
+ "market_read": "השוק הכללי בעלייה מתונה עם BTC ואלטקוינים גדולים יציבים, אך כמה נכסים כמו XRP ו-TON נראים מוצפים אחרי ריצה חדה.",
+ "skip_reason": "שאר המועמדים (TON, DOT, XDC, XMR, DOGE, ADA) נמצאים באזור ניטרלי או בנפח נמוך מדי, והמניות הפתוחות כבר בפוזיציות טובות שלא כדאי לגעת בהן.",
  "picks": [
-  "XMR long size=22% conf=MEDIUM"
+  "XRP short size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "XMR: Kraken: ['EOrder:Insufficient funds']"
+  "XRP: Kraken: ['EOrder:Insufficient initial margin']"
  ]
 }
