@@ -1273,5 +1273,30 @@
     "entry_bb_pct": null,
     "entry_macd_hist": null,
     "entry_change_24h": 8.46
+  },
+  {
+    "coin": "CRCL",
+    "pair": "PF_CRCLXUSD",
+    "status": "closed_externally",
+    "leveraged": false,
+    "collateral": 137.03,
+    "volume": 2.05134731,
+    "entry_price": 66.8,
+    "close_price": 66.8,
+    "target_price": 71.48,
+    "stop_price": 65.13,
+    "pnl_usd": 0,
+    "pnl_pct": 0,
+    "date_open": "2026-07-20T23:00:45.449466",
+    "date_close": "2026-07-21T14:00:04.037703",
+    "reasoning": "CRCL קפצה +8.6% על נפח גבוה במיוחד ($722K), התנועה שוברת את התזה של השורט הקיים ומעידה על פריצה אמיתית כלפי מעלה. סוגר את הפוזיציה השורט שנכנסת נגדנו וקרובה לסטופ, והופך ל-לונג על המומנטום עם סטופ צמוד ויעד סביר למניה.",
+    "confidence": "MEDIUM",
+    "txid": "a24eb009-1de4-46ea-b881-6875b510ed75",
+    "close_txid": null,
+    "side": "long",
+    "entry_rsi": null,
+    "entry_bb_pct": null,
+    "entry_macd_hist": null,
+    "entry_change_24h": 8.56
   }
 ]

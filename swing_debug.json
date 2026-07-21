@@ -1,36 +1,30 @@
 {
- "time": "2026-07-21T13:00:05",
+ "time": "2026-07-21T14:00:04",
  "usdc": 94.16,
- "portfolio": 566.15,
+ "portfolio": 578.81,
  "api_billing_blocked": false,
  "margin_headroom": 368.41,
  "open": [
-  "BTC long +7.2%",
-  "SOL long +3.4%",
-  "ETH long +2.4%",
-  "CRCL long +2.3%"
+  "BTC long +7.6%",
+  "SOL long +3.5%",
+  "ETH long +2.2%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "CRCL +11.5% vol=$945,224",
-  "MSTR +4.2% vol=$75,905",
-  "SPCX -2.1% vol=$1,290,000",
-  "HOOD +2.1% vol=$7,080",
-  "TSLA -2.0% vol=$438,460"
+  "CRCL +14.6% vol=$976,116",
+  "MSTR +7.5% vol=$71,623",
+  "HOOD +4.8% vol=$13,808",
+  "SPCX +3.2% vol=$1,331,338",
+  "GOOGL -2.6% vol=$109,593"
  ],
  "futures_ok": true,
- "futures_balance": 51.81,
+ "futures_balance": 64.99,
  "unallocated_spot": [],
  "call_reason": "תנועה חזקה במטבע חדש: ADA",
  "claude_called": true,
- "market_read": "השוק במגמת עלייה כללית אך רוב המטבעות המובילים נכנסו לאזור קניית יתר קיצוני עם BB% מעל 80, מה שמעדיף הימורי שורט על מיצוי מומנטום יותר מלונג חדש.",
- "skip_reason": "שאר המועמדים בקריפטו סובלים מנפח נמוך מדי (DOT, XDC, XMR) או ממומנטום MACD שעדיין חיובי מדי לשורט בטוח (BTC, ETH כבר בפוזיציה קיימת), והמניות חסרות אינדיקטורים ברורים למעט מחיר ונפח.",
+ "market_read": "השוק הקריפטו במומנטום עולה חזק אך עמוס-קנייה (RSI מעל 70 ברוב המטבעות), בעוד שהמניות הטוקניזציה מציעות הזדמנות שורט על תנועה פרבולית חריגה ב-CRCL.",
+ "skip_reason": "רוב מטבעות הקריפטו (BTC, XRP, DOT, ADA, XDC, BCH) עמוסי-קנייה בתוך מגמת עלייה כוללת - שורט מסוכן מדי נגד המומנטום, ולונג כבר מוחזק ב-BTC/ETH/SOL; שאר המניות (MSTR, SPCX, HOOD) בעלות נפח נמוך או היסטוריה חלשה יותר בלי אישור טכני חד-משמעי.",
  "picks": [
-  "XRP short size=22% conf=MEDIUM",
-  "ADA short size=15% conf=MEDIUM"
- ],
- "order_errors": [
-  "XRP: Kraken: ['EOrder:Insufficient initial margin']",
-  "ADA: Kraken: ['EOrder:Insufficient initial margin']"
+  "CRCL short size=20% conf=MEDIUM"
  ]
 }
