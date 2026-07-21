@@ -1,34 +1,34 @@
 {
- "time": "2026-07-21T04:00:04",
- "usdc": 87.3,
- "portfolio": 553.56,
+ "time": "2026-07-21T05:00:05",
+ "usdc": 87.29,
+ "portfolio": 552.29,
  "api_billing_blocked": false,
  "margin_headroom": 344.71,
  "open": [
-  "BTC long +5.7%",
-  "SOL long +3.0%",
-  "ETH long +1.5%",
-  "CRCL long +0.5%"
+  "BTC long +5.5%",
+  "SOL long +2.9%",
+  "ETH long +1.4%",
+  "CRCL long +1.1%"
  ],
  "stock_candidates": 14,
  "top_stocks": [
-  "OPENAI -11.1% vol=$10,271",
-  "CRCL +10.0% vol=$774,282",
+  "CRCL +11.9% vol=$783,733",
+  "OPENAI -11.5% vol=$8,974",
   "ANTHROPIC +5.7% vol=$7,306",
-  "MSTR +3.6% vol=$149,394",
-  "SPCX -3.4% vol=$1,198,645"
+  "MSTR +3.9% vol=$148,853",
+  "SPCX -3.3% vol=$1,202,302"
  ],
  "futures_ok": true,
- "futures_balance": 49.48,
+ "futures_balance": 48.77,
  "unallocated_spot": [],
  "call_reason": "תנועה חזקה במניה: OPENAI, ANTHROPIC, MSTR",
  "claude_called": true,
- "market_read": "השוק הכללי חיובי בעדינות עם רוב הקוינים ב-RSI גבוה, מה שמעדיף פוזיציות שורט על נכסים שמוצו את התנועה.",
- "skip_reason": "שאר המועמדים (ADA, ETH, XRP) גם עמוסי RSI אך עם נפח מסחר גבוה יותר ומיקום קיים כבר בפורטפוליו - מעדיף לא להכפיל חשיפה לאותם כיוונים.",
+ "market_read": "השוק הכללי חיובי בעדינות עם רוב המטבעות והמניות בקרבת עליון ה-BB, כלומר מעט הזדמנויות long נקיות מלבד דיפים ממוקדים כמו XDC.",
+ "skip_reason": "רוב המועמדים (LINK, ADA, XRP, ETH, CRCL) כבר overbought או כבר בפוזיציה קיימת שמתקדמת ליעד, אז לא כדאי לכפול חשיפה; המניות שקטות מדי היום ללא סטאפ ברור לשורט או לונג.",
  "picks": [
-  "XMR short size=30% conf=MEDIUM"
+  "XDC long size=15% conf=MEDIUM"
  ],
  "order_errors": [
-  "XMR: Kraken: ['EOrder:Margin trading in asset is restricted']"
+  "XDC: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
