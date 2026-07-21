@@ -1,34 +1,34 @@
 {
- "time": "2026-07-21T01:00:04",
+ "time": "2026-07-21T02:00:04",
  "usdc": 87.34,
- "portfolio": 550.83,
+ "portfolio": 547.86,
  "api_billing_blocked": false,
  "margin_headroom": 344.71,
  "open": [
-  "BTC long +5.7%",
-  "SOL long +2.9%",
-  "ETH long +0.9%",
+  "BTC long +5.1%",
+  "SOL long +2.5%",
+  "ETH long +0.5%",
   "CRCL long +0.2%"
  ],
  "stock_candidates": 14,
  "top_stocks": [
-  "CRCL +10.1% vol=$739,238",
+  "CRCL +10.5% vol=$738,727",
   "OPENAI -8.1% vol=$33,096",
   "ANTHROPIC +5.7% vol=$7,306",
-  "SPCX -3.7% vol=$1,197,953",
-  "MSTR +3.2% vol=$139,335"
+  "SPCX -3.7% vol=$1,192,366",
+  "MSTR +2.9% vol=$146,860"
  ],
  "futures_ok": true,
- "futures_balance": 49.14,
+ "futures_balance": 47.78,
  "unallocated_spot": [],
  "call_reason": "תנועה חזקה במניה: OPENAI, ANTHROPIC, SPCX",
  "claude_called": true,
- "market_read": "השוק הקריפטו כולו נמצא באזור overbought עם RSI 60-68 ו-BB% גבוה כמעט בכל המטבעות, מה שמעיד על שוק עולה אך מתוח שדורש זהירות בכניסות חדשות ללונג.",
- "skip_reason": "רוב מועמדי הקריפטו האחרים (BTC, ETH, SOL, LINK, PENGU) נמצאים כבר בפוזיציות פתוחות או שהמומנטום שלהם עדיין חיובי מדי לשורט; מניות ה-xStocks חסרות אינדיקטורים טכניים (RSI/MACD) לאישור כיוון ברור.",
+ "market_read": "השוק הקריפטו יציב עם נטייה חיובית מתונה, רוב המטבעות במגמת עלייה מתונה בלי קיצוניות.",
+ "skip_reason": "שאר המועמדים או קרובים לקיצון עליון (ADA, XMR) או נפח נמוך מדי / היסטוריה חלשה בלי אישור טכני חזק מספיק כדי להצדיק כניסה כפולה.",
  "picks": [
-  "ADA short size=20% conf=MEDIUM"
+  "XRP long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "ADA: Kraken: ['EOrder:Insufficient initial margin']"
+  "XRP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
