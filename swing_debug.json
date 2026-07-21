@@ -1,34 +1,35 @@
 {
- "time": "2026-07-21T19:00:04",
- "usdc": 94.13,
- "portfolio": 569.3,
+ "time": "2026-07-21T20:00:05",
+ "usdc": 94.11,
+ "portfolio": 568.18,
  "api_billing_blocked": false,
  "margin_headroom": 368.41,
  "open": [
-  "BTC long +6.9%",
-  "SOL long +2.5%",
-  "ETH long +1.2%",
-  "CRCL short +1.0%"
+  "BTC long +7.1%",
+  "SOL long +2.6%",
+  "ETH long +1.4%",
+  "CRCL short -1.0%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "HOOD +6.9% vol=$95,856",
-  "CRCL +6.6% vol=$1,272,208",
-  "TSLA +2.4% vol=$285,184",
-  "MSTR +2.2% vol=$80,143",
-  "CF +2.1% vol=$13,160"
+  "CRCL +8.5% vol=$1,182,357",
+  "HOOD +6.9% vol=$103,510",
+  "MSTR +2.8% vol=$88,364",
+  "SPCX +2.6% vol=$1,666,603",
+  "CF +2.3% vol=$12,853"
  ],
  "futures_ok": true,
- "futures_balance": 59.73,
+ "futures_balance": 58.17,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במטבע חדש: XRP",
+ "call_reason": "פוזיציה חלשה: CRCL",
  "claude_called": true,
- "market_read": "השוק הכללי בעלייה מתונה עם BTC ואלטקוינים גדולים יציבים, אך כמה נכסים כמו XRP ו-TON נראים מוצפים אחרי ריצה חדה.",
- "skip_reason": "שאר המועמדים (TON, DOT, XDC, XMR, DOGE, ADA) נמצאים באזור ניטרלי או בנפח נמוך מדי, והמניות הפתוחות כבר בפוזיציות טובות שלא כדאי לגעת בהן.",
+ "market_read": "השוק הכללי חיובי עם BTC/ETH/SOL בטרנד עלייה מתון, ומניות ה-xStocks כמו CRCL ו-HOOD מציגות פריצות חזקות עם נפח שמצדיק כניסה בכיוון המומנטום.",
+ "skip_reason": "XRP/TON overbought אך עדיין במומנטום חזק כלפי מעלה כך ששורט מסוכן, ו-DOT/ADA/ETH/BTC בלי סיגנל חזק מספיק לכניסה חדשה מעבר לפוזיציות הקיימות שכבר בדרך למטרה.",
  "picks": [
-  "XRP short size=20% conf=MEDIUM"
+  "CRCL long size=35% conf=HIGH",
+  "HOOD long size=20% conf=MEDIUM"
  ],
- "order_errors": [
-  "XRP: Kraken: ['EOrder:Insufficient initial margin']"
+ "skips": [
+  "CRCL: margin $63 < needed $66 (after transfer attempt)"
  ]
 }

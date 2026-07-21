@@ -1298,5 +1298,30 @@
     "entry_bb_pct": null,
     "entry_macd_hist": null,
     "entry_change_24h": 8.56
+  },
+  {
+    "coin": "CRCL",
+    "pair": "PF_CRCLXUSD",
+    "status": "closed_loss",
+    "leveraged": false,
+    "collateral": 115.76,
+    "volume": 1.64618885,
+    "entry_price": 70.32,
+    "close_price": 71.04,
+    "target_price": 66.1,
+    "stop_price": 72.08,
+    "pnl_usd": -1.19,
+    "pnl_pct": -1.02,
+    "date_open": "2026-07-21T14:00:32.146450",
+    "date_close": "2026-07-21T20:00:54.074629",
+    "reasoning": "CRCL קפצה +14.6% ביום עם טווח 18.5%, תנועה פרבולית קלאסית שדורשת חזרה לממוצע; נכנס לשורט עם סטופ צר כי המהלך נראה מוצה וללא המשך ולידציה מהותי.",
+    "confidence": "MEDIUM",
+    "txid": "a24ff1d2-45a7-48c5-abe7-8efa18cdbb2d",
+    "close_txid": "a25072b2-d4fc-4449-a6db-ec54f5234b66",
+    "side": "short",
+    "entry_rsi": null,
+    "entry_bb_pct": null,
+    "entry_macd_hist": null,
+    "entry_change_24h": 14.62
   }
 ]
