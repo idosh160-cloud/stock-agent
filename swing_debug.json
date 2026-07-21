@@ -1,34 +1,34 @@
 {
- "time": "2026-07-21T06:00:04",
- "usdc": 87.29,
- "portfolio": 554.27,
+ "time": "2026-07-21T07:00:05",
+ "usdc": 94.22,
+ "portfolio": 562.91,
  "api_billing_blocked": false,
- "margin_headroom": 344.71,
+ "margin_headroom": 368.41,
  "open": [
-  "BTC long +5.9%",
-  "SOL long +3.3%",
-  "ETH long +1.7%",
-  "CRCL long +0.2%"
+  "BTC long +6.2%",
+  "SOL long +3.6%",
+  "ETH long +1.9%",
+  "CRCL long +1.0%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "CRCL +11.2% vol=$778,850",
-  "MSTR +4.8% vol=$84,671",
-  "SPCX -3.0% vol=$1,200,310",
-  "GOOGL +2.2% vol=$11,034",
-  "TSLA -1.8% vol=$372,728"
+  "CRCL +12.0% vol=$873,628",
+  "MSTR +7.1% vol=$89,018",
+  "SPCX -3.4% vol=$1,170,031",
+  "GOOGL +2.5% vol=$22,393",
+  "AAPL -2.0% vol=$30,062"
  ],
  "futures_ok": true,
- "futures_balance": 49.45,
+ "futures_balance": 50.11,
  "unallocated_spot": [],
  "call_reason": "תנועה חזקה במטבע חדש: ADA",
  "claude_called": true,
- "market_read": "השוק הכללי במגמת עלייה מתונה עם הרבה מטבעות בקנייה מוגזמת, כך שהזדמנות הטובה ביותר כרגע היא שורט על ADA שהגיע למיצוי קיצוני ולא לונג נוסף על נכסים מתוחים.",
- "skip_reason": "שאר המטבעות (DOT, LINK, XRP) גם overbought אבל ה-MACD שלהם עדיין עולה חזק או שהנפח נמוך מדי, ומניות כמו MSTR/SPCX חסרות אינדיקטורים ברורים לכיוון מסחר נקי, אז דילגתי עליהם.",
+ "market_read": "שוק הקריפטו במגמת עלייה כללית אך כמה אלטים נכנסו לאזור overbought קיצוני שמזמין תיקון קצר טווח.",
+ "skip_reason": "שאר המועמדים (ADA, XRP, ETH, SOL) גם overbought אך כבר יש חשיפה קיימת אליהם בתיק, ומניות ה-xStock לא מציגות סטאפ ברור מספיק מול DOT.",
  "picks": [
-  "ADA short size=20% conf=MEDIUM"
+  "DOT short size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "ADA: Kraken: ['EOrder:Insufficient initial margin']"
+  "DOT: Kraken: ['EOrder:Invalid leverage']"
  ]
 }
