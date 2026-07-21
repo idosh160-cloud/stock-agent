@@ -1,34 +1,36 @@
 {
- "time": "2026-07-21T12:00:06",
- "usdc": 94.18,
- "portfolio": 564.58,
+ "time": "2026-07-21T13:00:05",
+ "usdc": 94.16,
+ "portfolio": 566.15,
  "api_billing_blocked": false,
  "margin_headroom": 368.41,
  "open": [
-  "BTC long +6.9%",
-  "SOL long +3.3%",
-  "ETH long +1.9%",
-  "CRCL long +2.2%"
+  "BTC long +7.2%",
+  "SOL long +3.4%",
+  "ETH long +2.4%",
+  "CRCL long +2.3%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "CRCL +11.2% vol=$941,333",
-  "MSTR +4.5% vol=$75,740",
-  "SPCX -3.4% vol=$1,247,572",
-  "AAPL -1.9% vol=$28,380",
-  "TSLA -1.6% vol=$436,468"
+  "CRCL +11.5% vol=$945,224",
+  "MSTR +4.2% vol=$75,905",
+  "SPCX -2.1% vol=$1,290,000",
+  "HOOD +2.1% vol=$7,080",
+  "TSLA -2.0% vol=$438,460"
  ],
  "futures_ok": true,
- "futures_balance": 51.77,
+ "futures_balance": 51.81,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במניה: MSTR, SPCX",
+ "call_reason": "תנועה חזקה במטבע חדש: ADA",
  "claude_called": true,
- "market_read": "השוק הכללי בעודף קנייה קל (BTC, ADA, XRP, DOT כולם RSI מעל 65) אבל עדיין במגמת עלייה בריאה ללא סימני היפוך ברורים.",
- "skip_reason": "רוב המועמדים הקריפטו כבר overbought (BTC, XRP, ADA, DOT, DOGE) עם BB% קרוב ל-90 - לא כדאי לפתוח לונג חדש שם ואין סימן ברור להיפוך לשורט; המניות (CRCL, MSTR) כבר מוחזקות או נטולות נזילות מספקת.",
+ "market_read": "השוק במגמת עלייה כללית אך רוב המטבעות המובילים נכנסו לאזור קניית יתר קיצוני עם BB% מעל 80, מה שמעדיף הימורי שורט על מיצוי מומנטום יותר מלונג חדש.",
+ "skip_reason": "שאר המועמדים בקריפטו סובלים מנפח נמוך מדי (DOT, XDC, XMR) או ממומנטום MACD שעדיין חיובי מדי לשורט בטוח (BTC, ETH כבר בפוזיציה קיימת), והמניות חסרות אינדיקטורים ברורים למעט מחיר ונפח.",
  "picks": [
-  "XMR long size=18% conf=MEDIUM"
+  "XRP short size=22% conf=MEDIUM",
+  "ADA short size=15% conf=MEDIUM"
  ],
  "order_errors": [
-  "XMR: Kraken: ['EOrder:Insufficient funds']"
+  "XRP: Kraken: ['EOrder:Insufficient initial margin']",
+  "ADA: Kraken: ['EOrder:Insufficient initial margin']"
  ]
 }
