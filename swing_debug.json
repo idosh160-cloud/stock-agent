@@ -1,32 +1,32 @@
 {
- "time": "2026-07-21T17:00:05",
+ "time": "2026-07-21T18:00:05",
  "usdc": 94.13,
- "portfolio": 569.21,
+ "portfolio": 568.13,
  "api_billing_blocked": false,
  "margin_headroom": 368.41,
  "open": [
-  "BTC long +7.2%",
-  "SOL long +3.0%",
-  "ETH long +1.5%",
-  "CRCL short -0.7%"
+  "BTC long +6.7%",
+  "SOL long +2.4%",
+  "ETH long +1.1%",
+  "CRCL short -0.1%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "CRCL +8.2% vol=$1,210,377",
-  "HOOD +6.1% vol=$36,014",
-  "SPCX +4.8% vol=$1,561,466",
-  "MSTR +2.1% vol=$91,894",
-  "TSLA +1.9% vol=$290,150"
+  "HOOD +6.8% vol=$35,911",
+  "CRCL +5.5% vol=$1,160,769",
+  "SPCX +3.9% vol=$1,531,615",
+  "QQQ +1.9% vol=$37,119",
+  "TSLA +1.9% vol=$282,795"
  ],
  "futures_ok": true,
- "futures_balance": 58.28,
+ "futures_balance": 58.76,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במטבע חדש: XRP, XMR",
+ "call_reason": "תנועה חזקה במטבע חדש: XRP",
  "claude_called": true,
- "market_read": "השוק בעליית מומנטום כללית עם BTC ורוב האלטים בטריטוריית overbought, אז עדיף לבחור מטבע עם מקום נשימה במקום לרדוף אחרי הקיצוניים.",
- "skip_reason": "TON/XRP/BTC כבר overbought עם BB% מעל 85 וסיכון לתיקון מהיר, ו-CRCL/ADA בעלי היסטוריה חלשה בלי שיפור ברור בתנאים הנוכחיים.",
+ "market_read": "השוק הכללי במגמת עלייה מתונה עם כמה נכסים בקנייה יתר (XRP, TON) שמסוכן לשורט נגד המומנטום החזק שלהם.",
+ "skip_reason": "XRP/TON overbought אך המומנטום עדיין חזק מדי לשורט, ו-HOOD/DOT/XDC בעלי נפח מסחר נמוך מדי או תנועה לא מספיק מוגדרת לכניסה איכותית.",
  "picks": [
-  "XMR long size=25% conf=MEDIUM"
+  "XMR long size=22% conf=MEDIUM"
  ],
  "order_errors": [
   "XMR: Kraken: ['EOrder:Insufficient funds']"
