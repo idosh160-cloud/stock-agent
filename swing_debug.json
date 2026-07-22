@@ -1,35 +1,35 @@
 {
- "time": "2026-07-22T05:00:05",
+ "time": "2026-07-22T06:00:04",
  "usdc": 94.03,
- "portfolio": 555.5,
+ "portfolio": 550.38,
  "api_billing_blocked": false,
  "margin_headroom": 368.41,
  "open": [
-  "BTC long +7.0%",
-  "SOL long +2.8%",
-  "ETH long +2.0%",
+  "BTC long +6.3%",
+  "SOL long +2.0%",
+  "ETH long +1.2%",
   "HOOD long -0.2%",
-  "SPCX long -0.4%"
+  "SPCX long -0.7%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "CRCL +4.8% vol=$934,515",
   "HOOD +3.9% vol=$106,918",
-  "SPCX +2.3% vol=$1,800,815",
-  "TSLA +1.9% vol=$188,905",
+  "CRCL +2.3% vol=$919,120",
+  "SPCX +2.1% vol=$1,797,428",
+  "GLD +1.6% vol=$26,430",
   "GOOGL -1.6% vol=$141,222"
  ],
  "futures_ok": true,
- "futures_balance": 42.71,
+ "futures_balance": 41.31,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במטבע חדש: TON",
+ "call_reason": "תנועה חזקה במטבע חדש: XMR",
  "claude_called": true,
- "market_read": "השוק הקריפטו נסחר בטווח צר עם BTC ו-ETH יציבים, ורוב האלטקוינים נטולי מומנטום חד למעט LTC שנראה במכירת יתר.",
- "skip_reason": "TON ו-XDC נראים overbought מדי (RSI>67, BB%>79) לפוזיציית לונג ונפח המסחר שלהם נמוך מדי לשורט בטוח; מניות כמו CRCL עם היסטוריית הפסדים גרועה ובלי סימנים טכניים ברורים לא מצדיקות כניסה כרגע.",
+ "market_read": "השוק הכללי בקונסולידציה שקטה עם BTC ורוב האלטים קרובים לתחתית הטווח היומי, מה שמעיד על הזדמנויות דיפ-ביי זהירות ולא על מגמת ירידה חדה.",
+ "skip_reason": "שאר המועמדים (ADA, DOGE, BCH, TON) מציגים איתותים מעורבים או נפח מסחר נמוך מדי, והפוזיציות הקיימות (BTC/SOL/ETH/HOOD/SPCX) עדיין בדרך ליעד ולא מצדיקות רוטציה.",
  "picks": [
-  "LTC long size=20% conf=MEDIUM"
+  "AVAX long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "LTC: Kraken: ['EOrder:Invalid leverage']"
+  "AVAX: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
