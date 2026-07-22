@@ -1323,5 +1323,30 @@
     "entry_bb_pct": null,
     "entry_macd_hist": null,
     "entry_change_24h": 14.62
+  },
+  {
+    "coin": "HOOD",
+    "pair": "PF_HOODXUSD",
+    "status": "closed_loss",
+    "leveraged": false,
+    "collateral": 113.64,
+    "volume": 1.0681455,
+    "entry_price": 106.39,
+    "close_price": 104.04,
+    "target_price": 111.71,
+    "stop_price": 104.26,
+    "pnl_usd": -2.51,
+    "pnl_pct": -2.21,
+    "date_open": "2026-07-21T20:00:54.385599",
+    "date_close": "2026-07-22T13:00:04.429320",
+    "reasoning": "HOOD עולה +6.9% עם נפח סביר, מומנטום חזק במניית ברוקראז' פופולרית שממשיכה לרוץ בשעות מסחר מורחבות — לונג עם סטופ צמוד כי זו מניה שנעה מהר יחסית לגודלה.",
+    "confidence": "MEDIUM",
+    "txid": "a25072b3-3031-477f-b81d-7074bdad4f80",
+    "close_txid": "a251df2e-dd59-4cf8-8978-ab951ca1e870",
+    "side": "long",
+    "entry_rsi": null,
+    "entry_bb_pct": null,
+    "entry_macd_hist": null,
+    "entry_change_24h": 6.94
   }
 ]

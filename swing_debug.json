@@ -1,35 +1,34 @@
 {
- "time": "2026-07-22T12:00:05",
- "usdc": 93.99,
- "portfolio": 550.65,
+ "time": "2026-07-22T13:00:06",
+ "usdc": 93.97,
+ "portfolio": 546.92,
  "api_billing_blocked": false,
  "margin_headroom": 368.41,
  "open": [
-  "BTC long +6.4%",
-  "SOL long +2.2%",
-  "ETH long +1.6%",
-  "HOOD long -1.3%",
-  "SPCX long -0.8%"
+  "BTC long +5.8%",
+  "SOL long +1.8%",
+  "ETH long +1.0%",
+  "SPCX long -1.7%"
  ],
  "stock_candidates": 11,
  "top_stocks": [
-  "SPCX +1.9% vol=$1,870,552",
-  "GLD +1.7% vol=$18,680",
-  "CRCL +1.6% vol=$807,879",
-  "TSLA +1.0% vol=$169,930",
-  "GOOGL -0.9% vol=$85,421"
+  "MSTR -2.2% vol=$75,941",
+  "GLD +1.3% vol=$18,862",
+  "TSLA +1.2% vol=$170,405",
+  "HOOD -0.9% vol=$108,021",
+  "QQQ -0.7% vol=$35,499"
  ],
  "futures_ok": true,
- "futures_balance": 40.02,
+ "futures_balance": 43.88,
  "unallocated_spot": [],
- "call_reason": "פוזיציה חלשה: HOOD",
+ "call_reason": "פוזיציה חלשה: SPCX",
  "claude_called": true,
- "market_read": "השוק בטווח נייטרלי-שלילי קל עם רוב הקריפטו והמניות ללא סיגנל קיצון ברור, כך שזו סביבה של תנועות מתונות ולא מגמה חדה.",
- "skip_reason": "שאר המועמדים בקריפטו (ADA, AVAX, XDC) עם נפח נמוך מדי או ללא איתות ברור, והמניות ללא נתוני RSI קיצוניים שמצדיקים כניסה חדשה מעבר לפוזיציות הקיימות.",
+ "market_read": "השוק הקריפטו כרגע במגמת תיקון קלה עם רוב הנכסים ליד תמיכה תחתונה, ומניות מפוצלות בין מומנטום חלש לצדדים.",
+ "skip_reason": "שאר המועמדים בקריפטו כמו XDC ו-DOGE סובלים מנפח מסחר נמוך מדי, ומניות ה-xStocks לא מציגות סטאפ ברור של פריצה או מיצוי כרגע.",
  "picks": [
-  "LTC long size=20% conf=MEDIUM"
+  "CC long size=15% conf=MEDIUM"
  ],
  "order_errors": [
-  "LTC: Kraken: ['EOrder:Invalid leverage']"
+  "CC: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
