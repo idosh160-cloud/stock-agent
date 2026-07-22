@@ -1,34 +1,36 @@
 {
- "time": "2026-07-22T18:00:05",
+ "time": "2026-07-22T19:00:05",
  "usdc": 94.01,
- "portfolio": 567.3,
+ "portfolio": 565.7,
  "api_billing_blocked": false,
  "margin_headroom": 368.41,
  "open": [
-  "BTC long +6.4%",
-  "SOL long +3.0%",
-  "ETH long +2.2%",
-  "NVDA long +2.9%"
+  "BTC long +6.2%",
+  "SOL long +2.4%",
+  "ETH long +1.8%",
+  "NVDA long +2.7%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "SPCX -6.9% vol=$1,804,695",
-  "CRCL -5.5% vol=$622,753",
-  "NVDA +3.7% vol=$558,217",
-  "HOOD -1.9% vol=$82,073",
-  "CF +1.2% vol=$19,389"
+  "CRCL -6.0% vol=$516,442",
+  "SPCX -5.6% vol=$1,795,793",
+  "NVDA +3.0% vol=$544,823",
+  "CF +2.2% vol=$20,105",
+  "GLD +1.0% vol=$15,380"
  ],
  "futures_ok": true,
- "futures_balance": 53.99,
+ "futures_balance": 54.1,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במטבע חדש: XDC, CC",
+ "call_reason": "תנועה חזקה במטבע חדש: CC, XDC",
  "claude_called": true,
- "market_read": "השוק הכללי נייטרלי עם BTC בטווח צר, אך כמה אלטקוינים מציגים oversold ברור המתאים לכניסה סלקטיבית.",
- "skip_reason": "שאר המועמדים או overbought (ADA, XRP, LTC) בלי סיגנל שורט חד, או בעלי היסטוריה שלילית וללא קונפירמציה חזקה מספיק (CRCL, SPCX, HOOD).",
+ "market_read": "השוק הכללי רגוע יחסית עם BTC בטווח צר סביב 66K, אבל כמה אלטקוינים קטנים מראים oversold מובהק שמאפשר כניסות ריבאונד ממוקדות.",
+ "skip_reason": "שאר המועמדים (XMR, BCH, DOT, LTC, DOGE, AVAX) נמצאים באמצע הטווח ללא איתות ברור, והמניות הבורסאיות (CRCL, SPCX) חסרות נתוני RSI/מומנטום ברורים והיסטוריה שלילית ללא שיפור בסיגנל שמצדיק כניסה עכשיו.",
  "picks": [
-  "CC long size=20% conf=MEDIUM"
+  "CC long size=25% conf=MEDIUM",
+  "XDC long size=15% conf=MEDIUM"
  ],
  "order_errors": [
-  "CC: Kraken: ['EOrder:Insufficient funds']"
+  "CC: Kraken: ['EOrder:Insufficient funds']",
+  "XDC: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
