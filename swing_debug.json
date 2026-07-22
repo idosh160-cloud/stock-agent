@@ -1,28 +1,30 @@
 {
- "time": "2026-07-22T10:00:04",
+ "time": "2026-07-22T11:00:05",
  "usdc": 94.0,
- "portfolio": 551.59,
+ "portfolio": 552.76,
  "api_billing_blocked": false,
  "margin_headroom": 368.41,
  "open": [
-  "BTC long +6.2%",
-  "SOL long +2.2%",
-  "ETH long +1.4%",
+  "BTC long +6.4%",
+  "SOL long +2.3%",
+  "ETH long +1.7%",
   "HOOD long -1.1%",
-  "SPCX long -0.5%"
+  "SPCX long -0.3%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "HOOD +2.9% vol=$107,875",
-  "SPCX +2.0% vol=$1,893,640",
+  "CF +2.4% vol=$6,771",
+  "SPCX +2.3% vol=$1,878,409",
   "GLD +2.0% vol=$19,081",
-  "GOOGL -1.9% vol=$123,533",
-  "TSLA +1.1% vol=$212,504"
+  "GOOGL -1.5% vol=$103,057",
+  "TSLA +1.2% vol=$165,600"
  ],
  "futures_ok": true,
- "futures_balance": 41.56,
+ "futures_balance": 41.46,
  "unallocated_spot": [],
  "call_reason": "פוזיציה חלשה: HOOD",
- "claude_called": false,
- "skip": "snapshot זהה לקריאה הקודמת"
+ "claude_called": true,
+ "market_read": "",
+ "skip_reason": "Expecting ',' delimiter: line 10 column 216 (char 385)",
+ "picks": []
 }
