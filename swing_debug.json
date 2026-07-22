@@ -1,30 +1,30 @@
 {
- "time": "2026-07-22T00:00:04",
- "usdc": 94.08,
- "portfolio": 569.53,
+ "time": "2026-07-22T01:00:04",
+ "usdc": 94.07,
+ "portfolio": 571.56,
  "api_billing_blocked": false,
  "margin_headroom": 368.41,
  "open": [
-  "BTC long +7.2%",
-  "SOL long +3.0%",
-  "ETH long +1.7%",
+  "BTC long +7.4%",
+  "SOL long +3.4%",
+  "ETH long +2.2%",
   "HOOD long +1.0%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "CRCL +7.4% vol=$970,601",
+  "CRCL +6.6% vol=$974,786",
   "HOOD +5.1% vol=$108,148",
-  "MSTR +4.1% vol=$85,277",
-  "SPCX +4.0% vol=$1,727,332",
-  "NVDA +2.3% vol=$159,142"
+  "SPCX +3.3% vol=$1,726,605",
+  "MSTR +2.9% vol=$85,630",
+  "TSLA +2.6% vol=$226,825"
  ],
  "futures_ok": true,
- "futures_balance": 58.05,
+ "futures_balance": 58.06,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במטבע חדש: XMR",
+ "call_reason": "תנועה חזקה במניה: CRCL, SPCX, MSTR",
  "claude_called": true,
- "market_read": "השוק הכללי חיובי מתון עם BTC יציב ליד 66.5K אבל כמה אלטים (XMR, TON, XDC) נכנסו לאזור over extended שמצדיק שורטים ממוקדים.",
- "skip_reason": "שאר המועמדים (TON, XDC) דומים אך עם נזילות נמוכה יותר, וה-DOT/LTC עדיין לא מציגים אישור ברור לקנייה בתחתית.",
+ "market_read": "השוק הכללי חיובי מתון עם BTC/ETH/SOL בתנופה בריאה, אבל XMR התנפח יתר על המידה ומהווה הזדמנות מין-ריברסל ברורה.",
+ "skip_reason": "שאר המועמדים (DOGE, LINK, XDC) בנפח נמוך או ללא איתות ברור, והמניות הפתוחות (HOOD/BTC/ETH/SOL) כבר בפוזיציה טובה לכיוון היעד - אין סיבה לסובב אותן.",
  "picks": [
   "XMR short size=20% conf=MEDIUM"
  ],
