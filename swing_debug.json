@@ -1,36 +1,34 @@
 {
- "time": "2026-07-22T19:00:05",
- "usdc": 94.01,
- "portfolio": 565.7,
+ "time": "2026-07-22T20:00:05",
+ "usdc": 93.99,
+ "portfolio": 563.64,
  "api_billing_blocked": false,
  "margin_headroom": 368.41,
  "open": [
   "BTC long +6.2%",
-  "SOL long +2.4%",
-  "ETH long +1.8%",
-  "NVDA long +2.7%"
+  "SOL long +2.3%",
+  "ETH long +1.4%",
+  "NVDA long +1.9%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "CRCL -6.0% vol=$516,442",
-  "SPCX -5.6% vol=$1,795,793",
-  "NVDA +3.0% vol=$544,823",
-  "CF +2.2% vol=$20,105",
-  "GLD +1.0% vol=$15,380"
+  "CRCL -7.5% vol=$415,792",
+  "SPCX -6.3% vol=$2,079,350",
+  "MSTR -2.8% vol=$60,529",
+  "NVDA +2.4% vol=$540,237",
+  "HOOD -1.9% vol=$22,315"
  ],
  "futures_ok": true,
- "futures_balance": 54.1,
+ "futures_balance": 53.26,
  "unallocated_spot": [],
  "call_reason": "תנועה חזקה במטבע חדש: CC, XDC",
  "claude_called": true,
- "market_read": "השוק הכללי רגוע יחסית עם BTC בטווח צר סביב 66K, אבל כמה אלטקוינים קטנים מראים oversold מובהק שמאפשר כניסות ריבאונד ממוקדות.",
- "skip_reason": "שאר המועמדים (XMR, BCH, DOT, LTC, DOGE, AVAX) נמצאים באמצע הטווח ללא איתות ברור, והמניות הבורסאיות (CRCL, SPCX) חסרות נתוני RSI/מומנטום ברורים והיסטוריה שלילית ללא שיפור בסיגנל שמצדיק כניסה עכשיו.",
+ "market_read": "השוק הכללי רדוד ומגובש בטווח צר, עם רוב המטבעות במגמת תיקון קלה אחרי ירידה, ו-BTC נייטרלי סביב RSI 47.",
+ "skip_reason": "שאר המועמדים (CC, XDC, DOGE, DOT, ADA) נמצאים באזור נייטרלי ללא סיגנל ברור, והמניות הפתוחות ירדו חזק ללא אישור מהפך מובהק לכיוון short.",
  "picks": [
-  "CC long size=25% conf=MEDIUM",
-  "XDC long size=15% conf=MEDIUM"
+  "BCH long size=18% conf=MEDIUM"
  ],
  "order_errors": [
-  "CC: Kraken: ['EOrder:Insufficient funds']",
-  "XDC: Kraken: ['EOrder:Insufficient funds']"
+  "BCH: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
