@@ -1,36 +1,35 @@
 {
- "time": "2026-07-22T15:00:04",
- "usdc": 94.04,
- "portfolio": 551.9,
+ "time": "2026-07-22T16:00:04",
+ "usdc": 94.03,
+ "portfolio": 557.43,
  "api_billing_blocked": false,
  "margin_headroom": 368.41,
  "open": [
-  "BTC long +6.0%",
-  "SOL long +2.6%",
-  "ETH long +1.9%",
-  "SPCX long -1.4%",
-  "NVDA long +0.5%"
+  "BTC long +6.4%",
+  "SOL long +3.4%",
+  "ETH long +2.4%",
+  "SPCX long -0.2%",
+  "NVDA long +2.5%"
  ],
  "stock_candidates": 11,
  "top_stocks": [
-  "MSTR -4.1% vol=$87,293",
-  "SPCX -3.2% vol=$1,732,118",
-  "CRCL -2.9% vol=$844,241",
-  "HOOD -1.5% vol=$106,488",
-  "NVDA +1.2% vol=$122,608"
+  "CRCL -4.7% vol=$673,862",
+  "NVDA +3.7% vol=$400,812",
+  "SPCX -2.7% vol=$1,450,409",
+  "MSTR -2.5% vol=$74,915",
+  "HOOD -2.2% vol=$84,931"
  ],
  "futures_ok": true,
- "futures_balance": 39.78,
- "futures_float_topup": false,
+ "futures_balance": 43.2,
  "unallocated_spot": [],
- "call_reason": "פוזיציה חלשה: SPCX",
+ "call_reason": "תנועה חזקה במטבע חדש: XDC",
  "claude_called": true,
- "market_read": "השוק הכללי רגוע עם BTC יורד קלות ורוב המטבעות בטווח ניטרלי-שלילי, מה שמחפש הזדמנויות היפוך נקודתיות.",
- "skip_reason": "שאר המועמדים בקריפטו נמוכי נפח או ניטרליים ללא איתות ברור, והמניות ללא נתוני RSI/BB אמינים לכניסה חדשה מעבר לפוזיציות הקיימות.",
+ "market_read": "השוק הקריפטו יציב עם BTC בקונסולידציה קלה, XRP מציג את המומנטום החזק ביותר עם נפח גבוה ותמיכה טכנית.",
+ "skip_reason": "ADA ו-AVAX קרובים ל-BB עליון אך MACD עדיין חיובי כך ששורט מוקדם מדי; XMR/BCH/CC בירידה ללא מומנטום ברור; מניות ה-xStocks (CRCL, SPCX) כבר מוצגות בתיק או חסרות טריגר חזק כרגע.",
  "picks": [
-  "BCH long size=20% conf=MEDIUM"
+  "XRP long size=35% conf=MEDIUM"
  ],
  "order_errors": [
-  "BCH: Kraken: ['EOrder:Insufficient funds']"
+  "XRP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
