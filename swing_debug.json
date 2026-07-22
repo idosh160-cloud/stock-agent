@@ -1,31 +1,35 @@
 {
- "time": "2026-07-22T02:00:05",
- "usdc": 94.07,
- "portfolio": 570.13,
+ "time": "2026-07-22T03:00:05",
+ "usdc": 94.06,
+ "portfolio": 554.5,
  "api_billing_blocked": false,
  "margin_headroom": 368.41,
  "open": [
-  "BTC long +7.0%",
-  "SOL long +3.2%",
-  "ETH long +1.9%",
-  "HOOD long +1.0%"
+  "BTC long +6.9%",
+  "SOL long +2.9%",
+  "ETH long +1.7%",
+  "HOOD long +1.0%",
+  "SPCX long +0.3%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "CRCL +6.2% vol=$972,076",
+  "CRCL +6.3% vol=$960,922",
   "HOOD +5.1% vol=$108,148",
-  "SPCX +3.6% vol=$1,769,180",
-  "MSTR +2.6% vol=$78,943",
-  "CF +2.5% vol=$12,564"
+  "SPCX +3.2% vol=$1,800,456",
+  "CF +2.1% vol=$12,523",
+  "MSTR +2.0% vol=$78,519"
  ],
  "futures_ok": true,
- "futures_balance": 57.98,
+ "futures_balance": 42.96,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במניה: CRCL, SPCX, MSTR",
+ "call_reason": "תנועה חזקה במניה: CRCL, CF, MSTR",
  "claude_called": true,
- "market_read": "השוק הכללי נייטרלי-חיובי עם BTC יציב סביב 66.4K וכל הפוזיציות הפתוחות מתקדמות יפה ליעד.",
- "skip_reason": "שאר המועמדים בקריפטו נמצאים ב-RSI אמצעי ללא איתות ברור, וה-xStocks האחרים (CRCL, MSTR) כבר רצו חזק יותר ופחות אטרקטיביים מבחינת יחס סיכון-סיכוי כרגע.",
+ "market_read": "השוק הקריפטו יציב עם BTC בטווח צר ורוב האלטקוינים במגמה מתונה, XMR בולט עם מומנטום MACD חיובי חד.",
+ "skip_reason": "TON ו-BCH קרובים מדי לרוויה עם נפח דליל מדי לפוזיציה בטוחה, ADA ו-DOT ניטרליים ללא איתות ברור, מניות TSLA/SPCX/HOOD כבר בתיק ולא מצדיקות תוספת.",
  "picks": [
-  "SPCX long size=25% conf=MEDIUM"
+  "XMR long size=20% conf=MEDIUM"
+ ],
+ "order_errors": [
+  "XMR: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
