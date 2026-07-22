@@ -1,31 +1,36 @@
 {
- "time": "2026-07-22T14:00:05",
- "usdc": 93.97,
- "portfolio": 558.11,
+ "time": "2026-07-22T15:00:04",
+ "usdc": 94.04,
+ "portfolio": 551.9,
  "api_billing_blocked": false,
  "margin_headroom": 368.41,
  "open": [
-  "BTC long +6.3%",
+  "BTC long +6.0%",
   "SOL long +2.6%",
-  "ETH long +2.2%",
-  "SPCX long -1.1%"
+  "ETH long +1.9%",
+  "SPCX long -1.4%",
+  "NVDA long +0.5%"
  ],
  "stock_candidates": 11,
  "top_stocks": [
-  "MSTR -2.3% vol=$72,762",
-  "SPCX -2.0% vol=$1,962,332",
-  "NVDA +1.6% vol=$108,636",
-  "HOOD -1.4% vol=$102,835",
-  "GLD +1.4% vol=$18,677"
+  "MSTR -4.1% vol=$87,293",
+  "SPCX -3.2% vol=$1,732,118",
+  "CRCL -2.9% vol=$844,241",
+  "HOOD -1.5% vol=$106,488",
+  "NVDA +1.2% vol=$122,608"
  ],
  "futures_ok": true,
- "futures_balance": 44.88,
+ "futures_balance": 39.78,
+ "futures_float_topup": false,
  "unallocated_spot": [],
  "call_reason": "פוזיציה חלשה: SPCX",
  "claude_called": true,
- "market_read": "השוק הקריפטו נייטרלי עם RSI סביב 40-60 ברוב המטבעות ללא איתות ברור, בעוד מניות טוקניזציה מציגות מומנטום מתון יותר.",
- "skip_reason": "מטבעות הקריפטו (XDC, XMR, CC, BCH, DOGE, AVAX) נמצאים באזור נייטרלי או בנפח נמוך מדי ללא איתות חד-משמעי, ולכן דילגתי עליהם לטובת הזדמנות ברורה יותר במניה.",
+ "market_read": "השוק הכללי רגוע עם BTC יורד קלות ורוב המטבעות בטווח ניטרלי-שלילי, מה שמחפש הזדמנויות היפוך נקודתיות.",
+ "skip_reason": "שאר המועמדים בקריפטו נמוכי נפח או ניטרליים ללא איתות ברור, והמניות ללא נתוני RSI/BB אמינים לכניסה חדשה מעבר לפוזיציות הקיימות.",
  "picks": [
-  "NVDA long size=20% conf=MEDIUM"
+  "BCH long size=20% conf=MEDIUM"
+ ],
+ "order_errors": [
+  "BCH: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
