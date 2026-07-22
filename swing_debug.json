@@ -1,30 +1,30 @@
 {
- "time": "2026-07-22T21:00:04",
+ "time": "2026-07-22T22:00:04",
  "usdc": 93.98,
- "portfolio": 564.31,
+ "portfolio": 565.95,
  "api_billing_blocked": false,
  "margin_headroom": 368.41,
  "open": [
-  "BTC long +6.2%",
-  "SOL long +2.5%",
-  "ETH long +1.5%",
-  "NVDA long +2.2%"
+  "BTC long +6.5%",
+  "SOL long +2.8%",
+  "ETH long +2.2%",
+  "NVDA long +1.4%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "SPCX -6.5% vol=$2,165,789",
-  "CRCL -6.3% vol=$427,091",
-  "GOOGL -5.6% vol=$84,387",
-  "TSLA -3.7% vol=$403,155",
-  "MSTR -2.7% vol=$60,805"
+  "SPCX -7.6% vol=$2,170,855",
+  "CRCL -6.2% vol=$440,461",
+  "GOOGL -6.2% vol=$107,906",
+  "TSLA -5.5% vol=$494,304",
+  "CF +2.9% vol=$39,816"
  ],
  "futures_ok": true,
- "futures_balance": 53.6,
+ "futures_balance": 52.68,
  "unallocated_spot": [],
  "call_reason": "תנועה חזקה במטבע חדש: CC, XDC",
  "claude_called": true,
- "market_read": "השוק הכללי נסחר בטווח צר עם BTC כמעט שטוח, אבל כמה אלטקוינים קטנים נכנסו לאזור oversold שמציע הזדמנויות ריבאונד קצרות טווח.",
- "skip_reason": "שאר המועמדים (XDC, BCH, XMR) פחות ברורים - BCH קרוב אבל ה-MACD שלילי חזק מדי, ומניות ה-xStocks לא מציגות כרגע יתרון סיכון/סיכוי ברור מספיק מול הפוזיציות הפתוחות שכבר בדרך ליעד.",
+ "market_read": "השוק הכללי נסחר בטווח צר עם BTC יציב סביב 66K, אך כמה מטבעות אלט ומניות טוקניזציה נמצאים באזורי oversold/overbought קיצוניים המציעים הזדמנויות ממוקדות.",
+ "skip_reason": "שאר המועמדים בקריפטו (BCH, XDC, DOT) חסרי מומנטום ברור או נפח נמוך מדי, ומניות ה-xStocks שירדו חזק (SPCX, CRCL, GOOGL, TSLA) חוזרות על היסטוריית הפסדים חוזרת ונשנית ללא אישור טכני חזק מספיק כרגע.",
  "picks": [
   "CC long size=25% conf=MEDIUM"
  ],
