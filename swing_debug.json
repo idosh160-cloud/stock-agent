@@ -1,33 +1,33 @@
 {
- "time": "2026-07-22T04:00:05",
- "usdc": 94.05,
- "portfolio": 553.27,
+ "time": "2026-07-22T05:00:05",
+ "usdc": 94.03,
+ "portfolio": 555.5,
  "api_billing_blocked": false,
  "margin_headroom": 368.41,
  "open": [
-  "BTC long +6.7%",
-  "SOL long +2.6%",
-  "ETH long +1.6%",
-  "HOOD long +1.0%",
-  "SPCX long -0.2%"
+  "BTC long +7.0%",
+  "SOL long +2.8%",
+  "ETH long +2.0%",
+  "HOOD long -0.2%",
+  "SPCX long -0.4%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "HOOD +5.1% vol=$108,148",
-  "CRCL +4.2% vol=$928,145",
-  "SPCX +2.4% vol=$1,803,531",
-  "CF +2.1% vol=$12,523",
-  "TSLA +1.9% vol=$214,378"
+  "CRCL +4.8% vol=$934,515",
+  "HOOD +3.9% vol=$106,918",
+  "SPCX +2.3% vol=$1,800,815",
+  "TSLA +1.9% vol=$188,905",
+  "GOOGL -1.6% vol=$141,222"
  ],
  "futures_ok": true,
- "futures_balance": 42.18,
+ "futures_balance": 42.71,
  "unallocated_spot": [],
  "call_reason": "תנועה חזקה במטבע חדש: TON",
  "claude_called": true,
- "market_read": "השוק הכללי נייטרלי-שלילי מעט עם BTC מתקרב ליעד ורוב האלטקוינים בטווח דחוס ללא מגמה ברורה.",
- "skip_reason": "שאר המועמדים או overbought עם נפח נמוך מדי (TON, BCH) או שכבר יש חשיפה דומה בתיק (HOOD, SPCX, SOL, ETH, BTC) כך שאין הצדקה לכפילות.",
+ "market_read": "השוק הקריפטו נסחר בטווח צר עם BTC ו-ETH יציבים, ורוב האלטקוינים נטולי מומנטום חד למעט LTC שנראה במכירת יתר.",
+ "skip_reason": "TON ו-XDC נראים overbought מדי (RSI>67, BB%>79) לפוזיציית לונג ונפח המסחר שלהם נמוך מדי לשורט בטוח; מניות כמו CRCL עם היסטוריית הפסדים גרועה ובלי סימנים טכניים ברורים לא מצדיקות כניסה כרגע.",
  "picks": [
-  "LTC long size=18% conf=MEDIUM"
+  "LTC long size=20% conf=MEDIUM"
  ],
  "order_errors": [
   "LTC: Kraken: ['EOrder:Invalid leverage']"
