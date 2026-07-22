@@ -1,34 +1,34 @@
 {
- "time": "2026-07-22T22:00:04",
+ "time": "2026-07-22T23:00:05",
  "usdc": 93.98,
- "portfolio": 565.95,
+ "portfolio": 565.72,
  "api_billing_blocked": false,
  "margin_headroom": 368.41,
  "open": [
-  "BTC long +6.5%",
+  "BTC long +6.4%",
   "SOL long +2.8%",
-  "ETH long +2.2%",
-  "NVDA long +1.4%"
+  "ETH long +2.1%",
+  "NVDA long +1.8%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "SPCX -7.6% vol=$2,170,855",
-  "CRCL -6.2% vol=$440,461",
-  "GOOGL -6.2% vol=$107,906",
-  "TSLA -5.5% vol=$494,304",
-  "CF +2.9% vol=$39,816"
+  "SPCX -7.1% vol=$2,264,975",
+  "CRCL -6.2% vol=$443,382",
+  "TSLA -5.8% vol=$493,588",
+  "GOOGL -5.6% vol=$113,522",
+  "CF +3.4% vol=$40,018"
  ],
  "futures_ok": true,
- "futures_balance": 52.68,
+ "futures_balance": 52.65,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במטבע חדש: CC, XDC",
+ "call_reason": "תנועה חזקה במטבע חדש: XDC, CC",
  "claude_called": true,
- "market_read": "השוק הכללי נסחר בטווח צר עם BTC יציב סביב 66K, אך כמה מטבעות אלט ומניות טוקניזציה נמצאים באזורי oversold/overbought קיצוניים המציעים הזדמנויות ממוקדות.",
- "skip_reason": "שאר המועמדים בקריפטו (BCH, XDC, DOT) חסרי מומנטום ברור או נפח נמוך מדי, ומניות ה-xStocks שירדו חזק (SPCX, CRCL, GOOGL, TSLA) חוזרות על היסטוריית הפסדים חוזרת ונשנית ללא אישור טכני חזק מספיק כרגע.",
+ "market_read": "השוק הכללי בטווח נייטרלי-חיובי עם BTC יציב סביב 66K ומניות ה-xStocks מציגות ירידות חדות שיוצרות הזדמנויות מיין-ריברסל.",
+ "skip_reason": "CRCL/SPCX/HOOD נדחים בגלל היסטוריה שלילית עקבית ללא סיגנל טכני חזק דיו לשבור את הדפוס; שאר הקריפטו (XDC, CC, BCH) בנפח מסחר נמוך מדי או ללא מומנטום ברור.",
  "picks": [
-  "CC long size=25% conf=MEDIUM"
+  "TSLA long size=30% conf=MEDIUM"
  ],
- "order_errors": [
-  "CC: Kraken: ['EOrder:Insufficient funds']"
+ "skips": [
+  "TSLA: margin $53 < needed $57 (after transfer attempt)"
  ]
 }
