@@ -1,35 +1,35 @@
 {
- "time": "2026-07-22T08:00:05",
- "usdc": 94.02,
- "portfolio": 548.32,
+ "time": "2026-07-22T09:00:05",
+ "usdc": 94.0,
+ "portfolio": 551.07,
  "api_billing_blocked": false,
  "margin_headroom": 368.41,
  "open": [
-  "BTC long +6.1%",
-  "SOL long +1.6%",
-  "ETH long +0.8%",
+  "BTC long +6.3%",
+  "SOL long +2.0%",
+  "ETH long +1.2%",
   "HOOD long -1.2%",
-  "SPCX long -0.9%"
+  "SPCX long -0.4%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
   "HOOD +2.9% vol=$106,162",
-  "GOOGL -2.1% vol=$126,171",
-  "GLD +1.6% vol=$26,430",
-  "CRCL +1.4% vol=$824,524",
-  "SPCX +1.4% vol=$1,820,891"
+  "GOOGL -1.9% vol=$125,774",
+  "GLD +1.9% vol=$22,978",
+  "SPCX +1.8% vol=$1,811,841",
+  "TSLA +1.3% vol=$206,253"
  ],
  "futures_ok": true,
- "futures_balance": 40.5,
+ "futures_balance": 41.81,
  "unallocated_spot": [],
  "call_reason": "פוזיציה חלשה: HOOD",
  "claude_called": true,
- "market_read": "השוק נמצא בקונסולידציה קלה עם RSI בטווח 35-45 ברוב הנכסים, ללא סיגנל חד של פריצה או קריסה, לכן דיפ-ביי סלקטיבי הוא הפעולה ההגיונית.",
- "skip_reason": "שאר המטבעות (BCH, DOGE, LINK, XMR, CC) עם נפח נמוך או סיגנל חלש מדי, והמניות לא מציגות קיצוניות RSI/BB% שמצדיקה שורט או לונג נוסף מעבר לפוזיציות הקיימות.",
+ "market_read": "השוק כרגע נייטרלי עם נטייה קלה לירידה, רוב המטבעות והמניות קרובים לתחתית הטווח היומי בלי מומנטום חד בשני הכיוונים.",
+ "skip_reason": "שאר המועמדים מציגים MACD שלילי חד או נפח מסחר נמוך מדי, מה שהופך אותם לפחות אמינים לעומת LTC כהזדמנות B+ ברורה.",
  "picks": [
-  "ADA long size=20% conf=MEDIUM"
+  "LTC long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "ADA: Kraken: ['EOrder:Insufficient funds']"
+  "LTC: Kraken: ['EOrder:Invalid leverage']"
  ]
 }
