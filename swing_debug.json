@@ -1,34 +1,31 @@
 {
- "time": "2026-07-22T13:00:06",
+ "time": "2026-07-22T14:00:05",
  "usdc": 93.97,
- "portfolio": 546.92,
+ "portfolio": 558.11,
  "api_billing_blocked": false,
  "margin_headroom": 368.41,
  "open": [
-  "BTC long +5.8%",
-  "SOL long +1.8%",
-  "ETH long +1.0%",
-  "SPCX long -1.7%"
+  "BTC long +6.3%",
+  "SOL long +2.6%",
+  "ETH long +2.2%",
+  "SPCX long -1.1%"
  ],
  "stock_candidates": 11,
  "top_stocks": [
-  "MSTR -2.2% vol=$75,941",
-  "GLD +1.3% vol=$18,862",
-  "TSLA +1.2% vol=$170,405",
-  "HOOD -0.9% vol=$108,021",
-  "QQQ -0.7% vol=$35,499"
+  "MSTR -2.3% vol=$72,762",
+  "SPCX -2.0% vol=$1,962,332",
+  "NVDA +1.6% vol=$108,636",
+  "HOOD -1.4% vol=$102,835",
+  "GLD +1.4% vol=$18,677"
  ],
  "futures_ok": true,
- "futures_balance": 43.88,
+ "futures_balance": 44.88,
  "unallocated_spot": [],
  "call_reason": "פוזיציה חלשה: SPCX",
  "claude_called": true,
- "market_read": "השוק הקריפטו כרגע במגמת תיקון קלה עם רוב הנכסים ליד תמיכה תחתונה, ומניות מפוצלות בין מומנטום חלש לצדדים.",
- "skip_reason": "שאר המועמדים בקריפטו כמו XDC ו-DOGE סובלים מנפח מסחר נמוך מדי, ומניות ה-xStocks לא מציגות סטאפ ברור של פריצה או מיצוי כרגע.",
+ "market_read": "השוק הקריפטו נייטרלי עם RSI סביב 40-60 ברוב המטבעות ללא איתות ברור, בעוד מניות טוקניזציה מציגות מומנטום מתון יותר.",
+ "skip_reason": "מטבעות הקריפטו (XDC, XMR, CC, BCH, DOGE, AVAX) נמצאים באזור נייטרלי או בנפח נמוך מדי ללא איתות חד-משמעי, ולכן דילגתי עליהם לטובת הזדמנות ברורה יותר במניה.",
  "picks": [
-  "CC long size=15% conf=MEDIUM"
- ],
- "order_errors": [
-  "CC: Kraken: ['EOrder:Insufficient funds']"
+  "NVDA long size=20% conf=MEDIUM"
  ]
 }
