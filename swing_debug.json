@@ -1,35 +1,28 @@
 {
- "time": "2026-07-22T09:00:05",
+ "time": "2026-07-22T10:00:04",
  "usdc": 94.0,
- "portfolio": 551.07,
+ "portfolio": 551.59,
  "api_billing_blocked": false,
  "margin_headroom": 368.41,
  "open": [
-  "BTC long +6.3%",
-  "SOL long +2.0%",
-  "ETH long +1.2%",
-  "HOOD long -1.2%",
-  "SPCX long -0.4%"
+  "BTC long +6.2%",
+  "SOL long +2.2%",
+  "ETH long +1.4%",
+  "HOOD long -1.1%",
+  "SPCX long -0.5%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "HOOD +2.9% vol=$106,162",
-  "GOOGL -1.9% vol=$125,774",
-  "GLD +1.9% vol=$22,978",
-  "SPCX +1.8% vol=$1,811,841",
-  "TSLA +1.3% vol=$206,253"
+  "HOOD +2.9% vol=$107,875",
+  "SPCX +2.0% vol=$1,893,640",
+  "GLD +2.0% vol=$19,081",
+  "GOOGL -1.9% vol=$123,533",
+  "TSLA +1.1% vol=$212,504"
  ],
  "futures_ok": true,
- "futures_balance": 41.81,
+ "futures_balance": 41.56,
  "unallocated_spot": [],
  "call_reason": "פוזיציה חלשה: HOOD",
- "claude_called": true,
- "market_read": "השוק כרגע נייטרלי עם נטייה קלה לירידה, רוב המטבעות והמניות קרובים לתחתית הטווח היומי בלי מומנטום חד בשני הכיוונים.",
- "skip_reason": "שאר המועמדים מציגים MACD שלילי חד או נפח מסחר נמוך מדי, מה שהופך אותם לפחות אמינים לעומת LTC כהזדמנות B+ ברורה.",
- "picks": [
-  "LTC long size=20% conf=MEDIUM"
- ],
- "order_errors": [
-  "LTC: Kraken: ['EOrder:Invalid leverage']"
- ]
+ "claude_called": false,
+ "skip": "snapshot זהה לקריאה הקודמת"
 }
