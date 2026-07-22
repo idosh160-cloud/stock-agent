@@ -1,34 +1,34 @@
 {
- "time": "2026-07-22T17:00:07",
+ "time": "2026-07-22T18:00:05",
  "usdc": 94.01,
- "portfolio": 555.74,
+ "portfolio": 567.3,
  "api_billing_blocked": false,
  "margin_headroom": 368.41,
  "open": [
-  "BTC long +6.7%",
-  "SOL long +3.5%",
-  "ETH long +2.8%",
-  "NVDA long +2.5%"
+  "BTC long +6.4%",
+  "SOL long +3.0%",
+  "ETH long +2.2%",
+  "NVDA long +2.9%"
  ],
- "stock_candidates": 11,
+ "stock_candidates": 12,
  "top_stocks": [
-  "SPCX -5.7% vol=$1,424,519",
-  "CRCL -4.6% vol=$620,761",
-  "NVDA +3.5% vol=$554,128",
+  "SPCX -6.9% vol=$1,804,695",
+  "CRCL -5.5% vol=$622,753",
+  "NVDA +3.7% vol=$558,217",
   "HOOD -1.9% vol=$82,073",
-  "AAPL -1.2% vol=$16,395"
+  "CF +1.2% vol=$19,389"
  ],
  "futures_ok": true,
- "futures_balance": 54.22,
+ "futures_balance": 53.99,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במטבע חדש: XDC, ADA",
+ "call_reason": "תנועה חזקה במטבע חדש: XDC, CC",
  "claude_called": true,
- "market_read": "השוק הכללי במצב ניטרלי-חיובי עם רוב הקריפטו הגדול (BTC, ETH, SOL) קרוב לגבול העליון, בעוד כמה מטבעות קטנים נכנסו לאזור oversold שמציע כניסות טובות.",
- "skip_reason": "ADA ו-XRP נראים overbought אך ה-MACD עדיין חיובי כך שהמומנטום לא התהפך — מסוכן לשורט; שאר המניות (NVDA, HOOD, MSTR) כבר בפוזיציה או חסרות סיגנל ברור כרגע.",
+ "market_read": "השוק הכללי נייטרלי עם BTC בטווח צר, אך כמה אלטקוינים מציגים oversold ברור המתאים לכניסה סלקטיבית.",
+ "skip_reason": "שאר המועמדים או overbought (ADA, XRP, LTC) בלי סיגנל שורט חד, או בעלי היסטוריה שלילית וללא קונפירמציה חזקה מספיק (CRCL, SPCX, HOOD).",
  "picks": [
-  "XDC long size=20% conf=MEDIUM"
+  "CC long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "XDC: Kraken: ['EOrder:Insufficient funds']"
+  "CC: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
