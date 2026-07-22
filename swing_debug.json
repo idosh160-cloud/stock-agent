@@ -1,35 +1,35 @@
 {
- "time": "2026-07-22T03:00:05",
- "usdc": 94.06,
- "portfolio": 554.5,
+ "time": "2026-07-22T04:00:05",
+ "usdc": 94.05,
+ "portfolio": 553.27,
  "api_billing_blocked": false,
  "margin_headroom": 368.41,
  "open": [
-  "BTC long +6.9%",
-  "SOL long +2.9%",
-  "ETH long +1.7%",
+  "BTC long +6.7%",
+  "SOL long +2.6%",
+  "ETH long +1.6%",
   "HOOD long +1.0%",
-  "SPCX long +0.3%"
+  "SPCX long -0.2%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "CRCL +6.3% vol=$960,922",
   "HOOD +5.1% vol=$108,148",
-  "SPCX +3.2% vol=$1,800,456",
+  "CRCL +4.2% vol=$928,145",
+  "SPCX +2.4% vol=$1,803,531",
   "CF +2.1% vol=$12,523",
-  "MSTR +2.0% vol=$78,519"
+  "TSLA +1.9% vol=$214,378"
  ],
  "futures_ok": true,
- "futures_balance": 42.96,
+ "futures_balance": 42.18,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במניה: CRCL, CF, MSTR",
+ "call_reason": "תנועה חזקה במטבע חדש: TON",
  "claude_called": true,
- "market_read": "השוק הקריפטו יציב עם BTC בטווח צר ורוב האלטקוינים במגמה מתונה, XMR בולט עם מומנטום MACD חיובי חד.",
- "skip_reason": "TON ו-BCH קרובים מדי לרוויה עם נפח דליל מדי לפוזיציה בטוחה, ADA ו-DOT ניטרליים ללא איתות ברור, מניות TSLA/SPCX/HOOD כבר בתיק ולא מצדיקות תוספת.",
+ "market_read": "השוק הכללי נייטרלי-שלילי מעט עם BTC מתקרב ליעד ורוב האלטקוינים בטווח דחוס ללא מגמה ברורה.",
+ "skip_reason": "שאר המועמדים או overbought עם נפח נמוך מדי (TON, BCH) או שכבר יש חשיפה דומה בתיק (HOOD, SPCX, SOL, ETH, BTC) כך שאין הצדקה לכפילות.",
  "picks": [
-  "XMR long size=20% conf=MEDIUM"
+  "LTC long size=18% conf=MEDIUM"
  ],
  "order_errors": [
-  "XMR: Kraken: ['EOrder:Insufficient funds']"
+  "LTC: Kraken: ['EOrder:Invalid leverage']"
  ]
 }
