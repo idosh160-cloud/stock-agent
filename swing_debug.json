@@ -1,35 +1,37 @@
 {
- "time": "2026-07-23T18:00:05",
+ "time": "2026-07-23T19:00:04",
  "usdc": 92.9,
- "portfolio": 538.63,
+ "portfolio": 538.36,
  "api_billing_blocked": false,
  "margin_headroom": 345.85,
  "open": [
-  "BTC long +3.0%",
-  "NVDA long +0.4%",
-  "TSLA short +10.9%",
-  "ETH long -0.9%"
+  "BTC long +3.3%",
+  "NVDA long -0.3%",
+  "TSLA short +11.2%",
+  "ETH long -0.8%"
  ],
  "stock_candidates": 13,
  "top_stocks": [
-  "TSLA -14.5% vol=$899,930",
-  "GOOGL -7.4% vol=$551,141",
-  "MSTR -6.2% vol=$162,608",
+  "TSLA -14.6% vol=$895,959",
+  "GOOGL -7.8% vol=$679,086",
+  "MSTR -5.8% vol=$160,762",
   "OPENAI +5.4% vol=$15,344",
   "HOOD -4.4% vol=$73,064"
  ],
  "futures_ok": true,
- "futures_balance": 39.61,
+ "futures_balance": 38.89,
  "futures_float_topup": false,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במטבע חדש: DOGE, ADA, XRP",
+ "call_reason": "תנועה חזקה במטבע חדש: DOGE, XRP",
  "claude_called": true,
- "market_read": "יש מכירת יתר רוחבית בכל שוק הקריפטו (BTC, ETH, SOL, ADA כולם RSI מתחת ל-30) שנראית כמו תיקון טכני ולא היפוך מגמה, מה שמייצר הזדמנות קנייה בתחתית.",
- "skip_reason": "שאר המועמדים (DOGE, AVAX, XRP, DOT, LINK, XDC) בעלי ווליום נמוך מדי או היסטוריה שלילית ללא שיפור משמעותי בתנאים, והמניות כרגע לא מציעות יתרון ברור על פני קריפטו.",
+ "market_read": "השוק הקריפטו כולו נמצא במצב oversold חד עם BTC ואלטים במגמת ירידה קצרת טווח שנראית כמיצוי מכירות ולא כהמשך מגמה.",
+ "skip_reason": "AVAX ו-DOGE נפח נמוך יותר ותנודתיות גבוהה מדי ביחס לרווח הפוטנציאלי; הפוזיציות הפתוחות (BTC, TSLA, NVDA, ETH) בתהליך תקין ולא מצריכות רוטציה.",
  "picks": [
-  "SOL long size=20% conf=HIGH"
+  "SOL long size=30% conf=HIGH",
+  "XRP long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "SOL: Kraken: ['EOrder:Insufficient funds']"
+  "SOL: Kraken: ['EOrder:Insufficient funds']",
+  "XRP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
