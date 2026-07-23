@@ -1,34 +1,35 @@
 {
- "time": "2026-07-23T01:00:04",
+ "time": "2026-07-23T02:00:04",
  "usdc": 93.95,
- "portfolio": 565.71,
+ "portfolio": 564.42,
  "api_billing_blocked": false,
  "margin_headroom": 368.41,
  "open": [
-  "BTC long +6.4%",
-  "SOL long +3.1%",
-  "ETH long +1.9%",
+  "BTC long +6.1%",
+  "SOL long +2.7%",
+  "ETH long +1.7%",
   "NVDA long +2.3%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "SPCX -6.6% vol=$2,271,185",
-  "CRCL -5.7% vol=$451,233",
+  "SPCX -7.1% vol=$2,230,620",
+  "CRCL -5.0% vol=$450,022",
   "TSLA -4.7% vol=$503,399",
-  "GOOGL -4.3% vol=$117,571",
-  "NVDA +3.1% vol=$605,003"
+  "GOOGL -4.3% vol=$118,752",
+  "NVDA +3.1% vol=$604,992"
  ],
  "futures_ok": true,
- "futures_balance": 53.64,
+ "futures_balance": 53.13,
  "unallocated_spot": [],
  "call_reason": "תנועה חזקה במטבע חדש: XDC",
  "claude_called": true,
- "market_read": "השוק הכללי נייטרלי עם BTC יציב סביב 66K וכמה אלטים מראים מומנטום חיובי מתון בלי סימני מיצוי.",
- "skip_reason": "שאר המועמדים (BTC, SOL, ETH, LINK, ADA) כבר בפוזיציות פתוחות או ניטרליים מדי מבחינת RSI/BB ללא יתרון ברור, והמניות מציגות תנודות חדות ללא אישור מגמה ברור.",
+ "market_read": "השוק היום נראה מעורב עם BTC וה-ETH נסחרים בצד, בעוד כמה מניות טוקניות רושמות ירידות חדות שיכולות להצביע על המשך מומנטום שלילי.",
+ "skip_reason": "שאר המטבעות (XRP, ADA, XMR) נראים ניטרליים ללא כיוון ברור, ו-SOL/ETH/BTC/NVDA כבר פתוחים ומתקדמים לכיוון היעד כך שאין סיבה לסובב אותם.",
  "picks": [
-  "XMR long size=20% conf=MEDIUM"
+  "BCH long size=22% conf=MEDIUM",
+  "TSLA short size=15% conf=MEDIUM"
  ],
  "order_errors": [
-  "XMR: Kraken: ['EOrder:Insufficient funds']"
+  "BCH: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
