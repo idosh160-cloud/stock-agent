@@ -1,36 +1,36 @@
 {
- "time": "2026-07-23T10:00:05",
+ "time": "2026-07-23T11:00:05",
  "usdc": 93.74,
- "portfolio": 557.57,
+ "portfolio": 558.49,
  "api_billing_blocked": false,
  "margin_headroom": 371.57,
  "open": [
-  "BTC long +5.8%",
-  "SOL long +2.1%",
-  "NVDA long +1.6%",
-  "TSLA short +2.0%"
+  "BTC long +5.9%",
+  "SOL long +2.4%",
+  "NVDA long +1.5%",
+  "TSLA short +2.2%"
  ],
  "stock_candidates": 11,
  "top_stocks": [
-  "SPCX -6.6% vol=$2,109,606",
-  "TSLA -6.2% vol=$620,244",
-  "GOOGL -6.1% vol=$118,439",
-  "CRCL -3.1% vol=$444,999",
-  "NVDA +2.8% vol=$603,977"
+  "TSLA -6.5% vol=$639,033",
+  "SPCX -6.2% vol=$2,125,798",
+  "GOOGL -5.8% vol=$119,475",
+  "CRCL -3.7% vol=$443,769",
+  "NVDA +2.9% vol=$608,172"
  ],
  "futures_ok": true,
- "futures_balance": 47.67,
+ "futures_balance": 47.71,
  "unallocated_spot": [
   "ETH $384"
  ],
  "call_reason": "תנועה חזקה במניה: SPCX, GOOGL, CRCL",
  "claude_called": true,
- "market_read": "השוק הקריפטו נסחר בטווח צר עם רוב הנכסים ניטרליים-שליליים, אין מומנטום חזק ברור אבל DOT מראה סימני oversold מובהקים.",
- "skip_reason": "שאר המועמדים (CC, DOGE, BCH, XMR) נמצאים באזורי RSI ניטרליים או בנפח מסחר חלש מדי, והמניות ברובן ללא סיגנל SHORT/LONG חד; ETH המוחזק נשאר כפוזיציה פסיבית שכן היסטוריית ETH חיובית ואין סיבה למכור כרגע.",
+ "market_read": "השוק הכללי רגוע יחסית עם BTC בטווח צר, אך כמה אלטקוינים הגיעו לאזורי oversold ברורים שמעניקים הזדמנות כניסה קצרת טווח.",
+ "skip_reason": "שאר המועמדים (DOT, CC, DOGE) בעלי נפח מסחר נמוך מדי או סיגנל חלש יחסית לעומת BCH, והפוזיציות הקיימות כולן ברווח ומתקדמות ליעד כך שאין סיבה לסובב אותן.",
  "picks": [
-  "DOT long size=22% conf=MEDIUM"
+  "BCH long size=25% conf=MEDIUM"
  ],
  "order_errors": [
-  "DOT: Kraken: ['EOrder:Invalid leverage']"
+  "BCH: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
