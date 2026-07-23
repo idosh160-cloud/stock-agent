@@ -1,36 +1,36 @@
 {
- "time": "2026-07-23T09:00:05",
+ "time": "2026-07-23T10:00:05",
  "usdc": 93.74,
- "portfolio": 558.43,
+ "portfolio": 557.57,
  "api_billing_blocked": false,
  "margin_headroom": 371.57,
  "open": [
   "BTC long +5.8%",
   "SOL long +2.1%",
-  "NVDA long +1.4%",
-  "TSLA short +2.1%"
+  "NVDA long +1.6%",
+  "TSLA short +2.0%"
  ],
  "stock_candidates": 11,
  "top_stocks": [
-  "TSLA -6.7% vol=$616,590",
-  "SPCX -6.4% vol=$2,200,609",
-  "GOOGL -5.3% vol=$117,724",
-  "NVDA +2.9% vol=$599,505",
-  "MSTR -2.6% vol=$68,110"
+  "SPCX -6.6% vol=$2,109,606",
+  "TSLA -6.2% vol=$620,244",
+  "GOOGL -6.1% vol=$118,439",
+  "CRCL -3.1% vol=$444,999",
+  "NVDA +2.8% vol=$603,977"
  ],
  "futures_ok": true,
- "futures_balance": 48.07,
+ "futures_balance": 47.67,
  "unallocated_spot": [
   "ETH $384"
  ],
- "call_reason": "תנועה חזקה במניה: SPCX, GOOGL, MSTR",
+ "call_reason": "תנועה חזקה במניה: SPCX, GOOGL, CRCL",
  "claude_called": true,
- "market_read": "השוק הקריפטו כרגע רגוע יחסית עם רוב הנכסים בטווח ניטרלי-שלילי קל, אבל כמה מטבעות מציגים סימני oversold ברורים המתאימים לכניסת לונג.",
- "skip_reason": "שאר המועמדים (CC, DOT, DOGE, AVAX) חלשים יותר מבחינת נפח מסחר או סיגנל פחות ברור, ולכן דילגתי עליהם לטובת ריכוז הכסח הפנוי ב-BCH כתמונה הטובה ביותר כרגע.",
+ "market_read": "השוק הקריפטו נסחר בטווח צר עם רוב הנכסים ניטרליים-שליליים, אין מומנטום חזק ברור אבל DOT מראה סימני oversold מובהקים.",
+ "skip_reason": "שאר המועמדים (CC, DOGE, BCH, XMR) נמצאים באזורי RSI ניטרליים או בנפח מסחר חלש מדי, והמניות ברובן ללא סיגנל SHORT/LONG חד; ETH המוחזק נשאר כפוזיציה פסיבית שכן היסטוריית ETH חיובית ואין סיבה למכור כרגע.",
  "picks": [
-  "BCH long size=20% conf=MEDIUM"
+  "DOT long size=22% conf=MEDIUM"
  ],
  "order_errors": [
-  "BCH: Kraken: ['EOrder:Insufficient funds']"
+  "DOT: Kraken: ['EOrder:Invalid leverage']"
  ]
 }
