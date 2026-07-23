@@ -1,39 +1,38 @@
 {
- "time": "2026-07-23T14:00:05",
- "usdc": 93.72,
- "portfolio": 541.81,
+ "time": "2026-07-23T15:00:08",
+ "usdc": 93.71,
+ "portfolio": 538.21,
  "api_billing_blocked": false,
- "margin_headroom": 371.57,
+ "margin_headroom": 381.21,
  "open": [
   "BTC long +4.6%",
-  "SOL long +1.1%",
-  "NVDA long +0.3%",
-  "TSLA short +9.6%",
-  "GOOGL long -1.1%"
+  "NVDA long -0.4%",
+  "TSLA short +10.8%"
  ],
  "stock_candidates": 13,
  "top_stocks": [
-  "TSLA -13.3% vol=$827,605",
-  "GOOGL -7.8% vol=$148,199",
-  "SPCX -7.8% vol=$1,945,867",
-  "CRCL -6.7% vol=$399,251",
-  "MSTR -4.2% vol=$78,038"
+  "TSLA -14.5% vol=$1,012,686",
+  "SPCX -9.2% vol=$2,044,585",
+  "CRCL -8.9% vol=$486,749",
+  "GOOGL -8.8% vol=$217,820",
+  "MSTR -6.0% vol=$54,673"
  ],
  "futures_ok": true,
- "futures_balance": 37.25,
+ "futures_balance": 39.13,
  "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $379"
+  "ETH $378"
  ],
- "call_reason": "פוזיציה חלשה: GOOGL",
+ "call_reason": "תנועה חזקה במטבע חדש: DOGE, CC",
  "claude_called": true,
- "market_read": "השוק הרחב במגמת ירידה קלה עם קריפטו רבות oversold, מה שיוצר הזדמנויות ריבאונד קצרות טווח.",
- "skip_reason": "פוזיציות BTC/SOL/NVDA/TSLA/GOOGL כבר פתוחות ובתנועה תקינה לעבר היעד, אין סיבה לסובב אותן; DOGE/DOT/AVAX נפח מסחר נמוך מדי לסחור בביטחון.",
+ "market_read": "השוק בקורקשן קלה עם רוב הקריפטו ב-oversold אך ווליום עדיין תקין — מתאים לכניסות ריבאונד סלקטיביות בלי לגעת בפוזיציות הקיימות שמתקדמות ליעד.",
+ "skip_reason": "BTC/NVDA/TSLA כבר פתוחות ומתקדמות כראוי; ETH הספוט נשאר כפוזיציה פסיבית שכן ה-RSI שלו נמוך אך ה-MACD שלילי מאוד ולא מספיק חד-משמעי לכניסה ממונפת נוספת; מניות ה-xStocks האחרות (SPCX, CRCL, GOOGL) חסרות אישור טכני ברור לכיוון מסחר עכשיו.",
  "picks": [
-  "XRP long size=28% conf=MEDIUM"
+  "SOL long size=25% conf=HIGH",
+  "XRP long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
+  "SOL: Kraken: ['EOrder:Insufficient funds']",
   "XRP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
