@@ -1,35 +1,35 @@
 {
- "time": "2026-07-23T05:00:05",
+ "time": "2026-07-23T06:00:05",
  "usdc": 93.92,
- "portfolio": 557.49,
+ "portfolio": 557.87,
  "api_billing_blocked": false,
  "margin_headroom": 368.41,
  "open": [
-  "BTC long +5.8%",
-  "SOL long +2.1%",
-  "ETH long +1.2%",
+  "BTC long +5.9%",
+  "SOL long +2.2%",
+  "ETH long +1.3%",
   "NVDA long +2.2%",
   "TSLA short +1.0%"
  ],
  "stock_candidates": 11,
  "top_stocks": [
-  "SPCX -6.4% vol=$2,212,435",
-  "TSLA -5.2% vol=$518,000",
-  "CRCL -5.1% vol=$445,123",
-  "GOOGL -4.2% vol=$118,980",
-  "NVDA +3.6% vol=$602,775"
+  "SPCX -5.9% vol=$2,226,961",
+  "TSLA -5.4% vol=$509,047",
+  "GOOGL -4.5% vol=$118,602",
+  "NVDA +3.4% vol=$602,773",
+  "CRCL -2.4% vol=$445,975"
  ],
  "futures_ok": true,
- "futures_balance": 48.37,
+ "futures_balance": 48.09,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במניה: SPCX, CRCL, GOOGL",
+ "call_reason": "תנועה חזקה במניה: SPCX, GOOGL, CRCL",
  "claude_called": true,
- "market_read": "השוק בכללי במגמת דשדוש שלילית קלה עם רוב המטבעות קרוב לתחתית הטווח, מה שיוצר הזדמנויות דיפ-קניה סלקטיביות.",
- "skip_reason": "שאר המועמדים (DOT, AVAX, DOGE, XRP, LINK, XDC) נמצאים באמצע הטווח ללא איתות ברור, ומניות ה-xStocks כרגע ללא הזדמנות אסימטרית מספקת מול הפוזיציות הפתוחות שכבר מתקדמות יפה ליעד.",
+ "market_read": "השוק בקונסולידציה שקטה עם רוב הנכסים באזור ניטרלי-נמוך של RSI, ללא מומנטום ברור לכיוון אחד.",
+ "skip_reason": "שאר המועמדים (DOT, LINK, DOGE) חלשים יותר בנפח או בסיגנל, ומניות ה-xStocks כרגע לא מציגות סטאפ ברור מספיק לכניסה חדשה מעבר לפוזיציות הקיימות.",
  "picks": [
-  "BCH long size=15% conf=MEDIUM"
+  "XRP long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "BCH: Kraken: ['EOrder:Insufficient funds']"
+  "XRP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
