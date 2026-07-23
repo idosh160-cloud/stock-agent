@@ -1,28 +1,39 @@
 {
- "time": "2026-07-23T07:00:05",
- "usdc": 93.91,
- "portfolio": 558.22,
+ "time": "2026-07-23T08:00:06",
+ "usdc": 93.9,
+ "portfolio": 555.87,
  "api_billing_blocked": false,
- "margin_headroom": 368.41,
+ "margin_headroom": 371.57,
  "open": [
-  "BTC long +6.0%",
-  "SOL long +2.2%",
-  "ETH long +1.5%",
-  "NVDA long +1.4%",
-  "TSLA short +0.9%"
+  "BTC long +5.4%",
+  "SOL long +1.8%",
+  "NVDA long +1.2%",
+  "TSLA short +1.3%"
  ],
  "stock_candidates": 11,
  "top_stocks": [
-  "SPCX -5.8% vol=$2,216,507",
-  "TSLA -4.5% vol=$507,506",
-  "GOOGL -4.5% vol=$118,358",
-  "NVDA +2.6% vol=$599,156",
-  "CRCL -2.5% vol=$445,951"
+  "SPCX -6.2% vol=$2,191,119",
+  "TSLA -5.9% vol=$507,446",
+  "GOOGL -4.7% vol=$118,399",
+  "CRCL -3.2% vol=$442,813",
+  "NVDA +3.1% vol=$605,822"
  ],
  "futures_ok": true,
- "futures_balance": 47.94,
- "unallocated_spot": [],
+ "futures_balance": 47.55,
+ "unallocated_spot": [
+  "ETH $382"
+ ],
  "call_reason": "תנועה חזקה במניה: SPCX, GOOGL, CRCL",
- "claude_called": false,
- "skip": "snapshot זהה לקריאה הקודמת"
+ "claude_called": true,
+ "market_read": "השוק הכללי בנסיגה קלה עם כמה מטבעות oversold - הזדמנות לכניסה סלקטיבית תוך שמירה על פוזיציות רווחיות קיימות.",
+ "skip_reason": "שאר המטבעות (DOT, CC, DOGE, ADA) עם ווליום נמוך יותר או איתותים חלשים יחסית ל-BCH ו-ETH, ומניות ה-xStock לא מציגות סטאפ ברור יותר טוב כרגע.",
+ "picks": [
+  "ETH long size=25% conf=MEDIUM",
+  "BCH long size=15% conf=MEDIUM"
+ ],
+ "order_errors": [
+  "liq ETH: all sizes rejected (margin collateral lock)",
+  "ETH: Kraken: ['EOrder:Insufficient funds']",
+  "BCH: Kraken: ['EOrder:Insufficient funds']"
+ ]
 }
