@@ -1,33 +1,33 @@
 {
- "time": "2026-07-23T04:00:04",
- "usdc": 93.93,
- "portfolio": 557.28,
+ "time": "2026-07-23T05:00:05",
+ "usdc": 93.92,
+ "portfolio": 557.49,
  "api_billing_blocked": false,
  "margin_headroom": 368.41,
  "open": [
   "BTC long +5.8%",
-  "SOL long +2.2%",
+  "SOL long +2.1%",
   "ETH long +1.2%",
-  "NVDA long +1.4%",
-  "TSLA short +1.2%"
+  "NVDA long +2.2%",
+  "TSLA short +1.0%"
  ],
- "stock_candidates": 12,
+ "stock_candidates": 11,
  "top_stocks": [
-  "SPCX -6.6% vol=$2,216,097",
-  "TSLA -5.4% vol=$501,064",
-  "CRCL -4.5% vol=$450,830",
-  "GOOGL -4.3% vol=$118,715",
-  "NVDA +2.8% vol=$598,094"
+  "SPCX -6.4% vol=$2,212,435",
+  "TSLA -5.2% vol=$518,000",
+  "CRCL -5.1% vol=$445,123",
+  "GOOGL -4.2% vol=$118,980",
+  "NVDA +3.6% vol=$602,775"
  ],
  "futures_ok": true,
- "futures_balance": 48.0,
+ "futures_balance": 48.37,
  "unallocated_spot": [],
  "call_reason": "תנועה חזקה במניה: SPCX, CRCL, GOOGL",
  "claude_called": true,
- "market_read": "השוק הכללי נסחר בירידות קלות עם רוב המטבעות באזור oversold, מה שיוצר הזדמנויות זהירות לקניית דיפים.",
- "skip_reason": "שאר המועמדים (DOT, CC) בעלי נפח מסחר נמוך מדי או סיגנלים חלשים מדי להצדיק כניסה עם ההון המוגבל שנותר.",
+ "market_read": "השוק בכללי במגמת דשדוש שלילית קלה עם רוב המטבעות קרוב לתחתית הטווח, מה שיוצר הזדמנויות דיפ-קניה סלקטיביות.",
+ "skip_reason": "שאר המועמדים (DOT, AVAX, DOGE, XRP, LINK, XDC) נמצאים באמצע הטווח ללא איתות ברור, ומניות ה-xStocks כרגע ללא הזדמנות אסימטרית מספקת מול הפוזיציות הפתוחות שכבר מתקדמות יפה ליעד.",
  "picks": [
-  "BCH long size=20% conf=MEDIUM"
+  "BCH long size=15% conf=MEDIUM"
  ],
  "order_errors": [
   "BCH: Kraken: ['EOrder:Insufficient funds']"
