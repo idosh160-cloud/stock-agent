@@ -1,35 +1,36 @@
 {
- "time": "2026-07-23T22:00:05",
+ "time": "2026-07-23T23:00:04",
  "usdc": 92.87,
- "portfolio": 540.04,
+ "portfolio": 540.32,
  "api_billing_blocked": false,
  "margin_headroom": 345.85,
  "open": [
   "BTC long +3.8%",
-  "NVDA long +0.1%",
-  "TSLA short +10.5%",
+  "NVDA long -0.2%",
+  "TSLA short +10.3%",
   "ETH long -0.6%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "TSLA -9.5% vol=$807,041",
-  "MSTR -5.5% vol=$162,148",
-  "CRCL -5.4% vol=$717,811",
-  "OPENAI +4.9% vol=$15,622",
-  "GOOGL -3.1% vol=$612,571"
+  "TSLA -9.7% vol=$812,087",
+  "MSTR -5.6% vol=$162,174",
+  "CRCL -5.3% vol=$726,409",
+  "OPENAI +4.9% vol=$16,489",
+  "GOOGL -3.0% vol=$609,023"
  ],
  "futures_ok": true,
- "futures_balance": 39.97,
- "futures_float_topup": false,
+ "futures_balance": 40.13,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במטבע חדש: DOGE, ADA",
+ "call_reason": "תנועה חזקה במטבע חדש: DOGE",
  "claude_called": true,
- "market_read": "השוק הקריפטו כולו במגמת תיקון קל עם רוב המטבעות באזור oversold, מה שיוצר הזדמנויות לונג סלקטיביות בעוד BTC עצמו נראה ניטרלי.",
- "skip_reason": "AVAX ו-PENGU נפסלו בגלל נפח מסחר נמוך מדי, ומניות ה-xStocks כרגע ללא סיגנל ברור מספיק מול הפוזיציות הקיימות שכבר פועלות היטב.",
+ "market_read": "השוק הקריפטו כולו במגמת תיקון קל עם RSI נמוכים ברוב המטבעות, מה שיוצר הזדמנויות דיפ-קניה זהירות תוך שמירה על סטופים.",
+ "skip_reason": "שאר המטבעות (ETH, ADA, XRP, BTC) כבר בפוזיציה פתוחה או שהאיתותים ניטרליים מדי; המניות שירדו חזק (TSLA, CRCL) כבר בפוזיציה או שאין תמונה ברורה לשורט/לונג.",
  "picks": [
-  "DOGE long size=25% conf=MEDIUM"
+  "SOL long size=22% conf=MEDIUM",
+  "DOGE long size=15% conf=MEDIUM"
  ],
  "order_errors": [
+  "SOL: Kraken: ['EOrder:Insufficient funds']",
   "DOGE: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
