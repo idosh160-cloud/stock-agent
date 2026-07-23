@@ -1,33 +1,33 @@
 {
- "time": "2026-07-23T02:00:04",
- "usdc": 93.95,
- "portfolio": 564.42,
+ "time": "2026-07-23T03:00:04",
+ "usdc": 93.94,
+ "portfolio": 558.95,
  "api_billing_blocked": false,
  "margin_headroom": 368.41,
  "open": [
-  "BTC long +6.1%",
-  "SOL long +2.7%",
-  "ETH long +1.7%",
-  "NVDA long +2.3%"
+  "BTC long +6.0%",
+  "SOL long +2.5%",
+  "ETH long +1.6%",
+  "NVDA long +2.3%",
+  "TSLA short +1.0%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "SPCX -7.1% vol=$2,230,620",
-  "CRCL -5.0% vol=$450,022",
-  "TSLA -4.7% vol=$503,399",
+  "SPCX -6.8% vol=$2,209,148",
+  "TSLA -5.1% vol=$499,746",
+  "CRCL -4.8% vol=$451,329",
   "GOOGL -4.3% vol=$118,752",
-  "NVDA +3.1% vol=$604,992"
+  "NVDA +3.6% vol=$602,865"
  ],
  "futures_ok": true,
- "futures_balance": 53.13,
+ "futures_balance": 48.08,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במטבע חדש: XDC",
+ "call_reason": "תנועה חזקה במניה: SPCX, CRCL, GOOGL",
  "claude_called": true,
- "market_read": "השוק היום נראה מעורב עם BTC וה-ETH נסחרים בצד, בעוד כמה מניות טוקניות רושמות ירידות חדות שיכולות להצביע על המשך מומנטום שלילי.",
- "skip_reason": "שאר המטבעות (XRP, ADA, XMR) נראים ניטרליים ללא כיוון ברור, ו-SOL/ETH/BTC/NVDA כבר פתוחים ומתקדמים לכיוון היעד כך שאין סיבה לסובב אותם.",
+ "market_read": "השוק הקריפטו נסחר בטווח צר עם BTC בלחץ קל, אבל BCH מציג היפוך טכני ברור באזור מכירת-יתר.",
+ "skip_reason": "שאר המטבעות (AVAX, DOGE, ETH, SOL, XRP) ב-RSI ניטרלי סביב 45-50 ללא מומנטום ברור, והמניות שנפלו חזק (SPCX, CRCL) בעלות היסטוריה שלילית ודורשות אישור חזק יותר שלא קיים כרגע.",
  "picks": [
-  "BCH long size=22% conf=MEDIUM",
-  "TSLA short size=15% conf=MEDIUM"
+  "BCH long size=20% conf=MEDIUM"
  ],
  "order_errors": [
   "BCH: Kraken: ['EOrder:Insufficient funds']"
