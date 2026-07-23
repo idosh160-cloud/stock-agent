@@ -1,34 +1,34 @@
 {
- "time": "2026-07-23T00:00:04",
- "usdc": 93.96,
- "portfolio": 565.58,
+ "time": "2026-07-23T01:00:04",
+ "usdc": 93.95,
+ "portfolio": 565.71,
  "api_billing_blocked": false,
  "margin_headroom": 368.41,
  "open": [
-  "BTC long +6.5%",
-  "SOL long +2.8%",
-  "ETH long +2.0%",
-  "NVDA long +1.5%"
+  "BTC long +6.4%",
+  "SOL long +3.1%",
+  "ETH long +1.9%",
+  "NVDA long +2.3%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "SPCX -6.8% vol=$2,282,730",
-  "CRCL -6.6% vol=$439,809",
-  "TSLA -6.1% vol=$491,437",
-  "GOOGL -5.1% vol=$116,298",
-  "CF +3.4% vol=$40,018"
+  "SPCX -6.6% vol=$2,271,185",
+  "CRCL -5.7% vol=$451,233",
+  "TSLA -4.7% vol=$503,399",
+  "GOOGL -4.3% vol=$117,571",
+  "NVDA +3.1% vol=$605,003"
  ],
  "futures_ok": true,
- "futures_balance": 53.16,
+ "futures_balance": 53.64,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במטבע חדש: XDC, CC",
+ "call_reason": "תנועה חזקה במטבע חדש: XDC",
  "claude_called": true,
- "market_read": "השוק הכללי רגוע יחסית עם BTC יציב ורוב האלטים בתנועה מתונה, אין סיגנל חזק לפריצה בשום כיוון מלבד AVAX שמראה בניית מומנטום.",
- "skip_reason": "מניות ה-xStocks חסרות אינדיקטורים טכניים (RSI/MACD) לכניסה מבוססת, וקריפטו נוספות כמו XDC/CC בעלי נפח נמוך ותנודתיות לא מספיק ברורה לכיוון.",
+ "market_read": "השוק הכללי נייטרלי עם BTC יציב סביב 66K וכמה אלטים מראים מומנטום חיובי מתון בלי סימני מיצוי.",
+ "skip_reason": "שאר המועמדים (BTC, SOL, ETH, LINK, ADA) כבר בפוזיציות פתוחות או ניטרליים מדי מבחינת RSI/BB ללא יתרון ברור, והמניות מציגות תנודות חדות ללא אישור מגמה ברור.",
  "picks": [
-  "AVAX long size=20% conf=MEDIUM"
+  "XMR long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "AVAX: Kraken: ['EOrder:Insufficient funds']"
+  "XMR: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
