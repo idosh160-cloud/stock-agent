@@ -1,31 +1,31 @@
 {
- "time": "2026-07-23T03:00:04",
- "usdc": 93.94,
- "portfolio": 558.95,
+ "time": "2026-07-23T04:00:04",
+ "usdc": 93.93,
+ "portfolio": 557.28,
  "api_billing_blocked": false,
  "margin_headroom": 368.41,
  "open": [
-  "BTC long +6.0%",
-  "SOL long +2.5%",
-  "ETH long +1.6%",
-  "NVDA long +2.3%",
-  "TSLA short +1.0%"
+  "BTC long +5.8%",
+  "SOL long +2.2%",
+  "ETH long +1.2%",
+  "NVDA long +1.4%",
+  "TSLA short +1.2%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "SPCX -6.8% vol=$2,209,148",
-  "TSLA -5.1% vol=$499,746",
-  "CRCL -4.8% vol=$451,329",
-  "GOOGL -4.3% vol=$118,752",
-  "NVDA +3.6% vol=$602,865"
+  "SPCX -6.6% vol=$2,216,097",
+  "TSLA -5.4% vol=$501,064",
+  "CRCL -4.5% vol=$450,830",
+  "GOOGL -4.3% vol=$118,715",
+  "NVDA +2.8% vol=$598,094"
  ],
  "futures_ok": true,
- "futures_balance": 48.08,
+ "futures_balance": 48.0,
  "unallocated_spot": [],
  "call_reason": "תנועה חזקה במניה: SPCX, CRCL, GOOGL",
  "claude_called": true,
- "market_read": "השוק הקריפטו נסחר בטווח צר עם BTC בלחץ קל, אבל BCH מציג היפוך טכני ברור באזור מכירת-יתר.",
- "skip_reason": "שאר המטבעות (AVAX, DOGE, ETH, SOL, XRP) ב-RSI ניטרלי סביב 45-50 ללא מומנטום ברור, והמניות שנפלו חזק (SPCX, CRCL) בעלות היסטוריה שלילית ודורשות אישור חזק יותר שלא קיים כרגע.",
+ "market_read": "השוק הכללי נסחר בירידות קלות עם רוב המטבעות באזור oversold, מה שיוצר הזדמנויות זהירות לקניית דיפים.",
+ "skip_reason": "שאר המועמדים (DOT, CC) בעלי נפח מסחר נמוך מדי או סיגנלים חלשים מדי להצדיק כניסה עם ההון המוגבל שנותר.",
  "picks": [
   "BCH long size=20% conf=MEDIUM"
  ],
