@@ -1,37 +1,38 @@
 {
- "time": "2026-07-23T12:00:05",
- "usdc": 93.74,
- "portfolio": 557.63,
+ "time": "2026-07-23T13:00:05",
+ "usdc": 93.72,
+ "portfolio": 547.24,
  "api_billing_blocked": false,
  "margin_headroom": 371.57,
  "open": [
-  "BTC long +5.6%",
-  "SOL long +2.3%",
-  "NVDA long +1.2%",
-  "TSLA short +3.4%"
+  "BTC long +5.0%",
+  "SOL long +1.4%",
+  "NVDA long +0.8%",
+  "TSLA short +4.7%",
+  "GOOGL long +0.3%"
  ],
- "stock_candidates": 11,
+ "stock_candidates": 12,
  "top_stocks": [
-  "TSLA -7.5% vol=$655,687",
-  "GOOGL -6.6% vol=$125,230",
-  "SPCX -6.4% vol=$2,113,199",
-  "CRCL -3.7% vol=$419,178",
-  "NVDA +2.9% vol=$606,202"
+  "TSLA -8.6% vol=$681,090",
+  "GOOGL -6.3% vol=$130,683",
+  "SPCX -6.1% vol=$1,925,621",
+  "CRCL -4.6% vol=$411,597",
+  "HOOD -2.4% vol=$49,130"
  ],
  "futures_ok": true,
- "futures_balance": 47.47,
+ "futures_balance": 41.68,
  "unallocated_spot": [
-  "ETH $384"
+  "ETH $380"
  ],
- "call_reason": "תנועה חזקה במניה: GOOGL, SPCX, CRCL",
+ "call_reason": "תנועה חזקה במניה: SPCX, CRCL, HOOD",
  "claude_called": true,
- "market_read": "השוק הכללי רגוע יחסית עם BTC יורד קלות ומניות בתנודתיות גבוהה יותר מהרגיל, יש הזדמנויות דיפ-באיינג נקודתיות.",
- "skip_reason": "שאר המטבעות (CC, LTC, BCH, XMR) בעלי נפח נמוך מדי או סיגנלים מעורפלים מכדי להצדיק כניסה חדשה כרגע.",
+ "market_read": "השוק הקריפטו והמניות בירידה קלה כללית עם כמה נכסים ב-oversold ברור, מה שיוצר הזדמנויות ריבאונד סלקטיביות.",
+ "skip_reason": "שאר הקריפטו (DOGE, CC) בנפח נמוך מדי, ומניות כמו SPCX/TSLA/GOOGL כבר מוחזקות או חסרות סטאפ שורט ברור כרגע.",
  "picks": [
-  "XRP long size=20% conf=MEDIUM",
-  "GOOGL long size=15% conf=MEDIUM"
+  "XRP long size=25% conf=MEDIUM"
  ],
  "order_errors": [
+  "liq ETH: all sizes rejected (margin collateral lock)",
   "XRP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
