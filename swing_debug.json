@@ -1,32 +1,33 @@
 {
- "time": "2026-07-23T21:00:05",
+ "time": "2026-07-23T22:00:05",
  "usdc": 92.87,
- "portfolio": 541.23,
+ "portfolio": 540.04,
  "api_billing_blocked": false,
  "margin_headroom": 345.85,
  "open": [
   "BTC long +3.8%",
-  "NVDA long +0.4%",
-  "TSLA short +10.3%",
-  "ETH long -0.5%"
+  "NVDA long +0.1%",
+  "TSLA short +10.5%",
+  "ETH long -0.6%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "TSLA -10.9% vol=$887,129",
-  "CRCL -5.5% vol=$712,053",
-  "MSTR -5.0% vol=$162,815",
+  "TSLA -9.5% vol=$807,041",
+  "MSTR -5.5% vol=$162,148",
+  "CRCL -5.4% vol=$717,811",
   "OPENAI +4.9% vol=$15,622",
-  "GOOGL -3.9% vol=$636,005"
+  "GOOGL -3.1% vol=$612,571"
  ],
  "futures_ok": true,
- "futures_balance": 40.46,
+ "futures_balance": 39.97,
+ "futures_float_topup": false,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במטבע חדש: DOGE",
+ "call_reason": "תנועה חזקה במטבע חדש: DOGE, ADA",
  "claude_called": true,
- "market_read": "השוק הקריפטו נמצא בתיקון קל עם רוב המטבעות ב-oversold, בעוד BTC יציב יחסית ומראה מומנטום חיובי קל.",
- "skip_reason": "AVAX ו-PENGU נפחי מסחר נמוכים מדי לביטחון גבוה, ומניות כמו TSLA/NVDA/ETH כבר מוחזקות בפוזיציות פתוחות שמתקדמות יפה ליעד.",
+ "market_read": "השוק הקריפטו כולו במגמת תיקון קל עם רוב המטבעות באזור oversold, מה שיוצר הזדמנויות לונג סלקטיביות בעוד BTC עצמו נראה ניטרלי.",
+ "skip_reason": "AVAX ו-PENGU נפסלו בגלל נפח מסחר נמוך מדי, ומניות ה-xStocks כרגע ללא סיגנל ברור מספיק מול הפוזיציות הקיימות שכבר פועלות היטב.",
  "picks": [
-  "DOGE long size=20% conf=MEDIUM"
+  "DOGE long size=25% conf=MEDIUM"
  ],
  "order_errors": [
   "DOGE: Kraken: ['EOrder:Insufficient funds']"
