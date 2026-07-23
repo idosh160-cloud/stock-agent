@@ -1448,5 +1448,30 @@
     "entry_bb_pct": null,
     "entry_macd_hist": null,
     "entry_change_24h": -6.6
+  },
+  {
+    "coin": "BTC",
+    "pair": "XBTUSDC",
+    "status": "closed_profit",
+    "leveraged": true,
+    "collateral": 135.79,
+    "volume": 0.00218903,
+    "entry_price": 62032.0,
+    "close_price": 64710.8,
+    "target_price": 66994.56,
+    "stop_price": 64817.1654,
+    "pnl_usd": 5.86,
+    "pnl_pct": 4.32,
+    "date_open": "2026-07-13T22:00:34.710147",
+    "date_close": "2026-07-23T17:00:04.094519",
+    "reasoning": "OK",
+    "confidence": "MEDIUM",
+    "txid": "OCSCNF-3NQBV-4MQ375",
+    "close_txid": "OJGGAJ-2Q7U7-JNDUQA",
+    "side": "long",
+    "entry_rsi": 34.8,
+    "entry_bb_pct": 18.3,
+    "entry_macd_hist": -18.045157,
+    "entry_change_24h": -2.71
   }
 ]

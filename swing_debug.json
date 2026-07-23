@@ -1,37 +1,33 @@
 {
- "time": "2026-07-23T16:00:04",
- "usdc": 93.52,
- "portfolio": 543.38,
+ "time": "2026-07-23T17:00:05",
+ "usdc": 93.03,
+ "portfolio": 541.49,
  "api_billing_blocked": false,
- "margin_headroom": 381.21,
+ "margin_headroom": 345.85,
  "open": [
-  "BTC long +4.7%",
-  "NVDA long -0.1%",
-  "TSLA short +9.8%"
+  "NVDA long +1.0%",
+  "TSLA short +10.9%",
+  "ETH long -0.4%"
  ],
  "stock_candidates": 13,
  "top_stocks": [
-  "TSLA -13.9% vol=$989,959",
-  "CRCL -8.7% vol=$487,121",
-  "GOOGL -7.5% vol=$307,292",
-  "SPCX -7.5% vol=$2,508,791",
-  "MSTR -6.5% vol=$166,835"
+  "TSLA -14.7% vol=$978,993",
+  "GOOGL -7.4% vol=$514,234",
+  "CRCL -6.6% vol=$470,840",
+  "MSTR -6.4% vol=$161,211",
+  "OPENAI +5.3% vol=$15,150"
  ],
  "futures_ok": true,
- "futures_balance": 40.07,
- "unallocated_spot": [
-  "ETH $378"
- ],
+ "futures_balance": 40.25,
+ "unallocated_spot": [],
  "call_reason": "תנועה חזקה במטבע חדש: DOGE",
  "claude_called": true,
- "market_read": "השוק כולו במצב oversold רחב (BTC, ETH, SOL, XRP, DOGE) אחרי ירידה יומית חדה, מה שיוצר הזדמנויות ריבאונד עם יחס סיכוי/סיכון טוב.",
- "skip_reason": "דילגתי על DOGE/AVAX/ADA בגלל נפח מסחר נמוך יחסית וסיכון גבוה יותר, ועל המניות כי אין סט-אפ ברור מספיק היום מול ההזדמנויות בקריפטו.",
+ "market_read": "ירידה רוחבית בקריפטו עם RSI נמוך בכל המטבעות הגדולים - נראה כמו תיקון זמני ולא היפוך מגמה, הזדמנות לקנות בדיפ עם סטופים מתאימים.",
+ "skip_reason": "BTC ו-ETH דומים ב-setup אך כבר פתוחה פוזיציית ETH בתיק, ומניות ה-xStocks כרגע נמוכות נפח או ללא איתות ברור לכיוון מסוים.",
  "picks": [
-  "ETH long size=30% conf=HIGH",
-  "XRP long size=20% conf=MEDIUM"
+  "SOL long size=22% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "XRP: Kraken: ['EOrder:Insufficient funds']"
+  "SOL: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
