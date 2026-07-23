@@ -1,35 +1,36 @@
 {
- "time": "2026-07-23T13:00:05",
+ "time": "2026-07-23T14:00:05",
  "usdc": 93.72,
- "portfolio": 547.24,
+ "portfolio": 541.81,
  "api_billing_blocked": false,
  "margin_headroom": 371.57,
  "open": [
-  "BTC long +5.0%",
-  "SOL long +1.4%",
-  "NVDA long +0.8%",
-  "TSLA short +4.7%",
-  "GOOGL long +0.3%"
+  "BTC long +4.6%",
+  "SOL long +1.1%",
+  "NVDA long +0.3%",
+  "TSLA short +9.6%",
+  "GOOGL long -1.1%"
  ],
- "stock_candidates": 12,
+ "stock_candidates": 13,
  "top_stocks": [
-  "TSLA -8.6% vol=$681,090",
-  "GOOGL -6.3% vol=$130,683",
-  "SPCX -6.1% vol=$1,925,621",
-  "CRCL -4.6% vol=$411,597",
-  "HOOD -2.4% vol=$49,130"
+  "TSLA -13.3% vol=$827,605",
+  "GOOGL -7.8% vol=$148,199",
+  "SPCX -7.8% vol=$1,945,867",
+  "CRCL -6.7% vol=$399,251",
+  "MSTR -4.2% vol=$78,038"
  ],
  "futures_ok": true,
- "futures_balance": 41.68,
+ "futures_balance": 37.25,
+ "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $380"
+  "ETH $379"
  ],
- "call_reason": "תנועה חזקה במניה: SPCX, CRCL, HOOD",
+ "call_reason": "פוזיציה חלשה: GOOGL",
  "claude_called": true,
- "market_read": "השוק הקריפטו והמניות בירידה קלה כללית עם כמה נכסים ב-oversold ברור, מה שיוצר הזדמנויות ריבאונד סלקטיביות.",
- "skip_reason": "שאר הקריפטו (DOGE, CC) בנפח נמוך מדי, ומניות כמו SPCX/TSLA/GOOGL כבר מוחזקות או חסרות סטאפ שורט ברור כרגע.",
+ "market_read": "השוק הרחב במגמת ירידה קלה עם קריפטו רבות oversold, מה שיוצר הזדמנויות ריבאונד קצרות טווח.",
+ "skip_reason": "פוזיציות BTC/SOL/NVDA/TSLA/GOOGL כבר פתוחות ובתנועה תקינה לעבר היעד, אין סיבה לסובב אותן; DOGE/DOT/AVAX נפח מסחר נמוך מדי לסחור בביטחון.",
  "picks": [
-  "XRP long size=25% conf=MEDIUM"
+  "XRP long size=28% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
