@@ -1,38 +1,37 @@
 {
- "time": "2026-07-23T15:00:08",
- "usdc": 93.71,
- "portfolio": 538.21,
+ "time": "2026-07-23T16:00:04",
+ "usdc": 93.52,
+ "portfolio": 543.38,
  "api_billing_blocked": false,
  "margin_headroom": 381.21,
  "open": [
-  "BTC long +4.6%",
-  "NVDA long -0.4%",
-  "TSLA short +10.8%"
+  "BTC long +4.7%",
+  "NVDA long -0.1%",
+  "TSLA short +9.8%"
  ],
  "stock_candidates": 13,
  "top_stocks": [
-  "TSLA -14.5% vol=$1,012,686",
-  "SPCX -9.2% vol=$2,044,585",
-  "CRCL -8.9% vol=$486,749",
-  "GOOGL -8.8% vol=$217,820",
-  "MSTR -6.0% vol=$54,673"
+  "TSLA -13.9% vol=$989,959",
+  "CRCL -8.7% vol=$487,121",
+  "GOOGL -7.5% vol=$307,292",
+  "SPCX -7.5% vol=$2,508,791",
+  "MSTR -6.5% vol=$166,835"
  ],
  "futures_ok": true,
- "futures_balance": 39.13,
- "futures_float_topup": false,
+ "futures_balance": 40.07,
  "unallocated_spot": [
   "ETH $378"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: DOGE, CC",
+ "call_reason": "תנועה חזקה במטבע חדש: DOGE",
  "claude_called": true,
- "market_read": "השוק בקורקשן קלה עם רוב הקריפטו ב-oversold אך ווליום עדיין תקין — מתאים לכניסות ריבאונד סלקטיביות בלי לגעת בפוזיציות הקיימות שמתקדמות ליעד.",
- "skip_reason": "BTC/NVDA/TSLA כבר פתוחות ומתקדמות כראוי; ETH הספוט נשאר כפוזיציה פסיבית שכן ה-RSI שלו נמוך אך ה-MACD שלילי מאוד ולא מספיק חד-משמעי לכניסה ממונפת נוספת; מניות ה-xStocks האחרות (SPCX, CRCL, GOOGL) חסרות אישור טכני ברור לכיוון מסחר עכשיו.",
+ "market_read": "השוק כולו במצב oversold רחב (BTC, ETH, SOL, XRP, DOGE) אחרי ירידה יומית חדה, מה שיוצר הזדמנויות ריבאונד עם יחס סיכוי/סיכון טוב.",
+ "skip_reason": "דילגתי על DOGE/AVAX/ADA בגלל נפח מסחר נמוך יחסית וסיכון גבוה יותר, ועל המניות כי אין סט-אפ ברור מספיק היום מול ההזדמנויות בקריפטו.",
  "picks": [
-  "SOL long size=25% conf=HIGH",
+  "ETH long size=30% conf=HIGH",
   "XRP long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "SOL: Kraken: ['EOrder:Insufficient funds']",
+  "liq ETH: all sizes rejected (margin collateral lock)",
   "XRP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
