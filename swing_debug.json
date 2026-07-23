@@ -1,31 +1,33 @@
 {
- "time": "2026-07-23T17:00:05",
- "usdc": 93.03,
- "portfolio": 541.49,
+ "time": "2026-07-23T18:00:05",
+ "usdc": 92.9,
+ "portfolio": 538.63,
  "api_billing_blocked": false,
  "margin_headroom": 345.85,
  "open": [
-  "NVDA long +1.0%",
+  "BTC long +3.0%",
+  "NVDA long +0.4%",
   "TSLA short +10.9%",
-  "ETH long -0.4%"
+  "ETH long -0.9%"
  ],
  "stock_candidates": 13,
  "top_stocks": [
-  "TSLA -14.7% vol=$978,993",
-  "GOOGL -7.4% vol=$514,234",
-  "CRCL -6.6% vol=$470,840",
-  "MSTR -6.4% vol=$161,211",
-  "OPENAI +5.3% vol=$15,150"
+  "TSLA -14.5% vol=$899,930",
+  "GOOGL -7.4% vol=$551,141",
+  "MSTR -6.2% vol=$162,608",
+  "OPENAI +5.4% vol=$15,344",
+  "HOOD -4.4% vol=$73,064"
  ],
  "futures_ok": true,
- "futures_balance": 40.25,
+ "futures_balance": 39.61,
+ "futures_float_topup": false,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במטבע חדש: DOGE",
+ "call_reason": "תנועה חזקה במטבע חדש: DOGE, ADA, XRP",
  "claude_called": true,
- "market_read": "ירידה רוחבית בקריפטו עם RSI נמוך בכל המטבעות הגדולים - נראה כמו תיקון זמני ולא היפוך מגמה, הזדמנות לקנות בדיפ עם סטופים מתאימים.",
- "skip_reason": "BTC ו-ETH דומים ב-setup אך כבר פתוחה פוזיציית ETH בתיק, ומניות ה-xStocks כרגע נמוכות נפח או ללא איתות ברור לכיוון מסוים.",
+ "market_read": "יש מכירת יתר רוחבית בכל שוק הקריפטו (BTC, ETH, SOL, ADA כולם RSI מתחת ל-30) שנראית כמו תיקון טכני ולא היפוך מגמה, מה שמייצר הזדמנות קנייה בתחתית.",
+ "skip_reason": "שאר המועמדים (DOGE, AVAX, XRP, DOT, LINK, XDC) בעלי ווליום נמוך מדי או היסטוריה שלילית ללא שיפור משמעותי בתנאים, והמניות כרגע לא מציעות יתרון ברור על פני קריפטו.",
  "picks": [
-  "SOL long size=22% conf=MEDIUM"
+  "SOL long size=20% conf=HIGH"
  ],
  "order_errors": [
   "SOL: Kraken: ['EOrder:Insufficient funds']"
