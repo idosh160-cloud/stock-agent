@@ -1,34 +1,34 @@
 {
- "time": "2026-07-22T23:00:05",
- "usdc": 93.98,
- "portfolio": 565.72,
+ "time": "2026-07-23T00:00:04",
+ "usdc": 93.96,
+ "portfolio": 565.58,
  "api_billing_blocked": false,
  "margin_headroom": 368.41,
  "open": [
-  "BTC long +6.4%",
+  "BTC long +6.5%",
   "SOL long +2.8%",
-  "ETH long +2.1%",
-  "NVDA long +1.8%"
+  "ETH long +2.0%",
+  "NVDA long +1.5%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "SPCX -7.1% vol=$2,264,975",
-  "CRCL -6.2% vol=$443,382",
-  "TSLA -5.8% vol=$493,588",
-  "GOOGL -5.6% vol=$113,522",
+  "SPCX -6.8% vol=$2,282,730",
+  "CRCL -6.6% vol=$439,809",
+  "TSLA -6.1% vol=$491,437",
+  "GOOGL -5.1% vol=$116,298",
   "CF +3.4% vol=$40,018"
  ],
  "futures_ok": true,
- "futures_balance": 52.65,
+ "futures_balance": 53.16,
  "unallocated_spot": [],
  "call_reason": "תנועה חזקה במטבע חדש: XDC, CC",
  "claude_called": true,
- "market_read": "השוק הכללי בטווח נייטרלי-חיובי עם BTC יציב סביב 66K ומניות ה-xStocks מציגות ירידות חדות שיוצרות הזדמנויות מיין-ריברסל.",
- "skip_reason": "CRCL/SPCX/HOOD נדחים בגלל היסטוריה שלילית עקבית ללא סיגנל טכני חזק דיו לשבור את הדפוס; שאר הקריפטו (XDC, CC, BCH) בנפח מסחר נמוך מדי או ללא מומנטום ברור.",
+ "market_read": "השוק הכללי רגוע יחסית עם BTC יציב ורוב האלטים בתנועה מתונה, אין סיגנל חזק לפריצה בשום כיוון מלבד AVAX שמראה בניית מומנטום.",
+ "skip_reason": "מניות ה-xStocks חסרות אינדיקטורים טכניים (RSI/MACD) לכניסה מבוססת, וקריפטו נוספות כמו XDC/CC בעלי נפח נמוך ותנודתיות לא מספיק ברורה לכיוון.",
  "picks": [
-  "TSLA long size=30% conf=MEDIUM"
+  "AVAX long size=20% conf=MEDIUM"
  ],
- "skips": [
-  "TSLA: margin $53 < needed $57 (after transfer attempt)"
+ "order_errors": [
+  "AVAX: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
