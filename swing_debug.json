@@ -1,35 +1,35 @@
 {
- "time": "2026-07-24T03:00:04",
- "usdc": 92.85,
- "portfolio": 535.4,
+ "time": "2026-07-24T04:00:08",
+ "usdc": 92.84,
+ "portfolio": 537.94,
  "api_billing_blocked": false,
  "margin_headroom": 345.85,
  "open": [
-  "BTC long +3.7%",
+  "BTC long +4.2%",
   "NVDA long +0.3%",
-  "TSLA short +11.1%",
-  "ETH long -1.3%"
+  "TSLA short +10.8%",
+  "ETH long -0.8%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "TSLA -10.2% vol=$823,126",
-  "CRCL -6.8% vol=$736,413",
-  "MSTR -6.1% vol=$154,419",
-  "GOOGL -4.6% vol=$615,054",
-  "HOOD -3.1% vol=$63,045"
+  "TSLA -9.8% vol=$831,250",
+  "CRCL -6.6% vol=$739,207",
+  "MSTR -5.2% vol=$156,951",
+  "GOOGL -4.8% vol=$613,470",
+  "HOOD -3.1% vol=$61,953"
  ],
  "futures_ok": true,
- "futures_balance": 38.14,
+ "futures_balance": 38.44,
  "futures_float_topup": false,
  "unallocated_spot": [],
- "call_reason": "פוזיציה חלשה: ETH",
+ "call_reason": "תנועה חזקה במניה: CRCL, MSTR, GOOGL",
  "claude_called": true,
- "market_read": "השוק במגמת ירידה קלה עם כמה מטבעות oversold שיכולים להציע הזדמנות ריבאונד קצרת טווח.",
- "skip_reason": "ADA ו-DOGE נמצאים גם הם באזור oversold אך עם היסטוריה חלשה יותר ונפח מסחר נמוך יותר, ומניות ה-xStocks כרגע לא מציגות סטאפ ברור מספיק לכניסה חדשה מעבר לפוזיציות הקיימות.",
+ "market_read": "השוק הכללי יציב עם BTC מתקרב ליעד ומניות בתיק נעות לטובתנו, אין צורך לגעת בפוזיציות המנצחות.",
+ "skip_reason": "שאר המועמדים בקריפטו וב-xStocks נמצאים באזור ניטרלי או ללא נפח מספיק - ADA היא ההזדמנות הברורה היחידה לפריסת המזומן הפנוי.",
  "picks": [
-  "SOL long size=20% conf=MEDIUM"
+  "ADA long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "SOL: Kraken: ['EOrder:Insufficient funds']"
+  "ADA: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
