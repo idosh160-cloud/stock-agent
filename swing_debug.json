@@ -1,32 +1,33 @@
 {
- "time": "2026-07-24T12:00:05",
- "usdc": 92.78,
- "portfolio": 539.79,
+ "time": "2026-07-24T13:00:04",
+ "usdc": 92.76,
+ "portfolio": 536.76,
  "api_billing_blocked": false,
  "margin_headroom": 345.85,
  "open": [
-  "BTC long +3.6%",
-  "NVDA long +0.2%",
-  "TSLA short +10.6%",
-  "ETH long -0.6%"
+  "BTC long +3.2%",
+  "NVDA long +0.3%",
+  "TSLA short +10.8%",
+  "ETH long -1.2%"
  ],
  "stock_candidates": 13,
  "top_stocks": [
-  "TSLA -7.1% vol=$726,020",
-  "CRCL -4.7% vol=$741,897",
-  "MSTR -3.3% vol=$178,497",
-  "CF -2.9% vol=$5,207",
-  "GOOGL -1.7% vol=$617,524"
+  "TSLA -6.6% vol=$700,398",
+  "CRCL -4.0% vol=$737,712",
+  "MSTR -3.0% vol=$174,117",
+  "CF -2.7% vol=$5,247",
+  "SPCX +1.4% vol=$2,216,562"
  ],
  "futures_ok": true,
- "futures_balance": 40.1,
+ "futures_balance": 39.3,
+ "futures_float_topup": false,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במניה: CRCL, MSTR, CF",
+ "call_reason": "פוזיציה חלשה: ETH",
  "claude_called": true,
- "market_read": "השוק הכללי בקירור קל עם רוב הקריפטו באזור oversold ותיקון בריא, בזמן שהמניות הטוקניזציה יורדות בלי סיגנל שורט קיצוני.",
- "skip_reason": "שאר המועמדים בקריפטו (DOT, ADA, CC) עם נפח נמוך מדי או היסטוריה גרועה בלי שיפור טכני משמעותי, והמניות לא מציגות קיצוניות מספקת לא ללונג ולא לשורט.",
+ "market_read": "השוק הרחב חלש עם BTC ואלטקוינים במגמת oversold קלה, אך יש הזדמנויות בדיקה איכותיות בנפח גבוה.",
+ "skip_reason": "AVAX ו-DOT נראים oversold אך הנפח שלהם נמוך מדי לביטחון בכניסה, ו-ADA למרות סימנים דומים נושא היסטוריה שלילית משמעותית ולא מספק ביטחון נוסף כרגע.",
  "picks": [
-  "SOL long size=15% conf=MEDIUM"
+  "SOL long size=20% conf=MEDIUM"
  ],
  "order_errors": [
   "SOL: Kraken: ['EOrder:Insufficient funds']"
