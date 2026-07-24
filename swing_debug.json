@@ -1,35 +1,28 @@
 {
- "time": "2026-07-24T04:00:08",
- "usdc": 92.84,
- "portfolio": 537.94,
+ "time": "2026-07-24T05:00:04",
+ "usdc": 92.82,
+ "portfolio": 537.43,
  "api_billing_blocked": false,
  "margin_headroom": 345.85,
  "open": [
-  "BTC long +4.2%",
-  "NVDA long +0.3%",
+  "BTC long +4.0%",
+  "NVDA long -0.3%",
   "TSLA short +10.8%",
-  "ETH long -0.8%"
+  "ETH long -1.0%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "TSLA -9.8% vol=$831,250",
-  "CRCL -6.6% vol=$739,207",
+  "TSLA -9.8% vol=$817,063",
+  "CRCL -6.8% vol=$740,246",
   "MSTR -5.2% vol=$156,951",
-  "GOOGL -4.8% vol=$613,470",
-  "HOOD -3.1% vol=$61,953"
+  "GOOGL -4.5% vol=$613,273",
+  "HOOD -3.1% vol=$55,814"
  ],
  "futures_ok": true,
- "futures_balance": 38.44,
+ "futures_balance": 38.84,
  "futures_float_topup": false,
  "unallocated_spot": [],
  "call_reason": "תנועה חזקה במניה: CRCL, MSTR, GOOGL",
- "claude_called": true,
- "market_read": "השוק הכללי יציב עם BTC מתקרב ליעד ומניות בתיק נעות לטובתנו, אין צורך לגעת בפוזיציות המנצחות.",
- "skip_reason": "שאר המועמדים בקריפטו וב-xStocks נמצאים באזור ניטרלי או ללא נפח מספיק - ADA היא ההזדמנות הברורה היחידה לפריסת המזומן הפנוי.",
- "picks": [
-  "ADA long size=20% conf=MEDIUM"
- ],
- "order_errors": [
-  "ADA: Kraken: ['EOrder:Insufficient funds']"
- ]
+ "claude_called": false,
+ "skip": "snapshot זהה לקריאה הקודמת"
 }
