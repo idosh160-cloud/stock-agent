@@ -1,32 +1,32 @@
 {
- "time": "2026-07-24T18:00:05",
+ "time": "2026-07-24T19:00:04",
  "usdc": 92.73,
- "portfolio": 538.18,
+ "portfolio": 537.42,
  "api_billing_blocked": false,
  "margin_headroom": 345.85,
  "open": [
-  "BTC long +2.2%",
-  "TSLA short +14.5%",
-  "ETH long -1.5%"
+  "BTC long +2.4%",
+  "TSLA short +14.1%",
+  "ETH long -1.7%"
  ],
  "stock_candidates": 13,
  "top_stocks": [
   "HOOD -6.1% vol=$22,640",
-  "TSLA -3.9% vol=$780,756",
-  "AAPL +3.9% vol=$52,344",
+  "TSLA -3.6% vol=$785,199",
+  "AAPL +3.5% vol=$53,311",
   "OPENAI -3.2% vol=$11,731",
-  "SPCX -2.7% vol=$1,166,098"
+  "ANTHROPIC +2.5% vol=$8,757"
  ],
  "futures_ok": true,
- "futures_balance": 42.33,
+ "futures_balance": 42.34,
  "unallocated_spot": [],
  "call_reason": "פוזיציה חלשה: ETH",
  "claude_called": true,
- "market_read": "השוק הקריפטו כולו במגמת ירידה קלה עם הרבה מטבעות ב-oversold, מה שיוצר הזדמנויות דיפ-באי לטווח קצר.",
- "skip_reason": "BTC/ETH כבר בפוזיציות פתוחות כך שלא מכפילים חשיפה, ומניות כרגע לא מציגות סטאפים ברורים מספיק (HOOD/SPCX/MSTR נראים אקראיים ללא מומנטום ברור בשני הכיוונים).",
+ "market_read": "השוק הקריפטו הראשי במגמת תיקון קלה עם כמה מטבעות ב-oversold קיצוני שמזמינים ריבאונד טקטי, בעוד המניות במגמה מעורבת בלי סיגנל חד.",
+ "skip_reason": "שאר המטבעות (CC, LTC, LINK, DOT, PENGU) נמצאים בנפח מסחר נמוך או ללא סיגנל טכני ברור, וה-XMR כבר overbought מדי לשורט בטוח; המניות (HOOD, SPCX, CRCL) חסרות אישור מומנטום נקי כרגע.",
  "picks": [
-  "SOL long size=25% conf=HIGH",
-  "XRP long size=15% conf=MEDIUM"
+  "SOL long size=30% conf=HIGH",
+  "XRP long size=20% conf=MEDIUM"
  ],
  "order_errors": [
   "SOL: Kraken: ['EOrder:Insufficient funds']",
