@@ -1,35 +1,33 @@
 {
- "time": "2026-07-24T22:00:04",
+ "time": "2026-07-24T23:00:04",
  "usdc": 92.7,
- "portfolio": 537.23,
+ "portfolio": 537.32,
  "api_billing_blocked": false,
  "margin_headroom": 345.85,
  "open": [
   "BTC long +2.2%",
-  "TSLA short +13.2%",
-  "ETH long -2.0%"
+  "TSLA short +13.6%",
+  "ETH long -1.9%"
  ],
- "stock_candidates": 13,
+ "stock_candidates": 12,
  "top_stocks": [
   "HOOD -6.8% vol=$23,708",
-  "OPENAI -4.3% vol=$15,675",
-  "AAPL +3.8% vol=$48,850",
-  "TSLA -3.2% vol=$682,129",
-  "MSTR -2.7% vol=$181,582"
+  "TSLA -3.7% vol=$701,170",
+  "AAPL +3.7% vol=$49,527",
+  "SPCX -3.4% vol=$1,130,548",
+  "MSTR -2.7% vol=$181,391"
  ],
  "futures_ok": true,
- "futures_balance": 43.27,
+ "futures_balance": 42.92,
  "unallocated_spot": [],
  "call_reason": "פוזיציה חלשה: ETH",
  "claude_called": true,
- "market_read": "השוק הקריפטו כולו נסחר ב-oversold קל אחרי ירידה כללית של יום, מה שיוצר הזדמנויות ריבאונד טובות במטבעות איכותיים כמו SOL ו-LINK.",
- "skip_reason": "BTC, ETH ו-TSLA כבר פתוחים ומתקדמים כמצופה כך שלא נוגעים בהם; שאר המניות (HOOD, SPCX, MSTR) נראות תנודתיות מדי בלי איתות ברור לכיוון מסוים כרגע.",
+ "market_read": "השוק הקריפטו כרגע במגמת ירידה קלה עם כמה נכסים oversold שמציעים הזדמנויות ריבאונד, בעוד המניות הטוקניזציה נסחרות בטווח סוער ללא כיוון ברור.",
+ "skip_reason": "ADA ו-LINK דומים אך עם נפח נמוך יותר ואין הצדקה לפזר על פני SOL; המניות (HOOD, SPCX) לא מציגות סטאפ ברור של over/oversold עם נפח מספק לשורט או לונג נקי.",
  "picks": [
-  "SOL long size=35% conf=HIGH",
-  "LINK long size=20% conf=MEDIUM"
+  "SOL long size=22% conf=MEDIUM"
  ],
  "order_errors": [
-  "SOL: Kraken: ['EOrder:Insufficient funds']",
-  "LINK: Kraken: ['EOrder:Insufficient funds']"
+  "SOL: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
