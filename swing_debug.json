@@ -1,35 +1,35 @@
 {
- "time": "2026-07-24T00:00:04",
- "usdc": 92.87,
- "portfolio": 538.96,
+ "time": "2026-07-24T01:00:04",
+ "usdc": 92.85,
+ "portfolio": 537.42,
  "api_billing_blocked": false,
  "margin_headroom": 345.85,
  "open": [
-  "BTC long +3.7%",
-  "NVDA long -0.2%",
-  "TSLA short +10.3%",
-  "ETH long -0.8%"
+  "BTC long +3.5%",
+  "NVDA long +0.3%",
+  "TSLA short +10.2%",
+  "ETH long -1.3%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "TSLA -9.7% vol=$812,817",
-  "MSTR -5.6% vol=$162,174",
-  "CRCL -5.6% vol=$729,466",
-  "OPENAI +4.9% vol=$16,489",
-  "GOOGL -4.0% vol=$606,352"
+  "TSLA -9.5% vol=$807,338",
+  "MSTR -6.2% vol=$160,165",
+  "CRCL -6.2% vol=$722,450",
+  "GOOGL -4.0% vol=$606,980",
+  "HOOD -3.1% vol=$68,984"
  ],
  "futures_ok": true,
- "futures_balance": 39.88,
+ "futures_balance": 39.92,
  "futures_float_topup": false,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במטבע חדש: DOGE, ADA",
+ "call_reason": "פוזיציה חלשה: ETH",
  "claude_called": true,
- "market_read": "השוק הקריפטו במגמת דיפ קלה עם רוב האלטים ב-oversold, בעוד המניות הטוקניזציה מציגות חולשה כללית ללא סיגנל ברור לשורט מובהק.",
- "skip_reason": "שאר המועמדים (ADA, XRP, ETH, PENGU) דומים ב-RSI נמוך אך ETH כבר מוחזק בפוזיציה כבדה ושאר המטבעות בעלי נפח נמוך יותר או תבנית חלשה יותר לביטחון גבוה.",
+ "market_read": "השוק נמצא באזור תיקון קל אחרי ריצה, עם כמה נכסים oversold שמראים סימני תמיכה טכניים.",
+ "skip_reason": "ADA ו-LINK מציגים סטאפים דומים אך עם היסטוריית ביצועים חלשה יותר או נזילות נמוכה יותר, ומניות ה-xStocks כרגע חסרות זנב ברור לטריגר כניסה חדש מעבר לפוזיציות הפתוחות.",
  "picks": [
-  "DOGE long size=15% conf=MEDIUM"
+  "XRP long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "DOGE: Kraken: ['EOrder:Insufficient funds']"
+  "XRP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
