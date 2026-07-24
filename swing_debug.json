@@ -1,30 +1,31 @@
 {
- "time": "2026-07-24T10:00:05",
+ "time": "2026-07-24T11:00:04",
  "usdc": 92.79,
- "portfolio": 541.08,
+ "portfolio": 539.49,
  "api_billing_blocked": false,
  "margin_headroom": 345.85,
  "open": [
-  "BTC long +3.7%",
-  "NVDA long +0.1%",
-  "TSLA short +10.2%",
-  "ETH long -0.4%"
+  "BTC long +3.5%",
+  "NVDA long +0.2%",
+  "TSLA short +10.6%",
+  "ETH long -0.7%"
  ],
- "stock_candidates": 12,
+ "stock_candidates": 13,
  "top_stocks": [
-  "TSLA -8.0% vol=$757,682",
-  "CRCL -5.0% vol=$746,060",
-  "MSTR -2.1% vol=$166,887",
-  "GOOGL -1.8% vol=$621,899",
-  "QQQ -1.4% vol=$89,094"
+  "TSLA -8.1% vol=$739,086",
+  "CRCL -5.3% vol=$744,005",
+  "MSTR -3.1% vol=$166,176",
+  "CF -2.7% vol=$5,441",
+  "GOOGL -1.9% vol=$619,734"
  ],
  "futures_ok": true,
- "futures_balance": 40.32,
+ "futures_balance": 39.95,
+ "futures_float_topup": false,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במניה: CRCL, MSTR",
+ "call_reason": "תנועה חזקה במניה: CRCL, MSTR, CF",
  "claude_called": true,
- "market_read": "השוק הכללי רגוע יחסית עם תנודתיות נמוכה-בינונית, אין מגמה חזקה חד-כיוונית בקריפטו או במניות כרגע.",
- "skip_reason": "שאר המטבעות/מניות נמצאים באמצע הטווח ללא איתות ברור (RSI ניטרלי, BB% אמצעי) או בעלי היסטוריה שלילית ללא שיפור בתנאים, ולכן לא מספקים יחס סיכון-סיכוי מספק כרגע.",
+ "market_read": "השוק הכללי נסחר בתיקון קל עם רוב המטבעות והמניות באזור oversold-נייטרלי, מה שיוצר הזדמנויות בחירה סלקטיביות.",
+ "skip_reason": "שאר המועמדים או חלשים מבחינת נפח/מומנטום או שההיסטוריה שלהם גרועה בלי שיפור טכני משמעותי, ולכן לא נכנסים.",
  "picks": [
   "SOL long size=20% conf=MEDIUM"
  ],
