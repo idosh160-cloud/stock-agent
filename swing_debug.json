@@ -1,31 +1,31 @@
 {
- "time": "2026-07-24T20:00:05",
- "usdc": 92.72,
- "portfolio": 538.48,
+ "time": "2026-07-24T21:00:04",
+ "usdc": 92.7,
+ "portfolio": 537.96,
  "api_billing_blocked": false,
  "margin_headroom": 345.85,
  "open": [
-  "BTC long +2.3%",
-  "TSLA short +13.8%",
-  "ETH long -1.7%"
+  "BTC long +2.2%",
+  "TSLA short +13.4%",
+  "ETH long -1.8%"
  ],
  "stock_candidates": 13,
  "top_stocks": [
   "HOOD -6.8% vol=$23,708",
+  "MSTR -3.9% vol=$181,846",
+  "AAPL +3.8% vol=$49,497",
   "OPENAI -3.8% vol=$11,382",
-  "AAPL +3.8% vol=$48,269",
-  "TSLA -3.6% vol=$692,859",
-  "MSTR -2.8% vol=$183,094"
+  "TSLA -2.9% vol=$679,183"
  ],
  "futures_ok": true,
- "futures_balance": 43.3,
+ "futures_balance": 43.29,
  "unallocated_spot": [],
  "call_reason": "פוזיציה חלשה: ETH",
  "claude_called": true,
- "market_read": "השוק הקריפטו במגמת תיקון קלה כלפי מטה עם כמה מטבעות באזור oversold מובהק, מציע הזדמנויות דיפ-ביי סלקטיביות.",
- "skip_reason": "שאר המטבעות (ADA, XRP, CC) מציגים אותות דומים אך עם נפח נמוך יותר או היסטוריה חלשה יותר, ולכן מרוכזים בעסקה אחת איכותית ולא מפזרים את ההון הזמין.",
+ "market_read": "השוק הקריפטו כולו נסחר ב-oversold מתון עם ירידות של 1-3% ברוב המטבעות המובילים, מה שיוצר הזדמנות לספיגת ריבאונד קצר טווח.",
+ "skip_reason": "BTC ו-ETH כבר בפוזיציות פתוחות עם ניהול קיים, ומניות ה-xStocks לא מציגות סטאפ ברור מספיק (לא oversold קיצוני ולא פריצה ברורה) כדי להצדיק כניסה נוספת מעבר ל-SOL.",
  "picks": [
-  "SOL long size=20% conf=MEDIUM"
+  "SOL long size=22% conf=HIGH"
  ],
  "order_errors": [
   "SOL: Kraken: ['EOrder:Insufficient funds']"
