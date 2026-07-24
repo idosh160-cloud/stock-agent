@@ -1,28 +1,35 @@
 {
- "time": "2026-07-24T05:00:04",
+ "time": "2026-07-24T06:00:04",
  "usdc": 92.82,
- "portfolio": 537.43,
+ "portfolio": 538.63,
  "api_billing_blocked": false,
  "margin_headroom": 345.85,
  "open": [
   "BTC long +4.0%",
-  "NVDA long -0.3%",
-  "TSLA short +10.8%",
-  "ETH long -1.0%"
+  "NVDA long -0.5%",
+  "TSLA short +10.5%",
+  "ETH long -0.7%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "TSLA -9.8% vol=$817,063",
-  "CRCL -6.8% vol=$740,246",
-  "MSTR -5.2% vol=$156,951",
-  "GOOGL -4.5% vol=$613,273",
-  "HOOD -3.1% vol=$55,814"
+  "TSLA -9.7% vol=$819,263",
+  "CRCL -6.4% vol=$743,408",
+  "MSTR -4.6% vol=$164,077",
+  "GOOGL -4.4% vol=$613,270",
+  "HOOD -3.2% vol=$48,165"
  ],
  "futures_ok": true,
- "futures_balance": 38.84,
+ "futures_balance": 39.02,
  "futures_float_topup": false,
  "unallocated_spot": [],
  "call_reason": "תנועה חזקה במניה: CRCL, MSTR, GOOGL",
- "claude_called": false,
- "skip": "snapshot זהה לקריאה הקודמת"
+ "claude_called": true,
+ "market_read": "השוק הכללי רגוע עם BTC יציב סביב 65K וברוב הקריפטו RSI ניטרלי-אוורסולד, אין מומנטום חד לאף כיוון.",
+ "skip_reason": "שאר המטבעות והמניות נמצאים באזור ניטרלי או ללא נפח מספיק כדי להצדיק כניסה חדשה מעבר לפוזיציות הקיימות.",
+ "picks": [
+  "ADA long size=18% conf=MEDIUM"
+ ],
+ "order_errors": [
+  "ADA: Kraken: ['EOrder:Insufficient funds']"
+ ]
 }
