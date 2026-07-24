@@ -1,35 +1,35 @@
 {
- "time": "2026-07-24T07:00:04",
- "usdc": 92.82,
- "portfolio": 539.98,
+ "time": "2026-07-24T08:00:05",
+ "usdc": 92.81,
+ "portfolio": 542.58,
  "api_billing_blocked": false,
  "margin_headroom": 345.85,
  "open": [
   "BTC long +4.3%",
   "NVDA long -0.5%",
-  "TSLA short +10.3%",
-  "ETH long -0.4%"
+  "TSLA short +9.8%",
+  "ETH long +0.1%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "TSLA -9.5% vol=$863,459",
-  "CRCL -6.3% vol=$743,372",
-  "MSTR -5.2% vol=$163,088",
-  "GOOGL -4.4% vol=$613,116",
-  "HOOD -2.8% vol=$48,411"
+  "TSLA -8.7% vol=$867,879",
+  "CRCL -5.7% vol=$748,688",
+  "GOOGL -3.2% vol=$616,433",
+  "MSTR -3.2% vol=$163,444",
+  "HOOD -2.0% vol=$47,314"
  ],
  "futures_ok": true,
- "futures_balance": 39.11,
+ "futures_balance": 39.95,
  "futures_float_topup": false,
  "unallocated_spot": [],
- "call_reason": "תנועה חזקה במניה: CRCL, MSTR, GOOGL",
+ "call_reason": "תנועה חזקה במניה: CRCL, GOOGL, MSTR",
  "claude_called": true,
- "market_read": "השוק הכללי רגוע עם BTC מתקרב לשיא טווח קצר ורוב האלטקוינים בתנועה צדדית, אבל ADA מציע הזדמנות oversold ברורה יחסית לשאר.",
- "skip_reason": "שאר המועמדים (XRP, PENGU, LTC, LINK) נמצאים באזור ניטרלי ללא איתות ברור, וה-stocks שירדו (TSLA, CRCL, MSTR) כבר בפוזיציות פתוחות או לא מציגים סטאפ שורט מובהק מספיק כרגע.",
+ "market_read": "השוק הקריפטו רגוע יחסית עם עליות מתונות, ומניות ה-xStocks במגמת ירידה יומית שיכולה להעיד על הזדמנויות שורט בהמשך.",
+ "skip_reason": "AVAX למרות oversold עם נזילות נמוכה מדי (34K$), ו-XMR/BTC/ETH כבר overextended או פתוחים בפוזיציה קיימת - לא הוספתי חשיפה נוספת.",
  "picks": [
-  "ADA long size=20% conf=MEDIUM"
+  "SOL long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "ADA: Kraken: ['EOrder:Insufficient funds']"
+  "SOL: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
