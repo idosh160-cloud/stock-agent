@@ -1,33 +1,33 @@
 {
- "time": "2026-07-24T13:00:04",
+ "time": "2026-07-24T14:00:04",
  "usdc": 92.76,
- "portfolio": 536.76,
+ "portfolio": 530.37,
  "api_billing_blocked": false,
  "margin_headroom": 345.85,
  "open": [
-  "BTC long +3.2%",
-  "NVDA long +0.3%",
-  "TSLA short +10.8%",
-  "ETH long -1.2%"
+  "BTC long +2.2%",
+  "NVDA long -1.0%",
+  "TSLA short +13.5%",
+  "ETH long -2.0%"
  ],
  "stock_candidates": 13,
  "top_stocks": [
-  "TSLA -6.6% vol=$700,398",
-  "CRCL -4.0% vol=$737,712",
-  "MSTR -3.0% vol=$174,117",
-  "CF -2.7% vol=$5,247",
-  "SPCX +1.4% vol=$2,216,562"
+  "HOOD -6.4% vol=$13,445",
+  "CRCL -6.3% vol=$691,861",
+  "TSLA -4.7% vol=$535,831",
+  "MSTR -4.5% vol=$165,800",
+  "OPENAI -4.1% vol=$13,733"
  ],
  "futures_ok": true,
- "futures_balance": 39.3,
+ "futures_balance": 36.71,
  "futures_float_topup": false,
  "unallocated_spot": [],
  "call_reason": "פוזיציה חלשה: ETH",
  "claude_called": true,
- "market_read": "השוק הרחב חלש עם BTC ואלטקוינים במגמת oversold קלה, אך יש הזדמנויות בדיקה איכותיות בנפח גבוה.",
- "skip_reason": "AVAX ו-DOT נראים oversold אך הנפח שלהם נמוך מדי לביטחון בכניסה, ו-ADA למרות סימנים דומים נושא היסטוריה שלילית משמעותית ולא מספק ביטחון נוסף כרגע.",
+ "market_read": "השוק הקריפטו כולו באזור oversold עם BTC, SOL, ADA, DOT ו-XRP כולם קרובים לתחתית ה-BB, מה שמצביע על הזדמנות תגובתית לטווח קצר.",
+ "skip_reason": "ADA, DOT ו-CC נפח מסחר נמוך מדי או היסטוריה שלילית ללא שיפור ברור בתנאים; LINK ו-XRP סבירים אך SOL מציע את השילוב הטוב ביותר של נפח, oversold קיצוני ותנודתיות לרווח א-סימטרי.",
  "picks": [
-  "SOL long size=20% conf=MEDIUM"
+  "SOL long size=30% conf=HIGH"
  ],
  "order_errors": [
   "SOL: Kraken: ['EOrder:Insufficient funds']"
