@@ -1,33 +1,32 @@
 {
- "time": "2026-07-24T11:00:04",
- "usdc": 92.79,
- "portfolio": 539.49,
+ "time": "2026-07-24T12:00:05",
+ "usdc": 92.78,
+ "portfolio": 539.79,
  "api_billing_blocked": false,
  "margin_headroom": 345.85,
  "open": [
-  "BTC long +3.5%",
+  "BTC long +3.6%",
   "NVDA long +0.2%",
   "TSLA short +10.6%",
-  "ETH long -0.7%"
+  "ETH long -0.6%"
  ],
  "stock_candidates": 13,
  "top_stocks": [
-  "TSLA -8.1% vol=$739,086",
-  "CRCL -5.3% vol=$744,005",
-  "MSTR -3.1% vol=$166,176",
-  "CF -2.7% vol=$5,441",
-  "GOOGL -1.9% vol=$619,734"
+  "TSLA -7.1% vol=$726,020",
+  "CRCL -4.7% vol=$741,897",
+  "MSTR -3.3% vol=$178,497",
+  "CF -2.9% vol=$5,207",
+  "GOOGL -1.7% vol=$617,524"
  ],
  "futures_ok": true,
- "futures_balance": 39.95,
- "futures_float_topup": false,
+ "futures_balance": 40.1,
  "unallocated_spot": [],
  "call_reason": "תנועה חזקה במניה: CRCL, MSTR, CF",
  "claude_called": true,
- "market_read": "השוק הכללי נסחר בתיקון קל עם רוב המטבעות והמניות באזור oversold-נייטרלי, מה שיוצר הזדמנויות בחירה סלקטיביות.",
- "skip_reason": "שאר המועמדים או חלשים מבחינת נפח/מומנטום או שההיסטוריה שלהם גרועה בלי שיפור טכני משמעותי, ולכן לא נכנסים.",
+ "market_read": "השוק הכללי בקירור קל עם רוב הקריפטו באזור oversold ותיקון בריא, בזמן שהמניות הטוקניזציה יורדות בלי סיגנל שורט קיצוני.",
+ "skip_reason": "שאר המועמדים בקריפטו (DOT, ADA, CC) עם נפח נמוך מדי או היסטוריה גרועה בלי שיפור טכני משמעותי, והמניות לא מציגות קיצוניות מספקת לא ללונג ולא לשורט.",
  "picks": [
-  "SOL long size=20% conf=MEDIUM"
+  "SOL long size=15% conf=MEDIUM"
  ],
  "order_errors": [
   "SOL: Kraken: ['EOrder:Insufficient funds']"
