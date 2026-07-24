@@ -1,35 +1,35 @@
 {
- "time": "2026-07-24T08:00:05",
- "usdc": 92.81,
- "portfolio": 542.58,
+ "time": "2026-07-24T09:00:05",
+ "usdc": 92.79,
+ "portfolio": 540.6,
  "api_billing_blocked": false,
  "margin_headroom": 345.85,
  "open": [
-  "BTC long +4.3%",
+  "BTC long +4.0%",
   "NVDA long -0.5%",
-  "TSLA short +9.8%",
-  "ETH long +0.1%"
+  "TSLA short +10.2%",
+  "ETH long -0.3%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "TSLA -8.7% vol=$867,879",
-  "CRCL -5.7% vol=$748,688",
-  "GOOGL -3.2% vol=$616,433",
-  "MSTR -3.2% vol=$163,444",
-  "HOOD -2.0% vol=$47,314"
+  "TSLA -8.4% vol=$770,265",
+  "CRCL -5.9% vol=$747,489",
+  "GOOGL -3.2% vol=$616,397",
+  "MSTR -2.1% vol=$166,887",
+  "NVDA -2.0% vol=$58,362"
  ],
  "futures_ok": true,
- "futures_balance": 39.95,
+ "futures_balance": 39.63,
  "futures_float_topup": false,
  "unallocated_spot": [],
  "call_reason": "תנועה חזקה במניה: CRCL, GOOGL, MSTR",
  "claude_called": true,
- "market_read": "השוק הקריפטו רגוע יחסית עם עליות מתונות, ומניות ה-xStocks במגמת ירידה יומית שיכולה להעיד על הזדמנויות שורט בהמשך.",
- "skip_reason": "AVAX למרות oversold עם נזילות נמוכה מדי (34K$), ו-XMR/BTC/ETH כבר overextended או פתוחים בפוזיציה קיימת - לא הוספתי חשיפה נוספת.",
+ "market_read": "השוק הכללי נסחר בטווח נייטרלי-חיובי עם BTC וETH יציבים ליד האמצע, ומטבעות אלט מראים סימני המשך מגמה מתונים.",
+ "skip_reason": "שאר המועמדים או חלשים מבחינת נפח/מומנטום או נמצאים בקיצון שמעדיף שורט לא ברור מספיק, ולכן דוללגתי ל-LINK בלבד.",
  "picks": [
-  "SOL long size=20% conf=MEDIUM"
+  "LINK long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "SOL: Kraken: ['EOrder:Insufficient funds']"
+  "LINK: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
