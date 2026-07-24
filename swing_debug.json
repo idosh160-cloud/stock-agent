@@ -1,31 +1,31 @@
 {
- "time": "2026-07-24T15:00:07",
- "usdc": 92.76,
- "portfolio": 532.78,
+ "time": "2026-07-24T16:00:05",
+ "usdc": 92.75,
+ "portfolio": 537.76,
  "api_billing_blocked": false,
  "margin_headroom": 345.85,
  "open": [
-  "BTC long +2.0%",
+  "BTC long +2.1%",
   "TSLA short +13.7%",
-  "ETH long -1.7%"
+  "ETH long -1.8%"
  ],
  "stock_candidates": 14,
  "top_stocks": [
-  "HOOD -6.6% vol=$18,930",
-  "CF -4.2% vol=$5,286",
-  "OPENAI -4.0% vol=$11,254",
-  "TSLA -3.4% vol=$423,620",
-  "AAPL +2.4% vol=$40,899"
+  "HOOD -6.2% vol=$20,090",
+  "CF -4.0% vol=$5,496",
+  "OPENAI -3.8% vol=$10,864",
+  "AAPL +3.8% vol=$55,333",
+  "TSLA -3.5% vol=$590,859"
  ],
  "futures_ok": true,
- "futures_balance": 43.13,
+ "futures_balance": 42.94,
  "unallocated_spot": [],
  "call_reason": "פוזיציה חלשה: ETH",
  "claude_called": true,
- "market_read": "השוק הקריפטו כולו במצב oversold חד עם ירידות של 1-3% ב-24 שעות, מה שיוצר הזדמנויות ריבאונד באיכות גבוהה.",
- "skip_reason": "BTC/ETH כבר בפוזיציות פתוחות, ו-DOT/ADA/CC בעלי נפח מסחר נמוך מדי או היסטוריה שלילית ללא הצדקה טכנית חזקה מספיק להצדיק פוזיציה נוספת.",
+ "market_read": "השוק הקריפטו כולו במגמת ירידה קלה עם RSI נמוך בכל הנכסים המרכזיים, מה שיוצר הזדמנויות דיפ-בை לטווח קצר.",
+ "skip_reason": "שאר המועמדים (ADA, CC, XRP) חלשים יותר מבחינת נפח או היסטוריה, ומניות ה-xStocks לא מציגות סטאפ ברור מספיק כרגע לעומת ה-USDC הפנוי.",
  "picks": [
-  "SOL long size=35% conf=HIGH"
+  "SOL long size=25% conf=HIGH"
  ],
  "order_errors": [
   "SOL: Kraken: ['EOrder:Insufficient funds']"
