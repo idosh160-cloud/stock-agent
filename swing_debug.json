@@ -1,26 +1,33 @@
 {
- "time": "2026-07-25T06:00:04",
+ "time": "2026-07-25T07:00:04",
  "usdc": 92.64,
- "portfolio": 537.06,
+ "portfolio": 536.98,
  "api_billing_blocked": false,
  "margin_headroom": 345.85,
  "open": [
   "BTC long +1.9%",
-  "TSLA short +13.5%",
+  "TSLA short +13.6%",
   "ETH long -1.9%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "HOOD -6.6% vol=$20,631",
-  "TSLA -3.4% vol=$698,312",
-  "AAPL +3.3% vol=$56,937",
-  "MSTR -3.3% vol=$169,773",
-  "OPENAI -2.5% vol=$23,176"
+  "HOOD -7.4% vol=$20,580",
+  "TSLA -3.9% vol=$644,866",
+  "MSTR -3.8% vol=$169,762",
+  "AAPL +2.9% vol=$55,685",
+  "ANTHROPIC +2.5% vol=$8,757"
  ],
  "futures_ok": true,
- "futures_balance": 43.11,
+ "futures_balance": 43.04,
  "unallocated_spot": [],
  "call_reason": "פוזיציה חלשה: ETH",
- "claude_called": false,
- "skip": "snapshot זהה לקריאה הקודמת"
+ "claude_called": true,
+ "market_read": "השוק הקריפטו כרגע ברוב oversold קל עם BTC ו-ETH גם ב-RSI נמוך, מה שמרמז על הזדמנות תיקון קצר טווח כלפי מעלה.",
+ "skip_reason": "שאר המטבעות והמניות נמצאים באזור ניטרלי או ללא זווית ברורה (RSI 35-60, BB% אמצעי) כך שאין יתרון סיכון/סיכוי מספיק לכניסה נוספת כרגע.",
+ "picks": [
+  "ADA long size=20% conf=MEDIUM"
+ ],
+ "order_errors": [
+  "ADA: Kraken: ['EOrder:Insufficient funds']"
+ ]
 }
