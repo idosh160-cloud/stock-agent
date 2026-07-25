@@ -1,35 +1,37 @@
 {
- "time": "2026-07-25T18:00:05",
- "usdc": 89.94,
- "portfolio": 537.28,
+ "time": "2026-07-25T19:00:05",
+ "usdc": 90.01,
+ "portfolio": 538.09,
  "api_billing_blocked": false,
- "margin_headroom": 360.2,
+ "margin_headroom": 350.6,
  "open": [
-  "BTC long +2.3%",
-  "TSLA short +13.7%"
+  "BTC long +2.6%",
+  "TSLA short +13.4%",
+  "SOL long +0.3%"
  ],
  "stock_candidates": 11,
  "top_stocks": [
+  "SPCX -2.4% vol=$976,067",
   "OPENAI +1.6% vol=$25,648",
-  "SPCX -1.5% vol=$992,905",
-  "MSTR +1.3% vol=$35,113",
-  "GOOGL -0.8% vol=$139,268",
-  "TSLA +0.7% vol=$100,771"
+  "TSLA +1.3% vol=$98,498",
+  "MSTR +0.9% vol=$35,011",
+  "GOOGL -0.7% vol=$128,772"
  ],
  "futures_ok": true,
- "futures_balance": 42.97,
+ "futures_balance": 43.17,
  "unallocated_spot": [
-  "ETH $373"
+  "ETH $374"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: SHIB, DOGE",
  "claude_called": true,
- "market_read": "השוק הקריפטו נמצא ברוב נכסים באזור קנוי-יתר קיצוני (SHIB, DOGE, AVAX) עם נפח נמוך, בעוד BTC ו-ETH נשארים יציבים במגמת עלייה מתונה עם מומנטום חיובי.",
- "skip_reason": "נכסים כמו SHIB, DOGE ו-AVAX קנויים יתר בקיצוניות אך נפח המסחר נמוך מדי לסחר בטוח, ומניות ה-xStocks כרגע ללא סטאפ ברור לשורט או לונג חזק.",
+ "market_read": "השוק הכללי חיובי מתון עם כמה אלטים בקיצון קנייה, מה שיוצר גם הזדמנויות המשך וגם הזדמנויות שורט על מיצוי.",
+ "skip_reason": "SHIB ו-AVAX נפחי מסחר נמוכים מדי לביצוע בטוח, ו-XMR עדיין במגמת ירידה ללא סימן היפוך ברור ב-MACD.",
  "picks": [
-  "SOL long size=20% conf=MEDIUM",
-  "LINK long size=15% conf=MEDIUM"
+  "XRP long size=20% conf=MEDIUM",
+  "DOGE short size=15% conf=MEDIUM"
  ],
  "order_errors": [
-  "LINK: Kraken: ['EOrder:Insufficient funds']"
+  "XRP: Kraken: ['EOrder:Insufficient funds']",
+  "DOGE: Kraken: ['EOrder:Insufficient initial margin']"
  ]
 }
