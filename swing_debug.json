@@ -1,29 +1,29 @@
 {
- "time": "2026-07-25T02:00:04",
+ "time": "2026-07-25T03:00:04",
  "usdc": 92.67,
- "portfolio": 537.31,
+ "portfolio": 537.17,
  "api_billing_blocked": false,
  "margin_headroom": 345.85,
  "open": [
   "BTC long +2.0%",
   "TSLA short +13.6%",
-  "ETH long -1.8%"
+  "ETH long -1.9%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "HOOD -6.6% vol=$23,195",
-  "AAPL +3.9% vol=$55,314",
-  "TSLA -3.7% vol=$699,225",
-  "MSTR -3.0% vol=$179,618",
+  "HOOD -6.6% vol=$20,631",
+  "AAPL +3.5% vol=$55,934",
+  "MSTR -3.2% vol=$176,711",
+  "TSLA -2.9% vol=$676,775",
   "OPENAI -2.5% vol=$23,176"
  ],
  "futures_ok": true,
- "futures_balance": 42.74,
+ "futures_balance": 42.87,
  "unallocated_spot": [],
  "call_reason": "פוזיציה חלשה: ETH",
  "claude_called": true,
- "market_read": "השוק בכללי במגמת דיפ קל עם BTC ו-ETH ברמות oversold, מה שיוצר הזדמנויות ריבאונד סלקטיביות במקום מכירה גורפת.",
- "skip_reason": "שאר המועמדים או חופפים לפוזיציות קיימות (BTC, ETH), נמוכי נפח, או ללא סיגנל ברור מספיק להצדיק כניסה חדשה כרגע.",
+ "market_read": "השוק הכללי במגמת תיקון קל עם BTC ואלטקוינים ברמות RSI נמוכות-בינוניות, מציע הזדמנויות קניה בירידות בלי איתות מכירה ברור באף נכס.",
+ "skip_reason": "שאר המועמדים (XMR מוגזם, המניות ברוב ירידה קלה ללא מומנטום ברור) לא מציגים יחס סיכוי/סיכון עדיף על SOL כרגע.",
  "picks": [
   "SOL long size=20% conf=MEDIUM"
  ],
