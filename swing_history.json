@@ -1498,5 +1498,30 @@
     "entry_bb_pct": null,
     "entry_macd_hist": null,
     "entry_change_24h": 1.62
+  },
+  {
+    "coin": "ETH",
+    "pair": "ETHUSDC",
+    "status": "closed_stale",
+    "leveraged": true,
+    "collateral": 163.01,
+    "volume": 0.08607925,
+    "entry_price": 1893.72,
+    "close_price": 1866.63,
+    "target_price": 2102.03,
+    "stop_price": 1817.97,
+    "pnl_usd": -2.33,
+    "pnl_pct": -1.43,
+    "date_open": "2026-07-23T16:00:37.620768",
+    "date_close": "2026-07-25T17:00:04.715938",
+    "reasoning": "OK",
+    "confidence": "HIGH",
+    "txid": "OCSPC4-MUKGP-7URWZD",
+    "close_txid": "OHKFSZ-N37OJ-SXUETM",
+    "side": "long",
+    "entry_rsi": 33.0,
+    "entry_bb_pct": 4.6,
+    "entry_macd_hist": -3.459471,
+    "entry_change_24h": -2.09
   }
 ]
