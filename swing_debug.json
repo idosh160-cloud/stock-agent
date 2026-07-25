@@ -1,33 +1,35 @@
 {
- "time": "2026-07-25T07:00:04",
- "usdc": 92.64,
- "portfolio": 536.98,
+ "time": "2026-07-25T08:00:04",
+ "usdc": 92.63,
+ "portfolio": 536.29,
  "api_billing_blocked": false,
  "margin_headroom": 345.85,
  "open": [
   "BTC long +1.9%",
-  "TSLA short +13.6%",
-  "ETH long -1.9%"
+  "TSLA short +13.7%",
+  "ETH long -2.0%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
   "HOOD -7.4% vol=$20,580",
-  "TSLA -3.9% vol=$644,866",
-  "MSTR -3.8% vol=$169,762",
-  "AAPL +2.9% vol=$55,685",
+  "MSTR -4.5% vol=$169,641",
+  "TSLA -3.6% vol=$643,652",
+  "AAPL +3.1% vol=$56,049",
   "ANTHROPIC +2.5% vol=$8,757"
  ],
  "futures_ok": true,
- "futures_balance": 43.04,
+ "futures_balance": 42.82,
  "unallocated_spot": [],
  "call_reason": "פוזיציה חלשה: ETH",
  "claude_called": true,
- "market_read": "השוק הקריפטו כרגע ברוב oversold קל עם BTC ו-ETH גם ב-RSI נמוך, מה שמרמז על הזדמנות תיקון קצר טווח כלפי מעלה.",
- "skip_reason": "שאר המטבעות והמניות נמצאים באזור ניטרלי או ללא זווית ברורה (RSI 35-60, BB% אמצעי) כך שאין יתרון סיכון/סיכוי מספיק לכניסה נוספת כרגע.",
+ "market_read": "השוק הקריפטו נמצא באזור oversold כללי (BTC, SOL, XRP, ADA כולם ב-RSI נמוך) מה שמצביע על הזדמנות התאוששות טקטית קצרת טווח.",
+ "skip_reason": "ADA נפסל בגלל היסטוריה חלשה מאוד (12% זכייה) בלי הבדל מהותי בתנאי הכניסה; מניות ה-xStock (HOOD, MSTR, TSLA) כבר בתנודה חדה ללא אישור נפח מספק לפוזיציה נוספת מעבר לפוזיציית TSLA הקיימת.",
  "picks": [
-  "ADA long size=20% conf=MEDIUM"
+  "SOL long size=22% conf=HIGH",
+  "XRP long size=18% conf=MEDIUM"
  ],
  "order_errors": [
-  "ADA: Kraken: ['EOrder:Insufficient funds']"
+  "SOL: Kraken: ['EOrder:Insufficient funds']",
+  "XRP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
