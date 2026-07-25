@@ -1,13 +1,13 @@
 {
- "time": "2026-07-25T04:00:04",
- "usdc": 92.66,
- "portfolio": 537.16,
+ "time": "2026-07-25T05:00:04",
+ "usdc": 92.64,
+ "portfolio": 537.55,
  "api_billing_blocked": false,
  "margin_headroom": 345.85,
  "open": [
-  "BTC long +2.0%",
+  "BTC long +2.2%",
   "TSLA short +13.6%",
-  "ETH long -1.9%"
+  "ETH long -1.8%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
@@ -15,10 +15,10 @@
   "MSTR -3.9% vol=$175,536",
   "AAPL +3.6% vol=$54,678",
   "TSLA -3.5% vol=$669,485",
-  "SPCX -2.5% vol=$1,353,136"
+  "SPCX -3.0% vol=$1,357,578"
  ],
  "futures_ok": true,
- "futures_balance": 42.94,
+ "futures_balance": 42.88,
  "unallocated_spot": [],
  "call_reason": "פוזיציה חלשה: ETH",
  "claude_called": false,
