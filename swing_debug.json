@@ -1,33 +1,33 @@
 {
- "time": "2026-07-25T12:00:04",
- "usdc": 92.61,
- "portfolio": 536.7,
+ "time": "2026-07-25T13:00:04",
+ "usdc": 92.58,
+ "portfolio": 537.25,
  "api_billing_blocked": false,
  "margin_headroom": 345.85,
  "open": [
-  "BTC long +2.0%",
+  "BTC long +2.1%",
   "TSLA short +13.9%",
-  "ETH long -2.0%"
+  "ETH long -1.9%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
   "HOOD -5.5% vol=$20,556",
-  "SPCX -4.2% vol=$1,346,036",
-  "TSLA -3.2% vol=$615,644",
-  "OPENAI -3.2% vol=$30,463",
-  "AAPL +2.9% vol=$55,416"
+  "SPCX -3.8% vol=$1,319,272",
+  "TSLA -3.3% vol=$605,448",
+  "AAPL +3.3% vol=$53,029",
+  "ANTHROPIC +2.5% vol=$8,757"
  ],
  "futures_ok": true,
- "futures_balance": 42.9,
+ "futures_balance": 43.05,
  "unallocated_spot": [],
  "call_reason": "פוזיציה חלשה: ETH",
  "claude_called": true,
- "market_read": "השוק הקריפטו נסחר בטווח צר עם רוב הנכסים ב-RSI נמוך-בינוני, ADA מציג את איתות ה-oversold הברור ביותר להיפוך.",
- "skip_reason": "שאר המועמדים (LTC, DOT, LINK, DOGE, XMR) נמצאים ב-RSI ניטרלי ללא איתות ברור, והמניות לא מציגות הזדמנות אסימטרית מספיק כרגע.",
+ "market_read": "השוק בקונסולידציה שקטה עם BTC ו-ETH ניטרליים, אבל SOL מראה סימני התאוששות מדיפ שכדאי לנצל עם המזומן הפנוי.",
+ "skip_reason": "שאר הקריפטו (LTC, ADA, XMR) ניטרליים ללא כיוון ברור, והמניות (HOOD, SPCX) ללא נתוני RSI/MACD אמינים להצדקת פוזיציה חדשה מעבר לפוזיציות הקיימות.",
  "picks": [
-  "ADA long size=20% conf=MEDIUM"
+  "SOL long size=30% conf=MEDIUM"
  ],
  "order_errors": [
-  "ADA: Kraken: ['EOrder:Insufficient funds']"
+  "SOL: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
