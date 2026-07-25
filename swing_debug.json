@@ -1,35 +1,33 @@
 {
- "time": "2026-07-25T11:00:05",
+ "time": "2026-07-25T12:00:04",
  "usdc": 92.61,
- "portfolio": 536.83,
+ "portfolio": 536.7,
  "api_billing_blocked": false,
  "margin_headroom": 345.85,
  "open": [
   "BTC long +2.0%",
-  "TSLA short +13.7%",
-  "ETH long -1.9%"
+  "TSLA short +13.9%",
+  "ETH long -2.0%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
   "HOOD -5.5% vol=$20,556",
-  "OPENAI -3.6% vol=$27,839",
-  "TSLA -3.3% vol=$632,542",
-  "MSTR -3.2% vol=$163,929",
-  "AAPL +3.0% vol=$55,753"
+  "SPCX -4.2% vol=$1,346,036",
+  "TSLA -3.2% vol=$615,644",
+  "OPENAI -3.2% vol=$30,463",
+  "AAPL +2.9% vol=$55,416"
  ],
  "futures_ok": true,
- "futures_balance": 42.96,
+ "futures_balance": 42.9,
  "unallocated_spot": [],
  "call_reason": "פוזיציה חלשה: ETH",
  "claude_called": true,
- "market_read": "השוק בתנודתיות מתונה עם כמה נכסים ב-oversold קלאסי (SOL, LTC, ADA) שמציעים הזדמנויות ריבאונד תוך שמירה על טרנד עולה כללי בביטקוין.",
- "skip_reason": "ADA נדחה בגלל היסטוריית הפסדים משמעותית (12% win) ללא סיגנל חזק מספיק להתגברות עליה; מניות ה-xStocks (HOOD, SPCX) בירידה חדה אך ללא אישור ברור לכיוון - מסוכן מדי לפוזיציה חדשה כרגע.",
+ "market_read": "השוק הקריפטו נסחר בטווח צר עם רוב הנכסים ב-RSI נמוך-בינוני, ADA מציג את איתות ה-oversold הברור ביותר להיפוך.",
+ "skip_reason": "שאר המועמדים (LTC, DOT, LINK, DOGE, XMR) נמצאים ב-RSI ניטרלי ללא איתות ברור, והמניות לא מציגות הזדמנות אסימטרית מספיק כרגע.",
  "picks": [
-  "SOL long size=22% conf=MEDIUM",
-  "LTC long size=22% conf=MEDIUM"
+  "ADA long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "SOL: Kraken: ['EOrder:Insufficient funds']",
-  "LTC: Kraken: ['EOrder:Invalid leverage']"
+  "ADA: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
