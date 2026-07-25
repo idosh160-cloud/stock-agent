@@ -1,26 +1,35 @@
 {
- "time": "2026-07-25T10:00:05",
+ "time": "2026-07-25T11:00:05",
  "usdc": 92.61,
- "portfolio": 536.77,
+ "portfolio": 536.83,
  "api_billing_blocked": false,
  "margin_headroom": 345.85,
  "open": [
-  "BTC long +1.9%",
-  "TSLA short +14.2%",
+  "BTC long +2.0%",
+  "TSLA short +13.7%",
   "ETH long -1.9%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
   "HOOD -5.5% vol=$20,556",
-  "TSLA -4.6% vol=$631,811",
-  "MSTR -4.3% vol=$165,013",
-  "AAPL +3.1% vol=$56,049",
-  "OPENAI -2.9% vol=$24,833"
+  "OPENAI -3.6% vol=$27,839",
+  "TSLA -3.3% vol=$632,542",
+  "MSTR -3.2% vol=$163,929",
+  "AAPL +3.0% vol=$55,753"
  ],
  "futures_ok": true,
- "futures_balance": 42.89,
+ "futures_balance": 42.96,
  "unallocated_spot": [],
  "call_reason": "פוזיציה חלשה: ETH",
- "claude_called": false,
- "skip": "snapshot זהה לקריאה הקודמת"
+ "claude_called": true,
+ "market_read": "השוק בתנודתיות מתונה עם כמה נכסים ב-oversold קלאסי (SOL, LTC, ADA) שמציעים הזדמנויות ריבאונד תוך שמירה על טרנד עולה כללי בביטקוין.",
+ "skip_reason": "ADA נדחה בגלל היסטוריית הפסדים משמעותית (12% win) ללא סיגנל חזק מספיק להתגברות עליה; מניות ה-xStocks (HOOD, SPCX) בירידה חדה אך ללא אישור ברור לכיוון - מסוכן מדי לפוזיציה חדשה כרגע.",
+ "picks": [
+  "SOL long size=22% conf=MEDIUM",
+  "LTC long size=22% conf=MEDIUM"
+ ],
+ "order_errors": [
+  "SOL: Kraken: ['EOrder:Insufficient funds']",
+  "LTC: Kraken: ['EOrder:Invalid leverage']"
+ ]
 }
