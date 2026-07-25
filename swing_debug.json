@@ -1,33 +1,33 @@
 {
- "time": "2026-07-25T22:00:04",
- "usdc": 90.0,
- "portfolio": 537.75,
+ "time": "2026-07-25T23:00:04",
+ "usdc": 89.99,
+ "portfolio": 538.23,
  "api_billing_blocked": false,
  "margin_headroom": 350.6,
  "open": [
-  "BTC long +2.5%",
+  "BTC long +2.6%",
   "TSLA short +13.3%",
-  "SOL long +0.0%"
+  "SOL long +0.1%"
  ],
- "stock_candidates": 9,
+ "stock_candidates": 8,
  "top_stocks": [
-  "SPCX -2.8% vol=$944,025",
-  "CRCL +0.9% vol=$41,485",
-  "OPENAI +0.8% vol=$21,393",
+  "CRCL +1.0% vol=$41,330",
+  "OPENAI +1.0% vol=$21,302",
   "QQQ +0.5% vol=$21,210",
-  "NVDA +0.5% vol=$44,088"
+  "NVDA +0.4% vol=$45,007",
+  "SPCX -0.4% vol=$644,611"
  ],
  "futures_ok": true,
- "futures_balance": 43.34,
+ "futures_balance": 43.28,
  "unallocated_spot": [
-  "ETH $373"
+  "ETH $374"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: SHIB, DOGE",
  "claude_called": true,
- "market_read": "השוק הרחב יציב עם BTC ואלטים באזור עליון של הטווח, כמה מטבעות במצב יתר-קנייה קיצוני שמזמין תיקון קצר.",
- "skip_reason": "SHIB ו-DOGE נמצאים גם הם ב-overbought אך עם נפח מסחר נמוך מדי לביצוע בטוח, והמניות הזמינות לא מציגות סטאפ ברור כרגע.",
+ "market_read": "השוק הכללי רגוע יחסית עם BTC יציב סביב 64.3K, אבל כמה אלטים (AVAX, SHIB) רצו חזק מדי ונראים בשלים לתיקון.",
+ "skip_reason": "SHIB נראה overbought גם כן אך הנפח נמוך מדי (74K$) לביצוע בטוח; שאר המועמדים (DOGE, XRP, ETH, LINK) בתחום ניטרלי ללא איתות ברור לכיוון.",
  "picks": [
-  "AVAX short size=22% conf=MEDIUM"
+  "AVAX short size=20% conf=HIGH"
  ],
  "order_errors": [
   "AVAX: Kraken: ['EOrder:Margin trading in asset is restricted']"
