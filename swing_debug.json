@@ -1,31 +1,31 @@
 {
- "time": "2026-07-25T00:00:04",
- "usdc": 92.69,
- "portfolio": 537.65,
+ "time": "2026-07-25T01:00:04",
+ "usdc": 92.67,
+ "portfolio": 537.19,
  "api_billing_blocked": false,
  "margin_headroom": 345.85,
  "open": [
-  "BTC long +2.2%",
+  "BTC long +2.0%",
   "TSLA short +13.6%",
   "ETH long -1.8%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "HOOD -6.8% vol=$23,708",
-  "TSLA -3.7% vol=$700,877",
-  "AAPL +3.7% vol=$49,657",
-  "MSTR -2.7% vol=$181,391",
-  "ANTHROPIC +2.5% vol=$8,757"
+  "HOOD -6.6% vol=$23,195",
+  "AAPL +3.6% vol=$48,440",
+  "TSLA -3.5% vol=$700,689",
+  "ANTHROPIC +2.5% vol=$8,757",
+  "MSTR -2.5% vol=$181,353"
  ],
  "futures_ok": true,
- "futures_balance": 42.89,
+ "futures_balance": 42.67,
  "unallocated_spot": [],
  "call_reason": "פוזיציה חלשה: ETH",
  "claude_called": true,
- "market_read": "השוק הקריפטו במגמת תיקון קל עם כמה נכסים ב-oversold מובהק, בעוד מניות ה-xStocks נראות פחות קיצוניות כרגע.",
- "skip_reason": "ADA ו-BTC גם oversold אך עם היסטוריה חלשה יותר או פחות נפח יחסי, ומניות ה-xStocks לא מציגות כרגע סטאפ ברור מספיק לשורט או לונג.",
+ "market_read": "BTC ו-ETH נמצאים באזור oversold אך עדיין בפוזיציות פתוחות, ו-SOL מציג את התמונה הטכנית הכי נקייה של דחייה מתחתית עם מומנטום חיובי.",
+ "skip_reason": "שאר המטבעות והמניות נמצאים באזור ניטרלי או ללא ווליום מספק, ו-BTC/ETH כבר מוחזקים כך שלא כדאי להגדיל חשיפה נוספת.",
  "picks": [
-  "SOL long size=30% conf=MEDIUM"
+  "SOL long size=20% conf=MEDIUM"
  ],
  "order_errors": [
   "SOL: Kraken: ['EOrder:Insufficient funds']"
