@@ -1,37 +1,35 @@
 {
- "time": "2026-07-25T17:00:06",
- "usdc": 92.55,
- "portfolio": 538.88,
+ "time": "2026-07-25T18:00:05",
+ "usdc": 89.94,
+ "portfolio": 537.28,
  "api_billing_blocked": false,
  "margin_headroom": 360.2,
  "open": [
-  "BTC long +2.2%",
+  "BTC long +2.3%",
   "TSLA short +13.7%"
  ],
  "stock_candidates": 11,
  "top_stocks": [
-  "OPENAI +1.7% vol=$24,070",
-  "NVDA -1.2% vol=$324,585",
-  "TSLA +1.1% vol=$105,491",
-  "SPCX -0.9% vol=$987,692",
-  "MSTR -0.6% vol=$84,394"
+  "OPENAI +1.6% vol=$25,648",
+  "SPCX -1.5% vol=$992,905",
+  "MSTR +1.3% vol=$35,113",
+  "GOOGL -0.8% vol=$139,268",
+  "TSLA +0.7% vol=$100,771"
  ],
  "futures_ok": true,
- "futures_balance": 42.87,
+ "futures_balance": 42.97,
  "unallocated_spot": [
-  "ETH $372"
+  "ETH $373"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: DOGE",
+ "call_reason": "תנועה חזקה במטבע חדש: SHIB, DOGE",
  "claude_called": true,
- "market_read": "השוק הקריפטו נסחר במגמה מעורבת עם BTC יציב סביב 64K, בעוד מטבעות ספקולטיביים כמו DOGE ו-SHIB רצו חזק ונראים מוצים לתיקון.",
- "skip_reason": "SHIB נפסל בגלל נפח מסחר דל מ-38K$ שמסוכן להחלקות מחיר; XRP ו-LINK קרובים לרוויה אך ללא סיגנל חזק מספיק לכניסה חדשה; מניות ה-xStocks נראות שקטות מדי היום ללא סטאפ ברור.",
+ "market_read": "השוק הקריפטו נמצא ברוב נכסים באזור קנוי-יתר קיצוני (SHIB, DOGE, AVAX) עם נפח נמוך, בעוד BTC ו-ETH נשארים יציבים במגמת עלייה מתונה עם מומנטום חיובי.",
+ "skip_reason": "נכסים כמו SHIB, DOGE ו-AVAX קנויים יתר בקיצוניות אך נפח המסחר נמוך מדי לסחר בטוח, ומניות ה-xStocks כרגע ללא סטאפ ברור לשורט או לונג חזק.",
  "picks": [
-  "DOGE short size=22% conf=HIGH",
-  "SOL long size=25% conf=MEDIUM"
+  "SOL long size=20% conf=MEDIUM",
+  "LINK long size=15% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "DOGE: Kraken: ['EOrder:Insufficient initial margin']",
-  "SOL: Kraken: ['EOrder:Insufficient funds']"
+  "LINK: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
