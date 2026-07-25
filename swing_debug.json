@@ -1,24 +1,24 @@
 {
- "time": "2026-07-25T05:00:04",
+ "time": "2026-07-25T06:00:04",
  "usdc": 92.64,
- "portfolio": 537.55,
+ "portfolio": 537.06,
  "api_billing_blocked": false,
  "margin_headroom": 345.85,
  "open": [
-  "BTC long +2.2%",
-  "TSLA short +13.6%",
-  "ETH long -1.8%"
+  "BTC long +1.9%",
+  "TSLA short +13.5%",
+  "ETH long -1.9%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
   "HOOD -6.6% vol=$20,631",
-  "MSTR -3.9% vol=$175,536",
-  "AAPL +3.6% vol=$54,678",
-  "TSLA -3.5% vol=$669,485",
-  "SPCX -3.0% vol=$1,357,578"
+  "TSLA -3.4% vol=$698,312",
+  "AAPL +3.3% vol=$56,937",
+  "MSTR -3.3% vol=$169,773",
+  "OPENAI -2.5% vol=$23,176"
  ],
  "futures_ok": true,
- "futures_balance": 42.88,
+ "futures_balance": 43.11,
  "unallocated_spot": [],
  "call_reason": "פוזיציה חלשה: ETH",
  "claude_called": false,
