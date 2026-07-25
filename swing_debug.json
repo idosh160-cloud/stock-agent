@@ -1,33 +1,26 @@
 {
- "time": "2026-07-25T15:00:04",
+ "time": "2026-07-25T16:00:05",
  "usdc": 92.58,
- "portfolio": 539.05,
+ "portfolio": 538.64,
  "api_billing_blocked": false,
  "margin_headroom": 345.85,
  "open": [
   "BTC long +2.2%",
-  "TSLA short +13.8%",
+  "TSLA short +13.9%",
   "ETH long -1.4%"
  ],
  "stock_candidates": 11,
  "top_stocks": [
-  "SPCX -2.0% vol=$1,045,576",
+  "MSTR -2.0% vol=$84,934",
+  "SPCX -1.6% vol=$989,212",
+  "NVDA -1.5% vol=$324,674",
   "OPENAI +1.3% vol=$21,539",
-  "CRCL +1.1% vol=$59,411",
-  "NVDA -1.0% vol=$369,880",
-  "AAPL +0.6% vol=$37,347"
+  "HOOD -0.7% vol=$7,618"
  ],
  "futures_ok": true,
- "futures_balance": 43.09,
+ "futures_balance": 42.78,
  "unallocated_spot": [],
  "call_reason": "פוזיציה חלשה: ETH",
- "claude_called": true,
- "market_read": "השוק הקריפטו רגוע יחסית עם BTC וETH קרובים לרמות עליונות, בעוד כמה אלטקוינים כמו LTC מציגים הזדמנות דיפ-קנייה ברורה.",
- "skip_reason": "שאר המועמדים (DOGE, XMR, CC) בעלי נפח נמוך או אותות מעורבים, ולא הצדיקו סיכון נוסף מעבר לפוזיציה הקיימת.",
- "picks": [
-  "LTC long size=20% conf=MEDIUM"
- ],
- "order_errors": [
-  "LTC: Kraken: ['EOrder:Invalid leverage']"
- ]
+ "claude_called": false,
+ "skip": "snapshot זהה לקריאה הקודמת"
 }
