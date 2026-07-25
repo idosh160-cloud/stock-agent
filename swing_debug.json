@@ -1,38 +1,35 @@
 {
- "time": "2026-07-25T20:00:04",
+ "time": "2026-07-25T21:00:05",
  "usdc": 90.01,
- "portfolio": 537.98,
+ "portfolio": 537.41,
  "api_billing_blocked": false,
  "margin_headroom": 350.6,
  "open": [
-  "BTC long +2.5%",
-  "TSLA short +13.4%",
-  "SOL long +0.2%"
+  "BTC long +2.4%",
+  "TSLA short +13.3%",
+  "SOL long -0.0%"
  ],
  "stock_candidates": 9,
  "top_stocks": [
-  "SPCX -3.0% vol=$963,327",
+  "SPCX -2.9% vol=$959,974",
   "OPENAI +1.6% vol=$25,648",
+  "CRCL +0.6% vol=$41,494",
   "SPY +0.6% vol=$41,812",
-  "QQQ +0.5% vol=$21,183",
-  "CRCL +0.5% vol=$41,727"
+  "QQQ +0.5% vol=$21,183"
  ],
  "futures_ok": true,
- "futures_balance": 43.21,
+ "futures_balance": 43.25,
  "unallocated_spot": [
-  "ETH $374"
+  "ETH $373"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: SHIB, DOGE",
  "claude_called": true,
- "market_read": "השוק הכללי חיובי אך רגוע יחסית, המטבעות הגדולים (BTC/ETH) עולים בביטחון עם נפח תומך בעוד כמה אלטים קטנים נראים סחוטים אחרי ריצות פראבוליות.",
- "skip_reason": "SHIB/AVAX/DOGE נראים עודפי קנייה קיצוניים אך ה-MACD עדיין חיובי ולא מראה סימני היפוך ברור, כך ששורט שם מסוכן מדי; המניות הטוקניזציה ללא נתוני RSI/BB אמינים כרגע כדי לבסס עסקה בביטחון.",
+ "market_read": "השוק הכללי נייטרלי עד חיובי קל, אבל כמה אלטקוינים כמו AVAX ו-SHIB רצו יותר מדי מהר ונראים בשלים לתיקון.",
+ "skip_reason": "SHIB ו-DOGE overbought אך עם וולום נמוך מדי לביטחון; מניות ה-xStocks לא מציגות סטאפ ברור כרגע (RSI לא זמין, תנועה שטוחה); ETH הספוט נשאר מוחזק כי המומנטום שלו עדיין חיובי (MACD חזק, RSI 57) ולא מצדיק מכירה.",
  "picks": [
-  "ETH long size=25% conf=HIGH",
-  "LINK long size=15% conf=MEDIUM"
+  "AVAX short size=22% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "ETH: Kraken: ['EOrder:Insufficient funds']",
-  "LINK: Kraken: ['EOrder:Insufficient funds']"
+  "AVAX: Kraken: ['EOrder:Margin trading in asset is restricted']"
  ]
 }
