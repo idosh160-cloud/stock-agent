@@ -1,33 +1,33 @@
 {
- "time": "2026-07-25T14:00:04",
+ "time": "2026-07-25T15:00:04",
  "usdc": 92.58,
- "portfolio": 538.65,
+ "portfolio": 539.05,
  "api_billing_blocked": false,
  "margin_headroom": 345.85,
  "open": [
   "BTC long +2.2%",
-  "TSLA short +13.5%",
-  "ETH long -1.5%"
+  "TSLA short +13.8%",
+  "ETH long -1.4%"
  ],
- "stock_candidates": 12,
+ "stock_candidates": 11,
  "top_stocks": [
-  "SPCX -3.1% vol=$1,094,666",
-  "ANTHROPIC +2.5% vol=$8,757",
-  "CRCL +2.4% vol=$86,757",
-  "OPENAI +1.9% vol=$21,801",
-  "GOOGL -1.4% vol=$326,341"
+  "SPCX -2.0% vol=$1,045,576",
+  "OPENAI +1.3% vol=$21,539",
+  "CRCL +1.1% vol=$59,411",
+  "NVDA -1.0% vol=$369,880",
+  "AAPL +0.6% vol=$37,347"
  ],
  "futures_ok": true,
- "futures_balance": 42.91,
+ "futures_balance": 43.09,
  "unallocated_spot": [],
  "call_reason": "פוזיציה חלשה: ETH",
  "claude_called": true,
- "market_read": "השוק נסחר בטווח צר עם BTC ואלטים ברובם ניטרליים, SOL מציג את ההזדמנות הכי ברורה של oversold bounce.",
- "skip_reason": "שאר המועמדים (DOGE, LINK, XMR, ETH) נמצאים באזור BB% גבוה או ניטרלי ללא בירור כיווני חד, והמניות ללא נתוני RSI מספקים לביסוס short/long בטוח.",
+ "market_read": "השוק הקריפטו רגוע יחסית עם BTC וETH קרובים לרמות עליונות, בעוד כמה אלטקוינים כמו LTC מציגים הזדמנות דיפ-קנייה ברורה.",
+ "skip_reason": "שאר המועמדים (DOGE, XMR, CC) בעלי נפח נמוך או אותות מעורבים, ולא הצדיקו סיכון נוסף מעבר לפוזיציה הקיימת.",
  "picks": [
-  "SOL long size=35% conf=MEDIUM"
+  "LTC long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "SOL: Kraken: ['EOrder:Insufficient funds']"
+  "LTC: Kraken: ['EOrder:Invalid leverage']"
  ]
 }
