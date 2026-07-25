@@ -1,33 +1,26 @@
 {
- "time": "2026-07-25T09:00:04",
+ "time": "2026-07-25T10:00:05",
  "usdc": 92.61,
- "portfolio": 536.07,
+ "portfolio": 536.77,
  "api_billing_blocked": false,
  "margin_headroom": 345.85,
  "open": [
-  "BTC long +1.7%",
-  "TSLA short +13.6%",
-  "ETH long -2.2%"
+  "BTC long +1.9%",
+  "TSLA short +14.2%",
+  "ETH long -1.9%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
   "HOOD -5.5% vol=$20,556",
+  "TSLA -4.6% vol=$631,811",
   "MSTR -4.3% vol=$165,013",
-  "TSLA -4.0% vol=$635,217",
   "AAPL +3.1% vol=$56,049",
-  "SPCX -2.5% vol=$1,290,707"
+  "OPENAI -2.9% vol=$24,833"
  ],
  "futures_ok": true,
- "futures_balance": 43.16,
+ "futures_balance": 42.89,
  "unallocated_spot": [],
  "call_reason": "פוזיציה חלשה: ETH",
- "claude_called": true,
- "market_read": "השוק הקריפטו כולו באזור oversold עם BTC, ETH, SOL, XRP כולם קרובים לתחתית הבולינגר - זה זמן לאיסוף לונגים סלקטיביים, לא לפאניקה.",
- "skip_reason": "BTC ו-ETH כבר בפוזיציות פתוחות אז לא מכפילים; ADA/LINK/LTC סגורים בנפח נמוך או עם MACD שלילי שסותר את האותות; מניות כרגע ללא סטאפ ברור מספיק (לא overbought קיצוני ולא דיפ עם נפח).",
- "picks": [
-  "SOL long size=30% conf=HIGH"
- ],
- "order_errors": [
-  "SOL: Kraken: ['EOrder:Insufficient funds']"
- ]
+ "claude_called": false,
+ "skip": "snapshot זהה לקריאה הקודמת"
 }
