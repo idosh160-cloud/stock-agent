@@ -1,31 +1,31 @@
 {
- "time": "2026-07-25T21:00:05",
- "usdc": 90.01,
- "portfolio": 537.41,
+ "time": "2026-07-25T22:00:04",
+ "usdc": 90.0,
+ "portfolio": 537.75,
  "api_billing_blocked": false,
  "margin_headroom": 350.6,
  "open": [
-  "BTC long +2.4%",
+  "BTC long +2.5%",
   "TSLA short +13.3%",
-  "SOL long -0.0%"
+  "SOL long +0.0%"
  ],
  "stock_candidates": 9,
  "top_stocks": [
-  "SPCX -2.9% vol=$959,974",
-  "OPENAI +1.6% vol=$25,648",
-  "CRCL +0.6% vol=$41,494",
-  "SPY +0.6% vol=$41,812",
-  "QQQ +0.5% vol=$21,183"
+  "SPCX -2.8% vol=$944,025",
+  "CRCL +0.9% vol=$41,485",
+  "OPENAI +0.8% vol=$21,393",
+  "QQQ +0.5% vol=$21,210",
+  "NVDA +0.5% vol=$44,088"
  ],
  "futures_ok": true,
- "futures_balance": 43.25,
+ "futures_balance": 43.34,
  "unallocated_spot": [
   "ETH $373"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: SHIB, DOGE",
  "claude_called": true,
- "market_read": "השוק הכללי נייטרלי עד חיובי קל, אבל כמה אלטקוינים כמו AVAX ו-SHIB רצו יותר מדי מהר ונראים בשלים לתיקון.",
- "skip_reason": "SHIB ו-DOGE overbought אך עם וולום נמוך מדי לביטחון; מניות ה-xStocks לא מציגות סטאפ ברור כרגע (RSI לא זמין, תנועה שטוחה); ETH הספוט נשאר מוחזק כי המומנטום שלו עדיין חיובי (MACD חזק, RSI 57) ולא מצדיק מכירה.",
+ "market_read": "השוק הרחב יציב עם BTC ואלטים באזור עליון של הטווח, כמה מטבעות במצב יתר-קנייה קיצוני שמזמין תיקון קצר.",
+ "skip_reason": "SHIB ו-DOGE נמצאים גם הם ב-overbought אך עם נפח מסחר נמוך מדי לביצוע בטוח, והמניות הזמינות לא מציגות סטאפ ברור כרגע.",
  "picks": [
   "AVAX short size=22% conf=MEDIUM"
  ],
