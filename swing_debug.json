@@ -1,7 +1,7 @@
 {
- "time": "2026-07-25T03:00:04",
- "usdc": 92.67,
- "portfolio": 537.17,
+ "time": "2026-07-25T04:00:04",
+ "usdc": 92.66,
+ "portfolio": 537.16,
  "api_billing_blocked": false,
  "margin_headroom": 345.85,
  "open": [
@@ -12,22 +12,15 @@
  "stock_candidates": 12,
  "top_stocks": [
   "HOOD -6.6% vol=$20,631",
-  "AAPL +3.5% vol=$55,934",
-  "MSTR -3.2% vol=$176,711",
-  "TSLA -2.9% vol=$676,775",
-  "OPENAI -2.5% vol=$23,176"
+  "MSTR -3.9% vol=$175,536",
+  "AAPL +3.6% vol=$54,678",
+  "TSLA -3.5% vol=$669,485",
+  "SPCX -2.5% vol=$1,353,136"
  ],
  "futures_ok": true,
- "futures_balance": 42.87,
+ "futures_balance": 42.94,
  "unallocated_spot": [],
  "call_reason": "פוזיציה חלשה: ETH",
- "claude_called": true,
- "market_read": "השוק הכללי במגמת תיקון קל עם BTC ואלטקוינים ברמות RSI נמוכות-בינוניות, מציע הזדמנויות קניה בירידות בלי איתות מכירה ברור באף נכס.",
- "skip_reason": "שאר המועמדים (XMR מוגזם, המניות ברוב ירידה קלה ללא מומנטום ברור) לא מציגים יחס סיכוי/סיכון עדיף על SOL כרגע.",
- "picks": [
-  "SOL long size=20% conf=MEDIUM"
- ],
- "order_errors": [
-  "SOL: Kraken: ['EOrder:Insufficient funds']"
- ]
+ "claude_called": false,
+ "skip": "snapshot זהה לקריאה הקודמת"
 }
