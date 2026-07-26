@@ -1,27 +1,35 @@
 {
- "time": "2026-07-26T01:00:04",
- "usdc": 89.99,
- "portfolio": 539.2,
+ "time": "2026-07-26T02:00:04",
+ "usdc": 89.98,
+ "portfolio": 538.69,
  "api_billing_blocked": false,
  "margin_headroom": 350.6,
  "open": [
-  "BTC long +2.7%",
+  "BTC long +2.6%",
   "TSLA short +13.3%",
   "SOL long +0.5%"
  ],
  "stock_candidates": 8,
  "top_stocks": [
-  "OPENAI +1.6% vol=$13,011",
-  "CRCL +1.5% vol=$42,806",
-  "SPCX -1.4% vol=$409,358",
-  "QQQ +0.5% vol=$8,565",
-  "SPY +0.4% vol=$41,719"
+  "CRCL +1.8% vol=$41,606",
+  "OPENAI +1.5% vol=$12,989",
+  "SPCX -1.0% vol=$410,102",
+  "NVDA +0.5% vol=$48,462",
+  "QQQ +0.5% vol=$8,565"
  ],
  "futures_ok": true,
- "futures_balance": 43.35,
+ "futures_balance": 43.29,
  "unallocated_spot": [
-  "ETH $375"
+  "ETH $374"
  ],
- "call_reason": "USDC $90 ממתין אבל בקירור דו-שעתי (טריגר חלש)",
- "claude_called": false
+ "call_reason": "תנועה חזקה במטבע חדש: SHIB",
+ "claude_called": true,
+ "market_read": "השוק הכרוני שקט יחסית עם רוב המטבעות ב-overbought קל אחרי עליות מתונות, אין מומנטום ברור לכיוון אחד.",
+ "skip_reason": "שאר המועמדים (SHIB, LTC, DOGE) עם MACD חיובי שסותר תזת שורט, וה-USDC הפנוי מוגבל כך שנשארתי עם פוזיציה אחת ממוקדת.",
+ "picks": [
+  "AVAX short size=18% conf=MEDIUM"
+ ],
+ "order_errors": [
+  "AVAX: Kraken: ['EOrder:Margin trading in asset is restricted']"
+ ]
 }
