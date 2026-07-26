@@ -1,35 +1,35 @@
 {
- "time": "2026-07-26T05:00:04",
- "usdc": 89.96,
- "portfolio": 540.55,
+ "time": "2026-07-26T06:00:04",
+ "usdc": 89.95,
+ "portfolio": 539.99,
  "api_billing_blocked": false,
  "margin_headroom": 350.6,
  "open": [
-  "BTC long +2.8%",
-  "TSLA short +12.9%",
+  "BTC long +2.6%",
+  "TSLA short +13.8%",
   "SOL long +0.8%"
  ],
- "stock_candidates": 8,
+ "stock_candidates": 9,
  "top_stocks": [
-  "CRCL +3.2% vol=$41,126",
-  "SPCX -1.1% vol=$415,213",
+  "CRCL +3.6% vol=$37,465",
+  "MSTR +1.1% vol=$21,146",
+  "SPCX -1.0% vol=$419,333",
   "OPENAI +0.8% vol=$13,107",
-  "TSLA +0.8% vol=$40,295",
-  "NVDA +0.5% vol=$51,363"
+  "NVDA +0.5% vol=$46,885"
  ],
  "futures_ok": true,
- "futures_balance": 43.42,
+ "futures_balance": 43.46,
  "unallocated_spot": [
-  "ETH $376"
+  "ETH $375"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: SHIB",
  "claude_called": true,
- "market_read": "השוק הקריפטו כללית עולה בעדינות עם רוב הנכסים בתחום overbought ונראה מיצוי מומנטום בטווח הקצר.",
- "skip_reason": "שאר המועמדים (BTC, SOL, ETH, LINK) עדיין במומנטום חיובי חזק ללונג ללא נקודת כניסה טובה, והמניות אינן מציגות תנועה קיצונית מספיק לשורט או לונג ברור.",
+ "market_read": "השוק מציג מומנטום עולה מתון בקריפטו עם כמה מטבעות בקנייתיתר קיצונית ומניות ללא איתות ברור.",
+ "skip_reason": "SHIB/PENGU/DOGE קנייתיתר קיצונית אך נפח מסחר נמוך מדי לשורט ממונף בבטחה; המניות (CRCL/SPCX) חסרות איתות טכני ברור כרגע, ו-ETH הספוט נשאר כפוזיציה פסיבית טובה בהתחשב במומנטום החיובי שלו.",
  "picks": [
-  "AVAX short size=25% conf=MEDIUM"
+  "LINK long size=17% conf=MEDIUM"
  ],
  "order_errors": [
-  "AVAX: Kraken: ['EOrder:Margin trading in asset is restricted']"
+  "LINK: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
