@@ -1,12 +1,12 @@
 {
- "time": "2026-07-26T20:00:05",
+ "time": "2026-07-26T21:00:04",
  "usdc": 89.86,
- "portfolio": 541.53,
+ "portfolio": 540.95,
  "api_billing_blocked": false,
  "margin_headroom": 350.6,
  "open": [
   "BTC long +3.0%",
-  "TSLA short +13.0%",
+  "TSLA short +13.5%",
   "SOL long +1.2%",
   "MSTR long +0.2%"
  ],
@@ -14,17 +14,24 @@
  "top_stocks": [
   "MSTR +1.1% vol=$30,186",
   "CF -1.0% vol=$11,523",
-  "CRCL +0.8% vol=$20,460",
+  "CRCL +0.7% vol=$20,383",
   "SPY +0.5% vol=$51,287",
-  "QQQ +0.4% vol=$6,072"
+  "NVDA +0.5% vol=$21,615"
  ],
  "futures_ok": true,
- "futures_balance": 38.82,
+ "futures_balance": 38.42,
  "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $382"
+  "ETH $381"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: SHIB, LTC",
- "claude_called": false,
- "skip": "snapshot זהה לקריאה הקודמת"
+ "call_reason": "תנועה חזקה במטבע חדש: SHIB",
+ "claude_called": true,
+ "market_read": "השוק הכללי רגוע יחסית עם מגמת עלייה מתונה ברוב הקריפטו, אך כמה מטבעות מגיעים לאזורי קיצון (ETH/LTC/LINK overbought, XMR oversold) שיוצרים הזדמנויות טקטיות.",
+ "skip_reason": "ETH דחוי ב-RSI 75 וקרוב לרצועה עליונה כך שלונג נוסף מסוכן, ואילו ה-ETH הספוט הקיים כבר נותן חשיפה מספקת; שאר המועמדים (LTC, LINK) overbought מדי לשורט נגד מומנטום חזק, וה-stocks לא מציגים סטאפ ברור כרגע.",
+ "picks": [
+  "XMR long size=25% conf=MEDIUM"
+ ],
+ "order_errors": [
+  "XMR: Kraken: ['EOrder:Insufficient funds']"
+ ]
 }
