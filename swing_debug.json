@@ -1,36 +1,27 @@
 {
- "time": "2026-07-26T00:00:04",
+ "time": "2026-07-26T01:00:04",
  "usdc": 89.99,
- "portfolio": 537.99,
+ "portfolio": 539.2,
  "api_billing_blocked": false,
  "margin_headroom": 350.6,
  "open": [
-  "BTC long +2.5%",
+  "BTC long +2.7%",
   "TSLA short +13.3%",
-  "SOL long +0.1%"
+  "SOL long +0.5%"
  ],
  "stock_candidates": 8,
  "top_stocks": [
-  "SPCX -1.8% vol=$425,753",
-  "CRCL +1.4% vol=$41,081",
-  "OPENAI +0.9% vol=$15,486",
-  "NVDA +0.5% vol=$47,960",
-  "QQQ +0.4% vol=$18,462"
+  "OPENAI +1.6% vol=$13,011",
+  "CRCL +1.5% vol=$42,806",
+  "SPCX -1.4% vol=$409,358",
+  "QQQ +0.5% vol=$8,565",
+  "SPY +0.4% vol=$41,719"
  ],
  "futures_ok": true,
- "futures_balance": 43.27,
+ "futures_balance": 43.35,
  "unallocated_spot": [
-  "ETH $374"
+  "ETH $375"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: SHIB, AVAX, DOGE",
- "claude_called": true,
- "market_read": "השוק הכללי חיובי בזהירות עם מספר אלטקוינים אובר-בוט (AVAX, SHIB) ו-ETH מראה מומנטום בריא להמשך עלייה.",
- "skip_reason": "AVAX ו-SHIB אובר-בוט קיצוני אך המומנטום עדיין חיובי וקצר לשורט; שאר המועמדים (ADA, XRP, LINK) ניטרליים מדי ללא יתרון ברור כרגע.",
- "picks": [
-  "ETH long size=40% conf=HIGH"
- ],
- "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "ETH: Kraken: ['EOrder:Insufficient funds']"
- ]
+ "call_reason": "USDC $90 ממתין אבל בקירור דו-שעתי (טריגר חלש)",
+ "claude_called": false
 }
