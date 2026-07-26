@@ -1,38 +1,40 @@
 {
- "time": "2026-07-26T14:00:05",
- "usdc": 89.9,
- "portfolio": 534.9,
+ "time": "2026-07-26T15:00:04",
+ "usdc": 89.89,
+ "portfolio": 537.86,
  "api_billing_blocked": false,
  "margin_headroom": 350.6,
  "open": [
-  "BTC long +2.8%",
+  "BTC long +3.1%",
   "TSLA short +12.8%",
-  "SOL long +0.7%",
+  "SOL long +0.8%",
   "MSTR long +0.1%"
  ],
  "stock_candidates": 10,
  "top_stocks": [
-  "MSTR +2.8% vol=$20,864",
+  "MSTR +1.6% vol=$20,856",
   "CRCL +1.3% vol=$46,907",
-  "TSLA +0.7% vol=$7,846",
-  "SPY +0.7% vol=$65,645",
+  "TSLA +1.0% vol=$7,647",
+  "SPY +0.7% vol=$60,444",
   "OPENAI -0.5% vol=$5,641"
  ],
  "futures_ok": true,
- "futures_balance": 37.84,
+ "futures_balance": 38.46,
  "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $376"
+  "ETH $378"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: SHIB",
  "claude_called": true,
- "market_read": "השוק הכללי ניטרלי עד חיובי בעדינות, עם כמה אלטקוינים בעלי מומנטום נקודתי כמו LINK ו-SHIB, ומניות ה-xStocks רגועות ללא הזדמנויות קיצוניות היום.",
- "skip_reason": "שאר המועמדים בקריפטו וב-xStocks מציגים נפח נמוך מדי, תנועה מעורפלת או סיגנלים סותרים שלא מצדיקים כניסה כרגע.",
+ "market_read": "השוק הכללי נסחר במגמה חיובית מתונה עם BTC ו-ETH בקניית יתר, בעוד אלטקוינים כמו LINK ו-AVAX מציעים הזדמנויות ממוקדות יותר.",
+ "skip_reason": "שאר המועמדים (SHIB, DOGE, PENGU, XMR, LTC) מציגים RSI וMACD ניטרליים ללא אות ברור, ומניות כמו SPCX/MSTR/CRCL כבר ממומשות או חסרות קטליזטור נוסף כרגע.",
  "picks": [
-  "LINK long size=30% conf=MEDIUM"
+  "LINK long size=22% conf=MEDIUM-HIGH",
+  "AVAX long size=15% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "LINK: Kraken: ['EOrder:Insufficient funds']"
+  "LINK: Kraken: ['EOrder:Insufficient funds']",
+  "AVAX: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
