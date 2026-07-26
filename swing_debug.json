@@ -1,7 +1,7 @@
 {
- "time": "2026-07-26T04:00:04",
+ "time": "2026-07-26T05:00:04",
  "usdc": 89.96,
- "portfolio": 539.87,
+ "portfolio": 540.55,
  "api_billing_blocked": false,
  "margin_headroom": 350.6,
  "open": [
@@ -11,22 +11,25 @@
  ],
  "stock_candidates": 8,
  "top_stocks": [
-  "CRCL +1.6% vol=$39,655",
-  "SPCX -1.2% vol=$411,322",
+  "CRCL +3.2% vol=$41,126",
+  "SPCX -1.1% vol=$415,213",
   "OPENAI +0.8% vol=$13,107",
   "TSLA +0.8% vol=$40,295",
-  "NVDA +0.6% vol=$50,480"
+  "NVDA +0.5% vol=$51,363"
  ],
  "futures_ok": true,
- "futures_balance": 43.54,
+ "futures_balance": 43.42,
  "unallocated_spot": [
-  "ETH $375"
+  "ETH $376"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: SHIB",
  "claude_called": true,
- "market_read": "השוק הכללי רגוע יחסית עם BTC יציב, אבל כמה אלטקוינים קטנים רצו חזק מדי מהר ונראים במיצוי קנייה.",
- "skip_reason": "שאר המטבעות והמניות נמצאים באמצע הטווח בלי אות ברור או בנפח נמוך מדי, לא מצדיקים כניסה חדשה מעבר לפוזיציות הקיימות.",
+ "market_read": "השוק הקריפטו כללית עולה בעדינות עם רוב הנכסים בתחום overbought ונראה מיצוי מומנטום בטווח הקצר.",
+ "skip_reason": "שאר המועמדים (BTC, SOL, ETH, LINK) עדיין במומנטום חיובי חזק ללונג ללא נקודת כניסה טובה, והמניות אינן מציגות תנועה קיצונית מספיק לשורט או לונג ברור.",
  "picks": [
-  "SHIB short size=18% conf=MEDIUM"
+  "AVAX short size=25% conf=MEDIUM"
+ ],
+ "order_errors": [
+  "AVAX: Kraken: ['EOrder:Margin trading in asset is restricted']"
  ]
 }
