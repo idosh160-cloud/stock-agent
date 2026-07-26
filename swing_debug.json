@@ -1,35 +1,35 @@
 {
- "time": "2026-07-26T16:00:04",
+ "time": "2026-07-26T17:00:04",
  "usdc": 89.89,
- "portfolio": 541.62,
+ "portfolio": 541.78,
  "api_billing_blocked": false,
  "margin_headroom": 350.6,
  "open": [
   "BTC long +3.1%",
-  "TSLA short +12.7%",
-  "SOL long +1.4%",
+  "TSLA short +12.8%",
+  "SOL long +1.5%",
   "MSTR long +0.2%"
  ],
- "stock_candidates": 10,
+ "stock_candidates": 8,
  "top_stocks": [
-  "MSTR +1.2% vol=$30,216",
-  "CRCL +1.2% vol=$27,929",
-  "TSLA +1.2% vol=$7,970",
-  "SPY +0.7% vol=$58,846",
-  "OPENAI -0.5% vol=$5,641"
+  "MSTR +1.6% vol=$30,208",
+  "CRCL +1.4% vol=$21,603",
+  "CF -0.9% vol=$11,382",
+  "NVDA +0.8% vol=$26,155",
+  "SPY +0.7% vol=$54,797"
  ],
  "futures_ok": true,
- "futures_balance": 38.63,
+ "futures_balance": 38.6,
  "futures_float_topup": false,
  "unallocated_spot": [
   "ETH $382"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: SHIB",
+ "call_reason": "תנועה חזקה במטבע חדש: SHIB, LINK",
  "claude_called": true,
- "market_read": "השוק הקריפטו כרגע רווי קניות עם רוב המטבעות (BTC, SOL, ETH, LTC, LINK) ב-RSI מעל 70 ו-BB% קרוב או מעל 100, מה שמרמז על מיצוי מהלך קצר טווח ולא כניסות לונג חדשות.",
- "skip_reason": "רוב המועמדים האחרים (BTC, SOL, ETH) כבר בפוזיציות פתוחות או ברווח בדרך ליעד ולא כדאי לגעת בהם; המניות (SPCX, MSTR, TSLA וכו') לא מציגות סיגנל קיצוני מספיק היום כדי להצדיק פוזיציה חדשה מעבר לקיים.",
+ "market_read": "רוב המטבעות הגדולים (ETH, SOL, LTC, LINK) נכנסו לאזור overbought קיצוני עם BB% מעל 100, מה שמצביע על מיצוי מומנטום קצר טווח.",
+ "skip_reason": "ETH ו-SOL כבר מוחזקים (ETH כספוט ו-SOL כפוזיציה פתוחה) כך ששורט עליהם יוצר ניגוד; שאר המועמדים (SHIB, PENGU, DOGE, AVAX, XMR) נטולי איתות ברור או תנודתיים מדי ללא אישור MACD/RSI תואם.",
  "picks": [
-  "LINK short size=25% conf=MEDIUM"
+  "LINK short size=22% conf=MEDIUM"
  ],
  "order_errors": [
   "LINK: Kraken: ['EOrder:Insufficient initial margin']"
