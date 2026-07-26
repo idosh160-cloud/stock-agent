@@ -1,37 +1,30 @@
 {
- "time": "2026-07-26T19:00:04",
+ "time": "2026-07-26T20:00:05",
  "usdc": 89.86,
- "portfolio": 541.56,
+ "portfolio": 541.53,
  "api_billing_blocked": false,
  "margin_headroom": 350.6,
  "open": [
-  "BTC long +3.1%",
-  "TSLA short +12.9%",
-  "SOL long +1.3%",
+  "BTC long +3.0%",
+  "TSLA short +13.0%",
+  "SOL long +1.2%",
   "MSTR long +0.2%"
  ],
  "stock_candidates": 8,
  "top_stocks": [
   "MSTR +1.1% vol=$30,186",
-  "CF -0.9% vol=$11,471",
+  "CF -1.0% vol=$11,523",
   "CRCL +0.8% vol=$20,460",
   "SPY +0.5% vol=$51,287",
   "QQQ +0.4% vol=$6,072"
  ],
  "futures_ok": true,
- "futures_balance": 38.79,
+ "futures_balance": 38.82,
  "futures_float_topup": false,
  "unallocated_spot": [
   "ETH $382"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: SHIB, LTC",
- "claude_called": true,
- "market_read": "השוק הקריפטו הראשי (BTC, ETH, SOL, LINK, LTC) נמצא באזור overbought עם BB% גבוה, בעוד XMR מציג הזדמנות מנוגדת של oversold bounce.",
- "skip_reason": "שאר המטבעות והמניות נמצאים באזור overbought (ETH, LTC, LINK, SOL) בלי איתות היפוך ברור, והמניות מציגות תנועה שטוחה מדי ללא edge ברור.",
- "picks": [
-  "XMR long size=20% conf=MEDIUM"
- ],
- "order_errors": [
-  "XMR: Kraken: ['EOrder:Insufficient funds']"
- ]
+ "claude_called": false,
+ "skip": "snapshot זהה לקריאה הקודמת"
 }
