@@ -1,28 +1,37 @@
 {
- "time": "2026-07-26T07:00:04",
+ "time": "2026-07-26T08:00:05",
  "usdc": 89.94,
- "portfolio": 540.51,
+ "portfolio": 539.64,
  "api_billing_blocked": false,
  "margin_headroom": 350.6,
  "open": [
-  "BTC long +2.6%",
+  "BTC long +2.5%",
   "TSLA short +13.8%",
-  "SOL long +0.9%"
+  "SOL long +0.6%"
  ],
  "stock_candidates": 9,
  "top_stocks": [
   "CRCL +3.5% vol=$37,309",
-  "SPCX -1.3% vol=$415,623",
+  "SPCX -1.6% vol=$397,841",
   "OPENAI +1.1% vol=$13,027",
   "MSTR +1.1% vol=$21,146",
-  "NVDA +0.4% vol=$47,132"
+  "NVDA +0.5% vol=$47,021"
  ],
  "futures_ok": true,
- "futures_balance": 43.62,
+ "futures_balance": 43.6,
  "unallocated_spot": [
-  "ETH $376"
+  "ETH $375"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: SHIB",
- "claude_called": false,
- "skip": "snapshot זהה לקריאה הקודמת"
+ "claude_called": true,
+ "market_read": "השוק הקריפטו נסחר בטווח יציב עם כמה מטבעות בקצה עליון (overbought) ומניות תנודתיות נמוכה יחסית, מה שמעדיף כניסות סלקטיביות במקום מרדף אחרי פריצות.",
+ "skip_reason": "SHIB ו-DOGE overbought מדי עם נזילות נמוכה לשורט בטוח, ומניות ה-xStocks מציגות טווחי תנועה קטנים מדי היום כדי להצדיק פוזיציה חדשה - ETH המוחזק בספוט נשאר כפוזיציה פסיבית כרגע.",
+ "picks": [
+  "AVAX short size=25% conf=MEDIUM",
+  "LINK long size=15% conf=MEDIUM"
+ ],
+ "order_errors": [
+  "AVAX: Kraken: ['EOrder:Margin trading in asset is restricted']",
+  "LINK: Kraken: ['EOrder:Insufficient funds']"
+ ]
 }
