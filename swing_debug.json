@@ -1,35 +1,28 @@
 {
- "time": "2026-07-26T06:00:04",
- "usdc": 89.95,
- "portfolio": 539.99,
+ "time": "2026-07-26T07:00:04",
+ "usdc": 89.94,
+ "portfolio": 540.51,
  "api_billing_blocked": false,
  "margin_headroom": 350.6,
  "open": [
   "BTC long +2.6%",
   "TSLA short +13.8%",
-  "SOL long +0.8%"
+  "SOL long +0.9%"
  ],
  "stock_candidates": 9,
  "top_stocks": [
-  "CRCL +3.6% vol=$37,465",
+  "CRCL +3.5% vol=$37,309",
+  "SPCX -1.3% vol=$415,623",
+  "OPENAI +1.1% vol=$13,027",
   "MSTR +1.1% vol=$21,146",
-  "SPCX -1.0% vol=$419,333",
-  "OPENAI +0.8% vol=$13,107",
-  "NVDA +0.5% vol=$46,885"
+  "NVDA +0.4% vol=$47,132"
  ],
  "futures_ok": true,
- "futures_balance": 43.46,
+ "futures_balance": 43.62,
  "unallocated_spot": [
-  "ETH $375"
+  "ETH $376"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: SHIB",
- "claude_called": true,
- "market_read": "השוק מציג מומנטום עולה מתון בקריפטו עם כמה מטבעות בקנייתיתר קיצונית ומניות ללא איתות ברור.",
- "skip_reason": "SHIB/PENGU/DOGE קנייתיתר קיצונית אך נפח מסחר נמוך מדי לשורט ממונף בבטחה; המניות (CRCL/SPCX) חסרות איתות טכני ברור כרגע, ו-ETH הספוט נשאר כפוזיציה פסיבית טובה בהתחשב במומנטום החיובי שלו.",
- "picks": [
-  "LINK long size=17% conf=MEDIUM"
- ],
- "order_errors": [
-  "LINK: Kraken: ['EOrder:Insufficient funds']"
- ]
+ "claude_called": false,
+ "skip": "snapshot זהה לקריאה הקודמת"
 }
