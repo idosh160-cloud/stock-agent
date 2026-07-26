@@ -1,40 +1,37 @@
 {
- "time": "2026-07-26T15:00:04",
+ "time": "2026-07-26T16:00:04",
  "usdc": 89.89,
- "portfolio": 537.86,
+ "portfolio": 541.62,
  "api_billing_blocked": false,
  "margin_headroom": 350.6,
  "open": [
   "BTC long +3.1%",
-  "TSLA short +12.8%",
-  "SOL long +0.8%",
-  "MSTR long +0.1%"
+  "TSLA short +12.7%",
+  "SOL long +1.4%",
+  "MSTR long +0.2%"
  ],
  "stock_candidates": 10,
  "top_stocks": [
-  "MSTR +1.6% vol=$20,856",
-  "CRCL +1.3% vol=$46,907",
-  "TSLA +1.0% vol=$7,647",
-  "SPY +0.7% vol=$60,444",
+  "MSTR +1.2% vol=$30,216",
+  "CRCL +1.2% vol=$27,929",
+  "TSLA +1.2% vol=$7,970",
+  "SPY +0.7% vol=$58,846",
   "OPENAI -0.5% vol=$5,641"
  ],
  "futures_ok": true,
- "futures_balance": 38.46,
+ "futures_balance": 38.63,
  "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $378"
+  "ETH $382"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: SHIB",
  "claude_called": true,
- "market_read": "השוק הכללי נסחר במגמה חיובית מתונה עם BTC ו-ETH בקניית יתר, בעוד אלטקוינים כמו LINK ו-AVAX מציעים הזדמנויות ממוקדות יותר.",
- "skip_reason": "שאר המועמדים (SHIB, DOGE, PENGU, XMR, LTC) מציגים RSI וMACD ניטרליים ללא אות ברור, ומניות כמו SPCX/MSTR/CRCL כבר ממומשות או חסרות קטליזטור נוסף כרגע.",
+ "market_read": "השוק הקריפטו כרגע רווי קניות עם רוב המטבעות (BTC, SOL, ETH, LTC, LINK) ב-RSI מעל 70 ו-BB% קרוב או מעל 100, מה שמרמז על מיצוי מהלך קצר טווח ולא כניסות לונג חדשות.",
+ "skip_reason": "רוב המועמדים האחרים (BTC, SOL, ETH) כבר בפוזיציות פתוחות או ברווח בדרך ליעד ולא כדאי לגעת בהם; המניות (SPCX, MSTR, TSLA וכו') לא מציגות סיגנל קיצוני מספיק היום כדי להצדיק פוזיציה חדשה מעבר לקיים.",
  "picks": [
-  "LINK long size=22% conf=MEDIUM-HIGH",
-  "AVAX long size=15% conf=MEDIUM"
+  "LINK short size=25% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "LINK: Kraken: ['EOrder:Insufficient funds']",
-  "AVAX: Kraken: ['EOrder:Insufficient funds']"
+  "LINK: Kraken: ['EOrder:Insufficient initial margin']"
  ]
 }
