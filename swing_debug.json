@@ -1,37 +1,39 @@
 {
- "time": "2026-07-26T17:00:04",
- "usdc": 89.89,
- "portfolio": 541.78,
+ "time": "2026-07-26T18:00:04",
+ "usdc": 89.88,
+ "portfolio": 541.05,
  "api_billing_blocked": false,
  "margin_headroom": 350.6,
  "open": [
-  "BTC long +3.1%",
-  "TSLA short +12.8%",
-  "SOL long +1.5%",
+  "BTC long +3.0%",
+  "TSLA short +12.9%",
+  "SOL long +1.2%",
   "MSTR long +0.2%"
  ],
- "stock_candidates": 8,
+ "stock_candidates": 9,
  "top_stocks": [
-  "MSTR +1.6% vol=$30,208",
-  "CRCL +1.4% vol=$21,603",
-  "CF -0.9% vol=$11,382",
-  "NVDA +0.8% vol=$26,155",
-  "SPY +0.7% vol=$54,797"
+  "MSTR +0.9% vol=$30,193",
+  "CRCL +0.7% vol=$21,107",
+  "TSLA +0.7% vol=$5,157",
+  "NVDA +0.4% vol=$25,245",
+  "SPY +0.3% vol=$51,796"
  ],
  "futures_ok": true,
- "futures_balance": 38.6,
+ "futures_balance": 38.97,
  "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $382"
+  "ETH $381"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: SHIB, LINK",
+ "call_reason": "תנועה חזקה במטבע חדש: SHIB",
  "claude_called": true,
- "market_read": "רוב המטבעות הגדולים (ETH, SOL, LTC, LINK) נכנסו לאזור overbought קיצוני עם BB% מעל 100, מה שמצביע על מיצוי מומנטום קצר טווח.",
- "skip_reason": "ETH ו-SOL כבר מוחזקים (ETH כספוט ו-SOL כפוזיציה פתוחה) כך ששורט עליהם יוצר ניגוד; שאר המועמדים (SHIB, PENGU, DOGE, AVAX, XMR) נטולי איתות ברור או תנודתיים מדי ללא אישור MACD/RSI תואם.",
+ "market_read": "השוק הכללי חיובי מתון עם מספר נכסים בקצה טכני (oversold/overbought) שמציעים הזדמנויות היפוך.",
+ "skip_reason": "שאר המועמדים (SHIB, DOGE, PENGU, AVAX, ETH, SOL, BTC, המניות) נראים ניטרליים או ללא אישור נפח/מומנטום ברור לכניסה כרגע.",
  "picks": [
-  "LINK short size=22% conf=MEDIUM"
+  "XMR long size=22% conf=MEDIUM",
+  "LINK short size=18% conf=MEDIUM"
  ],
  "order_errors": [
+  "XMR: Kraken: ['EOrder:Insufficient funds']",
   "LINK: Kraken: ['EOrder:Insufficient initial margin']"
  ]
 }
