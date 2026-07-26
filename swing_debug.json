@@ -1,32 +1,36 @@
 {
- "time": "2026-07-26T12:00:04",
+ "time": "2026-07-26T13:00:04",
  "usdc": 89.91,
- "portfolio": 541.25,
+ "portfolio": 541.23,
  "api_billing_blocked": false,
  "margin_headroom": 350.6,
  "open": [
   "BTC long +2.7%",
-  "TSLA short +12.3%",
-  "SOL long +0.7%"
+  "TSLA short +12.8%",
+  "SOL long +0.6%"
  ],
  "stock_candidates": 10,
  "top_stocks": [
-  "MSTR +2.2% vol=$21,202",
-  "CRCL +1.9% vol=$45,533",
-  "TSLA +1.6% vol=$10,304",
-  "QQQ +0.5% vol=$7,232",
-  "OPENAI -0.4% vol=$5,925"
+  "MSTR +2.0% vol=$21,109",
+  "CRCL +1.5% vol=$45,847",
+  "TSLA +0.9% vol=$10,242",
+  "OPENAI -0.5% vol=$5,641",
+  "QQQ +0.5% vol=$7,232"
  ],
  "futures_ok": true,
- "futures_balance": 44.24,
+ "futures_balance": 44.15,
  "unallocated_spot": [
   "ETH $376"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: SHIB",
  "claude_called": true,
- "market_read": "השוק הכללי רגוע יחסית עם ביטקוין יציב ואלטים מציגים תנועות מעורבות ללא מגמה ברורה וחזקה.",
- "skip_reason": "שאר המועמדים (LTC, AVAX, XMR, מניות) לא מציגים סיגנל טכני חד וברור מספיק להצדיק כניסה מעבר לשורט על SHIB.",
+ "market_read": "השוק רגוע יחסית עם BTC בטווח צר וכמה אלטקוינים ומניות מראים מומנטום מתון שניתן לנצל.",
+ "skip_reason": "שאר המועמדים (LTC, DOGE, ETH) נראים מוצפים בקנייה ללא אישור ברור לשורט, ו-AVAX חסר תבנית כניסה נקייה - עדיף לרכז בשני הסטאפים הטובים ביותר.",
  "picks": [
-  "SHIB short size=20% conf=MEDIUM"
+  "SHIB long size=20% conf=MEDIUM",
+  "MSTR long size=20% conf=MEDIUM"
+ ],
+ "order_errors": [
+  "SHIB: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
