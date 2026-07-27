@@ -1523,5 +1523,30 @@
     "entry_bb_pct": 4.6,
     "entry_macd_hist": -3.459471,
     "entry_change_24h": -2.09
+  },
+  {
+    "coin": "MSTR",
+    "pair": "PF_MSTRXUSD",
+    "status": "closed_externally",
+    "leveraged": false,
+    "collateral": 108.25,
+    "volume": 1.15589963,
+    "entry_price": 93.65,
+    "close_price": 93.65,
+    "target_price": 98.33,
+    "stop_price": 91.78,
+    "pnl_usd": 0,
+    "pnl_pct": 0,
+    "date_open": "2026-07-26T13:00:31.798663",
+    "date_close": "2026-07-27T14:00:04.368348",
+    "reasoning": "מניית MSTR עולה 2% בנפח סביר, מומנטום חיובי מתמשך ללא סימני מיצוי, לונג עם יעד וסטופ הדוקים יחסית למניה.",
+    "confidence": "MEDIUM",
+    "txid": "a259eb48-43d0-42fc-8090-6f24e53736b8",
+    "close_txid": null,
+    "side": "long",
+    "entry_rsi": null,
+    "entry_bb_pct": null,
+    "entry_macd_hist": null,
+    "entry_change_24h": 1.96
   }
 ]

@@ -1,29 +1,30 @@
 {
- "time": "2026-07-27T13:00:04",
- "usdc": 89.76,
- "portfolio": 551.35,
+ "time": "2026-07-27T14:00:05",
+ "usdc": 89.75,
+ "portfolio": 559.98,
  "api_billing_blocked": true,
  "margin_headroom": 350.6,
  "open": [
-  "BTC long +3.6%",
-  "TSLA short +12.5%",
-  "SOL long +3.2%",
-  "MSTR long -0.5%"
+  "BTC long +3.9%",
+  "TSLA short +13.9%",
+  "SOL long +3.2%"
  ],
  "stock_candidates": 10,
  "top_stocks": [
-  "SPCX +1.5% vol=$302,354",
-  "HOOD +1.2% vol=$18,201",
-  "GOOGL +1.1% vol=$21,459",
-  "CRCL +0.8% vol=$34,823",
-  "MSTR -0.6% vol=$68,300"
+  "MSTR +3.4% vol=$104,796",
+  "CRCL +3.2% vol=$36,049",
+  "NVDA -2.8% vol=$234,118",
+  "HOOD +2.7% vol=$18,366",
+  "GOOGL +2.3% vol=$27,683"
  ],
  "futures_ok": true,
- "futures_balance": 39.93,
- "futures_float_topup": false,
+ "futures_balance": 48.07,
  "unallocated_spot": [
-  "ETH $390"
+  "ETH $391"
  ],
- "call_reason": "USDC $90 ממתין אבל בקירור דו-שעתי (טריגר חלש)",
- "claude_called": false
+ "call_reason": "תנועה חזקה במניה: MSTR, CRCL, NVDA",
+ "claude_called": true,
+ "market_read": "",
+ "skip_reason": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdSgZTeb7fNYNGfEP52n6'}",
+ "picks": []
 }
