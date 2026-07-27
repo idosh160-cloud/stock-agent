@@ -1,40 +1,32 @@
 {
- "time": "2026-07-27T02:00:05",
- "usdc": 89.83,
- "portfolio": 548.63,
+ "time": "2026-07-27T03:00:04",
+ "usdc": 89.81,
+ "portfolio": 547.97,
  "api_billing_blocked": false,
  "margin_headroom": 350.6,
  "open": [
   "BTC long +3.8%",
-  "TSLA short +13.2%",
-  "SOL long +2.8%",
+  "TSLA short +12.5%",
+  "SOL long +2.7%",
   "MSTR long +0.3%"
  ],
  "stock_candidates": 10,
  "top_stocks": [
-  "SPCX +1.6% vol=$178,387",
-  "CRCL -1.4% vol=$25,655",
-  "AAPL +1.0% vol=$17,509",
-  "NVDA +1.0% vol=$75,851",
-  "SPY +0.6% vol=$88,397"
+  "SPCX +1.3% vol=$184,044",
+  "CRCL -1.1% vol=$31,774",
+  "AAPL +1.0% vol=$30,303",
+  "NVDA +0.5% vol=$76,973",
+  "TSLA +0.5% vol=$7,754"
  ],
  "futures_ok": true,
- "futures_balance": 39.0,
+ "futures_balance": 39.31,
  "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $388"
+  "ETH $387"
  ],
- "call_reason": "USDC $90 לא מושקע — מחפש לו בית (תיק מושקע תמיד)",
+ "call_reason": "תנועה חזקה במטבע חדש: SHIB",
  "claude_called": true,
- "market_read": "השוק הכללי נייטרלי-סלקטיבי עם רוב האלטקוינים בטווח צר, אבל XMR ו-LINK מציעים הזדמנויות ברורות בקצוות הטווח (oversold/overbought).",
- "skip_reason": "שאר המועמדים (SHIB, BCH, LTC, PENGU, ADA, DOGE, XRP) נמצאים ב-RSI ניטרלי וללא מומנטום ברור, לא מצדיק כניסה; מניות כמו NVDA/SPY/QQQ שקטות מדי לתנודה משמעותית.",
- "picks": [
-  "XMR long size=25% conf=MEDIUM",
-  "LINK short size=15% conf=MEDIUM"
- ],
- "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "XMR: Kraken: ['EOrder:Insufficient funds']",
-  "LINK: Kraken: ['EOrder:Insufficient initial margin']"
- ]
+ "market_read": "",
+ "skip_reason": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdRpEHHtiLdZ3j6gbhCeo'}",
+ "picks": []
 }
