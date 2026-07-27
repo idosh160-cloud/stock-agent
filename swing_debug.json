@@ -1,36 +1,29 @@
 {
- "time": "2026-07-27T00:00:04",
+ "time": "2026-07-27T01:00:04",
  "usdc": 89.84,
- "portfolio": 552.3,
+ "portfolio": 548.19,
  "api_billing_blocked": false,
  "margin_headroom": 350.6,
  "open": [
-  "BTC long +4.2%",
-  "TSLA short +12.2%",
-  "SOL long +3.2%",
-  "MSTR long +1.6%"
+  "BTC long +3.7%",
+  "TSLA short +12.7%",
+  "SOL long +2.5%",
+  "MSTR long +1.1%"
  ],
  "stock_candidates": 10,
  "top_stocks": [
-  "CRCL +2.2% vol=$24,228",
-  "MSTR +1.2% vol=$34,352",
-  "NVDA +1.0% vol=$59,244",
-  "TSLA +0.9% vol=$5,082",
-  "SPCX +0.8% vol=$155,080"
+  "AAPL +1.2% vol=$17,423",
+  "MSTR +0.8% vol=$34,255",
+  "SPCX +0.7% vol=$171,143",
+  "NVDA +0.7% vol=$59,632",
+  "SPY +0.6% vol=$88,428"
  ],
  "futures_ok": true,
- "futures_balance": 40.93,
+ "futures_balance": 39.62,
+ "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $390"
+  "ETH $387"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: SHIB, LINK",
- "claude_called": true,
- "market_read": "רוב הקריפטו הגדול (BTC, ETH, SOL, LINK) נמצא ב-RSI קיצוני של oversold-overbought עם BB% קרוב ל-100, כלומר שוק מוצה כלפי מעלה וללא הזדמנות לונג נקייה חדשה.",
- "skip_reason": "BTC/ETH/SOL/LINK כולם overbought קיצוני עם MACD עדיין חיובי - שורט מסוכן נגד מומנטום חזק, ולונג נוסף על פוזיציות קיימות מיותר; המניות ללא תנועה קיצונית היום כך שאין סטאפ ברור.",
- "picks": [
-  "XMR long size=20% conf=MEDIUM"
- ],
- "order_errors": [
-  "XMR: Kraken: ['EOrder:Insufficient funds']"
- ]
+ "call_reason": "USDC $90 ממתין אבל בקירור דו-שעתי (טריגר חלש)",
+ "claude_called": false
 }
