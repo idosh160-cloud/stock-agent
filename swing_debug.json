@@ -1,29 +1,29 @@
 {
- "time": "2026-07-28T03:00:05",
- "usdc": 88.5,
- "portfolio": 539.27,
+ "time": "2026-07-28T04:00:04",
+ "usdc": 88.49,
+ "portfolio": 540.39,
  "api_billing_blocked": true,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +0.6%",
-  "TSLA short +15.7%"
+  "BTC long +0.8%",
+  "TSLA short +15.8%"
  ],
  "stock_candidates": 11,
  "top_stocks": [
-  "NVDA -6.7% vol=$373,187",
-  "HOOD -4.0% vol=$43,229",
-  "TSLA -3.6% vol=$148,371",
-  "CRCL -2.4% vol=$634,509",
-  "QQQ -2.1% vol=$101,479"
+  "NVDA -6.4% vol=$375,002",
+  "HOOD -4.2% vol=$43,159",
+  "TSLA -3.8% vol=$149,216",
+  "QQQ -2.2% vol=$101,346",
+  "CRCL -1.5% vol=$646,488"
  ],
  "futures_ok": true,
- "futures_balance": 46.86,
+ "futures_balance": 46.95,
  "unallocated_spot": [
-  "ETH $374"
+  "ETH $375"
  ],
- "call_reason": "תנועה חזקה במניה: NVDA, HOOD, CRCL",
+ "call_reason": "תנועה חזקה במניה: NVDA, HOOD, QQQ",
  "claude_called": true,
  "market_read": "",
- "skip_reason": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdTi3E5fXMXDA2MfZuUbM'}",
+ "skip_reason": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdTncb57L73qgWfsU7Em6'}",
  "picks": []
 }
