@@ -1,29 +1,27 @@
 {
- "time": "2026-08-02T15:00:04",
- "usdc": 88.07,
- "portfolio": 535.88,
+ "time": "2026-08-02T16:00:07",
+ "usdc": 88.06,
+ "portfolio": 536.7,
  "api_billing_blocked": true,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +0.4%",
-  "TSLA short +13.4%"
+  "BTC long +0.5%",
+  "TSLA short +13.8%"
  ],
  "stock_candidates": 12,
  "top_stocks": [
-  "CF -2.9% vol=$9,890",
+  "CF -3.0% vol=$6,743",
   "HOOD +1.9% vol=$50,824",
-  "TSLA +1.3% vol=$7,702",
   "OPENAI -1.2% vol=$12,723",
-  "CRCL -0.9% vol=$30,520"
+  "GOOGL +0.8% vol=$5,364",
+  "TSLA +0.8% vol=$8,289"
  ],
  "futures_ok": true,
- "futures_balance": 48.5,
+ "futures_balance": 48.61,
  "unallocated_spot": [
-  "ETH $370"
+  "ETH $371"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: ADA",
- "claude_called": true,
- "market_read": "",
- "skip_reason": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cde7zEjbw7ESaWqFJkMYC'}",
- "picks": []
+ "claude_called": false,
+ "skip": "snapshot זהה לקריאה הקודמת"
 }
