@@ -1,29 +1,27 @@
 {
- "time": "2026-08-03T06:00:04",
+ "time": "2026-08-03T07:00:05",
  "usdc": 88.01,
- "portfolio": 537.35,
+ "portfolio": 535.0,
  "api_billing_blocked": true,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +0.0%",
-  "TSLA short +12.7%"
+  "BTC long -0.3%",
+  "TSLA short +13.2%"
  ],
  "stock_candidates": 10,
  "top_stocks": [
   "OPENAI +4.7% vol=$17,074",
-  "GOOGL +1.8% vol=$11,694",
-  "TSLA +1.4% vol=$29,492",
-  "CRCL +0.8% vol=$25,841",
-  "SPY +0.6% vol=$94,408"
+  "GOOGL +1.4% vol=$11,678",
+  "AAPL -0.9% vol=$24,933",
+  "TSLA +0.8% vol=$36,477",
+  "CRCL +0.8% vol=$25,841"
  ],
  "futures_ok": true,
- "futures_balance": 49.33,
+ "futures_balance": 49.07,
  "unallocated_spot": [
-  "ETH $371"
+  "ETH $369"
  ],
  "call_reason": "תנועה חזקה במניה: OPENAI",
- "claude_called": true,
- "market_read": "",
- "skip_reason": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdfJcpexU4xsc5YargLsT'}",
- "picks": []
+ "claude_called": false,
+ "skip": "snapshot זהה לקריאה הקודמת"
 }
