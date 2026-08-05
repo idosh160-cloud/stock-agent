@@ -1,29 +1,29 @@
 {
- "time": "2026-08-05T17:00:05",
- "usdc": 87.86,
- "portfolio": 547.25,
+ "time": "2026-08-05T18:00:05",
+ "usdc": 87.85,
+ "portfolio": 551.26,
  "api_billing_blocked": true,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +3.0%",
-  "TSLA short +10.5%"
+  "BTC long +3.1%",
+  "TSLA short +10.8%"
  ],
  "stock_candidates": 13,
  "top_stocks": [
-  "SPCX -5.3% vol=$3,268,184",
-  "NVDA +4.9% vol=$424,903",
-  "GLD +3.8% vol=$60,068",
-  "GOOGL -3.2% vol=$189,253",
+  "SPCX -10.7% vol=$2,904,352",
+  "NVDA +4.6% vol=$424,785",
+  "GOOGL -4.2% vol=$182,733",
+  "GLD +4.1% vol=$58,178",
   "CF -2.4% vol=$8,436"
  ],
  "futures_ok": true,
- "futures_balance": 51.34,
+ "futures_balance": 50.98,
  "unallocated_spot": [
-  "ETH $378"
+  "ETH $383"
  ],
- "call_reason": "תנועה חזקה במניה: SPCX, NVDA, GLD",
+ "call_reason": "תנועה חזקה במניה: SPCX, NVDA, GOOGL",
  "claude_called": true,
  "market_read": "",
- "skip_reason": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdjxZqVAgJgkFwCRz6iDg'}",
+ "skip_reason": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cdk39CkUxvTJdXwH2Jx3P'}",
  "picks": []
 }
