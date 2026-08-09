@@ -1,7 +1,7 @@
 {
- "time": "2026-08-09T03:00:04",
- "usdc": 87.55,
- "portfolio": 553.08,
+ "time": "2026-08-09T04:00:05",
+ "usdc": 87.54,
+ "portfolio": 552.96,
  "api_billing_blocked": true,
  "margin_headroom": 360.39,
  "open": [
@@ -10,9 +10,9 @@
  ],
  "stock_candidates": 11,
  "top_stocks": [
-  "IOT +49.0% vol=$11,961",
-  "SPCX +3.4% vol=$1,147,793",
-  "CRCL +0.8% vol=$105,769",
+  "IOT +32.2% vol=$20,351",
+  "SPCX +3.4% vol=$1,159,371",
+  "CRCL +0.9% vol=$88,584",
   "OPENAI -0.6% vol=$26,501",
   "FLU +0.5% vol=$5,071"
  ],
@@ -24,6 +24,6 @@
  "call_reason": "תנועה חזקה במניה: IOT, SPCX",
  "claude_called": true,
  "market_read": "",
- "skip_reason": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdrRkK2KmJLA6KXgsZz51'}",
+ "skip_reason": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdrWKcZet7FpiNtvfm6Zj'}",
  "picks": []
 }
