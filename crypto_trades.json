@@ -295,6 +295,29 @@
       "Near resistance $1.0125"
     ],
     "txid": "O63MW4-YQDHZ-5E2E7W",
-    "pnl_pct": null
+    "pnl_pct": -0.13,
+    "pnl_usd": -0.02,
+    "close_price": 1.00397
+  },
+  {
+    "date": "2026-08-11T08:00:04.299544",
+    "coin": "XRP",
+    "action": "SELL",
+    "price": 1.00397,
+    "volume": 17.566023,
+    "usd": 17.64,
+    "rsi": 26.02,
+    "buy_score": 3,
+    "sell_score": 4,
+    "reasons": [
+      "RSI 26.02 (oversold)",
+      "MACD bearish crossover",
+      "Below MA50 ($1.03)",
+      "Below MA200 (downtrend)",
+      "Near resistance $1.0125"
+    ],
+    "txid": "O6ZYAQ-U3XYF-DXCL5L",
+    "pnl_pct": -0.13,
+    "pnl_usd": -0.02
   }
 ]
