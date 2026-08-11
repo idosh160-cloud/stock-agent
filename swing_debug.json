@@ -1,29 +1,27 @@
 {
- "time": "2026-08-11T03:00:05",
- "usdc": 84.2,
- "portfolio": 545.22,
+ "time": "2026-08-11T04:00:05",
+ "usdc": 84.19,
+ "portfolio": 545.83,
  "api_billing_blocked": true,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +2.0%",
+  "BTC long +2.1%",
   "TSLA short +8.3%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "IOT -10.2% vol=$90,772",
+  "IOT -10.7% vol=$89,393",
   "MSTR -3.8% vol=$138,522",
   "COIN -3.2% vol=$6,467",
-  "NVDA -2.5% vol=$115,293",
-  "GLD +1.9% vol=$33,944"
+  "NVDA -2.5% vol=$113,978",
+  "SPCX +1.6% vol=$3,591,529"
  ],
  "futures_ok": true,
- "futures_balance": 53.11,
+ "futures_balance": 53.3,
  "unallocated_spot": [
   "ETH $375"
  ],
  "call_reason": "תנועה חזקה במניה: IOT, MSTR, COIN",
- "claude_called": true,
- "market_read": "",
- "skip_reason": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CdvDN6HrhYH1hJ3uDSVts'}",
- "picks": []
+ "claude_called": false,
+ "skip": "snapshot זהה לקריאה הקודמת"
 }
