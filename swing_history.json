@@ -1573,5 +1573,30 @@
     "entry_bb_pct": 101.6,
     "entry_macd_hist": 0.12175,
     "entry_change_24h": 0.68
+  },
+  {
+    "coin": "TSLA",
+    "pair": "PF_TSLAXUSD",
+    "status": "closed_externally",
+    "leveraged": false,
+    "collateral": 97.55,
+    "volume": 0.27,
+    "entry_price": 361.3,
+    "close_price": 361.3,
+    "target_price": 339.62,
+    "stop_price": 303.9736,
+    "pnl_usd": 0,
+    "pnl_pct": 0,
+    "date_open": "2026-07-23T02:00:45.771041",
+    "date_close": "2026-08-11T19:00:05.515187",
+    "reasoning": "TSLA צנח 4.7% עם טווח יומי גבוה של 7.5% ונפח מסחר גבוה - זה נראה כהמשך מומנטום שלילי ולא תיקון חד, לכן שורט על המשך הירידה עם סטופ צמוד יחסית למניה.",
+    "confidence": "MEDIUM",
+    "txid": "a252f660-fdae-4a81-9c56-6333cabeb3ca",
+    "close_txid": null,
+    "side": "short",
+    "entry_rsi": null,
+    "entry_bb_pct": null,
+    "entry_macd_hist": null,
+    "entry_change_24h": -4.67
   }
 ]
