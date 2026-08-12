@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-11T23:00:04.140405",
+  "timestamp": "2026-08-12T00:00:04.452662",
   "balance": {
     "ADA": 0.063756,
     "ATOM": 5.09606302,
@@ -7,7 +7,7 @@
     "ETH": 0.19955852,
     "LINK": 1.883e-05,
     "SOL": 0.23064445,
-    "USDC": 80.50885424,
+    "USDC": 80.50282524,
     "BTC": 4.893e-05,
     "XRP": 8.78301179,
     "USD": 0.0182
@@ -16,73 +16,73 @@
     {
       "coin": "ETH",
       "qty": 0.19955852,
-      "price": 1881.0,
-      "value_usd": 375.37,
+      "price": 1881.39,
+      "value_usd": 375.45,
       "avg_cost": 1893.395473,
-      "pnl_usd": -2.47,
-      "pnl_pct": -0.65,
-      "change_24h": 0.5,
+      "pnl_usd": -2.4,
+      "pnl_pct": -0.63,
+      "change_24h": 0.52,
       "high_24h": 1895.91,
       "low_24h": 1853.0
     },
     {
       "coin": "SOL",
       "qty": 0.23064445,
-      "price": 76.37,
-      "value_usd": 17.61,
+      "price": 76.25,
+      "value_usd": 17.59,
       "avg_cost": null,
       "pnl_usd": null,
       "pnl_pct": null,
-      "change_24h": 0.62,
+      "change_24h": 0.0,
       "high_24h": 76.6,
       "low_24h": 74.64
     },
     {
       "coin": "XRP",
       "qty": 8.78301179,
-      "price": 1.02077,
-      "value_usd": 8.97,
+      "price": 1.02241,
+      "value_usd": 8.98,
       "avg_cost": 1.007392,
-      "pnl_usd": 0.12,
-      "pnl_pct": 1.33,
-      "change_24h": 0.95,
+      "pnl_usd": 0.13,
+      "pnl_pct": 1.49,
+      "change_24h": 1.11,
       "high_24h": 1.02537,
       "low_24h": 0.99134
     },
     {
       "coin": "ATOM",
       "qty": 5.09606302,
-      "price": 1.4395,
-      "value_usd": 7.34,
+      "price": 1.4385,
+      "value_usd": 7.33,
       "avg_cost": null,
       "pnl_usd": null,
       "pnl_pct": null,
-      "change_24h": 3.2,
+      "change_24h": 3.13,
       "high_24h": 1.4431,
       "low_24h": 1.3911
     },
     {
       "coin": "BTC",
       "qty": 4.893e-05,
-      "price": 63619.33,
+      "price": 63550.9,
       "value_usd": 3.11,
       "avg_cost": null,
       "pnl_usd": null,
       "pnl_pct": null,
-      "change_24h": -0.48,
+      "change_24h": 0.0,
       "high_24h": 64400.0,
       "low_24h": 63200.0
     },
     {
       "coin": "ADA",
       "qty": 0.063756,
-      "price": 0.187051,
+      "price": 0.187242,
       "value_usd": 0.01,
       "avg_cost": null,
       "pnl_usd": null,
       "pnl_pct": null,
-      "change_24h": -1.92,
-      "high_24h": 0.191992,
+      "change_24h": -1.82,
+      "high_24h": 0.19141,
       "low_24h": 0.183694
     },
     {
@@ -100,40 +100,40 @@
     {
       "coin": "LINK",
       "qty": 1.883e-05,
-      "price": 8.77096,
+      "price": 8.7763,
       "value_usd": 0.0,
       "avg_cost": null,
       "pnl_usd": null,
       "pnl_pct": null,
-      "change_24h": 5.82,
+      "change_24h": 5.89,
       "high_24h": 8.79999,
       "low_24h": 8.28825
     }
   ],
-  "portfolio_usd": 492.94,
-  "usdc": 80.53,
+  "portfolio_usd": 492.99,
+  "usdc": 80.52,
   "signals": [
     {
       "coin": "BTC",
       "pair": "XBTUSDC",
       "action": "HOLD (pending order)",
-      "rsi": 33.06,
-      "macd": 2.144922,
-      "ma50": 64264.13,
-      "ma200": 64455.55,
+      "rsi": 32.73,
+      "macd": 2.666601,
+      "ma50": 64233.18,
+      "ma200": 64454.43,
       "support": 63415.22,
       "resistance": 63778.49,
       "near_support": true,
       "buy_score": 5,
       "sell_score": 3,
       "reasons": [
-        "RSI 33.06 (oversold)",
+        "RSI 32.73 (oversold)",
         "MACD bullish crossover",
         "Below MA200 (downtrend)",
         "Near support $63,415.2200",
         "Near resistance $63,778.4900"
       ],
-      "price": 63619.33,
+      "price": 63550.9,
       "volume": 0,
       "usd_value": 0.0,
       "limit_price": 0
@@ -142,10 +142,10 @@
       "coin": "ETH",
       "pair": "ETHUSDC",
       "action": "HOLD (pending order)",
-      "rsi": 47.95,
-      "macd": 1.820451,
-      "ma50": 1889.29,
-      "ma200": 1896.1,
+      "rsi": 47.14,
+      "macd": 1.865724,
+      "ma50": 1888.56,
+      "ma200": 1896.19,
       "support": 1876.4,
       "resistance": 1891.42,
       "near_support": true,
@@ -157,7 +157,7 @@
         "Near support $1,876.4000",
         "Near resistance $1,891.4200"
       ],
-      "price": 1881.0,
+      "price": 1881.39,
       "volume": 0,
       "usd_value": 0.0,
       "limit_price": 0
@@ -165,9 +165,9 @@
     {
       "coin": "XRP",
       "pair": "XRPUSDC",
-      "action": "HOLD",
-      "rsi": 61.31,
-      "macd": 0.0026,
+      "action": "SELL",
+      "rsi": 63.88,
+      "macd": 0.002593,
       "ma50": 1.02,
       "ma200": 1.04,
       "support": 1.0149,
@@ -176,19 +176,19 @@
       "buy_score": 3,
       "sell_score": 5,
       "reasons": [
-        "RSI 61.31 (overbought)",
+        "RSI 63.88 (overbought)",
         "MACD bullish crossover",
         "Below MA200 (downtrend)",
         "Near support $1.0149",
         "Near resistance $1.0278"
       ],
-      "price": 1.02077,
-      "volume": 0,
-      "usd_value": 0.0,
-      "limit_price": 0
+      "price": 1.02241,
+      "volume": 4.391506,
+      "usd_value": 4.49,
+      "limit_price": 1.0245
     }
   ],
-  "orders_today": 4,
+  "orders_today": 1,
   "params": {
     "RSI_BUY": 45,
     "RSI_SELL": 58,
@@ -197,6 +197,14 @@
     "MIN_SIGNALS": 2
   },
   "open_orders": [
+    {
+      "txid": "OWWASH-JRGNN-PXOK4P",
+      "coin": "XRP",
+      "side": "sell",
+      "price": 1.0245,
+      "volume": 4.391506,
+      "usd": 4.5
+    },
     {
       "txid": "OK63FO-HXY6N-3WTV3C",
       "coin": "BTC",
@@ -558,6 +566,26 @@
       "txid": "O56BOM-NPH5D-3RXQEB",
       "pnl_pct": -0.79,
       "pnl_usd": -0.12
+    },
+    {
+      "date": "2026-08-12T00:00:04.225348",
+      "coin": "XRP",
+      "action": "SELL",
+      "price": 1.02241,
+      "volume": 4.391506,
+      "usd": 4.49,
+      "rsi": 63.88,
+      "buy_score": 3,
+      "sell_score": 5,
+      "reasons": [
+        "RSI 63.88 (overbought)",
+        "MACD bullish crossover",
+        "Below MA200 (downtrend)",
+        "Near support $1.0149",
+        "Near resistance $1.0278"
+      ],
+      "txid": "OWWASH-JRGNN-PXOK4P",
+      "pnl_pct": null
     }
   ]
 }

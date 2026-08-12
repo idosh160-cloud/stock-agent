@@ -342,5 +342,25 @@
     "txid": "O56BOM-NPH5D-3RXQEB",
     "pnl_pct": -0.79,
     "pnl_usd": -0.12
+  },
+  {
+    "date": "2026-08-12T00:00:04.225348",
+    "coin": "XRP",
+    "action": "SELL",
+    "price": 1.02241,
+    "volume": 4.391506,
+    "usd": 4.49,
+    "rsi": 63.88,
+    "buy_score": 3,
+    "sell_score": 5,
+    "reasons": [
+      "RSI 63.88 (overbought)",
+      "MACD bullish crossover",
+      "Below MA200 (downtrend)",
+      "Near support $1.0149",
+      "Near resistance $1.0278"
+    ],
+    "txid": "OWWASH-JRGNN-PXOK4P",
+    "pnl_pct": null
   }
 ]
