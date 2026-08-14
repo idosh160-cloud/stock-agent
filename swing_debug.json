@@ -1,7 +1,7 @@
 {
- "time": "2026-08-14T05:00:05",
- "usdc": 84.87,
- "portfolio": 548.52,
+ "time": "2026-08-14T06:00:04",
+ "usdc": 84.86,
+ "portfolio": 548.45,
  "api_billing_blocked": true,
  "margin_headroom": 360.39,
  "open": [
@@ -9,20 +9,18 @@
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "CRCL +5.9% vol=$308,302",
-  "HOOD +4.2% vol=$65,786",
-  "SPCX -3.9% vol=$1,487,574",
-  "TSLA +3.7% vol=$84,269",
+  "CRCL +5.7% vol=$301,137",
+  "HOOD +4.3% vol=$63,102",
+  "TSLA +3.7% vol=$78,316",
+  "SPCX -3.5% vol=$1,538,904",
   "ANTHROPIC +3.0% vol=$15,665"
  ],
  "futures_ok": true,
- "futures_balance": 55.01,
+ "futures_balance": 55.1,
  "unallocated_spot": [
   "ETH $376"
  ],
- "call_reason": "תנועה חזקה במניה: CRCL, HOOD, SPCX",
- "claude_called": true,
- "market_read": "",
- "skip_reason": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Ce23wbzZy9F6iS5zY3kBj'}",
- "picks": []
+ "call_reason": "תנועה חזקה במניה: CRCL, HOOD, TSLA",
+ "claude_called": false,
+ "skip": "snapshot זהה לקריאה הקודמת"
 }
