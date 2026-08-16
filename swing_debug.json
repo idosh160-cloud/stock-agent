@@ -1,25 +1,26 @@
 {
- "time": "2026-08-16T06:00:05",
+ "time": "2026-08-16T07:00:04",
  "usdc": 84.68,
- "portfolio": 547.52,
+ "portfolio": 547.76,
  "api_billing_blocked": true,
  "margin_headroom": 360.39,
  "open": [
   "BTC long +0.4%"
  ],
- "stock_candidates": 12,
+ "stock_candidates": 13,
  "top_stocks": [
-  "IOT -1.9% vol=$17,257",
-  "SPCX +0.5% vol=$67,113",
-  "MSTR +0.5% vol=$57,699",
-  "TSLA +0.3% vol=$5,295",
-  "META -0.1% vol=$17,658"
+  "IOT -1.7% vol=$17,700",
+  "SPCX +0.7% vol=$68,936",
+  "MSTR +0.7% vol=$58,398",
+  "TSLA +0.6% vol=$5,337",
+  "NVDA +0.5% vol=$18,371"
  ],
  "futures_ok": true,
- "futures_balance": 55.85,
+ "futures_balance": 55.88,
  "unallocated_spot": [
   "ETH $375"
  ],
- "call_reason": "USDC $85 ממתין אבל בקירור דו-שעתי (טריגר חלש)",
- "claude_called": false
+ "call_reason": "USDC $85 לא מושקע — מחפש לו בית (תיק מושקע תמיד)",
+ "claude_called": false,
+ "skip": "snapshot זהה לקריאה הקודמת"
 }
