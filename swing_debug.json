@@ -1,22 +1,22 @@
 {
- "time": "2026-08-16T07:00:04",
+ "time": "2026-08-16T08:00:04",
  "usdc": 84.68,
- "portfolio": 547.76,
+ "portfolio": 547.9,
  "api_billing_blocked": true,
  "margin_headroom": 360.39,
  "open": [
   "BTC long +0.4%"
  ],
- "stock_candidates": 13,
+ "stock_candidates": 12,
  "top_stocks": [
-  "IOT -1.7% vol=$17,700",
-  "SPCX +0.7% vol=$68,936",
-  "MSTR +0.7% vol=$58,398",
-  "TSLA +0.6% vol=$5,337",
-  "NVDA +0.5% vol=$18,371"
+  "SPCX +0.8% vol=$65,568",
+  "NVDA +0.5% vol=$18,371",
+  "MSTR +0.5% vol=$62,840",
+  "IOT +0.2% vol=$13,819",
+  "CRCL +0.1% vol=$92,887"
  ],
  "futures_ok": true,
- "futures_balance": 55.88,
+ "futures_balance": 55.83,
  "unallocated_spot": [
   "ETH $375"
  ],
