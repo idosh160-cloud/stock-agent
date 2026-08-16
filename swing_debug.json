@@ -1,7 +1,7 @@
 {
- "time": "2026-08-16T15:00:04",
- "usdc": 84.65,
- "portfolio": 547.77,
+ "time": "2026-08-16T16:00:04",
+ "usdc": 84.64,
+ "portfolio": 548.11,
  "api_billing_blocked": true,
  "margin_headroom": 360.39,
  "open": [
@@ -9,14 +9,14 @@
  ],
  "stock_candidates": 11,
  "top_stocks": [
-  "CRCL +1.1% vol=$101,439",
+  "CRCL +1.4% vol=$98,769",
   "IOT +1.0% vol=$19,640",
-  "SPCX +0.3% vol=$81,059",
-  "AAPL -0.1% vol=$21,612",
-  "SPY +0.1% vol=$62,576"
+  "SPCX +0.3% vol=$68,894",
+  "GOOGL +0.2% vol=$78,405",
+  "AAPL +0.2% vol=$14,681"
  ],
  "futures_ok": true,
- "futures_balance": 55.49,
+ "futures_balance": 55.53,
  "unallocated_spot": [
   "ETH $376"
  ],
