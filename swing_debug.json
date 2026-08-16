@@ -1,7 +1,7 @@
 {
- "time": "2026-08-16T12:00:05",
+ "time": "2026-08-16T13:00:04",
  "usdc": 84.66,
- "portfolio": 547.63,
+ "portfolio": 547.21,
  "api_billing_blocked": true,
  "margin_headroom": 360.39,
  "open": [
@@ -9,20 +9,17 @@
  ],
  "stock_candidates": 13,
  "top_stocks": [
-  "IOT -1.2% vol=$16,481",
-  "CRCL +0.8% vol=$113,388",
-  "MSTR +0.5% vol=$76,121",
-  "SPCX +0.3% vol=$77,736",
-  "TSLA +0.2% vol=$5,126"
+  "IOT -1.8% vol=$19,939",
+  "CRCL +0.7% vol=$120,222",
+  "ANTHROPIC -0.6% vol=$7,539",
+  "MSTR +0.3% vol=$81,004",
+  "GOOGL +0.2% vol=$77,989"
  ],
  "futures_ok": true,
- "futures_balance": 55.71,
+ "futures_balance": 55.54,
  "unallocated_spot": [
   "ETH $375"
  ],
- "call_reason": "USDC $85 לא מושקע — מחפש לו בית (תיק מושקע תמיד)",
- "claude_called": true,
- "market_read": "",
- "skip_reason": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Ce6Pb5XYCpdGorfuW4Qp8'}",
- "picks": []
+ "call_reason": "USDC $85 ממתין אבל בקירור דו-שעתי (טריגר חלש)",
+ "claude_called": false
 }
