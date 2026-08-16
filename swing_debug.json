@@ -1,22 +1,22 @@
 {
- "time": "2026-08-16T19:00:05",
- "usdc": 84.64,
- "portfolio": 548.22,
+ "time": "2026-08-16T20:00:05",
+ "usdc": 84.63,
+ "portfolio": 548.29,
  "api_billing_blocked": true,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +0.6%"
+  "BTC long +0.5%"
  ],
  "stock_candidates": 11,
  "top_stocks": [
-  "CRCL +1.1% vol=$96,069",
+  "CRCL +1.2% vol=$97,810",
   "IOT -0.9% vol=$19,582",
-  "GOOGL +0.3% vol=$78,465",
-  "NVDA +0.2% vol=$12,101",
-  "TSLA -0.2% vol=$7,605"
+  "NVDA +0.4% vol=$14,255",
+  "SPY +0.3% vol=$122,144",
+  "AAPL +0.3% vol=$11,640"
  ],
  "futures_ok": true,
- "futures_balance": 55.49,
+ "futures_balance": 55.5,
  "unallocated_spot": [
   "ETH $376"
  ],
