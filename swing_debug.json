@@ -1,28 +1,25 @@
 {
- "time": "2026-08-17T10:00:05",
+ "time": "2026-08-17T11:00:04",
  "usdc": 84.58,
- "portfolio": 549.82,
+ "portfolio": 552.41,
  "api_billing_blocked": true,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +0.8%"
+  "BTC long +1.4%"
  ],
  "stock_candidates": 15,
  "top_stocks": [
-  "IOT -2.3% vol=$17,459",
-  "CF +2.3% vol=$7,323",
-  "SPCX +0.6% vol=$211,012",
-  "TSLA +0.6% vol=$14,281",
-  "OPENAI +0.6% vol=$11,672"
+  "CF +1.9% vol=$7,375",
+  "IOT -1.3% vol=$18,500",
+  "SPCX +1.2% vol=$232,640",
+  "OPENAI +0.6% vol=$11,672",
+  "MSTR +0.5% vol=$91,553"
  ],
  "futures_ok": true,
- "futures_balance": 55.67,
+ "futures_balance": 55.65,
  "unallocated_spot": [
-  "ETH $378"
+  "ETH $380"
  ],
- "call_reason": "תנועה חזקה במניה: IOT, CF",
- "claude_called": true,
- "market_read": "",
- "skip_reason": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Ce88FFn8ayEEXhsvXmQmq'}",
- "picks": []
+ "call_reason": "USDC $85 ממתין אבל בקירור דו-שעתי (טריגר חלש)",
+ "claude_called": false
 }
