@@ -1,25 +1,28 @@
 {
- "time": "2026-08-17T11:00:04",
- "usdc": 84.58,
- "portfolio": 552.41,
+ "time": "2026-08-17T12:00:05",
+ "usdc": 84.57,
+ "portfolio": 551.56,
  "api_billing_blocked": true,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +1.4%"
+  "BTC long +1.3%"
  ],
  "stock_candidates": 15,
  "top_stocks": [
-  "CF +1.9% vol=$7,375",
+  "OPENAI +1.8% vol=$11,608",
+  "CF +1.7% vol=$7,456",
   "IOT -1.3% vol=$18,500",
-  "SPCX +1.2% vol=$232,640",
-  "OPENAI +0.6% vol=$11,672",
+  "AAPL +0.7% vol=$104,840",
   "MSTR +0.5% vol=$91,553"
  ],
  "futures_ok": true,
- "futures_balance": 55.65,
+ "futures_balance": 55.19,
  "unallocated_spot": [
   "ETH $380"
  ],
- "call_reason": "USDC $85 ממתין אבל בקירור דו-שעתי (טריגר חלש)",
- "claude_called": false
+ "call_reason": "USDC $85 לא מושקע — מחפש לו בית (תיק מושקע תמיד)",
+ "claude_called": true,
+ "market_read": "",
+ "skip_reason": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Ce8HQ48Syrzgj2rtN6LWF'}",
+ "picks": []
 }
