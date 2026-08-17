@@ -1,24 +1,24 @@
 {
- "time": "2026-08-17T06:00:04",
+ "time": "2026-08-17T07:00:04",
  "usdc": 84.59,
- "portfolio": 551.43,
+ "portfolio": 553.28,
  "api_billing_blocked": true,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +1.1%"
+  "BTC long +1.4%"
  ],
  "stock_candidates": 15,
  "top_stocks": [
   "OPENAI -2.4% vol=$11,648",
-  "SPCX +2.0% vol=$193,072",
-  "CF +1.2% vol=$5,662",
-  "IOT -1.1% vol=$21,795",
-  "AAPL +0.5% vol=$78,860"
+  "SPCX +2.3% vol=$189,834",
+  "IOT -1.9% vol=$22,221",
+  "CF +1.6% vol=$6,406",
+  "CRCL +0.6% vol=$104,830"
  ],
  "futures_ok": true,
- "futures_balance": 55.99,
+ "futures_balance": 56.16,
  "unallocated_spot": [
-  "ETH $379"
+  "ETH $380"
  ],
  "call_reason": "תנועה חזקה במניה: OPENAI, SPCX",
  "claude_called": false,
