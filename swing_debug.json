@@ -1,26 +1,26 @@
 {
- "time": "2026-08-19T05:00:04",
- "usdc": 84.42,
- "portfolio": 551.12,
+ "time": "2026-08-19T06:00:05",
+ "usdc": 84.41,
+ "portfolio": 550.98,
  "api_billing_blocked": true,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +2.4%"
+  "BTC long +2.3%"
  ],
  "stock_candidates": 15,
  "top_stocks": [
-  "HOOD -4.4% vol=$16,616",
-  "MSTR -4.0% vol=$48,238",
-  "META -3.5% vol=$58,742",
-  "CRCL -3.4% vol=$282,421",
+  "HOOD -4.8% vol=$20,430",
+  "MSTR -4.5% vol=$48,205",
+  "CRCL -3.8% vol=$287,405",
+  "META -3.3% vol=$58,643",
   "COIN -1.9% vol=$41,476"
  ],
  "futures_ok": true,
- "futures_balance": 53.57,
+ "futures_balance": 53.52,
  "unallocated_spot": [
   "ETH $381"
  ],
- "call_reason": "תנועה חזקה במניה: HOOD, MSTR, META",
+ "call_reason": "תנועה חזקה במניה: HOOD, MSTR, CRCL",
  "claude_called": false,
  "skip": "snapshot זהה לקריאה הקודמת"
 }
