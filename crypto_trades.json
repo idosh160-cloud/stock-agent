@@ -401,6 +401,28 @@
       "Near support $1.0255"
     ],
     "txid": "OG7LVM-WL5RG-M342EQ",
-    "pnl_pct": null
+    "pnl_pct": 3.39,
+    "pnl_usd": 0.51,
+    "close_price": 1.06765
+  },
+  {
+    "date": "2026-08-19T16:00:03.886760",
+    "coin": "XRP",
+    "action": "SELL",
+    "price": 1.06765,
+    "volume": 8.360967,
+    "usd": 8.93,
+    "rsi": 94.88,
+    "buy_score": 2,
+    "sell_score": 3,
+    "reasons": [
+      "RSI 94.88 (overbought)",
+      "MACD bullish crossover",
+      "Above MA50 ($1.00)",
+      "Above MA200 (uptrend)"
+    ],
+    "txid": "OV7SDJ-PMK3Z-4S527W",
+    "pnl_pct": 3.39,
+    "pnl_usd": 0.51
   }
 ]
