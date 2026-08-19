@@ -424,5 +424,24 @@
     "txid": "OV7SDJ-PMK3Z-4S527W",
     "pnl_pct": 3.39,
     "pnl_usd": 0.51
+  },
+  {
+    "date": "2026-08-19T17:00:05.071481",
+    "coin": "XRP",
+    "action": "SELL",
+    "price": 1.06414,
+    "volume": 4.180484,
+    "usd": 4.45,
+    "rsi": 90.49,
+    "buy_score": 2,
+    "sell_score": 3,
+    "reasons": [
+      "RSI 90.49 (overbought)",
+      "MACD bullish crossover",
+      "Above MA50 ($1.00)",
+      "Above MA200 (uptrend)"
+    ],
+    "txid": "OB7HZN-FEOK3-ZUT6VH",
+    "pnl_pct": null
   }
 ]
