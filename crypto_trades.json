@@ -382,5 +382,25 @@
     ],
     "txid": "OOHLRC-NMHFK-L4X5YC",
     "pnl_pct": null
+  },
+  {
+    "date": "2026-08-19T15:00:04.369975",
+    "coin": "XRP",
+    "action": "BUY",
+    "price": 1.03263,
+    "volume": 14.526016,
+    "usd": 15.0,
+    "rsi": 89.43,
+    "buy_score": 4,
+    "sell_score": 3,
+    "reasons": [
+      "RSI 89.43 (overbought)",
+      "MACD bullish crossover",
+      "Above MA50 ($1.00)",
+      "Above MA200 (uptrend)",
+      "Near support $1.0255"
+    ],
+    "txid": "OG7LVM-WL5RG-M342EQ",
+    "pnl_pct": null
   }
 ]
