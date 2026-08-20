@@ -1,36 +1,39 @@
 {
- "time": "2026-08-20T21:00:06",
- "usdc": 87.1,
- "portfolio": 636.74,
+ "time": "2026-08-20T22:00:05",
+ "usdc": 87.09,
+ "portfolio": 628.86,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +15.8%",
-  "CRCL short +0.8%",
-  "MSTR short +1.6%"
+  "BTC long +15.9%",
+  "CRCL short +0.9%",
+  "MSTR short +1.7%",
+  "SPCX short -0.1%"
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "COIN +5.4% vol=$143,935",
-  "CRCL +5.2% vol=$1,276,610",
-  "MSTR +4.9% vol=$1,285,360",
-  "SPCX -4.5% vol=$1,315,148",
-  "IOT +2.9% vol=$48,488"
+  "SPCX -4.5% vol=$1,018,188",
+  "COIN +4.3% vol=$142,993",
+  "MSTR +4.3% vol=$1,264,385",
+  "CRCL +4.1% vol=$1,122,935",
+  "HOOD -3.5% vol=$450,890"
  ],
  "futures_ok": true,
- "futures_balance": 45.41,
+ "futures_balance": 37.51,
+ "futures_float_topup": false,
  "unallocated_spot": [
   "ETH $463"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: XRP, PENGU, FARTCOIN",
  "claude_called": true,
- "market_read": "השוק הקריפטו נסחר overbought כללי (BTC RSI 77, רוב האלטים 65-75) בעוד שסקטור המניות הטוקניזציה מציג חולשה נקודתית - מעדיף שורטים על מיצוי מומנטום על פני לונגים חדשים בשיא.",
- "skip_reason": "דחיתי לונגים חדשים על BTC/AVAX/DOT/ADA כי כולם overbought עמוק (RSI 65-77, BB% 75-95) ללא מרחב עלייה נוסף; ETH הנזיל נשאר כפי שהוא כי אין הזדמנות עדיפה ברורה לרוטציה שלו כרגע.",
+ "market_read": "השוק במגמת עליות חדות ברוב הקריפטו עם RSI מוגזם ברוב הצמדים - הזדמנות טובה יותר במיצוי מומנטום (שורט) מאשר ברדיפה אחרי המשך עלייה.",
+ "skip_reason": "BTC/MSTR/CRCL/SPCX כבר בפוזיציות פתוחות ומתקדמות כמתוכנן - אין סיבה לגעת בהן; שאר המועמדים בקריפטו (PENGU, FARTCOIN, DOT, AVAX, BNB, ADA, DOGE) או overbought מדי בלי סימן היפוך ברור או נזילות נמוכה מדי לסחר משמעותי.",
  "picks": [
-  "XRP short size=20% conf=MEDIUM",
-  "SPCX short size=18% conf=MEDIUM"
+  "XRP short size=25% conf=MEDIUM",
+  "TRUMP short size=20% conf=MEDIUM"
  ],
  "order_errors": [
+  "liq ETH: all sizes rejected (margin collateral lock)",
   "XRP: Kraken: ['EOrder:Insufficient initial margin']"
  ]
 }
