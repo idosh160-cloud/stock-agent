@@ -1,6 +1,6 @@
 {
-  "RSI_BUY": 45,
-  "RSI_SELL": 58,
+  "RSI_BUY": 42,
+  "RSI_SELL": 75,
   "MAX_TRADE_USD": 15,
   "MAX_DAILY_TRADES": 4,
   "MIN_SIGNALS": 2
