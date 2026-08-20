@@ -739,11 +739,35 @@ def run_cycle(auto_trade: bool = True) -> dict:
         })
     positions_out.sort(key=lambda x: x["value_usd"], reverse=True)
 
+    # ── שווי אמיתי כולל: פוזיציות מרג'ין (Spot) + ארנק Futures ────────────────
+    # portfolio_usd עד כאן הוא רק balance ספוט — אבל פוזיציית מרג'ין ממונפת לא
+    # מופיעה שם בכלל (הנכס יושב תחת OpenPositions, לא Balance), אז היא הייתה
+    # נעדרת לגמרי מהשווי הכולל. זו הייתה הסיבה שהבוט הראה מספר נמוך מהותית
+    # ממה שקרקן מציגה בפועל.
+    margin_equity = 0.0
+    try:
+        pos = _request("/0/private/OpenPositions", {"docalcs": "true"}, private=True)
+        for p in pos.values():
+            margin_equity += float(p.get("margin", 0) or 0) + float(p.get("net", 0) or 0)
+    except Exception as e:
+        logging.warning(f"[Portfolio] OpenPositions failed: {e}")
+    portfolio_usd += margin_equity
+
+    futures_usd = 0.0
+    try:
+        from kraken_futures import get_futures_balance
+        futures_usd = get_futures_balance()
+        portfolio_usd += futures_usd
+    except Exception as e:
+        logging.warning(f"[Portfolio] Futures balance failed: {e}")
+
     state = {
         "timestamp":     datetime.now().isoformat(),
         "balance":       balance,
         "positions":     positions_out,
         "portfolio_usd": round(portfolio_usd, 2),
+        "margin_equity": round(margin_equity, 2),
+        "futures_usd":   round(futures_usd, 2),
         "usdc":          round(usdc, 2),
         "signals":       signals,
         "orders_today":  daily,
