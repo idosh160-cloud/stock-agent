@@ -1,35 +1,35 @@
 {
- "time": "2026-08-20T13:00:06",
- "usdc": 87.13,
- "portfolio": 632.43,
+ "time": "2026-08-20T14:00:06",
+ "usdc": 87.12,
+ "portfolio": 635.17,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +14.6%",
-  "CRCL short +2.1%",
-  "MSTR short +0.7%"
+  "BTC long +14.2%",
+  "CRCL short +3.3%",
+  "MSTR short +2.3%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "MSTR +20.5% vol=$1,396,288",
-  "COIN +14.4% vol=$274,273",
-  "CRCL +12.8% vol=$2,066,544",
-  "CF +8.3% vol=$12,366",
-  "HOOD +6.6% vol=$363,171"
+  "MSTR +15.2% vol=$1,455,543",
+  "COIN +11.9% vol=$283,152",
+  "CF +7.9% vol=$12,351",
+  "IOT +6.6% vol=$27,164",
+  "CRCL +6.4% vol=$1,863,046"
  ],
  "futures_ok": true,
- "futures_balance": 44.97,
+ "futures_balance": 49.49,
  "unallocated_spot": [
-  "ETH $457"
+  "ETH $454"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: PENGU, XRP, TRUMP",
+ "call_reason": "תנועה חזקה במטבע חדש: XRP, PENGU, TRUMP",
  "claude_called": true,
- "market_read": "שוק הקריפטו בפריצה חזקה עם BTC ורוב האלטים בקניית יתר קיצונית, מה שהופך שורטים למסוכנים ולונגים חדשים בקריפטו לבעייתיים מבחינת יחס סיכוי-סיכון.",
- "skip_reason": "כל מטבעות הקריפטו המובילים ב-RSI קיצוני של קניית יתר (74-83) על רקע ראלי BTC חזק — שורט מסוכן מדי נגד מומנטום כה חזק, ולונג חדש נוסף על מה שכבר קיים (BTC) מגדיל סיכון ריכוזיות; שאר המניות (SPCX, NVDA, TSLA, AAPL) שטוחות מדי או חסרות תנע ברור.",
+ "market_read": "BTC ומטבעות רבים ב-overbought קיצוני אחרי ריצה חדה, זמן טוב למיין ג'ן-ריברסל בקוינים החלשים ביותר טכנית.",
+ "skip_reason": "שאר המועמדים בנפח נמוך מדי (PENGU, CC, ALGO, MELANIA) או כבר תחת פוזיציות פתוחות (BTC, CRCL, MSTR) שנעות לכיוון המטרה - לא נוגעים בהן.",
  "picks": [
-  "HOOD long size=25% conf=MEDIUM"
+  "XRP short size=25% conf=HIGH"
  ],
- "skips": [
-  "HOOD: margin $45 < needed $53 (after transfer attempt)"
+ "order_errors": [
+  "XRP: Kraken: ['EOrder:Insufficient initial margin']"
  ]
 }
