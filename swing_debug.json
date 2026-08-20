@@ -1,33 +1,33 @@
 {
- "time": "2026-08-20T14:00:06",
+ "time": "2026-08-20T15:00:06",
  "usdc": 87.12,
- "portfolio": 635.17,
+ "portfolio": 635.65,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +14.2%",
-  "CRCL short +3.3%",
-  "MSTR short +2.3%"
+  "BTC long +14.4%",
+  "CRCL short +3.0%",
+  "MSTR short +4.4%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "MSTR +15.2% vol=$1,455,543",
-  "COIN +11.9% vol=$283,152",
-  "CF +7.9% vol=$12,351",
-  "IOT +6.6% vol=$27,164",
-  "CRCL +6.4% vol=$1,863,046"
+  "COIN +7.0% vol=$251,675",
+  "MSTR +6.0% vol=$1,385,491",
+  "CF +5.4% vol=$12,240",
+  "SPCX -4.7% vol=$1,493,504",
+  "IOT +4.0% vol=$42,162"
  ],
  "futures_ok": true,
- "futures_balance": 49.49,
+ "futures_balance": 49.27,
  "unallocated_spot": [
-  "ETH $454"
+  "ETH $455"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: XRP, PENGU, TRUMP",
  "claude_called": true,
- "market_read": "BTC ומטבעות רבים ב-overbought קיצוני אחרי ריצה חדה, זמן טוב למיין ג'ן-ריברסל בקוינים החלשים ביותר טכנית.",
- "skip_reason": "שאר המועמדים בנפח נמוך מדי (PENGU, CC, ALGO, MELANIA) או כבר תחת פוזיציות פתוחות (BTC, CRCL, MSTR) שנעות לכיוון המטרה - לא נוגעים בהן.",
+ "market_read": "השוק במגמת עלייה כללית עם כמה אלטקוינים ו-BTC בקנייתיתר קיצונית, מה שיוצר הזדמנויות שורט על מהלכים מוגזמים.",
+ "skip_reason": "שאר המועמדים (DOGE, PENGU, ALGO, DOT) בקנייתיתר דומה אך עם נפח נמוך משמעותית מ-XRP, והמניות הפתוחות (MSTR, CRCL) כבר בפוזיציה מנצחת שלא כדאי לגעת בה.",
  "picks": [
-  "XRP short size=25% conf=HIGH"
+  "XRP short size=35% conf=HIGH"
  ],
  "order_errors": [
   "XRP: Kraken: ['EOrder:Insufficient initial margin']"
