@@ -1,39 +1,36 @@
 {
- "time": "2026-08-20T22:00:05",
+ "time": "2026-08-20T23:00:05",
  "usdc": 87.09,
- "portfolio": 628.86,
+ "portfolio": 630.84,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +15.9%",
-  "CRCL short +0.9%",
+  "BTC long +15.8%",
+  "CRCL short +0.8%",
   "MSTR short +1.7%",
-  "SPCX short -0.1%"
+  "SPCX short -0.2%"
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "SPCX -4.5% vol=$1,018,188",
-  "COIN +4.3% vol=$142,993",
-  "MSTR +4.3% vol=$1,264,385",
-  "CRCL +4.1% vol=$1,122,935",
+  "MSTR +4.4% vol=$1,261,350",
+  "SPCX -4.2% vol=$995,481",
+  "CRCL +4.1% vol=$1,028,455",
+  "COIN +4.0% vol=$141,415",
   "HOOD -3.5% vol=$450,890"
  ],
  "futures_ok": true,
- "futures_balance": 37.51,
- "futures_float_topup": false,
+ "futures_balance": 40.11,
  "unallocated_spot": [
-  "ETH $463"
+  "ETH $462"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: XRP, PENGU, FARTCOIN",
+ "call_reason": "תנועה חזקה במטבע חדש: XRP, PENGU, TRUMP",
  "claude_called": true,
- "market_read": "השוק במגמת עליות חדות ברוב הקריפטו עם RSI מוגזם ברוב הצמדים - הזדמנות טובה יותר במיצוי מומנטום (שורט) מאשר ברדיפה אחרי המשך עלייה.",
- "skip_reason": "BTC/MSTR/CRCL/SPCX כבר בפוזיציות פתוחות ומתקדמות כמתוכנן - אין סיבה לגעת בהן; שאר המועמדים בקריפטו (PENGU, FARTCOIN, DOT, AVAX, BNB, ADA, DOGE) או overbought מדי בלי סימן היפוך ברור או נזילות נמוכה מדי לסחר משמעותי.",
+ "market_read": "השוק הקריפטו במגמת עלייה חדה עם הרבה נכסים overbought, מה שיוצר הזדמנויות שורט על תנודות מוצו כמו XRP.",
+ "skip_reason": "שאר המועמדים (BTC, DOT, AVAX) עדיין במומנטום עולה חיובי ללא סימני היפוך ברורים, ו-TRUMP עדיין במגמת ירידה פעילה ללא אישור תחתית — לא כדאי לתפוס סכין נופלת.",
  "picks": [
-  "XRP short size=25% conf=MEDIUM",
-  "TRUMP short size=20% conf=MEDIUM"
+  "XRP short size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
   "XRP: Kraken: ['EOrder:Insufficient initial margin']"
  ]
 }
