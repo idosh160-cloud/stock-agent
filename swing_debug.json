@@ -1,37 +1,35 @@
 {
- "time": "2026-08-20T17:00:05",
- "usdc": 87.12,
- "portfolio": 637.94,
+ "time": "2026-08-20T18:00:06",
+ "usdc": 87.11,
+ "portfolio": 640.78,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +16.1%",
-  "CRCL short -0.9%",
-  "MSTR short +2.9%"
+  "BTC long +15.9%",
+  "CRCL short +0.3%",
+  "MSTR short +2.1%"
  ],
- "stock_candidates": 16,
+ "stock_candidates": 17,
  "top_stocks": [
-  "SPCX -6.2% vol=$1,390,615",
-  "CF +5.9% vol=$9,884",
-  "CRCL +5.9% vol=$1,581,667",
-  "MSTR +5.3% vol=$1,265,213",
-  "HOOD -4.0% vol=$471,762"
+  "COIN +7.6% vol=$182,419",
+  "MSTR +7.5% vol=$1,363,658",
+  "CRCL +6.4% vol=$1,491,134",
+  "CF +5.8% vol=$10,036",
+  "SPCX -5.2% vol=$1,384,696"
  ],
  "futures_ok": true,
- "futures_balance": 42.02,
+ "futures_balance": 44.7,
  "unallocated_spot": [
   "ETH $468"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: XRP, PENGU, DOGE",
+ "call_reason": "תנועה חזקה במטבע חדש: XRP, PENGU, FARTCOIN",
  "claude_called": true,
- "market_read": "אלטקוינים רבים רשמו ריצות פרבוליות היום עם RSI קיצוני מעל 75-90, מה שמצביע על מיצוי טווח קצר ולא על המשך מגמה.",
- "skip_reason": "שאר המועמדים (PENGU, FARTCOIN, DOT, ADA, AVAX, BCH) חופפים באותו סיפור מיצוי אבל עם נזילות נמוכה יותר או קורלציה גבוהה לפוזיציות הקיימות; TRUMP וה-stocks לא מציגים סיגנל חד כרגע.",
+ "market_read": "שוק הקריפטו במגמת עלייה חזקה עם רוב האלטים בקנייה מוגזמת קיצונית, זמן טוב לחפש היפוכים במקום להצטרף לגל המאוחר.",
+ "skip_reason": "שאר המועמדים בקריפטו (AVAX, ADA, DOT, DOGE, PENGU, FARTCOIN) חופפים לאותו סיגנל שורט אבל עם נזילות נמוכה יותר מ-XRP, ומניות ה-xStocks לא מציגות היום סיגנל קיצון ברור מלבד SPCX שכבר בפוזיציה דומה במח׳ MSTR.",
  "picks": [
-  "XRP short size=30% conf=HIGH",
-  "DOGE short size=20% conf=MEDIUM"
+  "XRP short size=25% conf=MEDIUM"
  ],
  "order_errors": [
-  "XRP: Kraken: ['EOrder:Insufficient initial margin']",
-  "DOGE: Kraken: ['EOrder:Insufficient initial margin']"
+  "XRP: Kraken: ['EOrder:Insufficient initial margin']"
  ]
 }
