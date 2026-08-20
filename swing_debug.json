@@ -1,35 +1,36 @@
 {
- "time": "2026-08-20T20:00:05",
+ "time": "2026-08-20T21:00:06",
  "usdc": 87.1,
- "portfolio": 637.91,
+ "portfolio": 636.74,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
   "BTC long +15.8%",
-  "CRCL short +1.2%",
-  "MSTR short +1.4%"
+  "CRCL short +0.8%",
+  "MSTR short +1.6%"
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "MSTR +8.6% vol=$1,406,621",
-  "COIN +7.5% vol=$151,799",
-  "CRCL +6.0% vol=$1,388,669",
-  "SPCX -3.9% vol=$1,367,636",
-  "CF +3.5% vol=$8,251"
+  "COIN +5.4% vol=$143,935",
+  "CRCL +5.2% vol=$1,276,610",
+  "MSTR +4.9% vol=$1,285,360",
+  "SPCX -4.5% vol=$1,315,148",
+  "IOT +2.9% vol=$48,488"
  ],
  "futures_ok": true,
- "futures_balance": 45.73,
+ "futures_balance": 45.41,
  "unallocated_spot": [
-  "ETH $464"
+  "ETH $463"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: XRP, PENGU, FARTCOIN",
  "claude_called": true,
- "market_read": "שוק הקריפטו במומנטום חיובי כללי עם BTC ואלטים עולים, אך כמה נכסים (BTC, AVAX, XDC, FARTCOIN) כבר overbought ומועדים לתיקון.",
- "skip_reason": "דילגתי על BTC/AVAX/XDC כי הם overbought עם BB% קרוב ל-100 וסיכון לשורט מול טרנד עולה חזק; המניות (MSTR/CRCL) כבר בפוזיציות קיימות ולא הצדקתי הכפלה; שאר האלטים בנפח מסחר נמוך מדי.",
+ "market_read": "השוק הקריפטו נסחר overbought כללי (BTC RSI 77, רוב האלטים 65-75) בעוד שסקטור המניות הטוקניזציה מציג חולשה נקודתית - מעדיף שורטים על מיצוי מומנטום על פני לונגים חדשים בשיא.",
+ "skip_reason": "דחיתי לונגים חדשים על BTC/AVAX/DOT/ADA כי כולם overbought עמוק (RSI 65-77, BB% 75-95) ללא מרחב עלייה נוסף; ETH הנזיל נשאר כפי שהוא כי אין הזדמנות עדיפה ברורה לרוטציה שלו כרגע.",
  "picks": [
-  "XRP long size=18% conf=MEDIUM"
+  "XRP short size=20% conf=MEDIUM",
+  "SPCX short size=18% conf=MEDIUM"
  ],
  "order_errors": [
-  "XRP: Kraken: ['EOrder:Insufficient funds']"
+  "XRP: Kraken: ['EOrder:Insufficient initial margin']"
  ]
 }
