@@ -1,33 +1,33 @@
 {
- "time": "2026-08-20T19:00:05",
- "usdc": 87.11,
- "portfolio": 640.15,
+ "time": "2026-08-20T20:00:05",
+ "usdc": 87.1,
+ "portfolio": 637.91,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +15.4%",
-  "CRCL short +2.3%",
-  "MSTR short +3.3%"
+  "BTC long +15.8%",
+  "CRCL short +1.2%",
+  "MSTR short +1.4%"
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "MSTR +6.8% vol=$1,351,786",
-  "COIN +6.6% vol=$174,939",
-  "CF +5.8% vol=$10,036",
-  "CRCL +5.4% vol=$1,450,212",
-  "SPCX -4.4% vol=$1,389,908"
+  "MSTR +8.6% vol=$1,406,621",
+  "COIN +7.5% vol=$151,799",
+  "CRCL +6.0% vol=$1,388,669",
+  "SPCX -3.9% vol=$1,367,636",
+  "CF +3.5% vol=$8,251"
  ],
  "futures_ok": true,
- "futures_balance": 48.73,
+ "futures_balance": 45.73,
  "unallocated_spot": [
-  "ETH $462"
+  "ETH $464"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: XRP, FARTCOIN, PENGU",
+ "call_reason": "תנועה חזקה במטבע חדש: XRP, PENGU, FARTCOIN",
  "claude_called": true,
- "market_read": "השוק בטרנד עולה כללי עם BTC ואלטים רבים בעליות חדות, אבל BTC עצמו כבר overbought (RSI 75) כך שהזדמנויות טובות יותר נמצאות באלטים עם מומנטום טרי כמו XRP.",
- "skip_reason": "BTC, AVAX, XDC ו-FARTCOIN כבר overbought מדי (RSI>70, BB% קרוב ל-100) לכניסת לונג חדשה, וקצר על מומנטום עולה מסוכן מדי; מניות ה-xStocks חסרות אינדיקטורים מספיקים לביסוס כניסה איכותית הפעם, ו-ETH הפאסיבי נשאר כפוזיציית ליבה סבירה בלי לגעת בו.",
+ "market_read": "שוק הקריפטו במומנטום חיובי כללי עם BTC ואלטים עולים, אך כמה נכסים (BTC, AVAX, XDC, FARTCOIN) כבר overbought ומועדים לתיקון.",
+ "skip_reason": "דילגתי על BTC/AVAX/XDC כי הם overbought עם BB% קרוב ל-100 וסיכון לשורט מול טרנד עולה חזק; המניות (MSTR/CRCL) כבר בפוזיציות קיימות ולא הצדקתי הכפלה; שאר האלטים בנפח מסחר נמוך מדי.",
  "picks": [
-  "XRP long size=35% conf=HIGH"
+  "XRP long size=18% conf=MEDIUM"
  ],
  "order_errors": [
   "XRP: Kraken: ['EOrder:Insufficient funds']"
