@@ -1,35 +1,35 @@
 {
- "time": "2026-08-20T18:00:06",
+ "time": "2026-08-20T19:00:05",
  "usdc": 87.11,
- "portfolio": 640.78,
+ "portfolio": 640.15,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +15.9%",
-  "CRCL short +0.3%",
-  "MSTR short +2.1%"
+  "BTC long +15.4%",
+  "CRCL short +2.3%",
+  "MSTR short +3.3%"
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "COIN +7.6% vol=$182,419",
-  "MSTR +7.5% vol=$1,363,658",
-  "CRCL +6.4% vol=$1,491,134",
+  "MSTR +6.8% vol=$1,351,786",
+  "COIN +6.6% vol=$174,939",
   "CF +5.8% vol=$10,036",
-  "SPCX -5.2% vol=$1,384,696"
+  "CRCL +5.4% vol=$1,450,212",
+  "SPCX -4.4% vol=$1,389,908"
  ],
  "futures_ok": true,
- "futures_balance": 44.7,
+ "futures_balance": 48.73,
  "unallocated_spot": [
-  "ETH $468"
+  "ETH $462"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: XRP, PENGU, FARTCOIN",
+ "call_reason": "תנועה חזקה במטבע חדש: XRP, FARTCOIN, PENGU",
  "claude_called": true,
- "market_read": "שוק הקריפטו במגמת עלייה חזקה עם רוב האלטים בקנייה מוגזמת קיצונית, זמן טוב לחפש היפוכים במקום להצטרף לגל המאוחר.",
- "skip_reason": "שאר המועמדים בקריפטו (AVAX, ADA, DOT, DOGE, PENGU, FARTCOIN) חופפים לאותו סיגנל שורט אבל עם נזילות נמוכה יותר מ-XRP, ומניות ה-xStocks לא מציגות היום סיגנל קיצון ברור מלבד SPCX שכבר בפוזיציה דומה במח׳ MSTR.",
+ "market_read": "השוק בטרנד עולה כללי עם BTC ואלטים רבים בעליות חדות, אבל BTC עצמו כבר overbought (RSI 75) כך שהזדמנויות טובות יותר נמצאות באלטים עם מומנטום טרי כמו XRP.",
+ "skip_reason": "BTC, AVAX, XDC ו-FARTCOIN כבר overbought מדי (RSI>70, BB% קרוב ל-100) לכניסת לונג חדשה, וקצר על מומנטום עולה מסוכן מדי; מניות ה-xStocks חסרות אינדיקטורים מספיקים לביסוס כניסה איכותית הפעם, ו-ETH הפאסיבי נשאר כפוזיציית ליבה סבירה בלי לגעת בו.",
  "picks": [
-  "XRP short size=25% conf=MEDIUM"
+  "XRP long size=35% conf=HIGH"
  ],
  "order_errors": [
-  "XRP: Kraken: ['EOrder:Insufficient initial margin']"
+  "XRP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
