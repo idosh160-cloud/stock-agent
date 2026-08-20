@@ -886,8 +886,10 @@ def sync_trades_with_kraken(trades: list, balance: dict, request_fn=None) -> tup
     margin_coins = set(kraken["margin_positions"].keys())
 
     # כיוון 1: סגור מה שלא קיים בקרקן
+    # מדלגים על כל רשומה שמנוהלת ב-Futures (is_futures) — מניה או קריפטו מאומץ —
+    # כי הלוגיקה כאן בודקת balance/OpenPositions של Spot בלבד ותסגור אותן בטעות.
     for t in trades:
-        if t.get("status") != "open" or t.get("is_stock"):
+        if t.get("status") != "open" or t.get("is_stock") or t.get("is_futures"):
             continue
         coin    = t["coin"]
         holding = float(balance.get(coin, 0))
@@ -919,7 +921,9 @@ def sync_trades_with_kraken(trades: list, balance: dict, request_fn=None) -> tup
                 )
 
     # כיוון 2: פתח מחדש מה שקרקן אומר שפתוח אבל JSON לא יודע עליו
-    open_coins_in_json = {t["coin"] for t in trades if t.get("status") == "open"}
+    # (רק רשומות Spot — אם יש רשומת is_futures פתוחה על אותו קוין זה עניין נפרד,
+    # מרג'ין Spot ו-Futures יכולים להתקיים זה לצד זה על אותו מטבע)
+    open_coins_in_json = {t["coin"] for t in trades if t.get("status") == "open" and not t.get("is_futures")}
     for coin, kpos in kraken["margin_positions"].items():
         if coin in open_coins_in_json:
             continue
@@ -972,12 +976,15 @@ def sync_trades_with_kraken(trades: list, balance: dict, request_fn=None) -> tup
 
 
 def reconcile_stock_trades(trades: list) -> tuple[list, bool]:
-    """סנכרון מניות מול Kraken Futures — דו-כיווני:
+    """סנכרון מול Kraken Futures — כל פוזיציה שם, מניה טוקנית או פרפ קריפטו — דו-כיווני:
     1) רשומה 'open' בלי פוזיציה ובלי פקודה בקרקן = רפאים → נסגרת.
     2) גודל הרשומה מסונכרן לגודל האמיתי בקרקן (מילוי חלקי!).
-    3) פוזיציה אמיתית בקרקן בלי רשומה = יתומה → מאומצת לניהול (סטופ/יעד/מעקב)."""
+    3) פוזיציה אמיתית בקרקן בלי רשומה = יתומה → מאומצת לניהול (סטופ/יעד/מעקב).
+    כיוון 3 מכסה גם פוזיציות קריפטו ב-Futures Perps (למשל שורט BTC/ETH/SOL) —
+    לא רק xStocks. הבוט עצמו לא פותח כאלה (הוא סוחר קריפטו רק ב-Spot/Margin),
+    אז אימוץ הוא הדרך היחידה שהן יזכו להגנת סטופ/יעד בכלל."""
     changed = False
-    open_stocks = [t for t in trades if t.get("status") == "open" and t.get("is_stock")]
+    open_futures = [t for t in trades if t.get("status") == "open" and t.get("is_futures")]
     try:
         from kraken_futures import get_futures_positions, cancel_futures_order, _request
         positions = get_futures_positions()
@@ -988,45 +995,62 @@ def reconcile_stock_trades(trades: list) -> tuple[list, bool]:
             oo = []
         order_syms = {o.get("symbol") for o in oo}
     except Exception as e:
-        logging.warning(f"[StockSync] לא הצליח למשוך מצב Futures: {e}")
+        logging.warning(f"[FuturesSync] לא הצליח למשוך מצב Futures: {e}")
         return trades, changed
 
     # ── כיוון 3: אימוץ פוזיציות יתומות — קיימות בקרקן, לא מנוהלות אצלנו ──
-    # (מילוי חלקי ישן, פקודה ששרדה ניקוי רפאים וכו'. בלי זה הן בלי סטופ לנצח.)
-    tracked_syms = {t.get("pair") for t in open_stocks}
+    # (מילוי חלקי ישן, פקודה ששרדה ניקוי רפאים, או פוזיציה שנפתחה מחוץ לבוט
+    # לגמרי. בלי זה הן בלי סטופ לנצח — זה בדיוק מה שקרה ל-BTC/ETH/SOL/TSLAX.)
+    tracked_syms = {t.get("pair") for t in open_futures}
     for p in positions:
         sym = str(p.get("symbol", ""))
         if not sym.startswith("PF_") or sym in tracked_syms:
             continue
         if sym in order_syms:
             # יש פקודה תלויה על הסימבול (למשל סגירה שטרם התמלאה) — לא לאמץ מחדש!
-            # אימוץ כזה יצר היום רשומת MSTR כפולה עם סגירה כפולה ומייל כפול.
+            # אימוץ כזה יצר בעבר רשומת MSTR כפולה עם סגירה כפולה ומייל כפול.
+            # (מגבלה ידועה: אם יש TP קבוע-מראש על פוזיציה יתומה — היא תישאר
+            # חסומה מאימוץ כל עוד הוא פתוח. יש לבטל אותו ידנית בקרקן במקרה כזה.)
             continue
-        if not _is_xstock(sym):
-            continue  # רק xStocks אמיתיים — פרפ קריפטו (גם כזה שמתחזה: PF_AVAXUSD) לא מנוהל כאן
-        ticker = sym[3:-4]  # PF_TSLAXUSD → TSLA
+
+        is_stock = _is_xstock(sym)
+        if is_stock:
+            ticker = sym[3:-4]  # PF_TSLAXUSD → TSLA
+            tp, sp, pdec = TARGET_PCT_STOCK, STOP_PCT_STOCK, 2
+        else:
+            raw    = sym[3:-3]  # PF_XBTUSD → XBT | PF_ETHUSD → ETH
+            ticker = _COIN_ALIASES.get(raw, raw)
+            tp, sp = TARGET_PCT, STOP_PCT
+            pdec   = CANDIDATES.get(ticker, {}).get("price_dec", 4)
+
         p_size  = abs(float(p.get("size", 0) or 0))
         p_price = float(p.get("price", 0) or 0)
         if p_size <= 0 or p_price <= 0:
             continue
         p_side = "short" if str(p.get("side", "")).lower() == "short" else "long"
-        tgt, stp = _targets_for_side(p_side, p_price, TARGET_PCT_STOCK, STOP_PCT_STOCK, 2)
+        tgt, stp = _targets_for_side(p_side, p_price, tp, sp, pdec)
         trades.append({
-            "coin": ticker, "pair": sym, "is_stock": True, "is_futures": True,
+            "coin": ticker, "pair": sym, "is_stock": is_stock, "is_futures": True,
             "side": p_side, "entry_price": p_price, "limit_price": p_price,
             "volume": p_size, "usd": round(p_size * p_price, 2),
             "target_price": tgt, "stop_price": stp,
             "date_open": datetime.now().isoformat(), "date_close": None,
             "status": "open", "confidence": "MEDIUM",
-            "reasoning": "Adopted from Kraken Futures — untracked position (partial fill?)",
+            "reasoning": "Adopted from Kraken Futures — untracked position (not opened by this bot)",
             "market_read": "", "current_price": p_price,
             "pnl_pct": 0.0, "pnl_usd": 0.0,
             "txid": "", "sell_txid": None, "close_price": None, "close_txid": None,
         })
         changed = True
-        logging.warning(f"[StockSync] {ticker} ({p_side}, {p_size}x${p_price}) קיים בקרקן ללא רשומה → אומץ לניהול")
+        kind = "מניה" if is_stock else "קריפטו"
+        logging.warning(f"[FuturesSync] {ticker} ({kind}, {p_side}, {p_size}x${p_price}) קיים בקרקן ללא רשומה → אומץ לניהול")
+        _send_trade_alert(
+            f"🛡️ פוזיציה אומצה: {ticker}",
+            f"נמצאה פוזיציית {kind} פתוחה ב-Kraken Futures שהבוט לא ידע עליה ({p_side}, "
+            f"{p_size} @ ${p_price}). היא אומצה לניהול אוטומטי — סטופ ${stp:.4f} / יעד ${tgt:.4f}."
+        )
 
-    for t in open_stocks:
+    for t in open_futures:
         sym = t.get("pair")
         if sym in pos_syms:
             # פוזיציה קיימת — סנכרן גודל אמיתי (מילוי חלקי משאיר רשומה מנופחת)
@@ -1035,7 +1059,7 @@ def reconcile_stock_trades(trades: list) -> tuple[list, bool]:
                 real = abs(float(kp.get("size", 0) or 0))
                 rec  = float(t.get("volume", 0) or 0)
                 if real > 0 and rec > 0 and abs(real - rec) > max(1e-6, 0.02 * rec):
-                    logging.warning(f"[StockSync] {t.get('coin')} רשום {rec} אבל בקרקן {real} — מסנכרן גודל")
+                    logging.warning(f"[FuturesSync] {t.get('coin')} רשום {rec} אבל בקרקן {real} — מסנכרן גודל")
                     t["volume"] = real
                     t["usd"]    = round(real * float(t.get("entry_price", 0) or 0), 2)
                     changed = True
@@ -1054,7 +1078,7 @@ def reconcile_stock_trades(trades: list) -> tuple[list, bool]:
         t["pnl_pct"]    = 0.0
         t["pnl_usd"]    = 0.0
         changed = True
-        logging.warning(f"[StockSync] {t.get('coin')} (מניה) לא קיים ב-Kraken — מנקה רפאים")
+        logging.warning(f"[FuturesSync] {t.get('coin')} לא קיים ב-Kraken — מנקה רפאים")
         archive_closed_trade(t)
     return trades, changed
 
@@ -1078,7 +1102,9 @@ def check_open_swings(balance: dict, request_fn) -> list:
         entry = t["entry_price"]
         vol   = t["volume"]
 
-        if t.get("is_stock") and t.get("is_futures"):
+        if t.get("is_futures"):
+            # is_futures לבד קובע ניתוב — לא is_stock: פרפ קריפטו מאומץ (BTC/ETH/SOL)
+            # חי גם הוא ב-Kraken Futures, גם אם אינו "מניה" מבחינת is_stock
             from kraken_futures import get_futures_price
             current = get_futures_price(pair)
         else:
@@ -1157,8 +1183,8 @@ def check_open_swings(balance: dict, request_fn) -> list:
                     new_status  = "closed_loss"
                     alert_title = f"🔴 Stop-Loss: {coin}"
 
-                if t.get("is_stock") and t.get("is_futures"):
-                    # ── מניה — דרך Kraken Futures Perps ──────────────────
+                if t.get("is_futures"):
+                    # ── דרך Kraken Futures Perps — מניה טוקנית או פרפ קריפטו (מאומץ) ──
                     from kraken_futures import place_futures_order, cancel_futures_order
                     if t.get("sell_txid"):
                         try:
@@ -1504,7 +1530,7 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
         logging.info(f"[Swing] ROTATION: closing {close_for_rotation} — {rotation_reason}")
         for t in trades:
             if t.get("coin") == close_for_rotation and t.get("status") == "open":
-                is_fut_stock = t.get("is_stock") and t.get("is_futures")
+                is_fut_stock = t.get("is_futures")  # is_futures לבד — פרפ קריפטו מאומץ גם הוא ב-Futures
                 if is_fut_stock:
                     from kraken_futures import get_futures_price
                     current = get_futures_price(t["pair"])
