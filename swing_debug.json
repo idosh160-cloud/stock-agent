@@ -1,36 +1,34 @@
 {
- "time": "2026-08-21T21:00:05",
- "usdc": 86.99,
- "portfolio": 649.93,
+ "time": "2026-08-21T22:00:05",
+ "usdc": 86.97,
+ "portfolio": 660.9,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +23.5%",
-  "HOOD short -0.2%"
+  "BTC long +25.1%",
+  "HOOD short -0.7%"
  ],
- "stock_candidates": 17,
+ "stock_candidates": 18,
  "top_stocks": [
-  "HOOD +13.9% vol=$404,543",
-  "CF +10.3% vol=$31,087",
+  "HOOD +14.1% vol=$406,008",
+  "CF +12.8% vol=$34,001",
+  "COIN +9.6% vol=$127,704",
   "FLU +9.4% vol=$10,233",
-  "COIN +7.9% vol=$127,168",
-  "MSTR +6.3% vol=$581,004"
+  "IOT +8.7% vol=$5,983"
  ],
  "futures_ok": true,
- "futures_balance": 46.37,
+ "futures_balance": 45.88,
  "unallocated_spot": [
-  "ETH $487"
+  "ETH $503"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: BCH, PENGU, FARTCOIN",
+ "call_reason": "תנועה חזקה במטבע חדש: BCH, PENGU, DOGE",
  "claude_called": true,
- "market_read": "שוק האלטקוינים רותח עם עליות דו-ספרתיות ו-RSI קיצוני ברוב המטבעות, מה שמצביע על שוק מתוח שבשל לתיקון מהיר יותר מהמשך ריצה.",
- "skip_reason": "BTC ו-HOOD כבר פתוחים ונשארים כפי שהם (BTC ברווח יפה בדרך ליעד, HOOD שטוח אך לא הוחלט לסגור מנצח); ה-ETH הפאסיבי ($487) נשאר כהחזקה ארוכת טווח כי זה נכס איכותי ואין צורך לגייס ממנו הון כרגע; שאר המועמדים (BCH, MELANIA, LINK, TRUMP, מניות ה-xStock) נפסלו בגלל נזילות נמוכה מדי, מומנטום MACD עדיין חיובי חזק מדי לשורט, או חוסר יתרון ברור בהשוואה ל-ADA/DOGE.",
+ "market_read": "רוב השוק הקריפטו overbought בצורה קיצונית אחרי ריצה חדה, בעוד BTC ו-HOOD השורט הקיימים ממשיכים לעבוד לטובתנו.",
+ "skip_reason": "שאר המטבעות (BCH, LINK, ADA) גם overbought אך עם MACD חיובי שמעיד על המשך מומנטום - פחות בטוח לשורט; המניות הפאמפ (COIN, CRCL) בנפח נמוך יחסית לסיכון.",
  "picks": [
-  "ADA short size=30% conf=HIGH",
-  "DOGE short size=15% conf=MEDIUM"
+  "DOGE short size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "ADA: Kraken: ['EOrder:Margin level too low']",
   "DOGE: Kraken: ['EOrder:Margin level too low']"
  ]
 }
