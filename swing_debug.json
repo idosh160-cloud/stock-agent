@@ -1,35 +1,36 @@
 {
- "time": "2026-08-21T20:00:05",
+ "time": "2026-08-21T21:00:05",
  "usdc": 86.99,
- "portfolio": 646.2,
+ "portfolio": 649.93,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +22.8%",
-  "HOOD short -0.1%"
+  "BTC long +23.5%",
+  "HOOD short -0.2%"
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "HOOD +13.8% vol=$402,593",
-  "CF +9.6% vol=$30,889",
-  "FLU +7.8% vol=$9,983",
-  "COIN +7.3% vol=$121,128",
-  "MSTR +6.0% vol=$604,435"
+  "HOOD +13.9% vol=$404,543",
+  "CF +10.3% vol=$31,087",
+  "FLU +9.4% vol=$10,233",
+  "COIN +7.9% vol=$127,168",
+  "MSTR +6.3% vol=$581,004"
  ],
  "futures_ok": true,
- "futures_balance": 46.51,
+ "futures_balance": 46.37,
  "unallocated_spot": [
-  "ETH $482"
+  "ETH $487"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: BCH, PENGU, FARTCOIN",
  "claude_called": true,
- "market_read": "השוק הקריפטו במומנטום עולה רחב עם כמה מטבעות בקיצון קנייה, ו-BTC ממשיך להוביל מגמה חיובית כללית.",
- "skip_reason": "המטבעות המאוד overbought כמו BCH/PENGU/FARTCOIN/MELANIA בעלי נפח נמוך או RSI קיצוני מדי לשורט בטוח, ו-HOOD/BTC כבר פוזיציות פתוחות שמתקדמות/יציבות ולא דורשות שינוי.",
+ "market_read": "שוק האלטקוינים רותח עם עליות דו-ספרתיות ו-RSI קיצוני ברוב המטבעות, מה שמצביע על שוק מתוח שבשל לתיקון מהיר יותר מהמשך ריצה.",
+ "skip_reason": "BTC ו-HOOD כבר פתוחים ונשארים כפי שהם (BTC ברווח יפה בדרך ליעד, HOOD שטוח אך לא הוחלט לסגור מנצח); ה-ETH הפאסיבי ($487) נשאר כהחזקה ארוכת טווח כי זה נכס איכותי ואין צורך לגייס ממנו הון כרגע; שאר המועמדים (BCH, MELANIA, LINK, TRUMP, מניות ה-xStock) נפסלו בגלל נזילות נמוכה מדי, מומנטום MACD עדיין חיובי חזק מדי לשורט, או חוסר יתרון ברור בהשוואה ל-ADA/DOGE.",
  "picks": [
-  "LINK long size=25% conf=HIGH"
+  "ADA short size=30% conf=HIGH",
+  "DOGE short size=15% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "LINK: Kraken: ['EOrder:Insufficient funds']"
+  "ADA: Kraken: ['EOrder:Margin level too low']",
+  "DOGE: Kraken: ['EOrder:Margin level too low']"
  ]
 }
