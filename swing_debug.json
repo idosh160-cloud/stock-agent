@@ -1,31 +1,32 @@
 {
- "time": "2026-08-21T16:00:08",
+ "time": "2026-08-21T17:00:05",
  "usdc": 87.01,
- "portfolio": 642.15,
+ "portfolio": 649.42,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +23.0%"
+  "BTC long +23.5%"
  ],
- "stock_candidates": 17,
+ "stock_candidates": 18,
  "top_stocks": [
-  "HOOD +13.3% vol=$456,859",
-  "COIN +10.2% vol=$132,746",
-  "CF +9.7% vol=$26,860",
-  "MSTR +7.9% vol=$851,462",
-  "FLU +7.1% vol=$11,604"
+  "HOOD +14.2% vol=$463,644",
+  "FLU +12.4% vol=$11,415",
+  "CF +10.6% vol=$27,432",
+  "COIN +7.2% vol=$131,978",
+  "MSTR +6.8% vol=$926,750"
  ],
  "futures_ok": true,
- "futures_balance": 51.66,
+ "futures_balance": 51.67,
  "unallocated_spot": [
-  "ETH $478"
+  "ETH $481"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: BCH, PENGU, TRUMP",
+ "call_reason": "תנועה חזקה במטבע חדש: BCH, PENGU, FARTCOIN",
  "claude_called": true,
- "market_read": "השוק הקריפטו נמצא בגל פאמפ רחב עם רוב המטבעות ב-RSI קיצוני של oversold עליון, מה שמעיד על מיצוי טווח קצר ולא על תחילת מגמה חדשה.",
- "skip_reason": "שאר המועמדים (PENGU, TRUMP, XRP וכו') גם overbought אך עם נפח נמוך יותר או תנודתיות מטבעית גבוהה מדי לשליטה בסיכון, ומניות לא מציגות נתוני RSI ברורים לביסוס שורט מוצדק כרגע.",
+ "market_read": "השוק הרחב במגמת עלייה חזקה עם ריצות פרבוליות באלטים ומניות, ומרבית הנכסים בתנאי overbought קיצוני שמעדיפים שורטים על היפוך.",
+ "skip_reason": "ETH הפאסיבי נשאר כפוזיציה כי אין הזדמנות ברורה עדיפה עליו כרגע, ושאר המועמדים (PENGU, FARTCOIN, MELANIA, XRP, ADA, LINK) כבר overbought בצורה קיצונית מדי לכניסה לונג וללא נפח/וודאות מספיקים לשורט נוסף מעבר לשני הבחירות שנבחרו.",
  "picks": [
-  "BCH short size=30% conf=HIGH"
+  "BCH short size=25% conf=MEDIUM",
+  "HOOD short size=15% conf=MEDIUM"
  ],
  "order_errors": [
   "BCH: Kraken: ['EOrder:Margin trading in asset is restricted']"
