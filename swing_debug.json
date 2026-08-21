@@ -1,41 +1,34 @@
 {
- "time": "2026-08-21T14:00:08",
+ "time": "2026-08-21T15:00:05",
  "usdc": 87.01,
- "portfolio": 638.73,
+ "portfolio": 643.11,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +23.1%",
-  "SPCX short +0.8%"
+  "BTC long +23.3%",
+  "SPCX short -1.3%"
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "CRCL +11.7% vol=$1,508,783",
-  "CF +11.7% vol=$25,721",
-  "COIN +9.7% vol=$139,061",
-  "HOOD +9.7% vol=$531,734",
-  "FLU +8.3% vol=$9,783"
+  "HOOD +10.8% vol=$434,602",
+  "COIN +10.6% vol=$136,080",
+  "CF +9.8% vol=$25,855",
+  "MSTR +9.2% vol=$1,071,437",
+  "CRCL +8.4% vol=$1,557,860"
  ],
  "futures_ok": true,
- "futures_balance": 43.81,
+ "futures_balance": 47.54,
  "unallocated_spot": [
-  "ETH $477"
+  "ETH $478"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: BCH, TRUMP, PENGU",
+ "call_reason": "פוזיציה חלשה: SPCX",
  "claude_called": true,
- "market_read": "השוק הקריפטו במגמת פאמפ רחבה עם הרבה אלטקוינים RSI מעל 70-90, סימן למיצוי טווח קצר ולא להמשך חלק.",
- "skip_reason": "TRUMP/MELANIA/PENGU/FARTCOIN נפח נמוך מדי ותנודתיות מוגזמת לספקולציה בטוחה, ו-XRP למרות נפח גבוה כבר יש חשיפת BTC דומה בתיק.",
+ "market_read": "השוק הכרוני מראה גל ספקולטיבי חזק באלטקוינים עם RSI קיצוניים בכל מקום — זמן טוב למיין-ריברז'ן ולא לרדוף מומנטום.",
+ "skip_reason": "שאר המועמדים (PENGU, TRUMP, MELANIA, FARTCOIN) עם נפח נמוך מדי לניהול סיכון תקין, ו-XRP/ADA/LINK עדיין לא הגיעו לקיצוניות מספקת לשורט ברור; המניות הפומפיות (HOOD, COIN, CRCL, MSTR) בעלות היסטוריה שלילית ולא מציגות יתרון ברור כרגע.",
  "picks": [
-  "BCH short size=25% conf=HIGH",
-  "CRCL short size=25% conf=MEDIUM"
+  "BCH short size=45% conf=HIGH"
  ],
  "order_errors": [
   "BCH: Kraken: ['EOrder:Margin trading in asset is restricted']"
- ],
- "transfers": [
-  "CRCL: moved $12 → FAILED"
- ],
- "skips": [
-  "CRCL: margin $43 < needed $53 (after transfer attempt)"
  ]
 }
