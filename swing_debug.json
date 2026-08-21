@@ -1,38 +1,36 @@
 {
- "time": "2026-08-21T01:00:05",
- "usdc": 87.08,
- "portfolio": 637.02,
+ "time": "2026-08-21T02:00:04",
+ "usdc": 87.07,
+ "portfolio": 634.84,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +17.4%",
-  "CRCL short +0.1%",
-  "SPCX short -0.4%"
+  "BTC long +19.7%",
+  "CRCL short -1.4%",
+  "SPCX short -0.8%"
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "MSTR +6.8% vol=$1,295,596",
+  "MSTR +8.6% vol=$1,323,834",
+  "COIN +7.2% vol=$148,520",
+  "CRCL +5.8% vol=$1,058,774",
   "FLU +5.7% vol=$6,301",
-  "COIN +5.6% vol=$144,715",
-  "CRCL +4.9% vol=$1,029,168",
-  "SPCX -3.9% vol=$919,310"
+  "IOT +4.6% vol=$49,032"
  ],
  "futures_ok": true,
- "futures_balance": 43.66,
+ "futures_balance": 41.0,
  "unallocated_spot": [
-  "ETH $467"
+  "ETH $471"
  ],
- "call_reason": "תנועה חזקה במניה: MSTR, FLU, COIN",
+ "call_reason": "פוזיציה חלשה: CRCL",
  "claude_called": true,
- "market_read": "השוק הכללי ברמות overbought (BTC RSI=82, רוב האלטים מעל 65) כך שעדיף למקד את הכסף הפנוי במניה עם מומנטום נקי במקום לרדוף קריפטו רווי.",
- "skip_reason": "דחיתי את רוב הקריפטו כי הם overbought קיצוני (RSI>65-82) ולונג שם מסוכן, ואת השורטים הפוטנציאליים (MSTR, ADA, SOL) כי השוק הכללי עדיין עולה וזה מסוכן לשחות נגד הזרם; SPCX/HOOD כבר יש חשיפה או תנועה לא ברורה מספיק.",
+ "market_read": "השוק כולו קנוי-יתר בצורה קיצונית (BTC RSI 86.8, רוב האלטים מעל 70) אחרי ריצה חדה, כך שהזדמנויות מיין-ריברז'ן שוריות עדיפות על כניסות לונג נוספות.",
+ "skip_reason": "כל מועמדי הלונג בקריפטו קנויי-יתר קיצוני ולא מציעים יחס סיכוי/סיכון טוב, ו-CRCL/SPCX הפתוחות כבר קרובות לסטופ ולא הגיוני להוסיף אליהן; ETH הספוט נשאר כהחזקה פסיבית מכיוון שאין הצדקה למכור אותו כרגע.",
  "picks": [
-  "COIN long size=25% conf=MEDIUM"
+  "SOL short size=18% conf=MEDIUM",
+  "MSTR short size=18% conf=MEDIUM"
  ],
- "transfers": [
-  "COIN: moved $11 → FAILED"
- ],
- "skips": [
-  "COIN: margin $44 < needed $53 (after transfer attempt)"
+ "order_errors": [
+  "SOL: Kraken: ['EOrder:Insufficient initial margin']"
  ]
 }
