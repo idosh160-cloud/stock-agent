@@ -1,35 +1,39 @@
 {
- "time": "2026-08-21T10:00:07",
+ "time": "2026-08-21T11:00:05",
  "usdc": 87.03,
- "portfolio": 629.75,
+ "portfolio": 634.4,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +24.1%",
-  "SPCX short -2.4%"
+  "BTC long +24.0%",
+  "SPCX short -2.1%"
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "MSTR +7.5% vol=$1,457,935",
-  "COIN +6.7% vol=$223,068",
-  "CF +6.3% vol=$5,684",
+  "MSTR +7.6% vol=$1,299,395",
+  "CF +6.1% vol=$6,709",
+  "CRCL +6.0% vol=$1,734,159",
   "FLU +5.9% vol=$9,324",
-  "CRCL +5.6% vol=$1,909,307"
+  "COIN +5.4% vol=$207,977"
  ],
  "futures_ok": true,
- "futures_balance": 39.12,
+ "futures_balance": 39.45,
  "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $480"
+  "ETH $478"
  ],
  "call_reason": "פוזיציה חלשה: SPCX",
  "claude_called": true,
- "market_read": "השוק במצב יתר-קניה כללי אחרי ראלי חד בקריפטו ובמניות, מה שמעדיף שורטים על נכסים קיצוניים יותר מאשר לונגים חדשים.",
- "skip_reason": "רוב מועמדי הקריפטו האחרים (BCH, ADA, BTC, LTC וכו') כבר overbought בצורה דומה אך עם נפח נמוך יותר או תנודתיות פחות מובהקת מ-XRP; SPCX ו-BTC הקיימים נשארים ללא שינוי כי SPCX קרוב לסטופ ו-BTC בדרך ליעד.",
+ "market_read": "השוק בעיצומו של ראלי חד עם המון נכסים overbought - הזדמנות לשורטים על מיצוי מומנטום בזמן ש-BTC ו-SPCX הקיימים ממשיכים לפי התוכנית.",
+ "skip_reason": "שאר המטבעות (XRP, ADA, LINK, DOGE) קרובים מדי במומנטום עולה חזק (MACD חיובי) כדי לשרטט שורט בטוח, ומניות כמו COIN/CRCL בלי סיגנל טכני ברור מספיק.",
  "picks": [
-  "XRP short size=30% conf=HIGH"
+  "BCH short size=35% conf=HIGH",
+  "MSTR short size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "XRP: Kraken: ['EOrder:Margin level too low']"
+  "BCH: Kraken: ['EOrder:Margin trading in asset is restricted']"
+ ],
+ "skips": [
+  "MSTR: margin $39 < needed $42 (after transfer attempt)"
  ]
 }
