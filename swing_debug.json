@@ -1,45 +1,34 @@
 {
- "time": "2026-08-21T07:00:05",
- "usdc": 87.05,
- "portfolio": 627.51,
+ "time": "2026-08-21T08:00:10",
+ "usdc": 87.04,
+ "portfolio": 624.19,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +20.5%",
-  "CRCL short -1.7%",
-  "SPCX short -0.9%",
-  "MSTR short -1.4%"
+  "BTC long +21.6%",
+  "SPCX short -1.1%"
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "MSTR +9.8% vol=$1,351,399",
-  "COIN +8.0% vol=$149,453",
-  "CF +5.2% vol=$9,488",
-  "CRCL +4.0% vol=$987,522",
-  "SPCX -3.8% vol=$876,350"
+  "COIN +9.1% vol=$149,842",
+  "MSTR +8.9% vol=$1,361,969",
+  "CRCL +6.0% vol=$991,062",
+  "CF +4.9% vol=$5,508",
+  "FLU +4.2% vol=$6,427"
  ],
  "futures_ok": true,
- "futures_balance": 32.44,
- "futures_float_topup": false,
+ "futures_balance": 43.18,
  "unallocated_spot": [
-  "ETH $474"
+  "ETH $473"
  ],
- "call_reason": "פוזיציה חלשה: CRCL, MSTR",
+ "call_reason": "פוזיציה חלשה: SPCX",
  "claude_called": true,
- "market_read": "רוב הנכסים הגדולים (BTC, SOL, BCH) נמצאים באזור oversold-על גבול קיצוני עם RSI מעל 75-90, מה שמעיד על שוק חם שדורש זהירות בלונגים חדשים ומעדיף short על מיצויים או long סלקטיבי במניות עם מומנטום נקי כמו COIN.",
- "skip_reason": "BTC, SOL, BCH ו-DOGE נמצאים ב-RSI קיצוני מעל 70-90 עם BB% קרוב ל-100 — כניסה ללונג חדש כרגע מסוכנת מדי, ופוזיציית BTC הקיימת כבר רווחית ומתקדמת ליעד כך שלא נוגעים בה; MSTR, CRCL ו-SPCX כבר פתוחות ומחכות להתפתחות, אין הצדקה לרוטציה.",
+ "market_read": "השוק הקריפטו כרגע ברובו overbought עם ריצות חדות של 24 שעות, מה שמעדיף פוזיציות שורט על מטבעות שמוצו את התנועה שלהם.",
+ "skip_reason": "שאר המטבעות (LINK, ADA, PENGU, TRUMP, DOGE, LTC) גם overbought אך עם נפח נמוך יותר או פחות קיצוניים מ-BCH; המניות (MSTR, COIN, CRCL) מעניינות אך ה-BTC וה-SPCX הפתוחים כבר תופסים חשיפה מספקת למניות ולביטקוין, אז מרכזים את הכסף הפנוי בהזדמנות הכי חדה.",
  "picks": [
-  "XRP short size=25% conf=MEDIUM",
-  "COIN long size=20% conf=MEDIUM"
+  "BCH short size=30% conf=HIGH"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "XRP: Kraken: ['EOrder:Insufficient initial margin']"
- ],
- "transfers": [
-  "COIN: moved $11 → FAILED"
- ],
- "skips": [
-  "COIN: margin $32 < needed $42 (after transfer attempt)"
+  "BCH: Kraken: ['EOrder:Margin trading in asset is restricted']"
  ]
 }
