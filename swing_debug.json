@@ -1,34 +1,36 @@
 {
- "time": "2026-08-21T22:00:05",
+ "time": "2026-08-21T23:00:05",
  "usdc": 86.97,
- "portfolio": 660.9,
+ "portfolio": 661.63,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +25.1%",
-  "HOOD short -0.7%"
+  "BTC long +25.0%",
+  "HOOD short -0.5%"
  ],
  "stock_candidates": 18,
  "top_stocks": [
-  "HOOD +14.1% vol=$406,008",
-  "CF +12.8% vol=$34,001",
-  "COIN +9.6% vol=$127,704",
+  "HOOD +13.9% vol=$405,365",
+  "CF +10.8% vol=$35,010",
+  "COIN +10.0% vol=$127,999",
   "FLU +9.4% vol=$10,233",
   "IOT +8.7% vol=$5,983"
  ],
  "futures_ok": true,
- "futures_balance": 45.88,
+ "futures_balance": 45.68,
  "unallocated_spot": [
-  "ETH $503"
+  "ETH $504"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: BCH, PENGU, DOGE",
  "claude_called": true,
- "market_read": "רוב השוק הקריפטו overbought בצורה קיצונית אחרי ריצה חדה, בעוד BTC ו-HOOD השורט הקיימים ממשיכים לעבוד לטובתנו.",
- "skip_reason": "שאר המטבעות (BCH, LINK, ADA) גם overbought אך עם MACD חיובי שמעיד על המשך מומנטום - פחות בטוח לשורט; המניות הפאמפ (COIN, CRCL) בנפח נמוך יחסית לסיכון.",
+ "market_read": "השוק באיוופוריה קצרת טווח עם כמה אלטקוינים במצב קניית יתר קיצונית אחרי ראלי חד, מה שיוצר הזדמנויות שורט למיצוי תנועה.",
+ "skip_reason": "שאר המטבעות (PENGU, TRUMP, XRP, LINK) עדיין מציגים MACD חיובי או נפח נמוך מדי, כך שהסיגנל לשורט פחות חד — נשארים עם שתי ההזדמנויות החזקות ביותר בלבד.",
  "picks": [
+  "BCH short size=25% conf=HIGH",
   "DOGE short size=20% conf=MEDIUM"
  ],
  "order_errors": [
+  "BCH: Kraken: ['EOrder:Margin trading in asset is restricted']",
   "DOGE: Kraken: ['EOrder:Margin level too low']"
  ]
 }
