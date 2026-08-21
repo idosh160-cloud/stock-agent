@@ -1673,5 +1673,30 @@
     "entry_bb_pct": null,
     "entry_macd_hist": null,
     "entry_change_24h": 8.57
+  },
+  {
+    "coin": "MSTR",
+    "pair": "PF_MSTRXUSD",
+    "status": "closed_loss",
+    "leveraged": false,
+    "collateral": 128.79,
+    "volume": 1.01138684,
+    "entry_price": 127.34,
+    "close_price": 123.17,
+    "target_price": 134.98,
+    "stop_price": 124.16,
+    "pnl_usd": -4.22,
+    "pnl_pct": -3.27,
+    "date_open": "2026-08-21T09:01:24.840308",
+    "date_close": "2026-08-21T10:00:05.749286",
+    "reasoning": "MSTR היא פרוקסי מובהק לביטקוין שקופץ 8.6% עם MACD חיובי חזק, וה-12.6% עלייה במניה משקפת את אותה מומנטום - למרות היסטוריה חלשה בעבר, ההקשר הנוכחי (פריצת BTC אמיתית) שונה מהותית מכניסות קודמות.",
+    "confidence": "MEDIUM",
+    "txid": "a28de35a-e6a6-4a43-8bbb-7ff5cacac4bc",
+    "close_txid": "a28df857-831f-4975-ba8a-a06a913cd044",
+    "side": "long",
+    "entry_rsi": null,
+    "entry_bb_pct": null,
+    "entry_macd_hist": null,
+    "entry_change_24h": 12.57
   }
 ]

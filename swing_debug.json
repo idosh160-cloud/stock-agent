@@ -1,41 +1,35 @@
 {
- "time": "2026-08-21T09:00:05",
- "usdc": 87.04,
- "portfolio": 643.96,
+ "time": "2026-08-21T10:00:07",
+ "usdc": 87.03,
+ "portfolio": 629.75,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +26.4%",
-  "SPCX short -1.2%"
+  "BTC long +24.1%",
+  "SPCX short -2.4%"
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "MSTR +12.6% vol=$1,477,182",
-  "CRCL +9.8% vol=$1,946,999",
-  "FLU +9.0% vol=$6,921",
-  "COIN +8.9% vol=$172,619",
-  "CF +5.5% vol=$5,398"
+  "MSTR +7.5% vol=$1,457,935",
+  "COIN +6.7% vol=$223,068",
+  "CF +6.3% vol=$5,684",
+  "FLU +5.9% vol=$9,324",
+  "CRCL +5.6% vol=$1,909,307"
  ],
  "futures_ok": true,
- "futures_balance": 42.98,
+ "futures_balance": 39.12,
+ "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $488"
+  "ETH $480"
  ],
  "call_reason": "פוזיציה חלשה: SPCX",
  "claude_called": true,
- "market_read": "שוק הקריפטו כולו בפריצה חזקה עם RSI קיצוני בכל המטבעות המובילים - זה לא זמן לשורט נגד המגמה אלא לרכוב על המניות הקשורות לביטקוין עם סטופים צמודים.",
- "skip_reason": "כל מטבעות הקריפטו הראשיים (BTC, SOL, XRP, BCH וכו') נמצאים ב-RSI קיצוני מעל 75-92 עם MACD עדיין חיובי וחזק - שורט נגד מומנטום כזה מסוכן מדי, ולונג חדש בנקודת קיצון כזו לא מציע יחס סיכוי/סיכון טוב; SPCX הקיימת קרובה לסטופ ולא כדאי להוסיף אליה.",
+ "market_read": "השוק במצב יתר-קניה כללי אחרי ראלי חד בקריפטו ובמניות, מה שמעדיף שורטים על נכסים קיצוניים יותר מאשר לונגים חדשים.",
+ "skip_reason": "רוב מועמדי הקריפטו האחרים (BCH, ADA, BTC, LTC וכו') כבר overbought בצורה דומה אך עם נפח נמוך יותר או תנודתיות פחות מובהקת מ-XRP; SPCX ו-BTC הקיימים נשארים ללא שינוי כי SPCX קרוב לסטופ ו-BTC בדרך ליעד.",
  "picks": [
-  "COIN long size=25% conf=MEDIUM",
-  "MSTR long size=20% conf=MEDIUM"
+  "XRP short size=30% conf=HIGH"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)"
- ],
- "transfers": [
-  "COIN: moved $13 → FAILED"
- ],
- "skips": [
-  "COIN: margin $43 < needed $54 (after transfer attempt)"
+  "XRP: Kraken: ['EOrder:Margin level too low']"
  ]
 }
