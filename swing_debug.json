@@ -1,32 +1,32 @@
 {
- "time": "2026-08-21T17:00:05",
- "usdc": 87.01,
- "portfolio": 649.42,
+ "time": "2026-08-21T18:00:06",
+ "usdc": 86.99,
+ "portfolio": 647.12,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +23.5%"
+  "BTC long +23.3%",
+  "HOOD short +0.2%"
  ],
  "stock_candidates": 18,
  "top_stocks": [
-  "HOOD +14.2% vol=$463,644",
-  "FLU +12.4% vol=$11,415",
-  "CF +10.6% vol=$27,432",
-  "COIN +7.2% vol=$131,978",
-  "MSTR +6.8% vol=$926,750"
+  "HOOD +14.2% vol=$462,957",
+  "CF +11.3% vol=$27,184",
+  "FLU +9.5% vol=$8,820",
+  "COIN +9.0% vol=$130,339",
+  "IOT +7.0% vol=$5,800"
  ],
  "futures_ok": true,
- "futures_balance": 51.67,
+ "futures_balance": 46.37,
  "unallocated_spot": [
-  "ETH $481"
+  "ETH $484"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: BCH, PENGU, FARTCOIN",
+ "call_reason": "תנועה חזקה במטבע חדש: BCH, PENGU, MELANIA",
  "claude_called": true,
- "market_read": "השוק הרחב במגמת עלייה חזקה עם ריצות פרבוליות באלטים ומניות, ומרבית הנכסים בתנאי overbought קיצוני שמעדיפים שורטים על היפוך.",
- "skip_reason": "ETH הפאסיבי נשאר כפוזיציה כי אין הזדמנות ברורה עדיפה עליו כרגע, ושאר המועמדים (PENGU, FARTCOIN, MELANIA, XRP, ADA, LINK) כבר overbought בצורה קיצונית מדי לכניסה לונג וללא נפח/וודאות מספיקים לשורט נוסף מעבר לשני הבחירות שנבחרו.",
+ "market_read": "רוב שוק האלטקוינים במצב oversold קיצוני אחרי ריצה חדה, מה שפותח הזדמנויות שורט על המנות הכי מוגזמות כמו BCH.",
+ "skip_reason": "שאר המועמדים (PENGU, MELANIA, FARTCOIN) דומים אך עם נפח נמוך יותר ותנודתיות פחות ברורה - מרכזים את ההון בסטאפ החזק ביותר בלבד.",
  "picks": [
-  "BCH short size=25% conf=MEDIUM",
-  "HOOD short size=15% conf=MEDIUM"
+  "BCH short size=30% conf=HIGH"
  ],
  "order_errors": [
   "BCH: Kraken: ['EOrder:Margin trading in asset is restricted']"
