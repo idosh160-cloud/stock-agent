@@ -1598,5 +1598,30 @@
     "entry_bb_pct": null,
     "entry_macd_hist": null,
     "entry_change_24h": -4.67
+  },
+  {
+    "coin": "MSTR",
+    "pair": "PF_MSTRXUSD",
+    "status": "closed_profit",
+    "leveraged": false,
+    "collateral": 140.88,
+    "volume": 1.22931937,
+    "entry_price": 114.6,
+    "close_price": 114.26,
+    "target_price": 106.58,
+    "stop_price": 113.454,
+    "pnl_usd": 0.42,
+    "pnl_pct": 0.3,
+    "date_open": "2026-08-20T12:00:34.330853",
+    "date_close": "2026-08-21T00:00:05.322945",
+    "reasoning": "MSTR זינק 23.6% ביום אחד עם טווח 27% - תנועה פרבולית קלאסית לתיקון. גודל התנוחה מוגבל ע\"י נזילות אך הסיכוי לרברסל אחרי ריצה כזו גבוה מאוד.",
+    "confidence": "HIGH",
+    "txid": "a28c2071-67b8-4908-a3cd-871d2ae9f743",
+    "close_txid": "a28d21c3-36e5-4b60-ac6e-86ab06fd08b9",
+    "side": "short",
+    "entry_rsi": null,
+    "entry_bb_pct": null,
+    "entry_macd_hist": null,
+    "entry_change_24h": 23.56
   }
 ]

@@ -1,36 +1,35 @@
 {
- "time": "2026-08-20T23:00:05",
- "usdc": 87.09,
- "portfolio": 630.84,
+ "time": "2026-08-21T00:00:07",
+ "usdc": 87.08,
+ "portfolio": 630.09,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +15.8%",
-  "CRCL short +0.8%",
-  "MSTR short +1.7%",
+  "BTC long +16.4%",
+  "CRCL short +0.2%",
   "SPCX short -0.2%"
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "MSTR +4.4% vol=$1,261,350",
-  "SPCX -4.2% vol=$995,481",
-  "CRCL +4.1% vol=$1,028,455",
-  "COIN +4.0% vol=$141,415",
+  "MSTR +5.5% vol=$1,279,448",
+  "COIN +4.7% vol=$144,137",
+  "CRCL +4.5% vol=$1,027,460",
+  "SPCX -4.1% vol=$937,099",
   "HOOD -3.5% vol=$450,890"
  ],
  "futures_ok": true,
- "futures_balance": 40.11,
+ "futures_balance": 44.23,
  "unallocated_spot": [
-  "ETH $462"
+  "ETH $465"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: XRP, PENGU, TRUMP",
+ "call_reason": "תנועה חזקה במטבע חדש: XRP, FARTCOIN, AVAX",
  "claude_called": true,
- "market_read": "השוק הקריפטו במגמת עלייה חדה עם הרבה נכסים overbought, מה שיוצר הזדמנויות שורט על תנודות מוצו כמו XRP.",
- "skip_reason": "שאר המועמדים (BTC, DOT, AVAX) עדיין במומנטום עולה חיובי ללא סימני היפוך ברורים, ו-TRUMP עדיין במגמת ירידה פעילה ללא אישור תחתית — לא כדאי לתפוס סכין נופלת.",
+ "market_read": "יום אלטים חזק עם XRP מוביל ראלי רחב, אבל כמה מטבעות כמו AVAX כבר נכנסו לאזור קניית יתר קיצונית שמזמין תיקון קצר.",
+ "skip_reason": "שאר המועמדים (XRP, ADA, DOT, BNB, BCH) נמצאים גם הם ב-RSI קיצוני אך בתוך ראלי רחב וחזק מדי לשורט בטוח, ואילו המניות (MSTR, SPCX, HOOD) כבר מוחזקות או לא מציגות יתרון ברור כרגע.",
  "picks": [
-  "XRP short size=20% conf=MEDIUM"
+  "AVAX short size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "XRP: Kraken: ['EOrder:Insufficient initial margin']"
+  "AVAX: Kraken: ['EOrder:Margin trading in asset is restricted']"
  ]
 }
