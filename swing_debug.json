@@ -1,34 +1,41 @@
 {
- "time": "2026-08-21T08:00:10",
+ "time": "2026-08-21T09:00:05",
  "usdc": 87.04,
- "portfolio": 624.19,
+ "portfolio": 643.96,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +21.6%",
-  "SPCX short -1.1%"
+  "BTC long +26.4%",
+  "SPCX short -1.2%"
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "COIN +9.1% vol=$149,842",
-  "MSTR +8.9% vol=$1,361,969",
-  "CRCL +6.0% vol=$991,062",
-  "CF +4.9% vol=$5,508",
-  "FLU +4.2% vol=$6,427"
+  "MSTR +12.6% vol=$1,477,182",
+  "CRCL +9.8% vol=$1,946,999",
+  "FLU +9.0% vol=$6,921",
+  "COIN +8.9% vol=$172,619",
+  "CF +5.5% vol=$5,398"
  ],
  "futures_ok": true,
- "futures_balance": 43.18,
+ "futures_balance": 42.98,
  "unallocated_spot": [
-  "ETH $473"
+  "ETH $488"
  ],
  "call_reason": "פוזיציה חלשה: SPCX",
  "claude_called": true,
- "market_read": "השוק הקריפטו כרגע ברובו overbought עם ריצות חדות של 24 שעות, מה שמעדיף פוזיציות שורט על מטבעות שמוצו את התנועה שלהם.",
- "skip_reason": "שאר המטבעות (LINK, ADA, PENGU, TRUMP, DOGE, LTC) גם overbought אך עם נפח נמוך יותר או פחות קיצוניים מ-BCH; המניות (MSTR, COIN, CRCL) מעניינות אך ה-BTC וה-SPCX הפתוחים כבר תופסים חשיפה מספקת למניות ולביטקוין, אז מרכזים את הכסף הפנוי בהזדמנות הכי חדה.",
+ "market_read": "שוק הקריפטו כולו בפריצה חזקה עם RSI קיצוני בכל המטבעות המובילים - זה לא זמן לשורט נגד המגמה אלא לרכוב על המניות הקשורות לביטקוין עם סטופים צמודים.",
+ "skip_reason": "כל מטבעות הקריפטו הראשיים (BTC, SOL, XRP, BCH וכו') נמצאים ב-RSI קיצוני מעל 75-92 עם MACD עדיין חיובי וחזק - שורט נגד מומנטום כזה מסוכן מדי, ולונג חדש בנקודת קיצון כזו לא מציע יחס סיכוי/סיכון טוב; SPCX הקיימת קרובה לסטופ ולא כדאי להוסיף אליה.",
  "picks": [
-  "BCH short size=30% conf=HIGH"
+  "COIN long size=25% conf=MEDIUM",
+  "MSTR long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "BCH: Kraken: ['EOrder:Margin trading in asset is restricted']"
+  "liq ETH: all sizes rejected (margin collateral lock)"
+ ],
+ "transfers": [
+  "COIN: moved $13 → FAILED"
+ ],
+ "skips": [
+  "COIN: margin $43 < needed $54 (after transfer attempt)"
  ]
 }
