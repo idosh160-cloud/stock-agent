@@ -1,39 +1,35 @@
 {
- "time": "2026-08-21T11:00:05",
- "usdc": 87.03,
- "portfolio": 634.4,
+ "time": "2026-08-21T12:00:06",
+ "usdc": 87.02,
+ "portfolio": 632.7,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +24.0%",
-  "SPCX short -2.1%"
+  "BTC long +22.3%",
+  "SPCX short -1.5%"
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "MSTR +7.6% vol=$1,299,395",
-  "CF +6.1% vol=$6,709",
-  "CRCL +6.0% vol=$1,734,159",
+  "CF +8.0% vol=$7,231",
+  "CRCL +7.3% vol=$1,724,354",
+  "COIN +6.6% vol=$206,238",
   "FLU +5.9% vol=$9,324",
-  "COIN +5.4% vol=$207,977"
+  "IOT +5.7% vol=$42,279"
  ],
  "futures_ok": true,
- "futures_balance": 39.45,
+ "futures_balance": 39.82,
  "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $478"
+  "ETH $473"
  ],
  "call_reason": "פוזיציה חלשה: SPCX",
  "claude_called": true,
- "market_read": "השוק בעיצומו של ראלי חד עם המון נכסים overbought - הזדמנות לשורטים על מיצוי מומנטום בזמן ש-BTC ו-SPCX הקיימים ממשיכים לפי התוכנית.",
- "skip_reason": "שאר המטבעות (XRP, ADA, LINK, DOGE) קרובים מדי במומנטום עולה חזק (MACD חיובי) כדי לשרטט שורט בטוח, ומניות כמו COIN/CRCL בלי סיגנל טכני ברור מספיק.",
+ "market_read": "שוק הקריפטו במגמת עלייה רוחבית עם BTC מוביל, רוב האלטים כבר overbought אז עדיף לתפוס את אלה שעוד לא קיצוניים כמו XRP.",
+ "skip_reason": "BCH/TRUMP/PENGU/DOT קיצוניים מדי (RSI>67, BB%>83) לשורט נגד מגמה עולה כללית, ומניות כמו CRCL/MSTR עם היסטוריה גרועה בלי איתות חזק מספיק כדי להצדיק סיכון נוסף; SPCX ו-BTC הקיימים נשארים ללא שינוי כי הם קרובים לסטופ/יעד.",
  "picks": [
-  "BCH short size=35% conf=HIGH",
-  "MSTR short size=20% conf=MEDIUM"
+  "XRP long size=30% conf=MEDIUM"
  ],
  "order_errors": [
-  "BCH: Kraken: ['EOrder:Margin trading in asset is restricted']"
- ],
- "skips": [
-  "MSTR: margin $39 < needed $42 (after transfer attempt)"
+  "XRP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
