@@ -1,32 +1,31 @@
 {
- "time": "2026-08-21T15:00:05",
+ "time": "2026-08-21T16:00:08",
  "usdc": 87.01,
- "portfolio": 643.11,
+ "portfolio": 642.15,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +23.3%",
-  "SPCX short -1.3%"
+  "BTC long +23.0%"
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "HOOD +10.8% vol=$434,602",
-  "COIN +10.6% vol=$136,080",
-  "CF +9.8% vol=$25,855",
-  "MSTR +9.2% vol=$1,071,437",
-  "CRCL +8.4% vol=$1,557,860"
+  "HOOD +13.3% vol=$456,859",
+  "COIN +10.2% vol=$132,746",
+  "CF +9.7% vol=$26,860",
+  "MSTR +7.9% vol=$851,462",
+  "FLU +7.1% vol=$11,604"
  ],
  "futures_ok": true,
- "futures_balance": 47.54,
+ "futures_balance": 51.66,
  "unallocated_spot": [
   "ETH $478"
  ],
- "call_reason": "פוזיציה חלשה: SPCX",
+ "call_reason": "תנועה חזקה במטבע חדש: BCH, PENGU, TRUMP",
  "claude_called": true,
- "market_read": "השוק הכרוני מראה גל ספקולטיבי חזק באלטקוינים עם RSI קיצוניים בכל מקום — זמן טוב למיין-ריברז'ן ולא לרדוף מומנטום.",
- "skip_reason": "שאר המועמדים (PENGU, TRUMP, MELANIA, FARTCOIN) עם נפח נמוך מדי לניהול סיכון תקין, ו-XRP/ADA/LINK עדיין לא הגיעו לקיצוניות מספקת לשורט ברור; המניות הפומפיות (HOOD, COIN, CRCL, MSTR) בעלות היסטוריה שלילית ולא מציגות יתרון ברור כרגע.",
+ "market_read": "השוק הקריפטו נמצא בגל פאמפ רחב עם רוב המטבעות ב-RSI קיצוני של oversold עליון, מה שמעיד על מיצוי טווח קצר ולא על תחילת מגמה חדשה.",
+ "skip_reason": "שאר המועמדים (PENGU, TRUMP, XRP וכו') גם overbought אך עם נפח נמוך יותר או תנודתיות מטבעית גבוהה מדי לשליטה בסיכון, ומניות לא מציגות נתוני RSI ברורים לביסוס שורט מוצדק כרגע.",
  "picks": [
-  "BCH short size=45% conf=HIGH"
+  "BCH short size=30% conf=HIGH"
  ],
  "order_errors": [
   "BCH: Kraken: ['EOrder:Margin trading in asset is restricted']"
