@@ -1,37 +1,41 @@
 {
- "time": "2026-08-21T03:00:05",
- "usdc": 87.07,
- "portfolio": 629.29,
+ "time": "2026-08-21T04:00:05",
+ "usdc": 87.06,
+ "portfolio": 629.62,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +18.6%",
-  "CRCL short -1.2%",
-  "SPCX short -1.3%",
-  "MSTR short -0.2%"
+  "BTC long +18.7%",
+  "CRCL short -0.5%",
+  "SPCX short -0.6%",
+  "MSTR short +0.1%"
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "MSTR +9.8% vol=$1,335,613",
-  "COIN +7.4% vol=$147,183",
-  "CRCL +5.9% vol=$1,035,003",
-  "IOT +5.9% vol=$48,771",
-  "CF +4.5% vol=$8,952"
+  "MSTR +8.9% vol=$1,341,520",
+  "COIN +7.3% vol=$145,880",
+  "IOT +4.6% vol=$47,827",
+  "CF +4.5% vol=$8,952",
+  "CRCL +4.5% vol=$1,019,039"
  ],
  "futures_ok": true,
- "futures_balance": 36.76,
+ "futures_balance": 37.4,
  "futures_float_topup": false,
  "unallocated_spot": [
   "ETH $468"
  ],
- "call_reason": "פוזיציה חלשה: CRCL, SPCX",
+ "call_reason": "תנועה חזקה במטבע חדש: ADA, PENGU, XRP",
  "claude_called": true,
- "market_read": "השוק הכללי ברמות overbought קיצוניות (BTC, SOL, ADA, PENGU כולם RSI מעל 70) אחרי ריצה חזקה, מה שמעדיף שורטים על מטבעות שמיצו את התנופה על פני לונגים חדשים.",
- "skip_reason": "MSTR, CRCL, SPCX כבר פתוחות ומנוהלות; BTC ארוך ורווחי כך שלא נפתח שורט מתנגש; שאר המניות (COIN, MSTR עצמה) חסרות נתוני RSI ברורים לכניסה חדשה, ולכן מרוכזים בהזדמנות הכי חדה - שורט SOL.",
+ "market_read": "השוק הרחב (BTC, SOL, ADA, XRP, LINK) נמצא באזור קניית יתר קיצונית אחרי ריצה חדה, מה שמעדיף פוזיציות שורט על מיצוי מומנטום על פני עוד לונגים.",
+ "skip_reason": "שאר המטבעות (ADA, XRP, LINK, DOGE) עדיין במומנטום עולה חזק ללא סימן היפוך ב-MACD, וסיכון שורט מוקדם מדי; ETH הספוט נשאר כהחזקה פסיבית ללא איתות ברור לשינוי.",
  "picks": [
-  "SOL short size=20% conf=MEDIUM"
+  "SOL short size=20% conf=MEDIUM",
+  "COIN short size=20% conf=MEDIUM"
  ],
  "order_errors": [
   "SOL: Kraken: ['EOrder:Insufficient initial margin']"
+ ],
+ "skips": [
+  "COIN: margin $37 < needed $42 (after transfer attempt)"
  ]
 }
