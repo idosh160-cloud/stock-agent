@@ -1,41 +1,37 @@
 {
- "time": "2026-08-21T04:00:05",
+ "time": "2026-08-21T05:00:04",
  "usdc": 87.06,
- "portfolio": 629.62,
+ "portfolio": 628.2,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +18.7%",
+  "BTC long +19.5%",
   "CRCL short -0.5%",
-  "SPCX short -0.6%",
-  "MSTR short +0.1%"
+  "SPCX short -0.4%",
+  "MSTR short -0.8%"
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "MSTR +8.9% vol=$1,341,520",
-  "COIN +7.3% vol=$145,880",
-  "IOT +4.6% vol=$47,827",
-  "CF +4.5% vol=$8,952",
-  "CRCL +4.5% vol=$1,019,039"
+  "MSTR +9.5% vol=$1,345,057",
+  "COIN +6.8% vol=$144,523",
+  "CF +4.8% vol=$9,587",
+  "CRCL +4.4% vol=$1,004,738",
+  "SPCX -3.9% vol=$885,109"
  ],
  "futures_ok": true,
- "futures_balance": 37.4,
+ "futures_balance": 35.03,
  "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $468"
+  "ETH $470"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: ADA, PENGU, XRP",
  "claude_called": true,
- "market_read": "השוק הרחב (BTC, SOL, ADA, XRP, LINK) נמצא באזור קניית יתר קיצונית אחרי ריצה חדה, מה שמעדיף פוזיציות שורט על מיצוי מומנטום על פני עוד לונגים.",
- "skip_reason": "שאר המטבעות (ADA, XRP, LINK, DOGE) עדיין במומנטום עולה חזק ללא סימן היפוך ב-MACD, וסיכון שורט מוקדם מדי; ETH הספוט נשאר כהחזקה פסיבית ללא איתות ברור לשינוי.",
+ "market_read": "השוק כולו overbought (BTC, XRP, ADA, SOL, BCH RSI מעל 70) אחרי ריצה חזקה, כך שרוב הקנדידטים מסוכנים ללונג נוסף ולשורט נגד מומנטום עולה.",
+ "skip_reason": "רוב המטבעות המובילים (BTC, XRP, ADA, SOL, BCH) overbought עם BB% קרוב ל-100 — שורט מסוכן כי המומנטום עדיין חיובי, ולונג נוסף עליהם זה chasing; המניות (MSTR, SPCX, CRCL) כבר בפוזיציות פתוחות.",
  "picks": [
-  "SOL short size=20% conf=MEDIUM",
-  "COIN short size=20% conf=MEDIUM"
+  "XMR long size=13% conf=MEDIUM"
  ],
  "order_errors": [
-  "SOL: Kraken: ['EOrder:Insufficient initial margin']"
- ],
- "skips": [
-  "COIN: margin $37 < needed $42 (after transfer attempt)"
+  "XMR: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
