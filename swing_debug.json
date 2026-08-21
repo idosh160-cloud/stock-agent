@@ -1,37 +1,37 @@
 {
- "time": "2026-08-21T05:00:04",
- "usdc": 87.06,
- "portfolio": 628.2,
+ "time": "2026-08-21T06:00:05",
+ "usdc": 87.05,
+ "portfolio": 628.19,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +19.5%",
-  "CRCL short -0.5%",
-  "SPCX short -0.4%",
-  "MSTR short -0.8%"
+  "BTC long +20.2%",
+  "CRCL short -1.8%",
+  "SPCX short -0.7%",
+  "MSTR short -1.3%"
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "MSTR +9.5% vol=$1,345,057",
-  "COIN +6.8% vol=$144,523",
-  "CF +4.8% vol=$9,587",
-  "CRCL +4.4% vol=$1,004,738",
-  "SPCX -3.9% vol=$885,109"
+  "MSTR +10.5% vol=$1,349,192",
+  "COIN +7.7% vol=$148,532",
+  "CF +5.4% vol=$9,326",
+  "CRCL +5.1% vol=$998,232",
+  "SPCX -3.6% vol=$872,212"
  ],
  "futures_ok": true,
- "futures_balance": 35.03,
+ "futures_balance": 33.59,
  "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $470"
+  "ETH $473"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: ADA, PENGU, XRP",
+ "call_reason": "פוזיציה חלשה: CRCL, MSTR",
  "claude_called": true,
- "market_read": "השוק כולו overbought (BTC, XRP, ADA, SOL, BCH RSI מעל 70) אחרי ריצה חזקה, כך שרוב הקנדידטים מסוכנים ללונג נוסף ולשורט נגד מומנטום עולה.",
- "skip_reason": "רוב המטבעות המובילים (BTC, XRP, ADA, SOL, BCH) overbought עם BB% קרוב ל-100 — שורט מסוכן כי המומנטום עדיין חיובי, ולונג נוסף עליהם זה chasing; המניות (MSTR, SPCX, CRCL) כבר בפוזיציות פתוחות.",
+ "market_read": "השוק הקריפטו במצב oversbought כללי עם BTC ואלטים רבים ב-RSI מעל 70-80, מה שמעדיף שורטים על נכסים ממוצים על פני לונגים חדשים.",
+ "skip_reason": "שאר המועמדים (BCH, PENGU, SOL, XRP) חופפים בתבנית oversbought דומה אך עם נזילות נמוכה יותר או MACD שעדיין חיובי וממשיך לעלות, ולכן פחות בטוחים מ-ADA; הפוזיציות הקיימות (BTC לונג רווחי, CRCL/SPCX/MSTR שורטים קרובים ליעד) נשארות ללא שינוי כי אף אחת לא הגיעה לסטופ ולא כדאי לסובב פוזיציה שעדיין בתנועה לכיוון היעד.",
  "picks": [
-  "XMR long size=13% conf=MEDIUM"
+  "ADA short size=22% conf=MEDIUM"
  ],
  "order_errors": [
-  "XMR: Kraken: ['EOrder:Insufficient funds']"
+  "ADA: Kraken: ['EOrder:Insufficient initial margin']"
  ]
 }
