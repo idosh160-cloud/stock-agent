@@ -1,35 +1,38 @@
 {
- "time": "2026-08-21T00:00:07",
+ "time": "2026-08-21T01:00:05",
  "usdc": 87.08,
- "portfolio": 630.09,
+ "portfolio": 637.02,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +16.4%",
-  "CRCL short +0.2%",
-  "SPCX short -0.2%"
+  "BTC long +17.4%",
+  "CRCL short +0.1%",
+  "SPCX short -0.4%"
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "MSTR +5.5% vol=$1,279,448",
-  "COIN +4.7% vol=$144,137",
-  "CRCL +4.5% vol=$1,027,460",
-  "SPCX -4.1% vol=$937,099",
-  "HOOD -3.5% vol=$450,890"
+  "MSTR +6.8% vol=$1,295,596",
+  "FLU +5.7% vol=$6,301",
+  "COIN +5.6% vol=$144,715",
+  "CRCL +4.9% vol=$1,029,168",
+  "SPCX -3.9% vol=$919,310"
  ],
  "futures_ok": true,
- "futures_balance": 44.23,
+ "futures_balance": 43.66,
  "unallocated_spot": [
-  "ETH $465"
+  "ETH $467"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: XRP, FARTCOIN, AVAX",
+ "call_reason": "תנועה חזקה במניה: MSTR, FLU, COIN",
  "claude_called": true,
- "market_read": "יום אלטים חזק עם XRP מוביל ראלי רחב, אבל כמה מטבעות כמו AVAX כבר נכנסו לאזור קניית יתר קיצונית שמזמין תיקון קצר.",
- "skip_reason": "שאר המועמדים (XRP, ADA, DOT, BNB, BCH) נמצאים גם הם ב-RSI קיצוני אך בתוך ראלי רחב וחזק מדי לשורט בטוח, ואילו המניות (MSTR, SPCX, HOOD) כבר מוחזקות או לא מציגות יתרון ברור כרגע.",
+ "market_read": "השוק הכללי ברמות overbought (BTC RSI=82, רוב האלטים מעל 65) כך שעדיף למקד את הכסף הפנוי במניה עם מומנטום נקי במקום לרדוף קריפטו רווי.",
+ "skip_reason": "דחיתי את רוב הקריפטו כי הם overbought קיצוני (RSI>65-82) ולונג שם מסוכן, ואת השורטים הפוטנציאליים (MSTR, ADA, SOL) כי השוק הכללי עדיין עולה וזה מסוכן לשחות נגד הזרם; SPCX/HOOD כבר יש חשיפה או תנועה לא ברורה מספיק.",
  "picks": [
-  "AVAX short size=20% conf=MEDIUM"
+  "COIN long size=25% conf=MEDIUM"
  ],
- "order_errors": [
-  "AVAX: Kraken: ['EOrder:Margin trading in asset is restricted']"
+ "transfers": [
+  "COIN: moved $11 → FAILED"
+ ],
+ "skips": [
+  "COIN: margin $44 < needed $53 (after transfer attempt)"
  ]
 }
