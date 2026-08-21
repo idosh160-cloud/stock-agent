@@ -1,35 +1,41 @@
 {
- "time": "2026-08-21T13:00:05",
- "usdc": 87.02,
- "portfolio": 634.78,
+ "time": "2026-08-21T14:00:08",
+ "usdc": 87.01,
+ "portfolio": 638.73,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
   "BTC long +23.1%",
-  "SPCX short -1.5%"
+  "SPCX short +0.8%"
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "CF +14.3% vol=$23,550",
-  "FLU +9.9% vol=$9,890",
-  "IOT +7.6% vol=$43,120",
-  "COIN +6.2% vol=$180,543",
-  "CRCL +6.2% vol=$1,609,748"
+  "CRCL +11.7% vol=$1,508,783",
+  "CF +11.7% vol=$25,721",
+  "COIN +9.7% vol=$139,061",
+  "HOOD +9.7% vol=$531,734",
+  "FLU +8.3% vol=$9,783"
  ],
  "futures_ok": true,
- "futures_balance": 39.92,
- "futures_float_topup": false,
+ "futures_balance": 43.81,
  "unallocated_spot": [
   "ETH $477"
  ],
- "call_reason": "פוזיציה חלשה: SPCX",
+ "call_reason": "תנועה חזקה במטבע חדש: BCH, TRUMP, PENGU",
  "claude_called": true,
- "market_read": "השוק בסנטימנט חיובי חזק עם המון נכסים overbought - זמן טוב לחפש הזדמנויות שורט על מהלכים שמוצו.",
- "skip_reason": "רוב המועמדים האחרים (TRUMP, MELANIA, PENGU) בעלי נפח מסחר נמוך מדי או קורלציה גבוהה לבטקוין שכבר יש בו פוזיציה רווחית; BTC ו-SPCX הקיימים נשארים ללא שינוי כי הם בכיוון הנכון או קרובים לסטופ.",
+ "market_read": "השוק הקריפטו במגמת פאמפ רחבה עם הרבה אלטקוינים RSI מעל 70-90, סימן למיצוי טווח קצר ולא להמשך חלק.",
+ "skip_reason": "TRUMP/MELANIA/PENGU/FARTCOIN נפח נמוך מדי ותנודתיות מוגזמת לספקולציה בטוחה, ו-XRP למרות נפח גבוה כבר יש חשיפת BTC דומה בתיק.",
  "picks": [
-  "BCH short size=20% conf=HIGH"
+  "BCH short size=25% conf=HIGH",
+  "CRCL short size=25% conf=MEDIUM"
  ],
  "order_errors": [
   "BCH: Kraken: ['EOrder:Margin trading in asset is restricted']"
+ ],
+ "transfers": [
+  "CRCL: moved $12 → FAILED"
+ ],
+ "skips": [
+  "CRCL: margin $43 < needed $53 (after transfer attempt)"
  ]
 }
