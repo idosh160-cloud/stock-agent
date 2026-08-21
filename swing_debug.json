@@ -1,32 +1,32 @@
 {
- "time": "2026-08-21T18:00:06",
+ "time": "2026-08-21T19:00:05",
  "usdc": 86.99,
- "portfolio": 647.12,
+ "portfolio": 647.42,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +23.3%",
+  "BTC long +22.9%",
   "HOOD short +0.2%"
  ],
- "stock_candidates": 18,
+ "stock_candidates": 17,
  "top_stocks": [
-  "HOOD +14.2% vol=$462,957",
-  "CF +11.3% vol=$27,184",
-  "FLU +9.5% vol=$8,820",
-  "COIN +9.0% vol=$130,339",
-  "IOT +7.0% vol=$5,800"
+  "HOOD +15.1% vol=$442,880",
+  "CF +11.0% vol=$30,654",
+  "COIN +9.5% vol=$129,699",
+  "FLU +7.8% vol=$9,983",
+  "MSTR +7.6% vol=$767,540"
  ],
  "futures_ok": true,
- "futures_balance": 46.37,
+ "futures_balance": 46.84,
  "unallocated_spot": [
-  "ETH $484"
+  "ETH $483"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: BCH, PENGU, MELANIA",
+ "call_reason": "תנועה חזקה במטבע חדש: BCH, PENGU, FARTCOIN",
  "claude_called": true,
- "market_read": "רוב שוק האלטקוינים במצב oversold קיצוני אחרי ריצה חדה, מה שפותח הזדמנויות שורט על המנות הכי מוגזמות כמו BCH.",
- "skip_reason": "שאר המועמדים (PENGU, MELANIA, FARTCOIN) דומים אך עם נפח נמוך יותר ותנודתיות פחות ברורה - מרכזים את ההון בסטאפ החזק ביותר בלבד.",
+ "market_read": "שוק האלטים והמניות הטוקניזציה בהתלהבות עם ריצות חדות, אבל כמה נכסים כבר קיצוניים ב-RSI ומחפשים תיקון.",
+ "skip_reason": "שאר המועמדים (ADA, XRP, LINK, HOOD, MSTR) נמצאים באמצע הטווח או עם היסטוריה חלשה בלי אישור טכני מספיק חזק כרגע — עדיף להתרכז ב-BCH הקיצוני.",
  "picks": [
-  "BCH short size=30% conf=HIGH"
+  "BCH short size=20% conf=MEDIUM"
  ],
  "order_errors": [
   "BCH: Kraken: ['EOrder:Margin trading in asset is restricted']"
