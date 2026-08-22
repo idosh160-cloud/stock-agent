@@ -1,36 +1,36 @@
 {
- "time": "2026-08-22T00:00:05",
+ "time": "2026-08-22T01:00:05",
  "usdc": 86.97,
- "portfolio": 661.23,
+ "portfolio": 663.27,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +24.8%",
-  "HOOD short -0.5%"
+  "BTC long +24.2%",
+  "HOOD short -0.2%"
  ],
  "stock_candidates": 18,
  "top_stocks": [
-  "HOOD +13.9% vol=$405,365",
-  "CF +11.0% vol=$35,069",
-  "COIN +9.5% vol=$125,995",
-  "FLU +9.4% vol=$10,233",
-  "IOT +8.7% vol=$5,983"
+  "HOOD +13.1% vol=$406,020",
+  "CF +11.5% vol=$35,225",
+  "FLU +9.0% vol=$11,283",
+  "IOT +8.5% vol=$5,976",
+  "COIN +7.7% vol=$125,982"
  ],
  "futures_ok": true,
- "futures_balance": 46.1,
+ "futures_balance": 46.33,
  "unallocated_spot": [
-  "ETH $503"
+  "ETH $504"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: BCH, PENGU, MELANIA",
+ "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN",
  "claude_called": true,
- "market_read": "רוב האלטקוינים הגדולים בקטגוריית 'קניית יתר קיצונית' אחרי ריצה חדה, בעוד BTC ומניות טוקניזציה ממשיכים במגמת עלייה יציבה יותר.",
- "skip_reason": "שאר המועמדים (ADA, PENGU, CC, LTC, AVAX) נמצאים גם הם בקניית יתר קיצונית אך עם ווליום נמוך יותר או פחות איתות ברור למיצוי מאשר BCH ו-XRP; ETH הספוט נשאר כפי שהוא כי אין כרגע הזדמנות עדיפה ברורה לגביו.",
+ "market_read": "השוק האלטים כולו נראה overbought עם RSI מעל 70 ברוב המטבעות, מה שמעדיף שורטים על מומנטום שנחלש מאשר לונגים חדשים.",
+ "skip_reason": "שאר המועמדים (LTC, LINK, ATOM, TRUMP, FARTCOIN) עדיין עם MACD חיובי חזק למרות ה-RSI הגבוה, לא מספיק סימן היפוך כדי לשורט; ETH נשאר כאחזקה פסיבית כי אין כרגע סיגנל חזק יותר להזזתו.",
  "picks": [
-  "BCH short size=25% conf=MEDIUM",
-  "XRP short size=20% conf=MEDIUM"
+  "BCH short size=30% conf=HIGH",
+  "DOT short size=15% conf=MEDIUM"
  ],
  "order_errors": [
   "BCH: Kraken: ['EOrder:Margin trading in asset is restricted']",
-  "XRP: Kraken: ['EOrder:Margin level too low']"
+  "DOT: Kraken: ['EOrder:Invalid leverage']"
  ]
 }
