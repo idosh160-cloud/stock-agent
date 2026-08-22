@@ -1,34 +1,34 @@
 {
- "time": "2026-08-22T16:00:05",
+ "time": "2026-08-22T17:00:05",
  "usdc": 86.89,
- "portfolio": 647.41,
+ "portfolio": 648.67,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +22.7%",
+  "BTC long +23.2%",
   "HOOD short +1.4%"
  ],
- "stock_candidates": 17,
+ "stock_candidates": 16,
  "top_stocks": [
-  "CRCL -2.2% vol=$354,845",
-  "SPCX -1.2% vol=$276,052",
-  "COIN -1.2% vol=$17,405",
-  "HOOD -1.0% vol=$80,430",
-  "ANTHROPIC +0.7% vol=$9,694"
+  "FLU -1.4% vol=$15,266",
+  "HOOD -1.2% vol=$82,453",
+  "COIN -0.9% vol=$16,848",
+  "CF -0.6% vol=$33,182",
+  "GOOGL -0.5% vol=$29,148"
  ],
  "futures_ok": true,
- "futures_balance": 48.25,
+ "futures_balance": 48.06,
  "unallocated_spot": [
-  "ETH $481"
+  "ETH $484"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TRUMP, MELANIA, PENGU",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP, MELANIA, FARTCOIN",
  "claude_called": true,
- "market_read": "ביטקוין יציב סביב 77 אלף בעוד רוב האלטקוינים (ETH, AVAX, LINK, TON) נחלשים 3-5%, מה שמעיד על תיקון זמני ולא היפוך מגמה.",
- "skip_reason": "TRUMP/MELANIA תנודתיים מדי עם טווח יומי מעל 100% וסיגנלים סותרים; ETH כבר מוחזק כפוזיציה פסיבית גדולה וה-MACD שלו שלילי מאוד כרגע כך שלא הזמן להוסיף; מניות היום שקטות מדי (טווח תת-1%) בלי סטאפ ברור לונג/שורט.",
+ "market_read": "השוק הקריפטו מעורב עם BTC יציב ואלטים מעורבים, מטבעות מם כמו TRUMP ו-MELANIA מראים מומנטום חזק שעדיין לא הגיע לקיצון.",
+ "skip_reason": "שאר המועמדים (ETH, AVAX, BCH, TON) בטרנד יורד או שטוח בלי אות ברור, והמניות נעות בטווח צר מדי כרגע כדי להצדיק כניסה חדשה על פני הפוזיציות הקיימות.",
  "picks": [
-  "LINK long size=25% conf=MEDIUM"
+  "TRUMP long size=25% conf=MEDIUM"
  ],
  "order_errors": [
-  "LINK: Kraken: ['EOrder:Insufficient funds']"
+  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
