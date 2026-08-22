@@ -1,34 +1,34 @@
 {
- "time": "2026-08-22T20:00:06",
+ "time": "2026-08-22T21:00:05",
  "usdc": 86.87,
- "portfolio": 651.13,
+ "portfolio": 650.19,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +23.4%",
+  "BTC long +23.2%",
   "HOOD short +1.3%"
  ],
- "stock_candidates": 16,
+ "stock_candidates": 15,
  "top_stocks": [
-  "FLU -1.9% vol=$13,972",
-  "HOOD -1.4% vol=$60,950",
-  "SPCX -1.3% vol=$121,264",
-  "MSTR +1.2% vol=$122,244",
-  "CF +0.6% vol=$31,035"
+  "FLU -2.3% vol=$13,874",
+  "CF -1.7% vol=$30,737",
+  "HOOD -1.6% vol=$56,855",
+  "SPCX -1.3% vol=$84,078",
+  "COIN -0.9% vol=$9,537"
  ],
  "futures_ok": true,
- "futures_balance": 47.83,
+ "futures_balance": 47.91,
  "unallocated_spot": [
-  "ETH $487"
+  "ETH $486"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: TRUMP, MELANIA, CC",
  "claude_called": true,
- "market_read": "השוק הרחב יציב-חיובי עם BTC מעל 77K ואלטקוינים מובילים מראים תנועה חיובית מתונה עם נפח תומך.",
- "skip_reason": "TRUMP ו-MELANIA כבר עשו ראלי פראי של 20-33% ביום עם RSI לא קיצוני — יחס סיכוי/סיכון גרוע לכניסה חדשה; מניות ה-xStocks נעות בטווח צר מדי היום ללא סיגנל ברור לשורט או לונג.",
+ "market_read": "השוק הקריפטו מעורב עם BTC יציב סביב 77K ומטבעות מם מובילים את התנועה, בעוד מניות טוקניזציה שקטות יחסית.",
+ "skip_reason": "שאר המועמדים חלשים יותר — MELANIA מתואם עם TRUMP (כפילות סיכון), שאר המניות שקטות מדי או ללא איתות ברור לכיוון, ו-BTC/HOOD כבר בפוזיציות רווחיות שאין סיבה לגעת בהן.",
  "picks": [
-  "XRP long size=20% conf=MEDIUM"
+  "TRUMP long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "XRP: Kraken: ['EOrder:Insufficient funds']"
+  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
