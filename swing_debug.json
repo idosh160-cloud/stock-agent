@@ -1,34 +1,37 @@
 {
- "time": "2026-08-22T05:00:04",
- "usdc": 86.95,
- "portfolio": 661.58,
+ "time": "2026-08-22T06:00:04",
+ "usdc": 86.94,
+ "portfolio": 650.97,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +25.1%",
-  "HOOD short -0.5%"
+  "BTC long +23.3%",
+  "HOOD short +0.8%"
  ],
  "stock_candidates": 18,
  "top_stocks": [
-  "CF +14.4% vol=$42,882",
-  "FLU +12.8% vol=$19,667",
-  "HOOD +11.6% vol=$351,810",
-  "COIN +7.4% vol=$125,656",
-  "IOT +6.3% vol=$5,941"
+  "HOOD +10.2% vol=$353,905",
+  "CF +7.0% vol=$48,084",
+  "FLU +6.0% vol=$18,730",
+  "COIN +4.8% vol=$124,841",
+  "IOT +4.3% vol=$8,117"
  ],
  "futures_ok": true,
- "futures_balance": 46.48,
+ "futures_balance": 47.15,
  "unallocated_spot": [
-  "ETH $502"
+  "ETH $487"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TRUMP, MELANIA, XRP",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP, MELANIA, CC",
  "claude_called": true,
- "market_read": "השוק הכללי במגמת עלייה חזקה עם המון נכסים oversold קיצוניים שמבשילים לתיקון טכני קצר טווח.",
- "skip_reason": "שאר המטבעות הקריפטו (TRUMP, MELANIA, ADA, DOT) קיצוניים מדי ותנודתיים מכדי לתת סטופ סביר, וה-ETH וה-HOOD הקיימים כבר ממצבים תפקיד סביר בתיק.",
+ "market_read": "השוק במגמת עלייה סלקטיבית עם מטבעות מיינסטרים כמו XMR ו-XRP מראים מומנטום בריא בעוד מטבעות מם כמו TRUMP/MELANIA כבר בקיצון קנייתי מסוכן לשורט.",
+ "skip_reason": "TRUMP/MELANIA נראים אטרקטיביים לשורט אך תנודתיות פראית ונפח נמוך הופכים אותם למסוכנים מדי; HOOD כבר בפוזיציה פתוחה ולא מוסיפים; ETH נשאר חלקית כי מציג היחלשות טכנית.",
  "picks": [
-  "XRP short size=40% conf=HIGH"
+  "XMR long size=30% conf=HIGH",
+  "XRP long size=18% conf=MEDIUM"
  ],
  "order_errors": [
-  "XRP: Kraken: ['EOrder:Margin level too low']"
+  "liq ETH: all sizes rejected (margin collateral lock)",
+  "XMR: Kraken: ['EOrder:Insufficient funds']",
+  "XRP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
