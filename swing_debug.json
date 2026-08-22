@@ -1,34 +1,36 @@
 {
- "time": "2026-08-22T02:00:04",
+ "time": "2026-08-22T03:00:05",
  "usdc": 86.96,
- "portfolio": 660.87,
+ "portfolio": 660.62,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +24.1%",
-  "HOOD short -0.3%"
+  "BTC long +25.0%",
+  "HOOD short -0.7%"
  ],
  "stock_candidates": 18,
  "top_stocks": [
-  "HOOD +12.6% vol=$359,536",
-  "CF +9.3% vol=$35,030",
-  "FLU +8.8% vol=$12,716",
+  "HOOD +12.5% vol=$354,001",
+  "CF +11.3% vol=$41,554",
+  "FLU +10.6% vol=$15,442",
   "IOT +8.7% vol=$5,942",
-  "COIN +7.2% vol=$125,103"
+  "COIN +8.0% vol=$125,644"
  ],
  "futures_ok": true,
- "futures_balance": 46.2,
+ "futures_balance": 45.75,
  "unallocated_spot": [
-  "ETH $501"
+  "ETH $502"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, DOT, TRUMP",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP, MELANIA, XMR",
  "claude_called": true,
- "market_read": "השוק האלטקוין ברובו קנוי-יתר עם RSI מעל 70 ברוב המטבעות, מה שמעיד על שלב מיצוי לפני תיקון קצר טווח.",
- "skip_reason": "רוב המועמדים באלטים (DOT, FARTCOIN, TRUMP, MELANIA, PENGU) קנויי-יתר קיצוני עם נפח נמוך מדי לביטחון בשורט, והמניות הפאמפ (CF, FLU, IOT) חסרות נזילות מספקת; HOOD הקיים נשאר כפוזיציה יציבה שלא מצדיקה רוטציה.",
+ "market_read": "שוק האלטקוינים רותח עם RSI קיצוני של 73-84 ברוב המטבעות המובילים, מה שמצביע על שוק overextended שמבשיל להיפוך טכני קצר טווח.",
+ "skip_reason": "TRUMP ו-MELANIA נפסלו בגלל נפח מסחר נמוך מדי שמסכן stop execution, ו-XMR נפסל כי ה-MACD עדיין חיובי מאוד ומעיד על מומנטום חזק שמסוכן לשרוט נגדו.",
  "picks": [
-  "XRP short size=20% conf=MEDIUM"
+  "XRP short size=30% conf=HIGH",
+  "ADA short size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "XRP: Kraken: ['EOrder:Margin level too low']"
+  "XRP: Kraken: ['EOrder:Margin level too low']",
+  "ADA: Kraken: ['EOrder:Margin level too low']"
  ]
 }
