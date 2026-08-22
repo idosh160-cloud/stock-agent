@@ -1,34 +1,35 @@
 {
- "time": "2026-08-22T09:00:05",
- "usdc": 86.93,
- "portfolio": 649.08,
+ "time": "2026-08-22T10:00:05",
+ "usdc": 86.92,
+ "portfolio": 648.74,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +23.0%",
-  "HOOD short +1.1%"
+  "BTC long +22.8%",
+  "HOOD short +1.2%"
  ],
  "stock_candidates": 18,
  "top_stocks": [
-  "HOOD +6.8% vol=$349,934",
-  "MSTR -4.9% vol=$387,498",
-  "CRCL -3.8% vol=$587,545",
-  "TSLA +3.4% vol=$485,765",
-  "FLU +3.1% vol=$19,082"
+  "HOOD +6.4% vol=$252,592",
+  "TSLA +3.1% vol=$483,998",
+  "FLU +3.1% vol=$16,350",
+  "IOT +2.8% vol=$6,964",
+  "MSTR -2.7% vol=$350,640"
  ],
  "futures_ok": true,
- "futures_balance": 47.67,
+ "futures_balance": 47.8,
  "unallocated_spot": [
   "ETH $484"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TRUMP, MELANIA, CC",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP, MELANIA, PENGU",
  "claude_called": true,
- "market_read": "השוק בקריפטו מעורב עם BTC יציב וכמה מטבעות מם בפריצה חזקה בעוד אלטים גדולים כמו ETH ו-AVAX חלשים.",
- "skip_reason": "שאר המועמדים או חלשי נפח, סוחרים בטווח סטוחח ללא כיוון ברור, או שהם פוזיציות קיימות שכבר בדרך ליעד ולא כדאי לגעת בהן.",
+ "market_read": "השוק הכללי מעורב — ביטקוין יציב סביב 77K בעוד אלטקוינים ספקולטיביים כמו TRUMP ו-MELANIA מציגים מומנטום פריצה חזק.",
+ "skip_reason": "MELANIA, XMR ו-XRP מראים סימני עלייה אך עם נפח נמוך יותר או RSI פחות ברור מ-TRUMP; המניות (HOOD, MSTR, CRCL) בטווח צר ללא איתות ברור לכיוון — עדיף לרכז את ההון בהזדמנות הכי חזקה.",
  "picks": [
-  "TRUMP long size=20% conf=MEDIUM"
+  "TRUMP long size=35% conf=HIGH"
  ],
  "order_errors": [
+  "liq ETH: all sizes rejected (margin collateral lock)",
   "TRUMP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
