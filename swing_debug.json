@@ -1,36 +1,36 @@
 {
- "time": "2026-08-22T14:00:05",
+ "time": "2026-08-22T15:00:05",
  "usdc": 86.9,
- "portfolio": 650.12,
+ "portfolio": 647.88,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +23.2%",
+  "BTC long +22.7%",
   "HOOD short +1.4%"
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "CRCL -5.6% vol=$511,547",
-  "SPCX +2.5% vol=$403,814",
-  "HOOD -2.2% vol=$116,509",
-  "COIN -2.2% vol=$23,461",
-  "MSTR +1.9% vol=$275,219"
+  "CRCL -2.2% vol=$400,914",
+  "COIN -2.0% vol=$17,451",
+  "CF -1.1% vol=$34,877",
+  "AMZN -1.0% vol=$11,400",
+  "FLU -0.6% vol=$17,552"
  ],
  "futures_ok": true,
- "futures_balance": 48.01,
+ "futures_balance": 48.2,
  "unallocated_spot": [
-  "ETH $485"
+  "ETH $482"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TRUMP, MELANIA, CC",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP, MELANIA, PENGU",
  "claude_called": true,
- "market_read": "השוק הכללי מעורב עם ביטקוין יציב סביב 77K ומטבעות מם/אלטים מראים תנועות חדות אך לא קיצוניות מדי, מה שמאפשר כניסה זהירה עם מומנטום.",
- "skip_reason": "שאר המועמדים (AVAX, TON, ALGO, FARTCOIN) מציגים RSI וסיגנלים ניטרליים-שליליים ללא בירור ברור לכיוון, ומניות ה-xStocks לא מציגות תנועה מספיק חדה כדי להצדיק פוזיציה חדשה על חשבון הפוזיציות הקיימות.",
+ "market_read": "השוק הכללי מעורב - ביטקוין יציב סביב 77K בעוד אלטקוינים גדולים כמו ETH נחלשים ומטבעות ספקולטיביים כמו TRUMP רצים חזק, מה שיוצר הזדמנויות משני הכיוונים.",
+ "skip_reason": "שאר המועמדים (MELANIA, PENGU, ALGO, AVAX, LINK, מניות ה-xStocks) מציגים נפח נמוך או תנועה חסרת כיוון ברור ללא איתות טכני חזק מספיק להצדיק כניסה על חשבון הפוזיציות הקיימות.",
  "picks": [
-  "TRUMP long size=25% conf=MEDIUM",
-  "XRP long size=15% conf=MEDIUM"
+  "TRUMP long size=20% conf=MEDIUM",
+  "ETH short size=15% conf=MEDIUM"
  ],
  "order_errors": [
   "TRUMP: Kraken: ['EOrder:Insufficient funds']",
-  "XRP: Kraken: ['EOrder:Insufficient funds']"
+  "ETH: Kraken: ['EOrder:Margin level too low']"
  ]
 }
