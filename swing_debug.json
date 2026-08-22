@@ -1,38 +1,34 @@
 {
- "time": "2026-08-22T12:00:06",
+ "time": "2026-08-22T13:00:05",
  "usdc": 86.91,
- "portfolio": 649.06,
+ "portfolio": 649.51,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +22.9%",
+  "BTC long +23.2%",
   "HOOD short +1.5%"
  ],
- "stock_candidates": 18,
+ "stock_candidates": 17,
  "top_stocks": [
-  "HOOD +6.6% vol=$200,489",
-  "COIN +3.9% vol=$28,467",
-  "TSLA +3.6% vol=$204,259",
-  "IOT -2.4% vol=$6,471",
-  "FLU +1.5% vol=$16,167"
+  "HOOD +6.6% vol=$197,614",
+  "TSLA +3.7% vol=$207,077",
+  "CF -3.3% vol=$37,730",
+  "COIN +2.5% vol=$31,191",
+  "AMZN -1.6% vol=$25,292"
  ],
  "futures_ok": true,
- "futures_balance": 47.82,
+ "futures_balance": 47.86,
  "unallocated_spot": [
-  "ETH $484"
+  "ETH $485"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TRUMP, MELANIA, PENGU",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP, MELANIA, CC",
  "claude_called": true,
- "market_read": "השוק הכללי מעורב עם קריפטו מרכזי (ETH,BTC) בירידה קלה בעוד אלטים ספקולטיביים כמו TRUMP וסמן מניות כמו TSLA מראים מומנטום חיובי ברור.",
- "skip_reason": "שאר המועמדים (MELANIA, PENGU, ALGO, AVAX, ETH, BCH, TON, CC, XMR) מציגים RSI ניטרלי או MACD שלילי ללא מגמה ברורה — לא מספיק אות לכניסה כרגע, וההחזקה ב-ETH הספוט נשארת כי אין הזדמנות עדיפה כרגע להזזתה.",
+ "market_read": "ביטקוין ברמת שיא עם מומנטום חיובי חזק, מה שתומך בהמשך זרימת כסף לאלטקוינים גדולים כמו XRP.",
+ "skip_reason": "TRUMP ו-MELANIA תנודתיים מדי עם MACD שלילי שמעיד על מיצוי הפריצה, ומניות ה-xStocks נעות בטווח צר מדי כרגע כדי להצדיק כניסה חדשה על חשבון הפוזיציות הקיימות שממשיכות לכיוון היעד.",
  "picks": [
-  "TSLA long size=25% conf=MEDIUM",
-  "TRUMP long size=20% conf=MEDIUM"
- ],
- "skips": [
-  "TSLA: margin $48 < needed $54 (after transfer attempt)"
+  "XRP long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
+  "XRP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
