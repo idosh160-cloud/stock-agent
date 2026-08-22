@@ -1,36 +1,34 @@
 {
- "time": "2026-08-22T04:00:05",
+ "time": "2026-08-22T05:00:04",
  "usdc": 86.95,
- "portfolio": 660.72,
+ "portfolio": 661.58,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +24.9%",
+  "BTC long +25.1%",
   "HOOD short -0.5%"
  ],
  "stock_candidates": 18,
  "top_stocks": [
-  "CF +12.2% vol=$41,945",
-  "FLU +11.7% vol=$19,428",
-  "HOOD +11.6% vol=$351,560",
-  "COIN +7.4% vol=$125,592",
+  "CF +14.4% vol=$42,882",
+  "FLU +12.8% vol=$19,667",
+  "HOOD +11.6% vol=$351,810",
+  "COIN +7.4% vol=$125,656",
   "IOT +6.3% vol=$5,941"
  ],
  "futures_ok": true,
- "futures_balance": 46.09,
+ "futures_balance": 46.48,
  "unallocated_spot": [
   "ETH $502"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TRUMP, MELANIA, XMR",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP, MELANIA, XRP",
  "claude_called": true,
- "market_read": "השוק האלטקוין ברובו overbought בצורה קיצונית אחרי ריצה חדה, מה שיוצר הזדמנויות שורט איכותיות על נכסים נזילים.",
- "skip_reason": "TRUMP ו-MELANIA overbought קיצוני אך נפח מסחר נמוך מדי לסיכון שורט (סיכון סקוויז), ו-XMR/BNB עדיין במומנטום MACD חיובי חזק מדי לשורט בטוח.",
+ "market_read": "השוק הכללי במגמת עלייה חזקה עם המון נכסים oversold קיצוניים שמבשילים לתיקון טכני קצר טווח.",
+ "skip_reason": "שאר המטבעות הקריפטו (TRUMP, MELANIA, ADA, DOT) קיצוניים מדי ותנודתיים מכדי לתת סטופ סביר, וה-ETH וה-HOOD הקיימים כבר ממצבים תפקיד סביר בתיק.",
  "picks": [
-  "XRP short size=25% conf=HIGH",
-  "ADA short size=15% conf=MEDIUM"
+  "XRP short size=40% conf=HIGH"
  ],
  "order_errors": [
-  "XRP: Kraken: ['EOrder:Margin level too low']",
-  "ADA: Kraken: ['EOrder:Margin level too low']"
+  "XRP: Kraken: ['EOrder:Margin level too low']"
  ]
 }
