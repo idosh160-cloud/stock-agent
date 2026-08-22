@@ -1,32 +1,36 @@
 {
- "time": "2026-08-22T11:00:05",
- "usdc": 86.92,
- "portfolio": 647.79,
+ "time": "2026-08-22T12:00:06",
+ "usdc": 86.91,
+ "portfolio": 649.06,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +22.7%",
+  "BTC long +22.9%",
   "HOOD short +1.5%"
  ],
  "stock_candidates": 18,
  "top_stocks": [
-  "HOOD +7.4% vol=$216,235",
-  "TSLA +3.4% vol=$204,364",
-  "MSTR -3.0% vol=$345,965",
-  "COIN +2.7% vol=$29,467",
-  "CRCL -1.9% vol=$534,300"
+  "HOOD +6.6% vol=$200,489",
+  "COIN +3.9% vol=$28,467",
+  "TSLA +3.6% vol=$204,259",
+  "IOT -2.4% vol=$6,471",
+  "FLU +1.5% vol=$16,167"
  ],
  "futures_ok": true,
- "futures_balance": 47.97,
+ "futures_balance": 47.82,
  "unallocated_spot": [
-  "ETH $482"
+  "ETH $484"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: TRUMP, MELANIA, PENGU",
  "claude_called": true,
- "market_read": "רוב המטבעות המרכזיים (ETH, LINK, BCH, TON) במגמת ירידה עם MACD שלילי, בעוד מטבעות מם כמו TRUMP מראים מומנטום עולה חזק שכדאי לנצל.",
- "skip_reason": "שאר המועמדים בקריפטו נמצאים במגמת ירידה עם MACD שלילי ו-RSI אמצעי ללא סימן ברור להיפוך, והמניות הפתוחות (HOOD/BTC) כבר בפוזיציה טובה שלא כדאי לגעת בה — ETH הפאסיבי נשאר כפי שהוא כי אין הזדמנות עדיפה ברורה מספיק להצדיק סבב.",
+ "market_read": "השוק הכללי מעורב עם קריפטו מרכזי (ETH,BTC) בירידה קלה בעוד אלטים ספקולטיביים כמו TRUMP וסמן מניות כמו TSLA מראים מומנטום חיובי ברור.",
+ "skip_reason": "שאר המועמדים (MELANIA, PENGU, ALGO, AVAX, ETH, BCH, TON, CC, XMR) מציגים RSI ניטרלי או MACD שלילי ללא מגמה ברורה — לא מספיק אות לכניסה כרגע, וההחזקה ב-ETH הספוט נשארת כי אין הזדמנות עדיפה כרגע להזזתה.",
  "picks": [
-  "TRUMP long size=25% conf=MEDIUM"
+  "TSLA long size=25% conf=MEDIUM",
+  "TRUMP long size=20% conf=MEDIUM"
+ ],
+ "skips": [
+  "TSLA: margin $48 < needed $54 (after transfer attempt)"
  ],
  "order_errors": [
   "TRUMP: Kraken: ['EOrder:Insufficient funds']"
