@@ -1,31 +1,34 @@
 {
- "time": "2026-08-22T07:00:05",
- "usdc": 86.94,
- "portfolio": 650.46,
+ "time": "2026-08-22T08:00:06",
+ "usdc": 86.93,
+ "portfolio": 650.02,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +23.5%",
+  "BTC long +23.2%",
   "HOOD short +0.6%"
  ],
  "stock_candidates": 18,
  "top_stocks": [
-  "FLU +10.6% vol=$19,845",
-  "HOOD +10.1% vol=$355,849",
-  "CF +5.7% vol=$49,850",
-  "COIN +4.5% vol=$124,107",
-  "IOT +4.3% vol=$8,117"
+  "HOOD +8.8% vol=$355,823",
+  "FLU +7.5% vol=$19,529",
+  "IOT +4.3% vol=$8,117",
+  "CF +4.3% vol=$48,985",
+  "TSLA +3.7% vol=$492,941"
  ],
  "futures_ok": true,
- "futures_balance": 47.19,
+ "futures_balance": 47.34,
  "unallocated_spot": [
-  "ETH $487"
+  "ETH $486"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TRUMP, MELANIA, XRP",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP, MELANIA, CC",
  "claude_called": true,
- "market_read": "השוק הרחב יציב סביב BTC אך יש כמה מטבעות מם שרצו פראית ונראים בשלים לתיקון חד.",
- "skip_reason": "שאר המועמדים (MELANIA, XRP, CC) חופפים בתזה של אקסטרים דומה אך עם פחות נפח/תנודתיות מובהקת, ומיקודי BTC ו-HOOD כבר פתוחים ולא דורשים סבב מחדש.",
+ "market_read": "השוק בהטיה חיובית עם כמה מטבעות ספקולטיביים בפראבולה קיצונית לצד מהלכים בריאים כמו XRP ו-BNB.",
+ "skip_reason": "TRUMP ו-CC נראים מוצפים אך תנודתיים מדי לשורט בטוח (ווליום נמוך/פראבולי), ETH מוחזק כפוזיציית ספוט פאסיבית ולא מצדיק סגירה כרגע.",
  "picks": [
-  "TRUMP short size=35% conf=HIGH"
+  "XRP long size=20% conf=HIGH"
+ ],
+ "order_errors": [
+  "XRP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
