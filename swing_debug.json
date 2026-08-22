@@ -1,34 +1,34 @@
 {
- "time": "2026-08-22T08:00:06",
+ "time": "2026-08-22T09:00:05",
  "usdc": 86.93,
- "portfolio": 650.02,
+ "portfolio": 649.08,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +23.2%",
-  "HOOD short +0.6%"
+  "BTC long +23.0%",
+  "HOOD short +1.1%"
  ],
  "stock_candidates": 18,
  "top_stocks": [
-  "HOOD +8.8% vol=$355,823",
-  "FLU +7.5% vol=$19,529",
-  "IOT +4.3% vol=$8,117",
-  "CF +4.3% vol=$48,985",
-  "TSLA +3.7% vol=$492,941"
+  "HOOD +6.8% vol=$349,934",
+  "MSTR -4.9% vol=$387,498",
+  "CRCL -3.8% vol=$587,545",
+  "TSLA +3.4% vol=$485,765",
+  "FLU +3.1% vol=$19,082"
  ],
  "futures_ok": true,
- "futures_balance": 47.34,
+ "futures_balance": 47.67,
  "unallocated_spot": [
-  "ETH $486"
+  "ETH $484"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: TRUMP, MELANIA, CC",
  "claude_called": true,
- "market_read": "השוק בהטיה חיובית עם כמה מטבעות ספקולטיביים בפראבולה קיצונית לצד מהלכים בריאים כמו XRP ו-BNB.",
- "skip_reason": "TRUMP ו-CC נראים מוצפים אך תנודתיים מדי לשורט בטוח (ווליום נמוך/פראבולי), ETH מוחזק כפוזיציית ספוט פאסיבית ולא מצדיק סגירה כרגע.",
+ "market_read": "השוק בקריפטו מעורב עם BTC יציב וכמה מטבעות מם בפריצה חזקה בעוד אלטים גדולים כמו ETH ו-AVAX חלשים.",
+ "skip_reason": "שאר המועמדים או חלשי נפח, סוחרים בטווח סטוחח ללא כיוון ברור, או שהם פוזיציות קיימות שכבר בדרך ליעד ולא כדאי לגעת בהן.",
  "picks": [
-  "XRP long size=20% conf=HIGH"
+  "TRUMP long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "XRP: Kraken: ['EOrder:Insufficient funds']"
+  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
