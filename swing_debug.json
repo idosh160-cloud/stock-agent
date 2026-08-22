@@ -1,36 +1,36 @@
 {
- "time": "2026-08-21T23:00:05",
+ "time": "2026-08-22T00:00:05",
  "usdc": 86.97,
- "portfolio": 661.63,
+ "portfolio": 661.23,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +25.0%",
+  "BTC long +24.8%",
   "HOOD short -0.5%"
  ],
  "stock_candidates": 18,
  "top_stocks": [
   "HOOD +13.9% vol=$405,365",
-  "CF +10.8% vol=$35,010",
-  "COIN +10.0% vol=$127,999",
+  "CF +11.0% vol=$35,069",
+  "COIN +9.5% vol=$125,995",
   "FLU +9.4% vol=$10,233",
   "IOT +8.7% vol=$5,983"
  ],
  "futures_ok": true,
- "futures_balance": 45.68,
+ "futures_balance": 46.1,
  "unallocated_spot": [
-  "ETH $504"
+  "ETH $503"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: BCH, PENGU, DOGE",
+ "call_reason": "תנועה חזקה במטבע חדש: BCH, PENGU, MELANIA",
  "claude_called": true,
- "market_read": "השוק באיוופוריה קצרת טווח עם כמה אלטקוינים במצב קניית יתר קיצונית אחרי ראלי חד, מה שיוצר הזדמנויות שורט למיצוי תנועה.",
- "skip_reason": "שאר המטבעות (PENGU, TRUMP, XRP, LINK) עדיין מציגים MACD חיובי או נפח נמוך מדי, כך שהסיגנל לשורט פחות חד — נשארים עם שתי ההזדמנויות החזקות ביותר בלבד.",
+ "market_read": "רוב האלטקוינים הגדולים בקטגוריית 'קניית יתר קיצונית' אחרי ריצה חדה, בעוד BTC ומניות טוקניזציה ממשיכים במגמת עלייה יציבה יותר.",
+ "skip_reason": "שאר המועמדים (ADA, PENGU, CC, LTC, AVAX) נמצאים גם הם בקניית יתר קיצונית אך עם ווליום נמוך יותר או פחות איתות ברור למיצוי מאשר BCH ו-XRP; ETH הספוט נשאר כפי שהוא כי אין כרגע הזדמנות עדיפה ברורה לגביו.",
  "picks": [
-  "BCH short size=25% conf=HIGH",
-  "DOGE short size=20% conf=MEDIUM"
+  "BCH short size=25% conf=MEDIUM",
+  "XRP short size=20% conf=MEDIUM"
  ],
  "order_errors": [
   "BCH: Kraken: ['EOrder:Margin trading in asset is restricted']",
-  "DOGE: Kraken: ['EOrder:Margin level too low']"
+  "XRP: Kraken: ['EOrder:Margin level too low']"
  ]
 }
