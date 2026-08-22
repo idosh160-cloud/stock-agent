@@ -1,34 +1,36 @@
 {
- "time": "2026-08-22T13:00:05",
- "usdc": 86.91,
- "portfolio": 649.51,
+ "time": "2026-08-22T14:00:05",
+ "usdc": 86.9,
+ "portfolio": 650.12,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
   "BTC long +23.2%",
-  "HOOD short +1.5%"
+  "HOOD short +1.4%"
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "HOOD +6.6% vol=$197,614",
-  "TSLA +3.7% vol=$207,077",
-  "CF -3.3% vol=$37,730",
-  "COIN +2.5% vol=$31,191",
-  "AMZN -1.6% vol=$25,292"
+  "CRCL -5.6% vol=$511,547",
+  "SPCX +2.5% vol=$403,814",
+  "HOOD -2.2% vol=$116,509",
+  "COIN -2.2% vol=$23,461",
+  "MSTR +1.9% vol=$275,219"
  ],
  "futures_ok": true,
- "futures_balance": 47.86,
+ "futures_balance": 48.01,
  "unallocated_spot": [
   "ETH $485"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: TRUMP, MELANIA, CC",
  "claude_called": true,
- "market_read": "ביטקוין ברמת שיא עם מומנטום חיובי חזק, מה שתומך בהמשך זרימת כסף לאלטקוינים גדולים כמו XRP.",
- "skip_reason": "TRUMP ו-MELANIA תנודתיים מדי עם MACD שלילי שמעיד על מיצוי הפריצה, ומניות ה-xStocks נעות בטווח צר מדי כרגע כדי להצדיק כניסה חדשה על חשבון הפוזיציות הקיימות שממשיכות לכיוון היעד.",
+ "market_read": "השוק הכללי מעורב עם ביטקוין יציב סביב 77K ומטבעות מם/אלטים מראים תנועות חדות אך לא קיצוניות מדי, מה שמאפשר כניסה זהירה עם מומנטום.",
+ "skip_reason": "שאר המועמדים (AVAX, TON, ALGO, FARTCOIN) מציגים RSI וסיגנלים ניטרליים-שליליים ללא בירור ברור לכיוון, ומניות ה-xStocks לא מציגות תנועה מספיק חדה כדי להצדיק פוזיציה חדשה על חשבון הפוזיציות הקיימות.",
  "picks": [
-  "XRP long size=20% conf=MEDIUM"
+  "TRUMP long size=25% conf=MEDIUM",
+  "XRP long size=15% conf=MEDIUM"
  ],
  "order_errors": [
+  "TRUMP: Kraken: ['EOrder:Insufficient funds']",
   "XRP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
