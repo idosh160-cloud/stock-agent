@@ -1,34 +1,34 @@
 {
- "time": "2026-08-22T22:00:05",
+ "time": "2026-08-22T23:00:05",
  "usdc": 86.86,
- "portfolio": 646.94,
+ "portfolio": 647.75,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +22.5%",
-  "HOOD short +1.4%"
+  "BTC long +22.7%",
+  "HOOD short +1.3%"
  ],
  "stock_candidates": 15,
  "top_stocks": [
-  "CF -5.8% vol=$27,279",
-  "FLU -5.2% vol=$13,648",
-  "COIN -2.7% vol=$9,699",
-  "CRCL -2.3% vol=$263,295",
-  "HOOD -2.2% vol=$56,992"
+  "FLU -4.4% vol=$13,883",
+  "CF -3.9% vol=$25,852",
+  "COIN -2.7% vol=$9,601",
+  "CRCL -1.9% vol=$259,926",
+  "HOOD -1.8% vol=$57,273"
  ],
  "futures_ok": true,
- "futures_balance": 48.18,
+ "futures_balance": 47.99,
  "unallocated_spot": [
-  "ETH $481"
+  "ETH $482"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: TRUMP, MELANIA, FARTCOIN",
  "claude_called": true,
- "market_read": "השוק הכללי חלש עם רוב הקריפטו והמניות בירידה קלה, אין סיגנל אובר-בוט ברור לשורט אבל יש כמה מטבעות קרובים לתחתית שיכולים להתאושש.",
- "skip_reason": "שאר המועמדים (FARTCOIN, MELANIA, AVAX, ETH) עם RSI ניטרלי ונפח מסחר נמוך יחסית ללא אישור מומנטום ברור, ומניות ה-xStocks נעות בטווח צר מדי היום כדי להצדיק פוזיציה חדשה מול הפוזיציות הפתוחות.",
+ "market_read": "השוק מעורב עם קריפטו-אלטים תנודתיים ומניות שקטות יחסית, XMR מציג מומנטום חיובי נקי יותר מהשאר.",
+ "skip_reason": "TRUMP ו-MELANIA תנודתיים מדי עם MACD שלילי וסיגנל לא ברור, ETH נשאר כהחזקה פסיבית כי אין הזדמנות עדיפה כרגע לרוטציה שלו.",
  "picks": [
-  "TRUMP long size=15% conf=MEDIUM"
+  "XMR long size=35% conf=MEDIUM"
  ],
  "order_errors": [
-  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
+  "XMR: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
