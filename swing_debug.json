@@ -1,33 +1,33 @@
 {
- "time": "2026-08-22T03:00:05",
- "usdc": 86.96,
- "portfolio": 660.62,
+ "time": "2026-08-22T04:00:05",
+ "usdc": 86.95,
+ "portfolio": 660.72,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +25.0%",
-  "HOOD short -0.7%"
+  "BTC long +24.9%",
+  "HOOD short -0.5%"
  ],
  "stock_candidates": 18,
  "top_stocks": [
-  "HOOD +12.5% vol=$354,001",
-  "CF +11.3% vol=$41,554",
-  "FLU +10.6% vol=$15,442",
-  "IOT +8.7% vol=$5,942",
-  "COIN +8.0% vol=$125,644"
+  "CF +12.2% vol=$41,945",
+  "FLU +11.7% vol=$19,428",
+  "HOOD +11.6% vol=$351,560",
+  "COIN +7.4% vol=$125,592",
+  "IOT +6.3% vol=$5,941"
  ],
  "futures_ok": true,
- "futures_balance": 45.75,
+ "futures_balance": 46.09,
  "unallocated_spot": [
   "ETH $502"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: TRUMP, MELANIA, XMR",
  "claude_called": true,
- "market_read": "שוק האלטקוינים רותח עם RSI קיצוני של 73-84 ברוב המטבעות המובילים, מה שמצביע על שוק overextended שמבשיל להיפוך טכני קצר טווח.",
- "skip_reason": "TRUMP ו-MELANIA נפסלו בגלל נפח מסחר נמוך מדי שמסכן stop execution, ו-XMR נפסל כי ה-MACD עדיין חיובי מאוד ומעיד על מומנטום חזק שמסוכן לשרוט נגדו.",
+ "market_read": "השוק האלטקוין ברובו overbought בצורה קיצונית אחרי ריצה חדה, מה שיוצר הזדמנויות שורט איכותיות על נכסים נזילים.",
+ "skip_reason": "TRUMP ו-MELANIA overbought קיצוני אך נפח מסחר נמוך מדי לסיכון שורט (סיכון סקוויז), ו-XMR/BNB עדיין במומנטום MACD חיובי חזק מדי לשורט בטוח.",
  "picks": [
-  "XRP short size=30% conf=HIGH",
-  "ADA short size=20% conf=MEDIUM"
+  "XRP short size=25% conf=HIGH",
+  "ADA short size=15% conf=MEDIUM"
  ],
  "order_errors": [
   "XRP: Kraken: ['EOrder:Margin level too low']",
