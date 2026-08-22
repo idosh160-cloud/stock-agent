@@ -1,7 +1,7 @@
 {
- "time": "2026-08-22T15:00:05",
- "usdc": 86.9,
- "portfolio": 647.88,
+ "time": "2026-08-22T16:00:05",
+ "usdc": 86.89,
+ "portfolio": 647.41,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
@@ -10,27 +10,25 @@
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "CRCL -2.2% vol=$400,914",
-  "COIN -2.0% vol=$17,451",
-  "CF -1.1% vol=$34,877",
-  "AMZN -1.0% vol=$11,400",
-  "FLU -0.6% vol=$17,552"
+  "CRCL -2.2% vol=$354,845",
+  "SPCX -1.2% vol=$276,052",
+  "COIN -1.2% vol=$17,405",
+  "HOOD -1.0% vol=$80,430",
+  "ANTHROPIC +0.7% vol=$9,694"
  ],
  "futures_ok": true,
- "futures_balance": 48.2,
+ "futures_balance": 48.25,
  "unallocated_spot": [
-  "ETH $482"
+  "ETH $481"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: TRUMP, MELANIA, PENGU",
  "claude_called": true,
- "market_read": "השוק הכללי מעורב - ביטקוין יציב סביב 77K בעוד אלטקוינים גדולים כמו ETH נחלשים ומטבעות ספקולטיביים כמו TRUMP רצים חזק, מה שיוצר הזדמנויות משני הכיוונים.",
- "skip_reason": "שאר המועמדים (MELANIA, PENGU, ALGO, AVAX, LINK, מניות ה-xStocks) מציגים נפח נמוך או תנועה חסרת כיוון ברור ללא איתות טכני חזק מספיק להצדיק כניסה על חשבון הפוזיציות הקיימות.",
+ "market_read": "ביטקוין יציב סביב 77 אלף בעוד רוב האלטקוינים (ETH, AVAX, LINK, TON) נחלשים 3-5%, מה שמעיד על תיקון זמני ולא היפוך מגמה.",
+ "skip_reason": "TRUMP/MELANIA תנודתיים מדי עם טווח יומי מעל 100% וסיגנלים סותרים; ETH כבר מוחזק כפוזיציה פסיבית גדולה וה-MACD שלו שלילי מאוד כרגע כך שלא הזמן להוסיף; מניות היום שקטות מדי (טווח תת-1%) בלי סטאפ ברור לונג/שורט.",
  "picks": [
-  "TRUMP long size=20% conf=MEDIUM",
-  "ETH short size=15% conf=MEDIUM"
+  "LINK long size=25% conf=MEDIUM"
  ],
  "order_errors": [
-  "TRUMP: Kraken: ['EOrder:Insufficient funds']",
-  "ETH: Kraken: ['EOrder:Margin level too low']"
+  "LINK: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
