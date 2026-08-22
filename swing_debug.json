@@ -1,34 +1,31 @@
 {
- "time": "2026-08-22T17:00:05",
- "usdc": 86.89,
- "portfolio": 648.67,
+ "time": "2026-08-22T18:00:05",
+ "usdc": 86.88,
+ "portfolio": 649.23,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +23.2%",
+  "BTC long +23.1%",
   "HOOD short +1.4%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
   "FLU -1.4% vol=$15,266",
-  "HOOD -1.2% vol=$82,453",
-  "COIN -0.9% vol=$16,848",
-  "CF -0.6% vol=$33,182",
-  "GOOGL -0.5% vol=$29,148"
+  "TSLA -0.7% vol=$120,514",
+  "CF -0.7% vol=$33,202",
+  "COIN +0.7% vol=$15,670",
+  "HOOD -0.4% vol=$81,662"
  ],
  "futures_ok": true,
- "futures_balance": 48.06,
+ "futures_balance": 48.0,
  "unallocated_spot": [
   "ETH $484"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: TRUMP, MELANIA, FARTCOIN",
  "claude_called": true,
- "market_read": "השוק הקריפטו מעורב עם BTC יציב ואלטים מעורבים, מטבעות מם כמו TRUMP ו-MELANIA מראים מומנטום חזק שעדיין לא הגיע לקיצון.",
- "skip_reason": "שאר המועמדים (ETH, AVAX, BCH, TON) בטרנד יורד או שטוח בלי אות ברור, והמניות נעות בטווח צר מדי כרגע כדי להצדיק כניסה חדשה על פני הפוזיציות הקיימות.",
+ "market_read": "השוק הכללי רגוע יחסית עם ביטקוין יציב מעל 77 אלף, אבל מטבעות מם פוליטיים כמו TRUMP ו-MELANIA רצים חזק וסימני מיצוי מתחילים להופיע.",
+ "skip_reason": "שאר המועמדים בקריפטו נמצאים באמצע טווח ללא איתות ברור (ETH, AVAX, LINK, TON), והמניות התנודה שלהן קטנה מדי היום כדי להצדיק כניסה חדשה מעבר לפוזיציות הקיימות.",
  "picks": [
-  "TRUMP long size=25% conf=MEDIUM"
- ],
- "order_errors": [
-  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
+  "TRUMP short size=25% conf=MEDIUM"
  ]
 }
