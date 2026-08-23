@@ -1,38 +1,36 @@
 {
- "time": "2026-08-23T05:00:05",
- "usdc": 86.83,
- "portfolio": 613.64,
+ "time": "2026-08-23T06:00:05",
+ "usdc": 86.82,
+ "portfolio": 612.97,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +22.1%",
-  "HOOD short +1.0%",
+  "BTC long +21.2%",
+  "HOOD short +1.1%",
   "ANTHROPIC long +6.3%"
  ],
- "stock_candidates": 16,
+ "stock_candidates": 15,
  "top_stocks": [
-  "FLU -9.8% vol=$8,083",
-  "CF -7.4% vol=$24,828",
+  "FLU -8.6% vol=$7,854",
   "ANTHROPIC +7.2% vol=$164,880",
-  "CRCL -4.2% vol=$232,036",
-  "COIN -4.0% vol=$8,965"
+  "CF -4.5% vol=$17,633",
+  "MSTR -2.2% vol=$66,329",
+  "CRCL -1.3% vol=$208,039"
  ],
  "futures_ok": true,
- "futures_balance": 19.18,
+ "futures_balance": 19.09,
  "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $475"
+  "ETH $474"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: MELANIA, FARTCOIN, DOT",
+ "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, ADA, LINK",
  "claude_called": true,
- "market_read": "השוק בקורקציה כללית עם רוב האלטקוינים ליד תחתית הטווח היומי ו-RSI באזור oversold, מה שיוצר הזדמנויות ריבאונד קצרות טווח.",
- "skip_reason": "דילגתי על ADA למרות ההיסטוריה הדומה (RSI~40) כי כבר הפסידה בעבר בתנאים דומים, ועל שאר המניות כי הטווח היומי צר מדי או שאין סיגנל ברור לכיוון.",
+ "market_read": "השוק האלטים במגמת תיקון קל עם כמה מטבעות oversold, בעוד BTC ו-ANTHROPIC ממשיכים לנוע לכיוון היעדים שלהם בפורטפוליו הקיים.",
+ "skip_reason": "שאר המועמדים (ADA, DOT, BCH) דומים ב-RSI אך עם נפח נמוך יותר או אותות פחות ברורים, ו-ETH המוחזק כמזומן פאסיבי נשאר ללא שינוי כי אין כרגע יתרון ברור להזזה שלו על פני ה-USDC הפנוי לעסקה החדשה.",
  "picks": [
-  "LINK long size=25% conf=MEDIUM",
-  "DOGE long size=15% conf=MEDIUM"
+  "LINK long size=25% conf=MEDIUM"
  ],
  "order_errors": [
-  "LINK: Kraken: ['EOrder:Insufficient funds']",
-  "DOGE: Kraken: ['EOrder:Insufficient funds']"
+  "LINK: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
