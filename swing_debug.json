@@ -1,12 +1,12 @@
 {
- "time": "2026-08-23T11:00:05",
- "usdc": 86.8,
- "portfolio": 618.37,
+ "time": "2026-08-23T12:00:06",
+ "usdc": 86.79,
+ "portfolio": 620.41,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +22.4%",
-  "HOOD short +0.4%",
+  "BTC long +23.2%",
+  "HOOD short +0.0%",
   "ANTHROPIC long +8.0%"
  ],
  "stock_candidates": 16,
@@ -14,21 +14,21 @@
   "ANTHROPIC +8.9% vol=$167,583",
   "FLU -6.5% vol=$7,420",
   "CF -2.7% vol=$14,228",
-  "HOOD +0.9% vol=$19,277",
-  "COIN -0.9% vol=$9,876"
+  "HOOD +1.3% vol=$21,443",
+  "CRCL +0.9% vol=$29,892"
  ],
  "futures_ok": true,
- "futures_balance": 18.34,
+ "futures_balance": 18.21,
  "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $482"
+  "ETH $486"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TRUMP, FARTCOIN",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP",
  "claude_called": true,
- "market_read": "השוק הכללי נייטרלי-חיובי עם BTC יציב סביב 76.7K ורוב האלטקוינים נעים בטווח צר ללא מגמה ברורה.",
- "skip_reason": "שאר המועמדים בקריפטו ובמניות נעים בטווח צר עם RSI ניטרלי (45-55) ונפח מסחר חלש - אין יתרון ברור לכיוון מסוים כרגע, לכן מרוכזים בהזדמנות היחידה עם מומנטום אמיתי.",
+ "market_read": "השוק הכללי יציב עם BTC ואלטים במגמת עלייה מתונה, אין איתותי היפוך חדים כרגע.",
+ "skip_reason": "שאר המועמדים או חסרי ווליום (TON, DOT), או שכבר קרובים לרוויה בלי בשלות ברורה להיפוך (TON overbought אך ווליום נמוך מדי לסיכון), והמניות היום שקטות מדי (טווח תוך-יומי מתחת ל-1.5%) כדי להצדיק פוזיציה חדשה — ETH הספוט נשאר כרגע כהחזקה פסיבית ללא סיגנל ברור לרוטציה.",
  "picks": [
-  "TRUMP long size=30% conf=MEDIUM"
+  "TRUMP long size=22% conf=MEDIUM"
  ],
  "order_errors": [
   "TRUMP: Kraken: ['EOrder:Insufficient funds']"
