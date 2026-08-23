@@ -1,36 +1,36 @@
 {
- "time": "2026-08-23T09:00:05",
- "usdc": 86.81,
- "portfolio": 618.68,
+ "time": "2026-08-23T10:00:05",
+ "usdc": 86.8,
+ "portfolio": 618.33,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +21.9%",
-  "HOOD short +0.8%",
+  "BTC long +22.0%",
+  "HOOD short +0.4%",
   "ANTHROPIC long +8.0%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
   "ANTHROPIC +8.9% vol=$167,583",
   "FLU -5.1% vol=$7,485",
-  "CF -2.0% vol=$15,253",
-  "MSTR -2.0% vol=$74,043",
-  "COIN -1.8% vol=$8,847"
+  "COIN -1.8% vol=$8,847",
+  "MSTR -1.5% vol=$73,634",
+  "NVDA +1.2% vol=$258,465"
  ],
  "futures_ok": true,
- "futures_balance": 18.77,
+ "futures_balance": 18.54,
  "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $482"
+  "ETH $481"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, TRUMP, LINK",
+ "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN",
  "claude_called": true,
- "market_read": "השוק הכללי רגוע-שלילי עם רוב האלטים בתיקון קל וללא מומנטום ברור, מלבד TRUMP שמראה כוח יחסי.",
- "skip_reason": "שאר המטבעות (ADA, DOT, LINK, BCH, LTC) נסחרים ב-RSI אמצעי עם MACD שלילי - חוסר כיוון ברור; הפוזיציות הקיימות (BTC, ANTHROPIC) בדרך ליעד ולא כדאי לגעת בהן, ו-ETH המוחזק פאסיבית הוא אחזקה סבירה שלא דורשת שינוי כרגע.",
+ "market_read": "השוק הכללי רדוד עם רוב האלטקוינים בירידה קלה וללא מגמה ברורה, מלבד XMR שמראה כוח יחסי.",
+ "skip_reason": "שאר המועמדים בקריפטו נמצאים ב-RSI אמצעי ו-MACD שלילי ללא איתות ברור, והמניות תנודתיות נמוכה מדי כרגע להצדיק כניסה חדשה מעבר לפוזיציות הקיימות.",
  "picks": [
-  "TRUMP long size=20% conf=MEDIUM"
+  "XMR long size=30% conf=MEDIUM"
  ],
  "order_errors": [
-  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
+  "XMR: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
