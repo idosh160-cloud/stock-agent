@@ -1723,5 +1723,30 @@
     "entry_bb_pct": null,
     "entry_macd_hist": null,
     "entry_change_24h": -4.47
+  },
+  {
+    "coin": "HOOD",
+    "pair": "PF_HOODXUSD",
+    "status": "closed_stale",
+    "leveraged": false,
+    "collateral": 100.0,
+    "volume": 0.92438528,
+    "entry_price": 108.18,
+    "close_price": 108.57,
+    "target_price": 101.69,
+    "stop_price": 110.88,
+    "pnl_usd": -0.36,
+    "pnl_pct": -0.36,
+    "date_open": "2026-08-21T17:00:44.771035",
+    "date_close": "2026-08-23T18:00:05.731775",
+    "reasoning": "HOOD עלה 14.2% ביום מהלך חריג למניה עם נפח גבוה יחסית, נראה כמו תנועת מומנטום שמיצתה את עצמה בטווח קצר. שורט קטן עם סטופ צמוד מתאים לתנודתיות הנמוכה יותר של מניות.",
+    "confidence": "MEDIUM",
+    "txid": "a28e8ec7-15ea-4cf9-984f-dcd490d3168f",
+    "close_txid": "a292a9f8-ac24-47f0-9e41-6372697c7da2",
+    "side": "short",
+    "entry_rsi": null,
+    "entry_bb_pct": null,
+    "entry_macd_hist": null,
+    "entry_change_24h": 14.2
   }
 ]

@@ -1,37 +1,35 @@
 {
- "time": "2026-08-23T17:00:05",
- "usdc": 86.77,
- "portfolio": 622.8,
+ "time": "2026-08-23T18:00:07",
+ "usdc": 86.76,
+ "portfolio": 621.44,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +23.4%",
-  "HOOD short -0.4%",
+  "BTC long +23.0%",
   "ANTHROPIC long +8.0%"
  ],
- "stock_candidates": 15,
+ "stock_candidates": 16,
  "top_stocks": [
   "ANTHROPIC +7.5% vol=$167,562",
-  "CF -2.7% vol=$12,882",
-  "CRCL +2.0% vol=$78,470",
-  "HOOD +1.9% vol=$23,395",
-  "NVDA +1.7% vol=$259,727"
+  "CF -3.1% vol=$12,823",
+  "FLU +2.9% vol=$5,477",
+  "HOOD +2.1% vol=$24,242",
+  "CRCL +1.7% vol=$79,093"
  ],
  "futures_ok": true,
- "futures_balance": 17.74,
+ "futures_balance": 22.51,
  "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $489"
+  "ETH $487"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: TRUMP, PENGU, TON",
  "claude_called": true,
- "market_read": "השוק בעליות מתונות עם כמה מטבעות ספקולטיביים במצב קניית יתר קיצונית, בעוד קריפטו הליבה (SOL, ETH) עדיין במגמה בריאה.",
- "skip_reason": "TRUMP חזק מדי למכירה בשלב זה (MACD עדיין עולה), ומניות כרגע בטווח צר ללא יתרון ברור - עדיף לרכז בקריפטו עם איתותים ברורים.",
+ "market_read": "השוק בעד עליות מתונות עם כמה מטבעות במומנטום חזק אך לא קיצוני, אין סימני מיצוי ברורים לשורט איכותי כרגע.",
+ "skip_reason": "שאר המועמדים או overbought קיצוני עם ווליום נמוך (PENGU) או נטולי בידול ברור מול הפוזיציות הקיימות, לכן מרכזים את המזומן הפנוי לפוזיציה אחת איכותית.",
  "picks": [
-  "SOL long size=22% conf=MEDIUM",
-  "PENGU short size=13% conf=MEDIUM"
+  "TRUMP long size=20% conf=HIGH"
  ],
  "order_errors": [
-  "SOL: Kraken: ['EOrder:Insufficient funds']"
+  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
