@@ -1,34 +1,35 @@
 {
- "time": "2026-08-23T03:00:05",
- "usdc": 86.84,
- "portfolio": 647.26,
+ "time": "2026-08-23T04:00:05",
+ "usdc": 86.83,
+ "portfolio": 647.03,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +22.8%",
-  "HOOD short +1.3%"
+  "BTC long +22.6%",
+  "HOOD short +1.0%"
  ],
- "stock_candidates": 15,
+ "stock_candidates": 16,
  "top_stocks": [
-  "FLU -7.1% vol=$10,611",
-  "CF -5.3% vol=$20,458",
+  "CF -10.1% vol=$25,019",
+  "FLU -8.1% vol=$7,081",
+  "CRCL -4.2% vol=$235,815",
   "COIN -3.0% vol=$9,043",
-  "MSTR -2.1% vol=$62,447",
-  "CRCL -2.0% vol=$245,329"
+  "MSTR -2.3% vol=$62,518"
  ],
  "futures_ok": true,
- "futures_balance": 47.49,
+ "futures_balance": 47.54,
  "unallocated_spot": [
-  "ETH $483"
+  "ETH $482"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: MELANIA, TRUMP, FARTCOIN",
  "claude_called": true,
- "market_read": "השוק הכללי נסחר בטווח עם רוב המטבעות באמצע הטווח ו-BTC יציב מעל 77 אלף, XMR בולט עם מומנטום חיובי ברור.",
- "skip_reason": "שאר המועמדים בקריפטו וסטוקים מציגים RSI ניטרלי או נפח נמוך מדי ללא יתרון סטטיסטי ברור, לכן דילגתי עליהם.",
+ "market_read": "השוק הקריפטו הרחב נמצא בתיקון קל עם RSI באזור אמצע-נמוך ורוב המטבעות קרובים לתחתית הבולינגר, מה שמרמז על הזדמנויות ריבאונד סלקטיביות ולא על מגמת ירידה חדה.",
+ "skip_reason": "שאר המטבעות (MELANIA, TRUMP, FARTCOIN, DOT, ALGO, PENGU, ADA, LTC, AVAX) מציגים נפח נמוך יחסית או מומנטום שלילי ללא אישור ברור, ו-ETH נשאר כהחזקה ליבה פסיבית כי אין הזדמנות עדיפה ברורה להזזתו כרגע.",
  "picks": [
-  "XMR long size=30% conf=MEDIUM"
+  "LINK long size=22% conf=MEDIUM",
+  "ANTHROPIC long size=22% conf=MEDIUM"
  ],
  "order_errors": [
-  "XMR: Kraken: ['EOrder:Insufficient funds']"
+  "LINK: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
