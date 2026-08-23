@@ -1,36 +1,36 @@
 {
- "time": "2026-08-23T10:00:05",
+ "time": "2026-08-23T11:00:05",
  "usdc": 86.8,
- "portfolio": 618.33,
+ "portfolio": 618.37,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +22.0%",
+  "BTC long +22.4%",
   "HOOD short +0.4%",
   "ANTHROPIC long +8.0%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
   "ANTHROPIC +8.9% vol=$167,583",
-  "FLU -5.1% vol=$7,485",
-  "COIN -1.8% vol=$8,847",
-  "MSTR -1.5% vol=$73,634",
-  "NVDA +1.2% vol=$258,465"
+  "FLU -6.5% vol=$7,420",
+  "CF -2.7% vol=$14,228",
+  "HOOD +0.9% vol=$19,277",
+  "COIN -0.9% vol=$9,876"
  ],
  "futures_ok": true,
- "futures_balance": 18.54,
+ "futures_balance": 18.34,
  "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $481"
+  "ETH $482"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP, FARTCOIN",
  "claude_called": true,
- "market_read": "השוק הכללי רדוד עם רוב האלטקוינים בירידה קלה וללא מגמה ברורה, מלבד XMR שמראה כוח יחסי.",
- "skip_reason": "שאר המועמדים בקריפטו נמצאים ב-RSI אמצעי ו-MACD שלילי ללא איתות ברור, והמניות תנודתיות נמוכה מדי כרגע להצדיק כניסה חדשה מעבר לפוזיציות הקיימות.",
+ "market_read": "השוק הכללי נייטרלי-חיובי עם BTC יציב סביב 76.7K ורוב האלטקוינים נעים בטווח צר ללא מגמה ברורה.",
+ "skip_reason": "שאר המועמדים בקריפטו ובמניות נעים בטווח צר עם RSI ניטרלי (45-55) ונפח מסחר חלש - אין יתרון ברור לכיוון מסוים כרגע, לכן מרוכזים בהזדמנות היחידה עם מומנטום אמיתי.",
  "picks": [
-  "XMR long size=30% conf=MEDIUM"
+  "TRUMP long size=30% conf=MEDIUM"
  ],
  "order_errors": [
-  "XMR: Kraken: ['EOrder:Insufficient funds']"
+  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
