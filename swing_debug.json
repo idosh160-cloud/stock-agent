@@ -1,36 +1,38 @@
 {
- "time": "2026-08-23T15:00:05",
- "usdc": 86.78,
- "portfolio": 621.43,
+ "time": "2026-08-23T16:00:05",
+ "usdc": 86.77,
+ "portfolio": 621.16,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +23.1%",
-  "HOOD short -0.1%",
+  "BTC long +22.9%",
+  "HOOD short -0.4%",
   "ANTHROPIC long +8.0%"
  ],
- "stock_candidates": 15,
+ "stock_candidates": 16,
  "top_stocks": [
   "ANTHROPIC +7.5% vol=$167,562",
   "CF -2.8% vol=$12,882",
-  "CRCL +1.7% vol=$77,006",
-  "HOOD +1.6% vol=$24,462",
-  "NVDA +1.5% vol=$249,001"
+  "CRCL +2.5% vol=$78,978",
+  "HOOD +1.9% vol=$25,532",
+  "MSTR -1.6% vol=$79,582"
  ],
  "futures_ok": true,
- "futures_balance": 18.04,
+ "futures_balance": 17.96,
  "futures_float_topup": false,
  "unallocated_spot": [
   "ETH $487"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TRUMP, MELANIA, TON",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP, PENGU, MELANIA",
  "claude_called": true,
- "market_read": "שוק הקריפטו במגמת עלייה מתונה עם כמה מטבעות בעודף קנייה קיצוני כמו TRUMP ו-MELANIA שמסוכן לשורט נגד מומנטום חזק כזה.",
- "skip_reason": "TRUMP ו-MELANIA חזקים מדי למומנטום נגדי (שורט) ועדיין לא מראים היפוך ב-MACD; XMR בטרנד יורד חד מדי לבאונס בטוח; שאר המטבעות/מניות שטוחים מדי או ללא נפח מספיק לכניסה משמעותית.",
+ "market_read": "השוק בעליה מתונה עם BTC יציב מעל 77K ואלטים מציגים מומנטום חיובי בנפחים סבירים.",
+ "skip_reason": "PENGU ו-XMR נפסלו בגלל נפח נמוך/מגמת MACD שלילית חזקה, ו-ANTHROPIC כבר הגיע ליעד כך שלא מוסיפים עוד לפוזיציה הקיימת.",
  "picks": [
-  "XRP long size=15% conf=MEDIUM"
+  "SOL long size=25% conf=HIGH",
+  "TRUMP long size=15% conf=MEDIUM"
  ],
  "order_errors": [
-  "XRP: Kraken: ['EOrder:Insufficient funds']"
+  "SOL: Kraken: ['EOrder:Insufficient funds']",
+  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
