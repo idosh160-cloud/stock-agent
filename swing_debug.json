@@ -1,33 +1,33 @@
 {
- "time": "2026-08-23T18:00:07",
+ "time": "2026-08-23T19:00:05",
  "usdc": 86.76,
- "portfolio": 621.44,
+ "portfolio": 627.28,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +23.0%",
+  "BTC long +23.3%",
   "ANTHROPIC long +8.0%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
   "ANTHROPIC +7.5% vol=$167,562",
-  "CF -3.1% vol=$12,823",
   "FLU +2.9% vol=$5,477",
   "HOOD +2.1% vol=$24,242",
-  "CRCL +1.7% vol=$79,093"
+  "CRCL +1.5% vol=$80,107",
+  "NVDA +1.4% vol=$41,505"
  ],
  "futures_ok": true,
  "futures_balance": 22.51,
  "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $487"
+  "ETH $489"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TRUMP, PENGU, TON",
+ "call_reason": "תנועה חזקה במטבע חדש: PENGU, TRUMP, TON",
  "claude_called": true,
- "market_read": "השוק בעד עליות מתונות עם כמה מטבעות במומנטום חזק אך לא קיצוני, אין סימני מיצוי ברורים לשורט איכותי כרגע.",
- "skip_reason": "שאר המועמדים או overbought קיצוני עם ווליום נמוך (PENGU) או נטולי בידול ברור מול הפוזיציות הקיימות, לכן מרכזים את המזומן הפנוי לפוזיציה אחת איכותית.",
+ "market_read": "השוק הקריפטו במגמת עלייה מתונה עם כמה מטבעות אלט חמים כמו TRUMP ו-PENGU, בעוד המניות הטוקניזציה שקטות יחסית.",
+ "skip_reason": "PENGU ו-TON נראים קנויים יתר על המידה (RSI מעל 70, BB% קרוב ל-100) ולא מספקים יחס סיכוי/סיכון טוב מספיק לשורט עם נפח נמוך; המניות הטוקניזציה חסרות תנועה משמעותית היום.",
  "picks": [
-  "TRUMP long size=20% conf=HIGH"
+  "TRUMP long size=30% conf=MEDIUM"
  ],
  "order_errors": [
   "TRUMP: Kraken: ['EOrder:Insufficient funds']"
