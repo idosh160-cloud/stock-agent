@@ -1,36 +1,36 @@
 {
- "time": "2026-08-23T13:00:05",
- "usdc": 86.79,
- "portfolio": 619.5,
+ "time": "2026-08-23T14:00:05",
+ "usdc": 86.78,
+ "portfolio": 624.44,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +23.0%",
-  "HOOD short +0.0%",
+  "BTC long +23.5%",
+  "HOOD short -0.0%",
   "ANTHROPIC long +8.0%"
  ],
  "stock_candidates": 15,
  "top_stocks": [
   "ANTHROPIC +7.5% vol=$167,562",
-  "FLU -1.7% vol=$8,359",
-  "CF -1.3% vol=$12,479",
-  "HOOD +1.3% vol=$21,443",
-  "NVDA +1.1% vol=$254,845"
+  "HOOD +1.6% vol=$24,422",
+  "NVDA +1.5% vol=$241,400",
+  "CRCL +1.2% vol=$35,384",
+  "CF +0.9% vol=$13,281"
  ],
  "futures_ok": true,
- "futures_balance": 18.08,
+ "futures_balance": 18.04,
  "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $485"
+  "ETH $491"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TRUMP, TON",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP, MELANIA, TON",
  "claude_called": true,
- "market_read": "השוק מציג מומנטום סלקטיבי - כמה אלטקוינים כמו TRUMP ו-TON רצים חזק בעוד הביטקוין וה-SOL נעים בטווח שקט יחסית.",
- "skip_reason": "TON ו-MELANIA כבר overbought מדי (RSI מעל 65-66, BB% מעל 95) לכניסה נוספת ללונג, וללא סיגנל שורט ברור כרגע; שאר המניות נעות בטווח צר מדי או ללא ווליום מספק להצדיק פוזיציה.",
+ "market_read": "השוק במומנטום עולה כללי אך כמה נכסים (TRUMP, MELANIA, TON, ETH) כבר קרובים לרוויה עליונה - עדיף למקד בכניסה נקייה כמו SOL שעדיין לא במתח קיצוני.",
+ "skip_reason": "TRUMP/MELANIA/TON/ETH קרובים ל-BB עליון ו-RSI גבוה - יחס סיכוי/סיכון לונג נחלש, ולא זיהיתי שם היפוך ברור לשורט; שאר המניות שקטות מדי או ללא מגמה ברורה כרגע.",
  "picks": [
-  "TRUMP long size=20% conf=MEDIUM"
+  "SOL long size=18% conf=MEDIUM"
  ],
  "order_errors": [
-  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
+  "SOL: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
