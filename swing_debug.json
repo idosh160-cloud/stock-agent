@@ -1,7 +1,7 @@
 {
- "time": "2026-08-23T19:00:05",
+ "time": "2026-08-23T20:00:05",
  "usdc": 86.76,
- "portfolio": 627.28,
+ "portfolio": 626.76,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
@@ -12,22 +12,22 @@
  "top_stocks": [
   "ANTHROPIC +7.5% vol=$167,562",
   "FLU +2.9% vol=$5,477",
-  "HOOD +2.1% vol=$24,242",
-  "CRCL +1.5% vol=$80,107",
-  "NVDA +1.4% vol=$41,505"
+  "CF +2.2% vol=$23,717",
+  "HOOD +1.8% vol=$31,291",
+  "NVDA +1.8% vol=$43,130"
  ],
  "futures_ok": true,
  "futures_balance": 22.51,
  "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $489"
+  "ETH $488"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: PENGU, TRUMP, TON",
  "claude_called": true,
- "market_read": "השוק הקריפטו במגמת עלייה מתונה עם כמה מטבעות אלט חמים כמו TRUMP ו-PENGU, בעוד המניות הטוקניזציה שקטות יחסית.",
- "skip_reason": "PENGU ו-TON נראים קנויים יתר על המידה (RSI מעל 70, BB% קרוב ל-100) ולא מספקים יחס סיכוי/סיכון טוב מספיק לשורט עם נפח נמוך; המניות הטוקניזציה חסרות תנועה משמעותית היום.",
+ "market_read": "השוק הכללי חיובי עם ביטקוין יציב מעל 77 אלף ומספר אלטקוינים מראים מומנטום עולה בריא ללא סימני מיצוי חד.",
+ "skip_reason": "PENGU ו-XDC מוצפים מדי (RSI מעל 80 וקרוב לרצועה עליונה) בנפח מסחר נמוך מדי לפוזיציה משמעותית, ומניות ה-xStocks כרגע נעות בטווח צר מדי (0.5-2%) ללא הזדמנות ברורה.",
  "picks": [
-  "TRUMP long size=30% conf=MEDIUM"
+  "TRUMP long size=25% conf=MEDIUM"
  ],
  "order_errors": [
   "TRUMP: Kraken: ['EOrder:Insufficient funds']"
