@@ -1,34 +1,34 @@
 {
- "time": "2026-08-23T01:00:04",
- "usdc": 86.85,
- "portfolio": 649.28,
+ "time": "2026-08-23T02:00:05",
+ "usdc": 86.84,
+ "portfolio": 648.0,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +23.2%",
+  "BTC long +23.0%",
   "HOOD short +1.3%"
  ],
  "stock_candidates": 15,
  "top_stocks": [
-  "FLU -4.6% vol=$13,286",
-  "CF -3.4% vol=$26,016",
-  "COIN -1.9% vol=$9,153",
-  "CRCL -1.7% vol=$257,782",
-  "HOOD -1.5% vol=$53,326"
+  "FLU -6.3% vol=$12,965",
+  "CF -4.7% vol=$26,106",
+  "COIN -2.7% vol=$8,641",
+  "HOOD -1.9% vol=$41,761",
+  "CRCL -1.1% vol=$247,640"
  ],
  "futures_ok": true,
- "futures_balance": 47.52,
+ "futures_balance": 47.53,
  "unallocated_spot": [
-  "ETH $485"
+  "ETH $484"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: XRP",
+ "call_reason": "תנועה חזקה במניה: FLU, CF, COIN",
  "claude_called": true,
- "market_read": "השוק נמצא במגמת עלייה מתונה עם רוב הקריפטו מראה מומנטום חיובי אך חלקו כבר קרוב לרוויה.",
- "skip_reason": "SOL נראה מתוח מדי (BB%=112) לכניסה חדשה, ADA/DOGE/TRUMP נראים ניטרליים ללא יתרון ברור, המניות נעות בטווח צר מדי כרגע לכניסה חד-משמעית; משאירים ETH כפוזיציה פסיבית שכן אין הזדמנות עדיפה ברורה לסבב מהיר.",
+ "market_read": "השוק בדריכה חיובית מתונה עם BTC יציב וכמה אלטקוינים כמו SOL מראים מומנטום חזק תוך שמירה על נפחים בריאים.",
+ "skip_reason": "שאר המועמדים (XRP, DOGE, XMR) נמצאים באמצע הטווח ללא איתות ברור, והמניות התנודתיות מדי קטנות בנפח כדי להצדיק כניסה כרגע — ETH הפזור נשאר כפוזיציה פאסיבית שמחכה להזדמנות טובה יותר.",
  "picks": [
-  "XRP long size=20% conf=MEDIUM"
+  "SOL long size=25% conf=HIGH"
  ],
  "order_errors": [
-  "XRP: Kraken: ['EOrder:Insufficient funds']"
+  "SOL: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
