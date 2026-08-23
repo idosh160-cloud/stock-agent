@@ -1,32 +1,32 @@
 {
- "time": "2026-08-22T23:00:05",
- "usdc": 86.86,
- "portfolio": 647.75,
+ "time": "2026-08-23T00:00:05",
+ "usdc": 86.85,
+ "portfolio": 648.98,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +22.7%",
+  "BTC long +22.8%",
   "HOOD short +1.3%"
  ],
  "stock_candidates": 15,
  "top_stocks": [
   "FLU -4.4% vol=$13,883",
-  "CF -3.9% vol=$25,852",
-  "COIN -2.7% vol=$9,601",
-  "CRCL -1.9% vol=$259,926",
-  "HOOD -1.8% vol=$57,273"
+  "CF -2.7% vol=$26,017",
+  "COIN -2.4% vol=$9,679",
+  "HOOD -1.8% vol=$58,005",
+  "CRCL -1.6% vol=$256,274"
  ],
  "futures_ok": true,
- "futures_balance": 47.99,
+ "futures_balance": 47.75,
  "unallocated_spot": [
-  "ETH $482"
+  "ETH $484"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TRUMP, MELANIA, FARTCOIN",
+ "call_reason": "תנועה חזקה במטבע חדש: MELANIA, FARTCOIN, PENGU",
  "claude_called": true,
- "market_read": "השוק מעורב עם קריפטו-אלטים תנודתיים ומניות שקטות יחסית, XMR מציג מומנטום חיובי נקי יותר מהשאר.",
- "skip_reason": "TRUMP ו-MELANIA תנודתיים מדי עם MACD שלילי וסיגנל לא ברור, ETH נשאר כהחזקה פסיבית כי אין הזדמנות עדיפה כרגע לרוטציה שלו.",
+ "market_read": "השוק הכללי יציב עם ביטקוין רגוע והזדמנויות ספציפיות באלטקוינים בעלי מומנטום איכותי כמו XMR.",
+ "skip_reason": "שאר המועמדים חלשים - RSI ו-MACD ניטרליים/שליליים או נפח נמוך מדי, ומניות רדומות מדי היום למהלך משמעותי.",
  "picks": [
-  "XMR long size=35% conf=MEDIUM"
+  "XMR long size=25% conf=MEDIUM"
  ],
  "order_errors": [
   "XMR: Kraken: ['EOrder:Insufficient funds']"
