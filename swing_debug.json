@@ -1,36 +1,36 @@
 {
- "time": "2026-08-23T08:00:05",
+ "time": "2026-08-23T09:00:05",
  "usdc": 86.81,
- "portfolio": 615.6,
+ "portfolio": 618.68,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +21.1%",
+  "BTC long +21.9%",
   "HOOD short +0.8%",
-  "ANTHROPIC long +6.3%"
+  "ANTHROPIC long +8.0%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "ANTHROPIC +7.2% vol=$164,880",
-  "FLU -6.6% vol=$7,536",
-  "CF -4.3% vol=$17,414",
-  "MSTR -2.5% vol=$67,872",
-  "COIN -2.3% vol=$8,267"
+  "ANTHROPIC +8.9% vol=$167,583",
+  "FLU -5.1% vol=$7,485",
+  "CF -2.0% vol=$15,253",
+  "MSTR -2.0% vol=$74,043",
+  "COIN -1.8% vol=$8,847"
  ],
  "futures_ok": true,
- "futures_balance": 18.92,
+ "futures_balance": 18.77,
  "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $477"
+  "ETH $482"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, TRUMP, ADA",
+ "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, TRUMP, LINK",
  "claude_called": true,
- "market_read": "השוק הקריפטו כרגע במגמת תיקון קלה כלפי מטה עם רוב המטבעות באזור ניטרלי-שלילי, אבל יש כמה הזדמנויות תיקון (bounce) באזורי תמיכה.",
- "skip_reason": "שאר המועמדים (ADA, DOT, BCH, PENGU) נמצאים באמצע הטווח או בנפח נמוך מדי, ו-ETH הפרק פועל כהחזקה יציבה שאין צורך לגעת בה כרגע.",
+ "market_read": "השוק הכללי רגוע-שלילי עם רוב האלטים בתיקון קל וללא מומנטום ברור, מלבד TRUMP שמראה כוח יחסי.",
+ "skip_reason": "שאר המטבעות (ADA, DOT, LINK, BCH, LTC) נסחרים ב-RSI אמצעי עם MACD שלילי - חוסר כיוון ברור; הפוזיציות הקיימות (BTC, ANTHROPIC) בדרך ליעד ולא כדאי לגעת בהן, ו-ETH המוחזק פאסיבית הוא אחזקה סבירה שלא דורשת שינוי כרגע.",
  "picks": [
-  "LINK long size=20% conf=MEDIUM"
+  "TRUMP long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "LINK: Kraken: ['EOrder:Insufficient funds']"
+  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
