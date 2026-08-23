@@ -1,35 +1,38 @@
 {
- "time": "2026-08-23T04:00:05",
+ "time": "2026-08-23T05:00:05",
  "usdc": 86.83,
- "portfolio": 647.03,
+ "portfolio": 613.64,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +22.6%",
-  "HOOD short +1.0%"
+  "BTC long +22.1%",
+  "HOOD short +1.0%",
+  "ANTHROPIC long +6.3%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "CF -10.1% vol=$25,019",
-  "FLU -8.1% vol=$7,081",
-  "CRCL -4.2% vol=$235,815",
-  "COIN -3.0% vol=$9,043",
-  "MSTR -2.3% vol=$62,518"
+  "FLU -9.8% vol=$8,083",
+  "CF -7.4% vol=$24,828",
+  "ANTHROPIC +7.2% vol=$164,880",
+  "CRCL -4.2% vol=$232,036",
+  "COIN -4.0% vol=$8,965"
  ],
  "futures_ok": true,
- "futures_balance": 47.54,
+ "futures_balance": 19.18,
+ "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $482"
+  "ETH $475"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: MELANIA, TRUMP, FARTCOIN",
+ "call_reason": "תנועה חזקה במטבע חדש: MELANIA, FARTCOIN, DOT",
  "claude_called": true,
- "market_read": "השוק הקריפטו הרחב נמצא בתיקון קל עם RSI באזור אמצע-נמוך ורוב המטבעות קרובים לתחתית הבולינגר, מה שמרמז על הזדמנויות ריבאונד סלקטיביות ולא על מגמת ירידה חדה.",
- "skip_reason": "שאר המטבעות (MELANIA, TRUMP, FARTCOIN, DOT, ALGO, PENGU, ADA, LTC, AVAX) מציגים נפח נמוך יחסית או מומנטום שלילי ללא אישור ברור, ו-ETH נשאר כהחזקה ליבה פסיבית כי אין הזדמנות עדיפה ברורה להזזתו כרגע.",
+ "market_read": "השוק בקורקציה כללית עם רוב האלטקוינים ליד תחתית הטווח היומי ו-RSI באזור oversold, מה שיוצר הזדמנויות ריבאונד קצרות טווח.",
+ "skip_reason": "דילגתי על ADA למרות ההיסטוריה הדומה (RSI~40) כי כבר הפסידה בעבר בתנאים דומים, ועל שאר המניות כי הטווח היומי צר מדי או שאין סיגנל ברור לכיוון.",
  "picks": [
-  "LINK long size=22% conf=MEDIUM",
-  "ANTHROPIC long size=22% conf=MEDIUM"
+  "LINK long size=25% conf=MEDIUM",
+  "DOGE long size=15% conf=MEDIUM"
  ],
  "order_errors": [
-  "LINK: Kraken: ['EOrder:Insufficient funds']"
+  "LINK: Kraken: ['EOrder:Insufficient funds']",
+  "DOGE: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
