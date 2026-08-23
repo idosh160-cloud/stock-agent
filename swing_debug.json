@@ -1,36 +1,36 @@
 {
- "time": "2026-08-23T14:00:05",
+ "time": "2026-08-23T15:00:05",
  "usdc": 86.78,
- "portfolio": 624.44,
+ "portfolio": 621.43,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +23.5%",
-  "HOOD short -0.0%",
+  "BTC long +23.1%",
+  "HOOD short -0.1%",
   "ANTHROPIC long +8.0%"
  ],
  "stock_candidates": 15,
  "top_stocks": [
   "ANTHROPIC +7.5% vol=$167,562",
-  "HOOD +1.6% vol=$24,422",
-  "NVDA +1.5% vol=$241,400",
-  "CRCL +1.2% vol=$35,384",
-  "CF +0.9% vol=$13,281"
+  "CF -2.8% vol=$12,882",
+  "CRCL +1.7% vol=$77,006",
+  "HOOD +1.6% vol=$24,462",
+  "NVDA +1.5% vol=$249,001"
  ],
  "futures_ok": true,
  "futures_balance": 18.04,
  "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $491"
+  "ETH $487"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: TRUMP, MELANIA, TON",
  "claude_called": true,
- "market_read": "השוק במומנטום עולה כללי אך כמה נכסים (TRUMP, MELANIA, TON, ETH) כבר קרובים לרוויה עליונה - עדיף למקד בכניסה נקייה כמו SOL שעדיין לא במתח קיצוני.",
- "skip_reason": "TRUMP/MELANIA/TON/ETH קרובים ל-BB עליון ו-RSI גבוה - יחס סיכוי/סיכון לונג נחלש, ולא זיהיתי שם היפוך ברור לשורט; שאר המניות שקטות מדי או ללא מגמה ברורה כרגע.",
+ "market_read": "שוק הקריפטו במגמת עלייה מתונה עם כמה מטבעות בעודף קנייה קיצוני כמו TRUMP ו-MELANIA שמסוכן לשורט נגד מומנטום חזק כזה.",
+ "skip_reason": "TRUMP ו-MELANIA חזקים מדי למומנטום נגדי (שורט) ועדיין לא מראים היפוך ב-MACD; XMR בטרנד יורד חד מדי לבאונס בטוח; שאר המטבעות/מניות שטוחים מדי או ללא נפח מספיק לכניסה משמעותית.",
  "picks": [
-  "SOL long size=18% conf=MEDIUM"
+  "XRP long size=15% conf=MEDIUM"
  ],
  "order_errors": [
-  "SOL: Kraken: ['EOrder:Insufficient funds']"
+  "XRP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
