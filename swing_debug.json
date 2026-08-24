@@ -1,20 +1,20 @@
 {
- "time": "2026-08-24T00:00:05",
+ "time": "2026-08-24T01:00:05",
  "usdc": 86.74,
- "portfolio": 629.16,
+ "portfolio": 629.24,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +23.9%",
+  "BTC long +23.8%",
   "ANTHROPIC long +8.0%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
   "ANTHROPIC +7.5% vol=$167,562",
-  "HOOD +2.2% vol=$32,418",
-  "FLU +2.2% vol=$7,095",
-  "CRCL +1.9% vol=$61,924",
-  "CF +1.7% vol=$23,595"
+  "HOOD +1.8% vol=$32,704",
+  "COIN +1.7% vol=$9,571",
+  "SPCX +1.1% vol=$68,502",
+  "TSLA +1.0% vol=$186,455"
  ],
  "futures_ok": true,
  "futures_balance": 22.52,
@@ -22,14 +22,6 @@
  "unallocated_spot": [
   "ETH $492"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: PENGU, TRUMP, TON",
- "claude_called": true,
- "market_read": "השוק הקריפטו כללי חיובי בזהירות עם BTC יציב סביב 77.7K, ורוב האלטקוינים במגמה מתונה ולא קיצונית מלבד כמה נכסים overbought.",
- "skip_reason": "PENGU ו-CC נראים overbought מדי עם נפח מסחר נמוך מדי לשורט בטוח, ו-TRUMP נותן איתות מעורב (RSI נייטרלי מול MACD שלילי) כך שהם לא עומדים ברף הביטחון הנדרש כרגע.",
- "picks": [
-  "BNB long size=25% conf=MEDIUM"
- ],
- "order_errors": [
-  "BNB: Kraken: ['EOrder:Insufficient funds']"
- ]
+ "call_reason": "USDC $87 ממתין אבל בקירור דו-שעתי (טריגר חלש)",
+ "claude_called": false
 }
