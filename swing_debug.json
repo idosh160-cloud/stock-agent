@@ -1,35 +1,35 @@
 {
- "time": "2026-08-24T09:00:06",
- "usdc": 86.7,
- "portfolio": 645.36,
+ "time": "2026-08-24T10:00:06",
+ "usdc": 86.69,
+ "portfolio": 645.86,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +22.8%",
+  "BTC long +23.6%",
   "ANTHROPIC long +0.2%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
   "ANTHROPIC -9.8% vol=$99,821",
-  "CF +3.1% vol=$39,443",
+  "CF +2.8% vol=$46,670",
   "FLU -1.7% vol=$5,579",
-  "NVDA -1.2% vol=$102,428",
+  "NVDA -1.0% vol=$106,416",
   "MSTR +0.9% vol=$49,125"
  ],
  "futures_ok": true,
  "futures_balance": 39.18,
  "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $490"
+  "ETH $492"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TRUMP, XDC, XRP",
+ "call_reason": "תנועה חזקה במטבע חדש: XDC, TRUMP, PENGU",
  "claude_called": true,
- "market_read": "השוק הקריפטו במגמת תיקון קל אחרי עליות, רוב המטבעות קרובים לתחתית הטווח עם RSI ניטרלי-נמוך, מה שמעיד על הזדמנויות ריבאונד סלקטיביות.",
- "skip_reason": "שאר המטבעות (ADA, DOGE, BCH, TRUMP) מציגים תבניות דומות אך עם נפח נמוך יותר או היסטוריה שלילית ברורה יותר, ומניות ה-xStocks לא מציגות תנועה מספיק חדה כדי להצדיק פוזיציה נוספת מעבר ל-XRP ול-BTC/ANTHROPIC הקיימות.",
+ "market_read": "השוק מעורב - רוב האלטים באדום קל ומצטננים, רק כמה כמו LTC ו-CC מראים המשך מומנטום עולה עם נפח תומך.",
+ "skip_reason": "XDC ו-LTC/CC דומים אך XDC כבר RSI 81.7 קיצוני מדי עם נפח נמוך לשורט בטוח; שאר המטבעות (TRUMP, TON) בירידה עם MACD שלילי ללא סימן היפוך ברור, ומניות ה-xStocks שטוחות ללא סיגנל חזק.",
  "picks": [
-  "XRP long size=20% conf=MEDIUM"
+  "LTC long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "XRP: Kraken: ['EOrder:Insufficient funds']"
+  "LTC: Kraken: ['EOrder:Invalid leverage']"
  ]
 }
