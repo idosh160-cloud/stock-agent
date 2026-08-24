@@ -1,20 +1,20 @@
 {
- "time": "2026-08-24T20:00:06",
+ "time": "2026-08-24T21:00:05",
  "usdc": 86.64,
- "portfolio": 644.3,
+ "portfolio": 644.77,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +25.6%",
+  "BTC long +25.8%",
   "ANTHROPIC long +0.2%"
  ],
  "stock_candidates": 18,
  "top_stocks": [
   "ANTHROPIC -9.8% vol=$99,821",
-  "NVDA -5.3% vol=$230,601",
-  "HOOD -4.5% vol=$62,478",
-  "FLU -4.0% vol=$7,089",
-  "TSLA -3.9% vol=$254,799"
+  "NVDA -5.2% vol=$245,695",
+  "HOOD -5.2% vol=$62,048",
+  "TSLA -4.4% vol=$252,347",
+  "FLU -4.0% vol=$7,089"
  ],
  "futures_ok": true,
  "futures_balance": 39.19,
@@ -24,12 +24,14 @@
  ],
  "call_reason": "תנועה חזקה במטבע חדש: VIRTUAL, TRUMP, DOGE",
  "claude_called": true,
- "market_read": "השוק הקריפטו מעורב עם רוב האלטקוינים בירידה קלה חוץ מ-VIRTUAL ו-XMR שמראים מומנטום חיובי חזק.",
- "skip_reason": "XMR קרוב לרוויה עליונה (BB% 94.8) למרות מומנטום חזק ולכן מסוכן ללונג נוסף; שאר המועמדים (DOGE, TRUMP, ADA) חלשים או ללא כיוון ברור.",
+ "market_read": "השוק הקריפטו מעורב עם כמה מטבעות בתנופה חיובית וכמה במיצוי ירידה, מה שיוצר הזדמנויות גם בלונג מומנטום וגם בקניית דיפ.",
+ "skip_reason": "שאר המועמדים (XMR overbought מדי, DOGE/ADA נפח נמוך מדי, מניות ה-xStock ברוב המקרים בירידה ללא איתות ברור להיפוך) לא הציעו יחס סיכוי/סיכון מספק כרגע.",
  "picks": [
-  "VIRTUAL long size=22% conf=MEDIUM"
+  "VIRTUAL long size=25% conf=HIGH",
+  "TRUMP long size=15% conf=MEDIUM"
  ],
  "order_errors": [
-  "VIRTUAL: Kraken: ['EOrder:Insufficient funds']"
+  "VIRTUAL: Kraken: ['EOrder:Insufficient funds']",
+  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
