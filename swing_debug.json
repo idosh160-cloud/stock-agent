@@ -1,35 +1,35 @@
 {
- "time": "2026-08-24T02:00:04",
+ "time": "2026-08-24T03:00:05",
  "usdc": 86.72,
- "portfolio": 624.45,
+ "portfolio": 626.02,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +22.6%",
+  "BTC long +23.5%",
   "ANTHROPIC long +8.0%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
   "ANTHROPIC +7.5% vol=$167,562",
   "FLU +4.4% vol=$6,247",
-  "COIN +1.7% vol=$9,571",
-  "CF +1.6% vol=$23,180",
-  "MSTR -1.1% vol=$85,606"
+  "COIN +2.4% vol=$9,131",
+  "CF +1.7% vol=$23,254",
+  "HOOD +1.4% vol=$33,690"
  ],
  "futures_ok": true,
  "futures_balance": 22.52,
  "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $485"
+  "ETH $488"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: PENGU, TRUMP, ADA",
+ "call_reason": "תנועה חזקה במטבע חדש: PENGU",
  "claude_called": true,
- "market_read": "השוק במגמת ירידה קלה ברוב האלטקוינים עם RSI נמוך-בינוני, מה שמצביע על הזדמנויות ריבאונד בנכסים עם נפח גבוה ליד תמיכה.",
- "skip_reason": "שאר המועמדים או חסרי נפח מספיק, או לא מציגים סט-אפ ברור של oversold/overbought; ETH הפרוס נשאר כפוזיציה פסיבית כי אין כרגע הזדמנות ברורה יותר לסובב אותו.",
+ "market_read": "השוק הכללי נמצא בתיקון קל עם רוב המטבעות במגמה שלילית קטנה של 1-4%, אך ADA מראה סימני מיצוי מכירות עם נפח תומך.",
+ "skip_reason": "שאר המועמדים או נפח נמוך מדי (MELANIA, PENGU) או ניטרליים ללא אות ברור (XRP, DOGE, AVAX), ולכן לא נכנסים כרגע.",
  "picks": [
-  "XRP long size=20% conf=MEDIUM"
+  "ADA long size=18% conf=MEDIUM"
  ],
  "order_errors": [
-  "XRP: Kraken: ['EOrder:Insufficient funds']"
+  "ADA: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
