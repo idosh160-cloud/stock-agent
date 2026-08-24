@@ -1,35 +1,32 @@
 {
- "time": "2026-08-24T10:00:06",
+ "time": "2026-08-24T11:00:05",
  "usdc": 86.69,
- "portfolio": 645.86,
+ "portfolio": 646.02,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +23.6%",
+  "BTC long +23.7%",
   "ANTHROPIC long +0.2%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
   "ANTHROPIC -9.8% vol=$99,821",
-  "CF +2.8% vol=$46,670",
+  "CF +2.2% vol=$46,699",
   "FLU -1.7% vol=$5,579",
-  "NVDA -1.0% vol=$106,416",
-  "MSTR +0.9% vol=$49,125"
+  "NVDA -1.2% vol=$106,251",
+  "HOOD -0.8% vol=$31,707"
  ],
  "futures_ok": true,
- "futures_balance": 39.18,
+ "futures_balance": 39.19,
  "futures_float_topup": false,
  "unallocated_spot": [
   "ETH $492"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: XDC, TRUMP, PENGU",
+ "call_reason": "תנועה חזקה במטבע חדש: XDC, PENGU, ADA",
  "claude_called": true,
- "market_read": "השוק מעורב - רוב האלטים באדום קל ומצטננים, רק כמה כמו LTC ו-CC מראים המשך מומנטום עולה עם נפח תומך.",
- "skip_reason": "XDC ו-LTC/CC דומים אך XDC כבר RSI 81.7 קיצוני מדי עם נפח נמוך לשורט בטוח; שאר המטבעות (TRUMP, TON) בירידה עם MACD שלילי ללא סימן היפוך ברור, ומניות ה-xStocks שטוחות ללא סיגנל חזק.",
+ "market_read": "השוק בכללותו רגוע יחסית עם רוב האלטים בירידה קלה, אין מומנטום חזק לקנייה מלבד עודף קנייה בXDC.",
+ "skip_reason": "שאר המועמדים (ADA, DOGE, XRP וכו') נעים ברוגע ללא סיגנל ברור, וה-BTC וה-ANTHROPIC הקיימים כבר בכיוון הנכון ולא כדאי לגעת בהם.",
  "picks": [
-  "LTC long size=20% conf=MEDIUM"
- ],
- "order_errors": [
-  "LTC: Kraken: ['EOrder:Invalid leverage']"
+  "XDC short size=20% conf=MEDIUM"
  ]
 }
