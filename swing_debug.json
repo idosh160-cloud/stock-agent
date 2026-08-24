@@ -1,38 +1,38 @@
 {
- "time": "2026-08-24T05:00:05",
- "usdc": 86.72,
- "portfolio": 626.28,
+ "time": "2026-08-24T06:00:05",
+ "usdc": 86.7,
+ "portfolio": 627.65,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +22.5%",
-  "ANTHROPIC long +8.0%"
+  "BTC long +23.0%",
+  "ANTHROPIC long +1.1%"
  ],
- "stock_candidates": 15,
+ "stock_candidates": 16,
  "top_stocks": [
-  "CF +3.6% vol=$17,576",
+  "ANTHROPIC -6.4% vol=$50,940",
+  "CF +3.5% vol=$17,461",
+  "MSTR +2.0% vol=$69,041",
   "FLU -1.7% vol=$5,579",
-  "MSTR +1.2% vol=$68,762",
-  "COIN +1.0% vol=$9,354",
-  "GLD +0.5% vol=$204,028"
+  "COIN +1.2% vol=$9,579"
  ],
  "futures_ok": true,
- "futures_balance": 22.52,
+ "futures_balance": 22.53,
  "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $487"
+  "ETH $489"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TRUMP",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP, ADA",
  "claude_called": true,
- "market_read": "השוק באלטים נסחר בתיקון קל עם RSI ניטרלי-שלילי אך לא oversold קיצוני, כמה מטבעות נמצאים קרוב לתחתית טווח עם ווליום סביר שמצדיק ריבאונד זהיר.",
- "skip_reason": "שאר המועמדים (ALGO, MELANIA, BCH, TON) בעלי נפח מסחר נמוך מדי או ללא סיגנל טכני ברור, ומניות ה-xStocks לא מציגות תנועה קיצונית מספיק לפוזיציה כרגע.",
+ "market_read": "שוק האלטקוינים במגמת ירידה קלה של 2-3% היום עם כמה מטבעות מתקרבים לתחתית הבולינגר, מה שיוצר הזדמנויות דיפ-באי סלקטיביות בלי סימני תשישות קיצוניים.",
+ "skip_reason": "שאר המועמדים או בנפח נמוך מדי (ALGO, MELANIA, FARTCOIN, PENGU) או ללא סיגנל טכני ברור מספיק (ADA, DOGE, BCH), והמניות כרגע רגועות מדי (טווח תת-1%) לכדי הזדמנות משכנעת.",
  "picks": [
-  "TRUMP long size=25% conf=MEDIUM",
-  "ADA long size=20% conf=MEDIUM"
+  "XRP long size=20% conf=MEDIUM",
+  "TRUMP long size=15% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "TRUMP: Kraken: ['EOrder:Insufficient funds']",
-  "ADA: Kraken: ['EOrder:Insufficient funds']"
+  "XRP: Kraken: ['EOrder:Insufficient funds']",
+  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
