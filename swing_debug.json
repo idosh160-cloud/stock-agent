@@ -1,20 +1,20 @@
 {
- "time": "2026-08-24T19:00:06",
- "usdc": 86.65,
- "portfolio": 645.09,
+ "time": "2026-08-24T20:00:06",
+ "usdc": 86.64,
+ "portfolio": 644.3,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +25.8%",
+  "BTC long +25.6%",
   "ANTHROPIC long +0.2%"
  ],
  "stock_candidates": 18,
  "top_stocks": [
   "ANTHROPIC -9.8% vol=$99,821",
-  "NVDA -4.3% vol=$229,178",
-  "TSLA -4.1% vol=$253,313",
+  "NVDA -5.3% vol=$230,601",
+  "HOOD -4.5% vol=$62,478",
   "FLU -4.0% vol=$7,089",
-  "HOOD -2.6% vol=$62,322"
+  "TSLA -3.9% vol=$254,799"
  ],
  "futures_ok": true,
  "futures_balance": 39.19,
@@ -22,12 +22,12 @@
  "unallocated_spot": [
   "ETH $494"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: VIRTUAL, XMR, TRUMP",
+ "call_reason": "תנועה חזקה במטבע חדש: VIRTUAL, TRUMP, DOGE",
  "claude_called": true,
- "market_read": "השוק מעורב - BTC יציב, אלטים מפוזרים בין דעיכה לעלייה קלה עם מומנטום סלקטיבי.",
- "skip_reason": "XMR ו-TRUMP נראים קיצוניים מדי (אוברבאט/דאונטרנד חד) בלי אישור ברור לכיוון, ושאר המטבעות/מניות שטוחים מדי או נפח נמוך מכדי להצדיק כניסה.",
+ "market_read": "השוק הקריפטו מעורב עם רוב האלטקוינים בירידה קלה חוץ מ-VIRTUAL ו-XMR שמראים מומנטום חיובי חזק.",
+ "skip_reason": "XMR קרוב לרוויה עליונה (BB% 94.8) למרות מומנטום חזק ולכן מסוכן ללונג נוסף; שאר המועמדים (DOGE, TRUMP, ADA) חלשים או ללא כיוון ברור.",
  "picks": [
-  "VIRTUAL long size=20% conf=MEDIUM"
+  "VIRTUAL long size=22% conf=MEDIUM"
  ],
  "order_errors": [
   "VIRTUAL: Kraken: ['EOrder:Insufficient funds']"
