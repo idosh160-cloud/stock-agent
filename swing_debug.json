@@ -1,35 +1,35 @@
 {
- "time": "2026-08-24T03:00:05",
+ "time": "2026-08-24T04:00:04",
  "usdc": 86.72,
- "portfolio": 626.02,
+ "portfolio": 624.86,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +23.5%",
+  "BTC long +22.6%",
   "ANTHROPIC long +8.0%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "ANTHROPIC +7.5% vol=$167,562",
-  "FLU +4.4% vol=$6,247",
+  "CF +3.6% vol=$17,591",
+  "FLU +2.9% vol=$6,226",
   "COIN +2.4% vol=$9,131",
-  "CF +1.7% vol=$23,254",
-  "HOOD +1.4% vol=$33,690"
+  "ANTHROPIC +1.6% vol=$13,207",
+  "CRCL -1.4% vol=$81,142"
  ],
  "futures_ok": true,
  "futures_balance": 22.52,
  "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $488"
+  "ETH $486"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: PENGU",
+ "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, PENGU, ADA",
  "claude_called": true,
- "market_read": "השוק הכללי נמצא בתיקון קל עם רוב המטבעות במגמה שלילית קטנה של 1-4%, אך ADA מראה סימני מיצוי מכירות עם נפח תומך.",
- "skip_reason": "שאר המועמדים או נפח נמוך מדי (MELANIA, PENGU) או ניטרליים ללא אות ברור (XRP, DOGE, AVAX), ולכן לא נכנסים כרגע.",
+ "market_read": "השוק הרחב באדום קל עם רוב האלטים ליד תחתית הטווח היומי, מצב שמתאים לדיפים סלקטיביים בנפח גבוה ולא לשורטים אגרסיביים.",
+ "skip_reason": "שאר המועמדים חלשים יותר - נפח נמוך יחסית (FARTCOIN, ALGO, MELANIA) או ללא סיגנל ברור מספיק להצדיק סייז משמעותי, ולכן מרוכזים בפוזיציה אחת חזקה.",
  "picks": [
-  "ADA long size=18% conf=MEDIUM"
+  "XRP long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "ADA: Kraken: ['EOrder:Insufficient funds']"
+  "XRP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
