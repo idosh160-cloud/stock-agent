@@ -1,35 +1,38 @@
 {
- "time": "2026-08-24T04:00:04",
+ "time": "2026-08-24T05:00:05",
  "usdc": 86.72,
- "portfolio": 624.86,
+ "portfolio": 626.28,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +22.6%",
+  "BTC long +22.5%",
   "ANTHROPIC long +8.0%"
  ],
- "stock_candidates": 16,
+ "stock_candidates": 15,
  "top_stocks": [
-  "CF +3.6% vol=$17,591",
-  "FLU +2.9% vol=$6,226",
-  "COIN +2.4% vol=$9,131",
-  "ANTHROPIC +1.6% vol=$13,207",
-  "CRCL -1.4% vol=$81,142"
+  "CF +3.6% vol=$17,576",
+  "FLU -1.7% vol=$5,579",
+  "MSTR +1.2% vol=$68,762",
+  "COIN +1.0% vol=$9,354",
+  "GLD +0.5% vol=$204,028"
  ],
  "futures_ok": true,
  "futures_balance": 22.52,
  "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $486"
+  "ETH $487"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, PENGU, ADA",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP",
  "claude_called": true,
- "market_read": "השוק הרחב באדום קל עם רוב האלטים ליד תחתית הטווח היומי, מצב שמתאים לדיפים סלקטיביים בנפח גבוה ולא לשורטים אגרסיביים.",
- "skip_reason": "שאר המועמדים חלשים יותר - נפח נמוך יחסית (FARTCOIN, ALGO, MELANIA) או ללא סיגנל ברור מספיק להצדיק סייז משמעותי, ולכן מרוכזים בפוזיציה אחת חזקה.",
+ "market_read": "השוק באלטים נסחר בתיקון קל עם RSI ניטרלי-שלילי אך לא oversold קיצוני, כמה מטבעות נמצאים קרוב לתחתית טווח עם ווליום סביר שמצדיק ריבאונד זהיר.",
+ "skip_reason": "שאר המועמדים (ALGO, MELANIA, BCH, TON) בעלי נפח מסחר נמוך מדי או ללא סיגנל טכני ברור, ומניות ה-xStocks לא מציגות תנועה קיצונית מספיק לפוזיציה כרגע.",
  "picks": [
-  "XRP long size=20% conf=MEDIUM"
+  "TRUMP long size=25% conf=MEDIUM",
+  "ADA long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "XRP: Kraken: ['EOrder:Insufficient funds']"
+  "liq ETH: all sizes rejected (margin collateral lock)",
+  "TRUMP: Kraken: ['EOrder:Insufficient funds']",
+  "ADA: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
