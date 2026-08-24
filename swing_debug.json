@@ -1,38 +1,35 @@
 {
- "time": "2026-08-23T23:00:04",
+ "time": "2026-08-24T00:00:05",
  "usdc": 86.74,
- "portfolio": 627.95,
+ "portfolio": 629.16,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +23.7%",
+  "BTC long +23.9%",
   "ANTHROPIC long +8.0%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
   "ANTHROPIC +7.5% vol=$167,562",
-  "FLU +3.6% vol=$5,311",
-  "HOOD +1.9% vol=$30,440",
-  "CRCL +1.3% vol=$61,264",
-  "COIN +1.3% vol=$6,496"
+  "HOOD +2.2% vol=$32,418",
+  "FLU +2.2% vol=$7,095",
+  "CRCL +1.9% vol=$61,924",
+  "CF +1.7% vol=$23,595"
  ],
  "futures_ok": true,
  "futures_balance": 22.52,
  "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $490"
+  "ETH $492"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: PENGU, TRUMP, XRP",
+ "call_reason": "תנועה חזקה במטבע חדש: PENGU, TRUMP, TON",
  "claude_called": true,
- "market_read": "השוק בסך הכל חיובי עם מומנטום עולה בקריפטו הגדול ובאלטים נבחרים, ללא סימני מיצוי ברורים במרבית הנכסים המובילים.",
- "skip_reason": "PENGU ו-CC בקנייתי יתר קיצוני עם נפח נמוך מדי לפתיחת שורט אמין, ומניות ה-xStocks כרגע ללא תנועה משמעותית מספיק להצדיק כניסה חדשה.",
+ "market_read": "השוק הקריפטו כללי חיובי בזהירות עם BTC יציב סביב 77.7K, ורוב האלטקוינים במגמה מתונה ולא קיצונית מלבד כמה נכסים overbought.",
+ "skip_reason": "PENGU ו-CC נראים overbought מדי עם נפח מסחר נמוך מדי לשורט בטוח, ו-TRUMP נותן איתות מעורב (RSI נייטרלי מול MACD שלילי) כך שהם לא עומדים ברף הביטחון הנדרש כרגע.",
  "picks": [
-  "SOL long size=25% conf=HIGH",
-  "TRUMP long size=15% conf=MEDIUM"
+  "BNB long size=25% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "SOL: Kraken: ['EOrder:Insufficient funds']",
-  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
+  "BNB: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
