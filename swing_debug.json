@@ -1,37 +1,35 @@
 {
- "time": "2026-08-24T21:00:05",
- "usdc": 86.64,
- "portfolio": 644.77,
+ "time": "2026-08-24T22:00:05",
+ "usdc": 86.63,
+ "portfolio": 646.17,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +25.8%",
+  "BTC long +25.9%",
   "ANTHROPIC long +0.2%"
  ],
  "stock_candidates": 18,
  "top_stocks": [
   "ANTHROPIC -9.8% vol=$99,821",
-  "NVDA -5.2% vol=$245,695",
-  "HOOD -5.2% vol=$62,048",
-  "TSLA -4.4% vol=$252,347",
-  "FLU -4.0% vol=$7,089"
+  "HOOD -5.1% vol=$62,615",
+  "TSLA -5.0% vol=$251,678",
+  "NVDA -4.7% vol=$244,783",
+  "COIN -4.2% vol=$47,384"
  ],
  "futures_ok": true,
  "futures_balance": 39.19,
  "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $494"
+  "ETH $496"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: VIRTUAL, TRUMP, DOGE",
+ "call_reason": "תנועה חזקה במטבע חדש: VIRTUAL, TRUMP, XMR",
  "claude_called": true,
- "market_read": "השוק הקריפטו מעורב עם כמה מטבעות בתנופה חיובית וכמה במיצוי ירידה, מה שיוצר הזדמנויות גם בלונג מומנטום וגם בקניית דיפ.",
- "skip_reason": "שאר המועמדים (XMR overbought מדי, DOGE/ADA נפח נמוך מדי, מניות ה-xStock ברוב המקרים בירידה ללא איתות ברור להיפוך) לא הציעו יחס סיכוי/סיכון מספק כרגע.",
+ "market_read": "השוק הכללי מעורב - ביטקוין יציב סביב 79 אלף, אלטקוינים מציגים תנועות מעורבות בלי מגמה ברורה אחידה.",
+ "skip_reason": "שאר המועמדים או חלשים בנפח, סותרים בין RSI ל-MACD, או שהפוזיציות הקיימות (BTC, ANTHROPIC) כבר בתנועה חיובית ואין סיבה לסובב אותן.",
  "picks": [
-  "VIRTUAL long size=25% conf=HIGH",
-  "TRUMP long size=15% conf=MEDIUM"
+  "VIRTUAL long size=30% conf=MEDIUM"
  ],
  "order_errors": [
-  "VIRTUAL: Kraken: ['EOrder:Insufficient funds']",
-  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
+  "VIRTUAL: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
