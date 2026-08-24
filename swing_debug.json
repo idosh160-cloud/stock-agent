@@ -1,36 +1,35 @@
 {
- "time": "2026-08-24T08:00:06",
+ "time": "2026-08-24T09:00:06",
  "usdc": 86.7,
- "portfolio": 639.42,
+ "portfolio": 645.36,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +23.2%",
-  "ANTHROPIC long +2.9%"
+  "BTC long +22.8%",
+  "ANTHROPIC long +0.2%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "ANTHROPIC -4.7% vol=$102,638",
-  "CF +3.0% vol=$36,907",
-  "MSTR +2.4% vol=$55,238",
-  "COIN +2.1% vol=$5,701",
-  "FLU -1.7% vol=$5,579"
+  "ANTHROPIC -9.8% vol=$99,821",
+  "CF +3.1% vol=$39,443",
+  "FLU -1.7% vol=$5,579",
+  "NVDA -1.2% vol=$102,428",
+  "MSTR +0.9% vol=$49,125"
  ],
  "futures_ok": true,
- "futures_balance": 33.63,
+ "futures_balance": 39.18,
  "futures_float_topup": false,
  "unallocated_spot": [
   "ETH $490"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TRUMP, XDC, ADA",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP, XDC, XRP",
  "claude_called": true,
- "market_read": "השוק הכללי בקונסולידציה עם BTC יציב מעל 77K ואלטקוינים ברובם בשלב תיקון קל, יש הזדמנויות נקודתיות לשני הכיוונים.",
- "skip_reason": "שאר המועמדים או בעלי נפח נמוך מדי (XDC, PENGU) או ללא איתות ברור (ADA, XRP, SOL, AVAX) — נשארתי עם שתי ההזדמנויות החדות ביותר.",
+ "market_read": "השוק הקריפטו במגמת תיקון קל אחרי עליות, רוב המטבעות קרובים לתחתית הטווח עם RSI ניטרלי-נמוך, מה שמעיד על הזדמנויות ריבאונד סלקטיביות.",
+ "skip_reason": "שאר המטבעות (ADA, DOGE, BCH, TRUMP) מציגים תבניות דומות אך עם נפח נמוך יותר או היסטוריה שלילית ברורה יותר, ומניות ה-xStocks לא מציגות תנועה מספיק חדה כדי להצדיק פוזיציה נוספת מעבר ל-XRP ול-BTC/ANTHROPIC הקיימות.",
  "picks": [
-  "TRUMP long size=25% conf=MEDIUM",
-  "CC short size=20% conf=MEDIUM"
+  "XRP long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
+  "XRP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
