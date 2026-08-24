@@ -1,35 +1,38 @@
 {
- "time": "2026-08-24T14:00:06",
+ "time": "2026-08-24T15:00:06",
  "usdc": 86.67,
- "portfolio": 649.15,
+ "portfolio": 651.12,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +25.2%",
+  "BTC long +26.7%",
   "ANTHROPIC long +0.2%"
  ],
- "stock_candidates": 17,
+ "stock_candidates": 18,
  "top_stocks": [
   "ANTHROPIC -9.8% vol=$99,821",
-  "NVDA -4.0% vol=$209,906",
-  "MSTR +2.5% vol=$73,874",
-  "TSLA -2.5% vol=$249,313",
-  "FLU -2.3% vol=$7,167"
+  "NVDA -3.9% vol=$235,238",
+  "CRCL +3.8% vol=$175,742",
+  "MSTR +3.4% vol=$126,711",
+  "COIN +2.9% vol=$33,624"
  ],
  "futures_ok": true,
  "futures_balance": 39.19,
  "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $498"
+  "ETH $502"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: PENGU, TRUMP, XDC",
+ "call_reason": "תנועה חזקה במטבע חדש: CC, XDC, TRUMP",
  "claude_called": true,
- "market_read": "השוק באיחוד כללי עם BTC יציב סביב 78.5K ורוב האלטקוינים בטווח צר-שלילי קל, למעט כמה מובילי מומנטום כמו XDC ו-CC.",
- "skip_reason": "שאר המועמדים או תנודתיים מדי בלי אישור נפח ברור (PENGU, TRUMP, DOGE) או במגמת ירידה קלה ללא סיגנל היפוך חזק (ADA, XRP, AVAX); המניות הטוקניזציה שקטות מדי כרגע לכניסה חדשה מעבר לפוזיציה הקיימת ב-ANTHROPIC.",
+ "market_read": "BTC ו-ETH נמצאים באזור עודף קנייה חד עם BB% קרוב ל-100, בעוד אלטקוינים בינוניים כמו LINK ו-TRUMP מציעים כניסות טובות יותר מבחינת יחס סיכוי/סיכון.",
+ "skip_reason": "דילגתי על BTC ו-ETH נוספים כי כבר מוחזקים ונמצאים בעודף קנייה קיצוני (RSI מעל 66), ועל מניות כמו CRCL/MSTR/SPCX בגלל היסטוריית הפסדים ללא איתות טכני חזק מספיק לשינוי המגמה.",
  "picks": [
-  "XDC long size=28% conf=MEDIUM"
+  "LINK long size=20% conf=MEDIUM",
+  "TRUMP long size=15% conf=MEDIUM"
  ],
  "order_errors": [
-  "XDC: Kraken: ['EOrder:Insufficient funds']"
+  "liq ETH: all sizes rejected (margin collateral lock)",
+  "LINK: Kraken: ['EOrder:Insufficient funds']",
+  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
