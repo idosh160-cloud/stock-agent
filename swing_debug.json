@@ -1,38 +1,36 @@
 {
- "time": "2026-08-24T15:00:06",
- "usdc": 86.67,
- "portfolio": 651.12,
+ "time": "2026-08-24T16:00:06",
+ "usdc": 86.66,
+ "portfolio": 646.73,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +26.7%",
+  "BTC long +26.1%",
   "ANTHROPIC long +0.2%"
  ],
  "stock_candidates": 18,
  "top_stocks": [
   "ANTHROPIC -9.8% vol=$99,821",
-  "NVDA -3.9% vol=$235,238",
-  "CRCL +3.8% vol=$175,742",
-  "MSTR +3.4% vol=$126,711",
-  "COIN +2.9% vol=$33,624"
+  "MSTR +4.1% vol=$136,465",
+  "NVDA -3.4% vol=$229,793",
+  "TSLA -2.1% vol=$264,901",
+  "FLU -1.9% vol=$8,346"
  ],
  "futures_ok": true,
  "futures_balance": 39.19,
  "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $502"
+  "ETH $497"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: CC, XDC, TRUMP",
+ "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, TRUMP, PENGU",
  "claude_called": true,
- "market_read": "BTC ו-ETH נמצאים באזור עודף קנייה חד עם BB% קרוב ל-100, בעוד אלטקוינים בינוניים כמו LINK ו-TRUMP מציעים כניסות טובות יותר מבחינת יחס סיכוי/סיכון.",
- "skip_reason": "דילגתי על BTC ו-ETH נוספים כי כבר מוחזקים ונמצאים בעודף קנייה קיצוני (RSI מעל 66), ועל מניות כמו CRCL/MSTR/SPCX בגלל היסטוריית הפסדים ללא איתות טכני חזק מספיק לשינוי המגמה.",
+ "market_read": "BTC ממשיך במגמה חיובית חזקה אך רוב האלטקוינים בטווח ניטרלי-שלילי ללא כיוון ברור, מה שמצריך בחירה סלקטיבית.",
+ "skip_reason": "VIRTUAL נפסל בגלל נפח מסחר נמוך מתחת ל-50k, שאר המועמדים (ADA, PENGU, XDC, DOGE, XRP) נראים ניטרליים ללא איתות ברור מספיק לכניסה.",
  "picks": [
-  "LINK long size=20% conf=MEDIUM",
-  "TRUMP long size=15% conf=MEDIUM"
+  "FARTCOIN long size=20% conf=MEDIUM",
+  "TRUMP short size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "LINK: Kraken: ['EOrder:Insufficient funds']",
-  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
+  "FARTCOIN: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
