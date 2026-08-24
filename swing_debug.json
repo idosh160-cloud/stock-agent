@@ -1,38 +1,32 @@
 {
- "time": "2026-08-24T06:00:05",
+ "time": "2026-08-24T07:00:05",
  "usdc": 86.7,
- "portfolio": 627.65,
+ "portfolio": 639.45,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +23.0%",
-  "ANTHROPIC long +1.1%"
+  "BTC long +23.5%",
+  "ANTHROPIC long +2.9%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "ANTHROPIC -6.4% vol=$50,940",
+  "ANTHROPIC -4.7% vol=$102,638",
   "CF +3.5% vol=$17,461",
-  "MSTR +2.0% vol=$69,041",
+  "COIN +2.1% vol=$7,409",
   "FLU -1.7% vol=$5,579",
-  "COIN +1.2% vol=$9,579"
+  "MSTR +1.5% vol=$55,038"
  ],
  "futures_ok": true,
- "futures_balance": 22.53,
+ "futures_balance": 33.63,
  "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $489"
+  "ETH $491"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: TRUMP, ADA",
  "claude_called": true,
- "market_read": "שוק האלטקוינים במגמת ירידה קלה של 2-3% היום עם כמה מטבעות מתקרבים לתחתית הבולינגר, מה שיוצר הזדמנויות דיפ-באי סלקטיביות בלי סימני תשישות קיצוניים.",
- "skip_reason": "שאר המועמדים או בנפח נמוך מדי (ALGO, MELANIA, FARTCOIN, PENGU) או ללא סיגנל טכני ברור מספיק (ADA, DOGE, BCH), והמניות כרגע רגועות מדי (טווח תת-1%) לכדי הזדמנות משכנעת.",
+ "market_read": "השוק הרחב חלש היום (רוב האלטקוינים ומדדי הסטוקים בטריטוריה שלילית קלה), אין מגמת עלייה ברורה לרכיבה, אז מחפשים הזדמנויות ממוקדות של מיצוי-יתר.",
+ "skip_reason": "שאר המועמדים בקריפטו (ADA, XRP, TRUMP וכו') נמצאים ב-RSI אמצעי ללא איתות ברור, וה-BTC וה-ANTHROPIC הקיימים כבר בכיוון חיובי ולא כדאי לגעת בהם; ETH המוחזק כספוט נשאר כפוזיציה פאסיבית כי אין הזדמנות עדיפה מספיק כרגע כדי להצדיק סבב.",
  "picks": [
-  "XRP long size=20% conf=MEDIUM",
-  "TRUMP long size=15% conf=MEDIUM"
- ],
- "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "XRP: Kraken: ['EOrder:Insufficient funds']",
-  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
+  "XDC short size=22% conf=MEDIUM"
  ]
 }
