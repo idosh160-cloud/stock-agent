@@ -1,37 +1,35 @@
 {
- "time": "2026-08-24T13:00:06",
- "usdc": 86.68,
- "portfolio": 651.37,
+ "time": "2026-08-24T14:00:06",
+ "usdc": 86.67,
+ "portfolio": 649.15,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +26.1%",
+  "BTC long +25.2%",
   "ANTHROPIC long +0.2%"
  ],
- "stock_candidates": 16,
+ "stock_candidates": 17,
  "top_stocks": [
   "ANTHROPIC -9.8% vol=$99,821",
-  "COIN +2.6% vol=$24,382",
-  "MSTR +1.6% vol=$50,848",
-  "NVDA -1.5% vol=$168,712",
-  "CRCL +1.3% vol=$112,573"
+  "NVDA -4.0% vol=$209,906",
+  "MSTR +2.5% vol=$73,874",
+  "TSLA -2.5% vol=$249,313",
+  "FLU -2.3% vol=$7,167"
  ],
  "futures_ok": true,
  "futures_balance": 39.19,
  "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $502"
+  "ETH $498"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: CC, XDC, BCH",
+ "call_reason": "תנועה חזקה במטבע חדש: PENGU, TRUMP, XDC",
  "claude_called": true,
- "market_read": "השוק בכללותו במגמת עלייה עם רוב הנכסים הגדולים בתחום קנוי-יתר, מה שיוצר הזדמנויות גם בלונג על מטבעות עם מקום לרוץ וגם בשורט על נכסים שמוצו.",
- "skip_reason": "BTC, ETH-long, LINK ו-BCH כבר קנויי-יתר מדי (RSI מעל 63-70, BB% קרוב ל-100+) ולא מציעים יחס סיכוי-סיכון טוב כרגע; מחזיקים בהחזקת הספוט של ETH כגידור טבעי לשורט החדש ולא מממשים אותה.",
+ "market_read": "השוק באיחוד כללי עם BTC יציב סביב 78.5K ורוב האלטקוינים בטווח צר-שלילי קל, למעט כמה מובילי מומנטום כמו XDC ו-CC.",
+ "skip_reason": "שאר המועמדים או תנודתיים מדי בלי אישור נפח ברור (PENGU, TRUMP, DOGE) או במגמת ירידה קלה ללא סיגנל היפוך חזק (ADA, XRP, AVAX); המניות הטוקניזציה שקטות מדי כרגע לכניסה חדשה מעבר לפוזיציה הקיימת ב-ANTHROPIC.",
  "picks": [
-  "FARTCOIN long size=25% conf=MEDIUM",
-  "ETH short size=18% conf=MEDIUM"
+  "XDC long size=28% conf=MEDIUM"
  ],
  "order_errors": [
-  "FARTCOIN: Kraken: ['EOrder:Insufficient funds']",
-  "ETH: Kraken: ['EOrder:Margin level too low']"
+  "XDC: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
