@@ -1,20 +1,20 @@
 {
- "time": "2026-08-24T18:00:06",
+ "time": "2026-08-24T19:00:06",
  "usdc": 86.65,
- "portfolio": 644.28,
+ "portfolio": 645.09,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +25.5%",
+  "BTC long +25.8%",
   "ANTHROPIC long +0.2%"
  ],
  "stock_candidates": 18,
  "top_stocks": [
   "ANTHROPIC -9.8% vol=$99,821",
-  "NVDA -4.5% vol=$229,130",
+  "NVDA -4.3% vol=$229,178",
+  "TSLA -4.1% vol=$253,313",
   "FLU -4.0% vol=$7,089",
-  "TSLA -2.7% vol=$265,968",
-  "HOOD -2.6% vol=$63,003"
+  "HOOD -2.6% vol=$62,322"
  ],
  "futures_ok": true,
  "futures_balance": 39.19,
@@ -22,12 +22,12 @@
  "unallocated_spot": [
   "ETH $494"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: VIRTUAL, DOGE, TRUMP",
+ "call_reason": "תנועה חזקה במטבע חדש: VIRTUAL, XMR, TRUMP",
  "claude_called": true,
- "market_read": "השוק מעורב עם רוב האלטקוינים בירידה קלה אך VIRTUAL ו-XMR מראים מומנטום חיובי אמיתי.",
- "skip_reason": "שאר המועמדים או מוגזמים (XMR BB%=97) או חלשים/ללא מגמה ברורה (DOGE, TRUMP, ADA) כך שלא הצדיקו כניסה נוספת עם ה-USDC המוגבל שנשאר.",
+ "market_read": "השוק מעורב - BTC יציב, אלטים מפוזרים בין דעיכה לעלייה קלה עם מומנטום סלקטיבי.",
+ "skip_reason": "XMR ו-TRUMP נראים קיצוניים מדי (אוברבאט/דאונטרנד חד) בלי אישור ברור לכיוון, ושאר המטבעות/מניות שטוחים מדי או נפח נמוך מכדי להצדיק כניסה.",
  "picks": [
-  "VIRTUAL long size=18% conf=MEDIUM"
+  "VIRTUAL long size=20% conf=MEDIUM"
  ],
  "order_errors": [
   "VIRTUAL: Kraken: ['EOrder:Insufficient funds']"
