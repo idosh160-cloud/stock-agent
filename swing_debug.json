@@ -1,35 +1,35 @@
 {
- "time": "2026-08-24T17:00:06",
- "usdc": 86.66,
- "portfolio": 645.41,
+ "time": "2026-08-24T18:00:06",
+ "usdc": 86.65,
+ "portfolio": 644.28,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +26.0%",
+  "BTC long +25.5%",
   "ANTHROPIC long +0.2%"
  ],
  "stock_candidates": 18,
  "top_stocks": [
   "ANTHROPIC -9.8% vol=$99,821",
-  "NVDA -4.3% vol=$228,879",
-  "MSTR +2.5% vol=$197,655",
-  "TSLA -2.4% vol=$266,564",
-  "FLU -1.9% vol=$8,346"
+  "NVDA -4.5% vol=$229,130",
+  "FLU -4.0% vol=$7,089",
+  "TSLA -2.7% vol=$265,968",
+  "HOOD -2.6% vol=$63,003"
  ],
  "futures_ok": true,
  "futures_balance": 39.19,
  "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $495"
+  "ETH $494"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: XDC, TRUMP",
+ "call_reason": "תנועה חזקה במטבע חדש: VIRTUAL, DOGE, TRUMP",
  "claude_called": true,
- "market_read": "השוק הקריפטו נסחר בעליות מתונות עם BTC מוביל ורוב האלטים בטווח נייטרלי-חיובי ללא סימני מיצוי חדים.",
- "skip_reason": "VIRTUAL ו-XDC נראים מוגזמים או בנפח נמוך מדי, ומניות כמו NVDA ו-ANTHROPIC חסרות אינדיקטורים ברורים כרגע — מעדיף לרכז את המזומן הפנוי על ה-setup החזק ביותר של XMR.",
+ "market_read": "השוק מעורב עם רוב האלטקוינים בירידה קלה אך VIRTUAL ו-XMR מראים מומנטום חיובי אמיתי.",
+ "skip_reason": "שאר המועמדים או מוגזמים (XMR BB%=97) או חלשים/ללא מגמה ברורה (DOGE, TRUMP, ADA) כך שלא הצדיקו כניסה נוספת עם ה-USDC המוגבל שנשאר.",
  "picks": [
-  "XMR long size=20% conf=MEDIUM"
+  "VIRTUAL long size=18% conf=MEDIUM"
  ],
  "order_errors": [
-  "XMR: Kraken: ['EOrder:Insufficient funds']"
+  "VIRTUAL: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
