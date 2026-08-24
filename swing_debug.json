@@ -1,11 +1,11 @@
 {
- "time": "2026-08-24T22:00:05",
+ "time": "2026-08-24T23:00:05",
  "usdc": 86.63,
- "portfolio": 646.17,
+ "portfolio": 644.9,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +25.9%",
+  "BTC long +25.5%",
   "ANTHROPIC long +0.2%"
  ],
  "stock_candidates": 18,
@@ -13,23 +13,23 @@
   "ANTHROPIC -9.8% vol=$99,821",
   "HOOD -5.1% vol=$62,615",
   "TSLA -5.0% vol=$251,678",
-  "NVDA -4.7% vol=$244,783",
+  "NVDA -4.3% vol=$250,528",
   "COIN -4.2% vol=$47,384"
  ],
  "futures_ok": true,
  "futures_balance": 39.19,
  "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $496"
+  "ETH $494"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: VIRTUAL, TRUMP, XMR",
  "claude_called": true,
- "market_read": "השוק הכללי מעורב - ביטקוין יציב סביב 79 אלף, אלטקוינים מציגים תנועות מעורבות בלי מגמה ברורה אחידה.",
- "skip_reason": "שאר המועמדים או חלשים בנפח, סותרים בין RSI ל-MACD, או שהפוזיציות הקיימות (BTC, ANTHROPIC) כבר בתנועה חיובית ואין סיבה לסובב אותן.",
+ "market_read": "השוק הכללי מעורב - קריפטו מראה מומנטום חיובי בעוד מניות טוקניזציה סופגות מכירה חדה, אז מתמקדים בהזדמנות הכי ברורה בקריפטו.",
+ "skip_reason": "XMR ו-SOL קרובים ל-overbought אך XMR נראה יותר תשוש (BB%87, RSI65) עם נפח נמוך יותר; TRUMP/DOT בטרנד ירידה עם MACD שלילי כך שדחיתי דיפ-קניות שם; המניות (HOOD/TSLA/NVDA) ירדו חד אך ללא אישור טכני ברור לריבאונד או שורט בשלב זה, ו-ANTHROPIC כבר פתוחה בפורטפוליו.",
  "picks": [
-  "VIRTUAL long size=30% conf=MEDIUM"
+  "SOL long size=25% conf=MEDIUM"
  ],
  "order_errors": [
-  "VIRTUAL: Kraken: ['EOrder:Insufficient funds']"
+  "SOL: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
