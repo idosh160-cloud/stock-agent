@@ -1,32 +1,36 @@
 {
- "time": "2026-08-24T07:00:05",
+ "time": "2026-08-24T08:00:06",
  "usdc": 86.7,
- "portfolio": 639.45,
+ "portfolio": 639.42,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +23.5%",
+  "BTC long +23.2%",
   "ANTHROPIC long +2.9%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
   "ANTHROPIC -4.7% vol=$102,638",
-  "CF +3.5% vol=$17,461",
-  "COIN +2.1% vol=$7,409",
-  "FLU -1.7% vol=$5,579",
-  "MSTR +1.5% vol=$55,038"
+  "CF +3.0% vol=$36,907",
+  "MSTR +2.4% vol=$55,238",
+  "COIN +2.1% vol=$5,701",
+  "FLU -1.7% vol=$5,579"
  ],
  "futures_ok": true,
  "futures_balance": 33.63,
  "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $491"
+  "ETH $490"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TRUMP, ADA",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP, XDC, ADA",
  "claude_called": true,
- "market_read": "השוק הרחב חלש היום (רוב האלטקוינים ומדדי הסטוקים בטריטוריה שלילית קלה), אין מגמת עלייה ברורה לרכיבה, אז מחפשים הזדמנויות ממוקדות של מיצוי-יתר.",
- "skip_reason": "שאר המועמדים בקריפטו (ADA, XRP, TRUMP וכו') נמצאים ב-RSI אמצעי ללא איתות ברור, וה-BTC וה-ANTHROPIC הקיימים כבר בכיוון חיובי ולא כדאי לגעת בהם; ETH המוחזק כספוט נשאר כפוזיציה פאסיבית כי אין הזדמנות עדיפה מספיק כרגע כדי להצדיק סבב.",
+ "market_read": "השוק הכללי בקונסולידציה עם BTC יציב מעל 77K ואלטקוינים ברובם בשלב תיקון קל, יש הזדמנויות נקודתיות לשני הכיוונים.",
+ "skip_reason": "שאר המועמדים או בעלי נפח נמוך מדי (XDC, PENGU) או ללא איתות ברור (ADA, XRP, SOL, AVAX) — נשארתי עם שתי ההזדמנויות החדות ביותר.",
  "picks": [
-  "XDC short size=22% conf=MEDIUM"
+  "TRUMP long size=25% conf=MEDIUM",
+  "CC short size=20% conf=MEDIUM"
+ ],
+ "order_errors": [
+  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
