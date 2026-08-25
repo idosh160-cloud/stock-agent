@@ -1,7 +1,7 @@
 {
- "time": "2026-08-25T22:00:05",
+ "time": "2026-08-25T23:00:05",
  "usdc": 28.07,
- "portfolio": 590.99,
+ "portfolio": 593.34,
  "api_billing_blocked": false,
  "margin_headroom": 140.35,
  "open": [
@@ -10,26 +10,24 @@
  "stock_candidates": 16,
  "top_stocks": [
   "HOOD +7.7% vol=$194,404",
-  "CF -5.1% vol=$21,577",
+  "CRCL +4.9% vol=$402,889",
   "COIN +4.0% vol=$20,978",
-  "CRCL +4.0% vol=$412,475",
-  "NVDA +2.6% vol=$196,055"
+  "CF -3.3% vol=$21,499",
+  "NVDA +2.5% vol=$188,693"
  ],
  "futures_ok": true,
  "futures_balance": 39.2,
  "unallocated_spot": [
-  "ETH $488"
+  "ETH $490"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TRUMP, ADA, DOT",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP, FARTCOIN, ADA",
  "claude_called": true,
- "market_read": "השוק באזור תיקון רחב עם הרבה אלטקוינים oversold על נפח סביר, מה שמעדיף לונגים על דיפים איכותיים בליקווידיות גבוהה כמו XRP ו-ADA.",
- "skip_reason": "שאר המועמדים (TRUMP, DOT, DOGE, XDC, AVAX) נמוכים מדי בנפח או חופפים מבחינת סטאפ ל-XRP/ADA שכבר נבחרו, ו-ANTHROPIC כבר בפוזיציה רווחית שמתקדמת ליעד כך שלא נוגעים בה; ETH הספוט נשאר מוחזק כי אין כאן סיבה ברורה לגרוד ממנו.",
+ "market_read": "השוק הרחב (BTC ~$78.9K) יציב אך אלטקוינים רבים במצב oversold עם RSI מתחת ל-40, מה שמרמז על הזדמנויות ריבאונד קצרות טווח ולא על מגמת דאמפ מתמשכת.",
+ "skip_reason": "שאר המועמדים (ADA, DOT, XDC, DOGE) מציגים תמונה דומה של oversold אך עם נפח נמוך יותר או פחות בירור מגמה מ-TRUMP; ANTHROPIC כבר בפוזיציה רווחית בדרך למטרה ולכן לא נוגעים בה, ו-ETH הספוט נשאר כהחזקה פסיבית שכן אין הצדקה ברורה למכור אותו כרגע לטובת סטאפ חלש יותר.",
  "picks": [
-  "XRP long size=30% conf=HIGH",
-  "ADA long size=20% conf=MEDIUM"
+  "TRUMP long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "XRP: Kraken: ['EOrder:Insufficient funds']",
-  "ADA: Kraken: ['EOrder:Insufficient funds']"
+  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
