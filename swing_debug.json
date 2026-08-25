@@ -1,7 +1,7 @@
 {
- "time": "2026-08-25T21:00:05",
+ "time": "2026-08-25T22:00:05",
  "usdc": 28.07,
- "portfolio": 589.58,
+ "portfolio": 590.99,
  "api_billing_blocked": false,
  "margin_headroom": 140.35,
  "open": [
@@ -9,28 +9,27 @@
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "HOOD +7.2% vol=$192,271",
-  "CF -4.9% vol=$39,892",
+  "HOOD +7.7% vol=$194,404",
+  "CF -5.1% vol=$21,577",
   "COIN +4.0% vol=$20,978",
-  "CRCL +3.8% vol=$436,544",
-  "NVDA +2.4% vol=$195,534"
+  "CRCL +4.0% vol=$412,475",
+  "NVDA +2.6% vol=$196,055"
  ],
  "futures_ok": true,
  "futures_balance": 39.2,
  "unallocated_spot": [
-  "ETH $486"
+  "ETH $488"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TRUMP, ADA, DOGE",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP, ADA, DOT",
  "claude_called": true,
- "market_read": "שוק הקריפטו האלטקוינים נמצא בתיקון חד עם מכירת יתר רוחבית (RSI 26-35) ונפחים גבוהים — הזדמנות לריבאונד טכני קצר טווח.",
- "skip_reason": "שאר המטבעות (TRUMP, ADA, DOGE, DOT) נראים דומים אך עם נפח נמוך יותר או היסטוריה שלילית משמעותית (ADA -24.59$), ונכסי המניות לא מציגים סטאפ ברור כרגע ביחס לקריפטו.",
+ "market_read": "השוק באזור תיקון רחב עם הרבה אלטקוינים oversold על נפח סביר, מה שמעדיף לונגים על דיפים איכותיים בליקווידיות גבוהה כמו XRP ו-ADA.",
+ "skip_reason": "שאר המועמדים (TRUMP, DOT, DOGE, XDC, AVAX) נמוכים מדי בנפח או חופפים מבחינת סטאפ ל-XRP/ADA שכבר נבחרו, ו-ANTHROPIC כבר בפוזיציה רווחית שמתקדמת ליעד כך שלא נוגעים בה; ETH הספוט נשאר מוחזק כי אין כאן סיבה ברורה לגרוד ממנו.",
  "picks": [
-  "LINK long size=25% conf=HIGH",
-  "XRP long size=20% conf=MEDIUM"
+  "XRP long size=30% conf=HIGH",
+  "ADA long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "LINK: Kraken: ['EOrder:Insufficient funds']",
-  "XRP: Kraken: ['EOrder:Insufficient funds']"
+  "XRP: Kraken: ['EOrder:Insufficient funds']",
+  "ADA: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
