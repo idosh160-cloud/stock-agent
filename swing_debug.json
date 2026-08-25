@@ -1,7 +1,7 @@
 {
- "time": "2026-08-25T15:00:06",
+ "time": "2026-08-25T16:00:06",
  "usdc": 28.07,
- "portfolio": 598.18,
+ "portfolio": 599.18,
  "api_billing_blocked": false,
  "margin_headroom": 140.35,
  "open": [
@@ -9,28 +9,26 @@
  ],
  "stock_candidates": 15,
  "top_stocks": [
-  "HOOD +2.2% vol=$108,204",
-  "CF -2.2% vol=$42,141",
-  "TSLA -1.9% vol=$198,319",
-  "GOOGL -1.3% vol=$277,521",
-  "GLD -1.2% vol=$76,181"
+  "HOOD +3.7% vol=$113,661",
+  "CF -2.6% vol=$41,926",
+  "MSTR +1.9% vol=$821,256",
+  "META +1.8% vol=$48,216",
+  "CRCL +1.7% vol=$693,778"
  ],
  "futures_ok": true,
  "futures_balance": 39.2,
  "unallocated_spot": [
-  "ETH $495"
+  "ETH $496"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: VIRTUAL, CC, TRUMP",
+ "call_reason": "תנועה חזקה במטבע חדש: CC, VIRTUAL, TRUMP",
  "claude_called": true,
- "market_read": "השוק בקירור קל אחרי עליות, רוב האלטקוינים קרובים לתחתית הרצועה (oversold) בעוד XMR מציג סימני מיצוי מלמעלה.",
- "skip_reason": "שאר המועמדים (ADA, VIRTUAL, CC, DOT, LTC, TON) מציגים תמונה דומה אך פחות קיצונית או עם נפח נמוך יותר, והמניות עם היסטוריה שלילית לא מספקות אישוש טכני חזק מספיק כרגע.",
+ "market_read": "השוק הכללי במגמת ירידה קלה עם כמה מטבעות במצב oversold שמציעים הזדמנויות היפוך טקטיות.",
+ "skip_reason": "שאר המועמדים (ADA, DOT, VIRTUAL) מציגים אותות דומים אך חלשים יותר או עם היסטוריה שלילית ללא שיפור ברור בתנאים, לכן מתמקדים ב-TRUMP כהזדמנות המובילה.",
  "picks": [
-  "TRUMP long size=28% conf=HIGH",
-  "XMR short size=18% conf=MEDIUM"
+  "TRUMP long size=25% conf=HIGH"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "TRUMP: Kraken: ['EOrder:Insufficient funds']",
-  "XMR: Kraken: ['EOrder:Margin trading in asset is restricted']"
+  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
