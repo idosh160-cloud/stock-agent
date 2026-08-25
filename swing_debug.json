@@ -1,35 +1,35 @@
 {
- "time": "2026-08-25T00:00:05",
+ "time": "2026-08-25T01:00:05",
  "usdc": 86.62,
- "portfolio": 645.38,
+ "portfolio": 645.79,
  "api_billing_blocked": false,
  "margin_headroom": 360.39,
  "open": [
-  "BTC long +25.9%",
+  "BTC long +27.1%",
   "ANTHROPIC long +0.2%"
  ],
- "stock_candidates": 18,
+ "stock_candidates": 17,
  "top_stocks": [
   "ANTHROPIC -9.8% vol=$99,821",
-  "HOOD -5.1% vol=$61,988",
-  "TSLA -5.0% vol=$251,678",
-  "COIN -4.7% vol=$47,357",
-  "NVDA -4.0% vol=$241,770"
+  "TSLA -4.7% vol=$110,005",
+  "NVDA -3.6% vol=$237,938",
+  "HOOD -3.6% vol=$63,860",
+  "MSTR +3.5% vol=$486,729"
  ],
  "futures_ok": true,
  "futures_balance": 39.19,
  "futures_float_topup": false,
  "unallocated_spot": [
-  "ETH $496"
+  "ETH $498"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: VIRTUAL, TRUMP, XMR",
+ "call_reason": "תנועה חזקה במניה: TSLA, NVDA, HOOD",
  "claude_called": true,
- "market_read": "השוק מציג פיזור - BTC יציב סביב 79K, מטבעות אלט מפוזרים אבל XMR מראה מומנטום עולה ברור עם נפח תומך.",
- "skip_reason": "TRUMP ו-DOT נראים כמו סכינים נופלות עם MACD שלילי ולא בשלים לבאונס עדיין, ומטבעות נמוכי נפח כמו VIRTUAL ו-XDC לא מספקים ביטחון מספיק לכניסה.",
+ "market_read": "השוק הכללי במגמת עלייה מתונה עם BTC יציב מעל $79K ואלטים מציגים מומנטום חיובי אך חלקם כבר קרובים לאזורי oversold/overbought קיצוניים.",
+ "skip_reason": "SOL ו-MELANIA נמצאים ב-RSI קיצוני מעל 70 עם BB% מעל 100 - מסוכן להיכנס לונג או שורט נגד מומנטום חזק כל כך; שאר המניות (ANTHROPIC, TSLA, MSTR) לא מציגות סיגנל ברור מספיק כרגע ל-position חדש מעבר למה שכבר קיים.",
  "picks": [
-  "XMR long size=20% conf=MEDIUM"
+  "XRP long size=30% conf=MEDIUM"
  ],
  "order_errors": [
-  "XMR: Kraken: ['EOrder:Insufficient funds']"
+  "XRP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
