@@ -1,38 +1,39 @@
 {
- "time": "2026-08-25T13:00:06",
+ "time": "2026-08-25T14:00:06",
  "usdc": 28.07,
- "portfolio": 597.73,
+ "portfolio": 594.56,
  "api_billing_blocked": false,
  "margin_headroom": 140.35,
  "open": [
   "ANTHROPIC long +4.4%"
  ],
- "stock_candidates": 16,
+ "stock_candidates": 15,
  "top_stocks": [
-  "COIN -6.4% vol=$26,465",
-  "HOOD -4.3% vol=$92,191",
-  "CRCL -3.4% vol=$695,115",
-  "TSLA -3.1% vol=$53,885",
-  "SPCX +3.0% vol=$510,301"
+  "COIN -5.2% vol=$25,101",
+  "NVDA +2.5% vol=$219,479",
+  "CF -2.4% vol=$39,710",
+  "META +2.3% vol=$52,770",
+  "MSTR -2.2% vol=$624,440"
  ],
  "futures_ok": true,
- "futures_balance": 39.21,
+ "futures_balance": 39.2,
  "unallocated_spot": [
-  "ETH $494"
+  "ETH $491"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: CC",
+ "call_reason": "תנועה חזקה במטבע חדש: VIRTUAL, CC, TRUMP",
  "owner_directive": "Open leveraged crypto exposure on BTC and ETH (long or short — your technical read, normal sizing/stop rules apply), plus ONE additional small-cap margin-eligible coin of your choice that isn't already open. If BTC/ETH are already open (e.g. from an earlier adopted position), that satisfies this leg — focus on the additional small coin.",
  "claude_called": true,
- "market_read": "שוק הקריפטו כולו באדום מתון עם RSI קרוב לאזור oversold ברוב הנכסים - נראה תיקון קצר יותר מהתחלת מגמת דובית חדה.",
- "skip_reason": "לא ננעל פוזיציה בסטוקים כרגע כי אין הזדמנות ברורה יותר מהקריפטו העדיפו למנדט, ו-ANTHROPIC ממשיך לנוע חיובי ליעד כך שלא מבוצעת רוטציה.",
+ "market_read": "רוב השוק בירידה עם RSI נמוך במרבית המטבעות - מצב של תת-מכירה זמנית עם פוטנציאל לריבאונד קצר טווח.",
+ "skip_reason": "נבחרו BTC, ETH ו-DOT לפי הדירקטיבה; שאר המועמדים (CC, TRUMP, VIRTUAL) בעלי נפח נמוך יותר או תבנית פחות ברורה - לא נבחרו כדי להתרכז בשלוש ההזדמנויות הטובות ביותר.",
  "picks": [
-  "BTC long size=20% conf=MEDIUM",
+  "BTC long size=25% conf=MEDIUM",
   "ETH long size=20% conf=MEDIUM",
-  "TRUMP long size=15% conf=MEDIUM"
+  "DOT long size=15% conf=MEDIUM"
  ],
  "order_errors": [
+  "liq ETH: all sizes rejected (margin collateral lock)",
   "BTC: Kraken: ['EOrder:Insufficient funds']",
   "ETH: Kraken: ['EOrder:Insufficient funds']",
-  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
+  "DOT: Kraken: ['EOrder:Invalid leverage']"
  ]
 }
