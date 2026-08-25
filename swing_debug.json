@@ -1,7 +1,7 @@
 {
- "time": "2026-08-25T03:00:06",
+ "time": "2026-08-25T04:00:05",
  "usdc": 54.79,
- "portfolio": 620.41,
+ "portfolio": 619.02,
  "api_billing_blocked": false,
  "margin_headroom": 273.95,
  "open": [
@@ -10,25 +10,27 @@
  "stock_candidates": 17,
  "top_stocks": [
   "ANTHROPIC -9.8% vol=$99,821",
-  "MSTR +6.1% vol=$509,021",
-  "TSLA -3.9% vol=$107,532",
-  "CF +3.7% vol=$60,255",
-  "NVDA -3.3% vol=$235,699"
+  "MSTR +6.1% vol=$509,775",
+  "CF +3.6% vol=$60,196",
+  "CRCL +3.5% vol=$667,112",
+  "NVDA -3.2% vol=$235,267"
  ],
  "futures_ok": true,
  "futures_balance": 39.19,
  "unallocated_spot": [
-  "ETH $501"
+  "ETH $499"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: VIRTUAL, TRUMP",
+ "call_reason": "תנועה חזקה במטבע חדש: VIRTUAL",
  "claude_called": true,
- "market_read": "השוק הכללי ברוב הקריפטו הגדול (BTC, SOL, ADA, XRP) נמצא בקיצון overbought עם BB% מעל 90 אחרי ריצה חדה, מה שמגביל כניסות לונג חדשות שם ומעדיף נכסים שעדיין באמצע הטווח כמו TRUMP.",
- "skip_reason": "BTC/SOL/ADA/XRP overbought מדי (RSI>60-72, BB%>85) לכניסת לונג חדשה וגם לא מספיק חלשים לשורט נגד מגמה עולה חזקה; מניות ה-xStocks לא הציגו סטאפ ברור מספיק (חסר RSI/היפוך ברור) לעומת TRUMP שנראה מאוזן יותר.",
+ "market_read": "שוק הקריפטו במגמת עלייה כללית עם BTC וSOL בקרבת שיא יומי, מה שיוצר גם הזדמנויות המשך מומנטום וגם סיכון לתיקון קצר טווח.",
+ "skip_reason": "דחיתי BTC ו-PENGU/VIRTUAL כי הם overbought מדי (RSI מעל 70, BB קרוב ל-100) עם סיכון גבוה לתיקון מיידי, ומניות כמו MSTR/CRCL נשארות מחוץ בגלל היסטוריה שלילית ללא סיגנל חזק מספיק לניגוד.",
  "picks": [
-  "TRUMP long size=25% conf=MEDIUM"
+  "TRUMP long size=22% conf=MEDIUM",
+  "SOL long size=20% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
+  "TRUMP: Kraken: ['EOrder:Insufficient funds']",
+  "SOL: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
