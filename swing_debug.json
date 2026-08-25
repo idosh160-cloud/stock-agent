@@ -1,7 +1,7 @@
 {
- "time": "2026-08-25T20:00:05",
+ "time": "2026-08-25T21:00:05",
  "usdc": 28.07,
- "portfolio": 595.59,
+ "portfolio": 589.58,
  "api_billing_blocked": false,
  "margin_headroom": 140.35,
  "open": [
@@ -9,26 +9,28 @@
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "HOOD +7.8% vol=$182,967",
-  "CRCL +5.3% vol=$433,098",
-  "COIN +4.3% vol=$21,051",
-  "MSTR +3.6% vol=$703,193",
-  "SPCX +2.9% vol=$252,854"
+  "HOOD +7.2% vol=$192,271",
+  "CF -4.9% vol=$39,892",
+  "COIN +4.0% vol=$20,978",
+  "CRCL +3.8% vol=$436,544",
+  "NVDA +2.4% vol=$195,534"
  ],
  "futures_ok": true,
  "futures_balance": 39.2,
  "unallocated_spot": [
-  "ETH $492"
+  "ETH $486"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, TRUMP, ADA",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP, ADA, DOGE",
  "claude_called": true,
- "market_read": "השוק הכללי בקריפטו נמצא במגמת תיקון קלה עם כמה מטבעות במכירת יתר שמציעים הזדמנויות ריבאונד קצרות טווח.",
- "skip_reason": "שאר המועמדים (TRUMP, DOGE, מניות ה-xStocks) מציגים אות חלש יותר או נפח נמוך מדי, ולכן מרכזים את הכניסה החדשה ב-ADA בלבד תוך שמירה על פוזיציית ANTHROPIC הרווחית הקיימת.",
+ "market_read": "שוק הקריפטו האלטקוינים נמצא בתיקון חד עם מכירת יתר רוחבית (RSI 26-35) ונפחים גבוהים — הזדמנות לריבאונד טכני קצר טווח.",
+ "skip_reason": "שאר המטבעות (TRUMP, ADA, DOGE, DOT) נראים דומים אך עם נפח נמוך יותר או היסטוריה שלילית משמעותית (ADA -24.59$), ונכסי המניות לא מציגים סטאפ ברור כרגע ביחס לקריפטו.",
  "picks": [
-  "ADA long size=30% conf=MEDIUM"
+  "LINK long size=25% conf=HIGH",
+  "XRP long size=20% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "ADA: Kraken: ['EOrder:Insufficient funds']"
+  "LINK: Kraken: ['EOrder:Insufficient funds']",
+  "XRP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
