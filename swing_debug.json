@@ -1,34 +1,36 @@
 {
- "time": "2026-08-25T18:00:06",
+ "time": "2026-08-25T19:00:06",
  "usdc": 28.07,
- "portfolio": 597.07,
+ "portfolio": 596.48,
  "api_billing_blocked": false,
  "margin_headroom": 140.35,
  "open": [
-  "ANTHROPIC long +4.4%"
+  "ANTHROPIC long +5.4%"
  ],
- "stock_candidates": 15,
+ "stock_candidates": 16,
  "top_stocks": [
-  "HOOD +7.5% vol=$118,852",
-  "CRCL +4.4% vol=$378,980",
-  "COIN +4.2% vol=$25,407",
-  "MSTR +3.9% vol=$714,374",
-  "SPCX +2.3% vol=$250,612"
+  "HOOD +8.2% vol=$132,225",
+  "CRCL +6.6% vol=$419,680",
+  "COIN +5.2% vol=$25,851",
+  "MSTR +4.2% vol=$573,560",
+  "SPCX +2.4% vol=$238,777"
  ],
  "futures_ok": true,
- "futures_balance": 39.2,
+ "futures_balance": 39.21,
  "unallocated_spot": [
   "ETH $493"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TRUMP, ADA",
+ "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, TRUMP",
  "claude_called": true,
- "market_read": "השוק הקריפטו נמצא בתיקון קל עם כמה מטבעות באזור oversold, מה שיוצר הזדמנויות ריבאונד קצרות טווח.",
- "skip_reason": "שאר המועמדים (ADA, DOT) דומים אך עם ווליום ותנודתיות נמוכים יותר מ-TRUMP, ומניות ה-xStock לא מציגות סיגנל חד מספיק כרגע לכניסה או שורט.",
+ "market_read": "השוק בתנודתיות מעורבת עם רוב האלטקוינים בתיקון קל כלפי מטה, אך יש הזדמנויות ריבאונד ומומנטום נקודתיות.",
+ "skip_reason": "שאר המועמדים (ADA, DOT, XDC, DOGE, BCH, TON, LTC, ATOM) נמצאים באזור ניטרלי ללא איתות ברור, והמניות הטוקניזציה לא מציגות סטאפ קיצוני מספיק לשורט או לונג כרגע.",
  "picks": [
-  "TRUMP long size=30% conf=MEDIUM"
+  "TRUMP long size=25% conf=MEDIUM",
+  "FARTCOIN long size=20% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
+  "TRUMP: Kraken: ['EOrder:Insufficient funds']",
+  "FARTCOIN: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
