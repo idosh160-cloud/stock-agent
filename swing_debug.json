@@ -1,36 +1,33 @@
 {
- "time": "2026-08-25T05:00:05",
- "usdc": 54.79,
- "portfolio": 617.48,
+ "time": "2026-08-25T06:00:05",
+ "usdc": 54.77,
+ "portfolio": 620.76,
  "api_billing_blocked": false,
- "margin_headroom": 273.95,
+ "margin_headroom": 273.85,
  "open": [
   "ANTHROPIC long +0.2%"
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "ANTHROPIC -9.8% vol=$99,821",
-  "MSTR +5.3% vol=$509,418",
-  "CF +3.8% vol=$59,744",
-  "TSLA -2.8% vol=$96,785",
-  "CRCL +2.5% vol=$667,878"
+  "MSTR +6.2% vol=$514,540",
+  "ANTHROPIC -6.2% vol=$49,447",
+  "CF +4.5% vol=$60,208",
+  "TSLA -3.0% vol=$95,303",
+  "CRCL +2.4% vol=$665,693"
  ],
  "futures_ok": true,
- "futures_balance": 39.19,
+ "futures_balance": 39.2,
  "unallocated_spot": [
-  "ETH $497"
+  "ETH $501"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: PENGU, VIRTUAL",
+ "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, PENGU, VIRTUAL",
  "claude_called": true,
- "market_read": "השוק הכללי במגמת עלייה עם BTC ו-SOL בקיצון קניה, ולכן עדיף לחפש הזדמנויות מומנטום שעדיין לא הגיעו לאזור overbought.",
- "skip_reason": "BTC ו-SOL נמצאים ב-RSI overbought מובהק (68-71) כך שכניסה ללונג מסוכנת וכניסה לשורט נגד מגמה עולה חזקה גם מסוכנת - עדיף לדלג עליהם הפעם.",
+ "market_read": "השוק במומנטום עולה כללי אך רוב הקריפטו המוביל (BTC, SOL, PENGU) כבר overbought, לכן עדיף שם עם מקום לרוץ כמו TRUMP.",
+ "skip_reason": "BTC/SOL/PENGU/FARTCOIN overbought מדי (RSI>70, BB קרוב ל-100) לסיכון לונג חדש, והמניות לא מציגות סטאפ ברור מספיק להצדיק רוטציה מפוזיציית ANTHROPIC הרווחית.",
  "picks": [
-  "VIRTUAL long size=25% conf=MEDIUM",
-  "BCH long size=15% conf=MEDIUM"
+  "TRUMP long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "VIRTUAL: Kraken: ['EOrder:Insufficient funds']",
-  "BCH: Kraken: ['EOrder:Insufficient funds']"
+  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
