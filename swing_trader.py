@@ -17,10 +17,76 @@ except ImportError:
     _PANDAS_TA_AVAILABLE = False
     logging.warning("[Swing] ta library not installed — indicators disabled")
 
-DIR          = os.path.dirname(os.path.abspath(__file__))
-SWING_FILE   = os.path.join(DIR, "swing_trades.json")
-HISTORY_FILE = os.path.join(DIR, "swing_history.json")
-DEBUG_FILE   = os.path.join(DIR, "swing_debug.json")
+DIR             = os.path.dirname(os.path.abspath(__file__))
+SWING_FILE      = os.path.join(DIR, "swing_trades.json")
+HISTORY_FILE    = os.path.join(DIR, "swing_history.json")
+DEBUG_FILE      = os.path.join(DIR, "swing_debug.json")
+DIRECTIVE_FILE  = os.path.join(DIR, "owner_directive.json")
+DIRECTIVE_MAX_ATTEMPTS = 6    # מספר סבבים לנסות למלא הנחיה חד-פעמית לפני שמוותרים
+DIRECTIVE_MAX_HOURS    = 24   # תוקף — לא נשארת תלויה לנצח אם השוק לא משתף פעולה
+
+
+def set_owner_directive(text: str, watch_coins: list = None):
+    """שומר הנחיה חד-פעמית מהבעלים — תוזרק לפרומפט של Claude בסבבים הקרובים
+    עד שתתמלא (הבוט יראה שהמטבעות נפתחו) או שתפוג תוקף/ניסיונות."""
+    with open(DIRECTIVE_FILE, "w", encoding="utf-8") as f:
+        json.dump({
+            "text": text,
+            "watch_coins": watch_coins or [],
+            "created": datetime.now().isoformat(),
+            "attempts": 0,
+        }, f, ensure_ascii=False, indent=2)
+
+
+def _load_owner_directive() -> dict | None:
+    if not os.path.exists(DIRECTIVE_FILE):
+        return None
+    try:
+        with open(DIRECTIVE_FILE, encoding="utf-8") as f:
+            d = json.load(f)
+        age_h = (datetime.now() - datetime.fromisoformat(d["created"])).total_seconds() / 3600
+        if age_h > DIRECTIVE_MAX_HOURS or d.get("attempts", 0) >= DIRECTIVE_MAX_ATTEMPTS:
+            os.remove(DIRECTIVE_FILE)
+            logging.info(f"[Directive] פג תוקף/מוצו ניסיונות — נמחקה: {d.get('text','')[:60]}")
+            return None
+        return d
+    except Exception:
+        return None
+
+
+def _clear_owner_directive_if_fulfilled(open_coins: set):
+    """בודק אם המטבעות שההנחיה ביקשה כבר פתוחים (על ידי הבוט, לרבות אימוץ) — אם כן, מוחקת."""
+    d = _load_owner_directive()
+    if not d:
+        return
+    watch = set(d.get("watch_coins") or [])
+    if watch and watch.issubset(open_coins):
+        os.remove(DIRECTIVE_FILE)
+        logging.info(f"[Directive] מולאה — כל היעדים פתוחים: {watch}")
+
+
+# ── הנחיה חד-פעמית מהבעלים (20/8/2026): לוודא חשיפה ממונפת ל-BTC/ETH + מטבע קטן נוסף ──
+# נזרעת פעם אחת בלבד (marker נפרד — לא נכתבת מחדש גם אחרי שההנחיה עצמה נמחקת/פגה)
+_DIRECTIVE_SEED_MARKER = os.path.join(DIR, "directive_v1_seeded.flag")
+
+
+def _seed_initial_owner_directive():
+    if os.path.exists(_DIRECTIVE_SEED_MARKER):
+        return
+    try:
+        open(_DIRECTIVE_SEED_MARKER, "w").close()
+    except Exception:
+        return
+    if os.path.exists(DIRECTIVE_FILE):
+        return  # הנחיה כבר קיימת ממקור אחר — לא לדרוס
+    set_owner_directive(
+        "Open leveraged crypto exposure on BTC and ETH (long or short — your technical read, normal sizing/stop "
+        "rules apply), plus ONE additional small-cap margin-eligible coin of your choice that isn't already open. "
+        "If BTC/ETH are already open (e.g. from an earlier adopted position), that satisfies this leg — focus on "
+        "the additional small coin.",
+        watch_coins=["BTC", "ETH"],
+    )
+    logging.warning("[Directive] הנחיית בעלים חד-פעמית נזרעה: BTC+ETH ממונפים + מטבע קטן נוסף")
 
 
 def _write_debug(d: dict):
@@ -588,7 +654,7 @@ def _clear_api_billing_alert():
         )
 
 
-def analyze_with_claude(candidates: list, open_coins: set, usdc: float, btc_price: float, stock_candidates: list = None, open_positions: list = None, portfolio_summary: str = "", spot_holdings: list = None) -> dict:
+def analyze_with_claude(candidates: list, open_coins: set, usdc: float, btc_price: float, stock_candidates: list = None, open_positions: list = None, portfolio_summary: str = "", spot_holdings: list = None, owner_directive: str = "") -> dict:
     _load_api_key()
     import anthropic
 
@@ -694,11 +760,21 @@ NOTE: while leveraged positions are open, Kraken may lock spot as collateral —
 partially fill. If a liquidation keeps failing, don't repeat it every cycle; work with the free USDC instead.
 """
 
+    directive_section = ""
+    if owner_directive:
+        directive_section = f"""
+⚠️ ONE-TIME OWNER DIRECTIVE (this cycle) — takes priority over normal caution: {owner_directive}
+Fulfill this if there is ANY reasonable candidate — don't skip it for marginal conviction the way you would a
+routine pick. You still choose direction (long/short) and sizing based on your own technical read; this directive
+only says WHAT to prioritize opening, not which side or how much. Skip only a specific leg if there is truly no
+tradeable setup for it right now (e.g. coin illiquid, market closed) — explain which leg and why in skip_reason.
+"""
+
     prompt = f"""You are an expert swing trader covering both crypto and tokenized stocks (xStocks). {datetime.now().strftime('%Y-%m-%d %H:%M')} UTC.
 
 BTC context price: ${btc_price:,.0f}
 Available USDC: ${usdc:.2f}
-YOUR MANDATE: grow this portfolio aggressively. The owner explicitly accepts full risk on this capital — it's a dedicated aggressive-experiment budget. Safety rails (daily kill-switch at -20%, 50%/asset cap, stop on every trade) are always on — so swing for real gains, don't preserve capital timidly.
+{directive_section}YOUR MANDATE: grow this portfolio aggressively. The owner explicitly accepts full risk on this capital — it's a dedicated aggressive-experiment budget. Safety rails (daily kill-switch at -20%, 50%/asset cap, stop on every trade) are always on — so swing for real gains, don't preserve capital timidly.
 - FULLY INVESTED, ALWAYS: the owner's explicit doctrine is that USDC is a conversion medium, NOT a position. Any USDC above a ~$15 fee buffer should be working in a trade. If you're holding cash, your job this cycle is to find its best home — a decent B+ setup with a proper stop ALWAYS beats cash. "Waiting for a better entry" is a position choice you must justify in skip_reason, not a default.
 - CONCENTRATE: back your 2-3 best setups with size, don't spread thin across 6 marginal picks.
 - SIZE by conviction via "size_pct" (% of portfolio, 10-50). A+ setup (clear trend + volume + indicators aligned) → 40-50. Decent B+ → 15-25. Truly bad → skip.
@@ -1269,6 +1345,8 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
         build_portfolio_summary, update_drawdown, is_kill_switch_active
     )
 
+    _seed_initial_owner_directive()
+
     trades      = load_swing_trades()
     open_swings = [t for t in trades if t.get("status") == "open"]
     open_coins  = {t["coin"] for t in open_swings}
@@ -1454,7 +1532,14 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
         return False, "הכל שקט — דולג על קריאה לClaude"
 
     should_call, call_reason = _should_call_claude(candidates, open_swings)
+    owner_directive = _load_owner_directive()
+    if owner_directive and not should_call:
+        # הנחיה חד-פעמית מהבעלים עוקפת את הסינון החכם — זה בדיוק המצב
+        # שבו רוצים לוודא שקלוד נשאל, לא לדלג בגלל "שוק שקט"
+        should_call, call_reason = True, f"הנחיית בעלים ממתינה: {owner_directive['text'][:60]}"
     debug["call_reason"] = call_reason
+    if owner_directive:
+        debug["owner_directive"] = owner_directive["text"]
     if not should_call:
         logging.info(f"[Swing] {call_reason}")
         debug["claude_called"] = False
@@ -1491,7 +1576,7 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
         except Exception:
             pass
 
-    if snapshot and snapshot == last_snapshot:
+    if snapshot and snapshot == last_snapshot and not owner_directive:
         logging.info(f"[Swing] מצב זהה לפעם הקודמת ({call_reason}) — דולג על Claude")
         debug["claude_called"] = False
         debug["skip"] = "snapshot זהה לקריאה הקודמת"
@@ -1511,7 +1596,14 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
             f.write(datetime.now().isoformat())
     except Exception:
         pass
-    analysis    = analyze_with_claude(candidates, open_coins, usdc, btc_price, stock_candidates, open_swings, portfolio_summary, spot_holdings)
+    analysis    = analyze_with_claude(candidates, open_coins, usdc, btc_price, stock_candidates, open_swings, portfolio_summary, spot_holdings, owner_directive["text"] if owner_directive else "")
+    if owner_directive:
+        owner_directive["attempts"] = owner_directive.get("attempts", 0) + 1
+        try:
+            with open(DIRECTIVE_FILE, "w", encoding="utf-8") as f:
+                json.dump(owner_directive, f, ensure_ascii=False, indent=2)
+        except Exception:
+            pass
     market_read = analysis.get("market_read", "")
     skip_reason = analysis.get("skip_reason", "")
     logging.info(f"[Swing] Claude: {market_read} | skipped: {skip_reason}")
@@ -1925,6 +2017,9 @@ def run_swing_scan(balance: dict, usdc: float, request_fn, btc_price: float = 0,
         except Exception as e:
             logging.error(f"[Swing] buy failed {coin}: {e}")
             debug.setdefault("order_errors", []).append(f"{coin}: {str(e)[:150]}")
+
+    if owner_directive:
+        _clear_owner_directive_if_fulfilled({t["coin"] for t in trades if t.get("status") == "open"})
 
     _write_debug(debug)
     save_swing_trades(trades)
