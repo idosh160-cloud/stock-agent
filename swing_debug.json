@@ -1,39 +1,38 @@
 {
- "time": "2026-08-25T12:00:06",
+ "time": "2026-08-25T13:00:06",
  "usdc": 28.07,
- "portfolio": 598.54,
+ "portfolio": 597.73,
  "api_billing_blocked": false,
  "margin_headroom": 140.35,
  "open": [
-  "ANTHROPIC long +4.0%"
+  "ANTHROPIC long +4.4%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "HOOD -4.1% vol=$87,432",
-  "TSLA -2.8% vol=$45,799",
-  "COIN -2.5% vol=$26,967",
-  "SPCX +2.3% vol=$485,567",
-  "META +2.2% vol=$45,729"
+  "COIN -6.4% vol=$26,465",
+  "HOOD -4.3% vol=$92,191",
+  "CRCL -3.4% vol=$695,115",
+  "TSLA -3.1% vol=$53,885",
+  "SPCX +3.0% vol=$510,301"
  ],
  "futures_ok": true,
- "futures_balance": 39.2,
+ "futures_balance": 39.21,
  "unallocated_spot": [
-  "ETH $495"
+  "ETH $494"
  ],
- "call_reason": "תנועה חזקה במניה: HOOD, TSLA, COIN",
+ "call_reason": "תנועה חזקה במטבע חדש: CC",
  "owner_directive": "Open leveraged crypto exposure on BTC and ETH (long or short — your technical read, normal sizing/stop rules apply), plus ONE additional small-cap margin-eligible coin of your choice that isn't already open. If BTC/ETH are already open (e.g. from an earlier adopted position), that satisfies this leg — focus on the additional small coin.",
  "claude_called": true,
- "market_read": "רוב מטבעות האלט ומניות ה-xStocks נסחרים בירידות קלות עם MACD שלילי, מה שמעיד על סנטימנט זהיר-שלילי בטווח הקצר.",
- "skip_reason": "שאר המועמדים (PENGU, CC, VIRTUAL, ADA, BNB, LTC, XDC, XMR, BCH) הראו סיגנלים מעורבים או נפח נמוך מדי ללא יתרון ברור, ולכן דולגו לטובת TRUMP שהציג oversold ברור יותר.",
+ "market_read": "שוק הקריפטו כולו באדום מתון עם RSI קרוב לאזור oversold ברוב הנכסים - נראה תיקון קצר יותר מהתחלת מגמת דובית חדה.",
+ "skip_reason": "לא ננעל פוזיציה בסטוקים כרגע כי אין הזדמנות ברורה יותר מהקריפטו העדיפו למנדט, ו-ANTHROPIC ממשיך לנוע חיובי ליעד כך שלא מבוצעת רוטציה.",
  "picks": [
-  "BTC short size=25% conf=MEDIUM",
-  "ETH short size=20% conf=MEDIUM",
+  "BTC long size=20% conf=MEDIUM",
+  "ETH long size=20% conf=MEDIUM",
   "TRUMP long size=15% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "BTC: Kraken: ['EOrder:Insufficient initial margin']",
-  "ETH: Kraken: ['EOrder:Insufficient initial margin']",
+  "BTC: Kraken: ['EOrder:Insufficient funds']",
+  "ETH: Kraken: ['EOrder:Insufficient funds']",
   "TRUMP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
