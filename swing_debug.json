@@ -1,7 +1,7 @@
 {
- "time": "2026-08-25T16:00:06",
+ "time": "2026-08-25T17:00:05",
  "usdc": 28.07,
- "portfolio": 599.18,
+ "portfolio": 597.14,
  "api_billing_blocked": false,
  "margin_headroom": 140.35,
  "open": [
@@ -9,26 +9,28 @@
  ],
  "stock_candidates": 15,
  "top_stocks": [
-  "HOOD +3.7% vol=$113,661",
-  "CF -2.6% vol=$41,926",
-  "MSTR +1.9% vol=$821,256",
-  "META +1.8% vol=$48,216",
-  "CRCL +1.7% vol=$693,778"
+  "HOOD +5.2% vol=$112,720",
+  "MSTR +4.5% vol=$765,188",
+  "CRCL +2.9% vol=$364,732",
+  "CF -1.8% vol=$41,571",
+  "COIN +1.7% vol=$28,938"
  ],
  "futures_ok": true,
  "futures_balance": 39.2,
  "unallocated_spot": [
-  "ETH $496"
+  "ETH $494"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: CC, VIRTUAL, TRUMP",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP, VIRTUAL",
  "claude_called": true,
- "market_read": "השוק הכללי במגמת ירידה קלה עם כמה מטבעות במצב oversold שמציעים הזדמנויות היפוך טקטיות.",
- "skip_reason": "שאר המועמדים (ADA, DOT, VIRTUAL) מציגים אותות דומים אך חלשים יותר או עם היסטוריה שלילית ללא שיפור ברור בתנאים, לכן מתמקדים ב-TRUMP כהזדמנות המובילה.",
+ "market_read": "השוק הקריפטו ברוב המטבעות במגמת תיקון קלה מטה עם כמה אלטים oversold שמציעים הזדמנות ריבאונד קצרת טווח.",
+ "skip_reason": "שאר המועמדים (VIRTUAL, DOT, מניות) נמצאים באזור ניטרלי ללא איתות ברור מספיק להצדיק תפיסת פוזיציה נוספת מעבר לשתי הבחירות המרוכזות.",
  "picks": [
-  "TRUMP long size=25% conf=HIGH"
+  "TRUMP long size=30% conf=HIGH",
+  "ADA long size=20% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
+  "TRUMP: Kraken: ['EOrder:Insufficient funds']",
+  "ADA: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
