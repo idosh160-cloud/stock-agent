@@ -1,7 +1,7 @@
 {
- "time": "2026-08-25T04:00:05",
+ "time": "2026-08-25T05:00:05",
  "usdc": 54.79,
- "portfolio": 619.02,
+ "portfolio": 617.48,
  "api_billing_blocked": false,
  "margin_headroom": 273.95,
  "open": [
@@ -10,27 +10,27 @@
  "stock_candidates": 17,
  "top_stocks": [
   "ANTHROPIC -9.8% vol=$99,821",
-  "MSTR +6.1% vol=$509,775",
-  "CF +3.6% vol=$60,196",
-  "CRCL +3.5% vol=$667,112",
-  "NVDA -3.2% vol=$235,267"
+  "MSTR +5.3% vol=$509,418",
+  "CF +3.8% vol=$59,744",
+  "TSLA -2.8% vol=$96,785",
+  "CRCL +2.5% vol=$667,878"
  ],
  "futures_ok": true,
  "futures_balance": 39.19,
  "unallocated_spot": [
-  "ETH $499"
+  "ETH $497"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: VIRTUAL",
+ "call_reason": "תנועה חזקה במטבע חדש: PENGU, VIRTUAL",
  "claude_called": true,
- "market_read": "שוק הקריפטו במגמת עלייה כללית עם BTC וSOL בקרבת שיא יומי, מה שיוצר גם הזדמנויות המשך מומנטום וגם סיכון לתיקון קצר טווח.",
- "skip_reason": "דחיתי BTC ו-PENGU/VIRTUAL כי הם overbought מדי (RSI מעל 70, BB קרוב ל-100) עם סיכון גבוה לתיקון מיידי, ומניות כמו MSTR/CRCL נשארות מחוץ בגלל היסטוריה שלילית ללא סיגנל חזק מספיק לניגוד.",
+ "market_read": "השוק הכללי במגמת עלייה עם BTC ו-SOL בקיצון קניה, ולכן עדיף לחפש הזדמנויות מומנטום שעדיין לא הגיעו לאזור overbought.",
+ "skip_reason": "BTC ו-SOL נמצאים ב-RSI overbought מובהק (68-71) כך שכניסה ללונג מסוכנת וכניסה לשורט נגד מגמה עולה חזקה גם מסוכנת - עדיף לדלג עליהם הפעם.",
  "picks": [
-  "TRUMP long size=22% conf=MEDIUM",
-  "SOL long size=20% conf=MEDIUM"
+  "VIRTUAL long size=25% conf=MEDIUM",
+  "BCH long size=15% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "TRUMP: Kraken: ['EOrder:Insufficient funds']",
-  "SOL: Kraken: ['EOrder:Insufficient funds']"
+  "VIRTUAL: Kraken: ['EOrder:Insufficient funds']",
+  "BCH: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
