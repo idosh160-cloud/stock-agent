@@ -1,39 +1,39 @@
 {
- "time": "2026-08-25T10:00:06",
+ "time": "2026-08-25T11:00:06",
  "usdc": 28.07,
- "portfolio": 598.05,
+ "portfolio": 599.5,
  "api_billing_blocked": false,
  "margin_headroom": 140.35,
  "open": [
-  "ANTHROPIC long +0.2%"
+  "ANTHROPIC long +4.0%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "HOOD -3.5% vol=$79,185",
-  "TSLA -2.7% vol=$49,221",
+  "HOOD -3.0% vol=$83,036",
+  "SPCX +2.5% vol=$482,928",
+  "TSLA -2.4% vol=$45,230",
   "META +2.1% vol=$46,035",
-  "SPCX +2.0% vol=$440,276",
-  "COIN -1.9% vol=$44,665"
+  "GOOGL +1.8% vol=$358,349"
  ],
  "futures_ok": true,
  "futures_balance": 39.2,
  "unallocated_spot": [
-  "ETH $494"
+  "ETH $495"
  ],
- "call_reason": "תנועה חזקה במניה: HOOD, TSLA, META",
+ "call_reason": "תנועה חזקה במניה: HOOD, SPCX, TSLA",
  "owner_directive": "Open leveraged crypto exposure on BTC and ETH (long or short — your technical read, normal sizing/stop rules apply), plus ONE additional small-cap margin-eligible coin of your choice that isn't already open. If BTC/ETH are already open (e.g. from an earlier adopted position), that satisfies this leg — focus on the additional small coin.",
  "claude_called": true,
- "market_read": "השוק הרחב נמצא בפולבאק מתון עם רוב האלטים קרוב לתחתית בולינגר ו-RSI סביב 40-50, מה שמרמז על הזדמנות דיפ-קניה זהירה בנכסי ליבה כמו BTC/ETH/SOL.",
- "skip_reason": "שאר המועמדים (ADA, BNB, LTC, TRUMP וכו') נמצאים במגמת שחיקה עם MACD שלילי ונפח נמוך יחסית, ולא מציעים יתרון ברור מעבר ל-SOL שנבחר כמטבע הקטן הנוסף.",
+ "market_read": "השוק הכללי מראה מומנטום חלש עם MACD שלילי ברוב המטבעות הגדולים, אך XMR בולט בחוזק יחסי המצדיק לונג נגד המגמה",
+ "skip_reason": "שאר המועמדים (CC, VIRTUAL, FARTCOIN, ADA, DOGE, BNB, XDC, PENGU) נמצאים בתנועה צדדית עם ווליום נמוך או ללא איתות ברור, והמניות אינן מציגות סטאפ חד יותר מהקריפטו כרגע",
  "picks": [
-  "BTC long size=25% conf=MEDIUM",
-  "ETH long size=25% conf=MEDIUM",
-  "SOL long size=15% conf=MEDIUM"
+  "BTC short size=25% conf=MEDIUM",
+  "ETH short size=20% conf=MEDIUM",
+  "XMR long size=15% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "BTC: Kraken: ['EOrder:Insufficient funds']",
-  "ETH: Kraken: ['EOrder:Insufficient funds']",
-  "SOL: Kraken: ['EOrder:Insufficient funds']"
+  "BTC: Kraken: ['EOrder:Insufficient initial margin']",
+  "ETH: Kraken: ['EOrder:Insufficient initial margin']",
+  "XMR: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
