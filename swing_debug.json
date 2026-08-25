@@ -1,7 +1,7 @@
 {
- "time": "2026-08-25T14:00:06",
+ "time": "2026-08-25T15:00:06",
  "usdc": 28.07,
- "portfolio": 594.56,
+ "portfolio": 598.18,
  "api_billing_blocked": false,
  "margin_headroom": 140.35,
  "open": [
@@ -9,31 +9,28 @@
  ],
  "stock_candidates": 15,
  "top_stocks": [
-  "COIN -5.2% vol=$25,101",
-  "NVDA +2.5% vol=$219,479",
-  "CF -2.4% vol=$39,710",
-  "META +2.3% vol=$52,770",
-  "MSTR -2.2% vol=$624,440"
+  "HOOD +2.2% vol=$108,204",
+  "CF -2.2% vol=$42,141",
+  "TSLA -1.9% vol=$198,319",
+  "GOOGL -1.3% vol=$277,521",
+  "GLD -1.2% vol=$76,181"
  ],
  "futures_ok": true,
  "futures_balance": 39.2,
  "unallocated_spot": [
-  "ETH $491"
+  "ETH $495"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: VIRTUAL, CC, TRUMP",
- "owner_directive": "Open leveraged crypto exposure on BTC and ETH (long or short — your technical read, normal sizing/stop rules apply), plus ONE additional small-cap margin-eligible coin of your choice that isn't already open. If BTC/ETH are already open (e.g. from an earlier adopted position), that satisfies this leg — focus on the additional small coin.",
  "claude_called": true,
- "market_read": "רוב השוק בירידה עם RSI נמוך במרבית המטבעות - מצב של תת-מכירה זמנית עם פוטנציאל לריבאונד קצר טווח.",
- "skip_reason": "נבחרו BTC, ETH ו-DOT לפי הדירקטיבה; שאר המועמדים (CC, TRUMP, VIRTUAL) בעלי נפח נמוך יותר או תבנית פחות ברורה - לא נבחרו כדי להתרכז בשלוש ההזדמנויות הטובות ביותר.",
+ "market_read": "השוק בקירור קל אחרי עליות, רוב האלטקוינים קרובים לתחתית הרצועה (oversold) בעוד XMR מציג סימני מיצוי מלמעלה.",
+ "skip_reason": "שאר המועמדים (ADA, VIRTUAL, CC, DOT, LTC, TON) מציגים תמונה דומה אך פחות קיצונית או עם נפח נמוך יותר, והמניות עם היסטוריה שלילית לא מספקות אישוש טכני חזק מספיק כרגע.",
  "picks": [
-  "BTC long size=25% conf=MEDIUM",
-  "ETH long size=20% conf=MEDIUM",
-  "DOT long size=15% conf=MEDIUM"
+  "TRUMP long size=28% conf=HIGH",
+  "XMR short size=18% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "BTC: Kraken: ['EOrder:Insufficient funds']",
-  "ETH: Kraken: ['EOrder:Insufficient funds']",
-  "DOT: Kraken: ['EOrder:Invalid leverage']"
+  "TRUMP: Kraken: ['EOrder:Insufficient funds']",
+  "XMR: Kraken: ['EOrder:Margin trading in asset is restricted']"
  ]
 }
