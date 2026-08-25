@@ -1,7 +1,7 @@
 {
- "time": "2026-08-25T07:00:05",
+ "time": "2026-08-25T08:00:05",
  "usdc": 54.77,
- "portfolio": 619.14,
+ "portfolio": 615.55,
  "api_billing_blocked": false,
  "margin_headroom": 273.85,
  "open": [
@@ -9,23 +9,23 @@
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "MSTR +5.8% vol=$513,640",
-  "CF +4.2% vol=$60,727",
-  "TSLA -3.1% vol=$89,772",
-  "NVDA -2.4% vol=$231,107",
-  "META +2.3% vol=$36,515"
+  "MSTR +4.0% vol=$507,955",
+  "TSLA -2.5% vol=$84,167",
+  "CRCL +2.3% vol=$660,684",
+  "META +2.2% vol=$42,152",
+  "SPCX +1.9% vol=$444,018"
  ],
  "futures_ok": true,
  "futures_balance": 39.2,
  "unallocated_spot": [
-  "ETH $499"
+  "ETH $495"
  ],
- "call_reason": "תנועה חזקה במניה: MSTR, CF, TSLA",
+ "call_reason": "תנועה חזקה במניה: MSTR, TSLA, CRCL",
  "claude_called": true,
- "market_read": "השוק הקריפטו במגמת עלייה כללית עם BTC וSOL מובילים, אך BTC כבר קרוב לרוויה בעוד SOL עדיין משאיר מקום לתנועה.",
- "skip_reason": "BTC ורוב האלטים האחרים או קרובים לרוויה (RSI>65, BB% קרוב לעליון) או בנפח נמוך מדי; המניות הטוקניזציה לא מציגות סיגנל חזק מספיק כרגע ביחס להיסטוריה השלילית שלהן.",
+ "market_read": "BTC יציב סביב 79.7K עם מומנטום חלש, בעוד אלטקוינים כמו SOL מראים כוח יחסי עם נפח ואישוש טכני.",
+ "skip_reason": "שאר המועמדים (TRUMP, FARTCOIN, BCH, מניות) נמצאים באזור ניטרלי או ללא אישוש ברור מספיק כדי להצדיק כניסה חדשה מעבר לפוזיציה הקיימת.",
  "picks": [
-  "SOL long size=35% conf=HIGH"
+  "SOL long size=30% conf=HIGH"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
