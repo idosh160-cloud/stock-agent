@@ -1,5 +1,5 @@
 {
- "time": "2026-08-26T03:00:04",
+ "time": "2026-08-26T04:00:04",
  "usdc": 28.07,
  "portfolio": 595.62,
  "api_billing_blocked": false,
@@ -9,11 +9,11 @@
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "HOOD +6.0% vol=$191,324",
-  "CF -4.3% vol=$22,279",
-  "CRCL +2.5% vol=$400,595",
+  "HOOD +6.2% vol=$192,065",
+  "CF -4.2% vol=$23,282",
+  "CRCL +2.9% vol=$399,376",
   "NVDA +1.8% vol=$232,797",
-  "SPCX +1.6% vol=$263,549"
+  "META +1.7% vol=$60,650"
  ],
  "futures_ok": true,
  "futures_balance": 39.21,
@@ -22,15 +22,16 @@
  ],
  "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN",
  "claude_called": true,
- "market_read": "השוק הכללי מציג תמונה מעורבת עם מומנטום חיובי ב-BCH ואולטרה-oversold ב-TRUMP, בזמן שרוב שאר האלטים בטווח ניטרלי ללא אדג' ברור.",
- "skip_reason": "שאר המטבעות והמניות (ADA, DOGE, AVAX, PENGU, LINK, LTC, DOT, HOOD, CRCL, NVDA, SPCX, META, COIN, AMZN, GOOGL) נמצאים באזור ניטרלי או חסרי נפח/מומנטום ברור, ו-FARTCOIN קרוב מדי לקיצון overbought לשורט בטוח בזמן שהמגמה עדיין עולה חזק - מעדיף להתרכז בשתי ההזדמנויות הטובות ביותר.",
+ "market_read": "השוק נראה ניוטרלי עד חיובי בזהירות עם BTC יציב ואלטים מציגים תיקונים בריאים שמאפשרים כניסות אסטרטגיות.",
+ "skip_reason": "FARTCOIN מוגזם קנייה אך עם MACD עדיין חיובי ונפח נמוך — לא מספיק בטוח לשורט; DOGE/DOT/LINK דומים ל-ADA אך עם היסטוריה שלילית יותר וללא יתרון ברור, כך שממוקדים בשני הסטאפים החזקים ביותר.",
  "picks": [
-  "BCH long size=35% conf=HIGH",
-  "TRUMP long size=20% conf=MEDIUM"
+  "ETH long size=35% conf=HIGH",
+  "ADA long size=20% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "BCH: Kraken: ['EOrder:Insufficient funds']",
-  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
+  "liq ETH: all sizes rejected (margin collateral lock)",
+  "ETH: Kraken: ['EOrder:Insufficient funds']",
+  "ADA: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
