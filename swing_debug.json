@@ -1,7 +1,7 @@
 {
- "time": "2026-08-26T01:00:04",
+ "time": "2026-08-26T02:00:05",
  "usdc": 28.07,
- "portfolio": 592.16,
+ "portfolio": 593.62,
  "api_billing_blocked": false,
  "margin_headroom": 140.35,
  "open": [
@@ -9,25 +9,28 @@
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "HOOD +6.6% vol=$192,001",
-  "CF -5.3% vol=$22,394",
-  "CRCL +3.3% vol=$408,319",
-  "COIN +2.5% vol=$20,468",
-  "NVDA +1.4% vol=$189,203"
+  "HOOD +6.1% vol=$191,151",
+  "CF -5.1% vol=$22,497",
+  "CRCL +3.0% vol=$407,571",
+  "SPCX +1.5% vol=$263,187",
+  "COIN +1.5% vol=$20,371"
  ],
  "futures_ok": true,
  "futures_balance": 39.2,
  "unallocated_spot": [
-  "ETH $489"
+  "ETH $490"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: PENGU",
+ "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN",
  "claude_called": true,
- "market_read": "השוק הכללי נסחר בטווח צר עם רוב האלטים ב-RSI אמצע-נמוך, ללא מגמה חד-משמעית אך עם כמה הזדמנויות oversold למרוץ תיקון קצר.",
- "skip_reason": "שאר המועמדים (ADA, LINK, DOGE) נמצאים באמצע הטווח בלי אות ברור מספיק, ו-ETH הבלתי מוקצה נשאר כהחזקה פסיבית כי אין כרגע סטאפ עדיף שמצדיק מכירה חלקית שלו.",
+ "market_read": "השוק הכולל בפייז תיקון קל עם כמה אלטקוינים במצב oversold שמציעים הזדמנויות ריבאונד טובות יותר מהחזקת מזומן פסיבית.",
+ "skip_reason": "דחיתי FARTCOIN לשורט כי ה-MACD עדיין חיובי ולא מאותת היחלשות מומנטום, ודחיתי מניות סטוקס כי אין להן איתותים RSI/MACD ברורים לניתוח כרגע.",
  "picks": [
-  "TRUMP long size=20% conf=MEDIUM"
+  "TRUMP long size=25% conf=MEDIUM",
+  "ADA long size=15% conf=MEDIUM"
  ],
  "order_errors": [
-  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
+  "liq ETH: all sizes rejected (margin collateral lock)",
+  "TRUMP: Kraken: ['EOrder:Insufficient funds']",
+  "ADA: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
