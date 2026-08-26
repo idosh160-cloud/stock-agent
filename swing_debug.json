@@ -1,7 +1,7 @@
 {
- "time": "2026-08-26T20:00:06",
+ "time": "2026-08-26T21:00:05",
  "usdc": 28.13,
- "portfolio": 596.41,
+ "portfolio": 596.88,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -9,21 +9,21 @@
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "GLD -11.2% vol=$131,644",
-  "FLU +6.0% vol=$10,048",
   "IOT +4.1% vol=$6,224",
-  "HOOD -2.6% vol=$60,939",
-  "MSTR -2.5% vol=$473,425"
+  "FLU +3.5% vol=$9,961",
+  "HOOD -2.9% vol=$54,020",
+  "COIN -2.6% vol=$28,895",
+  "NVDA -2.3% vol=$330,419"
  ],
  "futures_ok": true,
  "futures_balance": 39.21,
  "unallocated_spot": [
   "ETH $494"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, PENGU, XRP",
+ "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, XRP",
  "claude_called": true,
- "market_read": "השוק הקריפטו נמצא בתיקון מקומי עם כמה מטבעות oversold בולטים כמו XRP ו-XDC, בעוד ETH ו-BTC יציבים יחסית ליד רמות גבוהות.",
- "skip_reason": "XDC ו-PENGU בעלי נפח מסחר נמוך מדי לביטחון בכניסה, FARTCOIN תנודתי מדי ללא איתות ברור, ומניות ה-xStocks מציגות ירידות קלות בלבד ללא הזדמנות ברורה לשורט או לונג.",
+ "market_read": "השוק הכללי נראה מעורב עם רוב המטבעות במגמה שלילית קלה מלבד ETH ו-FARTCOIN שמראים חוזק יחסי.",
+ "skip_reason": "שאר המועמדים (XDC, XMR, מניות) נמצאים בווליום נמוך מדי או ב-RSI ניטרלי בלי סיגנל חד, ולכן לא הצדיקו כניסה כרגע.",
  "picks": [
   "XRP long size=25% conf=MEDIUM"
  ],
