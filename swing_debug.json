@@ -1,7 +1,7 @@
 {
- "time": "2026-08-26T06:00:05",
+ "time": "2026-08-26T07:00:05",
  "usdc": 28.07,
- "portfolio": 595.45,
+ "portfolio": 594.45,
  "api_billing_blocked": false,
  "margin_headroom": 140.35,
  "open": [
@@ -9,28 +9,25 @@
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "HOOD +5.5% vol=$193,939",
-  "CF -3.7% vol=$27,148",
-  "META +1.7% vol=$62,473",
-  "NVDA +1.5% vol=$234,714",
-  "COIN +1.5% vol=$20,471"
+  "HOOD +5.2% vol=$193,717",
+  "CF -3.0% vol=$26,998",
+  "COIN +2.2% vol=$20,313",
+  "CRCL +1.8% vol=$391,494",
+  "META +1.6% vol=$63,296"
  ],
  "futures_ok": true,
  "futures_balance": 39.21,
  "unallocated_spot": [
-  "ETH $492"
+  "ETH $491"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, TRUMP",
  "claude_called": true,
- "market_read": "השוק הכללי בסטגנציה עם BTC יציב, אבל כמה אלטים מציגים מומנטום ברור עם אינדיקטורים תואמים לכיוון עלייה.",
- "skip_reason": "FARTCOIN ו-XDC נפסלו בשל נזילות נמוכה/סיכון סחיטה, ומניות ה-xStocks חסרות מדדי RSI/MACD ברורים לביסוס כניסה איכותית כרגע.",
+ "market_read": "השוק הכללי רגוע יחסית עם BTC יציב סביב 79 אלף, אלטקוינים בודדים כמו פארטקוין וטראמפ מראים מומנטום חיובי ברור.",
+ "skip_reason": "שאר המועמדים (ADA, DOT, TON, AVAX) נמצאים באמצע טווח עם RSI חלש ואין סיגנל ברור, ו-ETH הספוט הבלתי מוקצה נשאר כהחזקה פסיבית סבירה שכן המומנטום שלו ניטרלי-חיובי ואין צורך לגעת בו כרגע.",
  "picks": [
-  "TRUMP long size=25% conf=MEDIUM",
-  "XMR long size=20% conf=MEDIUM"
+  "FARTCOIN long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "TRUMP: Kraken: ['EOrder:Insufficient funds']",
-  "XMR: Kraken: ['EOrder:Insufficient funds']"
+  "FARTCOIN: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
