@@ -1,34 +1,33 @@
 {
- "time": "2026-08-26T21:00:05",
+ "time": "2026-08-26T22:00:05",
  "usdc": 28.13,
- "portfolio": 596.88,
+ "portfolio": 602.17,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
   "ANTHROPIC long +4.7%"
  ],
- "stock_candidates": 17,
+ "stock_candidates": 16,
  "top_stocks": [
-  "IOT +4.1% vol=$6,224",
   "FLU +3.5% vol=$9,961",
-  "HOOD -2.9% vol=$54,020",
-  "COIN -2.6% vol=$28,895",
-  "NVDA -2.3% vol=$330,419"
+  "HOOD -2.5% vol=$56,805",
+  "NVDA +2.3% vol=$389,788",
+  "CF +1.9% vol=$28,123",
+  "SPCX +1.8% vol=$395,981"
  ],
  "futures_ok": true,
- "futures_balance": 39.21,
+ "futures_balance": 39.22,
  "unallocated_spot": [
-  "ETH $494"
+  "ETH $499"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, XRP",
+ "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, TRUMP",
  "claude_called": true,
- "market_read": "השוק הכללי נראה מעורב עם רוב המטבעות במגמה שלילית קלה מלבד ETH ו-FARTCOIN שמראים חוזק יחסי.",
- "skip_reason": "שאר המועמדים (XDC, XMR, מניות) נמצאים בווליום נמוך מדי או ב-RSI ניטרלי בלי סיגנל חד, ולכן לא הצדיקו כניסה כרגע.",
+ "market_read": "השוק הכללי נייטרלי-חיובי, ETH ו-SOL מובילים עם מומנטום חזק בזמן שהדולר יציב סביב BTC 78.7K.",
+ "skip_reason": "ETH ב-spot נשאר כפי שהוא כי הוא נכס חזק עם מומנטום MACD חיובי; שאר המועמדים (FARTCOIN, XDC) בעלי נפח נמוך או סיגנלים מעורבים ולא מצדיקים סיכון נוסף מעבר ל-USDC הזעום שנשאר.",
  "picks": [
-  "XRP long size=25% conf=MEDIUM"
+  "SOL long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "XRP: Kraken: ['EOrder:Insufficient funds']"
+  "SOL: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
