@@ -1,7 +1,7 @@
 {
- "time": "2026-08-26T15:00:05",
+ "time": "2026-08-26T16:00:06",
  "usdc": 28.13,
- "portfolio": 589.75,
+ "portfolio": 592.2,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -9,26 +9,28 @@
  ],
  "stock_candidates": 18,
  "top_stocks": [
-  "MSTR -4.3% vol=$729,290",
+  "MSTR -4.7% vol=$599,399",
   "IOT +4.1% vol=$6,224",
   "ANTHROPIC -3.8% vol=$33,099",
-  "META +3.6% vol=$135,410",
-  "CRCL -3.3% vol=$505,533"
+  "FLU +3.7% vol=$7,202",
+  "TSLA -2.8% vol=$134,287"
  ],
  "futures_ok": true,
  "futures_balance": 39.21,
  "unallocated_spot": [
-  "ETH $487"
+  "ETH $489"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, PENGU, XRP",
+ "call_reason": "תנועה חזקה במטבע חדש: PENGU, FARTCOIN, XRP",
  "claude_called": true,
- "market_read": "רוב האלטקוינים במצב oversold חד אחרי ירידה כללית, מה שיוצר הזדמנויות ריבאונד טובות, בעיקר ב-XRP עם הנפח הגבוה ביותר.",
- "skip_reason": "TON ו-ADA גם oversold אך עם נפח מסחר נמוך משמעותית מ-XRP; מניות ה-xStocks לא מציעות יחס סיכון/סיכוי ברור כרגע - מעדיפים ריכוז בהזדמנות הכי חזקה.",
+ "market_read": "השוק הכללי בקורקציה קלה עם כמה קריפטו מובילים בתחום oversold עמוק ונפח מסחר גבוה שמעיד על פוטנציאל תיקון קרוב.",
+ "skip_reason": "שאר המטבעות (XDC, XMR, BCH, DOGE, PENGU) בעלי נפח נמוך יותר או סיגנל חלש יחסית ל-XRP/ADA, ומניות הן שקטות יותר ולא מציעות יתרון ברור כרגע.",
  "picks": [
-  "XRP long size=25% conf=HIGH"
+  "XRP long size=30% conf=HIGH",
+  "ADA long size=15% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "XRP: Kraken: ['EOrder:Insufficient funds']"
+  "XRP: Kraken: ['EOrder:Insufficient funds']",
+  "ADA: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
