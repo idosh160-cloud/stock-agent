@@ -1,7 +1,7 @@
 {
- "time": "2026-08-26T22:00:05",
+ "time": "2026-08-26T23:00:05",
  "usdc": 28.13,
- "portfolio": 602.17,
+ "portfolio": 601.85,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -10,24 +10,27 @@
  "stock_candidates": 16,
  "top_stocks": [
   "FLU +3.5% vol=$9,961",
-  "HOOD -2.5% vol=$56,805",
-  "NVDA +2.3% vol=$389,788",
-  "CF +1.9% vol=$28,123",
-  "SPCX +1.8% vol=$395,981"
+  "CF +3.1% vol=$32,063",
+  "HOOD -2.3% vol=$56,978",
+  "NVDA +2.2% vol=$399,332",
+  "COIN -1.9% vol=$29,314"
  ],
  "futures_ok": true,
  "futures_balance": 39.22,
  "unallocated_spot": [
-  "ETH $499"
+  "ETH $498"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, TRUMP",
+ "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, XDC, TRUMP",
  "claude_called": true,
- "market_read": "השוק הכללי נייטרלי-חיובי, ETH ו-SOL מובילים עם מומנטום חזק בזמן שהדולר יציב סביב BTC 78.7K.",
- "skip_reason": "ETH ב-spot נשאר כפי שהוא כי הוא נכס חזק עם מומנטום MACD חיובי; שאר המועמדים (FARTCOIN, XDC) בעלי נפח נמוך או סיגנלים מעורבים ולא מצדיקים סיכון נוסף מעבר ל-USDC הזעום שנשאר.",
+ "market_read": "השוק הקריפטו נמצא בשלב עלייה מתונה עם כמה נכסים בתנופה שעדיין לא הגיעו לאזור קיצוני, בעוד שהמניות ה-xStocks נעות בטווח צר ללא אות ברור.",
+ "skip_reason": "SOL, ETH ו-PEAQ כבר קרובים לרוויה (RSI/BB גבוהים) והמניות נעות בטווח צר ללא כיוון ברור, ולכן לא נכנסתי אליהם כרגע.",
  "picks": [
-  "SOL long size=20% conf=MEDIUM"
+  "FARTCOIN long size=25% conf=MEDIUM",
+  "LINK long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "SOL: Kraken: ['EOrder:Insufficient funds']"
+  "liq ETH: all sizes rejected (margin collateral lock)",
+  "FARTCOIN: Kraken: ['EOrder:Insufficient funds']",
+  "LINK: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
