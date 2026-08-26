@@ -1,32 +1,31 @@
 {
- "time": "2026-08-26T12:00:05",
+ "time": "2026-08-26T13:00:06",
  "usdc": 28.07,
- "portfolio": 595.25,
+ "portfolio": 593.63,
  "api_billing_blocked": false,
  "margin_headroom": 140.35,
  "open": [
-  "ANTHROPIC long +4.8%"
+  "ANTHROPIC long +4.7%"
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "HOOD +6.0% vol=$162,703",
-  "ANTHROPIC -5.6% vol=$32,953",
-  "CRCL +4.9% vol=$354,409",
-  "MSTR +3.7% vol=$612,266",
-  "COIN +3.6% vol=$20,219"
+  "HOOD +6.8% vol=$157,395",
+  "META +4.7% vol=$74,530",
+  "CRCL +4.7% vol=$343,875",
+  "MSTR +4.0% vol=$541,760",
+  "COIN +3.8% vol=$19,553"
  ],
  "futures_ok": true,
  "futures_balance": 39.21,
  "unallocated_spot": [
-  "ETH $492"
+  "ETH $490"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN",
+ "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, TRUMP",
  "claude_called": true,
- "market_read": "השוק מעורב — יש הזדמנות מיד-ריברסל ב-XRP הסופר-נמכר לצד קיצור על FARTCOIN שהתפוצץ יתר על המידה.",
- "skip_reason": "שאר המטבעות (ADA, LINK, DOGE, BTC) בטווח ניטרלי בלי איתות ברור, והמניות התנודה שלהן קטנה מדי היום להצדיק חשיפה חדשה.",
+ "market_read": "השוק הכללי מעורב — אלטקוינים גדולים כמו XRP ו-TON נמצאים ב-oversold בזמן שקוינים ספקולטיביים כמו FARTCOIN רצים חזק מדי ומועדים לתיקון.",
+ "skip_reason": "FARTCOIN overbought מדי לשורט נגד מומנטום חזק, ו-XDC נזיל מדי ($34K); שאר המועמדים ניטרליים בלי אות ברור, לכן מתמקדים ב-XRP כהזדמנות היחידה עם יחס סיכוי/סיכון ברור.",
  "picks": [
-  "XRP long size=25% conf=MEDIUM",
-  "FARTCOIN short size=20% conf=MEDIUM"
+  "XRP long size=30% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
