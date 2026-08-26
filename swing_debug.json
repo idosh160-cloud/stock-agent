@@ -1,37 +1,34 @@
 {
- "time": "2026-08-26T04:00:04",
+ "time": "2026-08-26T05:00:05",
  "usdc": 28.07,
- "portfolio": 595.62,
+ "portfolio": 593.96,
  "api_billing_blocked": false,
  "margin_headroom": 140.35,
  "open": [
-  "ANTHROPIC long +5.4%"
+  "ANTHROPIC long +4.8%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "HOOD +6.2% vol=$192,065",
-  "CF -4.2% vol=$23,282",
-  "CRCL +2.9% vol=$399,376",
-  "NVDA +1.8% vol=$232,797",
-  "META +1.7% vol=$60,650"
+  "HOOD +5.7% vol=$194,043",
+  "CF -4.7% vol=$24,961",
+  "CRCL +2.2% vol=$395,026",
+  "META +2.1% vol=$61,976",
+  "NVDA +1.8% vol=$240,110"
  ],
  "futures_ok": true,
  "futures_balance": 39.21,
  "unallocated_spot": [
-  "ETH $492"
+  "ETH $491"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN",
  "claude_called": true,
- "market_read": "השוק נראה ניוטרלי עד חיובי בזהירות עם BTC יציב ואלטים מציגים תיקונים בריאים שמאפשרים כניסות אסטרטגיות.",
- "skip_reason": "FARTCOIN מוגזם קנייה אך עם MACD עדיין חיובי ונפח נמוך — לא מספיק בטוח לשורט; DOGE/DOT/LINK דומים ל-ADA אך עם היסטוריה שלילית יותר וללא יתרון ברור, כך שממוקדים בשני הסטאפים החזקים ביותר.",
+ "market_read": "השוק מעורב - קריפטו ברוב הנכסים במגמת תיקון קל אחרי ירידה, ANTHROPIC ממשיכה יפה לכיוון היעד.",
+ "skip_reason": "FARTCOIN קנוי יתר אך מומנטום MACD עדיין חיובי - שורט מסוכן; HOOD ו-CRCL פמפו חד בלי אישור טכני ברור והיסטוריה שלילית; שאר המועמדים ניטרליים/נפח נמוך מדי.",
  "picks": [
-  "ETH long size=35% conf=HIGH",
-  "ADA long size=20% conf=MEDIUM"
+  "TRUMP long size=25% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "ETH: Kraken: ['EOrder:Insufficient funds']",
-  "ADA: Kraken: ['EOrder:Insufficient funds']"
+  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
