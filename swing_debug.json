@@ -1,7 +1,7 @@
 {
- "time": "2026-08-26T08:00:05",
+ "time": "2026-08-26T09:00:06",
  "usdc": 28.07,
- "portfolio": 594.83,
+ "portfolio": 593.84,
  "api_billing_blocked": false,
  "margin_headroom": 140.35,
  "open": [
@@ -9,28 +9,28 @@
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "HOOD +5.9% vol=$193,157",
-  "CRCL +3.4% vol=$393,098",
-  "COIN +2.2% vol=$20,372",
-  "NVDA +1.5% vol=$185,517",
-  "CF -1.2% vol=$24,420"
+  "HOOD +5.7% vol=$189,943",
+  "CRCL +3.1% vol=$388,648",
+  "META +1.9% vol=$74,009",
+  "CF -1.7% vol=$24,194",
+  "COIN +1.3% vol=$20,236"
  ],
  "futures_ok": true,
  "futures_balance": 39.21,
  "unallocated_spot": [
-  "ETH $492"
+  "ETH $491"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN",
  "claude_called": true,
- "market_read": "השוק בעליה סלקטיבית - מטבעות עם MACD חיובי ו-RSI לא קיצוני מציעים הזדמנויות לונג נקיות, בעוד FARTCOIN כבר overbought מדי לכניסה חדשה.",
- "skip_reason": "FARTCOIN דחוי כי RSI 67 ו-BB% 85 מסמנים תשישות שמובילה לכניסה מסוכנת; מניות ה-xStock לא הציגו סטאפ ברור מספיק מול הזדמנויות הקריפטו.",
+ "market_read": "השוק מציג מומנטום סלקטיבי בקריפטו עם כמה אלטים שעדיין לא exhausted, בעוד BTC יציב סביב 78.7K.",
+ "skip_reason": "FARTCOIN overbought מדי לונג ומסוכן לשורט נגד מומנטום חזק, שאר המטבעות והמניות ללא edge ברור או ווליום נמוך מדי.",
  "picks": [
-  "XMR long size=30% conf=HIGH",
-  "TRUMP long size=20% conf=MEDIUM"
+  "TRUMP long size=25% conf=MEDIUM",
+  "XMR long size=20% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "XMR: Kraken: ['EOrder:Insufficient funds']",
-  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
+  "TRUMP: Kraken: ['EOrder:Insufficient funds']",
+  "XMR: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
