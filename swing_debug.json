@@ -1,7 +1,7 @@
 {
- "time": "2026-08-25T23:00:05",
+ "time": "2026-08-26T00:00:05",
  "usdc": 28.07,
- "portfolio": 593.34,
+ "portfolio": 590.75,
  "api_billing_blocked": false,
  "margin_headroom": 140.35,
  "open": [
@@ -9,25 +9,28 @@
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "HOOD +7.7% vol=$194,404",
-  "CRCL +4.9% vol=$402,889",
+  "HOOD +7.3% vol=$193,943",
+  "CF -5.9% vol=$21,521",
   "COIN +4.0% vol=$20,978",
-  "CF -3.3% vol=$21,499",
-  "NVDA +2.5% vol=$188,693"
+  "CRCL +4.0% vol=$413,042",
+  "NVDA +2.3% vol=$187,672"
  ],
  "futures_ok": true,
  "futures_balance": 39.2,
  "unallocated_spot": [
-  "ETH $490"
+  "ETH $488"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TRUMP, FARTCOIN, ADA",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP, ADA, FARTCOIN",
  "claude_called": true,
- "market_read": "השוק הרחב (BTC ~$78.9K) יציב אך אלטקוינים רבים במצב oversold עם RSI מתחת ל-40, מה שמרמז על הזדמנויות ריבאונד קצרות טווח ולא על מגמת דאמפ מתמשכת.",
- "skip_reason": "שאר המועמדים (ADA, DOT, XDC, DOGE) מציגים תמונה דומה של oversold אך עם נפח נמוך יותר או פחות בירור מגמה מ-TRUMP; ANTHROPIC כבר בפוזיציה רווחית בדרך למטרה ולכן לא נוגעים בה, ו-ETH הספוט נשאר כהחזקה פסיבית שכן אין הצדקה ברורה למכור אותו כרגע לטובת סטאפ חלש יותר.",
+ "market_read": "השוק הקריפטו כולל ברמות תת-מכירה חדות עם הזדמנויות ריבאונד, בזמן שהמניות הטוקניזציה יציבות יחסית ללא סיגנל חד.",
+ "skip_reason": "שאר המטבעות (DOGE, DOT, LTC, LINK, AVAX) מציגים תת-מכירה דומה אך עם נפח/מומנטום חלש יותר או היסטוריה שלילית משמעותית ללא שינוי בתנאים - מעדיפים להתרכז בשני הסטאפים החזקים ביותר.",
  "picks": [
+  "ADA long size=25% conf=MEDIUM",
   "TRUMP long size=20% conf=MEDIUM"
  ],
  "order_errors": [
+  "liq ETH: all sizes rejected (margin collateral lock)",
+  "ADA: Kraken: ['EOrder:Insufficient funds']",
   "TRUMP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
