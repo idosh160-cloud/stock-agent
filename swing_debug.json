@@ -1,7 +1,7 @@
 {
- "time": "2026-08-26T11:00:05",
+ "time": "2026-08-26T12:00:05",
  "usdc": 28.07,
- "portfolio": 596.54,
+ "portfolio": 595.25,
  "api_billing_blocked": false,
  "margin_headroom": 140.35,
  "open": [
@@ -9,26 +9,27 @@
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "HOOD +5.9% vol=$167,659",
-  "CRCL +5.8% vol=$358,406",
+  "HOOD +6.0% vol=$162,703",
   "ANTHROPIC -5.6% vol=$32,953",
-  "COIN +3.6% vol=$20,219",
-  "MSTR +2.6% vol=$628,176"
+  "CRCL +4.9% vol=$354,409",
+  "MSTR +3.7% vol=$612,266",
+  "COIN +3.6% vol=$20,219"
  ],
  "futures_ok": true,
- "futures_balance": 39.2,
+ "futures_balance": 39.21,
  "unallocated_spot": [
-  "ETH $493"
+  "ETH $492"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, TRUMP",
+ "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN",
  "claude_called": true,
- "market_read": "השוק הכללי חיובי בזהירות עם רוב הקריפטו במגמת עלייה מתונה בלי קיצוניות RSI, מה שמעדיף לונגים סלקטיביים על פני שורטים.",
- "skip_reason": "FARTCOIN ואטום קרובים לרוויה (RSI>60, BB קרוב לעליון) ולא מספקים יחס סיכון/סיכוי טוב כרגע; ANTHROPIC נשאר פתוח כי הוא בדרך למטרה ורווחי.",
+ "market_read": "השוק מעורב — יש הזדמנות מיד-ריברסל ב-XRP הסופר-נמכר לצד קיצור על FARTCOIN שהתפוצץ יתר על המידה.",
+ "skip_reason": "שאר המטבעות (ADA, LINK, DOGE, BTC) בטווח ניטרלי בלי איתות ברור, והמניות התנודה שלהן קטנה מדי היום להצדיק חשיפה חדשה.",
  "picks": [
-  "TRUMP long size=30% conf=MEDIUM"
+  "XRP long size=25% conf=MEDIUM",
+  "FARTCOIN short size=20% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
+  "XRP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
