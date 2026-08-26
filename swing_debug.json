@@ -1,7 +1,7 @@
 {
- "time": "2026-08-26T00:00:05",
+ "time": "2026-08-26T01:00:04",
  "usdc": 28.07,
- "portfolio": 590.75,
+ "portfolio": 592.16,
  "api_billing_blocked": false,
  "margin_headroom": 140.35,
  "open": [
@@ -9,28 +9,25 @@
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "HOOD +7.3% vol=$193,943",
-  "CF -5.9% vol=$21,521",
-  "COIN +4.0% vol=$20,978",
-  "CRCL +4.0% vol=$413,042",
-  "NVDA +2.3% vol=$187,672"
+  "HOOD +6.6% vol=$192,001",
+  "CF -5.3% vol=$22,394",
+  "CRCL +3.3% vol=$408,319",
+  "COIN +2.5% vol=$20,468",
+  "NVDA +1.4% vol=$189,203"
  ],
  "futures_ok": true,
  "futures_balance": 39.2,
  "unallocated_spot": [
-  "ETH $488"
+  "ETH $489"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TRUMP, ADA, FARTCOIN",
+ "call_reason": "תנועה חזקה במטבע חדש: PENGU",
  "claude_called": true,
- "market_read": "השוק הקריפטו כולל ברמות תת-מכירה חדות עם הזדמנויות ריבאונד, בזמן שהמניות הטוקניזציה יציבות יחסית ללא סיגנל חד.",
- "skip_reason": "שאר המטבעות (DOGE, DOT, LTC, LINK, AVAX) מציגים תת-מכירה דומה אך עם נפח/מומנטום חלש יותר או היסטוריה שלילית משמעותית ללא שינוי בתנאים - מעדיפים להתרכז בשני הסטאפים החזקים ביותר.",
+ "market_read": "השוק הכללי נסחר בטווח צר עם רוב האלטים ב-RSI אמצע-נמוך, ללא מגמה חד-משמעית אך עם כמה הזדמנויות oversold למרוץ תיקון קצר.",
+ "skip_reason": "שאר המועמדים (ADA, LINK, DOGE) נמצאים באמצע הטווח בלי אות ברור מספיק, ו-ETH הבלתי מוקצה נשאר כהחזקה פסיבית כי אין כרגע סטאפ עדיף שמצדיק מכירה חלקית שלו.",
  "picks": [
-  "ADA long size=25% conf=MEDIUM",
   "TRUMP long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "ADA: Kraken: ['EOrder:Insufficient funds']",
   "TRUMP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
