@@ -1,28 +1,34 @@
 {
- "time": "2026-08-26T14:00:06",
- "usdc": 28.07,
- "portfolio": 593.73,
+ "time": "2026-08-26T15:00:05",
+ "usdc": 28.13,
+ "portfolio": 589.75,
  "api_billing_blocked": false,
- "margin_headroom": 140.35,
+ "margin_headroom": 140.65,
  "open": [
   "ANTHROPIC long +4.7%"
  ],
- "stock_candidates": 17,
+ "stock_candidates": 18,
  "top_stocks": [
-  "CRCL +5.1% vol=$304,740",
+  "MSTR -4.3% vol=$729,290",
+  "IOT +4.1% vol=$6,224",
   "ANTHROPIC -3.8% vol=$33,099",
-  "HOOD +2.7% vol=$148,855",
-  "COIN +2.0% vol=$31,993",
-  "CF -1.7% vol=$20,062"
+  "META +3.6% vol=$135,410",
+  "CRCL -3.3% vol=$505,533"
  ],
  "futures_ok": true,
  "futures_balance": 39.21,
  "unallocated_spot": [
-  "ETH $490"
+  "ETH $487"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN",
+ "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, PENGU, XRP",
  "claude_called": true,
- "market_read": "",
- "skip_reason": "Expecting ',' delimiter: line 10 column 202 (char 372)",
- "picks": []
+ "market_read": "רוב האלטקוינים במצב oversold חד אחרי ירידה כללית, מה שיוצר הזדמנויות ריבאונד טובות, בעיקר ב-XRP עם הנפח הגבוה ביותר.",
+ "skip_reason": "TON ו-ADA גם oversold אך עם נפח מסחר נמוך משמעותית מ-XRP; מניות ה-xStocks לא מציעות יחס סיכון/סיכוי ברור כרגע - מעדיפים ריכוז בהזדמנות הכי חזקה.",
+ "picks": [
+  "XRP long size=25% conf=HIGH"
+ ],
+ "order_errors": [
+  "liq ETH: all sizes rejected (margin collateral lock)",
+  "XRP: Kraken: ['EOrder:Insufficient funds']"
+ ]
 }
