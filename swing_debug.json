@@ -1,7 +1,7 @@
 {
- "time": "2026-08-26T10:00:05",
+ "time": "2026-08-26T11:00:05",
  "usdc": 28.07,
- "portfolio": 591.72,
+ "portfolio": 596.54,
  "api_billing_blocked": false,
  "margin_headroom": 140.35,
  "open": [
@@ -9,28 +9,26 @@
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "HOOD +7.1% vol=$171,467",
-  "CRCL +5.0% vol=$382,975",
+  "HOOD +5.9% vol=$167,659",
+  "CRCL +5.8% vol=$358,406",
+  "ANTHROPIC -5.6% vol=$32,953",
   "COIN +3.6% vol=$20,219",
-  "CF -2.4% vol=$24,911",
-  "MSTR +2.2% vol=$662,374"
+  "MSTR +2.6% vol=$628,176"
  ],
  "futures_ok": true,
  "futures_balance": 39.2,
  "unallocated_spot": [
-  "ETH $489"
+  "ETH $493"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN",
+ "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, TRUMP",
  "claude_called": true,
- "market_read": "השוק הכללי מעורב עם ביטקוין שטוח וכמה אלטקוינים בתנאי oversold קיצוני שמזמנים ריבאונד טכני.",
- "skip_reason": "פארטקוין רץ חזק מדי בלי אישור נוסף ומניות ה-xStocks לא מציגות סיגנל קיצוני מספיק (RSI/BB) כדי להצדיק פוזיציה על פני ה-crypto oversold setups.",
+ "market_read": "השוק הכללי חיובי בזהירות עם רוב הקריפטו במגמת עלייה מתונה בלי קיצוניות RSI, מה שמעדיף לונגים סלקטיביים על פני שורטים.",
+ "skip_reason": "FARTCOIN ואטום קרובים לרוויה (RSI>60, BB קרוב לעליון) ולא מספקים יחס סיכון/סיכוי טוב כרגע; ANTHROPIC נשאר פתוח כי הוא בדרך למטרה ורווחי.",
  "picks": [
-  "XRP long size=25% conf=HIGH",
-  "DOT long size=15% conf=MEDIUM"
+  "TRUMP long size=30% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "XRP: Kraken: ['EOrder:Insufficient funds']",
-  "DOT: Kraken: ['EOrder:Invalid leverage']"
+  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
