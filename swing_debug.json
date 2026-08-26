@@ -1,31 +1,31 @@
 {
- "time": "2026-08-26T18:00:05",
+ "time": "2026-08-26T19:00:06",
  "usdc": 28.13,
- "portfolio": 594.63,
+ "portfolio": 596.85,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
   "ANTHROPIC long +4.7%"
  ],
- "stock_candidates": 18,
+ "stock_candidates": 17,
  "top_stocks": [
   "GLD -11.2% vol=$131,644",
-  "FLU +7.6% vol=$9,821",
-  "CRCL -4.5% vol=$572,191",
+  "FLU +6.0% vol=$10,048",
   "IOT +4.1% vol=$6,224",
-  "ANTHROPIC -3.8% vol=$33,099"
+  "CRCL -3.1% vol=$539,598",
+  "COIN -2.9% vol=$22,848"
  ],
  "futures_ok": true,
  "futures_balance": 39.21,
  "unallocated_spot": [
-  "ETH $492"
+  "ETH $494"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, PENGU, XRP",
+ "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, PENGU, TRUMP",
  "claude_called": true,
- "market_read": "השוק הרחב (BTC) יציב יחסית אך אלטקוינים מראים חולשה קצרת טווח עם כמה מטבעות oversold שמציעים הזדמנות ריבאונד.",
- "skip_reason": "שאר המועמדים או בעלי נפח נמוך מדי (PENGU, XDC) או ללא איתות ברור מספיק (FARTCOIN, TRUMP), ומניית ANTHROPIC הקיימת כבר בדרך ליעד ולא נוגעים בה; ETH נשאר מוחזק כהחזקה פסיבית כי נעילת מרג'ין עלולה לחסום נזילות.",
+ "market_read": "השוק הרחב (BTC) יציב יחסית בעוד אלטקוינים מראים חולשה קצרת טווח עם כמה הזדמנויות oversold כמו XRP ו-XDC.",
+ "skip_reason": "ETH המוחזק כספוט נשאר במקום כי הוא במגמת עלייה חיובית (RSI 55, MACD חיובי) וקרוב לרצועה עליונה - לא הזמן לממש; שאר המועמדים (XDC, FARTCOIN, PENGU) בנפח נמוך מדי או ללא איתות ברור מספיק להצדיק כניסה נוספת עם ה-USDC המוגבל.",
  "picks": [
-  "XRP long size=25% conf=MEDIUM"
+  "XRP long size=20% conf=MEDIUM"
  ],
  "order_errors": [
   "XRP: Kraken: ['EOrder:Insufficient funds']"
