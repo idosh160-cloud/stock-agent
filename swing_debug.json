@@ -1,7 +1,7 @@
 {
- "time": "2026-08-26T19:00:06",
+ "time": "2026-08-26T20:00:06",
  "usdc": 28.13,
- "portfolio": 596.85,
+ "portfolio": 596.41,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -12,22 +12,23 @@
   "GLD -11.2% vol=$131,644",
   "FLU +6.0% vol=$10,048",
   "IOT +4.1% vol=$6,224",
-  "CRCL -3.1% vol=$539,598",
-  "COIN -2.9% vol=$22,848"
+  "HOOD -2.6% vol=$60,939",
+  "MSTR -2.5% vol=$473,425"
  ],
  "futures_ok": true,
  "futures_balance": 39.21,
  "unallocated_spot": [
   "ETH $494"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, PENGU, TRUMP",
+ "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, PENGU, XRP",
  "claude_called": true,
- "market_read": "השוק הרחב (BTC) יציב יחסית בעוד אלטקוינים מראים חולשה קצרת טווח עם כמה הזדמנויות oversold כמו XRP ו-XDC.",
- "skip_reason": "ETH המוחזק כספוט נשאר במקום כי הוא במגמת עלייה חיובית (RSI 55, MACD חיובי) וקרוב לרצועה עליונה - לא הזמן לממש; שאר המועמדים (XDC, FARTCOIN, PENGU) בנפח נמוך מדי או ללא איתות ברור מספיק להצדיק כניסה נוספת עם ה-USDC המוגבל.",
+ "market_read": "השוק הקריפטו נמצא בתיקון מקומי עם כמה מטבעות oversold בולטים כמו XRP ו-XDC, בעוד ETH ו-BTC יציבים יחסית ליד רמות גבוהות.",
+ "skip_reason": "XDC ו-PENGU בעלי נפח מסחר נמוך מדי לביטחון בכניסה, FARTCOIN תנודתי מדי ללא איתות ברור, ומניות ה-xStocks מציגות ירידות קלות בלבד ללא הזדמנות ברורה לשורט או לונג.",
  "picks": [
-  "XRP long size=20% conf=MEDIUM"
+  "XRP long size=25% conf=MEDIUM"
  ],
  "order_errors": [
+  "liq ETH: all sizes rejected (margin collateral lock)",
   "XRP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
