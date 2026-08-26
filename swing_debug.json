@@ -1,7 +1,7 @@
 {
- "time": "2026-08-26T16:00:06",
+ "time": "2026-08-26T17:00:06",
  "usdc": 28.13,
- "portfolio": 592.2,
+ "portfolio": 591.14,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -9,21 +9,21 @@
  ],
  "stock_candidates": 18,
  "top_stocks": [
-  "MSTR -4.7% vol=$599,399",
+  "FLU +5.5% vol=$9,542",
+  "COIN -4.3% vol=$22,348",
+  "MSTR -4.2% vol=$595,462",
   "IOT +4.1% vol=$6,224",
-  "ANTHROPIC -3.8% vol=$33,099",
-  "FLU +3.7% vol=$7,202",
-  "TSLA -2.8% vol=$134,287"
+  "CRCL -4.0% vol=$601,015"
  ],
  "futures_ok": true,
  "futures_balance": 39.21,
  "unallocated_spot": [
-  "ETH $489"
+  "ETH $488"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: PENGU, FARTCOIN, XRP",
+ "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, PENGU, XRP",
  "claude_called": true,
- "market_read": "השוק הכללי בקורקציה קלה עם כמה קריפטו מובילים בתחום oversold עמוק ונפח מסחר גבוה שמעיד על פוטנציאל תיקון קרוב.",
- "skip_reason": "שאר המטבעות (XDC, XMR, BCH, DOGE, PENGU) בעלי נפח נמוך יותר או סיגנל חלש יחסית ל-XRP/ADA, ומניות הן שקטות יותר ולא מציעות יתרון ברור כרגע.",
+ "market_read": "שוק האלטים נכנס לאזור oversold חד עם RSI נמוך ברוב המטבעות המובילים בזמן ש-BTC יציב, זה נראה כמו הזדמנות לריבאונד טכני קצר טווח.",
+ "skip_reason": "XDC ו-BCH נפסלו בשל נפח מסחר דל מדי (מתחת ל-$70k) שלא מצדיק פוזיציה משמעותית, ו-DOT/DOGE חלשים יותר יחסית ל-XRP/ADA מבחינת שילוב נפח ו-RSI קיצוני.",
  "picks": [
   "XRP long size=30% conf=HIGH",
   "ADA long size=15% conf=MEDIUM"
