@@ -1,7 +1,7 @@
 {
- "time": "2026-08-27T18:00:06",
+ "time": "2026-08-27T19:00:05",
  "usdc": 28.13,
- "portfolio": 609.18,
+ "portfolio": 606.54,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -9,30 +9,31 @@
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "MSTR +11.6% vol=$1,154,235",
-  "NVDA +8.4% vol=$866,602",
+  "MSTR +10.6% vol=$1,146,285",
+  "NVDA +6.7% vol=$861,850",
   "COIN +5.8% vol=$54,495",
-  "CRCL +4.1% vol=$814,989",
-  "FLU +3.3% vol=$6,883"
+  "CRCL +4.0% vol=$818,760",
+  "FLU +3.1% vol=$6,497"
  ],
  "futures_ok": true,
  "futures_balance": 39.22,
  "unallocated_spot": [
-  "ETH $503",
+  "ETH $501",
   "SOL $25"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: TRUMP, XMR, SOL",
  "claude_called": true,
- "market_read": "השוק הקריפטו והמניות הרלוונטיות נמצאים ברובם בקיצון overbought אחרי ריצות חדות, מה שהופך שורטים על exhaustion לאטרקטיביים יותר מלונגים חדשים כרגע.",
- "skip_reason": "SOL ו-BTC כבר overbought מאוד (RSI 75/69) אך המומנטום עדיין חזק מדי לשורט בטוח, ולכן דילגתי עליהם; שאר המועמדים בנפח מסחר נמוך מדי או ניטרליים.",
+ "market_read": "השוק במגמת עלייה כללית עם BTC וכמה אלטקוינים ומניות טכנולוגיה במומנטום חזק, אבל חלק מהנכסים (SOL, XMR) כבר נכנסו לאזור over-bought קיצוני שמחייב זהירות.",
+ "skip_reason": "SOL ו-XMR נמצאים ב-RSI קיצוני (75.6 ו-72.5) עם BB% קרוב ל-90 - הסיכון לתיקון גבוה מדי כרגע ללונג, ומניות כמו NVDA/COIN כבר תמחרו חלק מהמומנטום ללא בידול ברור מ-MSTR.",
  "picks": [
-  "TRUMP short size=25% conf=HIGH",
-  "MSTR short size=20% conf=MEDIUM"
+  "TRUMP long size=25% conf=MEDIUM",
+  "MSTR long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)"
+  "liq ETH: all sizes rejected (margin collateral lock)",
+  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
  ],
  "skips": [
-  "MSTR: margin $39 < needed $41 (after transfer attempt)"
+  "MSTR: margin $39 < needed $40 (after transfer attempt)"
  ]
 }
