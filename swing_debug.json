@@ -1,7 +1,7 @@
 {
- "time": "2026-08-27T13:00:05",
+ "time": "2026-08-27T14:00:05",
  "usdc": 28.13,
- "portfolio": 603.32,
+ "portfolio": 604.0,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -9,25 +9,26 @@
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "FLU +7.8% vol=$11,454",
-  "NVDA +4.5% vol=$533,789",
-  "IOT +4.0% vol=$8,263",
-  "META -3.0% vol=$100,003",
-  "SPCX +2.3% vol=$700,077"
+  "NVDA +5.2% vol=$484,724",
+  "MSTR +4.4% vol=$782,683",
+  "FLU +4.4% vol=$11,332",
+  "CRCL +2.6% vol=$994,363",
+  "COIN +2.5% vol=$50,094"
  ],
  "futures_ok": true,
  "futures_balance": 39.23,
  "unallocated_spot": [
-  "ETH $498"
+  "ETH $499"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: PEAQ, XMR, FARTCOIN",
+ "call_reason": "תנועה חזקה במטבע חדש: PEAQ, XMR, SOL",
  "claude_called": true,
- "market_read": "השוק הכללי מעורב - יש כמה מטבעות בקיצון RSI גבוה (XMR, SOL) שמצביעים על מיצוי מומנטום קצר טווח, בעוד אלטים קטנים כמו PEAQ נסחרים בנפח נמוך מדי לכניסה משמעותית.",
- "skip_reason": "SOL ו-LINK אמנם חזקים אך כבר overbought עם מגמה חזקה מאחוריהם - סיכון שורט גבוה מדי; מניות ה-xStocks לא מציגות היום סטאפ ברור מספיק (טווחים צרים, ללא קיצון RSI); ETH הקיים בפוזיציה ספוט משאירים כפי שהוא כי אין סיבה טכנית לחתוך אותו כרגע.",
+ "market_read": "השוק נמצא במומנטום עולה מתון עם כמה מטבעות בקנייתיתר (SOL, XRP, PENGU) לצד הזדמנויות המשך מגמה נקיות כמו LINK.",
+ "skip_reason": "SOL/XRP/PENGU קרובים מדי לרוויה (BB%>85, RSI גבוה) ולא מספקים יחס סיכון-סיכוי טוב ללונג נוסף; המניות ללא נתוני RSI/MACD ברורים כרגע לא מצדיקות סיכון על חשבון הפוזיציה הקיימת המרוויחה ב-ANTHROPIC.",
  "picks": [
-  "XMR short size=20% conf=MEDIUM"
+  "LINK long size=25% conf=MEDIUM"
  ],
  "order_errors": [
-  "XMR: Kraken: ['EOrder:Margin trading in asset is restricted']"
+  "liq ETH: all sizes rejected (margin collateral lock)",
+  "LINK: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
