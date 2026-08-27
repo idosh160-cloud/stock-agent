@@ -1,7 +1,7 @@
 {
- "time": "2026-08-27T12:00:07",
+ "time": "2026-08-27T13:00:05",
  "usdc": 28.13,
- "portfolio": 604.58,
+ "portfolio": 603.32,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -9,33 +9,25 @@
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "FLU +7.0% vol=$11,745",
-  "NVDA +4.6% vol=$495,454",
+  "FLU +7.8% vol=$11,454",
+  "NVDA +4.5% vol=$533,789",
   "IOT +4.0% vol=$8,263",
-  "SPCX +2.1% vol=$703,527",
-  "GOOGL -1.8% vol=$200,305"
+  "META -3.0% vol=$100,003",
+  "SPCX +2.3% vol=$700,077"
  ],
  "futures_ok": true,
- "futures_balance": 39.22,
+ "futures_balance": 39.23,
  "unallocated_spot": [
-  "ETH $500"
+  "ETH $498"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: XMR, PEAQ, FARTCOIN",
+ "call_reason": "תנועה חזקה במטבע חדש: PEAQ, XMR, FARTCOIN",
  "claude_called": true,
- "market_read": "השוק הכללי יציב עם ביטקוין רגוע סביב 79.5K, אך כמה אלטקוינים ומניות מראים תנועות קיצוניות שמזמינות מסחר ממוקד בשני הכיוונים.",
- "skip_reason": "שאר המועמדים (SOL, LINK, DOGE, MSTR, SPCX) נמצאים באמצע טווח ללא איתות ברור מספיק, ומטבעות בנפח נמוך (PEAQ, FARTCOIN, CC) לא עומדים בסף הנזילות הנדרש.",
+ "market_read": "השוק הכללי מעורב - יש כמה מטבעות בקיצון RSI גבוה (XMR, SOL) שמצביעים על מיצוי מומנטום קצר טווח, בעוד אלטים קטנים כמו PEAQ נסחרים בנפח נמוך מדי לכניסה משמעותית.",
+ "skip_reason": "SOL ו-LINK אמנם חזקים אך כבר overbought עם מגמה חזקה מאחוריהם - סיכון שורט גבוה מדי; מניות ה-xStocks לא מציגות היום סטאפ ברור מספיק (טווחים צרים, ללא קיצון RSI); ETH הקיים בפוזיציה ספוט משאירים כפי שהוא כי אין סיבה טכנית לחתוך אותו כרגע.",
  "picks": [
-  "XMR short size=30% conf=HIGH",
-  "NVDA long size=25% conf=MEDIUM"
+  "XMR short size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
   "XMR: Kraken: ['EOrder:Margin trading in asset is restricted']"
- ],
- "transfers": [
-  "NVDA: moved $13 → FAILED"
- ],
- "skips": [
-  "NVDA: margin $39 < needed $50 (after transfer attempt)"
  ]
 }
