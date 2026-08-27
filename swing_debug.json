@@ -1,7 +1,7 @@
 {
- "time": "2026-08-27T21:00:06",
+ "time": "2026-08-27T22:00:05",
  "usdc": 28.13,
- "portfolio": 607.19,
+ "portfolio": 606.6,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -9,34 +9,29 @@
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "MSTR +12.3% vol=$1,306,760",
-  "NVDA +7.9% vol=$1,111,250",
-  "CRCL +5.2% vol=$824,062",
-  "COIN +4.1% vol=$47,316",
-  "FLU +3.1% vol=$6,497"
+  "MSTR +11.2% vol=$1,309,837",
+  "FLU +6.8% vol=$8,000",
+  "CRCL +5.0% vol=$829,050",
+  "NVDA +3.7% vol=$1,173,063",
+  "COIN +3.6% vol=$50,047"
  ],
  "futures_ok": true,
  "futures_balance": 39.23,
  "unallocated_spot": [
-  "ETH $501",
+  "ETH $500",
   "SOL $25"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: TRUMP, SOL, XMR",
  "claude_called": true,
- "market_read": "השוק בעדנה שורית מתונה עם BTC יציב מעל 80K, אבל כמה נכסים (MSTR, SOL) כבר רצו חזק ונראים מתישים לטווח קצר.",
- "skip_reason": "SOL ו-BTC כבר overbought/near-overbought אחרי ריצה חדה ולא מציעים יחס סיכוי-סיכון טוב כרגע; שאר המועמדים או בנפח נמוך מדי או ללא איתות ברור.",
+ "market_read": "השוק בבריאות עלייה כללית עם ביטקוין מוביל וכסף זורם לאלטים בעלי מומנטום חיובי ברור",
+ "skip_reason": "SOL מוגזם ב-RSI 72.5 וסמוך לרצועה עליונה כך שהסיכון לנפילה גבוה מהתשואה הפוטנציאלית, שאר המניות והמטבעות נראים סחיריים אך חלשים או חד-משמעיים פחות מהבחירות הנוכחיות",
  "picks": [
-  "MSTR short size=30% conf=MEDIUM",
-  "TRUMP long size=25% conf=MEDIUM"
+  "BTC long size=30% conf=HIGH",
+  "TRUMP long size=15% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
+  "BTC: Kraken: ['EOrder:Insufficient funds']",
   "TRUMP: Kraken: ['EOrder:Insufficient funds']"
- ],
- "transfers": [
-  "MSTR: moved $18 → FAILED"
- ],
- "skips": [
-  "MSTR: margin $39 < needed $61 (after transfer attempt)"
  ]
 }
