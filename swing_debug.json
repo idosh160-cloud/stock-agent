@@ -1,7 +1,7 @@
 {
- "time": "2026-08-27T17:00:05",
+ "time": "2026-08-27T18:00:06",
  "usdc": 28.13,
- "portfolio": 610.36,
+ "portfolio": 609.18,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -9,34 +9,30 @@
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "MSTR +13.5% vol=$818,152",
-  "NVDA +8.9% vol=$793,792",
-  "COIN +6.0% vol=$55,025",
-  "CRCL +5.5% vol=$812,713",
-  "FLU +3.5% vol=$6,969"
+  "MSTR +11.6% vol=$1,154,235",
+  "NVDA +8.4% vol=$866,602",
+  "COIN +5.8% vol=$54,495",
+  "CRCL +4.1% vol=$814,989",
+  "FLU +3.3% vol=$6,883"
  ],
  "futures_ok": true,
- "futures_balance": 39.23,
+ "futures_balance": 39.22,
  "unallocated_spot": [
-  "ETH $504",
+  "ETH $503",
   "SOL $25"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TRUMP, SOL, XMR",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP, XMR, SOL",
  "claude_called": true,
- "market_read": "השוק במגמת עלייה חדה בסקטור הקריפטו והמניות הממונפות עם כמה נכסים במצב oversold קיצוני שמבשילים לתיקון.",
- "skip_reason": "TRUMP ו-MELANIA בעלי ווליום נמוך מדי ותנודתיות פראית מדי לניהול סיכון תקין; שאר הקנדידטים בטווח ניטרלי ללא יתרון ברור.",
+ "market_read": "השוק הקריפטו והמניות הרלוונטיות נמצאים ברובם בקיצון overbought אחרי ריצות חדות, מה שהופך שורטים על exhaustion לאטרקטיביים יותר מלונגים חדשים כרגע.",
+ "skip_reason": "SOL ו-BTC כבר overbought מאוד (RSI 75/69) אך המומנטום עדיין חזק מדי לשורט בטוח, ולכן דילגתי עליהם; שאר המועמדים בנפח מסחר נמוך מדי או ניטרליים.",
  "picks": [
-  "SOL short size=25% conf=MEDIUM",
-  "MSTR short size=25% conf=MEDIUM"
+  "TRUMP short size=25% conf=HIGH",
+  "MSTR short size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "SOL: Kraken: ['EOrder:Insufficient initial margin']"
- ],
- "transfers": [
-  "MSTR: moved $14 → FAILED"
+  "liq ETH: all sizes rejected (margin collateral lock)"
  ],
  "skips": [
-  "MSTR: margin $39 < needed $51 (after transfer attempt)"
+  "MSTR: margin $39 < needed $41 (after transfer attempt)"
  ]
 }
