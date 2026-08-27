@@ -1,7 +1,7 @@
 {
- "time": "2026-08-27T10:00:06",
+ "time": "2026-08-27T11:00:05",
  "usdc": 28.13,
- "portfolio": 611.42,
+ "portfolio": 604.94,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -10,29 +10,32 @@
  "stock_candidates": 17,
  "top_stocks": [
   "FLU +5.9% vol=$11,574",
-  "NVDA +5.1% vol=$487,394",
-  "IOT +4.5% vol=$7,123",
-  "MSTR +2.7% vol=$807,904",
-  "COIN +2.6% vol=$29,387"
+  "NVDA +4.6% vol=$485,297",
+  "IOT +4.0% vol=$8,263",
+  "SPCX +2.1% vol=$699,650",
+  "GOOGL -1.5% vol=$195,028"
  ],
  "futures_ok": true,
  "futures_balance": 39.22,
  "unallocated_spot": [
-  "ETH $506"
+  "ETH $500"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, PEAQ",
+ "call_reason": "תנועה חזקה במטבע חדש: PEAQ, FARTCOIN, XMR",
  "claude_called": true,
- "market_read": "השוק בכללותו במומנטום חיובי עם כמה נכסים בקריפטו קרובים לרוויה אך עדיין לא מתהפכים, ומניות טק ממשיכות לרוץ בנפחים גבוהים.",
- "skip_reason": "שאר המועמדים בקריפטו (LINK, ADA, DOGE) קרובים מאוד לרוויה עם MACD עדיין חיובי כך שקיצור מוקדם מסוכן, ומניות כמו MSTR/SPCX/CRCL נדחות בגלל היסטוריה שלילית בלי שינוי משמעותי בתנאים.",
+ "market_read": "השוק הכללי מעורב - קריפטו מרכזי כמו SOL ו-XMR נראים overbought בעוד מניות כמו NVDA עדיין במומנטום עולה ואלטים קטנים כמו PEAQ נראים oversold.",
+ "skip_reason": "SOL ו-XMR overbought מדי (RSI>68, BB קרוב ל-95) אבל MACD עדיין חיובי חזק - סיכון גבוה מדי לשורט נגד מומנטום פעיל; שאר האלטים בנפח נמוך או ללא איתות ברור.",
  "picks": [
-  "SOL long size=25% conf=MEDIUM",
-  "NVDA long size=20% conf=MEDIUM"
+  "NVDA long size=30% conf=MEDIUM",
+  "PEAQ long size=15% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "SOL: Kraken: ['EOrder:Insufficient funds']"
+  "PEAQ: Kraken: ['EOrder:Insufficient funds']"
+ ],
+ "transfers": [
+  "NVDA: moved $18 → FAILED"
  ],
  "skips": [
-  "NVDA: margin $39 < needed $41 (after transfer attempt)"
+  "NVDA: margin $39 < needed $60 (after transfer attempt)"
  ]
 }
