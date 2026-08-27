@@ -1,31 +1,36 @@
 {
- "time": "2026-08-27T09:00:06",
+ "time": "2026-08-27T10:00:06",
  "usdc": 28.13,
- "portfolio": 610.83,
+ "portfolio": 611.42,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
   "ANTHROPIC long +4.7%"
  ],
- "stock_candidates": 16,
+ "stock_candidates": 17,
  "top_stocks": [
-  "NVDA +6.0% vol=$464,092",
-  "FLU +4.5% vol=$12,076",
-  "SPCX +2.0% vol=$683,808",
-  "GOOGL -1.8% vol=$182,182",
-  "MSTR +1.8% vol=$763,399"
+  "FLU +5.9% vol=$11,574",
+  "NVDA +5.1% vol=$487,394",
+  "IOT +4.5% vol=$7,123",
+  "MSTR +2.7% vol=$807,904",
+  "COIN +2.6% vol=$29,387"
  ],
  "futures_ok": true,
  "futures_balance": 39.22,
  "unallocated_spot": [
   "ETH $506"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN",
+ "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, PEAQ",
  "claude_called": true,
- "market_read": "רוב הקריפטו נראה overbought לאחר עלייה חדה, אז עדיף לחפש הזדמנות במניות עם מומנטום טרי ולא להילחם במגמת עלייה בקריפטו.",
- "skip_reason": "רוב מטבעות הקריפטו קרובים ל-RSI overbought עם BB% גבוה אחרי ריצה חדה - שורט מסוכן מול מגמת עלייה כללית, ולונג בשלב זה נראה מאוחר מדי; ETH הנותר נשאר כהחזקה פסיבית כי אין איתות ברור לשינוי.",
+ "market_read": "השוק בכללותו במומנטום חיובי עם כמה נכסים בקריפטו קרובים לרוויה אך עדיין לא מתהפכים, ומניות טק ממשיכות לרוץ בנפחים גבוהים.",
+ "skip_reason": "שאר המועמדים בקריפטו (LINK, ADA, DOGE) קרובים מאוד לרוויה עם MACD עדיין חיובי כך שקיצור מוקדם מסוכן, ומניות כמו MSTR/SPCX/CRCL נדחות בגלל היסטוריה שלילית בלי שינוי משמעותי בתנאים.",
  "picks": [
+  "SOL long size=25% conf=MEDIUM",
   "NVDA long size=20% conf=MEDIUM"
+ ],
+ "order_errors": [
+  "liq ETH: all sizes rejected (margin collateral lock)",
+  "SOL: Kraken: ['EOrder:Insufficient funds']"
  ],
  "skips": [
   "NVDA: margin $39 < needed $41 (after transfer attempt)"
