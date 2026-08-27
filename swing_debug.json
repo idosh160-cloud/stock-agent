@@ -1,7 +1,7 @@
 {
- "time": "2026-08-27T16:00:05",
+ "time": "2026-08-27T17:00:05",
  "usdc": 28.13,
- "portfolio": 609.64,
+ "portfolio": 610.36,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -9,31 +9,34 @@
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "MSTR +13.2% vol=$771,992",
-  "CRCL +7.4% vol=$790,784",
-  "NVDA +6.8% vol=$734,794",
-  "COIN +6.0% vol=$52,770",
-  "SPCX +3.4% vol=$657,016"
+  "MSTR +13.5% vol=$818,152",
+  "NVDA +8.9% vol=$793,792",
+  "COIN +6.0% vol=$55,025",
+  "CRCL +5.5% vol=$812,713",
+  "FLU +3.5% vol=$6,969"
  ],
  "futures_ok": true,
  "futures_balance": 39.23,
  "unallocated_spot": [
-  "ETH $504"
+  "ETH $504",
+  "SOL $25"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TRUMP, XMR, SOL",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP, SOL, XMR",
  "claude_called": true,
- "market_read": "השוק הקריפטו והמניות במגמת עלייה חדה עם ריבוי נכסים ב-overbought, מה שיוצר הזדמנויות שורט על מהלכים פראבוליים מוצו.",
- "skip_reason": "רוב מועמדי הקריפטו (TRUMP, SOL, XMR) נמצאים ב-RSI קיצוני אך המומנטום עדיין חיובי וMACD לא הפך שלילי - מסוכן מדי לשורט כרגע, ועדיף למקד בפוזיציה אחת איכותית.",
+ "market_read": "השוק במגמת עלייה חדה בסקטור הקריפטו והמניות הממונפות עם כמה נכסים במצב oversold קיצוני שמבשילים לתיקון.",
+ "skip_reason": "TRUMP ו-MELANIA בעלי ווליום נמוך מדי ותנודתיות פראית מדי לניהול סיכון תקין; שאר הקנדידטים בטווח ניטרלי ללא יתרון ברור.",
  "picks": [
-  "MSTR short size=30% conf=MEDIUM"
+  "SOL short size=25% conf=MEDIUM",
+  "MSTR short size=25% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)"
+  "liq ETH: all sizes rejected (margin collateral lock)",
+  "SOL: Kraken: ['EOrder:Insufficient initial margin']"
  ],
  "transfers": [
-  "MSTR: moved $18 → FAILED"
+  "MSTR: moved $14 → FAILED"
  ],
  "skips": [
-  "MSTR: margin $39 < needed $61 (after transfer attempt)"
+  "MSTR: margin $39 < needed $51 (after transfer attempt)"
  ]
 }
