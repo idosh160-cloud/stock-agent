@@ -1,7 +1,7 @@
 {
- "time": "2026-08-27T04:00:05",
+ "time": "2026-08-27T05:00:05",
  "usdc": 28.13,
- "portfolio": 601.88,
+ "portfolio": 600.81,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -10,29 +10,32 @@
  "stock_candidates": 16,
  "top_stocks": [
   "FLU +3.8% vol=$11,175",
-  "NVDA +3.4% vol=$415,419",
-  "HOOD -2.8% vol=$55,025",
-  "SPCX +2.4% vol=$593,921",
-  "COIN -1.5% vol=$29,401"
+  "NVDA +3.3% vol=$413,187",
+  "HOOD -2.0% vol=$52,584",
+  "SPCX +2.0% vol=$599,950",
+  "MSTR -1.5% vol=$674,332"
  ],
  "futures_ok": true,
  "futures_balance": 39.22,
  "unallocated_spot": [
-  "ETH $498"
+  "ETH $497"
  ],
- "call_reason": "תנועה חזקה במניה: FLU, NVDA, HOOD",
+ "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN",
  "claude_called": true,
- "market_read": "השוק הכללי נסחר בירידה קלה עם BTC יציב סביב 78.8 אלף, אבל SOL ו-NVDA מראים מומנטום עולה חזק ביחס לשוק.",
- "skip_reason": "שאר הקריפטו (TRUMP, PENGU, PEAQ, ADA, BNB) נסחרים בטווח סחרירי ללא איתות ברור, והמניות האחרות (SPCX, MSTR, HOOD) חסרות זווית ברורה של לונג או שורט כרגע.",
+ "market_read": "השוק בטרנד צדדי-חלש עם כמה נקודות אור נקודתיות במניות טוקניות ובמטבעות עם MACD חיובי.",
+ "skip_reason": "שאר המועמדים בקריפטו נעים ברוחב תנודות נמוך וRSI ניטרלי ללא איתות ברור, וכן היסטוריית ביצועים חלשה בחלקם (ADA, CRCL, MSTR) לא מספקת ביטחון נוסף.",
  "picks": [
-  "SOL long size=35% conf=HIGH",
-  "NVDA long size=20% conf=MEDIUM"
+  "NVDA long size=28% conf=MEDIUM",
+  "TRUMP long size=15% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "SOL: Kraken: ['EOrder:Insufficient funds']"
+  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
+ ],
+ "transfers": [
+  "NVDA: moved $18 → FAILED"
  ],
  "skips": [
-  "NVDA: margin $39 < needed $40 (after transfer attempt)"
+  "NVDA: margin $39 < needed $56 (after transfer attempt)"
  ]
 }
