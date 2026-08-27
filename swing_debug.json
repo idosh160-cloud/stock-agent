@@ -1,7 +1,7 @@
 {
- "time": "2026-08-27T19:00:05",
+ "time": "2026-08-27T20:00:05",
  "usdc": 28.13,
- "portfolio": 606.54,
+ "portfolio": 605.47,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -9,31 +9,26 @@
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "MSTR +10.6% vol=$1,146,285",
-  "NVDA +6.7% vol=$861,850",
-  "COIN +5.8% vol=$54,495",
-  "CRCL +4.0% vol=$818,760",
+  "MSTR +11.4% vol=$1,223,783",
+  "NVDA +8.1% vol=$1,169,168",
+  "COIN +6.1% vol=$47,998",
+  "CRCL +5.7% vol=$814,830",
   "FLU +3.1% vol=$6,497"
  ],
  "futures_ok": true,
  "futures_balance": 39.22,
  "unallocated_spot": [
-  "ETH $501",
+  "ETH $499",
   "SOL $25"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TRUMP, XMR, SOL",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP, SOL, XMR",
  "claude_called": true,
- "market_read": "השוק במגמת עלייה כללית עם BTC וכמה אלטקוינים ומניות טכנולוגיה במומנטום חזק, אבל חלק מהנכסים (SOL, XMR) כבר נכנסו לאזור over-bought קיצוני שמחייב זהירות.",
- "skip_reason": "SOL ו-XMR נמצאים ב-RSI קיצוני (75.6 ו-72.5) עם BB% קרוב ל-90 - הסיכון לתיקון גבוה מדי כרגע ללונג, ומניות כמו NVDA/COIN כבר תמחרו חלק מהמומנטום ללא בידול ברור מ-MSTR.",
+ "market_read": "השוק הקריפטו כללי חיובי עם BTC יציב ואלטקוינים בודדים מציגים מומנטום חזק בעוד רוב המניות המסומנות רגועות.",
+ "skip_reason": "SOL ו-MSTR רצו חזק אך כבר קרוב לתשישות (RSI קיצוני/BB עליון) ללא סיגנל שורט חד, ושאר המועמדים בנפח נמוך מדי או תבנית חלשה - עדיף ריכוז בפוזיציה אחת עם יחס סיכון/תגמול טוב.",
  "picks": [
-  "TRUMP long size=25% conf=MEDIUM",
-  "MSTR long size=20% conf=MEDIUM"
+  "TRUMP long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
   "TRUMP: Kraken: ['EOrder:Insufficient funds']"
- ],
- "skips": [
-  "MSTR: margin $39 < needed $40 (after transfer attempt)"
  ]
 }
