@@ -1,7 +1,7 @@
 {
- "time": "2026-08-27T06:00:04",
+ "time": "2026-08-27T07:00:05",
  "usdc": 28.13,
- "portfolio": 602.93,
+ "portfolio": 601.9,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -9,25 +9,33 @@
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "FLU +3.8% vol=$11,175",
-  "NVDA +3.2% vol=$418,891",
-  "HOOD -2.3% vol=$52,544",
-  "CF -2.1% vol=$28,923",
-  "SPCX +1.9% vol=$604,129"
+  "NVDA +3.5% vol=$425,467",
+  "HOOD -2.2% vol=$52,532",
+  "FLU +1.9% vol=$11,977",
+  "CRCL -1.8% vol=$677,262",
+  "SPCX +1.6% vol=$608,036"
  ],
  "futures_ok": true,
  "futures_balance": 39.22,
  "unallocated_spot": [
-  "ETH $499"
+  "ETH $498"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, TRUMP",
  "claude_called": true,
- "market_read": "השוק הקריפטו נסחר בטווח צר-ניטרלי ללא מומנטום חד בכיוון אחד, רוב המטבעות והמניות מציגים RSI אמצעי ותנודתיות מתונה.",
- "skip_reason": "רוב המועמדים (FARTCOIN, PEAQ, XMR) נמצאים במצבי קיצון או חסרי אישור נפח ברור; ETH הספוט נשאר כהחזקה פסיבית כי אין כרגע נתונים טכניים עדכניים עליו להצדיק רוטציה, ומניות ה-xStock מציגות תנועות קטנות מדי ללא איתות ברור לשורט/לונג.",
+ "market_read": "השוק הכללי נייטרלי עם כמה נקודות מומנטום ברורות ב-XMR ו-NVDA, בעוד שאר המועמדים נעים בטווח צר בלי אות חד-משמעי.",
+ "skip_reason": "שאר המטבעות (ADA, XRP, DOGE, PENGU וכו') נסחרים באמצע הטווח עם RSI וMACD נייטרליים בלי יתרון סטטיסטי מובהק, ולכן דחיתי אותם.",
  "picks": [
-  "XRP long size=20% conf=MEDIUM"
+  "XMR long size=25% conf=MEDIUM",
+  "NVDA long size=30% conf=HIGH"
  ],
  "order_errors": [
-  "XRP: Kraken: ['EOrder:Insufficient funds']"
+  "liq ETH: all sizes rejected (margin collateral lock)",
+  "XMR: Kraken: ['EOrder:Insufficient funds']"
+ ],
+ "transfers": [
+  "NVDA: moved $18 → FAILED"
+ ],
+ "skips": [
+  "NVDA: margin $0 < needed $60 (after transfer attempt)"
  ]
 }
