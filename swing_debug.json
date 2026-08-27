@@ -1,7 +1,7 @@
 {
- "time": "2026-08-27T01:00:05",
+ "time": "2026-08-27T02:00:05",
  "usdc": 28.13,
- "portfolio": 601.81,
+ "portfolio": 603.23,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -10,29 +10,32 @@
  "stock_candidates": 16,
  "top_stocks": [
   "FLU +3.8% vol=$11,175",
-  "NVDA +2.7% vol=$411,450",
-  "CF +2.4% vol=$31,176",
-  "HOOD -2.0% vol=$55,334",
-  "META +1.9% vol=$127,161"
+  "NVDA +3.7% vol=$378,432",
+  "HOOD -2.3% vol=$55,323",
+  "CF +2.1% vol=$32,581",
+  "SPCX +2.1% vol=$413,594"
  ],
  "futures_ok": true,
  "futures_balance": 39.22,
  "unallocated_spot": [
-  "ETH $498"
+  "ETH $499"
  ],
- "call_reason": "תנועה חזקה במניה: FLU, NVDA, CF",
+ "call_reason": "תנועה חזקה במניה: FLU, NVDA, HOOD",
  "claude_called": true,
- "market_read": "השוק בעליה מתונה עם כמה קריפטו ומניות שמראים מומנטום חיובי ברור בזמן שביטקוין יציב סביב 78.7 אלף.",
- "skip_reason": "שאר המועמדים או בעלי נפח נמוך מדי (PEAQ), overbought קיצוני בלי אישור נפח, או תנודתיות שטוחה ללא יתרון ברור - לכן לא נכנסים.",
+ "market_read": "השוק הכללי נייטרלי עד חיובי בזהירות, עם כמה מטבעות/מניות מראים מומנטום אמיתי בעוד רוב הרשימה נסחרת בטווח צר וללא כיוון ברור.",
+ "skip_reason": "SOL ו-FARTCOIN נראים overbought אך ה-MACD עדיין חיובי חזק כך שסיכון short מוקדם מדי; שאר המועמדים (TRUMP, PENGU, AVAX, XDC, XRP, XMR, LTC) נמצאים באזור ניטרלי ללא edge ברור.",
  "picks": [
-  "SOL long size=25% conf=MEDIUM",
-  "NVDA long size=20% conf=MEDIUM"
+  "BCH long size=30% conf=HIGH",
+  "NVDA long size=25% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "SOL: Kraken: ['EOrder:Insufficient funds']"
+  "BCH: Kraken: ['EOrder:Insufficient funds']"
+ ],
+ "transfers": [
+  "NVDA: moved $13 → FAILED"
  ],
  "skips": [
-  "NVDA: margin $39 < needed $40 (after transfer attempt)"
+  "NVDA: margin $39 < needed $50 (after transfer attempt)"
  ]
 }
