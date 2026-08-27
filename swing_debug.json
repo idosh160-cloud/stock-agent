@@ -1,34 +1,36 @@
 {
- "time": "2026-08-27T14:00:05",
+ "time": "2026-08-27T15:00:05",
  "usdc": 28.13,
- "portfolio": 604.0,
+ "portfolio": 608.81,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
   "ANTHROPIC long +4.7%"
  ],
- "stock_candidates": 17,
+ "stock_candidates": 16,
  "top_stocks": [
-  "NVDA +5.2% vol=$484,724",
-  "MSTR +4.4% vol=$782,683",
-  "FLU +4.4% vol=$11,332",
-  "CRCL +2.6% vol=$994,363",
-  "COIN +2.5% vol=$50,094"
+  "MSTR +11.8% vol=$661,944",
+  "CRCL +8.3% vol=$878,671",
+  "NVDA +7.2% vol=$617,698",
+  "COIN +5.3% vol=$50,978",
+  "FLU +4.4% vol=$10,198"
  ],
  "futures_ok": true,
- "futures_balance": 39.23,
+ "futures_balance": 39.22,
  "unallocated_spot": [
-  "ETH $499"
+  "ETH $503"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: PEAQ, XMR, SOL",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP, XMR, PEAQ",
  "claude_called": true,
- "market_read": "השוק נמצא במומנטום עולה מתון עם כמה מטבעות בקנייתיתר (SOL, XRP, PENGU) לצד הזדמנויות המשך מגמה נקיות כמו LINK.",
- "skip_reason": "SOL/XRP/PENGU קרובים מדי לרוויה (BB%>85, RSI גבוה) ולא מספקים יחס סיכון-סיכוי טוב ללונג נוסף; המניות ללא נתוני RSI/MACD ברורים כרגע לא מצדיקות סיכון על חשבון הפוזיציה הקיימת המרוויחה ב-ANTHROPIC.",
+ "market_read": "השוק הרחב בקריפטו במגמת עלייה חזקה עם BTC וכל האלטים העיקריים בטריטוריית overbought אך עדיין עם מומנטום חיובי, לכן עדיף לונג על נכסים עם RSI פחות קיצוני מאשר שורט נגד הטרנד.",
+ "skip_reason": "דחיתי שורטים על SOL/TRUMP/BTC/מניות ממונפות למרות RSI גבוה כי MACD עדיין חיובי חזק והשוק במגמת עלייה כללית - שורט נגד טרנד כזה מסוכן מדי; ANTHROPIC ממשיך לכיוון היעד כך שלא נוגעים בו.",
  "picks": [
-  "LINK long size=25% conf=MEDIUM"
+  "LINK long size=25% conf=MEDIUM",
+  "XMR long size=20% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "LINK: Kraken: ['EOrder:Insufficient funds']"
+  "LINK: Kraken: ['EOrder:Insufficient funds']",
+  "XMR: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
