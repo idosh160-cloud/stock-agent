@@ -1,7 +1,7 @@
 {
- "time": "2026-08-27T08:00:06",
+ "time": "2026-08-27T09:00:06",
  "usdc": 28.13,
- "portfolio": 602.96,
+ "portfolio": 610.83,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -9,28 +9,25 @@
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "NVDA +4.0% vol=$426,065",
-  "SPCX +2.0% vol=$606,201",
-  "HOOD -1.9% vol=$52,691",
-  "COIN -1.7% vol=$29,106",
-  "GOOGL -1.6% vol=$178,235"
+  "NVDA +6.0% vol=$464,092",
+  "FLU +4.5% vol=$12,076",
+  "SPCX +2.0% vol=$683,808",
+  "GOOGL -1.8% vol=$182,182",
+  "MSTR +1.8% vol=$763,399"
  ],
  "futures_ok": true,
  "futures_balance": 39.22,
  "unallocated_spot": [
-  "ETH $499"
+  "ETH $506"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, PEAQ, TRUMP",
+ "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN",
  "claude_called": true,
- "market_read": "השוק הכללי בתנודתיות מתונה ללא מגמה ברורה, אבל יש כמה נכסים עם סיגנלים טכניים ברורים לכיוון מסוים.",
- "skip_reason": "שאר המועמדים (FARTCOIN, PEAQ, TRUMP, PENGU, XMR) מציגים אותות מעורבים או תנודות ללא כיוון ברור, ומניות ה-xStocks לא מציגות סטאפ קיצוני מספיק כרגע להצדיק כניסה.",
+ "market_read": "רוב הקריפטו נראה overbought לאחר עלייה חדה, אז עדיף לחפש הזדמנות במניות עם מומנטום טרי ולא להילחם במגמת עלייה בקריפטו.",
+ "skip_reason": "רוב מטבעות הקריפטו קרובים ל-RSI overbought עם BB% גבוה אחרי ריצה חדה - שורט מסוכן מול מגמת עלייה כללית, ולונג בשלב זה נראה מאוחר מדי; ETH הנותר נשאר כהחזקה פסיבית כי אין איתות ברור לשינוי.",
  "picks": [
-  "LINK long size=25% conf=HIGH",
-  "XDC long size=18% conf=MEDIUM"
+  "NVDA long size=20% conf=MEDIUM"
  ],
- "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "LINK: Kraken: ['EOrder:Insufficient funds']",
-  "XDC: Kraken: ['EOrder:Insufficient funds']"
+ "skips": [
+  "NVDA: margin $39 < needed $41 (after transfer attempt)"
  ]
 }
