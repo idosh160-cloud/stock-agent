@@ -1,36 +1,39 @@
 {
- "time": "2026-08-27T15:00:05",
+ "time": "2026-08-27T16:00:05",
  "usdc": 28.13,
- "portfolio": 608.81,
+ "portfolio": 609.64,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
   "ANTHROPIC long +4.7%"
  ],
- "stock_candidates": 16,
+ "stock_candidates": 17,
  "top_stocks": [
-  "MSTR +11.8% vol=$661,944",
-  "CRCL +8.3% vol=$878,671",
-  "NVDA +7.2% vol=$617,698",
-  "COIN +5.3% vol=$50,978",
-  "FLU +4.4% vol=$10,198"
+  "MSTR +13.2% vol=$771,992",
+  "CRCL +7.4% vol=$790,784",
+  "NVDA +6.8% vol=$734,794",
+  "COIN +6.0% vol=$52,770",
+  "SPCX +3.4% vol=$657,016"
  ],
  "futures_ok": true,
- "futures_balance": 39.22,
+ "futures_balance": 39.23,
  "unallocated_spot": [
-  "ETH $503"
+  "ETH $504"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TRUMP, XMR, PEAQ",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP, XMR, SOL",
  "claude_called": true,
- "market_read": "השוק הרחב בקריפטו במגמת עלייה חזקה עם BTC וכל האלטים העיקריים בטריטוריית overbought אך עדיין עם מומנטום חיובי, לכן עדיף לונג על נכסים עם RSI פחות קיצוני מאשר שורט נגד הטרנד.",
- "skip_reason": "דחיתי שורטים על SOL/TRUMP/BTC/מניות ממונפות למרות RSI גבוה כי MACD עדיין חיובי חזק והשוק במגמת עלייה כללית - שורט נגד טרנד כזה מסוכן מדי; ANTHROPIC ממשיך לכיוון היעד כך שלא נוגעים בו.",
+ "market_read": "השוק הקריפטו והמניות במגמת עלייה חדה עם ריבוי נכסים ב-overbought, מה שיוצר הזדמנויות שורט על מהלכים פראבוליים מוצו.",
+ "skip_reason": "רוב מועמדי הקריפטו (TRUMP, SOL, XMR) נמצאים ב-RSI קיצוני אך המומנטום עדיין חיובי וMACD לא הפך שלילי - מסוכן מדי לשורט כרגע, ועדיף למקד בפוזיציה אחת איכותית.",
  "picks": [
-  "LINK long size=25% conf=MEDIUM",
-  "XMR long size=20% conf=MEDIUM"
+  "MSTR short size=30% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "LINK: Kraken: ['EOrder:Insufficient funds']",
-  "XMR: Kraken: ['EOrder:Insufficient funds']"
+  "liq ETH: all sizes rejected (margin collateral lock)"
+ ],
+ "transfers": [
+  "MSTR: moved $18 → FAILED"
+ ],
+ "skips": [
+  "MSTR: margin $39 < needed $61 (after transfer attempt)"
  ]
 }
