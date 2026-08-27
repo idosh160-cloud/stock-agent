@@ -1,7 +1,7 @@
 {
- "time": "2026-08-27T07:00:05",
+ "time": "2026-08-27T08:00:06",
  "usdc": 28.13,
- "portfolio": 601.9,
+ "portfolio": 602.96,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -9,33 +9,28 @@
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "NVDA +3.5% vol=$425,467",
-  "HOOD -2.2% vol=$52,532",
-  "FLU +1.9% vol=$11,977",
-  "CRCL -1.8% vol=$677,262",
-  "SPCX +1.6% vol=$608,036"
+  "NVDA +4.0% vol=$426,065",
+  "SPCX +2.0% vol=$606,201",
+  "HOOD -1.9% vol=$52,691",
+  "COIN -1.7% vol=$29,106",
+  "GOOGL -1.6% vol=$178,235"
  ],
  "futures_ok": true,
  "futures_balance": 39.22,
  "unallocated_spot": [
-  "ETH $498"
+  "ETH $499"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, TRUMP",
+ "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, PEAQ, TRUMP",
  "claude_called": true,
- "market_read": "השוק הכללי נייטרלי עם כמה נקודות מומנטום ברורות ב-XMR ו-NVDA, בעוד שאר המועמדים נעים בטווח צר בלי אות חד-משמעי.",
- "skip_reason": "שאר המטבעות (ADA, XRP, DOGE, PENGU וכו') נסחרים באמצע הטווח עם RSI וMACD נייטרליים בלי יתרון סטטיסטי מובהק, ולכן דחיתי אותם.",
+ "market_read": "השוק הכללי בתנודתיות מתונה ללא מגמה ברורה, אבל יש כמה נכסים עם סיגנלים טכניים ברורים לכיוון מסוים.",
+ "skip_reason": "שאר המועמדים (FARTCOIN, PEAQ, TRUMP, PENGU, XMR) מציגים אותות מעורבים או תנודות ללא כיוון ברור, ומניות ה-xStocks לא מציגות סטאפ קיצוני מספיק כרגע להצדיק כניסה.",
  "picks": [
-  "XMR long size=25% conf=MEDIUM",
-  "NVDA long size=30% conf=HIGH"
+  "LINK long size=25% conf=HIGH",
+  "XDC long size=18% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "XMR: Kraken: ['EOrder:Insufficient funds']"
- ],
- "transfers": [
-  "NVDA: moved $18 → FAILED"
- ],
- "skips": [
-  "NVDA: margin $0 < needed $60 (after transfer attempt)"
+  "LINK: Kraken: ['EOrder:Insufficient funds']",
+  "XDC: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
