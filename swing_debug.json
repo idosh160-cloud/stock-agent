@@ -1,7 +1,7 @@
 {
- "time": "2026-08-26T23:00:05",
+ "time": "2026-08-27T00:00:05",
  "usdc": 28.13,
- "portfolio": 601.85,
+ "portfolio": 605.17,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -10,27 +10,25 @@
  "stock_candidates": 16,
  "top_stocks": [
   "FLU +3.5% vol=$9,961",
-  "CF +3.1% vol=$32,063",
-  "HOOD -2.3% vol=$56,978",
-  "NVDA +2.2% vol=$399,332",
-  "COIN -1.9% vol=$29,314"
+  "CF +2.9% vol=$31,701",
+  "NVDA +2.7% vol=$414,739",
+  "SPCX +2.2% vol=$411,977",
+  "META +2.1% vol=$125,174"
  ],
  "futures_ok": true,
  "futures_balance": 39.22,
  "unallocated_spot": [
-  "ETH $498"
+  "ETH $501"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, XDC, TRUMP",
+ "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, TRUMP, XDC",
  "claude_called": true,
- "market_read": "השוק הקריפטו נמצא בשלב עלייה מתונה עם כמה נכסים בתנופה שעדיין לא הגיעו לאזור קיצוני, בעוד שהמניות ה-xStocks נעות בטווח צר ללא אות ברור.",
- "skip_reason": "SOL, ETH ו-PEAQ כבר קרובים לרוויה (RSI/BB גבוהים) והמניות נעות בטווח צר ללא כיוון ברור, ולכן לא נכנסתי אליהם כרגע.",
+ "market_read": "השוק בכללי בטרנד עלייה מתון עם כמה נכסים בקצה עליון של הרצועה - הזדמנות גם להמשך מומנטום וגם לשורט מיצוי במטבעות ספקולטיביים.",
+ "skip_reason": "שאר המועמדים (PEAQ, TRUMP, XDC, DOT, LINK, ADA, BNB, AVAX) בעלי נפח נמוך מדי או ללא איתות ברור מספיק, והמניות הזמינות לא מציגות סטאפ חד יותר מהקריפטו כרגע; ETH הספוט הבלתי מנוהל נשאר כפי שהוא כי הוא כבר בהתאמה עם הטרנד החזק.",
  "picks": [
-  "FARTCOIN long size=25% conf=MEDIUM",
-  "LINK long size=20% conf=MEDIUM"
+  "ETH long size=25% conf=MEDIUM",
+  "FARTCOIN short size=15% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "FARTCOIN: Kraken: ['EOrder:Insufficient funds']",
-  "LINK: Kraken: ['EOrder:Insufficient funds']"
+  "ETH: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
