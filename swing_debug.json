@@ -1,7 +1,7 @@
 {
- "time": "2026-08-28T01:00:05",
+ "time": "2026-08-28T02:00:06",
  "usdc": 28.13,
- "portfolio": 609.75,
+ "portfolio": 608.2,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -9,31 +9,32 @@
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "MSTR +12.8% vol=$1,060,478",
+  "MSTR +13.0% vol=$1,118,848",
   "FLU +8.1% vol=$9,197",
-  "CRCL +5.8% vol=$735,667",
-  "COIN +3.5% vol=$49,842",
-  "NVDA +3.4% vol=$1,320,430"
+  "CRCL +5.5% vol=$741,586",
+  "COIN +5.0% vol=$50,618",
+  "TSLA +2.2% vol=$297,790"
  ],
  "futures_ok": true,
  "futures_balance": 39.23,
  "unallocated_spot": [
-  "ETH $503",
-  "SOL $25"
+  "ETH $502"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TRUMP",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP, MELANIA",
  "claude_called": true,
- "market_read": "השוק הכללי במגמת עלייה מתונה עם BTC וכמה אלטים בקרבת רמות עודף קנייה, מה שיוצר גם הזדמנויות המשך וגם הזדמנויות שורט על מיצוי.",
- "skip_reason": "שאר המטבעות (PEAQ, CC, XMR, PENGU, BTC, XRP, LINK, LTC) נמצאים באזור נייטרלי או ללא נפח/מומנטום ברור מספיק כדי להצדיק כניסה על פני שני הסטאפים החזקים שנבחרו; SOL הקטן נשאר כפי שהוא כי גודלו זניח.",
+ "market_read": "שוק הקריפטו והמניות מראה סימני מיצוי אחרי ריצות חדות - MSTR ו-TRUMP קפצו חזק ומציגים תנאי overbought קלאסיים לשורט.",
+ "skip_reason": "שאר המועמדים (SOL, ADA, MELANIA, XMR) נמצאים באזור אמצע-טווח ללא איתות ברור, לא מספיק חזקים כדי להצדיק סיכון על חשבון הפוזיציות החזקות יותר.",
  "picks": [
-  "TRUMP long size=25% conf=MEDIUM",
-  "MSTR short size=20% conf=MEDIUM"
+  "MSTR short size=25% conf=MEDIUM",
+  "TRUMP short size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
+  "liq ETH: all sizes rejected (margin collateral lock)"
+ ],
+ "transfers": [
+  "MSTR: moved $13 → FAILED"
  ],
  "skips": [
-  "MSTR: margin $39 < needed $41 (after transfer attempt)"
+  "MSTR: margin $39 < needed $51 (after transfer attempt)"
  ]
 }
