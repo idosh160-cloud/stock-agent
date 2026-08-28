@@ -1,7 +1,7 @@
 {
- "time": "2026-08-28T18:00:06",
+ "time": "2026-08-28T19:00:06",
  "usdc": 28.13,
- "portfolio": 592.87,
+ "portfolio": 589.4,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -9,28 +9,28 @@
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "MSTR -7.7% vol=$879,731",
-  "FLU -7.0% vol=$6,799",
-  "CRCL -6.8% vol=$711,510",
-  "COIN -6.5% vol=$70,304",
-  "CF -5.7% vol=$20,185"
+  "MSTR -7.7% vol=$858,915",
+  "CRCL -7.6% vol=$723,889",
+  "COIN -7.2% vol=$69,786",
+  "FLU -6.8% vol=$7,988",
+  "CF -5.9% vol=$19,873"
  ],
  "futures_ok": true,
  "futures_balance": 39.24,
  "unallocated_spot": [
-  "ETH $488"
+  "ETH $485"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: BCH, FARTCOIN, TRUMP",
+ "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, BCH, ADA",
  "claude_called": true,
- "market_read": "השוק הקריפטו ברובו באדום היום עם הרבה מטבעות ב-oversold קיצוני, מה שיוצר הזדמנויות דיפ-קניה איכותיות בנפח גבוה כמו XRP ו-ADA.",
- "skip_reason": "BCH ו-FARTCOIN אמנם oversold אך הנזילות נמוכה מדי (מתחת ל-100k$) לניהול סיכון תקין, ומניות ה-xStocks היום לא מציגות סטאפ ברור יותר מהקריפטו הנוכחי.",
+ "market_read": "יום מכירות רחב בקריפטו עם רוב המטבעות ב-oversold עמוק, מה שיוצר הזדמנויות ריבאונד סלקטיביות במטבעות נזילים כמו SOL ו-XRP.",
+ "skip_reason": "BCH ו-PENGU נפח נמוך מדי לביטחון, ומניות ה-xStocks לא מציגות סטאפ ברור יותר מהאלטים המובילים כרגע.",
  "picks": [
-  "XRP long size=25% conf=HIGH",
-  "ADA long size=18% conf=MEDIUM"
+  "SOL long size=25% conf=HIGH",
+  "XRP long size=15% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "XRP: Kraken: ['EOrder:Insufficient funds']",
-  "ADA: Kraken: ['EOrder:Insufficient funds']"
+  "SOL: Kraken: ['EOrder:Insufficient funds']",
+  "XRP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
