@@ -1,7 +1,7 @@
 {
- "time": "2026-08-28T16:00:05",
+ "time": "2026-08-28T17:00:06",
  "usdc": 28.13,
- "portfolio": 598.9,
+ "portfolio": 592.7,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -9,25 +9,26 @@
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "MSTR -6.7% vol=$1,220,645",
-  "COIN -6.5% vol=$61,986",
-  "CRCL -6.3% vol=$442,773",
-  "FLU -4.8% vol=$6,787",
-  "CF -3.8% vol=$44,709"
+  "CRCL -8.0% vol=$662,529",
+  "MSTR -7.2% vol=$1,189,438",
+  "FLU -7.0% vol=$6,799",
+  "COIN -5.9% vol=$70,100",
+  "CF -5.3% vol=$19,882"
  ],
  "futures_ok": true,
  "futures_balance": 39.24,
  "unallocated_spot": [
-  "ETH $494"
+  "ETH $488"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TRUMP, FARTCOIN, ADA",
+ "call_reason": "תנועה חזקה במטבע חדש: BCH, FARTCOIN, TRUMP",
  "claude_called": true,
- "market_read": "השוק הקריפטו כרגע במגמת ירידה קלה עם רוב המטבעות קרובים לתחתית הבנד, מה שמצביע על הזדמנויות ריבאונד טקטיות.",
- "skip_reason": "שאר המועמדים חלשים מדי מבחינת נפח או תבנית לא ברורה מספיק (BCH נפח נמוך, TRUMP ו-XMR לא באזור קיצוני), ומניות ה-xStocks לא מציגות הזדמנות ברורה מעל ADA ביחס לסיכון-תשואה כרגע.",
+ "market_read": "שוק הקריפטו כולו בירידה חדה היום עם BTC מוביל למטה אבל נכנס לאזור oversold קיצוני שמזמין ריבאונד טקטי.",
+ "skip_reason": "אלטקוינים כמו ADA/XRP/LINK גם oversold אך עם נפח ותנודתיות נמוכים יותר מ-BTC ופחות אמינים; מניות ה-xStocks לא מציגות סטאפ ברור מספיק היום ביחס ל-BTC.",
  "picks": [
-  "ADA long size=20% conf=MEDIUM"
+  "BTC long size=35% conf=HIGH"
  ],
  "order_errors": [
-  "ADA: Kraken: ['EOrder:Insufficient funds']"
+  "liq ETH: all sizes rejected (margin collateral lock)",
+  "BTC: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
