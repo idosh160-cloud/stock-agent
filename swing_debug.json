@@ -1,35 +1,33 @@
 {
- "time": "2026-08-28T15:00:06",
+ "time": "2026-08-28T16:00:05",
  "usdc": 28.13,
- "portfolio": 607.37,
+ "portfolio": 598.9,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
-  "ANTHROPIC long +4.4%"
+  "ANTHROPIC long +4.2%"
  ],
  "stock_candidates": 17,
  "top_stocks": [
+  "MSTR -6.7% vol=$1,220,645",
+  "COIN -6.5% vol=$61,986",
+  "CRCL -6.3% vol=$442,773",
   "FLU -4.8% vol=$6,787",
-  "IOT -3.5% vol=$5,998",
-  "AMZN +2.9% vol=$70,000",
-  "META +2.6% vol=$46,844",
-  "COIN -2.5% vol=$62,744"
+  "CF -3.8% vol=$44,709"
  ],
  "futures_ok": true,
  "futures_balance": 39.24,
  "unallocated_spot": [
-  "ETH $502"
+  "ETH $494"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TRUMP, XMR, FARTCOIN",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP, FARTCOIN, ADA",
  "claude_called": true,
- "market_read": "השוק מציג פיצול ברור: TRUMP במיצוי קניית-יתר מובהק בעוד BCH במכירת-יתר קיצונית — שתי הזדמנויות מיין-ריברז'ן טובות באותו רגע.",
- "skip_reason": "שאר המטבעות/מניות נעים בטווח נייטרלי ללא איתות ברור (RSI אמצע, BB% אמצע) או בווליום נמוך מדי כדי להצדיק כניסה.",
+ "market_read": "השוק הקריפטו כרגע במגמת ירידה קלה עם רוב המטבעות קרובים לתחתית הבנד, מה שמצביע על הזדמנויות ריבאונד טקטיות.",
+ "skip_reason": "שאר המועמדים חלשים מדי מבחינת נפח או תבנית לא ברורה מספיק (BCH נפח נמוך, TRUMP ו-XMR לא באזור קיצוני), ומניות ה-xStocks לא מציגות הזדמנות ברורה מעל ADA ביחס לסיכון-תשואה כרגע.",
  "picks": [
-  "TRUMP short size=28% conf=HIGH",
-  "BCH long size=18% conf=MEDIUM"
+  "ADA long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "BCH: Kraken: ['EOrder:Insufficient funds']"
+  "ADA: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
