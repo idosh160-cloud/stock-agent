@@ -1,19 +1,19 @@
 {
- "time": "2026-08-27T23:00:05",
+ "time": "2026-08-28T00:00:06",
  "usdc": 28.13,
- "portfolio": 608.75,
+ "portfolio": 608.08,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
-  "ANTHROPIC long +4.6%"
+  "ANTHROPIC long +2.2%"
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "MSTR +11.7% vol=$1,324,693",
-  "FLU +6.2% vol=$10,271",
-  "CRCL +4.9% vol=$812,599",
-  "NVDA +3.5% vol=$1,294,251",
-  "COIN +3.3% vol=$49,861"
+  "MSTR +11.2% vol=$1,314,087",
+  "FLU +6.2% vol=$10,456",
+  "CRCL +4.1% vol=$760,291",
+  "COIN +3.3% vol=$49,861",
+  "NVDA +3.1% vol=$1,318,994"
  ],
  "futures_ok": true,
  "futures_balance": 39.23,
@@ -23,17 +23,20 @@
  ],
  "call_reason": "תנועה חזקה במטבע חדש: TRUMP, SOL, XMR",
  "claude_called": true,
- "market_read": "שוק קריפטו כללי חיובי עם BTC יציב סביב 80K, אלטקוינים מסוימים (TRUMP) מראים מומנטום נקי בעוד מניות כמו MSTR רצות פרבולית ומבשילות לתיקון.",
- "skip_reason": "SOL ו-BTC כבר overbought/עייפים מדי לכניסה חדשה, ושאר המועמדים (PEAQ, CC) עם ווליום נמוך מדי או חסרי כיוון ברור.",
+ "market_read": "השוק מראה סימני תשישות במניות ספציפיות כמו MSTR שרצו חזק מדי מהר, בעוד קריפטו כמו XRP ממשיך במומנטום בריא ומתון יותר.",
+ "skip_reason": "SOL ו-TRUMP רדופים מדי (RSI 74 ו-BB גבוה) לטווח ארוך, ו-CRCL/MSTR-לונג עם היסטוריית הפסדים ללא שיפור ברור בתנאים הנוכחיים - מדלג עליהם.",
  "picks": [
-  "TRUMP long size=25% conf=HIGH",
-  "MSTR short size=20% conf=MEDIUM"
+  "MSTR short size=25% conf=HIGH",
+  "XRP long size=15% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
+  "XRP: Kraken: ['EOrder:Insufficient funds']"
+ ],
+ "transfers": [
+  "MSTR: moved $13 → FAILED"
  ],
  "skips": [
-  "MSTR: margin $39 < needed $41 (after transfer attempt)"
+  "MSTR: margin $39 < needed $51 (after transfer attempt)"
  ]
 }
