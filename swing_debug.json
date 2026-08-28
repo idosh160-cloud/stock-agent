@@ -1,7 +1,7 @@
 {
- "time": "2026-08-28T11:00:05",
+ "time": "2026-08-28T12:00:06",
  "usdc": 28.13,
- "portfolio": 605.77,
+ "portfolio": 605.6,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -9,26 +9,28 @@
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "MSTR +6.9% vol=$1,137,136",
+  "MSTR +7.2% vol=$1,159,526",
+  "FLU -5.6% vol=$6,635",
   "IOT -3.9% vol=$7,126",
   "COIN +3.3% vol=$46,064",
-  "TSLA +2.8% vol=$309,749",
-  "FLU -2.7% vol=$6,683"
+  "TSLA +2.9% vol=$309,574"
  ],
  "futures_ok": true,
  "futures_balance": 39.24,
  "unallocated_spot": [
-  "ETH $501"
+  "ETH $500"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TRUMP, FARTCOIN, XMR",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP, MELANIA, XMR",
  "claude_called": true,
- "market_read": "השוק הכללי מעורב עם רוב האלטים בירידה קלה מול BTC יציב, אך XMR בולט עם מומנטום עולה אמיתי ונפח תומך.",
- "skip_reason": "שאר המטבעות (SOL, DOGE, ADA, XRP) נמצאים באזור ניטרלי-שלילי ללא איתות ברור מספיק, והמניות לא מציגות סטאפ קיצוני שמצדיק סיכון כרגע.",
+ "market_read": "השוק מראה סלקטיביות - אלטים גדולים כמו SOL/XRP/ADA חלשים בעוד XMR ו-TRUMP מציגים מומנטום חיובי ברור עם נפח.",
+ "skip_reason": "שאר המטבעות (SOL, DOGE, ADA וכו') נמצאים במגמת ירידה או צד ללא אות ברור, ומניות כמו MSTR רצו חזק מדי בלי אישור להיפוך לשורט.",
  "picks": [
-  "XMR long size=35% conf=HIGH"
+  "XMR long size=30% conf=HIGH",
+  "TRUMP long size=20% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "XMR: Kraken: ['EOrder:Insufficient funds']"
+  "XMR: Kraken: ['EOrder:Insufficient funds']",
+  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
