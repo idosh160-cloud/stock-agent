@@ -1,7 +1,7 @@
 {
- "time": "2026-08-28T06:00:05",
+ "time": "2026-08-28T07:00:05",
  "usdc": 28.13,
- "portfolio": 603.7,
+ "portfolio": 605.96,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -9,28 +9,33 @@
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "MSTR +11.2% vol=$1,124,856",
-  "CRCL +4.2% vol=$671,198",
+  "MSTR +11.3% vol=$1,129,809",
   "IOT -4.0% vol=$10,553",
-  "FLU +3.8% vol=$8,996",
-  "COIN +3.5% vol=$49,794"
+  "COIN +3.9% vol=$49,976",
+  "CRCL +3.2% vol=$631,692",
+  "CF -2.7% vol=$41,706"
  ],
  "futures_ok": true,
  "futures_balance": 39.23,
  "unallocated_spot": [
-  "ETH $498"
+  "ETH $500"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TRUMP, PENGU",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP, MELANIA",
  "claude_called": true,
- "market_read": "השוק הכללי בקונסולידציה עם רוב האלטקוינים קרובים לתחתית הטווח היומי, מה שמעיד על הזדמנויות ריבאונד קצרות טווח.",
- "skip_reason": "TRUMP ו-MELANIA לא מספיק overbought לשורט ברור, ומניות כמו MSTR/CRCL עם היסטוריה שלילית וחוסר איתות ברור כרגע — מדלג.",
+ "market_read": "השוק הכללי מעורב — BTC יציב סביב 80K, כמה נכסים בקיצוניות (MSTR ו-TRUMP רצו חזק) בעוד אחרים כמו XRP נמצאים בדיפ עם נזילות טובה לביס.",
+ "skip_reason": "TRUMP נדחה כי MACD עדיין חיובי חזק (לא מוכן להפוך), SOL נדחה כי MACD שלילי בלי כיוון ברור, שאר המניות/קריפטו בווליום נמוך או ללא סיגנל טכני מובהק.",
  "picks": [
-  "XRP long size=25% conf=MEDIUM",
-  "LTC long size=15% conf=MEDIUM"
+  "MSTR short size=25% conf=MEDIUM",
+  "XRP long size=20% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "XRP: Kraken: ['EOrder:Insufficient funds']",
-  "LTC: Kraken: ['EOrder:Invalid leverage']"
+  "XRP: Kraken: ['EOrder:Insufficient funds']"
+ ],
+ "transfers": [
+  "MSTR: moved $13 → FAILED"
+ ],
+ "skips": [
+  "MSTR: margin $39 < needed $50 (after transfer attempt)"
  ]
 }
