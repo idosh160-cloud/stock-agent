@@ -1,7 +1,7 @@
 {
- "time": "2026-08-28T17:00:06",
+ "time": "2026-08-28T18:00:06",
  "usdc": 28.13,
- "portfolio": 592.7,
+ "portfolio": 592.87,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -9,11 +9,11 @@
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "CRCL -8.0% vol=$662,529",
-  "MSTR -7.2% vol=$1,189,438",
+  "MSTR -7.7% vol=$879,731",
   "FLU -7.0% vol=$6,799",
-  "COIN -5.9% vol=$70,100",
-  "CF -5.3% vol=$19,882"
+  "CRCL -6.8% vol=$711,510",
+  "COIN -6.5% vol=$70,304",
+  "CF -5.7% vol=$20,185"
  ],
  "futures_ok": true,
  "futures_balance": 39.24,
@@ -22,13 +22,15 @@
  ],
  "call_reason": "תנועה חזקה במטבע חדש: BCH, FARTCOIN, TRUMP",
  "claude_called": true,
- "market_read": "שוק הקריפטו כולו בירידה חדה היום עם BTC מוביל למטה אבל נכנס לאזור oversold קיצוני שמזמין ריבאונד טקטי.",
- "skip_reason": "אלטקוינים כמו ADA/XRP/LINK גם oversold אך עם נפח ותנודתיות נמוכים יותר מ-BTC ופחות אמינים; מניות ה-xStocks לא מציגות סטאפ ברור מספיק היום ביחס ל-BTC.",
+ "market_read": "השוק הקריפטו ברובו באדום היום עם הרבה מטבעות ב-oversold קיצוני, מה שיוצר הזדמנויות דיפ-קניה איכותיות בנפח גבוה כמו XRP ו-ADA.",
+ "skip_reason": "BCH ו-FARTCOIN אמנם oversold אך הנזילות נמוכה מדי (מתחת ל-100k$) לניהול סיכון תקין, ומניות ה-xStocks היום לא מציגות סטאפ ברור יותר מהקריפטו הנוכחי.",
  "picks": [
-  "BTC long size=35% conf=HIGH"
+  "XRP long size=25% conf=HIGH",
+  "ADA long size=18% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "BTC: Kraken: ['EOrder:Insufficient funds']"
+  "XRP: Kraken: ['EOrder:Insufficient funds']",
+  "ADA: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
