@@ -1,7 +1,7 @@
 {
- "time": "2026-08-28T05:00:05",
+ "time": "2026-08-28T06:00:05",
  "usdc": 28.13,
- "portfolio": 602.12,
+ "portfolio": 603.7,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -9,28 +9,28 @@
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "MSTR +11.2% vol=$1,123,931",
-  "CRCL +4.4% vol=$674,210",
+  "MSTR +11.2% vol=$1,124,856",
+  "CRCL +4.2% vol=$671,198",
+  "IOT -4.0% vol=$10,553",
   "FLU +3.8% vol=$8,996",
-  "COIN +3.5% vol=$49,794",
-  "TSLA +2.4% vol=$295,662"
+  "COIN +3.5% vol=$49,794"
  ],
  "futures_ok": true,
  "futures_balance": 39.23,
  "unallocated_spot": [
-  "ETH $497"
+  "ETH $498"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: TRUMP, PENGU",
  "claude_called": true,
- "market_read": "השוק הקריפטו כללי בתיקון קל אחרי ריצה, כמה אלטקוינים (XRP, ADA, DOGE, AVAX) נמצאים קרוב לרצועת תמיכה תחתונה ומציעים הזדמנויות קנייה זולה.",
- "skip_reason": "TRUMP ו-SOL נראים לא ברורים מדי (TRUMP עדיין overbought בלי איתות היפוך ברור, SOL עם MACD שלילי חזק אך BB% אמצעי) — לא מספיק חד לפוזיציה גדולה; מניות ה-xStocks חסרות נתוני RSI/MACD מהימנים לכניסה עכשיו.",
+ "market_read": "השוק הכללי בקונסולידציה עם רוב האלטקוינים קרובים לתחתית הטווח היומי, מה שמעיד על הזדמנויות ריבאונד קצרות טווח.",
+ "skip_reason": "TRUMP ו-MELANIA לא מספיק overbought לשורט ברור, ומניות כמו MSTR/CRCL עם היסטוריה שלילית וחוסר איתות ברור כרגע — מדלג.",
  "picks": [
   "XRP long size=25% conf=MEDIUM",
-  "ADA long size=20% conf=MEDIUM"
+  "LTC long size=15% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
   "XRP: Kraken: ['EOrder:Insufficient funds']",
-  "ADA: Kraken: ['EOrder:Insufficient funds']"
+  "LTC: Kraken: ['EOrder:Invalid leverage']"
  ]
 }
