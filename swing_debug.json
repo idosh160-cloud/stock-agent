@@ -1,7 +1,7 @@
 {
- "time": "2026-08-28T03:00:05",
+ "time": "2026-08-28T04:00:05",
  "usdc": 28.13,
- "portfolio": 603.64,
+ "portfolio": 603.07,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -9,33 +9,26 @@
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "MSTR +11.8% vol=$1,101,849",
-  "FLU +5.5% vol=$9,069",
+  "MSTR +11.1% vol=$1,104,437",
   "COIN +5.0% vol=$50,618",
-  "CRCL +4.4% vol=$734,799",
-  "NVDA +2.5% vol=$1,305,360"
+  "CRCL +4.2% vol=$734,815",
+  "FLU +3.8% vol=$8,996",
+  "TSLA +2.5% vol=$295,810"
  ],
  "futures_ok": true,
  "futures_balance": 39.23,
  "unallocated_spot": [
-  "ETH $498"
+  "ETH $497"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TRUMP, FARTCOIN",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP, FARTCOIN, PENGU",
  "claude_called": true,
- "market_read": "השוק הכללי נייטרלי עד חיובי מעט עם BTC יציב ומספר אלטים באיזור oversold שמזמינים ריבאונד, לצד מניית MSTR שמראה מומנטום חזק.",
- "skip_reason": "TRUMP ושאר האלטים הדועכים (SOL, XRP, DOGE) נראים חלשים או ניטרליים ללא איתות ברור, ומניות אחרות כמו CRCL עם היסטוריה שלילית וללא שיפור טכני מובהק - לא כדאי כרגע.",
+ "market_read": "השוק הכללי מעורב עם רוב האלטים בירידה קלה מלבד TRUMP שמראה מומנטום עולה עם נפח תומך.",
+ "skip_reason": "רוב המטבעות (SOL, LINK, ADA, DOGE, PENGU) נמצאים ב-RSI ניטרלי-חלש ללא איתות ברור, והמניות שרצו חזק (MSTR) חסרות נתוני RSI ברורים לשורט בטוח - עדיף להתרכז ב-TRUMP עם האיתות הברור ביותר.",
  "picks": [
-  "MSTR long size=25% conf=MEDIUM",
-  "ADA long size=15% conf=MEDIUM"
+  "TRUMP long size=28% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "ADA: Kraken: ['EOrder:Insufficient funds']"
- ],
- "transfers": [
-  "MSTR: moved $13 → FAILED"
- ],
- "skips": [
-  "MSTR: margin $39 < needed $50 (after transfer attempt)"
+  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
