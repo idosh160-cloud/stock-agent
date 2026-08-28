@@ -1,7 +1,7 @@
 {
- "time": "2026-08-28T20:00:06",
+ "time": "2026-08-28T21:00:05",
  "usdc": 28.13,
- "portfolio": 590.92,
+ "portfolio": 589.59,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -9,27 +9,28 @@
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "MSTR -7.4% vol=$795,800",
-  "CRCL -7.3% vol=$739,590",
+  "ANTHROPIC -8.8% vol=$8,274",
+  "CRCL -8.1% vol=$734,609",
+  "MSTR -7.8% vol=$763,462",
   "FLU -6.8% vol=$7,988",
-  "COIN -5.8% vol=$78,123",
-  "CF -5.2% vol=$19,581"
+  "COIN -6.3% vol=$77,414"
  ],
  "futures_ok": true,
  "futures_balance": 39.24,
  "unallocated_spot": [
-  "ETH $487"
+  "ETH $485"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, BCH, ADA",
  "claude_called": true,
- "market_read": "שוק הקריפטו כולו נמצא במכירת יתר חדה (-3% עד -8% ברוב המטבעות) עם RSI נמוך מאוד ו-BB% קרוב לתחתית, מה שמצביע על הזדמנות ריבאונד טכני קצר טווח.",
- "skip_reason": "שאר המועמדים (FARTCOIN, BCH, ADA, DOGE, LINK) בעלי נפח נמוך יותר או קורלציה גבוהה לביטקוין ללא יתרון נוסף; המניות הטוקניזציה לא מציגות היום סטאפ ברור מספיק ביחס לסיכוי/סיכון של הקריפטו הנוכחי.",
+ "market_read": "שוק הקריפטו במכירה חדה היום עם ריבוי נכסים בקנייתיות-יתר קיצונית — זה מציב הזדמנויות ריבאונד טובות במיוחד ב-BTC.",
+ "skip_reason": "דחיתי את שאר המטבעות (SOL, XRP, ADA, DOGE) כי הם דומים ב-setup אבל עם וווליום/RSI חלשים יותר מ-BTC ו-LINK; מניות ה-xStocks ברוב ירידה בלי סיגנל short מובהק (RSI לא קיצוני), אז לא נכנס כרגע.",
  "picks": [
-  "BTC long size=45% conf=HIGH",
-  "XRP long size=20% conf=MEDIUM"
+  "BTC long size=35% conf=HIGH",
+  "LINK long size=20% conf=MEDIUM"
  ],
  "order_errors": [
+  "liq ETH: all sizes rejected (margin collateral lock)",
   "BTC: Kraken: ['EOrder:Insufficient funds']",
-  "XRP: Kraken: ['EOrder:Insufficient funds']"
+  "LINK: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
