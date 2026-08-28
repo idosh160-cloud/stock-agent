@@ -1,7 +1,7 @@
 {
- "time": "2026-08-28T07:00:05",
+ "time": "2026-08-28T08:00:06",
  "usdc": 28.13,
- "portfolio": 605.96,
+ "portfolio": 603.93,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -9,33 +9,26 @@
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "MSTR +11.3% vol=$1,129,809",
+  "MSTR +9.3% vol=$1,142,335",
   "IOT -4.0% vol=$10,553",
-  "COIN +3.9% vol=$49,976",
-  "CRCL +3.2% vol=$631,692",
-  "CF -2.7% vol=$41,706"
+  "CF -3.2% vol=$41,660",
+  "CRCL +2.8% vol=$641,658",
+  "HOOD -2.6% vol=$111,667"
  ],
  "futures_ok": true,
  "futures_balance": 39.23,
  "unallocated_spot": [
-  "ETH $500"
+  "ETH $499"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TRUMP, MELANIA",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP, MELANIA, PENGU",
  "claude_called": true,
- "market_read": "השוק הכללי מעורב — BTC יציב סביב 80K, כמה נכסים בקיצוניות (MSTR ו-TRUMP רצו חזק) בעוד אחרים כמו XRP נמצאים בדיפ עם נזילות טובה לביס.",
- "skip_reason": "TRUMP נדחה כי MACD עדיין חיובי חזק (לא מוכן להפוך), SOL נדחה כי MACD שלילי בלי כיוון ברור, שאר המניות/קריפטו בווליום נמוך או ללא סיגנל טכני מובהק.",
+ "market_read": "השוק מציג פיצול — קריפטו מרכזי כמו SOL/XRP/ADA במגמת תיקון קרוב לתחתית הטווח בעוד מטבעות ספקולטיביים כמו TRUMP ו-MELANIA רצו חזק ונראים מוגזמים מבחינת קנייה.",
+ "skip_reason": "TRUMP ו-MELANIA overbought מדי לשורט בטוח (MACD עדיין חיובי, אין סימני היפוך ברור), וההיסטוריה על ADA/DOGE/HOOD חלשה מכדי להצדיק כניסה בלי אישור טכני חזק יותר, לכן נשארתי עם פוזיציה אחת ממוקדת ב-SOL.",
  "picks": [
-  "MSTR short size=25% conf=MEDIUM",
-  "XRP long size=20% conf=MEDIUM"
+  "SOL long size=25% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "XRP: Kraken: ['EOrder:Insufficient funds']"
- ],
- "transfers": [
-  "MSTR: moved $13 → FAILED"
- ],
- "skips": [
-  "MSTR: margin $39 < needed $50 (after transfer attempt)"
+  "SOL: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
