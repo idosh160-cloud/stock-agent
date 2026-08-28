@@ -1,34 +1,35 @@
 {
- "time": "2026-08-28T14:00:05",
+ "time": "2026-08-28T15:00:06",
  "usdc": 28.13,
- "portfolio": 606.27,
+ "portfolio": 607.37,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
-  "ANTHROPIC long +2.2%"
+  "ANTHROPIC long +4.4%"
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "FLU -5.6% vol=$6,635",
-  "IOT -3.9% vol=$7,126",
-  "MSTR +2.2% vol=$1,427,877",
-  "CRCL -2.1% vol=$581,888",
-  "CF -2.1% vol=$42,898"
+  "FLU -4.8% vol=$6,787",
+  "IOT -3.5% vol=$5,998",
+  "AMZN +2.9% vol=$70,000",
+  "META +2.6% vol=$46,844",
+  "COIN -2.5% vol=$62,744"
  ],
  "futures_ok": true,
  "futures_balance": 39.24,
  "unallocated_spot": [
-  "ETH $501"
+  "ETH $502"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TRUMP, FARTCOIN, SOL",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP, XMR, FARTCOIN",
  "claude_called": true,
- "market_read": "השוק הקריפטו כללי בירידה קלה עם רוב האלטקוינים בקרבת תמיכות תחתונות, מה שיוצר הזדמנויות ריבאונד סלקטיביות כמו SOL.",
- "skip_reason": "TRUMP ו-XMR מציגים טווח תנודתיות גבוה מדי או נפח נמוך יחסית לביטחון בכניסה, והמניות הטוקניזציה לא מציגות סטאפ ברור מספיק כרגע — מרוכז ב-SOL כתפיסה הטובה ביותר.",
+ "market_read": "השוק מציג פיצול ברור: TRUMP במיצוי קניית-יתר מובהק בעוד BCH במכירת-יתר קיצונית — שתי הזדמנויות מיין-ריברז'ן טובות באותו רגע.",
+ "skip_reason": "שאר המטבעות/מניות נעים בטווח נייטרלי ללא איתות ברור (RSI אמצע, BB% אמצע) או בווליום נמוך מדי כדי להצדיק כניסה.",
  "picks": [
-  "SOL long size=25% conf=MEDIUM"
+  "TRUMP short size=28% conf=HIGH",
+  "BCH long size=18% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "SOL: Kraken: ['EOrder:Insufficient funds']"
+  "BCH: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
