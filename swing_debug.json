@@ -1,7 +1,7 @@
 {
- "time": "2026-08-28T10:00:05",
+ "time": "2026-08-28T11:00:05",
  "usdc": 28.13,
- "portfolio": 602.62,
+ "portfolio": 605.77,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -9,28 +9,26 @@
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "MSTR +5.8% vol=$1,110,212",
-  "IOT -3.7% vol=$8,254",
-  "TSLA +2.9% vol=$306,404",
-  "HOOD -2.5% vol=$136,259",
-  "FLU -2.4% vol=$5,430"
+  "MSTR +6.9% vol=$1,137,136",
+  "IOT -3.9% vol=$7,126",
+  "COIN +3.3% vol=$46,064",
+  "TSLA +2.8% vol=$309,749",
+  "FLU -2.7% vol=$6,683"
  ],
  "futures_ok": true,
  "futures_balance": 39.24,
  "unallocated_spot": [
-  "ETH $497"
+  "ETH $501"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TRUMP, FARTCOIN, PENGU",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP, FARTCOIN, XMR",
  "claude_called": true,
- "market_read": "השוק במגמה מעורבת עם רוב האלטים בתיקון קל אך כמה שמות (XMR, TRUMP) מציגים מומנטום חיובי ברור עם נפח תומך.",
- "skip_reason": "שאר המטבעות (SOL, DOGE, XRP, ADA, AVAX, PENGU, FARTCOIN, SHIB) נמצאים באזור תחתון עם RSI חלש בלי אישור מומנטום חיובי, וה-xStocks חסרי RSI/אינדיקטורים ברורים לכניסה נכונה כרגע.",
+ "market_read": "השוק הכללי מעורב עם רוב האלטים בירידה קלה מול BTC יציב, אך XMR בולט עם מומנטום עולה אמיתי ונפח תומך.",
+ "skip_reason": "שאר המטבעות (SOL, DOGE, ADA, XRP) נמצאים באזור ניטרלי-שלילי ללא איתות ברור מספיק, והמניות לא מציגות סטאפ קיצוני שמצדיק סיכון כרגע.",
  "picks": [
-  "XMR long size=30% conf=MEDIUM",
-  "TRUMP long size=20% conf=MEDIUM"
+  "XMR long size=35% conf=HIGH"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "XMR: Kraken: ['EOrder:Insufficient funds']",
-  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
+  "XMR: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
