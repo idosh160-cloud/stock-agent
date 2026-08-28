@@ -1,7 +1,7 @@
 {
- "time": "2026-08-28T13:00:05",
+ "time": "2026-08-28T14:00:05",
  "usdc": 28.13,
- "portfolio": 604.24,
+ "portfolio": 606.27,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -9,27 +9,26 @@
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "MSTR +7.2% vol=$1,430,515",
   "FLU -5.6% vol=$6,635",
   "IOT -3.9% vol=$7,126",
-  "COIN +3.0% vol=$45,610",
-  "TSLA +2.9% vol=$309,574"
+  "MSTR +2.2% vol=$1,427,877",
+  "CRCL -2.1% vol=$581,888",
+  "CF -2.1% vol=$42,898"
  ],
  "futures_ok": true,
  "futures_balance": 39.24,
  "unallocated_spot": [
-  "ETH $499"
+  "ETH $501"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TRUMP, FARTCOIN, XMR",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP, FARTCOIN, SOL",
  "claude_called": true,
- "market_read": "השוק הקריפטו נמצא בתיקון קל אחרי עליות, כמה מטבעות מגיעים לאזורי תמיכה שמייצרים הזדמנויות ריבאונד עם נפח תומך.",
- "skip_reason": "TRUMP ו-XMR נראים חמים מדי (RSI גבוה/MACD מתהפך) לכניסה כרגע, והמניות לא מציגות סטאפים ברורים מספיק מול הקריפטו שבתחתית טווח.",
+ "market_read": "השוק הקריפטו כללי בירידה קלה עם רוב האלטקוינים בקרבת תמיכות תחתונות, מה שיוצר הזדמנויות ריבאונד סלקטיביות כמו SOL.",
+ "skip_reason": "TRUMP ו-XMR מציגים טווח תנודתיות גבוה מדי או נפח נמוך יחסית לביטחון בכניסה, והמניות הטוקניזציה לא מציגות סטאפ ברור מספיק כרגע — מרוכז ב-SOL כתפיסה הטובה ביותר.",
  "picks": [
-  "SOL long size=30% conf=MEDIUM",
-  "FARTCOIN long size=15% conf=MEDIUM"
+  "SOL long size=25% conf=MEDIUM"
  ],
  "order_errors": [
-  "SOL: Kraken: ['EOrder:Insufficient funds']",
-  "FARTCOIN: Kraken: ['EOrder:Insufficient funds']"
+  "liq ETH: all sizes rejected (margin collateral lock)",
+  "SOL: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
