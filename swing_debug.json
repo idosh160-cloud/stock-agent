@@ -1,7 +1,7 @@
 {
- "time": "2026-08-28T19:00:06",
+ "time": "2026-08-28T20:00:06",
  "usdc": 28.13,
- "portfolio": 589.4,
+ "portfolio": 590.92,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -9,28 +9,27 @@
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "MSTR -7.7% vol=$858,915",
-  "CRCL -7.6% vol=$723,889",
-  "COIN -7.2% vol=$69,786",
+  "MSTR -7.4% vol=$795,800",
+  "CRCL -7.3% vol=$739,590",
   "FLU -6.8% vol=$7,988",
-  "CF -5.9% vol=$19,873"
+  "COIN -5.8% vol=$78,123",
+  "CF -5.2% vol=$19,581"
  ],
  "futures_ok": true,
  "futures_balance": 39.24,
  "unallocated_spot": [
-  "ETH $485"
+  "ETH $487"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, BCH, ADA",
  "claude_called": true,
- "market_read": "יום מכירות רחב בקריפטו עם רוב המטבעות ב-oversold עמוק, מה שיוצר הזדמנויות ריבאונד סלקטיביות במטבעות נזילים כמו SOL ו-XRP.",
- "skip_reason": "BCH ו-PENGU נפח נמוך מדי לביטחון, ומניות ה-xStocks לא מציגות סטאפ ברור יותר מהאלטים המובילים כרגע.",
+ "market_read": "שוק הקריפטו כולו נמצא במכירת יתר חדה (-3% עד -8% ברוב המטבעות) עם RSI נמוך מאוד ו-BB% קרוב לתחתית, מה שמצביע על הזדמנות ריבאונד טכני קצר טווח.",
+ "skip_reason": "שאר המועמדים (FARTCOIN, BCH, ADA, DOGE, LINK) בעלי נפח נמוך יותר או קורלציה גבוהה לביטקוין ללא יתרון נוסף; המניות הטוקניזציה לא מציגות היום סטאפ ברור מספיק ביחס לסיכוי/סיכון של הקריפטו הנוכחי.",
  "picks": [
-  "SOL long size=25% conf=HIGH",
-  "XRP long size=15% conf=MEDIUM"
+  "BTC long size=45% conf=HIGH",
+  "XRP long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "SOL: Kraken: ['EOrder:Insufficient funds']",
+  "BTC: Kraken: ['EOrder:Insufficient funds']",
   "XRP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
