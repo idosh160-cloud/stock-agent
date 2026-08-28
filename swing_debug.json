@@ -1,7 +1,7 @@
 {
- "time": "2026-08-28T04:00:05",
+ "time": "2026-08-28T05:00:05",
  "usdc": 28.13,
- "portfolio": 603.07,
+ "portfolio": 602.12,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -9,26 +9,28 @@
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "MSTR +11.1% vol=$1,104,437",
-  "COIN +5.0% vol=$50,618",
-  "CRCL +4.2% vol=$734,815",
+  "MSTR +11.2% vol=$1,123,931",
+  "CRCL +4.4% vol=$674,210",
   "FLU +3.8% vol=$8,996",
-  "TSLA +2.5% vol=$295,810"
+  "COIN +3.5% vol=$49,794",
+  "TSLA +2.4% vol=$295,662"
  ],
  "futures_ok": true,
  "futures_balance": 39.23,
  "unallocated_spot": [
   "ETH $497"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TRUMP, FARTCOIN, PENGU",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP, PENGU",
  "claude_called": true,
- "market_read": "השוק הכללי מעורב עם רוב האלטים בירידה קלה מלבד TRUMP שמראה מומנטום עולה עם נפח תומך.",
- "skip_reason": "רוב המטבעות (SOL, LINK, ADA, DOGE, PENGU) נמצאים ב-RSI ניטרלי-חלש ללא איתות ברור, והמניות שרצו חזק (MSTR) חסרות נתוני RSI ברורים לשורט בטוח - עדיף להתרכז ב-TRUMP עם האיתות הברור ביותר.",
+ "market_read": "השוק הקריפטו כללי בתיקון קל אחרי ריצה, כמה אלטקוינים (XRP, ADA, DOGE, AVAX) נמצאים קרוב לרצועת תמיכה תחתונה ומציעים הזדמנויות קנייה זולה.",
+ "skip_reason": "TRUMP ו-SOL נראים לא ברורים מדי (TRUMP עדיין overbought בלי איתות היפוך ברור, SOL עם MACD שלילי חזק אך BB% אמצעי) — לא מספיק חד לפוזיציה גדולה; מניות ה-xStocks חסרות נתוני RSI/MACD מהימנים לכניסה עכשיו.",
  "picks": [
-  "TRUMP long size=28% conf=MEDIUM"
+  "XRP long size=25% conf=MEDIUM",
+  "ADA long size=20% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
+  "XRP: Kraken: ['EOrder:Insufficient funds']",
+  "ADA: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
