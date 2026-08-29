@@ -1,36 +1,36 @@
 {
- "time": "2026-08-28T23:00:05",
+ "time": "2026-08-29T00:00:05",
  "usdc": 28.13,
- "portfolio": 592.45,
+ "portfolio": 592.53,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
   "ANTHROPIC long +4.2%"
  ],
- "stock_candidates": 16,
+ "stock_candidates": 17,
  "top_stocks": [
-  "ANTHROPIC -8.8% vol=$8,274",
-  "CRCL -8.3% vol=$730,673",
-  "MSTR -8.0% vol=$738,919",
-  "COIN -7.7% vol=$74,950",
-  "CF -5.1% vol=$21,598"
+  "CRCL -8.7% vol=$734,656",
+  "MSTR -7.8% vol=$740,228",
+  "COIN -7.7% vol=$75,116",
+  "HOOD -6.2% vol=$201,159",
+  "ANTHROPIC -6.2% vol=$8,077"
  ],
  "futures_ok": true,
  "futures_balance": 39.24,
  "unallocated_spot": [
   "ETH $488"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, BCH, ADA",
+ "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, BCH, TRUMP",
  "claude_called": true,
- "market_read": "השוק הקריפטו כולו במכירת יתר חדה עם BTC מוביל את הירידה, מה שיוצר הזדמנויות ריבאונד בנכסים איכותיים עם נפח גבוה.",
- "skip_reason": "דילגתי על FARTCOIN ו-BCH בגלל נפח מסחר נמוך מדי לגודל פוזיציה משמעותי, ועל המניות כי אין שם סטאפ ברור יותר מהקריפטו כרגע.",
+ "market_read": "שוק האלטים בירידה רוחבית חדה היום עם מספר מטבעות ב-oversold מובהק שיכולים לתת תיקון טכני קצר טווח.",
+ "skip_reason": "SOL, XRP, ADA, LINK, DOGE נמצאים ב-RSI בינוני-נמוך אך ה-MACD עדיין שלילי חזק ללא סימני היפוך ברור - מעדיף לחכות לאישור. מניות ה-xStocks בירידה חדה (CRCL, MSTR, COIN) הן מועמדות לשורט אך ללא סימני מיצוי ברורים ב-RSI/BB%, וההיסטוריה השלילית שלהן מחזקת את הזהירות.",
  "picks": [
-  "BTC long size=35% conf=HIGH",
-  "ADA long size=20% conf=MEDIUM"
+  "FARTCOIN long size=22% conf=MEDIUM",
+  "BCH long size=16% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "BTC: Kraken: ['EOrder:Insufficient funds']",
-  "ADA: Kraken: ['EOrder:Insufficient funds']"
+  "FARTCOIN: Kraken: ['EOrder:Insufficient funds']",
+  "BCH: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
