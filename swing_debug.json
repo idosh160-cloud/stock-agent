@@ -1,7 +1,7 @@
 {
- "time": "2026-08-29T15:00:05",
+ "time": "2026-08-29T16:00:05",
  "usdc": 28.13,
- "portfolio": 594.37,
+ "portfolio": 593.24,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -10,27 +10,25 @@
  "stock_candidates": 16,
  "top_stocks": [
   "FLU +4.7% vol=$6,085",
-  "CRCL -4.0% vol=$617,678",
-  "MSTR -3.8% vol=$207,548",
-  "CF -3.7% vol=$8,351",
-  "HOOD -3.5% vol=$129,118"
+  "GLD -2.7% vol=$12,733",
+  "HOOD -1.8% vol=$128,635",
+  "CF -1.8% vol=$6,787",
+  "NVDA -1.0% vol=$808,834"
  ],
  "futures_ok": true,
  "futures_balance": 39.25,
  "unallocated_spot": [
-  "ETH $489"
+  "ETH $488"
  ],
- "call_reason": "תנועה חזקה במניה: FLU, CRCL, MSTR",
+ "call_reason": "תנועה חזקה במניה: FLU, GLD",
  "claude_called": true,
- "market_read": "השוק הקריפטו מציג מומנטום מעורב עם כמה מטבעות במגמת עלייה ברורה תוך כדי מניות טוקניות בנסיגה כללית.",
- "skip_reason": "מניות הטוקניות ירדו ללא סימני מיצוי ברורים (RSI לא זמין) והיסטוריית המסחר בהן חלשה, לכן נמנעים מהן הפעם.",
+ "market_read": "השוק הכללי מציג תמונה מעורבת עם BTC יציב סביב 77.8K, אבל SOL בולט עם נפח ומומנטום חיוביים ברורים.",
+ "skip_reason": "שאר המטבעות/מניות מציגים RSI ניטרלי או נפח נמוך מדי (BCH, XMR, TRUMP) ולא מצדיקים כניסה חדשה מעבר ל-SOL ול-ANTHROPIC הקיים.",
  "picks": [
-  "SOL long size=30% conf=HIGH",
-  "BCH long size=18% conf=MEDIUM"
+  "SOL long size=35% conf=HIGH"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "SOL: Kraken: ['EOrder:Insufficient funds']",
-  "BCH: Kraken: ['EOrder:Insufficient funds']"
+  "SOL: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
