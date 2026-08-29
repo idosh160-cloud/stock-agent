@@ -1,7 +1,7 @@
 {
- "time": "2026-08-29T08:00:05",
+ "time": "2026-08-29T09:00:05",
  "usdc": 28.13,
- "portfolio": 591.36,
+ "portfolio": 590.82,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -10,27 +10,25 @@
  "stock_candidates": 16,
  "top_stocks": [
   "ANTHROPIC -8.5% vol=$8,376",
-  "MSTR -6.8% vol=$595,003",
-  "CRCL -6.8% vol=$824,058",
+  "CRCL -6.4% vol=$779,743",
+  "MSTR -6.3% vol=$564,536",
   "COIN -4.5% vol=$75,910",
-  "HOOD -4.1% vol=$201,953"
+  "HOOD -4.0% vol=$190,591"
  ],
  "futures_ok": true,
  "futures_balance": 39.25,
  "unallocated_spot": [
-  "ETH $487"
+  "ETH $486"
  ],
- "call_reason": "תנועה חזקה במניה: MSTR, CRCL, COIN",
+ "call_reason": "תנועה חזקה במניה: CRCL, MSTR, COIN",
  "claude_called": true,
- "market_read": "השוק בכלל בתיקון קל עם כמה מטבעות oversold שמראים סימני התאוששות ראשוניים ב-MACD.",
- "skip_reason": "המניות הטוקניזציה נמצאות במגמת ירידה חדה ללא איתות היפוך ברור, ושאר האלטקוינים נמוכי נפח או ניטרליים מכדי להצדיק פוזיציה.",
+ "market_read": "השוק האלטים ברובו בקנייתיתר עם ירידות קלות של 1-3%, מה שיוצר הזדמנויות דיפ-בை באיכות טובה כמו BCH.",
+ "skip_reason": "ADA ו-PENGU נראים דומים אך ADA עם היסטוריה שלילית חוזרת ו-PENGU עם נפח נמוך מדי; המניות היום שקטות יחסית ללא סטאפ ברור לשורט או לונג.",
  "picks": [
-  "BNB long size=25% conf=MEDIUM",
-  "ADA long size=15% conf=MEDIUM"
+  "BCH long size=28% conf=HIGH"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "BNB: Kraken: ['EOrder:Insufficient funds']",
-  "ADA: Kraken: ['EOrder:Insufficient funds']"
+  "BCH: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
