@@ -1,7 +1,7 @@
 {
- "time": "2026-08-29T13:00:05",
+ "time": "2026-08-29T14:00:06",
  "usdc": 28.13,
- "portfolio": 590.95,
+ "portfolio": 591.35,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -10,25 +10,26 @@
  "stock_candidates": 17,
  "top_stocks": [
   "ANTHROPIC -8.5% vol=$8,376",
-  "MSTR -5.4% vol=$197,257",
-  "CRCL -4.9% vol=$677,590",
-  "NVDA -4.2% vol=$1,017,629",
-  "COIN -4.2% vol=$76,233"
+  "FLU +5.2% vol=$6,190",
+  "CRCL -4.5% vol=$560,903",
+  "MSTR -3.8% vol=$174,140",
+  "HOOD -3.7% vol=$128,606"
  ],
  "futures_ok": true,
  "futures_balance": 39.25,
  "unallocated_spot": [
-  "ETH $486"
+  "ETH $487"
  ],
- "call_reason": "תנועה חזקה במניה: MSTR, CRCL, NVDA",
+ "call_reason": "תנועה חזקה במניה: FLU, CRCL, MSTR",
  "claude_called": true,
- "market_read": "השוק הכללי בקירור קל אחרי ירידות רוחביות בקריפטו ומניות, עם כמה נכסים באזור oversold שמציעים הזדמנות ריבאונד טקטית.",
- "skip_reason": "שאר המועמדים (ADA, LTC, TRUMP) נראים דומים אך עם MACD חלש יותר או נפח נמוך יותר מ-BCH, ולכן מרוכזים בפוזיציה אחת חזקה במקום לפזר.",
+ "market_read": "השוק באלטים נמצא בתיקון קל עם רוב המטבעות ב-RSI אמצעי-נמוך, מה שמעיד על הזדמנויות ריבאונד סלקטיביות ולא על מגמת דאב חדה.",
+ "skip_reason": "שאר המטבעות/מניות נמצאים באזור נייטרלי ללא איתות ברור (RSI אמצעי, MACD מעורב) או בעלי היסטוריה שלילית ללא שיפור טכני מובהק, לכן נבחרו רק שתי ההזדמנויות עם התאוששות MACD ברורה; ETH נשאר כהחזקה פסיבית מכיוון שאין הצדקה כרגע לרוטציה מלאה.",
  "picks": [
-  "BCH long size=30% conf=HIGH"
+  "BCH long size=25% conf=MEDIUM",
+  "LINK long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "BCH: Kraken: ['EOrder:Insufficient funds']"
+  "BCH: Kraken: ['EOrder:Insufficient funds']",
+  "LINK: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
