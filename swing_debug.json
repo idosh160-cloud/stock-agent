@@ -1,7 +1,7 @@
 {
- "time": "2026-08-29T05:00:06",
+ "time": "2026-08-29T06:00:05",
  "usdc": 28.13,
- "portfolio": 592.03,
+ "portfolio": 591.92,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -10,25 +10,26 @@
  "stock_candidates": 17,
  "top_stocks": [
   "ANTHROPIC -8.7% vol=$8,017",
-  "MSTR -7.7% vol=$622,829",
-  "CRCL -7.5% vol=$792,820",
-  "COIN -6.4% vol=$75,279",
+  "MSTR -7.5% vol=$621,370",
+  "CRCL -7.1% vol=$802,830",
+  "COIN -6.3% vol=$75,915",
   "HOOD -4.3% vol=$203,012"
  ],
  "futures_ok": true,
- "futures_balance": 39.24,
+ "futures_balance": 39.25,
  "unallocated_spot": [
   "ETH $487"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: TRUMP, MELANIA",
  "claude_called": true,
- "market_read": "השוק הרחב במגמת תיקון קל עם BTC וBNB באזור oversold תוך MACD חיובי - הזדמנות דיפ-קניה איכותית.",
- "skip_reason": "TRUMP ו-MELANIA כבר overbought עם BB%>90 אך נפח נמוך מדי לשורט בטוח; שאר האלטים ומניות ה-xStock בטווח ניטרלי/סחיר צר ללא יתרון ברור כרגע.",
+ "market_read": "השוק מציג פיצולים חדים - כמה אלטקוינים בקיצוניות overbought (TRUMP, MELANIA) לצד כמה oversold (BCH, XMR) שמתחילים להתהפך, הזדמנות למסחר דו-כיווני.",
+ "skip_reason": "שאר המועמדים (ADA, XRP, LINK, XMR, מניות) נמצאים באזור נייטרלי ללא איתות ברור מספיק או עם נפח נמוך מדי כדי להצדיק כניסה כרגע.",
  "picks": [
-  "BTC long size=35% conf=HIGH"
+  "BCH long size=25% conf=MEDIUM",
+  "TRUMP short size=20% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "BTC: Kraken: ['EOrder:Insufficient funds']"
+  "BCH: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
