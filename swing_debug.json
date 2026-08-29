@@ -1,7 +1,7 @@
 {
- "time": "2026-08-29T02:00:05",
+ "time": "2026-08-29T03:00:05",
  "usdc": 28.13,
- "portfolio": 592.82,
+ "portfolio": 591.85,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -9,25 +9,28 @@
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "MSTR -8.2% vol=$665,629",
-  "CRCL -7.3% vol=$794,680",
+  "MSTR -7.7% vol=$665,500",
+  "CRCL -7.7% vol=$793,897",
   "ANTHROPIC -6.2% vol=$8,077",
-  "COIN -6.0% vol=$75,346",
-  "HOOD -5.0% vol=$202,026"
+  "COIN -6.0% vol=$75,285",
+  "HOOD -4.3% vol=$202,022"
  ],
  "futures_ok": true,
  "futures_balance": 39.24,
  "unallocated_spot": [
-  "ETH $488"
+  "ETH $487"
  ],
- "call_reason": "תנועה חזקה במניה: MSTR, CRCL, COIN",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP",
  "claude_called": true,
- "market_read": "השוק הכללי רגוע יחסית עם רוב הנכסים בטווח אמצע (RSI 40-55), אין מומנטום חד בכיוון אחד, אז מחפשים הזדמנויות ספציפיות של oversold/overbought.",
- "skip_reason": "שאר המועמדים בקריפטו ניטרליים (RSI 40-57 ללא סיגנל ברור), ומניות ה-xStocks כולן בנפילה חדה אך ללא סימני מיצוי מובהקים לשורט נקי כרגע; ANTHROPIC כבר פתוחה ובדרך ליעד כך שלא נוגעים בה, ו-ETH הפאסיבי נשאר כי אין חלופה עדיפה ברורה מספיק כדי להצדיק מכירה חלקית.",
+ "market_read": "השוק הכללי נמצא בתיקון חד עם BTC ורוב האלטים ב-RSI נמוך, מה שיוצר הזדמנויות ריבאונד סלקטיביות במקום מכירה גורפת.",
+ "skip_reason": "המניות הטוקניזציה (MSTR, CRCL, COIN) ירדו חזק אבל בלי אינדיקטורים ברורים לשורט מוגזם, וההיסטוריה שלהן חלשה - עדיף לחכות לאישוש; ADA/LINK/DOGE נייטרליים מדי בלי אות ברור.",
  "picks": [
-  "BCH long size=20% conf=MEDIUM"
+  "BTC long size=32% conf=HIGH",
+  "BCH long size=15% conf=MEDIUM"
  ],
  "order_errors": [
+  "liq ETH: all sizes rejected (margin collateral lock)",
+  "BTC: Kraken: ['EOrder:Insufficient funds']",
   "BCH: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
