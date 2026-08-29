@@ -1,35 +1,36 @@
 {
- "time": "2026-08-29T14:00:06",
+ "time": "2026-08-29T15:00:05",
  "usdc": 28.13,
- "portfolio": 591.35,
+ "portfolio": 594.37,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
   "ANTHROPIC long +1.6%"
  ],
- "stock_candidates": 17,
+ "stock_candidates": 16,
  "top_stocks": [
-  "ANTHROPIC -8.5% vol=$8,376",
-  "FLU +5.2% vol=$6,190",
-  "CRCL -4.5% vol=$560,903",
-  "MSTR -3.8% vol=$174,140",
-  "HOOD -3.7% vol=$128,606"
+  "FLU +4.7% vol=$6,085",
+  "CRCL -4.0% vol=$617,678",
+  "MSTR -3.8% vol=$207,548",
+  "CF -3.7% vol=$8,351",
+  "HOOD -3.5% vol=$129,118"
  ],
  "futures_ok": true,
  "futures_balance": 39.25,
  "unallocated_spot": [
-  "ETH $487"
+  "ETH $489"
  ],
  "call_reason": "תנועה חזקה במניה: FLU, CRCL, MSTR",
  "claude_called": true,
- "market_read": "השוק באלטים נמצא בתיקון קל עם רוב המטבעות ב-RSI אמצעי-נמוך, מה שמעיד על הזדמנויות ריבאונד סלקטיביות ולא על מגמת דאב חדה.",
- "skip_reason": "שאר המטבעות/מניות נמצאים באזור נייטרלי ללא איתות ברור (RSI אמצעי, MACD מעורב) או בעלי היסטוריה שלילית ללא שיפור טכני מובהק, לכן נבחרו רק שתי ההזדמנויות עם התאוששות MACD ברורה; ETH נשאר כהחזקה פסיבית מכיוון שאין הצדקה כרגע לרוטציה מלאה.",
+ "market_read": "השוק הקריפטו מציג מומנטום מעורב עם כמה מטבעות במגמת עלייה ברורה תוך כדי מניות טוקניות בנסיגה כללית.",
+ "skip_reason": "מניות הטוקניות ירדו ללא סימני מיצוי ברורים (RSI לא זמין) והיסטוריית המסחר בהן חלשה, לכן נמנעים מהן הפעם.",
  "picks": [
-  "BCH long size=25% conf=MEDIUM",
-  "LINK long size=20% conf=MEDIUM"
+  "SOL long size=30% conf=HIGH",
+  "BCH long size=18% conf=MEDIUM"
  ],
  "order_errors": [
-  "BCH: Kraken: ['EOrder:Insufficient funds']",
-  "LINK: Kraken: ['EOrder:Insufficient funds']"
+  "liq ETH: all sizes rejected (margin collateral lock)",
+  "SOL: Kraken: ['EOrder:Insufficient funds']",
+  "BCH: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
