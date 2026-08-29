@@ -1,34 +1,25 @@
 {
- "time": "2026-08-29T18:00:06",
+ "time": "2026-08-29T19:00:05",
  "usdc": 28.13,
- "portfolio": 593.92,
+ "portfolio": 594.79,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
   "ANTHROPIC long +1.6%"
  ],
- "stock_candidates": 15,
+ "stock_candidates": 14,
  "top_stocks": [
-  "FLU +5.2% vol=$5,818",
-  "COIN +1.9% vol=$9,327",
-  "MSTR +1.1% vol=$133,072",
-  "TSLA +1.0% vol=$41,642",
-  "CRCL +0.9% vol=$474,003"
+  "MSTR +1.4% vol=$140,675",
+  "COIN +1.3% vol=$9,298",
+  "CRCL +1.0% vol=$453,937",
+  "NVDA +0.5% vol=$400,655",
+  "HOOD -0.4% vol=$18,489"
  ],
  "futures_ok": true,
  "futures_balance": 39.25,
  "unallocated_spot": [
-  "ETH $489"
+  "ETH $490"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TRUMP",
- "claude_called": true,
- "market_read": "השוק הכללי במגמה מעורבת עם BTC יציב סביב 78K, אך SOL מראה מומנטום חיובי ברור עם נפח גבוה שמצדיק כניסה ממוקדת.",
- "skip_reason": "שאר המטבעות והמניות מציגים נפח נמוך, טווח צר או סימנים סותרים (כמו TRUMP שעדיין במגמת ירידה) שלא מצדיקים כניסה כרגע.",
- "picks": [
-  "SOL long size=30% conf=HIGH"
- ],
- "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "SOL: Kraken: ['EOrder:Insufficient funds']"
- ]
+ "call_reason": "הכל שקט — דולג על קריאה לClaude",
+ "claude_called": false
 }
