@@ -1,34 +1,36 @@
 {
- "time": "2026-08-29T07:00:05",
+ "time": "2026-08-29T08:00:05",
  "usdc": 28.13,
- "portfolio": 590.91,
+ "portfolio": 591.36,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
   "ANTHROPIC long +1.6%"
  ],
- "stock_candidates": 17,
+ "stock_candidates": 16,
  "top_stocks": [
   "ANTHROPIC -8.5% vol=$8,376",
-  "MSTR -7.8% vol=$618,949",
-  "CRCL -7.2% vol=$827,286",
+  "MSTR -6.8% vol=$595,003",
+  "CRCL -6.8% vol=$824,058",
   "COIN -4.5% vol=$75,910",
-  "HOOD -4.1% vol=$201,274"
+  "HOOD -4.1% vol=$201,953"
  ],
  "futures_ok": true,
  "futures_balance": 39.25,
  "unallocated_spot": [
-  "ETH $486"
+  "ETH $487"
  ],
  "call_reason": "תנועה חזקה במניה: MSTR, CRCL, COIN",
  "claude_called": true,
- "market_read": "רוב האלטקוינים במגמת תיקון קל עם RSI נמוך-בינוני, מה שיוצר הזדמנויות דיפ-באיינג סלקטיביות כמו BNB.",
- "skip_reason": "ADA/LINK/DOGE אמנם oversold אך MACD שלהם עדיין שלילי ללא סימן היפוך ברור, והמניות ירדו חד ללא נתוני RSI/מומנטום ברורים לביסוס שורט או לונג - מעדיף להתרכז ב-BNB עם האיתות החזק ביותר.",
+ "market_read": "השוק בכלל בתיקון קל עם כמה מטבעות oversold שמראים סימני התאוששות ראשוניים ב-MACD.",
+ "skip_reason": "המניות הטוקניזציה נמצאות במגמת ירידה חדה ללא איתות היפוך ברור, ושאר האלטקוינים נמוכי נפח או ניטרליים מכדי להצדיק פוזיציה.",
  "picks": [
-  "BNB long size=30% conf=HIGH"
+  "BNB long size=25% conf=MEDIUM",
+  "ADA long size=15% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "BNB: Kraken: ['EOrder:Insufficient funds']"
+  "BNB: Kraken: ['EOrder:Insufficient funds']",
+  "ADA: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
