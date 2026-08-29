@@ -1,17 +1,17 @@
 {
- "time": "2026-08-29T03:00:05",
+ "time": "2026-08-29T04:00:05",
  "usdc": 28.13,
- "portfolio": 591.85,
+ "portfolio": 591.22,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
-  "ANTHROPIC long +4.2%"
+  "ANTHROPIC long +1.5%"
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "MSTR -7.7% vol=$665,500",
-  "CRCL -7.7% vol=$793,897",
-  "ANTHROPIC -6.2% vol=$8,077",
+  "ANTHROPIC -8.7% vol=$8,017",
+  "MSTR -7.9% vol=$646,525",
+  "CRCL -7.5% vol=$793,880",
   "COIN -6.0% vol=$75,285",
   "HOOD -4.3% vol=$202,022"
  ],
@@ -21,16 +21,6 @@
   "ETH $487"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: TRUMP",
- "claude_called": true,
- "market_read": "השוק הכללי נמצא בתיקון חד עם BTC ורוב האלטים ב-RSI נמוך, מה שיוצר הזדמנויות ריבאונד סלקטיביות במקום מכירה גורפת.",
- "skip_reason": "המניות הטוקניזציה (MSTR, CRCL, COIN) ירדו חזק אבל בלי אינדיקטורים ברורים לשורט מוגזם, וההיסטוריה שלהן חלשה - עדיף לחכות לאישוש; ADA/LINK/DOGE נייטרליים מדי בלי אות ברור.",
- "picks": [
-  "BTC long size=32% conf=HIGH",
-  "BCH long size=15% conf=MEDIUM"
- ],
- "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "BTC: Kraken: ['EOrder:Insufficient funds']",
-  "BCH: Kraken: ['EOrder:Insufficient funds']"
- ]
+ "claude_called": false,
+ "skip": "snapshot זהה לקריאה הקודמת"
 }
