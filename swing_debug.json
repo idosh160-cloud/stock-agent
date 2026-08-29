@@ -1,7 +1,7 @@
 {
- "time": "2026-08-29T04:00:05",
+ "time": "2026-08-29T05:00:06",
  "usdc": 28.13,
- "portfolio": 591.22,
+ "portfolio": 592.03,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -10,17 +10,25 @@
  "stock_candidates": 17,
  "top_stocks": [
   "ANTHROPIC -8.7% vol=$8,017",
-  "MSTR -7.9% vol=$646,525",
-  "CRCL -7.5% vol=$793,880",
-  "COIN -6.0% vol=$75,285",
-  "HOOD -4.3% vol=$202,022"
+  "MSTR -7.7% vol=$622,829",
+  "CRCL -7.5% vol=$792,820",
+  "COIN -6.4% vol=$75,279",
+  "HOOD -4.3% vol=$203,012"
  ],
  "futures_ok": true,
  "futures_balance": 39.24,
  "unallocated_spot": [
   "ETH $487"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TRUMP",
- "claude_called": false,
- "skip": "snapshot זהה לקריאה הקודמת"
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP, MELANIA",
+ "claude_called": true,
+ "market_read": "השוק הרחב במגמת תיקון קל עם BTC וBNB באזור oversold תוך MACD חיובי - הזדמנות דיפ-קניה איכותית.",
+ "skip_reason": "TRUMP ו-MELANIA כבר overbought עם BB%>90 אך נפח נמוך מדי לשורט בטוח; שאר האלטים ומניות ה-xStock בטווח ניטרלי/סחיר צר ללא יתרון ברור כרגע.",
+ "picks": [
+  "BTC long size=35% conf=HIGH"
+ ],
+ "order_errors": [
+  "liq ETH: all sizes rejected (margin collateral lock)",
+  "BTC: Kraken: ['EOrder:Insufficient funds']"
+ ]
 }
