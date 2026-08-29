@@ -1,7 +1,7 @@
 {
- "time": "2026-08-29T16:00:05",
+ "time": "2026-08-29T17:00:05",
  "usdc": 28.13,
- "portfolio": 593.24,
+ "portfolio": 594.58,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -9,21 +9,21 @@
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "FLU +4.7% vol=$6,085",
-  "GLD -2.7% vol=$12,733",
-  "HOOD -1.8% vol=$128,635",
-  "CF -1.8% vol=$6,787",
-  "NVDA -1.0% vol=$808,834"
+  "FLU +7.5% vol=$5,902",
+  "CF -1.2% vol=$5,464",
+  "MSTR +1.2% vol=$148,398",
+  "HOOD -1.2% vol=$26,042",
+  "COIN +1.0% vol=$9,255"
  ],
  "futures_ok": true,
  "futures_balance": 39.25,
  "unallocated_spot": [
-  "ETH $488"
+  "ETH $490"
  ],
- "call_reason": "תנועה חזקה במניה: FLU, GLD",
+ "call_reason": "תנועה חזקה במניה: FLU",
  "claude_called": true,
- "market_read": "השוק הכללי מציג תמונה מעורבת עם BTC יציב סביב 77.8K, אבל SOL בולט עם נפח ומומנטום חיוביים ברורים.",
- "skip_reason": "שאר המטבעות/מניות מציגים RSI ניטרלי או נפח נמוך מדי (BCH, XMR, TRUMP) ולא מצדיקים כניסה חדשה מעבר ל-SOL ול-ANTHROPIC הקיים.",
+ "market_read": "השוק הכללי נייטרלי עם BTC יציב סביב $78K, אבל SOL מראה מומנטום עולה ברור עם נפח תומך בעוד רוב שאר המטבעות נעים בטווח צר וללא כיוון ברור.",
+ "skip_reason": "TRUMP מציג איתותים מעורבים (RSI לא קיצוני מול MACD שלילי חזק), CC ו-FARTCOIN בנפח נמוך מדי לביטחון, והמניות אינן מציגות סטאפים קיצוניים מספיק לשורט או לונג כרגע.",
  "picks": [
   "SOL long size=35% conf=HIGH"
  ],
