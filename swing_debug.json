@@ -1,35 +1,34 @@
 {
- "time": "2026-08-29T11:00:05",
+ "time": "2026-08-29T12:00:05",
  "usdc": 28.13,
- "portfolio": 591.26,
+ "portfolio": 591.32,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
   "ANTHROPIC long +1.6%"
  ],
- "stock_candidates": 16,
+ "stock_candidates": 17,
  "top_stocks": [
   "ANTHROPIC -8.5% vol=$8,376",
-  "CRCL -5.9% vol=$688,258",
-  "MSTR -5.7% vol=$478,905",
-  "COIN -4.2% vol=$76,233",
-  "HOOD -4.0% vol=$153,029"
+  "MSTR -5.9% vol=$460,191",
+  "CRCL -5.7% vol=$690,378",
+  "FLU +4.4% vol=$6,080",
+  "COIN -4.2% vol=$76,233"
  ],
  "futures_ok": true,
  "futures_balance": 39.25,
  "unallocated_spot": [
   "ETH $487"
  ],
- "call_reason": "תנועה חזקה במניה: CRCL, MSTR, COIN",
+ "call_reason": "תנועה חזקה במניה: MSTR, CRCL, FLU",
  "claude_called": true,
- "market_read": "השוק הקריפטו כרגע במגמת ירידה קלה עם כמה מטבעות oversold שנראים בשלים לתיקון טכני כלפי מעלה.",
- "skip_reason": "ETH הנוכחי נשאר כהחזקה פסיבית ללא סיגנל טכני ברור כרגע במחזור הזה, ושאר המועמדים (PENGU, FARTCOIN, ADA, LTC) פחות ברורים או בעלי היסטוריה חלשה יותר יחסית ל-BCH/TON.",
+ "market_read": "שוק הקריפטו והמניות בירידה כללית קלה היום עם כמה מטבעות oversold שמראים סימני מיצוי מכירה.",
+ "skip_reason": "שאר המועמדים בקריפטו נייטרליים או ללא סיגנל ברור (RSI אמצעי, MACD שטוח), והמניות חסרות נתוני RSI/מומנטום ברורים לכיוון סחר בטוח.",
  "picks": [
-  "BCH long size=28% conf=HIGH",
-  "TON long size=20% conf=MEDIUM"
+  "BCH long size=25% conf=HIGH"
  ],
  "order_errors": [
-  "BCH: Kraken: ['EOrder:Insufficient funds']",
-  "TON: Kraken: ['EOrder:Insufficient funds']"
+  "liq ETH: all sizes rejected (margin collateral lock)",
+  "BCH: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
