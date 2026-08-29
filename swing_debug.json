@@ -1,35 +1,34 @@
 {
- "time": "2026-08-29T06:00:05",
+ "time": "2026-08-29T07:00:05",
  "usdc": 28.13,
- "portfolio": 591.92,
+ "portfolio": 590.91,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
-  "ANTHROPIC long +1.5%"
+  "ANTHROPIC long +1.6%"
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "ANTHROPIC -8.7% vol=$8,017",
-  "MSTR -7.5% vol=$621,370",
-  "CRCL -7.1% vol=$802,830",
-  "COIN -6.3% vol=$75,915",
-  "HOOD -4.3% vol=$203,012"
+  "ANTHROPIC -8.5% vol=$8,376",
+  "MSTR -7.8% vol=$618,949",
+  "CRCL -7.2% vol=$827,286",
+  "COIN -4.5% vol=$75,910",
+  "HOOD -4.1% vol=$201,274"
  ],
  "futures_ok": true,
  "futures_balance": 39.25,
  "unallocated_spot": [
-  "ETH $487"
+  "ETH $486"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TRUMP, MELANIA",
+ "call_reason": "תנועה חזקה במניה: MSTR, CRCL, COIN",
  "claude_called": true,
- "market_read": "השוק מציג פיצולים חדים - כמה אלטקוינים בקיצוניות overbought (TRUMP, MELANIA) לצד כמה oversold (BCH, XMR) שמתחילים להתהפך, הזדמנות למסחר דו-כיווני.",
- "skip_reason": "שאר המועמדים (ADA, XRP, LINK, XMR, מניות) נמצאים באזור נייטרלי ללא איתות ברור מספיק או עם נפח נמוך מדי כדי להצדיק כניסה כרגע.",
+ "market_read": "רוב האלטקוינים במגמת תיקון קל עם RSI נמוך-בינוני, מה שיוצר הזדמנויות דיפ-באיינג סלקטיביות כמו BNB.",
+ "skip_reason": "ADA/LINK/DOGE אמנם oversold אך MACD שלהם עדיין שלילי ללא סימן היפוך ברור, והמניות ירדו חד ללא נתוני RSI/מומנטום ברורים לביסוס שורט או לונג - מעדיף להתרכז ב-BNB עם האיתות החזק ביותר.",
  "picks": [
-  "BCH long size=25% conf=MEDIUM",
-  "TRUMP short size=20% conf=MEDIUM"
+  "BNB long size=30% conf=HIGH"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "BCH: Kraken: ['EOrder:Insufficient funds']"
+  "BNB: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
