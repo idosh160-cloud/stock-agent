@@ -1,7 +1,7 @@
 {
- "time": "2026-08-29T12:00:05",
+ "time": "2026-08-29T13:00:05",
  "usdc": 28.13,
- "portfolio": 591.32,
+ "portfolio": 590.95,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -10,22 +10,22 @@
  "stock_candidates": 17,
  "top_stocks": [
   "ANTHROPIC -8.5% vol=$8,376",
-  "MSTR -5.9% vol=$460,191",
-  "CRCL -5.7% vol=$690,378",
-  "FLU +4.4% vol=$6,080",
+  "MSTR -5.4% vol=$197,257",
+  "CRCL -4.9% vol=$677,590",
+  "NVDA -4.2% vol=$1,017,629",
   "COIN -4.2% vol=$76,233"
  ],
  "futures_ok": true,
  "futures_balance": 39.25,
  "unallocated_spot": [
-  "ETH $487"
+  "ETH $486"
  ],
- "call_reason": "תנועה חזקה במניה: MSTR, CRCL, FLU",
+ "call_reason": "תנועה חזקה במניה: MSTR, CRCL, NVDA",
  "claude_called": true,
- "market_read": "שוק הקריפטו והמניות בירידה כללית קלה היום עם כמה מטבעות oversold שמראים סימני מיצוי מכירה.",
- "skip_reason": "שאר המועמדים בקריפטו נייטרליים או ללא סיגנל ברור (RSI אמצעי, MACD שטוח), והמניות חסרות נתוני RSI/מומנטום ברורים לכיוון סחר בטוח.",
+ "market_read": "השוק הכללי בקירור קל אחרי ירידות רוחביות בקריפטו ומניות, עם כמה נכסים באזור oversold שמציעים הזדמנות ריבאונד טקטית.",
+ "skip_reason": "שאר המועמדים (ADA, LTC, TRUMP) נראים דומים אך עם MACD חלש יותר או נפח נמוך יותר מ-BCH, ולכן מרוכזים בפוזיציה אחת חזקה במקום לפזר.",
  "picks": [
-  "BCH long size=25% conf=HIGH"
+  "BCH long size=30% conf=HIGH"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
