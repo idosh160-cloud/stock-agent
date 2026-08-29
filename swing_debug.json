@@ -1,7 +1,7 @@
 {
- "time": "2026-08-29T00:00:05",
+ "time": "2026-08-29T01:00:05",
  "usdc": 28.13,
- "portfolio": 592.53,
+ "portfolio": 592.59,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -9,10 +9,10 @@
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "CRCL -8.7% vol=$734,656",
-  "MSTR -7.8% vol=$740,228",
-  "COIN -7.7% vol=$75,116",
-  "HOOD -6.2% vol=$201,159",
+  "MSTR -9.3% vol=$710,922",
+  "CRCL -8.7% vol=$812,988",
+  "COIN -7.7% vol=$75,368",
+  "CF -6.4% vol=$17,647",
   "ANTHROPIC -6.2% vol=$8,077"
  ],
  "futures_ok": true,
@@ -20,17 +20,15 @@
  "unallocated_spot": [
   "ETH $488"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, BCH, TRUMP",
+ "call_reason": "תנועה חזקה במניה: MSTR, CRCL, COIN",
  "claude_called": true,
- "market_read": "שוק האלטים בירידה רוחבית חדה היום עם מספר מטבעות ב-oversold מובהק שיכולים לתת תיקון טכני קצר טווח.",
- "skip_reason": "SOL, XRP, ADA, LINK, DOGE נמצאים ב-RSI בינוני-נמוך אך ה-MACD עדיין שלילי חזק ללא סימני היפוך ברור - מעדיף לחכות לאישור. מניות ה-xStocks בירידה חדה (CRCL, MSTR, COIN) הן מועמדות לשורט אך ללא סימני מיצוי ברורים ב-RSI/BB%, וההיסטוריה השלילית שלהן מחזקת את הזהירות.",
+ "market_read": "השוק הכללי נראה במגמת ירידה קלה עם BTC ב-oversold, מה שיוצר הזדמנות ריבאונד טכני קצר טווח.",
+ "skip_reason": "שאר המטבעות (LINK, SOL, ADA, XMR) ב-RSI ניטרלי ללא איתות ברור, והמניות ברובן ירדו חד בלי נתוני RSI לאישור oversold/overbought - מעדיף לרכז על ההזדמנות הכי ברורה.",
  "picks": [
-  "FARTCOIN long size=22% conf=MEDIUM",
-  "BCH long size=16% conf=MEDIUM"
+  "BTC long size=30% conf=HIGH"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "FARTCOIN: Kraken: ['EOrder:Insufficient funds']",
-  "BCH: Kraken: ['EOrder:Insufficient funds']"
+  "BTC: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
