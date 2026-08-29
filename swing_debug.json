@@ -1,7 +1,7 @@
 {
- "time": "2026-08-29T21:00:05",
+ "time": "2026-08-29T22:00:06",
  "usdc": 28.13,
- "portfolio": 594.97,
+ "portfolio": 594.75,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -9,14 +9,14 @@
  ],
  "stock_candidates": 13,
  "top_stocks": [
-  "CRCL +1.6% vol=$423,235",
-  "MSTR +1.0% vol=$99,453",
-  "HOOD +0.9% vol=$11,939",
-  "AMZN -0.4% vol=$32,878",
-  "NVDA +0.4% vol=$124,349"
+  "CRCL +1.4% vol=$422,881",
+  "MSTR +1.4% vol=$97,104",
+  "HOOD +1.1% vol=$11,975",
+  "NVDA +0.3% vol=$102,920",
+  "SPCX -0.2% vol=$87,618"
  ],
  "futures_ok": true,
- "futures_balance": 39.25,
+ "futures_balance": 39.26,
  "unallocated_spot": [
   "ETH $490"
  ],
