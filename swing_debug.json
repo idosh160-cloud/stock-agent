@@ -1,7 +1,7 @@
 {
- "time": "2026-08-30T09:00:04",
+ "time": "2026-08-30T10:00:05",
  "usdc": 28.13,
- "portfolio": 595.65,
+ "portfolio": 594.93,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -9,17 +9,26 @@
  ],
  "stock_candidates": 11,
  "top_stocks": [
-  "HOOD +1.9% vol=$106,680",
+  "HOOD +2.0% vol=$112,017",
   "MSTR +1.2% vol=$91,260",
-  "CRCL +0.9% vol=$321,179",
+  "CRCL +0.6% vol=$321,085",
   "GLD +0.4% vol=$24,836",
-  "AAPL -0.3% vol=$51,322"
+  "META +0.2% vol=$11,416"
  ],
  "futures_ok": true,
  "futures_balance": 39.26,
  "unallocated_spot": [
-  "ETH $491"
+  "ETH $490"
  ],
- "call_reason": "הכל שקט — דולג על קריאה לClaude",
- "claude_called": false
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP, FARTCOIN",
+ "claude_called": true,
+ "market_read": "השוק בקונסולידציה עם רוב האלטקוינים ליד תחתית הטווח - הזדמנות לריבאונד סלקטיבי בנכסים בעלי נפח גבוה כמו SOL.",
+ "skip_reason": "TRUMP ו-FARTCOIN אוברסולד אבל עם נפח מסחר נמוך מדי לביטחון; מניות ה-xStock שטוחות מדי היום ללא איתות ברור לונג/שורט.",
+ "picks": [
+  "SOL long size=30% conf=MEDIUM"
+ ],
+ "order_errors": [
+  "liq ETH: all sizes rejected (margin collateral lock)",
+  "SOL: Kraken: ['EOrder:Insufficient funds']"
+ ]
 }
