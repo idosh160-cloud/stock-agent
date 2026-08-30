@@ -1,7 +1,7 @@
 {
- "time": "2026-08-30T15:00:05",
+ "time": "2026-08-30T16:00:05",
  "usdc": 28.13,
- "portfolio": 600.12,
+ "portfolio": 600.76,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -10,27 +10,25 @@
  "stock_candidates": 15,
  "top_stocks": [
   "HOOD +2.7% vol=$163,516",
-  "MSTR +2.4% vol=$33,231",
+  "MSTR +2.4% vol=$30,633",
   "FLU +2.0% vol=$5,369",
-  "COIN +1.5% vol=$10,160",
-  "CRCL +1.3% vol=$352,350"
+  "CRCL +1.8% vol=$350,676",
+  "COIN +1.3% vol=$10,157"
  ],
  "futures_ok": true,
  "futures_balance": 39.26,
  "unallocated_spot": [
-  "ETH $495"
+  "ETH $496"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: XMR, TRUMP",
  "claude_called": true,
- "market_read": "השוק בקריפטו מציג כמה מטבעות אוברבאוט קיצוניים (XMR, TON, LTC) לצד כמה אוברסולד (TRUMP), בעוד המניות הטוקניזציה שקטות יחסית ללא איתות ברור.",
- "skip_reason": "TON/LTC/SOL אוברבאוט אך פחות קיצוניים מ-XMR ונפח מסחר נמוך יותר; המניות הטוקניזציה נעות בטווח צר מדי היום ללא איתות ברור לכיוון.",
+ "market_read": "רוב הקריפטו הראשי (BTC, ETH, LTC, LINK, BNB) נמצא באזור אוברבאוט קיצוני עם BB% קרוב ל-100 - לא זמן טוב ללונג חדש שם, ו-TRUMP מציע הזדמנות ריבאונד נגדית עם סיכון מוגבל.",
+ "skip_reason": "BTC/ETH/LTC/LINK/BNB/XMR כולם אוברבאוט (RSI>65, BB%>85) ומסוכנים ללונג חדש; שורט על מומנטום חזק (כמו XMR/LTC) מסוכן כי ה-MACD עדיין חיובי. מניות ה-xStocks חסרות נתוני RSI/BB ברורים היום כדי להצדיק פוזיציה חדשה.",
  "picks": [
-  "XMR short size=30% conf=HIGH",
-  "TRUMP long size=15% conf=MEDIUM"
+  "TRUMP long size=25% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "XMR: Kraken: ['EOrder:Margin trading in asset is restricted']",
   "TRUMP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
