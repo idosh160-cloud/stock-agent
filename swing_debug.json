@@ -1,19 +1,19 @@
 {
- "time": "2026-08-30T11:00:05",
+ "time": "2026-08-30T12:00:05",
  "usdc": 28.13,
- "portfolio": 596.22,
+ "portfolio": 596.27,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
   "ANTHROPIC long +1.6%"
  ],
- "stock_candidates": 12,
+ "stock_candidates": 14,
  "top_stocks": [
-  "HOOD +2.2% vol=$115,652",
-  "MSTR +1.2% vol=$90,184",
-  "FLU +0.4% vol=$6,540",
-  "GLD +0.4% vol=$24,836",
-  "QQQ +0.4% vol=$78,585"
+  "HOOD +2.6% vol=$115,953",
+  "MSTR +1.1% vol=$90,568",
+  "FLU +1.1% vol=$5,371",
+  "TSLA +0.4% vol=$5,432",
+  "QQQ +0.3% vol=$78,533"
  ],
  "futures_ok": true,
  "futures_balance": 39.26,
@@ -21,14 +21,6 @@
   "ETH $491"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: TRUMP, FARTCOIN",
- "claude_called": true,
- "market_read": "השוק הכללי במגמת דשדוש עם כמה נכסים oversold שנראים בשלים לריבאונד קצר טווח.",
- "skip_reason": "שאר המועמדים (XMR, LTC, XDC) נראים overbought/exhausted ולא מציעים יחס סיכון-סיכוי טוב לכניסה עכשווית, ומניות ה-xStocks נמצאות באיזור נייטרלי ללא סיגנל ברור.",
- "picks": [
-  "TRUMP long size=25% conf=MEDIUM"
- ],
- "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
- ]
+ "claude_called": false,
+ "skip": "snapshot זהה לקריאה הקודמת"
 }
