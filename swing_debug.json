@@ -1,36 +1,34 @@
 {
- "time": "2026-08-30T17:00:05",
+ "time": "2026-08-30T18:00:05",
  "usdc": 28.13,
- "portfolio": 610.45,
+ "portfolio": 605.7,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
   "ANTHROPIC long +1.6%"
  ],
- "stock_candidates": 15,
+ "stock_candidates": 16,
  "top_stocks": [
-  "MSTR +3.2% vol=$37,552",
-  "HOOD +2.9% vol=$169,134",
-  "CRCL +2.2% vol=$357,522",
-  "FLU +2.0% vol=$5,369",
-  "COIN +1.7% vol=$10,259"
+  "FLU +3.6% vol=$5,327",
+  "HOOD +2.9% vol=$171,005",
+  "MSTR +2.3% vol=$37,282",
+  "CF +2.3% vol=$5,082",
+  "CRCL +1.7% vol=$170,454"
  ],
  "futures_ok": true,
  "futures_balance": 39.26,
  "unallocated_spot": [
-  "ETH $505"
+  "ETH $500"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: XMR, TRUMP",
+ "call_reason": "תנועה חזקה במטבע חדש: XMR, TRUMP, FARTCOIN",
  "claude_called": true,
- "market_read": "השוק הקריפטו מראה סימני מתיחות יתר בנכסים מובילים כמו ETH בעוד altcoins בינוניים כמו XMR עדיין בתחילת מומנטום.",
- "skip_reason": "מניות (MSTR, HOOD, CRCL) מראות תנועה חיובית אך לא קיצונית מספיק וללא נתוני RSI ברורים כדי להצדיק פוזיציה על פני ההזדמנויות הקריפטו הברורות יותר.",
+ "market_read": "השוק הקריפטו מציג מומנטום מעורב עם כמה אלטים חזקים כמו XMR שעדיין לא במיצוי, בעוד ETH ורוב הסטוקים כבר קנויי יתר.",
+ "skip_reason": "TRUMP ו-FARTCOIN בירידה עם RSI נמוך אך ללא סימני היפוך ברור; ETH, LINK ו-XRP קנויי יתר מדי לכניסה חדשה; הסטוקים ברובם שקטים מדי היום ללא סטאפ ברור.",
  "picks": [
-  "ETH short size=25% conf=HIGH",
-  "XMR long size=25% conf=MEDIUM"
+  "XMR long size=30% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "ETH: Kraken: ['EOrder:Insufficient initial margin']",
   "XMR: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
