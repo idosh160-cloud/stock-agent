@@ -1,7 +1,7 @@
 {
- "time": "2026-08-30T16:00:05",
+ "time": "2026-08-30T17:00:05",
  "usdc": 28.13,
- "portfolio": 600.76,
+ "portfolio": 610.45,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -9,26 +9,28 @@
  ],
  "stock_candidates": 15,
  "top_stocks": [
-  "HOOD +2.7% vol=$163,516",
-  "MSTR +2.4% vol=$30,633",
+  "MSTR +3.2% vol=$37,552",
+  "HOOD +2.9% vol=$169,134",
+  "CRCL +2.2% vol=$357,522",
   "FLU +2.0% vol=$5,369",
-  "CRCL +1.8% vol=$350,676",
-  "COIN +1.3% vol=$10,157"
+  "COIN +1.7% vol=$10,259"
  ],
  "futures_ok": true,
  "futures_balance": 39.26,
  "unallocated_spot": [
-  "ETH $496"
+  "ETH $505"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: XMR, TRUMP",
  "claude_called": true,
- "market_read": "רוב הקריפטו הראשי (BTC, ETH, LTC, LINK, BNB) נמצא באזור אוברבאוט קיצוני עם BB% קרוב ל-100 - לא זמן טוב ללונג חדש שם, ו-TRUMP מציע הזדמנות ריבאונד נגדית עם סיכון מוגבל.",
- "skip_reason": "BTC/ETH/LTC/LINK/BNB/XMR כולם אוברבאוט (RSI>65, BB%>85) ומסוכנים ללונג חדש; שורט על מומנטום חזק (כמו XMR/LTC) מסוכן כי ה-MACD עדיין חיובי. מניות ה-xStocks חסרות נתוני RSI/BB ברורים היום כדי להצדיק פוזיציה חדשה.",
+ "market_read": "השוק הקריפטו מראה סימני מתיחות יתר בנכסים מובילים כמו ETH בעוד altcoins בינוניים כמו XMR עדיין בתחילת מומנטום.",
+ "skip_reason": "מניות (MSTR, HOOD, CRCL) מראות תנועה חיובית אך לא קיצונית מספיק וללא נתוני RSI ברורים כדי להצדיק פוזיציה על פני ההזדמנויות הקריפטו הברורות יותר.",
  "picks": [
-  "TRUMP long size=25% conf=MEDIUM"
+  "ETH short size=25% conf=HIGH",
+  "XMR long size=25% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
+  "ETH: Kraken: ['EOrder:Insufficient initial margin']",
+  "XMR: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
