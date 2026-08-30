@@ -1,7 +1,7 @@
 {
- "time": "2026-08-30T12:00:05",
+ "time": "2026-08-30T13:00:05",
  "usdc": 28.13,
- "portfolio": 596.27,
+ "portfolio": 598.27,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -9,18 +9,26 @@
  ],
  "stock_candidates": 14,
  "top_stocks": [
-  "HOOD +2.6% vol=$115,953",
-  "MSTR +1.1% vol=$90,568",
-  "FLU +1.1% vol=$5,371",
-  "TSLA +0.4% vol=$5,432",
-  "QQQ +0.3% vol=$78,533"
+  "HOOD +2.7% vol=$159,061",
+  "MSTR +2.5% vol=$103,181",
+  "CRCL +1.4% vol=$337,622",
+  "FLU -1.1% vol=$5,267",
+  "TSLA +0.4% vol=$10,078"
  ],
  "futures_ok": true,
  "futures_balance": 39.26,
  "unallocated_spot": [
-  "ETH $491"
+  "ETH $493"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TRUMP, FARTCOIN",
- "claude_called": false,
- "skip": "snapshot זהה לקריאה הקודמת"
+ "call_reason": "תנועה חזקה במטבע חדש: XMR",
+ "claude_called": true,
+ "market_read": "השוק הקריפטו הכללי במגמת עלייה מתונה עם BTC/ETH/SOL קרובים לרוויה עליונה אך עדיין לא מראים סימני היפוך ברורים.",
+ "skip_reason": "המניות (HOOD, MSTR, CRCL) חסרות נתוני RSI/MACD מהימנים והיסטוריה שלהן שלילית; מטבעות כמו XMR/TON קרובים לרוויה אך עם ווליום נמוך מדי לשורט בטוח.",
+ "picks": [
+  "ETH long size=30% conf=MEDIUM"
+ ],
+ "order_errors": [
+  "liq ETH: all sizes rejected (margin collateral lock)",
+  "ETH: Kraken: ['EOrder:Insufficient funds']"
+ ]
 }
