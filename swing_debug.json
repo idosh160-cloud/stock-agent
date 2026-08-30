@@ -1,33 +1,34 @@
 {
- "time": "2026-08-30T21:00:05",
+ "time": "2026-08-30T22:00:05",
  "usdc": 28.13,
- "portfolio": 602.4,
+ "portfolio": 600.3,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
   "ANTHROPIC long +1.6%"
  ],
- "stock_candidates": 15,
+ "stock_candidates": 14,
  "top_stocks": [
-  "HOOD +2.1% vol=$171,669",
-  "CRCL +1.7% vol=$180,575",
-  "MSTR +1.4% vol=$30,327",
-  "COIN +0.9% vol=$9,771",
-  "CF +0.7% vol=$7,383"
+  "HOOD +1.9% vol=$173,177",
+  "CRCL +1.6% vol=$187,896",
+  "MSTR +1.1% vol=$36,709",
+  "CF +0.7% vol=$7,809",
+  "COIN +0.5% vol=$16,868"
  ],
  "futures_ok": true,
  "futures_balance": 39.26,
  "unallocated_spot": [
-  "ETH $498"
+  "ETH $496"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, XMR, TRUMP",
+ "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, TRUMP, XMR",
  "claude_called": true,
- "market_read": "השוק הכללי מעורב - BTC יציב, אלטים מפוזרים בין oversold לoverbought בלי טרנד ברור אחד.",
- "skip_reason": "ETH הספוט נשאר כי המומנטום שלו חיובי (MACD חזק, RSI 57.7) ולא הגיע לאזור מוצדק למכירה; שאר המועמדים (XMR, ETH, TRUMP) כבר לא באזור כניסה אטרקטיבי או שהנפח נמוך מדי, ומניות ה-xStocks כרגע ללא תנועה מספקת לפוזיציה איכותית.",
+ "market_read": "השוק הכללי בתנודתיות מעורבת עם רוב האלטים בתיקון קל וכמה מטבעות באזור oversold שמציעים הזדמנויות ריבאונד קצרות טווח.",
+ "skip_reason": "פארטקוין נפסל בגלל נפח מסחר נמוך מדי (103K) שמסוכן למינוף, ומניות התנודות נמוכות מדי היום כדי להצדיק פוזיציה חדשה מעבר לפוזיציית ANTHROPIC הפתוחה שממשיכה לכיוון היעד.",
  "picks": [
-  "FARTCOIN long size=20% conf=MEDIUM"
+  "TRUMP long size=25% conf=MEDIUM"
  ],
  "order_errors": [
-  "FARTCOIN: Kraken: ['EOrder:Insufficient funds']"
+  "liq ETH: all sizes rejected (margin collateral lock)",
+  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
