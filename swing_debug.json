@@ -1,19 +1,19 @@
 {
- "time": "2026-08-30T00:00:05",
+ "time": "2026-08-30T01:00:05",
  "usdc": 28.13,
- "portfolio": 596.19,
+ "portfolio": 596.4,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
   "ANTHROPIC long +1.6%"
  ],
- "stock_candidates": 13,
+ "stock_candidates": 12,
  "top_stocks": [
-  "CRCL +1.1% vol=$419,354",
-  "FLU -0.9% vol=$6,140",
-  "MSTR +0.8% vol=$92,439",
-  "HOOD +0.8% vol=$10,815",
-  "NVDA +0.5% vol=$87,914"
+  "MSTR +1.4% vol=$94,391",
+  "CRCL +0.9% vol=$346,777",
+  "HOOD +0.7% vol=$13,820",
+  "NVDA +0.4% vol=$52,107",
+  "META +0.4% vol=$9,341"
  ],
  "futures_ok": true,
  "futures_balance": 39.26,
