@@ -1,34 +1,33 @@
 {
- "time": "2026-08-30T19:00:05",
+ "time": "2026-08-30T20:00:05",
  "usdc": 28.13,
- "portfolio": 606.99,
+ "portfolio": 605.32,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
   "ANTHROPIC long +1.6%"
  ],
- "stock_candidates": 16,
+ "stock_candidates": 15,
  "top_stocks": [
-  "FLU +3.6% vol=$5,327",
-  "HOOD +2.5% vol=$171,098",
-  "CRCL +2.2% vol=$178,240",
-  "MSTR +2.0% vol=$30,789",
-  "CF +2.0% vol=$5,271"
+  "HOOD +2.4% vol=$170,886",
+  "MSTR +1.7% vol=$30,528",
+  "CRCL +1.6% vol=$177,361",
+  "CF +1.5% vol=$6,149",
+  "COIN +1.2% vol=$9,742"
  ],
  "futures_ok": true,
  "futures_balance": 39.26,
  "unallocated_spot": [
-  "ETH $502"
+  "ETH $500"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, XMR, TRUMP",
+ "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, TRUMP, XMR",
  "claude_called": true,
- "market_read": "השוק מעורב עם רוב המטבעות הגדולים (ETH, XRP, LINK, LTC) בקנייתיתר, בעוד XMR מציג עדיין מומנטום בריא עם מקום לעלות.",
- "skip_reason": "רוב המועמדים הגדולים (ETH, XRP, LINK, LTC, TON) כבר ב-RSI מעל 65 וקרובים לרצועה עליונה - overbought מדי לכניסה חדשה; FARTCOIN ו-TRUMP סובלים מנפח נמוך ותנודה שלילית ללא אישור ברור; המניות מציגות תנועה שקטה מדי היום ללא edge משמעותי.",
+ "market_read": "השוק הכללי רגוע יחסית עם רוב הנכסים בטווח ניטרלי, אין מומנטום חזק ברור מלבד מכירת יתר בפארטקוין.",
+ "skip_reason": "שאר המועמדים נמצאים באזור ניטרלי ללא איתות ברור לכיוון מסוים כרגע, ו-ETH מוחזק כספוט ומהווה עצמו פוזיציה איכותית שלא כדאי לגעת בה.",
  "picks": [
-  "XMR long size=28% conf=HIGH"
+  "FARTCOIN long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "XMR: Kraken: ['EOrder:Insufficient funds']"
+  "FARTCOIN: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
