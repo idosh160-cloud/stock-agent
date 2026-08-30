@@ -1,7 +1,7 @@
 {
- "time": "2026-08-30T20:00:05",
+ "time": "2026-08-30T21:00:05",
  "usdc": 28.13,
- "portfolio": 605.32,
+ "portfolio": 602.4,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -9,21 +9,21 @@
  ],
  "stock_candidates": 15,
  "top_stocks": [
-  "HOOD +2.4% vol=$170,886",
-  "MSTR +1.7% vol=$30,528",
-  "CRCL +1.6% vol=$177,361",
-  "CF +1.5% vol=$6,149",
-  "COIN +1.2% vol=$9,742"
+  "HOOD +2.1% vol=$171,669",
+  "CRCL +1.7% vol=$180,575",
+  "MSTR +1.4% vol=$30,327",
+  "COIN +0.9% vol=$9,771",
+  "CF +0.7% vol=$7,383"
  ],
  "futures_ok": true,
  "futures_balance": 39.26,
  "unallocated_spot": [
-  "ETH $500"
+  "ETH $498"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, TRUMP, XMR",
+ "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, XMR, TRUMP",
  "claude_called": true,
- "market_read": "השוק הכללי רגוע יחסית עם רוב הנכסים בטווח ניטרלי, אין מומנטום חזק ברור מלבד מכירת יתר בפארטקוין.",
- "skip_reason": "שאר המועמדים נמצאים באזור ניטרלי ללא איתות ברור לכיוון מסוים כרגע, ו-ETH מוחזק כספוט ומהווה עצמו פוזיציה איכותית שלא כדאי לגעת בה.",
+ "market_read": "השוק הכללי מעורב - BTC יציב, אלטים מפוזרים בין oversold לoverbought בלי טרנד ברור אחד.",
+ "skip_reason": "ETH הספוט נשאר כי המומנטום שלו חיובי (MACD חזק, RSI 57.7) ולא הגיע לאזור מוצדק למכירה; שאר המועמדים (XMR, ETH, TRUMP) כבר לא באזור כניסה אטרקטיבי או שהנפח נמוך מדי, ומניות ה-xStocks כרגע ללא תנועה מספקת לפוזיציה איכותית.",
  "picks": [
   "FARTCOIN long size=20% conf=MEDIUM"
  ],
