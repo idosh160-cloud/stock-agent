@@ -1,34 +1,36 @@
 {
- "time": "2026-08-30T22:00:05",
+ "time": "2026-08-30T23:00:04",
  "usdc": 28.13,
- "portfolio": 600.3,
+ "portfolio": 598.05,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
   "ANTHROPIC long +1.6%"
  ],
- "stock_candidates": 14,
+ "stock_candidates": 15,
  "top_stocks": [
-  "HOOD +1.9% vol=$173,177",
-  "CRCL +1.6% vol=$187,896",
-  "MSTR +1.1% vol=$36,709",
-  "CF +0.7% vol=$7,809",
+  "FLU +3.9% vol=$5,851",
+  "HOOD +1.0% vol=$171,787",
+  "CRCL +0.8% vol=$183,284",
+  "MSTR +0.6% vol=$36,699",
   "COIN +0.5% vol=$16,868"
  ],
  "futures_ok": true,
- "futures_balance": 39.26,
+ "futures_balance": 39.27,
  "unallocated_spot": [
-  "ETH $496"
+  "ETH $494"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, TRUMP, XMR",
  "claude_called": true,
- "market_read": "השוק הכללי בתנודתיות מעורבת עם רוב האלטים בתיקון קל וכמה מטבעות באזור oversold שמציעים הזדמנויות ריבאונד קצרות טווח.",
- "skip_reason": "פארטקוין נפסל בגלל נפח מסחר נמוך מדי (103K) שמסוכן למינוף, ומניות התנודות נמוכות מדי היום כדי להצדיק פוזיציה חדשה מעבר לפוזיציית ANTHROPIC הפתוחה שממשיכה לכיוון היעד.",
+ "market_read": "השוק הכללי חלש עם רוב האלטקוינים ב-RSI נמוך ותיקון אחרי ירידה, מה שיוצר הזדמנויות bounce קצרות טווח.",
+ "skip_reason": "דחיתי את שאר הקריפטו (ADA, DOGE, SOL, XMR) כי הם ניטרליים ללא סיגנל ברור, ואת המניות כי הטווחים היומיים קטנים מדי (0.5-1%) ולא מצדיקים סיכון מול הזדמנויות הקריפטו העמוקות יותר.",
  "picks": [
-  "TRUMP long size=25% conf=MEDIUM"
+  "TRUMP long size=25% conf=HIGH",
+  "FARTCOIN long size=15% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
+  "TRUMP: Kraken: ['EOrder:Insufficient funds']",
+  "FARTCOIN: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
