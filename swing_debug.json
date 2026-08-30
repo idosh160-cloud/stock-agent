@@ -1,7 +1,7 @@
 {
- "time": "2026-08-30T13:00:05",
+ "time": "2026-08-30T14:00:05",
  "usdc": 28.13,
- "portfolio": 598.27,
+ "portfolio": 600.23,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -9,26 +9,26 @@
  ],
  "stock_candidates": 14,
  "top_stocks": [
-  "HOOD +2.7% vol=$159,061",
-  "MSTR +2.5% vol=$103,181",
-  "CRCL +1.4% vol=$337,622",
-  "FLU -1.1% vol=$5,267",
+  "MSTR +3.0% vol=$104,537",
+  "HOOD +2.6% vol=$159,198",
+  "FLU +2.0% vol=$5,369",
+  "CRCL +1.9% vol=$356,585",
   "TSLA +0.4% vol=$10,078"
  ],
  "futures_ok": true,
  "futures_balance": 39.26,
  "unallocated_spot": [
-  "ETH $493"
+  "ETH $495"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: XMR",
+ "call_reason": "תנועה חזקה במטבע חדש: XMR, TRUMP",
  "claude_called": true,
- "market_read": "השוק הקריפטו הכללי במגמת עלייה מתונה עם BTC/ETH/SOL קרובים לרוויה עליונה אך עדיין לא מראים סימני היפוך ברורים.",
- "skip_reason": "המניות (HOOD, MSTR, CRCL) חסרות נתוני RSI/MACD מהימנים והיסטוריה שלהן שלילית; מטבעות כמו XMR/TON קרובים לרוויה אך עם ווליום נמוך מדי לשורט בטוח.",
+ "market_read": "השוק הקריפטו כולו נראה overbought היום עם RSI מעל 60-70 ברוב המטבעות ו-BB% מעל 100, מה שהופך שורטים על נכסים קיצוניים לפתרון סיכון-תשואה טוב יותר מלונג בנקודה זו.",
+ "skip_reason": "רוב הקנדידטים האחרים (TON, PENGU, SOL, BNB, LINK, XRP, BTC) כבר overbought עם MACD חיובי חזק שעדיין לא מתהפך — סיכון שורט מוקדם; TRUMP ניטרלי מדי (RSI 40) לכניסה ברורה; המניות הראו תנועה קטנה מדי (0.1-3%) בלי איתותים ברורים ועם היסטוריה חלשה.",
  "picks": [
-  "ETH long size=30% conf=MEDIUM"
+  "XMR short size=25% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "ETH: Kraken: ['EOrder:Insufficient funds']"
+  "XMR: Kraken: ['EOrder:Margin trading in asset is restricted']"
  ]
 }
