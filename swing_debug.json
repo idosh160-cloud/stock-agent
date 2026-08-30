@@ -1,7 +1,7 @@
 {
- "time": "2026-08-30T04:00:05",
+ "time": "2026-08-30T05:00:05",
  "usdc": 28.13,
- "portfolio": 595.79,
+ "portfolio": 595.25,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -9,16 +9,16 @@
  ],
  "stock_candidates": 11,
  "top_stocks": [
-  "CRCL +0.9% vol=$349,219",
-  "HOOD +0.8% vol=$17,317",
-  "MSTR +0.8% vol=$93,408",
-  "GLD -0.2% vol=$30,482",
-  "NVDA +0.2% vol=$38,618"
+  "HOOD +1.0% vol=$31,692",
+  "MSTR +0.9% vol=$94,429",
+  "CRCL +0.4% vol=$349,637",
+  "NVDA +0.3% vol=$37,850",
+  "GLD -0.2% vol=$30,482"
  ],
  "futures_ok": true,
  "futures_balance": 39.26,
  "unallocated_spot": [
-  "ETH $491"
+  "ETH $490"
  ],
  "call_reason": "הכל שקט — דולג על קריאה לClaude",
  "claude_called": false
