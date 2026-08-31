@@ -1,7 +1,7 @@
 {
- "time": "2026-08-31T20:00:05",
+ "time": "2026-08-31T21:00:05",
  "usdc": 28.13,
- "portfolio": 622.52,
+ "portfolio": 620.72,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -9,28 +9,25 @@
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "CRCL +6.9% vol=$1,608,332",
-  "TSLA +5.5% vol=$800,498",
-  "COIN +3.7% vol=$42,021",
-  "AMZN -2.8% vol=$126,900",
-  "HOOD -2.5% vol=$266,220"
+  "CRCL +6.8% vol=$1,770,411",
+  "TSLA +5.2% vol=$824,278",
+  "COIN +3.6% vol=$43,125",
+  "AMZN -2.7% vol=$131,861",
+  "FLU +2.4% vol=$9,014"
  ],
  "futures_ok": true,
  "futures_balance": 61.48,
  "unallocated_spot": [
-  "ETH $496"
+  "ETH $494"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: XMR, TRUMP, ADA",
  "claude_called": true,
- "market_read": "השוק הקריפטו נמצא במגמת עלייה רוחבית עם BTC סביב 78.9K ורוב האלטים ב-BB עליון עם MACD חיובי, מה שמעיד על מומנטום bullish בריא ולא על exhaustion קיצוני.",
- "skip_reason": "TRUMP/ADA/TON/XRP/LTC כולם BB% מעל 80 וקרובים לרוויה בלי אישור MACD חזק מספיק לעומת ETH/LINK; XMR שלילי ב-MACD למרות העלייה, ומניות (CRCL/TSLA/COIN) עלו חד אך בלי אינדיקטורי RSI זמינים לאישור short/long ברור - מעדיף להתרכז בשתי ההזדמנויות החזקות ביותר.",
+ "market_read": "השוק בעליות מתונות כלליות עם כמה מטבעות קרובים לרוויה עליונה, אבל SOL ו-ETH עדיין מציגים מומנטום בריא בלי סימני מיצוי.",
+ "skip_reason": "שאר המועמדים או קרובים מדי לרוויה עליונה (TRUMP, TON, LTC, XRP עם BB%>80) או בעלי ווליום נמוך מדי/היסטוריה שלילית ללא שיפור בתנאים הנוכחיים, לכן לא נכנסים עכשיו.",
  "picks": [
-  "ETH long size=40% conf=HIGH",
-  "LINK long size=20% conf=MEDIUM"
+  "SOL long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "ETH: Kraken: ['EOrder:Insufficient funds']",
-  "LINK: Kraken: ['EOrder:Insufficient funds']"
+  "SOL: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
