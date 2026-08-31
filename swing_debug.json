@@ -1,7 +1,7 @@
 {
- "time": "2026-08-31T16:00:05",
+ "time": "2026-08-31T17:00:06",
  "usdc": 28.13,
- "portfolio": 619.45,
+ "portfolio": 620.1,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -9,28 +9,26 @@
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "HOOD -4.1% vol=$271,817",
-  "TSLA +3.8% vol=$623,174",
-  "CF -3.7% vol=$10,807",
-  "AMZN -2.6% vol=$106,582",
-  "MSTR -2.4% vol=$242,708"
+  "HOOD -3.9% vol=$268,193",
+  "CF -3.7% vol=$8,498",
+  "TSLA +3.6% vol=$624,149",
+  "AMZN -2.7% vol=$105,365",
+  "CRCL +2.6% vol=$978,245"
  ],
  "futures_ok": true,
  "futures_balance": 61.48,
  "unallocated_spot": [
-  "ETH $493"
+  "ETH $494"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: XMR",
  "claude_called": true,
- "market_read": "השוק בעדנה מתונה עם ETH מוביל את המומנטום החיובי בקריפטו תוך ווליום גבוה, בעוד המניות הטוקניזציה ברובן שליליות ולא מציעות סטאפ ברור.",
- "skip_reason": "שאר המועמדים (XMR, TRUMP, ADA, מניות פוחתות) מציגים איתותים מעורבים או ווליום נמוך מדי ולכן דולגו לטובת ריכוז ב-ETH ו-LINK.",
+ "market_read": "השוק הכללי בעליה מתונה עם BTC יציב ומטבעות אלט מציגים מומנטום חיובי ללא סימני מיצוי ברור עדיין.",
+ "skip_reason": "שאר המועמדים בקריפטו קרובים לאיזור אובר-בוט (TON RSI 76.5) או חלשים מדי בנפח/מומנטום ביחס ל-XMR, והמניות מציגות ירידות קלות ללא תבנית ברורה לשורט או לונג איכותי כרגע.",
  "picks": [
-  "ETH long size=35% conf=HIGH",
-  "LINK long size=18% conf=MEDIUM"
+  "XMR long size=32% conf=HIGH"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "ETH: Kraken: ['EOrder:Insufficient funds']",
-  "LINK: Kraken: ['EOrder:Insufficient funds']"
+  "XMR: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
