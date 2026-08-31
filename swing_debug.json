@@ -1,7 +1,7 @@
 {
- "time": "2026-08-31T15:00:06",
+ "time": "2026-08-31T16:00:05",
  "usdc": 28.13,
- "portfolio": 619.31,
+ "portfolio": 619.45,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -9,25 +9,28 @@
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "HOOD -4.7% vol=$260,614",
+  "HOOD -4.1% vol=$271,817",
+  "TSLA +3.8% vol=$623,174",
   "CF -3.7% vol=$10,807",
-  "TSLA +2.8% vol=$608,390",
-  "AMZN -2.7% vol=$106,878",
-  "GOOGL -2.4% vol=$423,465"
+  "AMZN -2.6% vol=$106,582",
+  "MSTR -2.4% vol=$242,708"
  ],
  "futures_ok": true,
  "futures_balance": 61.48,
  "unallocated_spot": [
   "ETH $493"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: XMR, TRUMP",
+ "call_reason": "תנועה חזקה במטבע חדש: XMR",
  "claude_called": true,
- "market_read": "השוק הכללי חיובי במידה מתונה עם BTC יציב ואלטקוינים מראים עליות מתונות עם נפחים סבירים, ללא סימני מיצוי ברורים.",
- "skip_reason": "שאר המועמדים או חלשים בנפח (AVAX, DOGE), חסרי כיוון ברור (ADA, SOL, LINK עם RSI ניטרלי), או שההיסטוריה השלילית שלהם דורשת אישור חזק יותר שלא קיים כרגע (XMR עם MACD שלילי למרות העלייה); ETH מרוכז נותן את היחס סיכון-סיכוי הטוב ביותר עם ה-USDC המוגבל שיש.",
+ "market_read": "השוק בעדנה מתונה עם ETH מוביל את המומנטום החיובי בקריפטו תוך ווליום גבוה, בעוד המניות הטוקניזציה ברובן שליליות ולא מציעות סטאפ ברור.",
+ "skip_reason": "שאר המועמדים (XMR, TRUMP, ADA, מניות פוחתות) מציגים איתותים מעורבים או ווליום נמוך מדי ולכן דולגו לטובת ריכוז ב-ETH ו-LINK.",
  "picks": [
-  "ETH long size=20% conf=MEDIUM"
+  "ETH long size=35% conf=HIGH",
+  "LINK long size=18% conf=MEDIUM"
  ],
  "order_errors": [
-  "ETH: Kraken: ['EOrder:Insufficient funds']"
+  "liq ETH: all sizes rejected (margin collateral lock)",
+  "ETH: Kraken: ['EOrder:Insufficient funds']",
+  "LINK: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
