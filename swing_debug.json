@@ -1,7 +1,7 @@
 {
- "time": "2026-08-31T05:00:05",
+ "time": "2026-08-31T06:00:05",
  "usdc": 28.13,
- "portfolio": 608.92,
+ "portfolio": 613.12,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -10,27 +10,24 @@
  "stock_candidates": 15,
  "top_stocks": [
   "FLU +2.2% vol=$8,055",
-  "HOOD -2.2% vol=$299,897",
-  "CF -1.9% vol=$12,339",
-  "CRCL -1.7% vol=$283,814",
-  "GLD -1.6% vol=$21,381"
+  "HOOD -1.7% vol=$240,205",
+  "CF -1.6% vol=$12,363",
+  "GLD -1.6% vol=$21,381",
+  "CRCL -0.9% vol=$598,335"
  ],
  "futures_ok": true,
  "futures_balance": 61.48,
  "unallocated_spot": [
-  "ETH $483"
+  "ETH $487"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: XMR",
  "claude_called": true,
- "market_read": "השוק באלטים מעורב עם כמה מטבעות oversold שמראים סימני התאוששות לצד XMR שמוביל במומנטום ברור.",
- "skip_reason": "שאר המועמדים בקריפטו (DOT, TON, ADA, LTC) בנפח מסחר נמוך מדי או ללא אישור מומנטום ברור, והמניות כרגע לא מציגות סטאפים קיצוניים מספיק לשורט/לונג.",
+ "market_read": "השוק הכללי רגוע יחסית עם רוב האלטקוינים בטווח ניטרלי, TON בולט כמכירת יתר קיצונית מול השאר.",
+ "skip_reason": "XMR עלה חזק אבל המומנטום עדיין חיובי (MACD+) כך ששורט מוקדם מדי; שאר המועמדים (ADA, LINK, DOGE) ניטרליים ללא קצה ברור, ומניות ה-xStocks נעות בטווח צר מדי כרגע לסטאפ איכותי.",
  "picks": [
-  "XMR long size=30% conf=HIGH",
-  "TRUMP long size=15% conf=MEDIUM"
+  "TON long size=25% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "XMR: Kraken: ['EOrder:Insufficient funds']",
-  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
+  "TON: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
