@@ -1,7 +1,7 @@
 {
- "time": "2026-08-31T10:00:05",
+ "time": "2026-08-31T11:00:06",
  "usdc": 28.13,
- "portfolio": 615.31,
+ "portfolio": 617.06,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -9,28 +9,28 @@
  ],
  "stock_candidates": 15,
  "top_stocks": [
-  "CF -2.2% vol=$12,783",
-  "FLU +1.8% vol=$12,177",
-  "HOOD -1.5% vol=$254,138",
-  "MSTR +1.0% vol=$125,651",
-  "GLD -0.8% vol=$21,431"
+  "CF -2.6% vol=$11,749",
+  "HOOD -2.1% vol=$253,217",
+  "TSLA -0.7% vol=$391,428",
+  "AMZN -0.7% vol=$63,458",
+  "MSTR +0.7% vol=$128,087"
  ],
  "futures_ok": true,
  "futures_balance": 61.48,
  "unallocated_spot": [
-  "ETH $489"
+  "ETH $490"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: XMR",
+ "call_reason": "תנועה חזקה במטבע חדש: XMR, TRUMP",
  "claude_called": true,
- "market_read": "השוק מציג פיזור — כמה אלטים רצו חזק (XMR) ומוצו, בזמן שרוב הקריפטו והמניות נעים בטווח נייטרלי בלי מגמה ברורה.",
- "skip_reason": "שאר המטבעות (ADA, LINK, SOL וכו') נעים ברוגע ללא איתות ברור, והמניות בטווח צר מדי כדי להצדיק סיכון היום — מרוכז בשני הסטאפים הכי חדים.",
+ "market_read": "השוק הכללי נייטרלי עם BTC יציב, אבל XMR מציג תנועה קיצונית ומיצוי מומנטום שמזמין שורט, ו-SOL מציג בסיס יציב לעלייה מתונה.",
+ "skip_reason": "שאר המועמדים (ADA, ETH, XRP, AVAX, LINK ומניות) נמצאים באזור נייטרלי בלי איתות ברור, כך שהעדפתי להתמקד בשתי ההגדרות החדות ביותר.",
  "picks": [
   "XMR short size=25% conf=HIGH",
-  "TRUMP long size=20% conf=MEDIUM"
+  "SOL long size=15% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
   "XMR: Kraken: ['EOrder:Margin trading in asset is restricted']",
-  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
+  "SOL: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
