@@ -1,36 +1,34 @@
 {
- "time": "2026-08-31T18:00:06",
+ "time": "2026-08-31T19:00:05",
  "usdc": 28.13,
- "portfolio": 621.05,
+ "portfolio": 622.2,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
   "ANTHROPIC long +0.2%"
  ],
- "stock_candidates": 16,
+ "stock_candidates": 17,
  "top_stocks": [
-  "TSLA +4.4% vol=$638,768",
-  "HOOD -4.2% vol=$262,471",
-  "CRCL +3.5% vol=$1,021,947",
-  "COIN +2.9% vol=$36,820",
-  "FLU +2.4% vol=$9,014"
+  "CRCL +5.4% vol=$1,074,646",
+  "TSLA +4.7% vol=$642,153",
+  "HOOD -3.9% vol=$262,104",
+  "AMZN -3.2% vol=$109,596",
+  "COIN +3.0% vol=$37,531"
  ],
  "futures_ok": true,
  "futures_balance": 61.48,
  "unallocated_spot": [
-  "ETH $494"
+  "ETH $495"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: XMR, TRUMP",
+ "call_reason": "תנועה חזקה במטבע חדש: XMR, TRUMP, ADA",
  "claude_called": true,
- "market_read": "השוק הקריפטו כרגע במגמת עלייה כללית עם נפחים תומכים, אלטים רבים קרובים לפס עליון של בולינגר אך עדיין לא קיצוניים.",
- "skip_reason": "שאר המטבעות/מניות מציגים תנועה חלשה יותר או נפח נמוך מדי (TRUMP, TON, PENGU) או היסטוריה שלילית בלי שינוי טכני משמעותי (ADA, HOOD, CRCL) — לא מספיק חזק להצדיק כניסה נוספת.",
+ "market_read": "השוק הקריפטו כרגע במגמת עלייה כללית עם מומנטום חיובי ברוב האלטים, אבל חלק מהם (XMR, ADA, FARTCOIN) כבר קרובים לרוויה עליונה.",
+ "skip_reason": "דחיתי את המטבעות שנמצאים כבר ב-BB% קרוב ל-100 (ADA, TRUMP, FARTCOIN, LINK, XRP, LTC) כי הם קרובים למיצוי התנועה בלי מרווח ברור לשורט חד; ETH הנותר בספוט נשאר כי המגמה בו חזקה ועקבית ואין סיבה לצאת ממנו כרגע.",
  "picks": [
-  "ETH long size=35% conf=HIGH",
-  "LINK long size=15% conf=MEDIUM"
+  "SOL long size=25% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "ETH: Kraken: ['EOrder:Insufficient funds']",
-  "LINK: Kraken: ['EOrder:Insufficient funds']"
+  "SOL: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
