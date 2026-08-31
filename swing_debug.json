@@ -1,7 +1,7 @@
 {
- "time": "2026-08-31T22:00:05",
+ "time": "2026-08-31T23:00:05",
  "usdc": 28.13,
- "portfolio": 621.92,
+ "portfolio": 619.77,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -9,26 +9,28 @@
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "CRCL +7.0% vol=$1,760,548",
-  "TSLA +5.3% vol=$824,725",
-  "COIN +4.7% vol=$35,182",
-  "MSTR +2.7% vol=$332,451",
-  "FLU +2.4% vol=$9,014"
+  "CRCL +6.4% vol=$1,759,448",
+  "TSLA +5.4% vol=$824,695",
+  "COIN +4.7% vol=$45,958",
+  "MSTR +2.4% vol=$330,863",
+  "AMZN -2.0% vol=$114,409"
  ],
  "futures_ok": true,
  "futures_balance": 61.48,
  "unallocated_spot": [
-  "ETH $495"
+  "ETH $493"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: XMR, TRUMP, TON",
+ "call_reason": "תנועה חזקה במטבע חדש: XMR, TON, TRUMP",
  "claude_called": true,
- "market_read": "השוק באלטים מראה מומנטום חיובי ברוב המטבעות עם XMR בולט לחיוב ובלי סימני תשישות ברורים.",
- "skip_reason": "TRUMP ו-TON כבר קרובים ל-BB עליון עם RSI גבוה יחסית (overbought/near) כך שהסיכוי לכניסה מאוחרת גבוה מדי, המניות לא מציגות סטאפ חד דיו כרגע.",
+ "market_read": "השוק בעלייה מתונה כללית עם כמה מטבעות מציגים מומנטום חיובי בלי סימני מיצוי קיצוניים.",
+ "skip_reason": "TON ו-ADA נראים קרובים לתקרה (RSI/BB גבוהים) בעוד מניות ה-xStocks מציגות תנועה חלשה מדי או נפח נמוך להצדקת כניסה עכשיו.",
  "picks": [
-  "XMR long size=32% conf=HIGH"
+  "ETH long size=25% conf=MEDIUM",
+  "XMR long size=20% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
+  "ETH: Kraken: ['EOrder:Insufficient funds']",
   "XMR: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
