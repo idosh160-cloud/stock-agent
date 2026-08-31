@@ -1,7 +1,7 @@
 {
- "time": "2026-08-31T02:00:05",
+ "time": "2026-08-31T03:00:05",
  "usdc": 28.13,
- "portfolio": 607.37,
+ "portfolio": 606.99,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -9,11 +9,11 @@
  ],
  "stock_candidates": 15,
  "top_stocks": [
-  "FLU +4.6% vol=$6,034",
-  "CF -2.3% vol=$12,222",
-  "HOOD -1.9% vol=$234,340",
-  "CRCL -1.7% vol=$267,425",
-  "TSLA -1.2% vol=$290,069"
+  "FLU +5.1% vol=$8,225",
+  "CF -2.4% vol=$12,228",
+  "GLD -1.6% vol=$21,381",
+  "HOOD -1.5% vol=$265,592",
+  "CRCL -1.4% vol=$266,748"
  ],
  "futures_ok": true,
  "futures_balance": 61.48,
@@ -22,15 +22,15 @@
  ],
  "call_reason": "תנועה חזקה במניה: FLU, CF",
  "claude_called": true,
- "market_read": "השוק האלט-קוין נמצא ברובו ב-oversold קיצוני אחרי ירידה כללית, מה שיוצר הזדמנויות ריבאונד טכני קצרות טווח.",
- "skip_reason": "TRUMP ו-FARTCOIN תנודתיים מדי ביחס לנפח שלהם, ומניות ה-xStocks כרגע לא מציגות סטאפ ברור (לא overbought קיצוני ולא oversold עם מומנטום היפוך).",
+ "market_read": "השוק הקריפטו נראה במצב תיקון קצר-טווח עם כמה מטבעות מרכזיים ב-oversold מובהק שמעניקים הזדמנות ריבאונד.",
+ "skip_reason": "TON ו-DOT נפסלו בגלל נזילות נמוכה מדי (ווליום דל), ומניות ה-xStocks לא מציגות סטאפ ברור מספיק היום להצדיק כניסה על פני הזדמנויות הקריפטו העדיפות.",
  "picks": [
-  "XRP long size=30% conf=HIGH",
-  "TON long size=20% conf=MEDIUM"
+  "XRP long size=25% conf=MEDIUM",
+  "LINK long size=20% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
   "XRP: Kraken: ['EOrder:Insufficient funds']",
-  "TON: Kraken: ['EOrder:Insufficient funds']"
+  "LINK: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
