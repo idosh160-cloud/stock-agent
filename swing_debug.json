@@ -1,7 +1,7 @@
 {
- "time": "2026-08-31T17:00:06",
+ "time": "2026-08-31T18:00:06",
  "usdc": 28.13,
- "portfolio": 620.1,
+ "portfolio": 621.05,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -9,26 +9,28 @@
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "HOOD -3.9% vol=$268,193",
-  "CF -3.7% vol=$8,498",
-  "TSLA +3.6% vol=$624,149",
-  "AMZN -2.7% vol=$105,365",
-  "CRCL +2.6% vol=$978,245"
+  "TSLA +4.4% vol=$638,768",
+  "HOOD -4.2% vol=$262,471",
+  "CRCL +3.5% vol=$1,021,947",
+  "COIN +2.9% vol=$36,820",
+  "FLU +2.4% vol=$9,014"
  ],
  "futures_ok": true,
  "futures_balance": 61.48,
  "unallocated_spot": [
   "ETH $494"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: XMR",
+ "call_reason": "תנועה חזקה במטבע חדש: XMR, TRUMP",
  "claude_called": true,
- "market_read": "השוק הכללי בעליה מתונה עם BTC יציב ומטבעות אלט מציגים מומנטום חיובי ללא סימני מיצוי ברור עדיין.",
- "skip_reason": "שאר המועמדים בקריפטו קרובים לאיזור אובר-בוט (TON RSI 76.5) או חלשים מדי בנפח/מומנטום ביחס ל-XMR, והמניות מציגות ירידות קלות ללא תבנית ברורה לשורט או לונג איכותי כרגע.",
+ "market_read": "השוק הקריפטו כרגע במגמת עלייה כללית עם נפחים תומכים, אלטים רבים קרובים לפס עליון של בולינגר אך עדיין לא קיצוניים.",
+ "skip_reason": "שאר המטבעות/מניות מציגים תנועה חלשה יותר או נפח נמוך מדי (TRUMP, TON, PENGU) או היסטוריה שלילית בלי שינוי טכני משמעותי (ADA, HOOD, CRCL) — לא מספיק חזק להצדיק כניסה נוספת.",
  "picks": [
-  "XMR long size=32% conf=HIGH"
+  "ETH long size=35% conf=HIGH",
+  "LINK long size=15% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "XMR: Kraken: ['EOrder:Insufficient funds']"
+  "ETH: Kraken: ['EOrder:Insufficient funds']",
+  "LINK: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
