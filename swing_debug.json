@@ -1,7 +1,7 @@
 {
- "time": "2026-08-31T09:00:06",
+ "time": "2026-08-31T10:00:05",
  "usdc": 28.13,
- "portfolio": 615.32,
+ "portfolio": 615.31,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -10,25 +10,27 @@
  "stock_candidates": 15,
  "top_stocks": [
   "CF -2.2% vol=$12,783",
-  "HOOD -2.1% vol=$253,286",
   "FLU +1.8% vol=$12,177",
-  "GLD -0.8% vol=$21,431",
-  "TSLA -0.7% vol=$391,428"
+  "HOOD -1.5% vol=$254,138",
+  "MSTR +1.0% vol=$125,651",
+  "GLD -0.8% vol=$21,431"
  ],
  "futures_ok": true,
- "futures_balance": 61.47,
+ "futures_balance": 61.48,
  "unallocated_spot": [
   "ETH $489"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: XMR",
  "claude_called": true,
- "market_read": "השוק הכללי רגוע יחסית עם רוב האלטים ב-RSI נייטרלי, אך XMR בלט בעלייה חדה ומוגזמת שמזמנת מהפך.",
- "skip_reason": "שאר המועמדים (SOL, ADA, XRP וכו') נמצאים באזור RSI נייטרלי ללא מומנטום ברור לכיוון מסוים, ולכן לא מצדיקים כניסה כעת.",
+ "market_read": "השוק מציג פיזור — כמה אלטים רצו חזק (XMR) ומוצו, בזמן שרוב הקריפטו והמניות נעים בטווח נייטרלי בלי מגמה ברורה.",
+ "skip_reason": "שאר המטבעות (ADA, LINK, SOL וכו') נעים ברוגע ללא איתות ברור, והמניות בטווח צר מדי כדי להצדיק סיכון היום — מרוכז בשני הסטאפים הכי חדים.",
  "picks": [
-  "XMR short size=30% conf=MEDIUM"
+  "XMR short size=25% conf=HIGH",
+  "TRUMP long size=20% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "XMR: Kraken: ['EOrder:Margin trading in asset is restricted']"
+  "XMR: Kraken: ['EOrder:Margin trading in asset is restricted']",
+  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
