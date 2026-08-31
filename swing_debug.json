@@ -1,36 +1,36 @@
 {
- "time": "2026-08-30T23:00:04",
+ "time": "2026-08-31T00:00:05",
  "usdc": 28.13,
- "portfolio": 598.05,
+ "portfolio": 608.7,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
-  "ANTHROPIC long +1.6%"
+  "ANTHROPIC long +0.2%"
  ],
  "stock_candidates": 15,
  "top_stocks": [
-  "FLU +3.9% vol=$5,851",
-  "HOOD +1.0% vol=$171,787",
-  "CRCL +0.8% vol=$183,284",
-  "MSTR +0.6% vol=$36,699",
-  "COIN +0.5% vol=$16,868"
+  "FLU +4.9% vol=$6,051",
+  "CF -3.9% vol=$11,466",
+  "MSTR -1.5% vol=$64,882",
+  "COIN -1.1% vol=$22,074",
+  "TSLA -0.9% vol=$288,098"
  ],
  "futures_ok": true,
- "futures_balance": 39.27,
+ "futures_balance": 61.48,
  "unallocated_spot": [
-  "ETH $494"
+  "ETH $483"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, TRUMP, XMR",
+ "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, ADA, DOGE",
  "claude_called": true,
- "market_read": "השוק הכללי חלש עם רוב האלטקוינים ב-RSI נמוך ותיקון אחרי ירידה, מה שיוצר הזדמנויות bounce קצרות טווח.",
- "skip_reason": "דחיתי את שאר הקריפטו (ADA, DOGE, SOL, XMR) כי הם ניטרליים ללא סיגנל ברור, ואת המניות כי הטווחים היומיים קטנים מדי (0.5-1%) ולא מצדיקים סיכון מול הזדמנויות הקריפטו העמוקות יותר.",
+ "market_read": "השוק הרחב במגמת תיקון קל עם רוב האלטקוינים בטריטוריית oversold, מה שיוצר הזדמנויות ריבאונד קצרות טווח.",
+ "skip_reason": "שאר המועמדים כמו FARTCOIN ו-PENGU בעלי נפח מסחר נמוך מדי לביטחון בכניסה, ומניות ה-xStocks לא מציגות סטאפ ברור כרגע.",
  "picks": [
-  "TRUMP long size=25% conf=HIGH",
-  "FARTCOIN long size=15% conf=MEDIUM"
+  "ADA long size=25% conf=MEDIUM",
+  "XRP long size=20% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "TRUMP: Kraken: ['EOrder:Insufficient funds']",
-  "FARTCOIN: Kraken: ['EOrder:Insufficient funds']"
+  "ADA: Kraken: ['EOrder:Insufficient funds']",
+  "XRP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
