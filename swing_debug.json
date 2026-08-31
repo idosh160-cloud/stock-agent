@@ -1,7 +1,7 @@
 {
- "time": "2026-08-31T07:00:05",
+ "time": "2026-08-31T08:00:06",
  "usdc": 28.13,
- "portfolio": 613.45,
+ "portfolio": 614.02,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -9,18 +9,28 @@
  ],
  "stock_candidates": 15,
  "top_stocks": [
-  "FLU +2.8% vol=$8,757",
-  "HOOD -1.6% vol=$239,892",
-  "GLD -1.6% vol=$21,381",
-  "CF -0.9% vol=$12,810",
-  "CRCL -0.8% vol=$592,508"
+  "CF -2.2% vol=$12,783",
+  "HOOD -1.6% vol=$246,319",
+  "FLU +1.1% vol=$8,747",
+  "GLD -0.7% vol=$21,634",
+  "SPY -0.6% vol=$86,815"
  ],
  "futures_ok": true,
  "futures_balance": 61.47,
  "unallocated_spot": [
   "ETH $487"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: XMR",
- "claude_called": false,
- "skip": "snapshot זהה לקריאה הקודמת"
+ "call_reason": "תנועה חזקה במטבע חדש: XMR, TRUMP",
+ "claude_called": true,
+ "market_read": "השוק בטרנד מעורב עם אלטים בודדים כמו XMR מראים מומנטום חזק אמיתי, בעוד רוב המניות המבוזרות שקטות וללא קצה ברור.",
+ "skip_reason": "שאר המועמדים (SOL, ADA, LINK, מניות) נמצאים באמצע טווח עם RSI ניטרלי ו-MACD שלילי/שטוח — אין קצה ברור לכיוון מסחר כרגע.",
+ "picks": [
+  "XMR long size=30% conf=HIGH",
+  "TRUMP long size=15% conf=MEDIUM"
+ ],
+ "order_errors": [
+  "liq ETH: all sizes rejected (margin collateral lock)",
+  "XMR: Kraken: ['EOrder:Insufficient funds']",
+  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
+ ]
 }
