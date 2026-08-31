@@ -1,7 +1,7 @@
 {
- "time": "2026-08-31T14:00:05",
+ "time": "2026-08-31T15:00:06",
  "usdc": 28.13,
- "portfolio": 614.1,
+ "portfolio": 619.31,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -9,26 +9,25 @@
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "HOOD -5.0% vol=$263,449",
-  "CF -4.1% vol=$10,838",
-  "MSTR -3.7% vol=$135,277",
-  "CRCL -2.4% vol=$586,799",
-  "TSLA +2.4% vol=$497,922"
+  "HOOD -4.7% vol=$260,614",
+  "CF -3.7% vol=$10,807",
+  "TSLA +2.8% vol=$608,390",
+  "AMZN -2.7% vol=$106,878",
+  "GOOGL -2.4% vol=$423,465"
  ],
  "futures_ok": true,
  "futures_balance": 61.48,
  "unallocated_spot": [
-  "ETH $488"
+  "ETH $493"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: XMR",
+ "call_reason": "תנועה חזקה במטבע חדש: XMR, TRUMP",
  "claude_called": true,
- "market_read": "השוק הקריפטו נסחר במגמה מעורבת עם רוב המטבעות סביב RSI נייטרלי, ETH מציג את האיתות הטכני החזק ביותר עם נפח גבוה ומומנטום חיובי.",
- "skip_reason": "XMR ו-FARTCOIN מציגים איתותים סותרים (מומנטום מוחלש או נפח דל), מניות כמו HOOD/MSTR/CRCL בירידה חדה אך ללא אישור טכני חזק לשורט כרגע, ולכן דבקתי בהזדמנות הברורה ביותר.",
+ "market_read": "השוק הכללי חיובי במידה מתונה עם BTC יציב ואלטקוינים מראים עליות מתונות עם נפחים סבירים, ללא סימני מיצוי ברורים.",
+ "skip_reason": "שאר המועמדים או חלשים בנפח (AVAX, DOGE), חסרי כיוון ברור (ADA, SOL, LINK עם RSI ניטרלי), או שההיסטוריה השלילית שלהם דורשת אישור חזק יותר שלא קיים כרגע (XMR עם MACD שלילי למרות העלייה); ETH מרוכז נותן את היחס סיכון-סיכוי הטוב ביותר עם ה-USDC המוגבל שיש.",
  "picks": [
-  "ETH long size=35% conf=HIGH"
+  "ETH long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
   "ETH: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
