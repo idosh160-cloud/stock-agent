@@ -1,34 +1,33 @@
 {
- "time": "2026-08-31T12:00:06",
+ "time": "2026-08-31T13:00:08",
  "usdc": 28.13,
- "portfolio": 615.13,
+ "portfolio": 616.06,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
   "ANTHROPIC long +0.2%"
  ],
- "stock_candidates": 15,
+ "stock_candidates": 16,
  "top_stocks": [
-  "CF -2.2% vol=$11,049",
-  "HOOD -2.1% vol=$253,977",
-  "FLU +2.0% vol=$9,056",
-  "TSLA -0.8% vol=$388,461",
-  "AAPL -0.8% vol=$53,185"
+  "CF -3.2% vol=$10,860",
+  "HOOD -2.5% vol=$232,287",
+  "CRCL -2.2% vol=$572,681",
+  "FLU +2.1% vol=$9,048",
+  "MSTR -1.4% vol=$122,777"
  ],
  "futures_ok": true,
- "futures_balance": 61.47,
+ "futures_balance": 61.48,
  "unallocated_spot": [
-  "ETH $489"
+  "ETH $490"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: XMR",
  "claude_called": true,
- "market_read": "השוק הכללי רגוע יחסית עם אלטים ברובם באמצע הטווח, XMR בלבד רץ חזק אבל עדיין לא מציג היחלשות מומנטום לשורט.",
- "skip_reason": "XMR overbought אך MACD עדיין חיובי בעוצמה כך שאין אישור להיחלשות למכירה בשורט; שאר המטבעות (ADA, SOL, XRP, LINK) נייטרליים ללא קאטליזטור ברור כרגע.",
+ "market_read": "השוק הכללי רגוע עם BTC יציב ב-77.9K, מרבית האלטקוינים בטרנד עדין חיובי בלי סימני מיצוי ברור.",
+ "skip_reason": "שאר המועמדים (ADA, SOL, LINK) נמצאים באזור ניטרלי/חלש עם RSI מתחת ל-45 בלי אישור מומנטום ברור, והמניות בירידה קלה בלי סטאפ שורט מובהק (RSI/BB לא קיצוניים) — מעדיף לרכז את הסייז ב-XMR שהיא ההזדמנות הכי חדה כרגע, ומשאיר את ETH הפסיבי כאחזקה סבירה כי RSI 50.7 ניטרלי בלי הצדקה לרוטציה.",
  "picks": [
-  "ETH long size=30% conf=MEDIUM"
+  "XMR long size=30% conf=HIGH"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "ETH: Kraken: ['EOrder:Insufficient funds']"
+  "XMR: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
