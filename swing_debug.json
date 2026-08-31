@@ -1,36 +1,36 @@
 {
- "time": "2026-08-31T00:00:05",
+ "time": "2026-08-31T01:00:04",
  "usdc": 28.13,
- "portfolio": 608.7,
+ "portfolio": 610.91,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
   "ANTHROPIC long +0.2%"
  ],
- "stock_candidates": 15,
+ "stock_candidates": 16,
  "top_stocks": [
-  "FLU +4.9% vol=$6,051",
-  "CF -3.9% vol=$11,466",
-  "MSTR -1.5% vol=$64,882",
-  "COIN -1.1% vol=$22,074",
-  "TSLA -0.9% vol=$288,098"
+  "FLU +4.6% vol=$6,034",
+  "CF -1.6% vol=$12,176",
+  "CRCL -0.9% vol=$272,018",
+  "TSLA -0.9% vol=$290,760",
+  "MSTR -0.9% vol=$83,966"
  ],
  "futures_ok": true,
  "futures_balance": 61.48,
  "unallocated_spot": [
-  "ETH $483"
+  "ETH $485"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, ADA, DOGE",
+ "call_reason": "תנועה חזקה במניה: FLU",
  "claude_called": true,
- "market_read": "השוק הרחב במגמת תיקון קל עם רוב האלטקוינים בטריטוריית oversold, מה שיוצר הזדמנויות ריבאונד קצרות טווח.",
- "skip_reason": "שאר המועמדים כמו FARTCOIN ו-PENGU בעלי נפח מסחר נמוך מדי לביטחון בכניסה, ומניות ה-xStocks לא מציגות סטאפ ברור כרגע.",
+ "market_read": "השוק האלטים במגמת תיקון קלה עם כמה נכסים oversold מובהקים שמציעים הזדמנויות ריבאונד לטווח קצר.",
+ "skip_reason": "שאר המועמדים (ADA, DOGE, XDC, XRP) חלשים יותר מבחינת נפח או היסטוריה גרועה יותר בלי שיפור טכני מובהק, ומניות ה-xStocks כרגע רגועות מדי (טווח יומי קטן) כדי להצדיק פוזיציה על פני ההזדמנויות הקריפטו.",
  "picks": [
-  "ADA long size=25% conf=MEDIUM",
-  "XRP long size=20% conf=MEDIUM"
+  "TRUMP long size=25% conf=MEDIUM",
+  "LINK long size=15% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "ADA: Kraken: ['EOrder:Insufficient funds']",
-  "XRP: Kraken: ['EOrder:Insufficient funds']"
+  "TRUMP: Kraken: ['EOrder:Insufficient funds']",
+  "LINK: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
