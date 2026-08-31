@@ -1,7 +1,7 @@
 {
- "time": "2026-08-31T06:00:05",
+ "time": "2026-08-31T07:00:05",
  "usdc": 28.13,
- "portfolio": 613.12,
+ "portfolio": 613.45,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -9,25 +9,18 @@
  ],
  "stock_candidates": 15,
  "top_stocks": [
-  "FLU +2.2% vol=$8,055",
-  "HOOD -1.7% vol=$240,205",
-  "CF -1.6% vol=$12,363",
+  "FLU +2.8% vol=$8,757",
+  "HOOD -1.6% vol=$239,892",
   "GLD -1.6% vol=$21,381",
-  "CRCL -0.9% vol=$598,335"
+  "CF -0.9% vol=$12,810",
+  "CRCL -0.8% vol=$592,508"
  ],
  "futures_ok": true,
- "futures_balance": 61.48,
+ "futures_balance": 61.47,
  "unallocated_spot": [
   "ETH $487"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: XMR",
- "claude_called": true,
- "market_read": "השוק הכללי רגוע יחסית עם רוב האלטקוינים בטווח ניטרלי, TON בולט כמכירת יתר קיצונית מול השאר.",
- "skip_reason": "XMR עלה חזק אבל המומנטום עדיין חיובי (MACD+) כך ששורט מוקדם מדי; שאר המועמדים (ADA, LINK, DOGE) ניטרליים ללא קצה ברור, ומניות ה-xStocks נעות בטווח צר מדי כרגע לסטאפ איכותי.",
- "picks": [
-  "TON long size=25% conf=MEDIUM"
- ],
- "order_errors": [
-  "TON: Kraken: ['EOrder:Insufficient funds']"
- ]
+ "claude_called": false,
+ "skip": "snapshot זהה לקריאה הקודמת"
 }
