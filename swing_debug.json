@@ -1,37 +1,29 @@
 {
- "time": "2026-09-01T10:00:06",
+ "time": "2026-09-01T11:00:07",
  "usdc": 28.13,
- "portfolio": 603.61,
+ "portfolio": 604.39,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
   "ANTHROPIC long +0.2%",
   "CRCL short +1.7%",
   "TSLA short +0.9%",
-  "COIN short +0.9%"
+  "COIN short +2.4%"
  ],
  "stock_candidates": 14,
  "top_stocks": [
-  "CRCL +5.9% vol=$1,481,950",
+  "CRCL +5.5% vol=$1,489,657",
   "TSLA +4.7% vol=$482,108",
-  "COIN +3.0% vol=$39,553",
-  "AMZN -2.9% vol=$138,108",
-  "HOOD +2.6% vol=$232,660"
+  "AMZN -2.9% vol=$120,000",
+  "HOOD +2.2% vol=$235,260",
+  "META -2.2% vol=$65,375"
  ],
  "futures_ok": true,
- "futures_balance": 48.98,
+ "futures_balance": 48.69,
  "unallocated_spot": [
-  "ETH $490"
+  "ETH $491"
  ],
- "call_reason": "תנועה חזקה במניה: AMZN, HOOD, GOOGL",
- "claude_called": true,
- "market_read": "השוק הקריפטו בתיקון קל עם רוב המטבעות קרובים לתחתית הבולינגר וב-RSI נמוך-בינוני, מצב שמזמין דיפ-בים סלקטיביים.",
- "skip_reason": "שאר המטבעות (TRUMP, TON, XRP, BTC) מציגים תמונה דומה של oversold אך עם ווליום נמוך יותר או תנועה פחות ברורה מ-SOL; המניות הטוקניזציה שכבר פתוחות (CRCL, TSLA, COIN) מתקדמות יפה ליעד ולא כדאי לגעת בהן.",
- "picks": [
-  "SOL long size=25% conf=MEDIUM"
- ],
- "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "SOL: Kraken: ['EOrder:Insufficient funds']"
- ]
+ "call_reason": "תנועה חזקה במניה: AMZN, HOOD, META",
+ "claude_called": false,
+ "skip": "snapshot זהה לקריאה הקודמת"
 }
