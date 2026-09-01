@@ -1,36 +1,37 @@
 {
- "time": "2026-09-01T08:00:06",
+ "time": "2026-09-01T09:00:05",
  "usdc": 28.13,
- "portfolio": 603.21,
+ "portfolio": 603.3,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
   "ANTHROPIC long +0.2%",
-  "CRCL short +0.1%",
-  "TSLA short +0.2%",
+  "CRCL short +1.9%",
+  "TSLA short +0.6%",
   "COIN short +0.9%"
  ],
  "stock_candidates": 14,
  "top_stocks": [
-  "CRCL +8.2% vol=$1,490,630",
-  "TSLA +5.5% vol=$449,525",
-  "HOOD +3.7% vol=$175,984",
+  "CRCL +5.4% vol=$1,468,852",
+  "TSLA +5.0% vol=$457,761",
   "COIN +3.0% vol=$39,553",
-  "SPCX +2.2% vol=$597,159"
+  "HOOD +2.8% vol=$198,286",
+  "AMZN -2.6% vol=$134,393"
  ],
  "futures_ok": true,
- "futures_balance": 43.93,
+ "futures_balance": 49.2,
  "unallocated_spot": [
-  "ETH $494"
+  "ETH $489"
  ],
- "call_reason": "תנועה חזקה במניה: HOOD, SPCX",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP",
  "claude_called": true,
- "market_read": "השוק הקריפטו רגוע יחסית עם תנודתיות נמוכה, המניות הטוקניזציה מראות תנועות חדות יותר אך רוב הפוזיציות הפתוחות שלי כבר בכיוון הנכון.",
- "skip_reason": "רוב הקנדידטים האחרים (TRUMP, XDC, XMR) מציגים איתותים סותרים או קיצוניים מדי (RSI קיצוני, MACD שלילי) ולא מצדיקים כניסה נוספת מעבר לפוזיציה הקיימת.",
+ "market_read": "השוק הכללי חלש-ניטרלי עם רוב הנכסים ליד תחתית טווח יומי ו-RSI סביב 40, מצב שמתאים לכניסות לונג זהירות על ריבאונד ולא למרדף אחרי מומנטום.",
+ "skip_reason": "שאר המועמדים (TRUMP, TON, XRP, SOL, BTC) מציגים תמונה דומה של RSI חלש ליד תחתית טווח ללא אישור נפח ברור, והמניות ברובן בירידה קלה ללא סטאפ שורט חד — לא עדיפים על ETH שכבר בפורטפוליו וניתן לנהל בסטופ.",
  "picks": [
-  "LINK long size=20% conf=MEDIUM"
+  "ETH long size=25% conf=MEDIUM"
  ],
  "order_errors": [
-  "LINK: Kraken: ['EOrder:Insufficient funds']"
+  "liq ETH: all sizes rejected (margin collateral lock)",
+  "ETH: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
