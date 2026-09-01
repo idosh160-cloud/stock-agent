@@ -1,32 +1,37 @@
 {
- "time": "2026-09-01T03:00:05",
+ "time": "2026-09-01T04:00:05",
  "usdc": 28.13,
- "portfolio": 606.47,
+ "portfolio": 601.98,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
   "ANTHROPIC long +0.2%",
-  "CRCL short +0.1%",
-  "TSLA short -0.0%"
+  "CRCL short -0.1%",
+  "TSLA short +0.1%",
+  "COIN short +0.5%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "CRCL +9.2% vol=$1,802,243",
-  "TSLA +5.6% vol=$462,799",
-  "COIN +5.2% vol=$39,820",
-  "MSTR +2.8% vol=$340,548",
-  "SPCX +2.2% vol=$596,343"
+  "CRCL +9.7% vol=$1,805,743",
+  "TSLA +4.9% vol=$444,534",
+  "COIN +4.6% vol=$39,614",
+  "MSTR +3.7% vol=$334,902",
+  "HOOD +2.5% vol=$155,370"
  ],
  "futures_ok": true,
- "futures_balance": 49.1,
+ "futures_balance": 42.98,
  "unallocated_spot": [
-  "ETH $492"
+  "ETH $494"
  ],
- "call_reason": "תנועה חזקה במניה: COIN, MSTR, SPCX",
+ "call_reason": "תנועה חזקה במניה: MSTR, HOOD, SPCX",
  "claude_called": true,
- "market_read": "השוק הכללי נייטרלי-שטוח עם BTC ואלטים ברייג' צר ללא מומנטום ברור, בעוד כמה מניות טוקניזציה רצות חזק מדי ומהוות הזדמנות שורט למחזור.",
- "skip_reason": "יתרת ה-USDC הפנויה ($28) קטנה מדי לפתיחת פוזיציה משמעותית בפני עצמה, ולכן נעשה שימוש במרווח השוליים הפנוי במקום; ETH שנשאר בספוט הוא אחזקה סבירה לטווח בינוני ולא נזוז ממנה כרגע כי אין הזדמנות טובה יותר לגייס נגדה הון.",
+ "market_read": "השוק הכללי רגוע עם נטייה חיובית קלה בקריפטו וסטוקים ממשיכים לרוץ אחרי ראלי חד ב-CRCL/TSLA/COIN.",
+ "skip_reason": "ADA ו-LINK קרובים מדי לרצועה עליונה (BB%>77) בלי איתות ברור להמשך, וה-xStocks הפתוחים כבר נותנים חשיפה מספקת לסקטור המניות.",
  "picks": [
-  "COIN short size=20% conf=MEDIUM"
+  "SOL long size=25% conf=MEDIUM"
+ ],
+ "order_errors": [
+  "liq ETH: all sizes rejected (margin collateral lock)",
+  "SOL: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
