@@ -1,36 +1,37 @@
 {
- "time": "2026-09-01T05:00:04",
+ "time": "2026-09-01T06:00:06",
  "usdc": 28.13,
- "portfolio": 601.85,
+ "portfolio": 602.88,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
   "ANTHROPIC long +0.2%",
-  "CRCL short -0.2%",
-  "TSLA short +0.0%",
+  "CRCL short -1.0%",
+  "TSLA short +0.2%",
   "COIN short +0.2%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "CRCL +9.7% vol=$1,794,331",
-  "TSLA +5.0% vol=$449,014",
-  "COIN +5.0% vol=$40,310",
-  "HOOD +3.7% vol=$174,144",
-  "MSTR +3.3% vol=$338,871"
+  "CRCL +9.6% vol=$1,465,546",
+  "TSLA +4.9% vol=$448,139",
+  "COIN +4.5% vol=$40,275",
+  "HOOD +3.9% vol=$171,813",
+  "MSTR +3.6% vol=$353,797"
  ],
  "futures_ok": true,
- "futures_balance": 43.48,
+ "futures_balance": 41.25,
  "unallocated_spot": [
-  "ETH $493"
+  "ETH $496"
  ],
- "call_reason": "תנועה חזקה במניה: HOOD, MSTR, SPCX",
+ "call_reason": "פוזיציה חלשה: CRCL",
  "claude_called": true,
- "market_read": "השוק הכללי נייטרלי-חיובי, רוב הקריפטו והמניות בתנודתיות מתונה ללא איתות קיצון ברור מלבד ALGO שקנוי יתר על מדי בנפח נמוך.",
- "skip_reason": "ALGO קנוי יתר קיצוני אך נפח מסחר נמוך מדי ($31K) לביצוע שורט בטוח; שאר המניות/קריפטו נעים בטווח ניטרלי ללא יתרון סטטיסטי ברור, והפוזיציות הקיימות בפורטפוליו לא דורשות רוטציה כרגע.",
+ "market_read": "שוק הקריפטו במגמת עלייה מתונה עם BTC מוביל בנפח וחוזק, מניות ה-xStocks כבר ממונפות מספיק בתיק הקיים.",
+ "skip_reason": "הפוזיציות הפתוחות ב-ANTHROPIC/TSLA/COIN בדרך ליעד ולא נוגעים בהן; CRCL שלילי אך קרוב לסטופ כך שממתינים; שאר הקריפטו (SOL, ADA, LINK) קרובים ל-BB עליון בלי יתרון ברור על BTC.",
  "picks": [
-  "SOL long size=20% conf=MEDIUM"
+  "BTC long size=25% conf=HIGH"
  ],
  "order_errors": [
-  "SOL: Kraken: ['EOrder:Insufficient funds']"
+  "liq ETH: all sizes rejected (margin collateral lock)",
+  "BTC: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
