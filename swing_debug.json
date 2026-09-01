@@ -1,37 +1,39 @@
 {
- "time": "2026-09-01T13:00:06",
+ "time": "2026-09-01T14:00:05",
  "usdc": 28.13,
- "portfolio": 604.97,
+ "portfolio": 609.81,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
   "ANTHROPIC long +0.2%",
-  "CRCL short +2.6%",
-  "TSLA short +1.3%",
-  "COIN short +2.7%"
+  "CRCL short +5.1%",
+  "TSLA short +2.1%",
+  "COIN short +3.9%"
  ],
  "stock_candidates": 15,
  "top_stocks": [
-  "CRCL +5.6% vol=$1,483,556",
-  "TSLA +4.3% vol=$581,205",
-  "AMZN -3.4% vol=$119,173",
-  "HOOD +2.8% vol=$222,366",
-  "COIN +2.5% vol=$44,055"
+  "CRCL +2.8% vol=$1,537,426",
+  "HOOD +2.5% vol=$279,506",
+  "GLD -2.1% vol=$106,438",
+  "AMZN -2.1% vol=$90,975",
+  "AAPL +1.9% vol=$972,003"
  ],
  "futures_ok": true,
- "futures_balance": 51.57,
+ "futures_balance": 56.6,
  "unallocated_spot": [
-  "ETH $489"
+  "ETH $488"
  ],
- "call_reason": "תנועה חזקה במניה: AMZN, HOOD, GOOGL",
+ "call_reason": "תנועה חזקה במניה: HOOD, GLD, AMZN",
  "claude_called": true,
- "market_read": "השוק הקריפטו כרגע במגמת תיקון קלה עם RSI נמוך במטבעות מובילים ומניות עולות/יורדות בטווח מוגבל — הזדמנויות ריבאונד סלקטיביות יותר מגל מגמה חד-כיווני.",
- "skip_reason": "שאר המועמדים (TRUMP, TON, BTC, CC) מציגים תבנית דומה של עודף מכירה אך בנפחים נמוכים יותר או ביטחון נמוך יותר, ולכן מרוכזים במקום להתפזר; המניות הפתוחות (CRCL, TSLA, COIN, ANTHROPIC) כבר בדרך ליעד ולא מצדיקות רוטציה.",
+ "market_read": "השוק הקריפטו כולו נסוג ב-24 השעות האחרונות עם RSI נמוך-בינוני ברוב המטבעות, מה שיוצר הזדמנויות bounce זהירות בנכסים באיכות גבוהה כמו ETH ו-SOL.",
+ "skip_reason": "שאר המטבעות (XMR, TON, CC, TRUMP) בנפחים נמוכים או ברמת RSI לא מוכרעת מספיק; מניות ה-xStock לא מציגות עיוות קיצוני (לא overbought/oversold ברור) כדי להצדיק כניסה חדשה מעבר לפוזיציות הפתוחות שממשיכות לכיוון המטרה.",
  "picks": [
-  "SOL long size=25% conf=MEDIUM"
+  "ETH long size=25% conf=MEDIUM",
+  "SOL long size=20% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
+  "ETH: Kraken: ['EOrder:Insufficient funds']",
   "SOL: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
