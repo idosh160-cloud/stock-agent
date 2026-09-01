@@ -1,39 +1,39 @@
 {
- "time": "2026-09-01T16:00:06",
+ "time": "2026-09-01T17:00:06",
  "usdc": 28.13,
- "portfolio": 609.0,
+ "portfolio": 609.32,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
   "ANTHROPIC long +0.2%",
-  "CRCL short +3.6%",
-  "TSLA short +1.9%",
+  "CRCL short +5.0%",
+  "TSLA short +2.5%",
   "COIN short +4.2%"
  ],
  "stock_candidates": 15,
  "top_stocks": [
-  "AAPL +3.9% vol=$1,015,962",
-  "HOOD +3.7% vol=$357,172",
-  "GLD -2.4% vol=$106,429",
-  "AMZN -2.2% vol=$81,541",
-  "MSTR -1.9% vol=$333,110"
+  "AAPL +3.7% vol=$829,772",
+  "CRCL -3.0% vol=$1,360,983",
+  "MSTR -2.9% vol=$333,891",
+  "AMZN -2.8% vol=$87,328",
+  "COIN -2.7% vol=$45,686"
  ],
  "futures_ok": true,
- "futures_balance": 54.91,
+ "futures_balance": 58.66,
  "unallocated_spot": [
-  "ETH $489"
+  "ETH $486"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TON",
+ "call_reason": "תנועה חזקה במטבע חדש: XMR, TON, TRUMP",
  "claude_called": true,
- "market_read": "השוק הכללי בקריפטו נסחר בירידה מתונה עם כמה מטבעות ב-oversold ברור, בעוד המניות המוקטנות (xStocks) לא מציגות כרגע יתרון ברור מספיק מול הקריפטו.",
- "skip_reason": "שאר המועמדים (LTC overbought, XMR עם MACD שלילי חד, מניות ללא סיגנל ברור) לא מציגים יחס סיכון/סיכוי מספק כרגע.",
+ "market_read": "השוק בקריפטו נמצא בתיקון קצר עם רוב המטבעות באזור oversold, מה שיוצר הזדמנויות לונג טובות באלטקוינים איכותיים כמו SOL.",
+ "skip_reason": "BTC ו-ETH נמצאים גם ב-oversold אך ה-MACD השלילי החזק שלהם מרמז על המשך מגמה יורדת בטווח הקצר, ומניות ה-xStocks לא מציגות סטאפים ברורים היום ללונג או שורט.",
  "picks": [
-  "SOL long size=25% conf=MEDIUM",
-  "TON long size=15% conf=MEDIUM"
+  "SOL long size=35% conf=HIGH",
+  "XMR long size=15% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
   "SOL: Kraken: ['EOrder:Insufficient funds']",
-  "TON: Kraken: ['EOrder:Insufficient funds']"
+  "XMR: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
