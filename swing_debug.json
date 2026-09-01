@@ -1,36 +1,35 @@
 {
- "time": "2026-09-01T00:00:05",
+ "time": "2026-09-01T01:00:04",
  "usdc": 28.13,
- "portfolio": 619.38,
+ "portfolio": 620.07,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
   "ANTHROPIC long +0.2%"
  ],
- "stock_candidates": 16,
+ "stock_candidates": 15,
  "top_stocks": [
-  "CRCL +9.9% vol=$1,762,000",
-  "TSLA +6.3% vol=$528,695",
-  "COIN +5.2% vol=$40,161",
-  "MSTR +3.8% vol=$308,771",
-  "SPCX +2.4% vol=$657,096"
+  "CRCL +9.3% vol=$1,787,455",
+  "TSLA +5.9% vol=$525,408",
+  "COIN +5.2% vol=$39,839",
+  "MSTR +2.5% vol=$309,420",
+  "IOT +1.9% vol=$6,254"
  ],
  "futures_ok": true,
  "futures_balance": 61.48,
  "unallocated_spot": [
-  "ETH $493"
+  "ETH $494"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: XMR, TRUMP",
+ "call_reason": "תנועה חזקה במניה: CRCL, TSLA, COIN",
  "claude_called": true,
- "market_read": "שוק הקריפטו במגמת עלייה מתונה עם כמה מטבעות עדיין לא overbought, מציע הזדמנויות מומנטום נקיות.",
- "skip_reason": "TON ו-CRCL נראים exhausted (RSI/BB גבוהים מדי) ומניות אחרות בטווח שינוי קטן ללא איתות ברור, כך שנשארים בחוץ הפעם.",
+ "market_read": "השוק בשלב עליה מתונה עם מומנטום חיובי ברוב הקריפטו ומניה אחת (CRCL) שרצה חזק מדי ומועמדת לתיקון.",
+ "skip_reason": "שאר המטבעות/מניות נמצאים באזור ניטרלי (RSI 45-56, BB לא בקיצון) בלי אות ברור מספיק לכניסה כרגע.",
  "picks": [
-  "XMR long size=35% conf=HIGH",
-  "TRUMP long size=20% conf=MEDIUM"
+  "ETH long size=30% conf=HIGH",
+  "CRCL short size=20% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "XMR: Kraken: ['EOrder:Insufficient funds']",
-  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
+  "ETH: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
