@@ -1,37 +1,36 @@
 {
- "time": "2026-09-01T04:00:05",
+ "time": "2026-09-01T05:00:04",
  "usdc": 28.13,
- "portfolio": 601.98,
+ "portfolio": 601.85,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
   "ANTHROPIC long +0.2%",
-  "CRCL short -0.1%",
-  "TSLA short +0.1%",
-  "COIN short +0.5%"
+  "CRCL short -0.2%",
+  "TSLA short +0.0%",
+  "COIN short +0.2%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "CRCL +9.7% vol=$1,805,743",
-  "TSLA +4.9% vol=$444,534",
-  "COIN +4.6% vol=$39,614",
-  "MSTR +3.7% vol=$334,902",
-  "HOOD +2.5% vol=$155,370"
+  "CRCL +9.7% vol=$1,794,331",
+  "TSLA +5.0% vol=$449,014",
+  "COIN +5.0% vol=$40,310",
+  "HOOD +3.7% vol=$174,144",
+  "MSTR +3.3% vol=$338,871"
  ],
  "futures_ok": true,
- "futures_balance": 42.98,
+ "futures_balance": 43.48,
  "unallocated_spot": [
-  "ETH $494"
+  "ETH $493"
  ],
- "call_reason": "תנועה חזקה במניה: MSTR, HOOD, SPCX",
+ "call_reason": "תנועה חזקה במניה: HOOD, MSTR, SPCX",
  "claude_called": true,
- "market_read": "השוק הכללי רגוע עם נטייה חיובית קלה בקריפטו וסטוקים ממשיכים לרוץ אחרי ראלי חד ב-CRCL/TSLA/COIN.",
- "skip_reason": "ADA ו-LINK קרובים מדי לרצועה עליונה (BB%>77) בלי איתות ברור להמשך, וה-xStocks הפתוחים כבר נותנים חשיפה מספקת לסקטור המניות.",
+ "market_read": "השוק הכללי נייטרלי-חיובי, רוב הקריפטו והמניות בתנודתיות מתונה ללא איתות קיצון ברור מלבד ALGO שקנוי יתר על מדי בנפח נמוך.",
+ "skip_reason": "ALGO קנוי יתר קיצוני אך נפח מסחר נמוך מדי ($31K) לביצוע שורט בטוח; שאר המניות/קריפטו נעים בטווח ניטרלי ללא יתרון סטטיסטי ברור, והפוזיציות הקיימות בפורטפוליו לא דורשות רוטציה כרגע.",
  "picks": [
-  "SOL long size=25% conf=MEDIUM"
+  "SOL long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
   "SOL: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
