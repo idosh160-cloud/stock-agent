@@ -1,30 +1,30 @@
 {
- "time": "2026-09-01T19:00:06",
+ "time": "2026-09-01T20:00:05",
  "usdc": 28.13,
- "portfolio": 619.79,
+ "portfolio": 620.52,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
   "ANTHROPIC long +0.2%",
-  "TSLA short +3.4%"
+  "TSLA short +2.8%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "COIN -6.7% vol=$46,343",
-  "CRCL -6.2% vol=$1,288,625",
-  "MSTR -5.9% vol=$339,626",
+  "CRCL -6.1% vol=$834,706",
+  "COIN -5.8% vol=$43,685",
+  "MSTR -5.8% vol=$383,488",
   "FLU -3.8% vol=$6,355",
-  "TSLA -3.4% vol=$708,826"
+  "TSLA -3.1% vol=$743,621"
  ],
  "futures_ok": true,
- "futures_balance": 73.76,
+ "futures_balance": 73.16,
  "unallocated_spot": [
-  "ETH $482"
+  "ETH $483"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: TRUMP, TON, XMR",
  "claude_called": true,
- "market_read": "השוק כולו במגמת ירידה קלה עם רוב הנכסים oversold, מה שמעיד על הזדמנות ריבאונד קצר טווח ולא על קריסה מתמשכת.",
- "skip_reason": "שאר המועמדים (TON, XMR, TRUMP, FARTCOIN) בעלי נפח נמוך מדי או תנודתיות לא יציבה מספיק לביטחון גבוה; המניות ירדו אך ללא איתות מכריע לשורט או לונג ברור כרגע.",
+ "market_read": "השוק הקריפטו כולו נמצא בתיקון קל עם RSI נמוך ברוב המטבעות המובילים, מה שיוצר הזדמנויות דיפ-בסיס באיכות גבוהה.",
+ "skip_reason": "שאר המועמדים או בעלי נזילות נמוכה מדי (TRUMP, CC, TON) או חסרי סיגנל ברור מספיק (XMR, FARTCOIN) ביחס ל-SOL שמציג את השילוב הטוב ביותר של oversold+נפח; המניות הפכפכות רך מדי ולא מציעות יתרון ברור כרגע.",
  "picks": [
   "SOL long size=20% conf=HIGH"
  ],
