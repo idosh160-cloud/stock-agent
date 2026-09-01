@@ -1,7 +1,7 @@
 {
- "time": "2026-09-01T22:00:05",
+ "time": "2026-09-01T23:00:04",
  "usdc": 28.13,
- "portfolio": 619.95,
+ "portfolio": 619.44,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -10,23 +10,23 @@
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "CRCL -6.0% vol=$713,297",
-  "MSTR -5.9% vol=$384,138",
-  "COIN -5.6% vol=$42,734",
-  "FLU -3.8% vol=$6,355",
-  "TSLA -3.2% vol=$730,628"
+  "CRCL -6.4% vol=$707,886",
+  "MSTR -6.0% vol=$386,139",
+  "COIN -5.7% vol=$32,558",
+  "TSLA -3.3% vol=$730,378",
+  "GLD -2.6% vol=$326,681"
  ],
  "futures_ok": true,
- "futures_balance": 73.41,
+ "futures_balance": 73.43,
  "unallocated_spot": [
   "ETH $482"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TRUMP, FARTCOIN, XMR",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP, FARTCOIN, TON",
  "claude_called": true,
- "market_read": "השוק הקריפטו כולו במגמת ירידה קלה עם רוב המטבעות ב-oversold, זה מצב שמתאים לדיפ-בייינג סלקטיבי ולא לשורטים אגרסיביים.",
- "skip_reason": "שאר המועמדים (TRUMP, FARTCOIN, CC, TON) עם נפח נמוך מדי או תנודתיות פרועה מדי לגודל התיק הקטן; המניות ירדו אך ללא סיגנל חד מספיק להצדיק פתיחת עמדה נוספת עם המזומן המוגבל שנותר.",
+ "market_read": "השוק הקריפטו כרגע ברובו oversold עם ירידות רוחביות של 2-7%, מה שיוצר הזדמנויות ריבאונד אך דורש זהירות בגודל הפוזיציה בגלל מזומן מוגבל.",
+ "skip_reason": "יתרת ה-USDC הפנויה מוגבלת מאוד ($28) אחרי חשבון buffer לעמלות, ולכן נכנסים רק לפוזיציה אחת ממוקדת בגודל שמכבד את המרווח הפנוי; שאר המועמדים (TRUMP, FARTCOIN, CC, TON) נפח מסחר נמוך מדי או תנודתיות גבוהה מדי לסיכון הנוכחי, והמניות לא מציגות יתרון ברור על פני ETH/SOL הקיימות.",
  "picks": [
-  "SOL long size=20% conf=MEDIUM"
+  "SOL long size=12% conf=MEDIUM"
  ],
  "order_errors": [
   "SOL: Kraken: ['EOrder:Insufficient funds']"
