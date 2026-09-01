@@ -1,36 +1,36 @@
 {
- "time": "2026-09-01T07:00:05",
+ "time": "2026-09-01T08:00:06",
  "usdc": 28.13,
- "portfolio": 601.74,
+ "portfolio": 603.21,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
   "ANTHROPIC long +0.2%",
-  "CRCL short -0.4%",
-  "TSLA short -0.2%",
-  "COIN short +0.2%"
+  "CRCL short +0.1%",
+  "TSLA short +0.2%",
+  "COIN short +0.9%"
  ],
  "stock_candidates": 14,
  "top_stocks": [
-  "CRCL +8.3% vol=$1,493,724",
-  "TSLA +5.3% vol=$450,650",
-  "COIN +4.3% vol=$40,229",
-  "HOOD +3.9% vol=$182,412",
-  "SPCX +2.5% vol=$592,341"
+  "CRCL +8.2% vol=$1,490,630",
+  "TSLA +5.5% vol=$449,525",
+  "HOOD +3.7% vol=$175,984",
+  "COIN +3.0% vol=$39,553",
+  "SPCX +2.2% vol=$597,159"
  ],
  "futures_ok": true,
- "futures_balance": 42.91,
+ "futures_balance": 43.93,
  "unallocated_spot": [
   "ETH $494"
  ],
- "call_reason": "תנועה חזקה במניה: HOOD, SPCX, AMZN",
+ "call_reason": "תנועה חזקה במניה: HOOD, SPCX",
  "claude_called": true,
- "market_read": "השוק כרגע רגוע יחסית עם תנועות קטנות בקריפטו ומניות ה-xStocks כבר עלו חזק, אז אין הזדמנות דרמטית אבל SOL מציע כניסה נקייה בעלות סיכון נמוכה.",
- "skip_reason": "TRUMP נראה על תחתית הטווח אך ה-MACD עדיין שלילי כך שהכניסה מוקדמת; שאר הקריפטו (ADA, LINK, XDC) נמצאים בקרבת עליון ה-BB ומסוכנים לשורט קטן; המניות שהוזכרו כבר פתוחות בפוזיציות קיימות בפורטפוליו ואין צידוק לרוטציה.",
+ "market_read": "השוק הקריפטו רגוע יחסית עם תנודתיות נמוכה, המניות הטוקניזציה מראות תנועות חדות יותר אך רוב הפוזיציות הפתוחות שלי כבר בכיוון הנכון.",
+ "skip_reason": "רוב הקנדידטים האחרים (TRUMP, XDC, XMR) מציגים איתותים סותרים או קיצוניים מדי (RSI קיצוני, MACD שלילי) ולא מצדיקים כניסה נוספת מעבר לפוזיציה הקיימת.",
  "picks": [
-  "SOL long size=20% conf=MEDIUM"
+  "LINK long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "SOL: Kraken: ['EOrder:Insufficient funds']"
+  "LINK: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
