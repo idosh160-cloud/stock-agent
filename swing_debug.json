@@ -1,39 +1,36 @@
 {
- "time": "2026-09-01T14:00:05",
+ "time": "2026-09-01T15:00:06",
  "usdc": 28.13,
- "portfolio": 609.81,
+ "portfolio": 608.5,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
   "ANTHROPIC long +0.2%",
-  "CRCL short +5.1%",
-  "TSLA short +2.1%",
-  "COIN short +3.9%"
+  "CRCL short +3.4%",
+  "TSLA short +2.4%",
+  "COIN short +3.0%"
  ],
  "stock_candidates": 15,
  "top_stocks": [
-  "CRCL +2.8% vol=$1,537,426",
-  "HOOD +2.5% vol=$279,506",
+  "HOOD +3.2% vol=$358,069",
+  "AAPL +3.0% vol=$1,008,735",
+  "AMZN -3.0% vol=$80,800",
   "GLD -2.1% vol=$106,438",
-  "AMZN -2.1% vol=$90,975",
-  "AAPL +1.9% vol=$972,003"
+  "CRCL +2.0% vol=$1,416,436"
  ],
  "futures_ok": true,
- "futures_balance": 56.6,
+ "futures_balance": 54.44,
  "unallocated_spot": [
-  "ETH $488"
+  "ETH $489"
  ],
- "call_reason": "תנועה חזקה במניה: HOOD, GLD, AMZN",
+ "call_reason": "תנועה חזקה במניה: HOOD, AAPL, AMZN",
  "claude_called": true,
- "market_read": "השוק הקריפטו כולו נסוג ב-24 השעות האחרונות עם RSI נמוך-בינוני ברוב המטבעות, מה שיוצר הזדמנויות bounce זהירות בנכסים באיכות גבוהה כמו ETH ו-SOL.",
- "skip_reason": "שאר המטבעות (XMR, TON, CC, TRUMP) בנפחים נמוכים או ברמת RSI לא מוכרעת מספיק; מניות ה-xStock לא מציגות עיוות קיצוני (לא overbought/oversold ברור) כדי להצדיק כניסה חדשה מעבר לפוזיציות הפתוחות שממשיכות לכיוון המטרה.",
+ "market_read": "השוק בקונסולידציה עם רוב הקריפטו במגמת ירידה קלה קרוב לתחתית הבולינגר, בעוד מניות מעורבות ללא מגמה ברורה.",
+ "skip_reason": "רוב המועמדים בקריפטו (ETH, SOL, XMR) עדיין במומנטום שלילי לפי MACD למרות RSI נמוך, מסוכן להיכנס עכשיו; המניות קרובות לטווח שכבר קיים בתיק אז לא כפלתי חשיפה.",
  "picks": [
-  "ETH long size=25% conf=MEDIUM",
-  "SOL long size=20% conf=MEDIUM"
+  "LINK long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "ETH: Kraken: ['EOrder:Insufficient funds']",
-  "SOL: Kraken: ['EOrder:Insufficient funds']"
+  "LINK: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
