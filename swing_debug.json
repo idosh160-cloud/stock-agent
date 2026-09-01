@@ -1,36 +1,39 @@
 {
- "time": "2026-09-01T15:00:06",
+ "time": "2026-09-01T16:00:06",
  "usdc": 28.13,
- "portfolio": 608.5,
+ "portfolio": 609.0,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
   "ANTHROPIC long +0.2%",
-  "CRCL short +3.4%",
-  "TSLA short +2.4%",
-  "COIN short +3.0%"
+  "CRCL short +3.6%",
+  "TSLA short +1.9%",
+  "COIN short +4.2%"
  ],
  "stock_candidates": 15,
  "top_stocks": [
-  "HOOD +3.2% vol=$358,069",
-  "AAPL +3.0% vol=$1,008,735",
-  "AMZN -3.0% vol=$80,800",
-  "GLD -2.1% vol=$106,438",
-  "CRCL +2.0% vol=$1,416,436"
+  "AAPL +3.9% vol=$1,015,962",
+  "HOOD +3.7% vol=$357,172",
+  "GLD -2.4% vol=$106,429",
+  "AMZN -2.2% vol=$81,541",
+  "MSTR -1.9% vol=$333,110"
  ],
  "futures_ok": true,
- "futures_balance": 54.44,
+ "futures_balance": 54.91,
  "unallocated_spot": [
   "ETH $489"
  ],
- "call_reason": "תנועה חזקה במניה: HOOD, AAPL, AMZN",
+ "call_reason": "תנועה חזקה במטבע חדש: TON",
  "claude_called": true,
- "market_read": "השוק בקונסולידציה עם רוב הקריפטו במגמת ירידה קלה קרוב לתחתית הבולינגר, בעוד מניות מעורבות ללא מגמה ברורה.",
- "skip_reason": "רוב המועמדים בקריפטו (ETH, SOL, XMR) עדיין במומנטום שלילי לפי MACD למרות RSI נמוך, מסוכן להיכנס עכשיו; המניות קרובות לטווח שכבר קיים בתיק אז לא כפלתי חשיפה.",
+ "market_read": "השוק הכללי בקריפטו נסחר בירידה מתונה עם כמה מטבעות ב-oversold ברור, בעוד המניות המוקטנות (xStocks) לא מציגות כרגע יתרון ברור מספיק מול הקריפטו.",
+ "skip_reason": "שאר המועמדים (LTC overbought, XMR עם MACD שלילי חד, מניות ללא סיגנל ברור) לא מציגים יחס סיכון/סיכוי מספק כרגע.",
  "picks": [
-  "LINK long size=20% conf=MEDIUM"
+  "SOL long size=25% conf=MEDIUM",
+  "TON long size=15% conf=MEDIUM"
  ],
  "order_errors": [
-  "LINK: Kraken: ['EOrder:Insufficient funds']"
+  "liq ETH: all sizes rejected (margin collateral lock)",
+  "SOL: Kraken: ['EOrder:Insufficient funds']",
+  "TON: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
