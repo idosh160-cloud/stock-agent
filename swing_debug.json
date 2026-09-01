@@ -1,39 +1,38 @@
 {
- "time": "2026-09-01T17:00:06",
+ "time": "2026-09-01T18:00:06",
  "usdc": 28.13,
- "portfolio": 609.32,
+ "portfolio": 614.19,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
   "ANTHROPIC long +0.2%",
-  "CRCL short +5.0%",
-  "TSLA short +2.5%",
-  "COIN short +4.2%"
+  "CRCL short +5.5%",
+  "TSLA short +2.7%"
  ],
- "stock_candidates": 15,
+ "stock_candidates": 17,
  "top_stocks": [
-  "AAPL +3.7% vol=$829,772",
-  "CRCL -3.0% vol=$1,360,983",
-  "MSTR -2.9% vol=$333,891",
-  "AMZN -2.8% vol=$87,328",
-  "COIN -2.7% vol=$45,686"
+  "COIN -5.5% vol=$43,857",
+  "MSTR -4.5% vol=$338,218",
+  "CRCL -4.5% vol=$1,318,944",
+  "AAPL +3.1% vol=$808,350",
+  "TSLA -3.1% vol=$720,213"
  ],
  "futures_ok": true,
- "futures_balance": 58.66,
+ "futures_balance": 66.51,
  "unallocated_spot": [
-  "ETH $486"
+  "ETH $483"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: XMR, TON, TRUMP",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP, XMR, TON",
  "claude_called": true,
- "market_read": "השוק בקריפטו נמצא בתיקון קצר עם רוב המטבעות באזור oversold, מה שיוצר הזדמנויות לונג טובות באלטקוינים איכותיים כמו SOL.",
- "skip_reason": "BTC ו-ETH נמצאים גם ב-oversold אך ה-MACD השלילי החזק שלהם מרמז על המשך מגמה יורדת בטווח הקצר, ומניות ה-xStocks לא מציגות סטאפים ברורים היום ללונג או שורט.",
+ "market_read": "שוק הקריפטו הראשי (BTC, ETH, SOL) נמצא באזור אוברסולד חד אחרי ירידה של יומיים עם ווליום גבוה, מה שיוצר הזדמנות ריבאונד טקטית.",
+ "skip_reason": "שאר המועמדים (TRUMP, XMR, CC, TON, אלטים קטנים) בעלי ווליום נמוך מדי או ללא אישור מומנטום ברור; המניות (CRCL, TSLA, ANTHROPIC) כבר בפוזיציות פתוחות ומתקדמות לכיוון היעד - לא נוגעים בהן.",
  "picks": [
-  "SOL long size=35% conf=HIGH",
-  "XMR long size=15% conf=MEDIUM"
+  "BTC long size=25% conf=MEDIUM",
+  "ETH long size=15% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "SOL: Kraken: ['EOrder:Insufficient funds']",
-  "XMR: Kraken: ['EOrder:Insufficient funds']"
+  "BTC: Kraken: ['EOrder:Insufficient funds']",
+  "ETH: Kraken: ['EOrder:Insufficient funds']"
  ]
 }

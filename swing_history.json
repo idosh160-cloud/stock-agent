@@ -1748,5 +1748,30 @@
     "entry_bb_pct": null,
     "entry_macd_hist": null,
     "entry_change_24h": 14.2
+  },
+  {
+    "coin": "COIN",
+    "pair": "PF_COINXUSD",
+    "status": "closed_externally",
+    "leveraged": false,
+    "collateral": 121.29,
+    "volume": 0.64495374,
+    "entry_price": 188.06,
+    "close_price": 188.06,
+    "target_price": 176.78,
+    "stop_price": 186.1794,
+    "pnl_usd": 0,
+    "pnl_pct": 0,
+    "date_open": "2026-09-01T03:00:45.346555",
+    "date_close": "2026-09-01T18:00:05.185290",
+    "reasoning": "COIN קפץ +5.2% ביום עם ווליום סביר בעוד BTC שטוח, תבנית דומה לזו שכבר עובדת לנו ב-CRCL ו-TSLA (מימוש יתר של מניות קריפטו-קשורות). שורט על התשה של הראלי עם סטופ צר ויעד פי 3 מהסיכון.",
+    "confidence": "MEDIUM",
+    "txid": "a2a38332-f850-4835-b265-cd733b7d4fda",
+    "close_txid": null,
+    "side": "short",
+    "entry_rsi": null,
+    "entry_bb_pct": null,
+    "entry_macd_hist": null,
+    "entry_change_24h": 5.19
   }
 ]
