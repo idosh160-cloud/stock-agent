@@ -1,36 +1,36 @@
 {
- "time": "2026-08-31T23:00:05",
+ "time": "2026-09-01T00:00:05",
  "usdc": 28.13,
- "portfolio": 619.77,
+ "portfolio": 619.38,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
   "ANTHROPIC long +0.2%"
  ],
- "stock_candidates": 17,
+ "stock_candidates": 16,
  "top_stocks": [
-  "CRCL +6.4% vol=$1,759,448",
-  "TSLA +5.4% vol=$824,695",
-  "COIN +4.7% vol=$45,958",
-  "MSTR +2.4% vol=$330,863",
-  "AMZN -2.0% vol=$114,409"
+  "CRCL +9.9% vol=$1,762,000",
+  "TSLA +6.3% vol=$528,695",
+  "COIN +5.2% vol=$40,161",
+  "MSTR +3.8% vol=$308,771",
+  "SPCX +2.4% vol=$657,096"
  ],
  "futures_ok": true,
  "futures_balance": 61.48,
  "unallocated_spot": [
   "ETH $493"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: XMR, TON, TRUMP",
+ "call_reason": "תנועה חזקה במטבע חדש: XMR, TRUMP",
  "claude_called": true,
- "market_read": "השוק בעלייה מתונה כללית עם כמה מטבעות מציגים מומנטום חיובי בלי סימני מיצוי קיצוניים.",
- "skip_reason": "TON ו-ADA נראים קרובים לתקרה (RSI/BB גבוהים) בעוד מניות ה-xStocks מציגות תנועה חלשה מדי או נפח נמוך להצדקת כניסה עכשיו.",
+ "market_read": "שוק הקריפטו במגמת עלייה מתונה עם כמה מטבעות עדיין לא overbought, מציע הזדמנויות מומנטום נקיות.",
+ "skip_reason": "TON ו-CRCL נראים exhausted (RSI/BB גבוהים מדי) ומניות אחרות בטווח שינוי קטן ללא איתות ברור, כך שנשארים בחוץ הפעם.",
  "picks": [
-  "ETH long size=25% conf=MEDIUM",
-  "XMR long size=20% conf=MEDIUM"
+  "XMR long size=35% conf=HIGH",
+  "TRUMP long size=20% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "ETH: Kraken: ['EOrder:Insufficient funds']",
-  "XMR: Kraken: ['EOrder:Insufficient funds']"
+  "XMR: Kraken: ['EOrder:Insufficient funds']",
+  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
