@@ -1,37 +1,36 @@
 {
- "time": "2026-09-01T06:00:06",
+ "time": "2026-09-01T07:00:05",
  "usdc": 28.13,
- "portfolio": 602.88,
+ "portfolio": 601.74,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
   "ANTHROPIC long +0.2%",
-  "CRCL short -1.0%",
-  "TSLA short +0.2%",
+  "CRCL short -0.4%",
+  "TSLA short -0.2%",
   "COIN short +0.2%"
  ],
- "stock_candidates": 16,
+ "stock_candidates": 14,
  "top_stocks": [
-  "CRCL +9.6% vol=$1,465,546",
-  "TSLA +4.9% vol=$448,139",
-  "COIN +4.5% vol=$40,275",
-  "HOOD +3.9% vol=$171,813",
-  "MSTR +3.6% vol=$353,797"
+  "CRCL +8.3% vol=$1,493,724",
+  "TSLA +5.3% vol=$450,650",
+  "COIN +4.3% vol=$40,229",
+  "HOOD +3.9% vol=$182,412",
+  "SPCX +2.5% vol=$592,341"
  ],
  "futures_ok": true,
- "futures_balance": 41.25,
+ "futures_balance": 42.91,
  "unallocated_spot": [
-  "ETH $496"
+  "ETH $494"
  ],
- "call_reason": "פוזיציה חלשה: CRCL",
+ "call_reason": "תנועה חזקה במניה: HOOD, SPCX, AMZN",
  "claude_called": true,
- "market_read": "שוק הקריפטו במגמת עלייה מתונה עם BTC מוביל בנפח וחוזק, מניות ה-xStocks כבר ממונפות מספיק בתיק הקיים.",
- "skip_reason": "הפוזיציות הפתוחות ב-ANTHROPIC/TSLA/COIN בדרך ליעד ולא נוגעים בהן; CRCL שלילי אך קרוב לסטופ כך שממתינים; שאר הקריפטו (SOL, ADA, LINK) קרובים ל-BB עליון בלי יתרון ברור על BTC.",
+ "market_read": "השוק כרגע רגוע יחסית עם תנועות קטנות בקריפטו ומניות ה-xStocks כבר עלו חזק, אז אין הזדמנות דרמטית אבל SOL מציע כניסה נקייה בעלות סיכון נמוכה.",
+ "skip_reason": "TRUMP נראה על תחתית הטווח אך ה-MACD עדיין שלילי כך שהכניסה מוקדמת; שאר הקריפטו (ADA, LINK, XDC) נמצאים בקרבת עליון ה-BB ומסוכנים לשורט קטן; המניות שהוזכרו כבר פתוחות בפוזיציות קיימות בפורטפוליו ואין צידוק לרוטציה.",
  "picks": [
-  "BTC long size=25% conf=HIGH"
+  "SOL long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "BTC: Kraken: ['EOrder:Insufficient funds']"
+  "SOL: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
