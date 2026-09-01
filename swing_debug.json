@@ -1,35 +1,36 @@
 {
- "time": "2026-09-01T01:00:04",
+ "time": "2026-09-01T02:00:05",
  "usdc": 28.13,
- "portfolio": 620.07,
+ "portfolio": 612.35,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
-  "ANTHROPIC long +0.2%"
+  "ANTHROPIC long +0.2%",
+  "CRCL short -0.1%"
  ],
- "stock_candidates": 15,
+ "stock_candidates": 16,
  "top_stocks": [
-  "CRCL +9.3% vol=$1,787,455",
-  "TSLA +5.9% vol=$525,408",
-  "COIN +5.2% vol=$39,839",
-  "MSTR +2.5% vol=$309,420",
-  "IOT +1.9% vol=$6,254"
+  "CRCL +9.2% vol=$1,797,944",
+  "TSLA +5.7% vol=$524,598",
+  "COIN +5.2% vol=$39,820",
+  "MSTR +3.1% vol=$309,322",
+  "SPCX +1.9% vol=$597,509"
  ],
  "futures_ok": true,
- "futures_balance": 61.48,
+ "futures_balance": 55.59,
  "unallocated_spot": [
-  "ETH $494"
+  "ETH $492"
  ],
- "call_reason": "תנועה חזקה במניה: CRCL, TSLA, COIN",
+ "call_reason": "תנועה חזקה במניה: TSLA, COIN, MSTR",
  "claude_called": true,
- "market_read": "השוק בשלב עליה מתונה עם מומנטום חיובי ברוב הקריפטו ומניה אחת (CRCL) שרצה חזק מדי ומועמדת לתיקון.",
- "skip_reason": "שאר המטבעות/מניות נמצאים באזור ניטרלי (RSI 45-56, BB לא בקיצון) בלי אות ברור מספיק לכניסה כרגע.",
+ "market_read": "השוק הקריפטו נסחר בטווח צר עם הטיה שלילית קלה (BTC ו-XMR), בזמן שמניות טוקניזציה כמו TSLA ו-COIN מראות סימני מיצוי אחרי ריצה חדה.",
+ "skip_reason": "שאר הנכסים (ADA, LINK, BNB, BTC, ETH, SOL) נמצאים באזור ניטרלי ללא איתות ברור, ומניות כמו MSTR/SPCX/HOOD היסטוריית הפסדים ואין אישור טכני חזק מספיק לכניסה.",
  "picks": [
-  "ETH long size=30% conf=HIGH",
-  "CRCL short size=20% conf=MEDIUM"
+  "XMR short size=25% conf=MEDIUM",
+  "TSLA short size=20% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "ETH: Kraken: ['EOrder:Insufficient funds']"
+  "XMR: Kraken: ['EOrder:Margin trading in asset is restricted']"
  ]
 }
