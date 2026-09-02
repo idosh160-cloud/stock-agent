@@ -1,37 +1,36 @@
 {
- "time": "2026-09-02T22:00:05",
+ "time": "2026-09-02T23:00:05",
  "usdc": 28.15,
- "portfolio": 602.02,
+ "portfolio": 599.7,
  "api_billing_blocked": false,
  "margin_headroom": 140.75,
  "open": [
   "ANTHROPIC long +5.0%",
   "TSLA short +2.9%",
-  "AAPL long +0.1%",
-  "NVDA long -0.3%"
+  "AAPL long -0.0%",
+  "NVDA long -0.2%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
   "ANTHROPIC -5.5% vol=$208,425",
   "HOOD +5.2% vol=$341,776",
-  "NVDA +3.3% vol=$392,897",
-  "CF +3.2% vol=$9,637",
+  "NVDA +3.5% vol=$398,335",
+  "CF +3.4% vol=$9,649",
   "META +2.9% vol=$107,722"
  ],
  "futures_ok": true,
- "futures_balance": 60.23,
+ "futures_balance": 60.15,
  "unallocated_spot": [
-  "ETH $478"
+  "ETH $475"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, TRUMP",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP",
  "claude_called": true,
- "market_read": "השוק הקריפטו נמצא בתיקון קל עם כמה מטבעות בתנאי oversold, בעוד מניות ה-xStocks נעות בטווח צר ללא סיגנל חד.",
- "skip_reason": "רוב מועמדי הקריפטו והמניות נמצאים באזור ניטרלי ללא איתות ברור מספיק לכניסה בגודל משמעותי, ולכן נשמר רוב ההון בפוזיציות הקיימות ובנזילות שמשוחררת מ-ETH.",
+ "market_read": "השוק הכללי במגמה מעורבת עם רוב הקריפטו במצב oversold קל, מה שיוצר הזדמנויות bounce קצרות טווח.",
+ "skip_reason": "שאר המועמדים בקריפטו בנפח מסחר נמוך מדי או ללא איתות ברור, ופוזיציות המניות הקיימות כבר בתנועה לכיוון היעד ולא כדאי לגעת בהן.",
  "picks": [
-  "TRUMP long size=20% conf=MEDIUM"
+  "TRUMP long size=15% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
   "TRUMP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
