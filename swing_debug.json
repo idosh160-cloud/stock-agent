@@ -1,30 +1,30 @@
 {
- "time": "2026-09-02T04:00:04",
+ "time": "2026-09-02T05:00:04",
  "usdc": 28.13,
- "portfolio": 619.68,
+ "portfolio": 619.86,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
   "ANTHROPIC long +0.2%",
-  "TSLA short +3.0%"
+  "TSLA short +2.9%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "CRCL -6.3% vol=$577,105",
-  "COIN -5.8% vol=$32,554",
-  "MSTR -4.2% vol=$357,509",
-  "FLU -3.8% vol=$7,311",
-  "GLD -3.0% vol=$321,068"
+  "CRCL -6.2% vol=$576,965",
+  "COIN -5.2% vol=$32,024",
+  "MSTR -4.9% vol=$348,446",
+  "HOOD -4.5% vol=$363,617",
+  "FLU -3.8% vol=$7,311"
  ],
  "futures_ok": true,
- "futures_balance": 73.28,
+ "futures_balance": 73.33,
  "unallocated_spot": [
   "ETH $482"
  ],
  "call_reason": "תנועה חזקה במניה: CRCL, COIN, MSTR",
  "claude_called": true,
- "market_read": "השוק הכללי רגוע יחסית עם BTC יציב סביב 77.5K וברוב הנכסים תנועה מתונה ללא איתות קיצוני.",
- "skip_reason": "שאר המועמדים בקריפטו וגם המניות מציגים RSI ניטרלי או חולשה ללא איתות ברור מספיק לכניסה, ומזומן זמין קטן מדי לפיזור על כמה עסקאות.",
+ "market_read": "השוק הקריפטו שקט יחסית עם BTC יציב ורוב האלטים בטווח צר, XMR בולט עם מומנטום חיובי אמיתי.",
+ "skip_reason": "שאר המועמדים בקריפטו חלשים או ב-RSI ניטרלי ללא אישור נפח ברור, ומניות ה-xStock הרדופות עדיין לא מראות סימני מיצוי מובהקים לשורט בטוח כרגע - הפוזיציות הפתוחות ANTHROPIC ו-TSLA נשארות ללא שינוי כי הן ברווח ומתקדמות ליעד.",
  "picks": [
   "XMR long size=15% conf=MEDIUM"
  ],
