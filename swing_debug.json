@@ -1,36 +1,36 @@
 {
- "time": "2026-09-02T08:00:05",
+ "time": "2026-09-02T09:00:06",
  "usdc": 28.13,
- "portfolio": 619.83,
+ "portfolio": 609.01,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
   "ANTHROPIC long +0.2%",
-  "TSLA short +2.4%"
+  "TSLA short +2.6%",
+  "AAPL long +0.0%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "CRCL -4.4% vol=$549,280",
-  "HOOD -4.2% vol=$352,710",
-  "MSTR -3.9% vol=$319,873",
+  "MSTR -4.6% vol=$339,336",
+  "HOOD -4.3% vol=$328,232",
+  "CRCL -4.2% vol=$547,285",
   "COIN -3.4% vol=$32,681",
-  "AAPL +2.7% vol=$383,951"
+  "FLU +3.0% vol=$8,410"
  ],
  "futures_ok": true,
- "futures_balance": 72.75,
+ "futures_balance": 67.15,
  "unallocated_spot": [
-  "ETH $483"
+  "ETH $478"
  ],
- "call_reason": "תנועה חזקה במניה: CRCL, HOOD, MSTR",
+ "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN",
  "claude_called": true,
- "market_read": "השוק מציג מומנטום סלקטיבי - XMR וכמה מניות טכנולוגיה מובילות בעוד altcoins קטנות ומניות פינטק (CRCL/HOOD/MSTR) בירידה עם היסטוריה שלילית.",
- "skip_reason": "דחיתי XRP/DOT/TON/LTC בגלל RSI נייטרלי וללא מומנטום ברור, ודחיתי CRCL/HOOD/MSTR/COIN בגלל היסטוריית הפסדים חזקה וללא איתות טכני חזק מספיק לשינוי המגמה.",
+ "market_read": "השוק הקריפטו נמצא בתיקון קל עם כמה נכסים ב-oversold, בזמן שהמניות המקוטלגות מציגות תמונה מעורבת בלי מומנטום ברור.",
+ "skip_reason": "שאר המועמדים בקריפטו (FARTCOIN, PENGU, TRUMP, DOT) סובלים מנפח מסחר נמוך או חוסר אישור MACD חד-משמעי, והמניות (MSTR, HOOD, CRCL) ירדו חד אך בלי סימן ברור להיפוך כדי לשורט אותן כרגע.",
  "picks": [
-  "XMR long size=30% conf=HIGH",
-  "AAPL long size=20% conf=MEDIUM"
+  "SOL long size=25% conf=HIGH"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "XMR: Kraken: ['EOrder:Insufficient funds']"
+  "SOL: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
