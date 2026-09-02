@@ -1,7 +1,7 @@
 {
- "time": "2026-09-02T03:00:04",
+ "time": "2026-09-02T04:00:04",
  "usdc": 28.13,
- "portfolio": 618.35,
+ "portfolio": 619.68,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -10,28 +10,25 @@
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "CRCL -5.7% vol=$577,115",
-  "COIN -5.5% vol=$32,559",
-  "MSTR -4.7% vol=$346,000",
+  "CRCL -6.3% vol=$577,105",
+  "COIN -5.8% vol=$32,554",
+  "MSTR -4.2% vol=$357,509",
   "FLU -3.8% vol=$7,311",
-  "TSLA -3.0% vol=$741,558"
+  "GLD -3.0% vol=$321,068"
  ],
  "futures_ok": true,
- "futures_balance": 73.24,
+ "futures_balance": 73.28,
  "unallocated_spot": [
-  "ETH $481"
+  "ETH $482"
  ],
  "call_reason": "תנועה חזקה במניה: CRCL, COIN, MSTR",
  "claude_called": true,
- "market_read": "השוק בקריפטו מעורב - רוב האלטים במגמת ירידה קלה מלבד XMR שמראה כוח יחסי, בעוד המניות המפוקנות (crypto-related) נסחרות בירידות חדות שיכולות להיות הזדמנות שורט בהמשך.",
- "skip_reason": "דחיתי את שאר המטבעות (ETH, DOGE, AVAX, LTC, LINK, XRP, BNB) כי הם באמצע הטווח ללא סיגנל ברור, ואת המניות כי רוב הירידות של היום עדיין לא הראו סימני התמצות ברור לשורט מיידי.",
+ "market_read": "השוק הכללי רגוע יחסית עם BTC יציב סביב 77.5K וברוב הנכסים תנועה מתונה ללא איתות קיצוני.",
+ "skip_reason": "שאר המועמדים בקריפטו וגם המניות מציגים RSI ניטרלי או חולשה ללא איתות ברור מספיק לכניסה, ומזומן זמין קטן מדי לפיזור על כמה עסקאות.",
  "picks": [
-  "XMR long size=25% conf=HIGH",
-  "TRUMP long size=15% conf=MEDIUM"
+  "XMR long size=15% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "XMR: Kraken: ['EOrder:Insufficient funds']",
-  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
+  "XMR: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
