@@ -1,34 +1,36 @@
 {
- "time": "2026-09-02T07:00:05",
+ "time": "2026-09-02T08:00:05",
  "usdc": 28.13,
- "portfolio": 620.49,
+ "portfolio": 619.83,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
   "ANTHROPIC long +0.2%",
-  "TSLA short +2.7%"
+  "TSLA short +2.4%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "CRCL -5.5% vol=$546,858",
-  "HOOD -5.1% vol=$351,544",
-  "COIN -4.8% vol=$32,358",
-  "MSTR -4.3% vol=$327,839",
-  "TSLA -2.8% vol=$723,390"
+  "CRCL -4.4% vol=$549,280",
+  "HOOD -4.2% vol=$352,710",
+  "MSTR -3.9% vol=$319,873",
+  "COIN -3.4% vol=$32,681",
+  "AAPL +2.7% vol=$383,951"
  ],
  "futures_ok": true,
- "futures_balance": 72.82,
+ "futures_balance": 72.75,
  "unallocated_spot": [
   "ETH $483"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: XMR",
+ "call_reason": "תנועה חזקה במניה: CRCL, HOOD, MSTR",
  "claude_called": true,
- "market_read": "השוק הכללי מעורב עם BTC יציב ומטבעות אלט מציגים תנועות מעורבות ללא מגמה ברורה חוץ מ-XMR שבולט לחיוב.",
- "skip_reason": "שאר המועמדים בקריפטו נמצאים באמצע טווח או בנפח נמוך מדי (DOT, TON, TRUMP) ולא מציעים יתרון סטטיסטי ברור, והמניות ה-xStocks ברובן במגמת ירידה חדה שדורשת אישור נוסף לפני כניסה לשורט.",
+ "market_read": "השוק מציג מומנטום סלקטיבי - XMR וכמה מניות טכנולוגיה מובילות בעוד altcoins קטנות ומניות פינטק (CRCL/HOOD/MSTR) בירידה עם היסטוריה שלילית.",
+ "skip_reason": "דחיתי XRP/DOT/TON/LTC בגלל RSI נייטרלי וללא מומנטום ברור, ודחיתי CRCL/HOOD/MSTR/COIN בגלל היסטוריית הפסדים חזקה וללא איתות טכני חזק מספיק לשינוי המגמה.",
  "picks": [
-  "XMR long size=15% conf=MEDIUM"
+  "XMR long size=30% conf=HIGH",
+  "AAPL long size=20% conf=MEDIUM"
  ],
  "order_errors": [
+  "liq ETH: all sizes rejected (margin collateral lock)",
   "XMR: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
