@@ -1,36 +1,38 @@
 {
- "time": "2026-09-02T14:00:06",
- "usdc": 28.13,
- "portfolio": 612.33,
+ "time": "2026-09-02T15:00:05",
+ "usdc": 28.15,
+ "portfolio": 611.16,
  "api_billing_blocked": false,
- "margin_headroom": 140.65,
+ "margin_headroom": 140.75,
  "open": [
   "ANTHROPIC long +0.2%",
-  "TSLA short +3.9%",
-  "AAPL long +0.2%"
+  "TSLA short +4.0%",
+  "AAPL long -0.0%"
  ],
  "stock_candidates": 15,
  "top_stocks": [
-  "META +4.2% vol=$68,615",
-  "MSTR -4.1% vol=$308,776",
-  "SPCX -2.7% vol=$474,194",
-  "COIN -2.6% vol=$43,407",
-  "CRCL -2.5% vol=$455,316"
+  "MSTR -3.5% vol=$314,844",
+  "META +3.4% vol=$88,360",
+  "NVDA +2.9% vol=$172,006",
+  "CRCL -2.7% vol=$407,748",
+  "SPCX -2.5% vol=$529,777"
  ],
  "futures_ok": true,
- "futures_balance": 68.61,
+ "futures_balance": 68.5,
  "unallocated_spot": [
-  "ETH $480"
+  "ETH $479"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: DOT",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP, DOT",
  "claude_called": true,
- "market_read": "השוק כרגע בקירור קל אחרי עליות, עם רוב הקריפטו והמניות בתיקון קטן ו-RSI באזור נייטרלי-נמוך שמעודד קניית דיפים סלקטיבית.",
- "skip_reason": "שאר המועמדים בקריפטו (DOT, TRUMP, FARTCOIN) בנפח נמוך או ללא איתות ברור, והמניות שנפלו (MSTR, SPCX, CRCL) עם היסטוריה שלילית ולא מציגות עדיין סימני תחתית ברורים.",
+ "market_read": "השוק הרחב (BTC) יציב סביב 77K, אלטקוינים מציגים תמונה מעורבת עם כמה הזדמנויות ברורות למכירת יתר/מומנטום.",
+ "skip_reason": "שאר המטבעות (DOT, LINK, XRP, SOL, LTC, AVAX) נמצאים באמצע הטווח ללא איתות ברור, ומניות ה-xStock לא מציגות סטאפ עדיף על שתי הבחירות שנבחרו.",
  "picks": [
-  "SOL long size=25% conf=MEDIUM"
+  "XMR long size=28% conf=HIGH",
+  "TRUMP long size=15% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "SOL: Kraken: ['EOrder:Insufficient funds']"
+  "XMR: Kraken: ['EOrder:Insufficient funds']",
+  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
