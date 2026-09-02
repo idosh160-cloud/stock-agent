@@ -1,35 +1,36 @@
 {
- "time": "2026-09-02T13:00:06",
+ "time": "2026-09-02T14:00:06",
  "usdc": 28.13,
- "portfolio": 605.78,
+ "portfolio": 612.33,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
   "ANTHROPIC long +0.2%",
-  "TSLA short +2.4%",
-  "AAPL long +0.6%"
+  "TSLA short +3.9%",
+  "AAPL long +0.2%"
  ],
  "stock_candidates": 15,
  "top_stocks": [
-  "HOOD -3.7% vol=$347,164",
-  "CRCL -3.7% vol=$540,556",
-  "META +3.4% vol=$50,932",
-  "AAPL +3.2% vol=$379,966",
-  "MSTR -2.9% vol=$361,999"
+  "META +4.2% vol=$68,615",
+  "MSTR -4.1% vol=$308,776",
+  "SPCX -2.7% vol=$474,194",
+  "COIN -2.6% vol=$43,407",
+  "CRCL -2.5% vol=$455,316"
  ],
  "futures_ok": true,
- "futures_balance": 67.46,
+ "futures_balance": 68.61,
  "unallocated_spot": [
-  "ETH $475"
+  "ETH $480"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: DOT, TRUMP",
+ "call_reason": "תנועה חזקה במטבע חדש: DOT",
  "claude_called": true,
- "market_read": "שוק הקריפטו במגמת ירידה קלה עם כמה נכסים ב-oversold קיצוני שיכולים להניב ריבאונד מהיר.",
- "skip_reason": "ETH הספוט הפרוס נשאר במקום כי הוא עצמו ב-RSI נמוך ומהווה החזקה סבירה; שאר המועמדים (DOT, TRUMP, PENGU) בנפח מסחר נמוך מדי או ללא אישור מומנטום מספק, והמניות לא מציגות סטאפ ברור יותר מ-SOL.",
+ "market_read": "השוק כרגע בקירור קל אחרי עליות, עם רוב הקריפטו והמניות בתיקון קטן ו-RSI באזור נייטרלי-נמוך שמעודד קניית דיפים סלקטיבית.",
+ "skip_reason": "שאר המועמדים בקריפטו (DOT, TRUMP, FARTCOIN) בנפח נמוך או ללא איתות ברור, והמניות שנפלו (MSTR, SPCX, CRCL) עם היסטוריה שלילית ולא מציגות עדיין סימני תחתית ברורים.",
  "picks": [
-  "SOL long size=20% conf=HIGH"
+  "SOL long size=25% conf=MEDIUM"
  ],
  "order_errors": [
+  "liq ETH: all sizes rejected (margin collateral lock)",
   "SOL: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
