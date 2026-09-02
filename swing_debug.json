@@ -1,38 +1,36 @@
 {
- "time": "2026-09-02T11:00:05",
+ "time": "2026-09-02T12:00:06",
  "usdc": 28.13,
- "portfolio": 604.69,
+ "portfolio": 606.25,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
   "ANTHROPIC long +0.2%",
-  "TSLA short +3.0%",
-  "AAPL long +0.0%"
+  "TSLA short +2.8%",
+  "AAPL long +0.4%"
  ],
- "stock_candidates": 16,
+ "stock_candidates": 15,
  "top_stocks": [
-  "HOOD -5.6% vol=$347,979",
-  "CRCL -5.6% vol=$533,934",
-  "MSTR -5.5% vol=$354,670",
-  "COIN -5.4% vol=$46,547",
-  "AAPL +2.4% vol=$371,890"
+  "CRCL -4.7% vol=$526,530",
+  "COIN -4.5% vol=$44,782",
+  "MSTR -4.2% vol=$362,853",
+  "HOOD -3.9% vol=$349,805",
+  "META +3.4% vol=$50,932"
  ],
  "futures_ok": true,
- "futures_balance": 67.31,
+ "futures_balance": 67.28,
  "unallocated_spot": [
-  "ETH $474"
+  "ETH $475"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: DOT, FARTCOIN, TRUMP",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP, DOT, FARTCOIN",
  "claude_called": true,
- "market_read": "השוק האלט-קוין נכנס לתיקון עם כמה נכסים באזור oversold קיצוני תוך ווליום תומך, בעוד המניות הטוקניזציה נעות בטווח צר וללא איתות ברור.",
- "skip_reason": "שאר המועמדים (DOT, FARTCOIN, TRUMP, PENGU, XRP, LTC, AVAX) חלשים יותר בווליום או בעלי היסטוריה שלילית ללא שיפור טכני מובהק, והמניות (HOOD/CRCL/MSTR/COIN) כבר נפלו 5%+ אך ללא אישור התהפכות ברורה לשורט עדיין.",
+ "market_read": "השוק הקריפטו כולו במגמת תיקון קצר עם RSI נמוך בכמה נכסים מובילים, מה שפותח הזדמנויות לונג בריבאונד תוך שהמניות הטוקניזציה ממשיכות במגמה חיובית מתונה.",
+ "skip_reason": "שאר המטבעות (TRUMP, PENGU, FARTCOIN) נראים oversold אך עם נפח מסחר נמוך מדי לניהול סיכון ראוי, ופוזיציות המניות הקיימות (TSLA, AAPL, ANTHROPIC) מתקדמות לכיוון המטרה ולכן לא רוטציה.",
  "picks": [
-  "SOL long size=25% conf=HIGH",
-  "LINK long size=15% conf=MEDIUM"
+  "SOL long size=30% conf=HIGH"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "SOL: Kraken: ['EOrder:Insufficient funds']",
-  "LINK: Kraken: ['EOrder:Insufficient funds']"
+  "SOL: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
