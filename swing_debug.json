@@ -1,36 +1,37 @@
 {
- "time": "2026-09-02T20:00:06",
+ "time": "2026-09-02T21:00:06",
  "usdc": 28.15,
- "portfolio": 602.07,
+ "portfolio": 602.58,
  "api_billing_blocked": false,
  "margin_headroom": 140.75,
  "open": [
-  "ANTHROPIC long +0.2%",
-  "TSLA short +2.7%",
-  "AAPL long +0.2%",
-  "NVDA long -0.5%"
+  "ANTHROPIC long +4.8%",
+  "TSLA short +2.6%",
+  "AAPL long +0.1%",
+  "NVDA long -0.8%"
  ],
- "stock_candidates": 15,
+ "stock_candidates": 16,
  "top_stocks": [
-  "CF +3.7% vol=$9,665",
-  "NVDA +3.2% vol=$285,765",
-  "HOOD +2.8% vol=$228,140",
-  "META +2.6% vol=$96,902",
-  "MSTR -1.5% vol=$390,772"
+  "ANTHROPIC -5.7% vol=$69,300",
+  "HOOD +4.6% vol=$316,203",
+  "CF +3.7% vol=$9,664",
+  "NVDA +3.0% vol=$391,062",
+  "META +2.7% vol=$97,413"
  ],
  "futures_ok": true,
- "futures_balance": 59.87,
+ "futures_balance": 60.1,
  "unallocated_spot": [
   "ETH $478"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, TRUMP, PENGU",
+ "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, TRUMP",
  "claude_called": true,
- "market_read": "השוק הכללי רגוע עם נטיות ירידה קלות באלטים, יש כמה מטבעות oversold שמציעים הזדמנות ריבאונד קצרת טווח.",
- "skip_reason": "שאר המועמדים (FARTCOIN נמוך מדי בנפח, PENGU/DOT/LINK ניטרליים ללא אות ברור) לא מספקים יחס סיכוי-סיכון מספיק חד כדי להצדיק כניסה נוספת עם המזומן המוגבל שנותר.",
+ "market_read": "השוק הכללי רגוע יחסית עם BTC יציב ורוב האלטקוינים בתיקון קל, כשכמה מטבעות נכנסו לאזור oversold שמזמין ריבאונד טקטי.",
+ "skip_reason": "שאר המועמדים (TRUMP, PENGU, DOT) נמצאים באזור ניטרלי בלי סיגנל ברור מספיק, והמניות הפתוחות כבר בתנועה טובה לכיוון היעד ולכן לא נוגעים בהן.",
  "picks": [
-  "TRUMP long size=20% conf=MEDIUM"
+  "FARTCOIN long size=25% conf=MEDIUM"
  ],
  "order_errors": [
-  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
+  "liq ETH: all sizes rejected (margin collateral lock)",
+  "FARTCOIN: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
