@@ -1,7 +1,7 @@
 {
- "time": "2026-09-01T23:00:04",
+ "time": "2026-09-02T00:00:05",
  "usdc": 28.13,
- "portfolio": 619.44,
+ "portfolio": 620.45,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -10,25 +10,26 @@
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "CRCL -6.4% vol=$707,886",
-  "MSTR -6.0% vol=$386,139",
+  "CRCL -6.3% vol=$625,711",
   "COIN -5.7% vol=$32,558",
-  "TSLA -3.3% vol=$730,378",
+  "MSTR -5.1% vol=$380,478",
+  "TSLA -3.3% vol=$731,043",
   "GLD -2.6% vol=$326,681"
  ],
  "futures_ok": true,
- "futures_balance": 73.43,
+ "futures_balance": 73.24,
  "unallocated_spot": [
-  "ETH $482"
+  "ETH $483"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TRUMP, FARTCOIN, TON",
+ "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, TRUMP, TON",
  "claude_called": true,
- "market_read": "השוק הקריפטו כרגע ברובו oversold עם ירידות רוחביות של 2-7%, מה שיוצר הזדמנויות ריבאונד אך דורש זהירות בגודל הפוזיציה בגלל מזומן מוגבל.",
- "skip_reason": "יתרת ה-USDC הפנויה מוגבלת מאוד ($28) אחרי חשבון buffer לעמלות, ולכן נכנסים רק לפוזיציה אחת ממוקדת בגודל שמכבד את המרווח הפנוי; שאר המועמדים (TRUMP, FARTCOIN, CC, TON) נפח מסחר נמוך מדי או תנודתיות גבוהה מדי לסיכון הנוכחי, והמניות לא מציגות יתרון ברור על פני ETH/SOL הקיימות.",
+ "market_read": "שוק הקריפטו והמניות בירידה כללית היום עם הרבה אלטקוינים ב-oversold, מה שיוצר הזדמנויות ריבאונד סלקטיביות תוך שמירה על סטופים הדוקים.",
+ "skip_reason": "TRUMP/TON/CC נמוכי נזילות מדי ביחס לגודל הפוזיציה הרצוי, ומניות ה-xStock לא מציגות סטאפ ברור מספיק היום (לא oversold קיצוני ולא פריצה) - עדיף לרכז ב-SOL כהזדמנות הכי חזקה.",
  "picks": [
-  "SOL long size=12% conf=MEDIUM"
+  "SOL long size=35% conf=HIGH"
  ],
  "order_errors": [
+  "liq ETH: all sizes rejected (margin collateral lock)",
   "SOL: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
