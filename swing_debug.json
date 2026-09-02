@@ -1,32 +1,32 @@
 {
- "time": "2026-09-02T19:00:06",
+ "time": "2026-09-02T20:00:06",
  "usdc": 28.15,
- "portfolio": 604.21,
+ "portfolio": 602.07,
  "api_billing_blocked": false,
  "margin_headroom": 140.75,
  "open": [
   "ANTHROPIC long +0.2%",
-  "TSLA short +3.4%",
-  "AAPL long +0.5%",
-  "NVDA long -0.4%"
+  "TSLA short +2.7%",
+  "AAPL long +0.2%",
+  "NVDA long -0.5%"
  ],
  "stock_candidates": 15,
  "top_stocks": [
-  "NVDA +3.5% vol=$293,288",
-  "HOOD +2.7% vol=$229,005",
-  "META +2.6% vol=$96,482",
-  "CF +2.5% vol=$9,391",
-  "MSTR -2.2% vol=$449,983"
+  "CF +3.7% vol=$9,665",
+  "NVDA +3.2% vol=$285,765",
+  "HOOD +2.8% vol=$228,140",
+  "META +2.6% vol=$96,902",
+  "MSTR -1.5% vol=$390,772"
  ],
  "futures_ok": true,
- "futures_balance": 61.61,
+ "futures_balance": 59.87,
  "unallocated_spot": [
-  "ETH $479"
+  "ETH $478"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, XMR, TRUMP",
+ "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, TRUMP, PENGU",
  "claude_called": true,
- "market_read": "השוק הכללי נייטרלי-שלילי בקריפטו עם כמה שמות oversold שמראים סימני התאוששות, בעוד המניות הטוקניזציה יציבות ללא סיגנל קיצון.",
- "skip_reason": "FARTCOIN עם נפח נמוך מדי ($69k) ו-XMR רץ חזק מדי ללונג אך לא מספיק stalling לשורט בטוח - מדלג על שניהם.",
+ "market_read": "השוק הכללי רגוע עם נטיות ירידה קלות באלטים, יש כמה מטבעות oversold שמציעים הזדמנות ריבאונד קצרת טווח.",
+ "skip_reason": "שאר המועמדים (FARTCOIN נמוך מדי בנפח, PENGU/DOT/LINK ניטרליים ללא אות ברור) לא מספקים יחס סיכוי-סיכון מספיק חד כדי להצדיק כניסה נוספת עם המזומן המוגבל שנותר.",
  "picks": [
   "TRUMP long size=20% conf=MEDIUM"
  ],
