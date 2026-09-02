@@ -1,7 +1,7 @@
 {
- "time": "2026-09-02T02:00:05",
+ "time": "2026-09-02T03:00:04",
  "usdc": 28.13,
- "portfolio": 616.35,
+ "portfolio": 618.35,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
@@ -10,28 +10,28 @@
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "CRCL -6.3% vol=$580,109",
-  "COIN -5.9% vol=$32,301",
-  "MSTR -5.4% vol=$367,684",
+  "CRCL -5.7% vol=$577,115",
+  "COIN -5.5% vol=$32,559",
+  "MSTR -4.7% vol=$346,000",
   "FLU -3.8% vol=$7,311",
-  "GLD -3.5% vol=$319,520"
+  "TSLA -3.0% vol=$741,558"
  ],
  "futures_ok": true,
- "futures_balance": 73.33,
+ "futures_balance": 73.24,
  "unallocated_spot": [
-  "ETH $479"
+  "ETH $481"
  ],
  "call_reason": "תנועה חזקה במניה: CRCL, COIN, MSTR",
  "claude_called": true,
- "market_read": "השוק בקריפטו נראה בתיקון קצר טווח עם ריבוי נכסים ב-oversold, מה שמייצר הזדמנויות bounce טובות בזמן שהמניות ה-tokenized נסחרות בירידה שקטה יותר.",
- "skip_reason": "דילגתי על שאר הקריפטו (FARTCOIN, TRUMP, DOGE וכו') בגלל ווליום נמוך או חוסר ודאות, ועל המניות כי הירידות שלהן (CRCL, MSTR, COIN) לא מלוות עדיין באיתותי היפוך ברורים לשורט או לונג.",
+ "market_read": "השוק בקריפטו מעורב - רוב האלטים במגמת ירידה קלה מלבד XMR שמראה כוח יחסי, בעוד המניות המפוקנות (crypto-related) נסחרות בירידות חדות שיכולות להיות הזדמנות שורט בהמשך.",
+ "skip_reason": "דחיתי את שאר המטבעות (ETH, DOGE, AVAX, LTC, LINK, XRP, BNB) כי הם באמצע הטווח ללא סיגנל ברור, ואת המניות כי רוב הירידות של היום עדיין לא הראו סימני התמצות ברור לשורט מיידי.",
  "picks": [
-  "ETH long size=25% conf=HIGH",
-  "SOL long size=18% conf=MEDIUM"
+  "XMR long size=25% conf=HIGH",
+  "TRUMP long size=15% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "ETH: Kraken: ['EOrder:Insufficient funds']",
-  "SOL: Kraken: ['EOrder:Insufficient funds']"
+  "XMR: Kraken: ['EOrder:Insufficient funds']",
+  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
