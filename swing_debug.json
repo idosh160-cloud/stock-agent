@@ -1,35 +1,37 @@
 {
- "time": "2026-09-02T16:00:05",
+ "time": "2026-09-02T17:00:05",
  "usdc": 28.15,
- "portfolio": 609.8,
+ "portfolio": 608.99,
  "api_billing_blocked": false,
  "margin_headroom": 140.75,
  "open": [
   "ANTHROPIC long +0.2%",
   "TSLA short +3.8%",
-  "AAPL long -0.2%"
+  "AAPL long +0.3%"
  ],
  "stock_candidates": 15,
  "top_stocks": [
-  "MSTR -4.2% vol=$341,559",
-  "NVDA +3.4% vol=$276,353",
-  "CRCL -3.0% vol=$211,491",
-  "META +2.4% vol=$99,745",
-  "SPCX -2.3% vol=$519,747"
+  "CF +3.3% vol=$12,513",
+  "NVDA +3.0% vol=$268,958",
+  "MSTR -2.9% vol=$469,436",
+  "META +2.0% vol=$92,108",
+  "CRCL -1.8% vol=$199,159"
  ],
  "futures_ok": true,
- "futures_balance": 68.18,
+ "futures_balance": 68.23,
  "unallocated_spot": [
-  "ETH $478"
+  "ETH $477"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: DOT, TRUMP",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP",
  "claude_called": true,
- "market_read": "השוק הכללי במגמה מעורבת עם רוב האלטקוינים במגמת ירידה קלה, אבל SOL ו-ETH מראים סימני התייצבות עם MACD חיובי.",
- "skip_reason": "שאר המועמדים (DOT, TRUMP, FARTCOIN) בנפח נמוך או ב-RSI חלש מדי בלי אישור ברור, והפוזיציות הפתוחות בתיק כבר מנוהלות היטב עם סטופים ויעדים — אין צורך לסובב אותן.",
+ "market_read": "השוק במגמת תיקון קל עם רוב הקריפטו ב-RSI אמצע-נמוך, מציע הזדמנויות קניית דיפ סלקטיביות בעוד מניות טכנולוגיה כמו NVDA ממשיכות במומנטום חיובי.",
+ "skip_reason": "שאר הקריפטו כמו TRUMP, DOT, FARTCOIN בנפח נמוך מדי או ללא אישור מומנטום ברור, ו-XMR/TON כבר רצו חזק מדי לכניסה חדשה בלונג.",
  "picks": [
-  "SOL long size=22% conf=MEDIUM"
+  "SOL long size=25% conf=MEDIUM",
+  "NVDA long size=20% conf=MEDIUM"
  ],
  "order_errors": [
+  "liq ETH: all sizes rejected (margin collateral lock)",
   "SOL: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
