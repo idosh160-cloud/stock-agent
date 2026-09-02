@@ -1,38 +1,38 @@
 {
- "time": "2026-09-02T10:00:06",
+ "time": "2026-09-02T11:00:05",
  "usdc": 28.13,
- "portfolio": 605.53,
+ "portfolio": 604.69,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
   "ANTHROPIC long +0.2%",
-  "TSLA short +2.6%",
-  "AAPL long -0.1%"
+  "TSLA short +3.0%",
+  "AAPL long +0.0%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "CRCL -5.7% vol=$541,800",
-  "COIN -5.2% vol=$41,114",
-  "MSTR -5.1% vol=$333,894",
-  "HOOD -4.4% vol=$323,739",
-  "AAPL +2.8% vol=$371,154"
+  "HOOD -5.6% vol=$347,979",
+  "CRCL -5.6% vol=$533,934",
+  "MSTR -5.5% vol=$354,670",
+  "COIN -5.4% vol=$46,547",
+  "AAPL +2.4% vol=$371,890"
  ],
  "futures_ok": true,
- "futures_balance": 67.15,
+ "futures_balance": 67.31,
  "unallocated_spot": [
-  "ETH $475"
+  "ETH $474"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, DOT",
+ "call_reason": "תנועה חזקה במטבע חדש: DOT, FARTCOIN, TRUMP",
  "claude_called": true,
- "market_read": "השוק בכללותו בתיקון קל עם כמה נכסים נכנסים לאיזור oversold ברור, מה שפותח הזדמנויות ריבאונד טכניות באלטים ובמיוחד ב-ETH.",
- "skip_reason": "שאר המועמדים (DOT, TRUMP, LTC, PENGU, FARTCOIN) עם נפח נמוך יותר או סיגנלים חלשים יותר יחסית ל-ETH ו-XRP; פוזיציות המניות הקיימות (TSLA, AAPL, ANTHROPIC) נעות לכיוון היעד ולא מצריכות רוטציה.",
+ "market_read": "השוק האלט-קוין נכנס לתיקון עם כמה נכסים באזור oversold קיצוני תוך ווליום תומך, בעוד המניות הטוקניזציה נעות בטווח צר וללא איתות ברור.",
+ "skip_reason": "שאר המועמדים (DOT, FARTCOIN, TRUMP, PENGU, XRP, LTC, AVAX) חלשים יותר בווליום או בעלי היסטוריה שלילית ללא שיפור טכני מובהק, והמניות (HOOD/CRCL/MSTR/COIN) כבר נפלו 5%+ אך ללא אישור התהפכות ברורה לשורט עדיין.",
  "picks": [
-  "ETH long size=25% conf=HIGH",
-  "XRP long size=25% conf=MEDIUM"
+  "SOL long size=25% conf=HIGH",
+  "LINK long size=15% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "ETH: Kraken: ['EOrder:Insufficient funds']",
-  "XRP: Kraken: ['EOrder:Insufficient funds']"
+  "SOL: Kraken: ['EOrder:Insufficient funds']",
+  "LINK: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
