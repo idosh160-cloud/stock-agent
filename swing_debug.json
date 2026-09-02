@@ -1,34 +1,37 @@
 {
- "time": "2026-09-02T01:00:05",
+ "time": "2026-09-02T02:00:05",
  "usdc": 28.13,
- "portfolio": 618.29,
+ "portfolio": 616.35,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
   "ANTHROPIC long +0.2%",
-  "TSLA short +2.8%"
+  "TSLA short +3.0%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "CRCL -6.1% vol=$589,897",
-  "COIN -5.2% vol=$32,546",
-  "MSTR -5.1% vol=$356,637",
-  "TSLA -2.8% vol=$732,342",
-  "GLD -2.7% vol=$326,399"
+  "CRCL -6.3% vol=$580,109",
+  "COIN -5.9% vol=$32,301",
+  "MSTR -5.4% vol=$367,684",
+  "FLU -3.8% vol=$7,311",
+  "GLD -3.5% vol=$319,520"
  ],
  "futures_ok": true,
- "futures_balance": 73.25,
+ "futures_balance": 73.33,
  "unallocated_spot": [
-  "ETH $481"
+  "ETH $479"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TON",
+ "call_reason": "תנועה חזקה במניה: CRCL, COIN, MSTR",
  "claude_called": true,
- "market_read": "השוק הכללי במגמת ירידה קלה עם הרבה נכסים oversold, מה שיוצר הזדמנויות בונס זהירות בעיקר בקריפטו נזיל.",
- "skip_reason": "שאר המועמדים או בנפח נמוך מדי (TON, AVAX) או שהמומנטום שלילי מדי (ETH עם MACD חזק שלילי) לכניסה כרגע; הפוזיציות הקיימות ב-ANTHROPIC ו-TSLA רווחיות ונשארות פתוחות ללא רוטציה.",
+ "market_read": "השוק בקריפטו נראה בתיקון קצר טווח עם ריבוי נכסים ב-oversold, מה שמייצר הזדמנויות bounce טובות בזמן שהמניות ה-tokenized נסחרות בירידה שקטה יותר.",
+ "skip_reason": "דילגתי על שאר הקריפטו (FARTCOIN, TRUMP, DOGE וכו') בגלל ווליום נמוך או חוסר ודאות, ועל המניות כי הירידות שלהן (CRCL, MSTR, COIN) לא מלוות עדיין באיתותי היפוך ברורים לשורט או לונג.",
  "picks": [
-  "XRP long size=15% conf=MEDIUM"
+  "ETH long size=25% conf=HIGH",
+  "SOL long size=18% conf=MEDIUM"
  ],
  "order_errors": [
-  "XRP: Kraken: ['EOrder:Insufficient funds']"
+  "liq ETH: all sizes rejected (margin collateral lock)",
+  "ETH: Kraken: ['EOrder:Insufficient funds']",
+  "SOL: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
