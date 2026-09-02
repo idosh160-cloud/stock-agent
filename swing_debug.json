@@ -1,35 +1,34 @@
 {
- "time": "2026-09-02T06:00:05",
+ "time": "2026-09-02T07:00:05",
  "usdc": 28.13,
- "portfolio": 621.05,
+ "portfolio": 620.49,
  "api_billing_blocked": false,
  "margin_headroom": 140.65,
  "open": [
   "ANTHROPIC long +0.2%",
-  "TSLA short +2.9%"
+  "TSLA short +2.7%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "CRCL -5.3% vol=$586,668",
-  "MSTR -4.8% vol=$335,445",
-  "COIN -4.3% vol=$32,500",
-  "HOOD -4.1% vol=$363,034",
-  "TSLA -3.0% vol=$718,039"
+  "CRCL -5.5% vol=$546,858",
+  "HOOD -5.1% vol=$351,544",
+  "COIN -4.8% vol=$32,358",
+  "MSTR -4.3% vol=$327,839",
+  "TSLA -2.8% vol=$723,390"
  ],
  "futures_ok": true,
- "futures_balance": 73.18,
+ "futures_balance": 72.82,
  "unallocated_spot": [
-  "ETH $484"
+  "ETH $483"
  ],
- "call_reason": "תנועה חזקה במניה: CRCL, MSTR, COIN",
+ "call_reason": "תנועה חזקה במטבע חדש: XMR",
  "claude_called": true,
- "market_read": "השוק הכללי נייטרלי עם BTC יציב, אבל אלטים סלקטיביים כמו XMR ו-BNB מראים מומנטום עולה תוך ווליום תומך.",
- "skip_reason": "שאר המועמדים חלשים - ווליום נמוך (TON, CC, PENGU) או RSI ניטרלי בלי אישור ברור, והמניות ה-xStocks בירידה חדה יותר מתאימות לשורט אך ללא סיגנל טכני חזק מספיק כרגע.",
+ "market_read": "השוק הכללי מעורב עם BTC יציב ומטבעות אלט מציגים תנועות מעורבות ללא מגמה ברורה חוץ מ-XMR שבולט לחיוב.",
+ "skip_reason": "שאר המועמדים בקריפטו נמצאים באמצע טווח או בנפח נמוך מדי (DOT, TON, TRUMP) ולא מציעים יתרון סטטיסטי ברור, והמניות ה-xStocks ברובן במגמת ירידה חדה שדורשת אישור נוסף לפני כניסה לשורט.",
  "picks": [
-  "XMR long size=28% conf=HIGH"
+  "XMR long size=15% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
   "XMR: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
