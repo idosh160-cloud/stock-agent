@@ -1,37 +1,36 @@
 {
- "time": "2026-09-03T14:00:08",
+ "time": "2026-09-03T15:00:06",
  "usdc": 28.15,
- "portfolio": 599.92,
+ "portfolio": 616.25,
  "api_billing_blocked": false,
  "margin_headroom": 140.75,
  "open": [
   "ANTHROPIC long +3.6%",
-  "AAPL long +0.5%",
-  "NVDA long +1.2%",
-  "META long +2.6%"
+  "AAPL long +1.1%",
+  "NVDA long -0.0%",
+  "META long +2.0%"
  ],
  "stock_candidates": 15,
  "top_stocks": [
-  "HOOD +12.6% vol=$264,073",
-  "CRCL +9.8% vol=$397,455",
-  "MSTR +7.1% vol=$505,759",
-  "SPCX +6.8% vol=$723,183",
+  "HOOD +15.8% vol=$269,561",
+  "CRCL +12.9% vol=$432,840",
+  "MSTR +12.9% vol=$625,143",
+  "TSLA +7.8% vol=$264,411",
   "ANTHROPIC -6.8% vol=$233,814"
  ],
  "futures_ok": true,
- "futures_balance": 54.0,
+ "futures_balance": 52.78,
  "unallocated_spot": [
-  "ETH $485"
+  "ETH $498"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TRUMP, FARTCOIN, ADA",
+ "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, ADA, TRUMP",
  "claude_called": true,
- "market_read": "השוק הקריפטו במגמת עלייה כללית עם BTC ורוב האלטים בקרבת overbought, אבל XMR עדיין מציג מרחב עלייה נקי.",
- "skip_reason": "BTC, ADA, XRP, BNB, LINK כולם overbought עם BB% מעל 80-100 - יחס סיכוי/סיכון גרוע לכניסה חדשה; FARTCOIN/TRUMP נפח מסחר נמוך מדי לגודל רציני.",
+ "market_read": "שוק הקריפטו רוב הקטגוריות בקנייה חדה ו-RSI קיצוני, מה שמעדיף שורטים לרברסיה על פני עוד לונגים בכיוון המגמה.",
+ "skip_reason": "יתר המטבעות (ADA, DOGE, LINK, BNB, SOL) נמצאים באותו מצב קיצון אך עם נזילות/היסטוריה חלשה יותר או תנועה חדה מדי לסטופ בטוח; מזומן פנוי מוגבל ($28) כך שנכנסתי לפוזיציה אחת ממוקדת בלבד.",
  "picks": [
-  "XMR long size=28% conf=HIGH"
+  "XRP short size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "XMR: Kraken: ['EOrder:Insufficient funds']"
+  "XRP: Kraken: ['EOrder:Insufficient initial margin']"
  ]
 }
