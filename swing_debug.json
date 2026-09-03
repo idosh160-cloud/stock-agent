@@ -1,31 +1,38 @@
 {
- "time": "2026-09-03T07:00:06",
+ "time": "2026-09-03T08:00:06",
  "usdc": 28.15,
- "portfolio": 594.42,
+ "portfolio": 593.09,
  "api_billing_blocked": false,
  "margin_headroom": 140.75,
  "open": [
   "ANTHROPIC long +5.3%",
-  "TSLA short +2.2%",
-  "AAPL long -0.0%",
+  "TSLA short +1.9%",
+  "AAPL long +0.2%",
   "NVDA long -0.1%",
   "META long +0.2%",
-  "HOOD short +0.5%"
+  "HOOD short +0.2%"
  ],
- "stock_candidates": 16,
+ "stock_candidates": 15,
  "top_stocks": [
-  "HOOD +5.5% vol=$389,091",
+  "HOOD +6.0% vol=$389,723",
   "ANTHROPIC -5.2% vol=$237,606",
+  "NVDA +3.8% vol=$380,841",
   "META +3.7% vol=$99,806",
-  "NVDA +3.7% vol=$385,791",
-  "GLD +2.5% vol=$138,013"
+  "GLD +2.5% vol=$139,128"
  ],
  "futures_ok": true,
- "futures_balance": 48.66,
+ "futures_balance": 49.17,
  "unallocated_spot": [
-  "ETH $481"
+  "ETH $479"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: XMR",
- "claude_called": false,
- "skip": "snapshot זהה לקריאה הקודמת"
+ "call_reason": "תנועה חזקה במטבע חדש: XMR, FARTCOIN",
+ "claude_called": true,
+ "market_read": "השוק במגמה חיובית מתונה עם כמה מטבעות ומניות מתקרבים לאזור overbought, אבל יש עדיין הזדמנויות מומנטום נקיות כמו XMR.",
+ "skip_reason": "שאר המועמדים הקריפטו (BNB, LTC, XDC) כבר overbought עם BB% קרוב ל-100, ומניות ה-xStock החדשות רחוקות מהיעד ולא מצדיקות רוטציה מפוזיציות פתוחות רווחיות.",
+ "picks": [
+  "XMR long size=20% conf=MEDIUM"
+ ],
+ "order_errors": [
+  "XMR: Kraken: ['EOrder:Insufficient funds']"
+ ]
 }
