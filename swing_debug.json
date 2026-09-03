@@ -1,40 +1,38 @@
 {
- "time": "2026-09-03T09:00:06",
+ "time": "2026-09-03T10:00:06",
  "usdc": 28.15,
- "portfolio": 593.04,
+ "portfolio": 591.08,
  "api_billing_blocked": false,
  "margin_headroom": 140.75,
  "open": [
   "ANTHROPIC long +5.3%",
-  "TSLA short +1.6%",
-  "AAPL long +0.2%",
-  "NVDA long -0.1%",
+  "TSLA short +1.8%",
+  "AAPL long +0.1%",
+  "NVDA long -0.4%",
   "META long +0.4%",
-  "HOOD short -0.2%"
+  "HOOD short -0.1%"
  ],
  "stock_candidates": 15,
  "top_stocks": [
-  "HOOD +7.7% vol=$382,112",
+  "HOOD +8.7% vol=$349,387",
   "ANTHROPIC -5.2% vol=$237,606",
-  "NVDA +4.0% vol=$378,232",
   "META +4.0% vol=$103,020",
-  "COIN +2.6% vol=$74,409"
+  "NVDA +3.7% vol=$377,317",
+  "GLD +2.8% vol=$140,589"
  ],
  "futures_ok": true,
- "futures_balance": 48.27,
+ "futures_balance": 48.32,
  "unallocated_spot": [
-  "ETH $480"
+  "ETH $478"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: XMR, ADA",
+ "call_reason": "תנועה חזקה במטבע חדש: XMR",
  "claude_called": true,
- "market_read": "רוב האלטים עלו חזק ב-24 שעות ונכנסו לאזור oversold עם RSI ו-BB% קיצוניים, מה שמעדיף שורטים על היפוך ממוצע יותר מלונגים חדשים.",
- "skip_reason": "המזומן הפנוי ($28) קטן מכדי לפתוח פוזיציה נפרדת משמעותית - השתמשתי במרווח המרג'ין הפנוי לפוזיציות השורט; ETH הספוט נשאר כאחיזה פסיבית שכן אין כרגע סטאפ ברור יותר לסבב מחדש שלו.",
+ "market_read": "השוק הכללי חיובי ומתון, מניות בפורטפוליו נעות בבטחה לכיוון המטרות והמזומן הפנוי מצומק כך שההזדמנות הטובה ביותר היא פוזיציית קריפטו קטנה עם ניהול סיכון הדוק.",
+ "skip_reason": "שאר המועמדים (BNB, LTC, XDC) קרובים לרוויה עם BB% מעל 85 והיסטוריית win-rate חלשה ב-ADA/DOGE, ולכן לא מספקים יחס סיכון/סיכוי טוב יותר מ-XMR בהינתן המזומן המוגבל הזמין.",
  "picks": [
-  "LTC short size=25% conf=HIGH",
-  "BNB short size=20% conf=MEDIUM"
+  "XMR long size=12% conf=MEDIUM"
  ],
  "order_errors": [
-  "LTC: Kraken: ['EOrder:Invalid leverage']",
-  "BNB: Kraken: ['EOrder:Margin trading in asset is restricted']"
+  "XMR: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
