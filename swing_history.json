@@ -1823,5 +1823,30 @@
     "entry_bb_pct": null,
     "entry_macd_hist": null,
     "entry_change_24h": 5.71
+  },
+  {
+    "coin": "HOOD",
+    "pair": "PF_HOODXUSD",
+    "status": "closed_loss",
+    "leveraged": false,
+    "collateral": 100.0,
+    "volume": 0.90628965,
+    "entry_price": 110.34,
+    "close_price": 119.26,
+    "target_price": 104.82,
+    "stop_price": 112.55,
+    "pnl_usd": -8.08,
+    "pnl_pct": -8.08,
+    "date_open": "2026-09-03T05:00:38.874365",
+    "date_close": "2026-09-03T14:00:06.560836",
+    "reasoning": "HOOD זינק 6.2% ביום עם טווח 8.9%, תנועה פרבולית שנראית מוצתה - שורט על מהלך חד מדי לפני תיקון ממוצע. סטופ צמוד כי זו מניה עם תנודתיות יומית קטנה יחסית.",
+    "confidence": "MEDIUM",
+    "txid": "a2a7b40b-46d2-43b6-a238-3f11f2c8ab6c",
+    "close_txid": "a2a874f8-96fb-4641-8d44-36180e7775b2",
+    "side": "short",
+    "entry_rsi": null,
+    "entry_bb_pct": null,
+    "entry_macd_hist": null,
+    "entry_change_24h": 6.18
   }
 ]
