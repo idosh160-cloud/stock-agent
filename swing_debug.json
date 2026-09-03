@@ -1,38 +1,39 @@
 {
- "time": "2026-09-03T04:00:05",
+ "time": "2026-09-03T05:00:05",
  "usdc": 28.15,
- "portfolio": 598.81,
+ "portfolio": 599.96,
  "api_billing_blocked": false,
  "margin_headroom": 140.75,
  "open": [
   "ANTHROPIC long +5.3%",
   "TSLA short +2.0%",
   "AAPL long +0.1%",
-  "NVDA long -0.3%",
+  "NVDA long +0.1%",
   "META long +0.4%"
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "HOOD +6.2% vol=$390,910",
+  "HOOD +6.2% vol=$391,465",
   "ANTHROPIC -5.2% vol=$237,606",
-  "META +3.9% vol=$100,490",
-  "NVDA +3.6% vol=$381,412",
-  "CF +3.5% vol=$7,332"
+  "NVDA +4.1% vol=$383,192",
+  "META +3.9% vol=$100,510",
+  "CF +3.5% vol=$7,940"
  ],
  "futures_ok": true,
- "futures_balance": 54.22,
+ "futures_balance": 54.31,
  "unallocated_spot": [
-  "ETH $480"
+  "ETH $481"
  ],
- "call_reason": "תנועה חזקה במניה: HOOD, CF",
+ "call_reason": "תנועה חזקה במטבע חדש: XMR, ADA",
  "claude_called": true,
- "market_read": "השוק הקריפטו הכללי חיובי היום עם רוב המטבעות בעלייה מתונה, אך הרבה מהם קרובים לרצועה עליונה (BB% גבוה) מה שמגביל את הפוטנציאל להמשך עלייה חד.",
- "skip_reason": "רוב המטבעות (ADA, AVAX, XRP, DOT, DOGE, LTC, TRUMP) קרובים לרוויה עליונה (BB%>80, RSI>60) ולכן לונג חדש שם מסוכן מדי, ו-XMR חלש מדי מבחינת מומנטום (MACD שלילי) כדי להצדיק כניסה; המניות הזמינות חסרות נתוני RSI/MACD מספקים לבניית תזה חזקה חדשה מעבר לפוזיציות הקיימות שכבר בטריגקטוריה טובה.",
+ "market_read": "השוק בכללותו נראה overbought בכמה נכסי קריפטו ומניות שקפצו חזק, מה שיוצר הזדמנויות מין-ריברסל בטווח הקצר.",
+ "skip_reason": "שאר המועמדים (AVAX, LTC, XRP, DOT, DOGE, LINK) מציגים BB% גבוה אך MACD עדיין חיובי וללא סימן ברור של היפוך - עדיף להישאר עם הפוזיציות הקיימות ולא להיכנס לעוד לונגים בשוק שכבר רץ.",
  "picks": [
-  "LINK long size=25% conf=MEDIUM"
+  "ADA short size=20% conf=MEDIUM",
+  "HOOD short size=15% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "LINK: Kraken: ['EOrder:Insufficient funds']"
+  "ADA: Kraken: ['EOrder:Insufficient initial margin']"
  ]
 }
