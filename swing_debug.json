@@ -1,33 +1,37 @@
 {
- "time": "2026-09-03T16:00:06",
+ "time": "2026-09-03T17:00:06",
  "usdc": 28.15,
- "portfolio": 624.77,
+ "portfolio": 613.06,
  "api_billing_blocked": false,
  "margin_headroom": 140.75,
  "open": [
-  "ANTHROPIC long +3.6%",
-  "AAPL long +1.5%",
-  "NVDA long +0.8%",
-  "META long +3.2%"
+  "ANTHROPIC long +4.1%",
+  "AAPL long +1.4%",
+  "NVDA long +0.7%",
+  "META long +3.1%",
+  "HOOD short +0.4%"
  ],
  "stock_candidates": 15,
  "top_stocks": [
-  "HOOD +16.4% vol=$398,202",
-  "CRCL +16.3% vol=$573,306",
-  "MSTR +14.5% vol=$663,909",
-  "COIN +10.1% vol=$149,565",
-  "TSLA +8.2% vol=$319,884"
+  "HOOD +15.9% vol=$397,400",
+  "CRCL +15.9% vol=$577,053",
+  "MSTR +14.8% vol=$622,180",
+  "COIN +10.0% vol=$148,508",
+  "TSLA +7.7% vol=$327,145"
  ],
  "futures_ok": true,
- "futures_balance": 55.64,
+ "futures_balance": 48.73,
  "unallocated_spot": [
-  "ETH $503"
+  "ETH $498"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, ADA, DOGE",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP, ADA, FARTCOIN",
  "claude_called": true,
- "market_read": "השוק בקריפטו רווי בקנייתיתר (RSI מעל 75-85 בכל המטבעות המובילים) עם MACD עדיין חיובי חזק, כך ששורט נגד המומנטום מסוכן, ולכן עדיף לחפש הזדמנות במניות שרצו חזק מדי.",
- "skip_reason": "כל המטבעות המובילים בקריפטו נמצאים בקנייתיתר קיצונית אך עם MACD חיובי חזק — שורט נגד מומנטום עולה מסוכן, ולונג בשלב זה הוא רדיפה אחרי המחיר; המניות האחרות (CRCL, MSTR) חסרות מספיק מידע טכני ובעלות היסטוריה שלילית מובהקת של 0/9 ו-0/4.",
+ "market_read": "השוק במגמת עלייה חזקה עם רוב המטבעות והמניות בקנייתי-יתר קיצונית, מה שיוצר הזדמנויות שורט על התשה יותר מאשר כניסות לונג חדשות.",
+ "skip_reason": "רוב הפוזיציות הפתוחות כבר ברווח ובדרך ליעד ולכן לא נוגעים בהן; יתר המועמדים בקריפטו (ADA, DOGE, TRUMP) קיצוניים מדי או בעלי היסטוריה גרועה מבלי שיפור ברור בהתנהגות, ומניות ה-xStock הפתוחות כבר תפוסות ברוב ההון הזמין.",
  "picks": [
-  "HOOD short size=20% conf=MEDIUM"
+  "XRP short size=20% conf=MEDIUM"
+ ],
+ "order_errors": [
+  "XRP: Kraken: ['EOrder:Insufficient initial margin']"
  ]
 }
