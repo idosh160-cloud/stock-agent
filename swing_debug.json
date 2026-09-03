@@ -1,37 +1,45 @@
 {
- "time": "2026-09-03T19:00:06",
+ "time": "2026-09-03T20:00:06",
  "usdc": 28.15,
- "portfolio": 617.88,
+ "portfolio": 616.36,
  "api_billing_blocked": false,
  "margin_headroom": 140.75,
  "open": [
   "ANTHROPIC long +4.1%",
-  "AAPL long +0.8%",
-  "NVDA long +1.9%",
-  "META long +3.2%",
-  "HOOD short -0.3%"
+  "AAPL long +1.0%",
+  "NVDA long +1.4%",
+  "META long +2.7%",
+  "HOOD short -1.0%"
  ],
  "stock_candidates": 15,
  "top_stocks": [
-  "HOOD +15.7% vol=$567,126",
-  "MSTR +15.5% vol=$658,849",
-  "CRCL +14.6% vol=$583,865",
-  "COIN +9.7% vol=$147,431",
-  "SPCX +8.1% vol=$702,383"
+  "MSTR +17.2% vol=$863,819",
+  "CRCL +16.1% vol=$589,586",
+  "HOOD +15.4% vol=$571,133",
+  "COIN +9.6% vol=$159,456",
+  "SPCX +6.4% vol=$665,488"
  ],
  "futures_ok": true,
- "futures_balance": 49.37,
+ "futures_balance": 46.98,
  "unallocated_spot": [
-  "ETH $502"
+  "ETH $503"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, ADA, TRUMP",
+ "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, ADA, DOGE",
  "claude_called": true,
- "market_read": "השוק הקריפטו רותח עם כמעט כל המטבעות ב-overbought קיצוני אחרי ריצה חדה, זה מסמן הזדמנות שורט על מיצוי מומנטום ולא כניסה נוספת ללונג.",
- "skip_reason": "ETH המוחזק כספוט כבר overbought (RSI 74, BB% 91.7) אחרי ריצה חדה - לא כניסה טובה כרגע לרוטציה נוספת, משאיר אותו כפוזיציה פסיבית; שאר האלטים (ADA, DOGE, PENGU, FARTCOIN) קיצוניים מדי ותנודתיים לגודל הקטן של המזומן הפנוי.",
+ "market_read": "השוק בכללותו רותח - קריפטו רוב הנכסים overbought בחדות, אבל מניות פרבוליות כמו MSTR/CRCL/HOOD מציעות הזדמנות שורט מבוססת מיצוי תנועה יומית קיצונית.",
+ "skip_reason": "דילגתי על שאר הקריפטו (ADA, DOGE, XRP, LINK, BTC, ETH) כי כולם RSI מעל 70-80 ו-BB% קרוב ל-90 - כניסה חדשה לשורט מסוכנת בשוק עולה חזק, וכניסה ללונג מאוחרת מדי; HOOD כבר בפוזיציית שורט קיימת אז לא כפלתי.",
  "picks": [
-  "XRP short size=20% conf=MEDIUM"
+  "MSTR short size=30% conf=MEDIUM",
+  "TRUMP long size=15% conf=MEDIUM"
  ],
  "order_errors": [
-  "XRP: Kraken: ['EOrder:Insufficient initial margin']"
+  "liq ETH: all sizes rejected (margin collateral lock)",
+  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
+ ],
+ "transfers": [
+  "MSTR: moved $17 → FAILED"
+ ],
+ "skips": [
+  "MSTR: margin $47 < needed $62 (after transfer attempt)"
  ]
 }
