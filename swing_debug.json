@@ -1,38 +1,41 @@
 {
- "time": "2026-09-03T10:00:06",
+ "time": "2026-09-03T11:00:08",
  "usdc": 28.15,
- "portfolio": 591.08,
+ "portfolio": 591.37,
  "api_billing_blocked": false,
  "margin_headroom": 140.75,
  "open": [
-  "ANTHROPIC long +5.3%",
-  "TSLA short +1.8%",
-  "AAPL long +0.1%",
+  "ANTHROPIC long +3.6%",
+  "TSLA short +1.7%",
+  "AAPL long -0.1%",
   "NVDA long -0.4%",
-  "META long +0.4%",
-  "HOOD short -0.1%"
+  "META long +0.2%",
+  "HOOD short +0.5%"
  ],
  "stock_candidates": 15,
  "top_stocks": [
-  "HOOD +8.7% vol=$349,387",
-  "ANTHROPIC -5.2% vol=$237,606",
-  "META +4.0% vol=$103,020",
-  "NVDA +3.7% vol=$377,317",
+  "HOOD +8.2% vol=$310,942",
+  "ANTHROPIC -6.8% vol=$233,814",
+  "NVDA +3.8% vol=$377,093",
+  "META +3.7% vol=$113,734",
   "GLD +2.8% vol=$140,589"
  ],
  "futures_ok": true,
- "futures_balance": 48.32,
+ "futures_balance": 48.17,
  "unallocated_spot": [
-  "ETH $478"
+  "ETH $479"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: XMR",
+ "call_reason": "תנועה חזקה במטבע חדש: XMR, ADA",
  "claude_called": true,
- "market_read": "השוק הכללי חיובי ומתון, מניות בפורטפוליו נעות בבטחה לכיוון המטרות והמזומן הפנוי מצומק כך שההזדמנות הטובה ביותר היא פוזיציית קריפטו קטנה עם ניהול סיכון הדוק.",
- "skip_reason": "שאר המועמדים (BNB, LTC, XDC) קרובים לרוויה עם BB% מעל 85 והיסטוריית win-rate חלשה ב-ADA/DOGE, ולכן לא מספקים יחס סיכון/סיכוי טוב יותר מ-XMR בהינתן המזומן המוגבל הזמין.",
+ "market_read": "השוק במגמת עלייה מתונה עם כמה מטבעות בקצה עליון (BNB, ADA, LTC) שנראים על-קנייה מול XMR שעדיין נייטרלי עם מומנטום בריא.",
+ "skip_reason": "שאר המטבעות (ADA, LTC, DOGE, TRUMP) נראים דומים מדי או בנפח נמוך מדי כדי להצדיק כניסה נוספת מעבר לשני הפוזיציות הנבחרות, והפוזיציות הפתוחות במניות כבר קרובות ליעד ולא כדאי לגעת בהן.",
  "picks": [
-  "XMR long size=12% conf=MEDIUM"
+  "BNB short size=20% conf=MEDIUM",
+  "XMR long size=20% conf=MEDIUM"
  ],
  "order_errors": [
+  "liq ETH: all sizes rejected (margin collateral lock)",
+  "BNB: Kraken: ['EOrder:Margin trading in asset is restricted']",
   "XMR: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
