@@ -1,37 +1,38 @@
 {
- "time": "2026-09-03T03:00:05",
+ "time": "2026-09-03T04:00:05",
  "usdc": 28.15,
- "portfolio": 598.85,
+ "portfolio": 598.81,
  "api_billing_blocked": false,
  "margin_headroom": 140.75,
  "open": [
   "ANTHROPIC long +5.3%",
-  "TSLA short +2.3%",
-  "AAPL long -0.0%",
-  "NVDA long -0.2%",
-  "META long +0.1%"
+  "TSLA short +2.0%",
+  "AAPL long +0.1%",
+  "NVDA long -0.3%",
+  "META long +0.4%"
  ],
- "stock_candidates": 16,
+ "stock_candidates": 17,
  "top_stocks": [
-  "HOOD +6.4% vol=$390,832",
+  "HOOD +6.2% vol=$390,910",
   "ANTHROPIC -5.2% vol=$237,606",
-  "NVDA +3.7% vol=$381,880",
-  "META +3.6% vol=$99,891",
-  "GLD +2.0% vol=$130,997"
+  "META +3.9% vol=$100,490",
+  "NVDA +3.6% vol=$381,412",
+  "CF +3.5% vol=$7,332"
  ],
  "futures_ok": true,
- "futures_balance": 53.77,
+ "futures_balance": 54.22,
  "unallocated_spot": [
-  "ETH $481"
+  "ETH $480"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: ADA",
+ "call_reason": "תנועה חזקה במניה: HOOD, CF",
  "claude_called": true,
- "market_read": "השוק בעליה כללית עם כמה נכסים overbought (ADA, DOT, XRP) שמראים סימני מיצוי בטווח הקצר.",
- "skip_reason": "יתר הפוזיציות הפתוחות (ANTHROPIC, TSLA, AAPL, NVDA, META) בדרך ליעד או ניטרליות ולא כדאי לסובב אותן; ה-ETH הפאסיבי נשאר כהחזקה כי אין מספיק מזומן פנוי לפתוח שם פוזיציה נוספת משמעותית מעבר לשורט הקטן שנבחר.",
+ "market_read": "השוק הקריפטו הכללי חיובי היום עם רוב המטבעות בעלייה מתונה, אך הרבה מהם קרובים לרצועה עליונה (BB% גבוה) מה שמגביל את הפוטנציאל להמשך עלייה חד.",
+ "skip_reason": "רוב המטבעות (ADA, AVAX, XRP, DOT, DOGE, LTC, TRUMP) קרובים לרוויה עליונה (BB%>80, RSI>60) ולכן לונג חדש שם מסוכן מדי, ו-XMR חלש מדי מבחינת מומנטום (MACD שלילי) כדי להצדיק כניסה; המניות הזמינות חסרות נתוני RSI/MACD מספקים לבניית תזה חזקה חדשה מעבר לפוזיציות הקיימות שכבר בטריגקטוריה טובה.",
  "picks": [
-  "ADA short size=12% conf=MEDIUM"
+  "LINK long size=25% conf=MEDIUM"
  ],
  "order_errors": [
-  "ADA: Kraken: ['EOrder:Insufficient initial margin']"
+  "liq ETH: all sizes rejected (margin collateral lock)",
+  "LINK: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
