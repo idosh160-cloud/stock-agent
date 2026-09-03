@@ -1,37 +1,38 @@
 {
- "time": "2026-09-03T01:00:05",
+ "time": "2026-09-03T02:00:06",
  "usdc": 28.15,
- "portfolio": 600.12,
+ "portfolio": 601.78,
  "api_billing_blocked": false,
  "margin_headroom": 140.75,
  "open": [
-  "ANTHROPIC long +5.0%",
-  "TSLA short +2.7%",
-  "AAPL long +0.0%",
+  "ANTHROPIC long +5.3%",
+  "TSLA short +2.6%",
+  "AAPL long -0.1%",
   "NVDA long -0.2%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "ANTHROPIC -5.5% vol=$208,425",
-  "HOOD +5.0% vol=$384,515",
-  "CF +4.0% vol=$9,545",
-  "NVDA +3.6% vol=$395,874",
-  "META +3.3% vol=$110,007"
+  "HOOD +5.8% vol=$387,435",
+  "ANTHROPIC -5.2% vol=$237,606",
+  "NVDA +3.9% vol=$394,904",
+  "CF +3.5% vol=$8,496",
+  "META +3.4% vol=$110,001"
  ],
  "futures_ok": true,
- "futures_balance": 60.16,
+ "futures_balance": 60.01,
  "unallocated_spot": [
-  "ETH $476"
+  "ETH $477"
  ],
- "call_reason": "תנועה חזקה במניה: HOOD, CF, META",
+ "call_reason": "תנועה חזקה במטבע חדש: XMR",
  "claude_called": true,
- "market_read": "השוק הקריפטו נסחר בטווח צר עם נטייה שלילית קלה, אבל ETH מראה סימני תחתית עם מומנטום מתהפך.",
- "skip_reason": "המניות הפתוחות (ANTHROPIC, TSLA, AAPL, NVDA) בדרך ליעד או שטוחות ולא כדאי לגעת בהן; שאר המועמדים בקריפטו/מניות חלשים או ללא נפח מספיק להצדיק כניסה נוספת.",
+ "market_read": "השוק הכללי מעורב עם כמה אלטקוינים במתיחת יתר לצד מניות טכנולוגיה שממשיכות מומנטום חיובי מתון.",
+ "skip_reason": "שאר המועמדים (DOT, XRP, TRUMP, HOOD, SPCX) נמצאים באזור ביניים ללא איתות ברור מספיק או עם היסטוריה חלשה בלי שיפור בתנאים, לכן דילגתי עליהם.",
  "picks": [
-  "ETH long size=30% conf=MEDIUM"
+  "ADA short size=20% conf=MEDIUM",
+  "META long size=20% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "ETH: Kraken: ['EOrder:Insufficient funds']"
+  "ADA: Kraken: ['EOrder:Insufficient initial margin']"
  ]
 }
