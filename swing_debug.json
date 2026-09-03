@@ -1,38 +1,35 @@
 {
- "time": "2026-09-03T22:00:05",
+ "time": "2026-09-03T23:00:05",
  "usdc": 28.15,
- "portfolio": 615.79,
+ "portfolio": 608.66,
  "api_billing_blocked": false,
  "margin_headroom": 140.75,
  "open": [
   "ANTHROPIC long +4.1%",
-  "AAPL long +1.1%",
+  "AAPL long +1.0%",
   "NVDA long +1.5%",
   "META long +2.3%",
-  "HOOD short -1.0%"
+  "HOOD short -0.1%",
+  "CRCL short -0.1%"
  ],
  "stock_candidates": 15,
  "top_stocks": [
-  "MSTR +16.9% vol=$958,139",
-  "CRCL +15.3% vol=$671,929",
-  "HOOD +13.7% vol=$455,720",
+  "MSTR +15.7% vol=$932,525",
+  "CRCL +15.5% vol=$685,226",
+  "HOOD +12.6% vol=$462,396",
   "COIN +9.2% vol=$146,128",
-  "SPCX +6.2% vol=$665,383"
+  "SPCX +6.2% vol=$677,691"
  ],
  "futures_ok": true,
- "futures_balance": 47.59,
+ "futures_balance": 43.62,
  "unallocated_spot": [
-  "ETH $502"
+  "ETH $499"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, ADA, XRP",
+ "call_reason": "תנועה חזקה במטבע חדש: ADA, XRP, FARTCOIN",
  "claude_called": true,
- "market_read": "השוק הקריפטו רותח עם BTC ורוב האלטים ב-RSI קיצוני של over70-80, ובמניות ה-xStocks יש כמה תנועות פרבוליות של +10-17% ביום שנראות כמו הזדמנויות שורט למיצוי ולא המשך.",
- "skip_reason": "דילגתי על קריפטו לונג (BTC, ADA, XRP, LINK, DOGE) כי כולם RSI מעל 70 ו-BB% קרוב ל-100 - כניסה בשלב זה היא רדיפה אחרי המהלך ולא כניסה טובה; ETH הפרוס נשאר כפי שהוא כי אין כרגע סיבה טובה יותר לגייס ממנו.",
+ "market_read": "שוק הקריפטו רותח עם BTC ואלטקוינים רבים ב-RSI מעל 65-72 אחרי ריצות חדות, בעוד מניות הקריפטו (MSTR/CRCL/HOOD) קפצו 10-16% ביום - מצב בשל ל-mean reversion בטווח הקצר.",
+ "skip_reason": "ה-USDC הפנוי הוא רק $28 (מתחת לסף השימושי) והתיק כבר ב-110% חשיפה עם 6 פוזיציות פתוחות; HOOD ו-CRCL כבר שורטים תקפים על אותה תזה ולכן לא מסובבים אותם, ו-ETH המרוחק נשאר כחניה כי כל הקריפטו נראה overbought כרגע ולא מציע נקודת כניסה טובה יותר.",
  "picks": [
-  "MSTR short size=25% conf=HIGH",
-  "CRCL short size=15% conf=MEDIUM"
- ],
- "skips": [
-  "MSTR: margin $48 < needed $51 (after transfer attempt)"
+  "MSTR short size=20% conf=MEDIUM"
  ]
 }
