@@ -1,36 +1,37 @@
 {
- "time": "2026-09-02T23:00:05",
+ "time": "2026-09-03T00:00:05",
  "usdc": 28.15,
- "portfolio": 599.7,
+ "portfolio": 602.58,
  "api_billing_blocked": false,
  "margin_headroom": 140.75,
  "open": [
   "ANTHROPIC long +5.0%",
   "TSLA short +2.9%",
-  "AAPL long -0.0%",
-  "NVDA long -0.2%"
+  "AAPL long +0.0%",
+  "NVDA long -0.4%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
   "ANTHROPIC -5.5% vol=$208,425",
-  "HOOD +5.2% vol=$341,776",
-  "NVDA +3.5% vol=$398,335",
-  "CF +3.4% vol=$9,649",
+  "HOOD +4.6% vol=$378,609",
+  "NVDA +3.3% vol=$396,132",
+  "CF +3.0% vol=$9,635",
   "META +2.9% vol=$107,722"
  ],
  "futures_ok": true,
- "futures_balance": 60.15,
+ "futures_balance": 60.37,
  "unallocated_spot": [
-  "ETH $475"
+  "ETH $478"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TRUMP",
+ "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN",
  "claude_called": true,
- "market_read": "השוק הכללי במגמה מעורבת עם רוב הקריפטו במצב oversold קל, מה שיוצר הזדמנויות bounce קצרות טווח.",
- "skip_reason": "שאר המועמדים בקריפטו בנפח מסחר נמוך מדי או ללא איתות ברור, ופוזיציות המניות הקיימות כבר בתנועה לכיוון היעד ולא כדאי לגעת בהן.",
+ "market_read": "השוק הכללי יציב עם נטייה חיובית מתונה בקריפטו, מניות הפורטפוליו נעות לפי תוכניתן ללא צורך בהתערבות",
+ "skip_reason": "שאר המועמדים (TRUMP, DOT, FARTCOIN) מציגים סיגנלים חלשים או נפח נמוך יחסית, ומניות ה-xStocks כרגע נעות בטווח צר ללא הזדמנות ברורה לשורט/לונג חדש מעבר לפוזיציות הקיימות",
  "picks": [
-  "TRUMP long size=15% conf=MEDIUM"
+  "SOL long size=30% conf=HIGH"
  ],
  "order_errors": [
-  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
+  "liq ETH: all sizes rejected (margin collateral lock)",
+  "SOL: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
