@@ -1,38 +1,31 @@
 {
- "time": "2026-09-03T06:00:05",
+ "time": "2026-09-03T07:00:06",
  "usdc": 28.15,
- "portfolio": 593.89,
+ "portfolio": 594.42,
  "api_billing_blocked": false,
  "margin_headroom": 140.75,
  "open": [
   "ANTHROPIC long +5.3%",
-  "TSLA short +2.5%",
-  "AAPL long -0.1%",
-  "NVDA long -0.2%",
+  "TSLA short +2.2%",
+  "AAPL long -0.0%",
+  "NVDA long -0.1%",
   "META long +0.2%",
-  "HOOD short +0.7%"
+  "HOOD short +0.5%"
  ],
- "stock_candidates": 17,
+ "stock_candidates": 16,
  "top_stocks": [
-  "HOOD +5.5% vol=$388,310",
+  "HOOD +5.5% vol=$389,091",
   "ANTHROPIC -5.2% vol=$237,606",
-  "META +3.6% vol=$100,332",
-  "NVDA +3.6% vol=$382,917",
-  "GLD +2.5% vol=$133,304"
+  "META +3.7% vol=$99,806",
+  "NVDA +3.7% vol=$385,791",
+  "GLD +2.5% vol=$138,013"
  ],
  "futures_ok": true,
- "futures_balance": 48.94,
+ "futures_balance": 48.66,
  "unallocated_spot": [
   "ETH $481"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: XMR",
- "claude_called": true,
- "market_read": "השוק הכללי חיובי בזהירות עם רוב המטבעות והמניות בעליה מתונה אך רבים כבר קרובים לרוויה עליונה.",
- "skip_reason": "שאר המועמדים (ADA, XRP, DOT, LINK, AVAX) כבר ב-BB% מעל 80 עם RSI גבוה — כניסת לונג מאוחרת מדי וללא סיגנל שורט ברור כי המומנטום עדיין חיובי; היתרה הפנויה קטנה מדי לפוזיציה שנייה משמעותית.",
- "picks": [
-  "XMR long size=20% conf=MEDIUM"
- ],
- "order_errors": [
-  "XMR: Kraken: ['EOrder:Insufficient funds']"
- ]
+ "claude_called": false,
+ "skip": "snapshot זהה לקריאה הקודמת"
 }
