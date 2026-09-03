@@ -1,45 +1,37 @@
 {
- "time": "2026-09-03T20:00:06",
+ "time": "2026-09-03T21:00:06",
  "usdc": 28.15,
- "portfolio": 616.36,
+ "portfolio": 614.45,
  "api_billing_blocked": false,
  "margin_headroom": 140.75,
  "open": [
   "ANTHROPIC long +4.1%",
   "AAPL long +1.0%",
-  "NVDA long +1.4%",
-  "META long +2.7%",
-  "HOOD short -1.0%"
+  "NVDA long +1.3%",
+  "META long +2.3%",
+  "HOOD short -0.8%"
  ],
  "stock_candidates": 15,
  "top_stocks": [
-  "MSTR +17.2% vol=$863,819",
-  "CRCL +16.1% vol=$589,586",
-  "HOOD +15.4% vol=$571,133",
-  "COIN +9.6% vol=$159,456",
-  "SPCX +6.4% vol=$665,488"
+  "MSTR +16.6% vol=$931,917",
+  "CRCL +15.2% vol=$671,326",
+  "HOOD +14.3% vol=$481,886",
+  "COIN +9.1% vol=$157,633",
+  "SPCX +6.5% vol=$683,654"
  ],
  "futures_ok": true,
- "futures_balance": 46.98,
+ "futures_balance": 47.62,
  "unallocated_spot": [
-  "ETH $503"
+  "ETH $501"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: FARTCOIN, ADA, DOGE",
+ "call_reason": "תנועה חזקה במטבע חדש: ADA, FARTCOIN, XRP",
  "claude_called": true,
- "market_read": "השוק בכללותו רותח - קריפטו רוב הנכסים overbought בחדות, אבל מניות פרבוליות כמו MSTR/CRCL/HOOD מציעות הזדמנות שורט מבוססת מיצוי תנועה יומית קיצונית.",
- "skip_reason": "דילגתי על שאר הקריפטו (ADA, DOGE, XRP, LINK, BTC, ETH) כי כולם RSI מעל 70-80 ו-BB% קרוב ל-90 - כניסה חדשה לשורט מסוכנת בשוק עולה חזק, וכניסה ללונג מאוחרת מדי; HOOD כבר בפוזיציית שורט קיימת אז לא כפלתי.",
+ "market_read": "השוק הקריפטו במומנטום עולה כללי עם BTC ואלטים רבים בקנייה מוגזמת, אבל יש כמה מטבעות שעדיין לא הגיעו לקיצון וניתן לרכב על המגמה.",
+ "skip_reason": "רוב המועמדים (ADA, XRP, DOGE, LINK, BNB, BTC) כבר ב-RSI קיצוני מעל 75 עם BB% קרוב ל-85-90, סיכון כניסה לונג גבוה מדי, ואין מספיק מרווח מרג'ין פנוי לפוזיציית שורט משמעותית; המניות הפתוחות ממשיכות לכיוון המטרה ולא מצדיקות רוטציה.",
  "picks": [
-  "MSTR short size=30% conf=MEDIUM",
-  "TRUMP long size=15% conf=MEDIUM"
+  "XMR long size=18% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "TRUMP: Kraken: ['EOrder:Insufficient funds']"
- ],
- "transfers": [
-  "MSTR: moved $17 → FAILED"
- ],
- "skips": [
-  "MSTR: margin $47 < needed $62 (after transfer attempt)"
+  "XMR: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
