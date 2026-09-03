@@ -1,39 +1,38 @@
 {
- "time": "2026-09-03T05:00:05",
+ "time": "2026-09-03T06:00:05",
  "usdc": 28.15,
- "portfolio": 599.96,
+ "portfolio": 593.89,
  "api_billing_blocked": false,
  "margin_headroom": 140.75,
  "open": [
   "ANTHROPIC long +5.3%",
-  "TSLA short +2.0%",
-  "AAPL long +0.1%",
-  "NVDA long +0.1%",
-  "META long +0.4%"
+  "TSLA short +2.5%",
+  "AAPL long -0.1%",
+  "NVDA long -0.2%",
+  "META long +0.2%",
+  "HOOD short +0.7%"
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "HOOD +6.2% vol=$391,465",
+  "HOOD +5.5% vol=$388,310",
   "ANTHROPIC -5.2% vol=$237,606",
-  "NVDA +4.1% vol=$383,192",
-  "META +3.9% vol=$100,510",
-  "CF +3.5% vol=$7,940"
+  "META +3.6% vol=$100,332",
+  "NVDA +3.6% vol=$382,917",
+  "GLD +2.5% vol=$133,304"
  ],
  "futures_ok": true,
- "futures_balance": 54.31,
+ "futures_balance": 48.94,
  "unallocated_spot": [
   "ETH $481"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: XMR, ADA",
+ "call_reason": "תנועה חזקה במטבע חדש: XMR",
  "claude_called": true,
- "market_read": "השוק בכללותו נראה overbought בכמה נכסי קריפטו ומניות שקפצו חזק, מה שיוצר הזדמנויות מין-ריברסל בטווח הקצר.",
- "skip_reason": "שאר המועמדים (AVAX, LTC, XRP, DOT, DOGE, LINK) מציגים BB% גבוה אך MACD עדיין חיובי וללא סימן ברור של היפוך - עדיף להישאר עם הפוזיציות הקיימות ולא להיכנס לעוד לונגים בשוק שכבר רץ.",
+ "market_read": "השוק הכללי חיובי בזהירות עם רוב המטבעות והמניות בעליה מתונה אך רבים כבר קרובים לרוויה עליונה.",
+ "skip_reason": "שאר המועמדים (ADA, XRP, DOT, LINK, AVAX) כבר ב-BB% מעל 80 עם RSI גבוה — כניסת לונג מאוחרת מדי וללא סיגנל שורט ברור כי המומנטום עדיין חיובי; היתרה הפנויה קטנה מדי לפוזיציה שנייה משמעותית.",
  "picks": [
-  "ADA short size=20% conf=MEDIUM",
-  "HOOD short size=15% conf=MEDIUM"
+  "XMR long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "ADA: Kraken: ['EOrder:Insufficient initial margin']"
+  "XMR: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
