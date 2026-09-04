@@ -1,39 +1,37 @@
 {
- "time": "2026-09-04T16:00:11",
+ "time": "2026-09-04T17:00:06",
  "usdc": 28.15,
- "portfolio": 600.92,
+ "portfolio": 612.21,
  "api_billing_blocked": false,
  "margin_headroom": 140.75,
  "open": [
   "ANTHROPIC long +4.1%",
   "NVDA long +2.4%",
   "META long +2.5%",
-  "HOOD short -0.1%"
+  "HOOD short +0.2%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "TSLA -8.3% vol=$990,531",
-  "CF -5.8% vol=$67,425",
-  "COIN -4.5% vol=$53,090",
+  "TSLA -7.7% vol=$1,004,241",
+  "COIN -3.9% vol=$75,382",
+  "CF -3.8% vol=$68,452",
   "FLU -3.1% vol=$6,314",
-  "AAPL -2.7% vol=$187,970"
+  "AAPL -2.3% vol=$186,222"
  ],
  "futures_ok": true,
- "futures_balance": 56.59,
+ "futures_balance": 55.36,
  "unallocated_spot": [
-  "ETH $490"
+  "ETH $492"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TRUMP, PENGU, ADA",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP, PENGU, DOGE",
  "claude_called": true,
- "market_read": "השוק הקריפטו נמצא בירידה כללית עם רוב המטבעות קרוב לתחתית הבולינגר ו-RSI נמוך, מה שיוצר הזדמנויות ריבאונד טקטיות במטבעות נזילים.",
- "skip_reason": "דחיתי את שאר המטבעות (TRUMP, PENGU, CC, DOT, DOGE, LTC, FARTCOIN) בגלל ווליום נמוך יחסית או חוסר בהירות בכיוון, ואת המניות כי אין נתוני RSI ברורים לתמוך בכניסה כרגע פרט לפוזיציות הקיימות שממשיכות לכיוון היעד.",
+ "market_read": "השוק הקריפטו כולו באדום עם RSI בינוני-נמוך ו-MACD שלילי, מצב של חולשה מתונה ולא קריסה מלאה — מתאים לבחירות סלקטיביות של דיפ-ביי ולא לשורטים אגרסיביים.",
+ "skip_reason": "רוב המטבעות והמניות מציגים תנועה דומה ללא יתרון ברור מעבר ל-XRP, ולכן נמנעים מפיזור מיותר על סטאפים חלשים יותר כמו ADA/DOGE/TSLA שירדו בחדות ללא איתות טכני מספיק חזק.",
  "picks": [
-  "SOL long size=20% conf=MEDIUM",
-  "XRP long size=15% conf=MEDIUM"
+  "XRP long size=22% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
-  "SOL: Kraken: ['EOrder:Insufficient funds']",
   "XRP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
