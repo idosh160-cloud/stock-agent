@@ -1,40 +1,39 @@
 {
- "time": "2026-09-04T00:00:06",
+ "time": "2026-09-04T01:00:05",
  "usdc": 28.15,
- "portfolio": 604.02,
+ "portfolio": 604.34,
  "api_billing_blocked": false,
  "margin_headroom": 140.75,
  "open": [
   "ANTHROPIC long +4.1%",
   "AAPL long +1.0%",
-  "NVDA long +1.5%",
+  "NVDA long +1.8%",
   "META long +2.3%",
-  "HOOD short -0.4%",
-  "CRCL short -0.0%",
-  "MSTR short -0.3%"
+  "HOOD short -0.3%",
+  "CRCL short +0.3%",
+  "MSTR short +0.1%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "MSTR +15.9% vol=$935,223",
-  "CRCL +14.9% vol=$686,262",
-  "HOOD +13.8% vol=$418,533",
+  "MSTR +16.5% vol=$929,945",
+  "CRCL +14.4% vol=$688,084",
+  "HOOD +14.0% vol=$408,448",
   "COIN +9.2% vol=$146,128",
-  "SPCX +6.7% vol=$681,098"
+  "SPCX +6.9% vol=$689,818"
  ],
  "futures_ok": true,
- "futures_balance": 36.62,
+ "futures_balance": 38.53,
  "unallocated_spot": [
-  "ETH $501"
+  "ETH $500"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: ADA, TRUMP, XRP",
+ "call_reason": "תנועה חזקה במניה: COIN, SPCX, TSLA",
  "claude_called": true,
- "market_read": "שוק הקריפטו במומנטום חיובי כללי אך רוב המטבעות המובילים כבר overbought, אלטרנטיבות עם RSI בינוני כמו XMR מציעות סיכוי/סיכון טוב יותר.",
- "skip_reason": "ADA/XRP/LINK/BNB/ETH כבר overbought (RSI>65-73) אחרי ריצות חדות - מסוכן להיכנס לונג עכשיו; הפוזיציות הקיימות במניות בדרך ליעד ולא נוגעות.",
+ "market_read": "השוק הכללי בטווח נייטרלי-חיובי עם רוב הקריפטו והמניות בטריטוריה ניטרלית ללא איתות קיצוני ברור.",
+ "skip_reason": "שאר המועמדים (SOL, TRUMP, XMR, BNB) מציגים MACD שלילי או RSI לא מספיק קיצוני לכיוון ברור, ולכן לא מצדיקים סיכון נוסף מעבר ליתרת המזומן הזמינה הקטנה.",
  "picks": [
-  "XMR long size=25% conf=MEDIUM"
+  "XRP long size=12% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "XMR: Kraken: ['EOrder:Insufficient funds']"
+  "XRP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
