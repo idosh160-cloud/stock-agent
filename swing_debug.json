@@ -1,37 +1,37 @@
 {
- "time": "2026-09-04T06:00:06",
+ "time": "2026-09-04T07:00:06",
  "usdc": 28.15,
- "portfolio": 606.07,
+ "portfolio": 604.23,
  "api_billing_blocked": false,
  "margin_headroom": 140.75,
  "open": [
   "ANTHROPIC long +4.1%",
-  "AAPL long +1.1%",
+  "AAPL long +0.8%",
   "NVDA long +1.8%",
   "META long +2.5%",
-  "HOOD short -1.2%",
-  "CRCL short +0.8%",
-  "MSTR short +0.3%"
+  "HOOD short -1.1%",
+  "CRCL short +0.2%",
+  "MSTR short +0.7%"
  ],
  "stock_candidates": 14,
  "top_stocks": [
-  "MSTR +14.4% vol=$946,319",
-  "CRCL +13.8% vol=$652,599",
-  "HOOD +13.6% vol=$427,658",
-  "COIN +7.9% vol=$131,266",
-  "SPCX +7.3% vol=$717,161"
+  "CRCL +14.1% vol=$726,592",
+  "MSTR +13.3% vol=$1,007,918",
+  "HOOD +13.2% vol=$467,938",
+  "COIN +7.0% vol=$130,285",
+  "SPCX +6.9% vol=$688,783"
  ],
  "futures_ok": true,
- "futures_balance": 38.85,
+ "futures_balance": 37.75,
  "unallocated_spot": [
-  "ETH $502"
+  "ETH $501"
  ],
  "call_reason": "פוזיציה חלשה: HOOD",
  "claude_called": true,
- "market_read": "השוק הקריפטו מציג חולשה כללית עם רוב המטבעות באזור אדום, מה שיוצר הזדמנויות oversold סלקטיביות כמו XMR.",
- "skip_reason": "שאר הקריפטו (DOGE, FARTCOIN, TRUMP וכו') נסחרים באמצע הטווח ללא איתות ברור, והמניות שכבר פתוחות (MSTR, HOOD, CRCL) מתקדמות כמתוכנן ואין הצדקה לסגור פוזיציות רווחיות.",
+ "market_read": "השוק הכללי בקריפטו יציב-חיובי עם BTC סביב 80.8K ותנודתיות מתונה, בעוד מניות הטוקנים שכבר בפוזיציה רצות חזק אך עדיין קרובות לכניסה.",
+ "skip_reason": "שאר המועמדים בקריפטו (DOT, PENGU, DOGE, LTC, BNB) חלשים או בנפח נמוך מדי, ומניות ה-xStocks הפתוחות כבר בפוזיציה טובה ומתקדמות ליעד - אין הצדקה לגעת בהן או להוסיף חשיפה כפולה.",
  "picks": [
-  "XMR long size=25% conf=MEDIUM"
+  "XMR long size=20% conf=MEDIUM"
  ],
  "order_errors": [
   "liq ETH: all sizes rejected (margin collateral lock)",
