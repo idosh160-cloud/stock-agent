@@ -1,37 +1,36 @@
 {
- "time": "2026-09-04T18:00:06",
+ "time": "2026-09-04T19:00:05",
  "usdc": 28.15,
- "portfolio": 609.63,
+ "portfolio": 611.9,
  "api_billing_blocked": false,
  "margin_headroom": 140.75,
  "open": [
   "ANTHROPIC long +4.1%",
   "NVDA long +2.3%",
-  "META long +2.5%",
-  "HOOD short -0.2%"
+  "META long +2.4%",
+  "HOOD short -0.1%"
  ],
- "stock_candidates": 16,
+ "stock_candidates": 17,
  "top_stocks": [
-  "TSLA -7.6% vol=$1,019,826",
-  "COIN -4.5% vol=$110,704",
-  "CF -3.8% vol=$68,452",
-  "FLU -2.7% vol=$6,359",
-  "SPCX -2.3% vol=$594,936"
+  "TSLA -7.2% vol=$1,027,362",
+  "COIN -4.3% vol=$147,643",
+  "CF -4.0% vol=$68,336",
+  "FLU -2.2% vol=$6,245",
+  "IOT -2.1% vol=$6,243"
  ],
  "futures_ok": true,
- "futures_balance": 55.91,
+ "futures_balance": 57.03,
  "unallocated_spot": [
-  "ETH $489"
+  "ETH $490"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: PENGU, TRUMP, ADA",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP, PENGU, ADA",
  "claude_called": true,
- "market_read": "השוק הקריפטו במגמת ירידה קלה עם רוב המטבעות באזור oversold, מה שיוצר הזדמנויות ריבאונד זהירות.",
- "skip_reason": "שאר המטבעות (ADA, DOGE, XRP, TRUMP) מציגים תמונה דומה של oversold אך עם נפח נמוך יותר או היסטוריה שלילית משמעותית יותר - SOL מציע את שילוב הנזילות וההיסטוריה הטוב ביותר.",
+ "market_read": "השוק בקריפטו נמצא בתיקון קל עם רוב המטבעות ליד תחתית הטווח היומי אך ללא פאניקה חריגה.",
+ "skip_reason": "שאר המועמדים או שנפח המסחר שלהם נמוך מדי (CC) או שהאיתותים חלשים מדי (ADA, DOGE, AVAX) ביחס ל-XRP שמציג את השילוב הטוב ביותר של נזילות וקרבה לתמיכה.",
  "picks": [
-  "SOL long size=25% conf=MEDIUM"
+  "XRP long size=20% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "SOL: Kraken: ['EOrder:Insufficient funds']"
+  "XRP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
