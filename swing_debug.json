@@ -1,7 +1,7 @@
 {
- "time": "2026-09-03T23:00:05",
+ "time": "2026-09-04T00:00:06",
  "usdc": 28.15,
- "portfolio": 608.66,
+ "portfolio": 604.02,
  "api_billing_blocked": false,
  "margin_headroom": 140.75,
  "open": [
@@ -9,27 +9,32 @@
   "AAPL long +1.0%",
   "NVDA long +1.5%",
   "META long +2.3%",
-  "HOOD short -0.1%",
-  "CRCL short -0.1%"
+  "HOOD short -0.4%",
+  "CRCL short -0.0%",
+  "MSTR short -0.3%"
  ],
- "stock_candidates": 15,
+ "stock_candidates": 16,
  "top_stocks": [
-  "MSTR +15.7% vol=$932,525",
-  "CRCL +15.5% vol=$685,226",
-  "HOOD +12.6% vol=$462,396",
+  "MSTR +15.9% vol=$935,223",
+  "CRCL +14.9% vol=$686,262",
+  "HOOD +13.8% vol=$418,533",
   "COIN +9.2% vol=$146,128",
-  "SPCX +6.2% vol=$677,691"
+  "SPCX +6.7% vol=$681,098"
  ],
  "futures_ok": true,
- "futures_balance": 43.62,
+ "futures_balance": 36.62,
  "unallocated_spot": [
-  "ETH $499"
+  "ETH $501"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: ADA, XRP, FARTCOIN",
+ "call_reason": "תנועה חזקה במטבע חדש: ADA, TRUMP, XRP",
  "claude_called": true,
- "market_read": "שוק הקריפטו רותח עם BTC ואלטקוינים רבים ב-RSI מעל 65-72 אחרי ריצות חדות, בעוד מניות הקריפטו (MSTR/CRCL/HOOD) קפצו 10-16% ביום - מצב בשל ל-mean reversion בטווח הקצר.",
- "skip_reason": "ה-USDC הפנוי הוא רק $28 (מתחת לסף השימושי) והתיק כבר ב-110% חשיפה עם 6 פוזיציות פתוחות; HOOD ו-CRCL כבר שורטים תקפים על אותה תזה ולכן לא מסובבים אותם, ו-ETH המרוחק נשאר כחניה כי כל הקריפטו נראה overbought כרגע ולא מציע נקודת כניסה טובה יותר.",
+ "market_read": "שוק הקריפטו במומנטום חיובי כללי אך רוב המטבעות המובילים כבר overbought, אלטרנטיבות עם RSI בינוני כמו XMR מציעות סיכוי/סיכון טוב יותר.",
+ "skip_reason": "ADA/XRP/LINK/BNB/ETH כבר overbought (RSI>65-73) אחרי ריצות חדות - מסוכן להיכנס לונג עכשיו; הפוזיציות הקיימות במניות בדרך ליעד ולא נוגעות.",
  "picks": [
-  "MSTR short size=20% conf=MEDIUM"
+  "XMR long size=25% conf=MEDIUM"
+ ],
+ "order_errors": [
+  "liq ETH: all sizes rejected (margin collateral lock)",
+  "XMR: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
