@@ -1,40 +1,39 @@
 {
- "time": "2026-09-04T07:00:06",
+ "time": "2026-09-04T08:00:06",
  "usdc": 28.15,
- "portfolio": 604.23,
+ "portfolio": 604.02,
  "api_billing_blocked": false,
  "margin_headroom": 140.75,
  "open": [
   "ANTHROPIC long +4.1%",
   "AAPL long +0.8%",
-  "NVDA long +1.8%",
-  "META long +2.5%",
-  "HOOD short -1.1%",
-  "CRCL short +0.2%",
-  "MSTR short +0.7%"
+  "NVDA long +2.2%",
+  "META long +3.0%",
+  "HOOD short -1.2%",
+  "CRCL short +0.4%",
+  "MSTR short +0.6%"
  ],
- "stock_candidates": 14,
+ "stock_candidates": 15,
  "top_stocks": [
-  "CRCL +14.1% vol=$726,592",
-  "MSTR +13.3% vol=$1,007,918",
-  "HOOD +13.2% vol=$467,938",
-  "COIN +7.0% vol=$130,285",
-  "SPCX +6.9% vol=$688,783"
+  "CRCL +13.9% vol=$694,843",
+  "MSTR +13.7% vol=$1,036,752",
+  "HOOD +13.0% vol=$476,033",
+  "COIN +7.3% vol=$129,644",
+  "SPCX +7.2% vol=$703,697"
  ],
  "futures_ok": true,
- "futures_balance": 37.75,
+ "futures_balance": 37.66,
  "unallocated_spot": [
   "ETH $501"
  ],
  "call_reason": "פוזיציה חלשה: HOOD",
  "claude_called": true,
- "market_read": "השוק הכללי בקריפטו יציב-חיובי עם BTC סביב 80.8K ותנודתיות מתונה, בעוד מניות הטוקנים שכבר בפוזיציה רצות חזק אך עדיין קרובות לכניסה.",
- "skip_reason": "שאר המועמדים בקריפטו (DOT, PENGU, DOGE, LTC, BNB) חלשים או בנפח נמוך מדי, ומניות ה-xStocks הפתוחות כבר בפוזיציה טובה ומתקדמות ליעד - אין הצדקה לגעת בהן או להוסיף חשיפה כפולה.",
+ "market_read": "השוק הכללי רגוע יחסית עם BTC בקונסולידציה קלה, ורוב הפוזיציות הקיימות בפורטפוליו מתקדמות באיטיות לכיוון המטרה בלי צורך להתערב.",
+ "skip_reason": "היתרה הפנויה קטנה מאוד ($28) והפורטפוליו כבר בחשיפה של 130%, כך שרוב המועמדים האחרים (XMR, BNB, מניות) לא מציגים יתרון סיכון/סיכוי ברור מעל הפוזיציות הפתוחות — נשארים עם פוזיציה קטנה אחת ממוקדת בלבד.",
  "picks": [
-  "XMR long size=20% conf=MEDIUM"
+  "LINK short size=15% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "XMR: Kraken: ['EOrder:Insufficient funds']"
+  "LINK: Kraken: ['EOrder:Insufficient initial margin']"
  ]
 }
