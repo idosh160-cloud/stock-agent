@@ -1,39 +1,39 @@
 {
- "time": "2026-09-04T08:00:06",
+ "time": "2026-09-04T09:00:08",
  "usdc": 28.15,
- "portfolio": 604.02,
+ "portfolio": 609.85,
  "api_billing_blocked": false,
  "margin_headroom": 140.75,
  "open": [
   "ANTHROPIC long +4.1%",
-  "AAPL long +0.8%",
   "NVDA long +2.2%",
-  "META long +3.0%",
-  "HOOD short -1.2%",
-  "CRCL short +0.4%",
+  "META long +2.8%",
+  "HOOD short -0.6%",
+  "CRCL short +0.0%",
   "MSTR short +0.6%"
  ],
- "stock_candidates": 15,
+ "stock_candidates": 16,
  "top_stocks": [
-  "CRCL +13.9% vol=$694,843",
-  "MSTR +13.7% vol=$1,036,752",
-  "HOOD +13.0% vol=$476,033",
-  "COIN +7.3% vol=$129,644",
-  "SPCX +7.2% vol=$703,697"
+  "CRCL +15.0% vol=$698,834",
+  "MSTR +14.1% vol=$1,064,127",
+  "HOOD +12.1% vol=$494,315",
+  "SPCX +7.1% vol=$769,965",
+  "COIN +6.9% vol=$126,776"
  ],
  "futures_ok": true,
- "futures_balance": 37.66,
+ "futures_balance": 44.85,
  "unallocated_spot": [
-  "ETH $501"
+  "ETH $505"
  ],
- "call_reason": "פוזיציה חלשה: HOOD",
+ "call_reason": "תנועה חזקה במטבע חדש: XMR",
  "claude_called": true,
- "market_read": "השוק הכללי רגוע יחסית עם BTC בקונסולידציה קלה, ורוב הפוזיציות הקיימות בפורטפוליו מתקדמות באיטיות לכיוון המטרה בלי צורך להתערב.",
- "skip_reason": "היתרה הפנויה קטנה מאוד ($28) והפורטפוליו כבר בחשיפה של 130%, כך שרוב המועמדים האחרים (XMR, BNB, מניות) לא מציגים יתרון סיכון/סיכוי ברור מעל הפוזיציות הפתוחות — נשארים עם פוזיציה קטנה אחת ממוקדת בלבד.",
+ "market_read": "השוק בקריפטו מראה סימני מיצוי בכמה אלטקוינים (XMR, LINK, ETH) עם RSI קיצוני אחרי ריצות חדות, בעוד המניות הטוקניזציה ממשיכות במגמה חיובית מתונה יותר.",
+ "skip_reason": "שאר המניות (NVDA, META, ANTHROPIC) כבר בפוזיציות רווחיות שמתקדמות ליעד ואין סיבה לגעת בהן; HOOD ו-MSTR ו-CRCL שטוחות/שליליות אבל לא מציגות סיגנל טכני חדש מספיק חזק לשינוי כרגע.",
  "picks": [
-  "LINK short size=15% conf=MEDIUM"
+  "LINK short size=25% conf=MEDIUM"
  ],
  "order_errors": [
+  "liq ETH: all sizes rejected (margin collateral lock)",
   "LINK: Kraken: ['EOrder:Insufficient initial margin']"
  ]
 }
