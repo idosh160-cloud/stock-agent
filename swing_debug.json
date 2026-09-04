@@ -1,39 +1,38 @@
 {
- "time": "2026-09-04T09:00:08",
+ "time": "2026-09-04T10:00:06",
  "usdc": 28.15,
- "portfolio": 609.85,
+ "portfolio": 615.47,
  "api_billing_blocked": false,
  "margin_headroom": 140.75,
  "open": [
   "ANTHROPIC long +4.1%",
   "NVDA long +2.2%",
-  "META long +2.8%",
-  "HOOD short -0.6%",
-  "CRCL short +0.0%",
-  "MSTR short +0.6%"
+  "META long +2.7%",
+  "HOOD short +0.0%",
+  "CRCL short +0.3%",
+  "MSTR short +1.0%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "CRCL +15.0% vol=$698,834",
-  "MSTR +14.1% vol=$1,064,127",
-  "HOOD +12.1% vol=$494,315",
-  "SPCX +7.1% vol=$769,965",
-  "COIN +6.9% vol=$126,776"
+  "CRCL +14.7% vol=$698,143",
+  "MSTR +13.7% vol=$1,042,735",
+  "HOOD +12.2% vol=$498,160",
+  "COIN +8.0% vol=$127,371",
+  "SPCX +7.4% vol=$749,304"
  ],
  "futures_ok": true,
- "futures_balance": 44.85,
+ "futures_balance": 45.81,
  "unallocated_spot": [
-  "ETH $505"
+  "ETH $504"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: XMR",
  "claude_called": true,
- "market_read": "השוק בקריפטו מראה סימני מיצוי בכמה אלטקוינים (XMR, LINK, ETH) עם RSI קיצוני אחרי ריצות חדות, בעוד המניות הטוקניזציה ממשיכות במגמה חיובית מתונה יותר.",
- "skip_reason": "שאר המניות (NVDA, META, ANTHROPIC) כבר בפוזיציות רווחיות שמתקדמות ליעד ואין סיבה לגעת בהן; HOOD ו-MSTR ו-CRCL שטוחות/שליליות אבל לא מציגות סיגנל טכני חדש מספיק חזק לשינוי כרגע.",
+ "market_read": "השוק הכללי יציב עם BTC סביב 81K, הפוזיציות הקיימות בסטוקים בכיוון חיובי ולא דורשות שינוי כרגע.",
+ "skip_reason": "הפוזיציות הפתוחות בסטוקים (NVDA, META, ANTHROPIC) מתקדמות יפה לכיוון היעד ואין סיבה לסובב אותן; שאר המועמדים בקריפטו (ETH, LINK, BNB) נראים סחירים אך ללא יתרון ברור כרגע מעבר ל-XMR, והמזומן הזמין מוגבל מדי לפוזיציה נוספת.",
  "picks": [
-  "LINK short size=25% conf=MEDIUM"
+  "XMR short size=15% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "LINK: Kraken: ['EOrder:Insufficient initial margin']"
+  "XMR: Kraken: ['EOrder:Margin trading in asset is restricted']"
  ]
 }
