@@ -1,36 +1,36 @@
 {
- "time": "2026-09-04T19:00:05",
+ "time": "2026-09-04T20:00:06",
  "usdc": 28.15,
- "portfolio": 611.9,
+ "portfolio": 613.6,
  "api_billing_blocked": false,
  "margin_headroom": 140.75,
  "open": [
   "ANTHROPIC long +4.1%",
-  "NVDA long +2.3%",
-  "META long +2.4%",
-  "HOOD short -0.1%"
+  "NVDA long +2.2%",
+  "META long +3.0%",
+  "HOOD short +1.2%"
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "TSLA -7.2% vol=$1,027,362",
-  "COIN -4.3% vol=$147,643",
+  "TSLA -6.0% vol=$1,309,108",
   "CF -4.0% vol=$68,336",
-  "FLU -2.2% vol=$6,245",
-  "IOT -2.1% vol=$6,243"
+  "COIN -3.6% vol=$132,235",
+  "HOOD -2.5% vol=$688,579",
+  "AAPL -2.4% vol=$181,288"
  ],
  "futures_ok": true,
- "futures_balance": 57.03,
+ "futures_balance": 57.94,
  "unallocated_spot": [
-  "ETH $490"
+  "ETH $491"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: TRUMP, PENGU, ADA",
  "claude_called": true,
- "market_read": "השוק בקריפטו נמצא בתיקון קל עם רוב המטבעות ליד תחתית הטווח היומי אך ללא פאניקה חריגה.",
- "skip_reason": "שאר המועמדים או שנפח המסחר שלהם נמוך מדי (CC) או שהאיתותים חלשים מדי (ADA, DOGE, AVAX) ביחס ל-XRP שמציג את השילוב הטוב ביותר של נזילות וקרבה לתמיכה.",
+ "market_read": "השוק הכללי בקריפטו במגמת ירידה קלה עם RSI אמצעי-נמוך, אין סימני מכירת יתר קיצונית אך יש הזדמנויות מדודות לקניית ירידות קלות.",
+ "skip_reason": "רוב המטבעות והמניות מציגים מומנטום שלילי חלש ללא איתות ברור לשורט או לונג חזק, לכן נשארתי עם פוזיציה שמרנית אחת בלבד בביטקוין.",
  "picks": [
-  "XRP long size=20% conf=MEDIUM"
+  "BTC long size=15% conf=MEDIUM"
  ],
  "order_errors": [
-  "XRP: Kraken: ['EOrder:Insufficient funds']"
+  "BTC: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
