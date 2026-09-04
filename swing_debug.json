@@ -1,39 +1,38 @@
 {
- "time": "2026-09-04T12:00:07",
+ "time": "2026-09-04T13:00:07",
  "usdc": 28.15,
- "portfolio": 616.92,
+ "portfolio": 610.88,
  "api_billing_blocked": false,
  "margin_headroom": 140.75,
  "open": [
   "ANTHROPIC long +4.1%",
-  "NVDA long +2.5%",
-  "META long +2.7%",
-  "HOOD short +0.8%",
-  "CRCL short +0.7%",
-  "MSTR short +0.3%"
+  "NVDA long +2.3%",
+  "META long +2.0%",
+  "HOOD short +2.5%",
+  "CRCL short +4.1%",
+  "MSTR short +4.1%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "MSTR +14.1% vol=$1,043,351",
-  "CRCL +11.7% vol=$615,003",
-  "HOOD +11.4% vol=$571,691",
-  "SPCX +6.2% vol=$954,303",
-  "COIN +6.0% vol=$102,987"
+  "MSTR +7.7% vol=$1,095,251",
+  "CRCL +7.7% vol=$640,150",
+  "HOOD +6.6% vol=$700,521",
+  "SPCX +5.2% vol=$991,259",
+  "CF -2.9% vol=$64,659"
  ],
  "futures_ok": true,
- "futures_balance": 46.79,
+ "futures_balance": 56.11,
  "unallocated_spot": [
-  "ETH $504"
+  "ETH $490"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: XMR, FARTCOIN",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP, DOT, PENGU",
  "claude_called": true,
- "market_read": "השוק בעדנה מתונה עם רוב הפוזיציות הקיימות ברווח קטן ויציב, אבל התיק כבר חשוף מעל 100% כך שצריך למחזר הון בזהירות לפני כניסה חדשה.",
- "skip_reason": "מטבעות ומניות אחרות עם RSI קיצוני (LINK, TON, BCH, FARTCOIN) מסוכנים ללונג ולא מספיק ברור לשורט; המניות שכבר יש בהן פוזיציה (MSTR, CRCL, HOOD) לא צריכות תוספת כרגע.",
+ "market_read": "השוק הכללי בירידה קלה עם רוב הקריפטו קרוב לתחתית הרצועה - סימני oversold אבל לא היפוך ברור עדיין, והמניות הטוקניזציה ממשיכות מגמת עלייה חזקה.",
+ "skip_reason": "יתר הפוזיציות הפתוחות בסטוקים בדרך ליעד ולא כדאי לגעת בהן, ותיק ה-ETH הפאסיבי נשאר כאחיזה נכונה כרגע ולא כדאי לגרוע ממנו לטובת סטאפ קריפטו בינוני; USDC הפנוי מוגבל אז נכנסים בפוזיציה קטנה אחת איכותית בלבד.",
  "picks": [
-  "XMR long size=27% conf=MEDIUM"
+  "XRP long size=15% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "XMR: Kraken: ['EOrder:Insufficient funds']"
+  "XRP: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
