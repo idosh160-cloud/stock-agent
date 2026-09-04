@@ -1,38 +1,39 @@
 {
- "time": "2026-09-04T11:00:06",
+ "time": "2026-09-04T12:00:07",
  "usdc": 28.15,
  "portfolio": 616.92,
  "api_billing_blocked": false,
  "margin_headroom": 140.75,
  "open": [
   "ANTHROPIC long +4.1%",
-  "NVDA long +2.7%",
+  "NVDA long +2.5%",
   "META long +2.7%",
   "HOOD short +0.8%",
-  "CRCL short -0.0%",
-  "MSTR short +1.0%"
+  "CRCL short +0.7%",
+  "MSTR short +0.3%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "CRCL +14.6% vol=$612,913",
-  "MSTR +13.2% vol=$1,044,359",
-  "HOOD +11.0% vol=$572,100",
-  "COIN +7.2% vol=$127,653",
-  "SPCX +6.7% vol=$920,027"
+  "MSTR +14.1% vol=$1,043,351",
+  "CRCL +11.7% vol=$615,003",
+  "HOOD +11.4% vol=$571,691",
+  "SPCX +6.2% vol=$954,303",
+  "COIN +6.0% vol=$102,987"
  ],
  "futures_ok": true,
- "futures_balance": 46.24,
+ "futures_balance": 46.79,
  "unallocated_spot": [
-  "ETH $505"
+  "ETH $504"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: XMR",
+ "call_reason": "תנועה חזקה במטבע חדש: XMR, FARTCOIN",
  "claude_called": true,
- "market_read": "השוק במגמת עלייה מתונה עם כמה נכסים overbought ורוב הפוזיציות הקיימות בפורטפוליו מתקדמות בכיוון הנכון.",
- "skip_reason": "שאר המועמדים או overbought קיצוני (LINK, ETH) או ללא מומנטום ברור (ADA, DOT, BNB), והפורטפוליו כבר חשוף ב-108% כך שלא הוספתי פוזיציה גדולה נוספת.",
+ "market_read": "השוק בעדנה מתונה עם רוב הפוזיציות הקיימות ברווח קטן ויציב, אבל התיק כבר חשוף מעל 100% כך שצריך למחזר הון בזהירות לפני כניסה חדשה.",
+ "skip_reason": "מטבעות ומניות אחרות עם RSI קיצוני (LINK, TON, BCH, FARTCOIN) מסוכנים ללונג ולא מספיק ברור לשורט; המניות שכבר יש בהן פוזיציה (MSTR, CRCL, HOOD) לא צריכות תוספת כרגע.",
  "picks": [
-  "XMR long size=12% conf=MEDIUM"
+  "XMR long size=27% conf=MEDIUM"
  ],
  "order_errors": [
+  "liq ETH: all sizes rejected (margin collateral lock)",
   "XMR: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
