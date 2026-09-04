@@ -1,39 +1,39 @@
 {
- "time": "2026-09-04T04:00:06",
+ "time": "2026-09-04T05:00:05",
  "usdc": 28.15,
- "portfolio": 604.64,
+ "portfolio": 604.4,
  "api_billing_blocked": false,
  "margin_headroom": 140.75,
  "open": [
   "ANTHROPIC long +4.1%",
-  "AAPL long +1.2%",
-  "NVDA long +2.1%",
+  "AAPL long +1.1%",
+  "NVDA long +1.8%",
   "META long +2.3%",
-  "HOOD short -1.2%",
-  "CRCL short +0.5%",
-  "MSTR short -0.2%"
+  "HOOD short -1.1%",
+  "CRCL short +0.4%",
+  "MSTR short -0.4%"
  ],
  "stock_candidates": 14,
  "top_stocks": [
-  "MSTR +15.2% vol=$942,106",
-  "CRCL +14.4% vol=$671,260",
-  "HOOD +13.1% vol=$427,548",
-  "COIN +8.1% vol=$139,233",
-  "SPCX +6.9% vol=$708,692"
+  "MSTR +15.8% vol=$943,275",
+  "CRCL +14.4% vol=$665,292",
+  "HOOD +13.6% vol=$426,237",
+  "COIN +8.2% vol=$131,762",
+  "SPCX +7.0% vol=$711,371"
  ],
  "futures_ok": true,
- "futures_balance": 37.98,
+ "futures_balance": 37.12,
  "unallocated_spot": [
-  "ETH $501"
+  "ETH $502"
  ],
  "call_reason": "פוזיציה חלשה: HOOD",
  "claude_called": true,
- "market_read": "השוק הכללי רגוע-מעורב, BTC נסחר בטווח ללא כיוון ברור בעוד כמה מטבעות מראים תשישות אחרי ריצות חדות.",
- "skip_reason": "ההון הפנוי מוגבל מאוד ($28 USDC, exposure כבר 130%), ולכן נבחרה עסקה אחת ממוקדת בלבד במקום לפזר על כמה סטאפים חלשים; שאר המועמדים (XMR, DOT, מניות) לא הציגו יתרון ברור מספיק כדי להצדיק לקיחת מרווח נוסף כרגע.",
+ "market_read": "השוק כללית נייטרלי-שלילי עם רוב האלטים במגמה יורדת קלה ומניות ה-xStocks שכבר בפוזיציות רווחיות מתקדמות לעבר היעד.",
+ "skip_reason": "רוב המניות הפתוחות כבר בתנועה חיובית לכיוון היעד ואין הצדקה לרוטציה; שאר המועמדים בקריפטו וב-xStocks נראים ניטרליים או overbought בלי סיגנל ברור מספיק לפוזיציה נוספת בגודל משמעותי, וההון הפנוי זעיר ($28) כך שרק פוזיציה קטנה אחת מוצדקת.",
  "picks": [
-  "ADA short size=15% conf=MEDIUM"
+  "XMR long size=10% conf=MEDIUM"
  ],
  "order_errors": [
-  "ADA: Kraken: ['EOrder:Insufficient initial margin']"
+  "XMR: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
