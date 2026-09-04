@@ -1,33 +1,39 @@
 {
- "time": "2026-09-04T15:00:06",
+ "time": "2026-09-04T16:00:11",
  "usdc": 28.15,
- "portfolio": 605.95,
+ "portfolio": 600.92,
  "api_billing_blocked": false,
  "margin_headroom": 140.75,
  "open": [
   "ANTHROPIC long +4.1%",
-  "NVDA long +3.2%",
-  "META long +2.1%",
-  "HOOD short +0.9%",
-  "CRCL short +3.8%",
-  "MSTR short +2.7%"
+  "NVDA long +2.4%",
+  "META long +2.5%",
+  "HOOD short -0.1%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "TSLA -7.0% vol=$850,407",
-  "COIN -5.6% vol=$43,215",
-  "CF -5.5% vol=$63,786",
-  "NVDA +3.0% vol=$465,185",
-  "AAPL -2.9% vol=$189,598"
+  "TSLA -8.3% vol=$990,531",
+  "CF -5.8% vol=$67,425",
+  "COIN -4.5% vol=$53,090",
+  "FLU -3.1% vol=$6,314",
+  "AAPL -2.7% vol=$187,970"
  ],
  "futures_ok": true,
- "futures_balance": 53.08,
+ "futures_balance": 56.59,
  "unallocated_spot": [
-  "ETH $488"
+  "ETH $490"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: TRUMP, PENGU, ADA",
  "claude_called": true,
- "market_read": "",
- "skip_reason": "Expecting ',' delimiter: line 17 column 35 (char 679)",
- "picks": []
+ "market_read": "השוק הקריפטו נמצא בירידה כללית עם רוב המטבעות קרוב לתחתית הבולינגר ו-RSI נמוך, מה שיוצר הזדמנויות ריבאונד טקטיות במטבעות נזילים.",
+ "skip_reason": "דחיתי את שאר המטבעות (TRUMP, PENGU, CC, DOT, DOGE, LTC, FARTCOIN) בגלל ווליום נמוך יחסית או חוסר בהירות בכיוון, ואת המניות כי אין נתוני RSI ברורים לתמוך בכניסה כרגע פרט לפוזיציות הקיימות שממשיכות לכיוון היעד.",
+ "picks": [
+  "SOL long size=20% conf=MEDIUM",
+  "XRP long size=15% conf=MEDIUM"
+ ],
+ "order_errors": [
+  "liq ETH: all sizes rejected (margin collateral lock)",
+  "SOL: Kraken: ['EOrder:Insufficient funds']",
+  "XRP: Kraken: ['EOrder:Insufficient funds']"
+ ]
 }
