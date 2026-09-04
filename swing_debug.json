@@ -1,38 +1,33 @@
 {
- "time": "2026-09-04T14:00:07",
+ "time": "2026-09-04T15:00:06",
  "usdc": 28.15,
- "portfolio": 606.92,
+ "portfolio": 605.95,
  "api_billing_blocked": false,
  "margin_headroom": 140.75,
  "open": [
   "ANTHROPIC long +4.1%",
-  "NVDA long +3.9%",
-  "META long +1.3%",
-  "HOOD short +2.0%",
-  "CRCL short +4.5%",
-  "MSTR short +1.8%"
+  "NVDA long +3.2%",
+  "META long +2.1%",
+  "HOOD short +0.9%",
+  "CRCL short +3.8%",
+  "MSTR short +2.7%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "MSTR +6.1% vol=$1,239,487",
-  "CF -3.2% vol=$64,489",
-  "NVDA +3.1% vol=$446,633",
-  "TSLA -2.6% vol=$850,054",
-  "GLD -2.2% vol=$134,365"
+  "TSLA -7.0% vol=$850,407",
+  "COIN -5.6% vol=$43,215",
+  "CF -5.5% vol=$63,786",
+  "NVDA +3.0% vol=$465,185",
+  "AAPL -2.9% vol=$189,598"
  ],
  "futures_ok": true,
- "futures_balance": 52.04,
+ "futures_balance": 53.08,
  "unallocated_spot": [
-  "ETH $490"
+  "ETH $488"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TRUMP, PENGU, DOT",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP, PENGU, ADA",
  "claude_called": true,
- "market_read": "השוק הקריפטו כולו במגמת ירידה קלה עם RSI נמוך בכל הטבלה — מצב של תיקון-יתר שמזמין ריבאונד טקטי בלונג קטן, בזמן שהמניות הטוקניזציה כבר במגמה חיובית ומחזיקות יעד.",
- "skip_reason": "שאר המטבעות מציגים תמונה דומה (RSI נמוך, BB תחתי) בלי יתרון מובחן על SOL, והמניות הפתוחות כרגע בדרך ליעד ולא כדאי לסובב אותן; ה-USDC הפנוי קטן מדי להוסיף פוזיציה שנייה משמעותית.",
- "picks": [
-  "SOL long size=18% conf=MEDIUM"
- ],
- "order_errors": [
-  "SOL: Kraken: ['EOrder:Insufficient funds']"
- ]
+ "market_read": "",
+ "skip_reason": "Expecting ',' delimiter: line 17 column 35 (char 679)",
+ "picks": []
 }
