@@ -1,40 +1,39 @@
 {
- "time": "2026-09-04T03:00:05",
+ "time": "2026-09-04T04:00:06",
  "usdc": 28.15,
- "portfolio": 605.25,
+ "portfolio": 604.64,
  "api_billing_blocked": false,
  "margin_headroom": 140.75,
  "open": [
   "ANTHROPIC long +4.1%",
-  "AAPL long +1.1%",
-  "NVDA long +1.8%",
+  "AAPL long +1.2%",
+  "NVDA long +2.1%",
   "META long +2.3%",
-  "HOOD short -0.8%",
+  "HOOD short -1.2%",
   "CRCL short +0.5%",
-  "MSTR short +0.8%"
+  "MSTR short -0.2%"
  ],
  "stock_candidates": 14,
  "top_stocks": [
-  "CRCL +14.6% vol=$690,490",
-  "MSTR +14.1% vol=$932,207",
-  "HOOD +12.6% vol=$413,123",
-  "COIN +8.2% vol=$144,867",
-  "SPCX +6.8% vol=$688,080"
+  "MSTR +15.2% vol=$942,106",
+  "CRCL +14.4% vol=$671,260",
+  "HOOD +13.1% vol=$427,548",
+  "COIN +8.1% vol=$139,233",
+  "SPCX +6.9% vol=$708,692"
  ],
  "futures_ok": true,
- "futures_balance": 38.67,
+ "futures_balance": 37.98,
  "unallocated_spot": [
   "ETH $501"
  ],
- "call_reason": "תנועה חזקה במניה: COIN, SPCX, TSLA",
+ "call_reason": "פוזיציה חלשה: HOOD",
  "claude_called": true,
- "market_read": "השוק במגמה מעורבת עם רוב הפוזיציות הקיימות בתנועה איטית לכיוון היעד, ומטבעות ה-alt מציגים היחלשות זמנית שיוצרת הזדמנויות דיפ-ביי.",
- "skip_reason": "שאר המועמדים (ADA overbought, BNB/LTC ניטרליים, מניות ה-xStock כבר פתוחות ומתקדמות ליעד) לא מציגים סטאפ ברור יותר מ-XMR כרגע.",
+ "market_read": "השוק הכללי רגוע-מעורב, BTC נסחר בטווח ללא כיוון ברור בעוד כמה מטבעות מראים תשישות אחרי ריצות חדות.",
+ "skip_reason": "ההון הפנוי מוגבל מאוד ($28 USDC, exposure כבר 130%), ולכן נבחרה עסקה אחת ממוקדת בלבד במקום לפזר על כמה סטאפים חלשים; שאר המועמדים (XMR, DOT, מניות) לא הציגו יתרון ברור מספיק כדי להצדיק לקיחת מרווח נוסף כרגע.",
  "picks": [
-  "XMR long size=25% conf=MEDIUM"
+  "ADA short size=15% conf=MEDIUM"
  ],
  "order_errors": [
-  "liq ETH: all sizes rejected (margin collateral lock)",
-  "XMR: Kraken: ['EOrder:Insufficient funds']"
+  "ADA: Kraken: ['EOrder:Insufficient initial margin']"
  ]
 }
