@@ -1,7 +1,7 @@
 {
- "time": "2026-09-04T02:00:05",
+ "time": "2026-09-04T03:00:05",
  "usdc": 28.15,
- "portfolio": 605.95,
+ "portfolio": 605.25,
  "api_billing_blocked": false,
  "margin_headroom": 140.75,
  "open": [
@@ -9,31 +9,32 @@
   "AAPL long +1.1%",
   "NVDA long +1.8%",
   "META long +2.3%",
-  "HOOD short -0.3%",
+  "HOOD short -0.8%",
   "CRCL short +0.5%",
-  "MSTR short +0.4%"
+  "MSTR short +0.8%"
  ],
  "stock_candidates": 14,
  "top_stocks": [
-  "MSTR +15.1% vol=$927,061",
-  "CRCL +14.0% vol=$692,044",
-  "HOOD +12.6% vol=$407,360",
-  "COIN +8.6% vol=$144,994",
-  "SPCX +6.8% vol=$690,911"
+  "CRCL +14.6% vol=$690,490",
+  "MSTR +14.1% vol=$932,207",
+  "HOOD +12.6% vol=$413,123",
+  "COIN +8.2% vol=$144,867",
+  "SPCX +6.8% vol=$688,080"
  ],
  "futures_ok": true,
- "futures_balance": 39.16,
+ "futures_balance": 38.67,
  "unallocated_spot": [
   "ETH $501"
  ],
  "call_reason": "תנועה חזקה במניה: COIN, SPCX, TSLA",
  "claude_called": true,
- "market_read": "השוק הכללי רגוע יחסית עם BTC יציב סביב 81 אלף, אבל כמה אלטקוינים כמו ADA ו-LINK נראים מוצפים אחרי ריצה קצרה.",
- "skip_reason": "שאר המועמדים בקריפטו נמוכי נפח או ניטרליים (DOGE, TRUMP, DOT, FARTCOIN), והפוזיציות הקיימות במניות כבר בדרך ליעד ולא כדאי לסובב אותן.",
+ "market_read": "השוק במגמה מעורבת עם רוב הפוזיציות הקיימות בתנועה איטית לכיוון היעד, ומטבעות ה-alt מציגים היחלשות זמנית שיוצרת הזדמנויות דיפ-ביי.",
+ "skip_reason": "שאר המועמדים (ADA overbought, BNB/LTC ניטרליים, מניות ה-xStock כבר פתוחות ומתקדמות ליעד) לא מציגים סטאפ ברור יותר מ-XMR כרגע.",
  "picks": [
-  "ADA short size=18% conf=MEDIUM"
+  "XMR long size=25% conf=MEDIUM"
  ],
  "order_errors": [
-  "ADA: Kraken: ['EOrder:Insufficient initial margin']"
+  "liq ETH: all sizes rejected (margin collateral lock)",
+  "XMR: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
