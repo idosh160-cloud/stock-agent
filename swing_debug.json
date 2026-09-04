@@ -1,36 +1,33 @@
 {
- "time": "2026-09-04T20:00:06",
+ "time": "2026-09-04T21:00:06",
  "usdc": 28.15,
- "portfolio": 613.6,
+ "portfolio": 612.94,
  "api_billing_blocked": false,
  "margin_headroom": 140.75,
  "open": [
   "ANTHROPIC long +4.1%",
-  "NVDA long +2.2%",
-  "META long +3.0%",
-  "HOOD short +1.2%"
+  "NVDA long +2.0%",
+  "META long +3.3%",
+  "HOOD short +1.1%"
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "TSLA -6.0% vol=$1,309,108",
-  "CF -4.0% vol=$68,336",
-  "COIN -3.6% vol=$132,235",
-  "HOOD -2.5% vol=$688,579",
-  "AAPL -2.4% vol=$181,288"
+  "TSLA -6.8% vol=$1,251,125",
+  "CF -3.5% vol=$69,286",
+  "COIN -3.5% vol=$131,945",
+  "AAPL -2.3% vol=$181,872",
+  "FLU -2.2% vol=$6,245"
  ],
  "futures_ok": true,
- "futures_balance": 57.94,
+ "futures_balance": 57.82,
  "unallocated_spot": [
-  "ETH $491"
+  "ETH $490"
  ],
  "call_reason": "תנועה חזקה במטבע חדש: TRUMP, PENGU, ADA",
  "claude_called": true,
- "market_read": "השוק הכללי בקריפטו במגמת ירידה קלה עם RSI אמצעי-נמוך, אין סימני מכירת יתר קיצונית אך יש הזדמנויות מדודות לקניית ירידות קלות.",
- "skip_reason": "רוב המטבעות והמניות מציגים מומנטום שלילי חלש ללא איתות ברור לשורט או לונג חזק, לכן נשארתי עם פוזיציה שמרנית אחת בלבד בביטקוין.",
+ "market_read": "רוב הקריפטו במגמת ירידה עם RSI סביב 40-45 ו-MACD שלילי, כלומר אין הזדמנויות ברורות ללונג או שורט חד-משמעי כרגע.",
+ "skip_reason": "האלטקוינים מציגים תמונה מעורבת (RSI לא קיצוני, BB% נמוך אך לא באזור היפוך ברור) כך שהעדפתי לא להיכנס לפוזיציית מינוף חדשה עליהם; יתר הפוזיציות הפתוחות בתיק בכיוון חיובי ולא מצריכות רוטציה.",
  "picks": [
-  "BTC long size=15% conf=MEDIUM"
- ],
- "order_errors": [
-  "BTC: Kraken: ['EOrder:Insufficient funds']"
+  "TSLA long size=20% conf=MEDIUM"
  ]
 }
