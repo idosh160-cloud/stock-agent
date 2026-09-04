@@ -1,38 +1,38 @@
 {
- "time": "2026-09-04T13:00:07",
+ "time": "2026-09-04T14:00:07",
  "usdc": 28.15,
- "portfolio": 610.88,
+ "portfolio": 606.92,
  "api_billing_blocked": false,
  "margin_headroom": 140.75,
  "open": [
   "ANTHROPIC long +4.1%",
-  "NVDA long +2.3%",
-  "META long +2.0%",
-  "HOOD short +2.5%",
-  "CRCL short +4.1%",
-  "MSTR short +4.1%"
+  "NVDA long +3.9%",
+  "META long +1.3%",
+  "HOOD short +2.0%",
+  "CRCL short +4.5%",
+  "MSTR short +1.8%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "MSTR +7.7% vol=$1,095,251",
-  "CRCL +7.7% vol=$640,150",
-  "HOOD +6.6% vol=$700,521",
-  "SPCX +5.2% vol=$991,259",
-  "CF -2.9% vol=$64,659"
+  "MSTR +6.1% vol=$1,239,487",
+  "CF -3.2% vol=$64,489",
+  "NVDA +3.1% vol=$446,633",
+  "TSLA -2.6% vol=$850,054",
+  "GLD -2.2% vol=$134,365"
  ],
  "futures_ok": true,
- "futures_balance": 56.11,
+ "futures_balance": 52.04,
  "unallocated_spot": [
   "ETH $490"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: TRUMP, DOT, PENGU",
+ "call_reason": "תנועה חזקה במטבע חדש: TRUMP, PENGU, DOT",
  "claude_called": true,
- "market_read": "השוק הכללי בירידה קלה עם רוב הקריפטו קרוב לתחתית הרצועה - סימני oversold אבל לא היפוך ברור עדיין, והמניות הטוקניזציה ממשיכות מגמת עלייה חזקה.",
- "skip_reason": "יתר הפוזיציות הפתוחות בסטוקים בדרך ליעד ולא כדאי לגעת בהן, ותיק ה-ETH הפאסיבי נשאר כאחיזה נכונה כרגע ולא כדאי לגרוע ממנו לטובת סטאפ קריפטו בינוני; USDC הפנוי מוגבל אז נכנסים בפוזיציה קטנה אחת איכותית בלבד.",
+ "market_read": "השוק הקריפטו כולו במגמת ירידה קלה עם RSI נמוך בכל הטבלה — מצב של תיקון-יתר שמזמין ריבאונד טקטי בלונג קטן, בזמן שהמניות הטוקניזציה כבר במגמה חיובית ומחזיקות יעד.",
+ "skip_reason": "שאר המטבעות מציגים תמונה דומה (RSI נמוך, BB תחתי) בלי יתרון מובחן על SOL, והמניות הפתוחות כרגע בדרך ליעד ולא כדאי לסובב אותן; ה-USDC הפנוי קטן מדי להוסיף פוזיציה שנייה משמעותית.",
  "picks": [
-  "XRP long size=15% conf=MEDIUM"
+  "SOL long size=18% conf=MEDIUM"
  ],
  "order_errors": [
-  "XRP: Kraken: ['EOrder:Insufficient funds']"
+  "SOL: Kraken: ['EOrder:Insufficient funds']"
  ]
 }
