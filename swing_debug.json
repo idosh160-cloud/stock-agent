@@ -1,37 +1,32 @@
 {
- "time": "2026-09-04T23:00:05",
+ "time": "2026-09-05T00:00:05",
  "usdc": 28.15,
- "portfolio": 606.16,
+ "portfolio": 607.03,
  "api_billing_blocked": false,
  "margin_headroom": 140.75,
  "open": [
   "ANTHROPIC long +4.1%",
   "NVDA long +2.0%",
   "META long +2.7%",
-  "HOOD short +0.9%",
-  "TSLA long +0.1%"
+  "HOOD short +1.0%",
+  "TSLA long -0.2%"
  ],
- "stock_candidates": 17,
+ "stock_candidates": 16,
  "top_stocks": [
-  "TSLA -5.3% vol=$1,214,818",
-  "COIN -3.5% vol=$131,945",
-  "FLU -3.1% vol=$6,190",
-  "CF -2.5% vol=$68,978",
-  "AAPL -2.4% vol=$180,363"
+  "TSLA -5.5% vol=$1,221,399",
+  "COIN -3.4% vol=$132,469",
+  "AAPL -2.4% vol=$178,179",
+  "IOT -2.1% vol=$6,243",
+  "CF -2.0% vol=$70,255"
  ],
  "futures_ok": true,
- "futures_balance": 51.22,
+ "futures_balance": 51.25,
  "unallocated_spot": [
-  "ETH $490"
+  "ETH $491"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: ADA, PENGU, TRUMP",
+ "call_reason": "תנועה חזקה במטבע חדש: ADA, PENGU, FARTCOIN",
  "claude_called": true,
- "market_read": "השוק כולו באדום עם RSI בינוני (38-44) ו-MACD שלילי בכל המטבעות — זו ירידה מתמשכת ולא תחתית קיצונית, אז נדרשת זהירות בכניסות לונג.",
- "skip_reason": "ADA ו-XRP נראים oversold אבל ל-ADA יש היסטוריה שלילית באותו טווח RSI בדיוק, וה-MACD עדיין שלילי בכולם כך שאין אישור ברור להיפוך — עדיף להישאר עם פוזיציה קטנה וממוקדת ב-SOL ולא לפזר על פני מספר מטבעות חלשים; ETH הספוט נשאר כפי שהוא כי אין הצדקה למכור אותו לתוך שוק יורד.",
- "picks": [
-  "SOL long size=22% conf=MEDIUM"
- ],
- "order_errors": [
-  "SOL: Kraken: ['EOrder:Insufficient funds']"
- ]
+ "market_read": "",
+ "skip_reason": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CejJrvSbSZkS8RGCYLyzL'}",
+ "picks": []
 }
