@@ -1923,5 +1923,30 @@
     "entry_bb_pct": null,
     "entry_macd_hist": null,
     "entry_change_24h": 15.68
+  },
+  {
+    "coin": "HOOD",
+    "pair": "PF_HOODXUSD",
+    "status": "closed_stale",
+    "leveraged": false,
+    "collateral": 124.95,
+    "volume": 1.013382,
+    "entry_price": 123.3,
+    "close_price": 122.93,
+    "target_price": 114.67,
+    "stop_price": 126.38,
+    "pnl_usd": 0.37,
+    "pnl_pct": 0.3,
+    "date_open": "2026-09-03T16:00:46.061230",
+    "date_close": "2026-09-05T17:00:05.518006",
+    "reasoning": "HOOD קפצה +16.4% ביום אחד עם range של כמעט 17% — תנועה פרבולית קיצונית למניה שסביר שתתקן חלק ממנה. אין נתוני RSI אך גודל התנועה החריג מצדיק שורט מיד-ריברסל עם סטופ הדוק.",
+    "confidence": "MEDIUM",
+    "txid": "a2a8a01f-11ac-45b2-9e0c-492643601ea2",
+    "close_txid": "a2acbb4e-5dd4-41ea-85fa-c94ea9726d76",
+    "side": "short",
+    "entry_rsi": null,
+    "entry_bb_pct": null,
+    "entry_macd_hist": null,
+    "entry_change_24h": 16.43
   }
 ]
