@@ -1948,5 +1948,30 @@
     "entry_bb_pct": null,
     "entry_macd_hist": null,
     "entry_change_24h": 16.43
+  },
+  {
+    "coin": "TSLA",
+    "pair": "PF_TSLAXUSD",
+    "status": "closed_stale",
+    "leveraged": false,
+    "collateral": 122.59,
+    "volume": 0.34667157,
+    "entry_price": 353.62,
+    "close_price": 356.0,
+    "target_price": 371.3,
+    "stop_price": 346.55,
+    "pnl_usd": 0.83,
+    "pnl_pct": 0.67,
+    "date_open": "2026-09-04T21:00:43.207430",
+    "date_close": "2026-09-06T22:00:05.028079",
+    "reasoning": "TSLA ירד 6.8% ביום אחד עם טווח גדול - נראה כמו תגובת יתר/קפיטולציה שיכולה להוביל לריבאונד טכני קצר. כניסה עם סטופ צמוד כי המניה תנודתית מאוד היום, אבל היחס סיכוי/סיכון חיובי לתיקון מהיר כלפי מעלה.",
+    "confidence": "MEDIUM",
+    "txid": "a2ab0e60-76c5-4392-8452-11af9e708f90",
+    "close_txid": "a2af2993-5f55-4dd4-ada6-c59f7efa5185",
+    "side": "long",
+    "entry_rsi": null,
+    "entry_bb_pct": null,
+    "entry_macd_hist": null,
+    "entry_change_24h": -6.77
   }
 ]
