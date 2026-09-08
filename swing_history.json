@@ -1973,5 +1973,30 @@
     "entry_bb_pct": null,
     "entry_macd_hist": null,
     "entry_change_24h": -6.77
+  },
+  {
+    "coin": "NVDA",
+    "pair": "PF_NVDAXUSD",
+    "status": "closed_stale",
+    "leveraged": false,
+    "collateral": 121.8,
+    "volume": 0.53972615,
+    "entry_price": 225.67,
+    "close_price": 227.2,
+    "target_price": 239.21,
+    "stop_price": 221.16,
+    "pnl_usd": 0.83,
+    "pnl_pct": 0.68,
+    "date_open": "2026-09-02T17:00:40.284869",
+    "date_close": "2026-09-08T15:00:05.900455",
+    "reasoning": "NVDA עולה 3% עם נפח מסחר גבוה משמעותית מהממוצע במניות האחרות, מומנטום חיובי ברור ללא סימני מיצוי. כניסה לונג עם סטופ הדוק בהתאם לתנודתיות מניה, יעד ריאלי של המשך התפרצות.",
+    "confidence": "MEDIUM",
+    "txid": "a2a6b28f-8009-4231-b785-74cac48eb477",
+    "close_txid": "a2b29958-6f2a-46e7-95c7-808afbce4513",
+    "side": "long",
+    "entry_rsi": null,
+    "entry_bb_pct": null,
+    "entry_macd_hist": null,
+    "entry_change_24h": 3.05
   }
 ]
