@@ -1998,5 +1998,30 @@
     "entry_bb_pct": null,
     "entry_macd_hist": null,
     "entry_change_24h": 3.05
+  },
+  {
+    "coin": "META",
+    "pair": "PF_METAXUSD",
+    "status": "closed_externally",
+    "leveraged": false,
+    "collateral": 120.36,
+    "volume": 0.20160129,
+    "entry_price": 597.02,
+    "close_price": 597.02,
+    "target_price": 626.87,
+    "stop_price": 602.9902,
+    "pnl_usd": 0,
+    "pnl_pct": 0,
+    "date_open": "2026-09-03T02:00:45.437916",
+    "date_close": "2026-09-09T11:00:05.246816",
+    "reasoning": "META עולה 3.4% עם נפח מסחר סביר ואין סימני מיצוי קיצוני, מומנטום חיובי תומך בהמשך עלייה מתונה. סטופ צר וטארגט פי 2.5 מתאים לתנודתיות מניה.",
+    "confidence": "MEDIUM",
+    "txid": "a2a773b5-cd80-43a6-892d-60006e123b70",
+    "close_txid": null,
+    "side": "long",
+    "entry_rsi": null,
+    "entry_bb_pct": null,
+    "entry_macd_hist": null,
+    "entry_change_24h": 3.42
   }
 ]
