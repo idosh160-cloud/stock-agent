@@ -1,28 +1,25 @@
 {
- "time": "2026-09-12T22:00:05",
+ "time": "2026-09-12T23:00:04",
  "usdc": 28.17,
- "portfolio": 647.48,
+ "portfolio": 648.8,
  "api_billing_blocked": true,
  "margin_headroom": 140.85,
  "open": [
-  "ANTHROPIC long +9.8%"
+  "ANTHROPIC long +8.9%"
  ],
  "stock_candidates": 15,
  "top_stocks": [
-  "HOOD -1.0% vol=$94,415",
-  "GOOGL +0.7% vol=$103,789",
-  "TSLA +0.7% vol=$18,255",
-  "SPCX -0.5% vol=$91,296",
-  "ANTHROPIC +0.4% vol=$21,296"
+  "GOOGL +0.8% vol=$101,504",
+  "ANTHROPIC -0.8% vol=$19,293",
+  "TSLA +0.5% vol=$18,042",
+  "HOOD -0.5% vol=$93,197",
+  "MSTR -0.5% vol=$8,914"
  ],
  "futures_ok": true,
- "futures_balance": 77.39,
+ "futures_balance": 78.97,
  "unallocated_spot": [
-  "ETH $505"
+  "ETH $504"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: XMR",
- "claude_called": true,
- "market_read": "",
- "skip_reason": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CezJBXRiXWup4Wv3cXnvk'}",
- "picks": []
+ "call_reason": "הכל שקט — דולג על קריאה לClaude",
+ "claude_called": false
 }
