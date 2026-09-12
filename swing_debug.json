@@ -1,22 +1,22 @@
 {
- "time": "2026-09-12T20:00:05",
+ "time": "2026-09-12T21:00:04",
  "usdc": 28.17,
- "portfolio": 647.86,
+ "portfolio": 648.14,
  "api_billing_blocked": true,
  "margin_headroom": 140.85,
  "open": [
   "ANTHROPIC long +9.8%"
  ],
- "stock_candidates": 16,
+ "stock_candidates": 15,
  "top_stocks": [
-  "FLU +1.2% vol=$6,053",
-  "TSLA +0.8% vol=$6,338",
-  "SPCX -0.7% vol=$100,247",
-  "MSTR -0.7% vol=$69,036",
-  "META +0.5% vol=$13,337"
+  "HOOD -0.9% vol=$94,426",
+  "GOOGL +0.7% vol=$104,781",
+  "SPCX -0.6% vol=$93,744",
+  "TSLA +0.6% vol=$19,989",
+  "ANTHROPIC +0.4% vol=$21,296"
  ],
  "futures_ok": true,
- "futures_balance": 78.84,
+ "futures_balance": 78.88,
  "unallocated_spot": [
   "ETH $504"
  ],
