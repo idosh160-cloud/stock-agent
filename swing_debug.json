@@ -1,28 +1,26 @@
 {
- "time": "2026-09-13T18:00:05",
+ "time": "2026-09-13T19:00:05",
  "usdc": 28.17,
- "portfolio": 644.76,
+ "portfolio": 645.6,
  "api_billing_blocked": true,
  "margin_headroom": 140.85,
  "open": [
-  "ANTHROPIC long +10.2%"
+  "ANTHROPIC long +11.0%"
  ],
  "stock_candidates": 17,
  "top_stocks": [
   "IOT +8.4% vol=$38,595",
-  "HOOD -2.1% vol=$37,663",
-  "COIN -2.0% vol=$19,549",
-  "NVDA -1.5% vol=$305,431",
-  "ANTHROPIC -1.1% vol=$106,910"
+  "HOOD -2.2% vol=$38,605",
+  "NVDA -1.6% vol=$304,713",
+  "TSLA -1.6% vol=$32,873",
+  "COIN -1.5% vol=$19,506"
  ],
  "futures_ok": true,
- "futures_balance": 78.67,
+ "futures_balance": 78.56,
  "unallocated_spot": [
-  "ETH $501"
+  "ETH $502"
  ],
  "call_reason": "תנועה חזקה במניה: IOT, HOOD",
- "claude_called": true,
- "market_read": "",
- "skip_reason": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cf1sgwRFZ4BrnWMexAMwi'}",
- "picks": []
+ "claude_called": false,
+ "skip": "snapshot זהה לקריאה הקודמת"
 }
