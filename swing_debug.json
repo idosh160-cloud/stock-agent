@@ -1,25 +1,28 @@
 {
- "time": "2026-09-15T12:00:05",
+ "time": "2026-09-15T13:00:05",
  "usdc": 28.17,
- "portfolio": 638.78,
+ "portfolio": 639.09,
  "api_billing_blocked": true,
  "margin_headroom": 140.85,
  "open": [
-  "ANTHROPIC long +11.2%"
+  "ANTHROPIC long +10.8%"
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "IOT -1.9% vol=$16,260",
-  "COIN +1.4% vol=$441,862",
-  "SPCX +1.1% vol=$570,334",
-  "MSTR +0.9% vol=$898,757",
-  "AMZN -0.9% vol=$90,503"
+  "COIN +3.8% vol=$443,886",
+  "IOT -1.8% vol=$14,223",
+  "CRCL +1.7% vol=$760,113",
+  "MSTR +1.2% vol=$840,839",
+  "META +1.1% vol=$105,975"
  ],
  "futures_ok": true,
- "futures_balance": 78.51,
+ "futures_balance": 78.57,
  "unallocated_spot": [
   "ETH $495"
  ],
- "call_reason": "הכל שקט — דולג על קריאה לClaude",
- "claude_called": false
+ "call_reason": "תנועה חזקה במטבע חדש: XDC",
+ "claude_called": true,
+ "market_read": "",
+ "skip_reason": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cf5GRw9f13rd3v6Gs7h6Q'}",
+ "picks": []
 }
