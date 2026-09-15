@@ -1,28 +1,25 @@
 {
- "time": "2026-09-15T11:00:06",
+ "time": "2026-09-15T12:00:05",
  "usdc": 28.17,
- "portfolio": 640.64,
+ "portfolio": 638.78,
  "api_billing_blocked": true,
  "margin_headroom": 140.85,
  "open": [
-  "ANTHROPIC long +10.8%"
+  "ANTHROPIC long +11.2%"
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "IOT -4.5% vol=$13,344",
-  "COIN +4.2% vol=$445,615",
-  "OPENAI +2.2% vol=$8,800",
-  "CRCL +1.7% vol=$762,810",
-  "GOOGL +1.7% vol=$1,456,712"
+  "IOT -1.9% vol=$16,260",
+  "COIN +1.4% vol=$441,862",
+  "SPCX +1.1% vol=$570,334",
+  "MSTR +0.9% vol=$898,757",
+  "AMZN -0.9% vol=$90,503"
  ],
  "futures_ok": true,
- "futures_balance": 78.61,
+ "futures_balance": 78.51,
  "unallocated_spot": [
-  "ETH $497"
+  "ETH $495"
  ],
- "call_reason": "תנועה חזקה במניה: IOT, COIN, OPENAI",
- "claude_called": true,
- "market_read": "",
- "skip_reason": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cf57HCTrNWDgPJC5gkBMr'}",
- "picks": []
+ "call_reason": "הכל שקט — דולג על קריאה לClaude",
+ "claude_called": false
 }
