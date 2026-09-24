@@ -1,22 +1,22 @@
 {
- "time": "2026-09-24T22:00:05",
+ "time": "2026-09-24T23:00:04",
  "usdc": 28.21,
- "portfolio": 686.44,
+ "portfolio": 686.54,
  "api_billing_blocked": true,
  "margin_headroom": 141.05,
  "open": [
-  "ANTHROPIC long +9.8%"
+  "ANTHROPIC long +8.5%"
  ],
  "stock_candidates": 18,
  "top_stocks": [
-  "IOT +7.3% vol=$5,415",
-  "CF +5.0% vol=$7,335",
-  "META +3.6% vol=$357,131",
-  "HOOD -1.5% vol=$567,566",
-  "ANTHROPIC -1.5% vol=$82,958"
+  "IOT +7.0% vol=$5,685",
+  "CF +5.8% vol=$7,397",
+  "META +4.0% vol=$355,474",
+  "ANTHROPIC -2.5% vol=$101,429",
+  "HOOD -1.6% vol=$566,786"
  ],
  "futures_ok": true,
- "futures_balance": 78.3,
+ "futures_balance": 79.04,
  "unallocated_spot": [
   "ETH $537",
   "SOL $27"
@@ -24,6 +24,6 @@
  "call_reason": "תנועה חזקה במטבע חדש: PEAQ, LTC, LINK",
  "claude_called": true,
  "market_read": "",
- "skip_reason": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CfP1tVe4Xwe8VDypLofRz'}",
+ "skip_reason": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CfP6Tm5dUjH9kQHcvJibq'}",
  "picks": []
 }
