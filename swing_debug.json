@@ -1,22 +1,22 @@
 {
- "time": "2026-09-26T04:00:05",
+ "time": "2026-09-26T05:00:06",
  "usdc": 28.21,
- "portfolio": 688.71,
+ "portfolio": 688.97,
  "api_billing_blocked": true,
  "margin_headroom": 141.05,
  "open": [
-  "ANTHROPIC long +7.5%"
+  "ANTHROPIC long +7.8%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "CRCL -5.5% vol=$429,329",
-  "META -4.4% vol=$128,703",
+  "CRCL -5.3% vol=$452,104",
+  "META -4.5% vol=$128,584",
   "CF +4.0% vol=$8,378",
   "COIN -3.0% vol=$70,554",
-  "HOOD -2.3% vol=$44,843"
+  "TSLA -2.3% vol=$586,506"
  ],
  "futures_ok": true,
- "futures_balance": 79.19,
+ "futures_balance": 79.17,
  "unallocated_spot": [
   "ETH $538",
   "SOL $28"
