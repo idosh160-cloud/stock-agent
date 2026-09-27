@@ -1,24 +1,24 @@
 {
- "time": "2026-09-27T06:00:05",
+ "time": "2026-09-27T07:00:05",
  "usdc": 28.21,
- "portfolio": 692.3,
+ "portfolio": 692.91,
  "api_billing_blocked": true,
  "margin_headroom": 141.05,
  "open": [
-  "ANTHROPIC long +6.6%"
+  "ANTHROPIC long +6.8%"
  ],
- "stock_candidates": 14,
+ "stock_candidates": 15,
  "top_stocks": [
-  "CRCL +2.8% vol=$227,660",
-  "MSTR +1.0% vol=$22,116",
-  "ANTHROPIC -0.8% vol=$29,882",
+  "CRCL +2.7% vol=$197,536",
+  "MSTR +1.3% vol=$22,133",
   "IOT +0.7% vol=$7,878",
-  "HOOD +0.4% vol=$52,457"
+  "HOOD +0.4% vol=$52,457",
+  "ANTHROPIC -0.3% vol=$29,761"
  ],
  "futures_ok": true,
- "futures_balance": 79.37,
+ "futures_balance": 79.35,
  "unallocated_spot": [
-  "ETH $541",
+  "ETH $542",
   "SOL $28"
  ],
  "call_reason": "תנועה חזקה במניה: CRCL",
