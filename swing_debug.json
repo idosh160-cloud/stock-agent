@@ -1,7 +1,7 @@
 {
- "time": "2026-09-27T05:00:06",
+ "time": "2026-09-27T06:00:05",
  "usdc": 28.21,
- "portfolio": 689.57,
+ "portfolio": 692.3,
  "api_billing_blocked": true,
  "margin_headroom": 141.05,
  "open": [
@@ -9,21 +9,19 @@
  ],
  "stock_candidates": 14,
  "top_stocks": [
-  "CRCL +2.3% vol=$252,813",
-  "CF +1.1% vol=$6,493",
-  "ANTHROPIC -1.0% vol=$30,335",
+  "CRCL +2.8% vol=$227,660",
+  "MSTR +1.0% vol=$22,116",
+  "ANTHROPIC -0.8% vol=$29,882",
   "IOT +0.7% vol=$7,878",
-  "MSTR +0.7% vol=$25,653"
+  "HOOD +0.4% vol=$52,457"
  ],
  "futures_ok": true,
- "futures_balance": 79.39,
+ "futures_balance": 79.37,
  "unallocated_spot": [
-  "ETH $539",
+  "ETH $541",
   "SOL $28"
  ],
  "call_reason": "תנועה חזקה במניה: CRCL",
- "claude_called": true,
- "market_read": "",
- "skip_reason": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CfTMXxEE6xQg8ucUR63P9'}",
- "picks": []
+ "claude_called": false,
+ "skip": "snapshot זהה לקריאה הקודמת"
 }
