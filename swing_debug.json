@@ -1,7 +1,7 @@
 {
- "time": "2026-09-30T03:00:05",
+ "time": "2026-09-30T04:00:04",
  "usdc": 28.21,
- "portfolio": 685.34,
+ "portfolio": 684.35,
  "api_billing_blocked": true,
  "margin_headroom": 141.05,
  "open": [
@@ -11,19 +11,17 @@
  "top_stocks": [
   "CF +5.2% vol=$5,571",
   "FLU +4.5% vol=$13,271",
+  "HOOD +3.8% vol=$184,888",
   "META +3.7% vol=$293,777",
-  "OPENAI +3.6% vol=$20,786",
-  "HOOD +3.3% vol=$178,393"
+  "OPENAI +3.2% vol=$21,427"
  ],
  "futures_ok": true,
  "futures_balance": 79.55,
  "unallocated_spot": [
-  "ETH $535",
+  "ETH $534",
   "SOL $28"
  ],
- "call_reason": "תנועה חזקה במניה: CF, FLU, META",
- "claude_called": true,
- "market_read": "",
- "skip_reason": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CfYsouunSLXbTEoneDxTh'}",
- "picks": []
+ "call_reason": "תנועה חזקה במניה: CF, FLU, HOOD",
+ "claude_called": false,
+ "skip": "snapshot זהה לקריאה הקודמת"
 }
