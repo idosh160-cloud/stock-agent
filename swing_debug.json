@@ -1,29 +1,27 @@
 {
- "time": "2026-10-04T21:00:04",
+ "time": "2026-10-04T22:00:05",
  "usdc": 28.23,
- "portfolio": 692.39,
+ "portfolio": 691.48,
  "api_billing_blocked": true,
  "margin_headroom": 141.15,
  "open": [
-  "ANTHROPIC long +7.7%"
+  "ANTHROPIC long +7.4%"
  ],
- "stock_candidates": 16,
+ "stock_candidates": 15,
  "top_stocks": [
-  "CRCL +1.5% vol=$185,806",
-  "IOT +1.3% vol=$8,892",
-  "CF -1.0% vol=$8,734",
+  "CRCL +1.5% vol=$201,181",
+  "IOT +1.1% vol=$8,776",
   "COIN +0.9% vol=$31,771",
-  "HOOD +0.6% vol=$53,587"
+  "HOOD +0.5% vol=$83,033",
+  "OPENAI +0.4% vol=$5,695"
  ],
  "futures_ok": true,
- "futures_balance": 79.21,
+ "futures_balance": 79.19,
  "unallocated_spot": [
-  "ETH $542",
+  "ETH $541",
   "SOL $28"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: ADA, CC, DOGE",
- "claude_called": true,
- "market_read": "",
- "skip_reason": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CfhsQFZbDuyJibqXc37kM'}",
- "picks": []
+ "call_reason": "תנועה חזקה במטבע חדש: DOGE, ADA, CC",
+ "claude_called": false,
+ "skip": "snapshot זהה לקריאה הקודמת"
 }
