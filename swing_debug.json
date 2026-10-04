@@ -1,27 +1,26 @@
 {
- "time": "2026-10-04T15:00:05",
+ "time": "2026-10-04T16:00:05",
  "usdc": 28.23,
- "portfolio": 691.07,
+ "portfolio": 691.2,
  "api_billing_blocked": true,
  "margin_headroom": 141.15,
  "open": [
-  "ANTHROPIC long +7.6%"
+  "ANTHROPIC long +7.5%"
  ],
- "stock_candidates": 16,
+ "stock_candidates": 17,
  "top_stocks": [
-  "IOT +2.3% vol=$7,042",
-  "CRCL +1.3% vol=$40,028",
+  "CRCL +0.9% vol=$123,163",
   "CF -0.8% vol=$10,323",
-  "MSTR +0.7% vol=$105,289",
-  "TSLA +0.6% vol=$221,667"
+  "TSLA +0.6% vol=$221,596",
+  "COIN +0.6% vol=$32,814",
+  "MSTR +0.5% vol=$138,018"
  ],
  "futures_ok": true,
- "futures_balance": 79.23,
+ "futures_balance": 79.24,
  "unallocated_spot": [
   "ETH $540",
   "SOL $28"
  ],
- "call_reason": "תנועה חזקה במניה: IOT",
- "claude_called": false,
- "skip": "snapshot זהה לקריאה הקודמת"
+ "call_reason": "הכל שקט — דולג על קריאה לClaude",
+ "claude_called": false
 }
