@@ -1,24 +1,24 @@
 {
- "time": "2026-10-04T16:00:05",
+ "time": "2026-10-04T17:00:06",
  "usdc": 28.23,
- "portfolio": 691.2,
+ "portfolio": 692.2,
  "api_billing_blocked": true,
  "margin_headroom": 141.15,
  "open": [
-  "ANTHROPIC long +7.5%"
+  "ANTHROPIC long +7.7%"
  ],
  "stock_candidates": 17,
  "top_stocks": [
-  "CRCL +0.9% vol=$123,163",
+  "IOT +1.4% vol=$11,249",
+  "CRCL +1.2% vol=$168,637",
   "CF -0.8% vol=$10,323",
-  "TSLA +0.6% vol=$221,596",
   "COIN +0.6% vol=$32,814",
-  "MSTR +0.5% vol=$138,018"
+  "TSLA +0.5% vol=$221,559"
  ],
  "futures_ok": true,
- "futures_balance": 79.24,
+ "futures_balance": 79.22,
  "unallocated_spot": [
-  "ETH $540",
+  "ETH $541",
   "SOL $28"
  ],
  "call_reason": "הכל שקט — דולג על קריאה לClaude",
