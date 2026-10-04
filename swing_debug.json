@@ -1,7 +1,7 @@
 {
- "time": "2026-10-04T11:00:05",
+ "time": "2026-10-04T12:00:05",
  "usdc": 28.23,
- "portfolio": 691.46,
+ "portfolio": 691.24,
  "api_billing_blocked": true,
  "margin_headroom": 141.15,
  "open": [
@@ -9,16 +9,16 @@
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "IOT +4.8% vol=$11,190",
-  "MSTR +1.9% vol=$89,004",
-  "CRCL +0.9% vol=$39,258",
-  "CF -0.6% vol=$16,664",
+  "IOT +5.0% vol=$9,211",
+  "MSTR +1.5% vol=$98,970",
+  "CRCL +1.2% vol=$39,721",
+  "CF -0.9% vol=$16,784",
   "COIN +0.4% vol=$30,238"
  ],
  "futures_ok": true,
- "futures_balance": 79.27,
+ "futures_balance": 79.22,
  "unallocated_spot": [
-  "ETH $541",
+  "ETH $540",
   "SOL $28"
  ],
  "call_reason": "תנועה חזקה במניה: IOT",
