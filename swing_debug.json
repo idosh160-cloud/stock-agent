@@ -1,7 +1,7 @@
 {
- "time": "2026-10-05T05:00:05",
+ "time": "2026-10-05T06:00:04",
  "usdc": 28.23,
- "portfolio": 691.31,
+ "portfolio": 692.07,
  "api_billing_blocked": true,
  "margin_headroom": 141.15,
  "open": [
@@ -9,18 +9,21 @@
  ],
  "stock_candidates": 15,
  "top_stocks": [
-  "SPCX +0.8% vol=$100,163",
-  "HOOD +0.6% vol=$114,663",
-  "MSTR -0.6% vol=$209,192",
+  "HOOD +0.6% vol=$114,841",
+  "MSTR -0.5% vol=$209,467",
   "IOT +0.5% vol=$8,309",
-  "CRCL -0.5% vol=$544,611"
+  "COIN +0.5% vol=$70,017",
+  "SPCX +0.5% vol=$102,388"
  ],
  "futures_ok": true,
- "futures_balance": 79.24,
+ "futures_balance": 79.25,
  "unallocated_spot": [
-  "ETH $541",
+  "ETH $542",
   "SOL $28"
  ],
- "call_reason": "הכל שקט — דולג על קריאה לClaude",
- "claude_called": false
+ "call_reason": "תנועה חזקה במטבע חדש: ADA",
+ "claude_called": true,
+ "market_read": "",
+ "skip_reason": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CfiaaZFGrSkUjic1rqgr2'}",
+ "picks": []
 }
