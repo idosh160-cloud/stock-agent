@@ -1,29 +1,29 @@
 {
- "time": "2026-10-07T03:00:04",
+ "time": "2026-10-07T04:00:05",
  "usdc": 28.23,
- "portfolio": 672.35,
+ "portfolio": 671.85,
  "api_billing_blocked": true,
  "margin_headroom": 141.15,
  "open": [
-  "ANTHROPIC long +8.8%"
+  "ANTHROPIC long +9.2%"
  ],
  "stock_candidates": 19,
  "top_stocks": [
-  "IOT +4.6% vol=$40,017",
-  "CF -3.8% vol=$5,976",
-  "HOOD -2.6% vol=$394,960",
-  "COIN -2.6% vol=$183,481",
-  "MSTR -2.0% vol=$750,919"
+  "CF -4.5% vol=$5,826",
+  "IOT +4.3% vol=$41,738",
+  "COIN -2.6% vol=$182,573",
+  "HOOD -2.4% vol=$396,068",
+  "AMZN +1.9% vol=$84,464"
  ],
  "futures_ok": true,
  "futures_balance": 78.94,
  "unallocated_spot": [
-  "ETH $523",
+  "ETH $522",
   "SOL $27"
  ],
- "call_reason": "תנועה חזקה במטבע חדש: DOT, TRUMP, ADA",
+ "call_reason": "תנועה חזקה במטבע חדש: DOT, TRUMP, FARTCOIN",
  "claude_called": true,
  "market_read": "",
- "skip_reason": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011Cfn8UJ24Hgo87ZuoRaS1r'}",
+ "skip_reason": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CfnD3fhfyHjjouC63YPfw'}",
  "picks": []
 }
