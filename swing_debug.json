@@ -1,19 +1,19 @@
 {
- "time": "2026-10-11T12:00:06",
+ "time": "2026-10-11T13:00:06",
  "usdc": 28.25,
- "portfolio": 650.1,
+ "portfolio": 649.9,
  "api_billing_blocked": true,
  "margin_headroom": 141.25,
  "open": [
-  "ANTHROPIC long +7.6%"
+  "ANTHROPIC long +7.7%"
  ],
  "stock_candidates": 16,
  "top_stocks": [
-  "CF +26.4% vol=$556,039",
-  "ANTHROPIC -0.8% vol=$295,113",
+  "CF +26.8% vol=$596,247",
+  "ANTHROPIC -0.7% vol=$298,828",
+  "GLD -0.7% vol=$6,806",
   "OPENAI -0.6% vol=$19,851",
-  "GLD +0.4% vol=$6,913",
-  "SPCX +0.3% vol=$38,145"
+  "HOOD +0.4% vol=$10,513"
  ],
  "futures_ok": true,
  "futures_balance": 79.24,
@@ -22,8 +22,6 @@
   "SOL $25"
  ],
  "call_reason": "תנועה חזקה במניה: CF",
- "claude_called": true,
- "market_read": "",
- "skip_reason": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CfvQtSLg8QuzFBTYRGNvt'}",
- "picks": []
+ "claude_called": false,
+ "skip": "snapshot זהה לקריאה הקודמת"
 }
