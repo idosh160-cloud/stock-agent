@@ -2245,5 +2245,31 @@
     "entry_bb_pct": null,
     "entry_macd_hist": null,
     "entry_change_24h": -6.77
+  },
+  {
+    "coin": "ANTHROPIC",
+    "pair": "PF_ANTHROPICXUSD",
+    "is_stock": true,
+    "is_futures": true,
+    "side": "short",
+    "entry_price": 2211.57,
+    "limit_price": 2211.57,
+    "volume": 0.01,
+    "usd": 22.12,
+    "target_price": 2056.76,
+    "stop_price": 1842.6906,
+    "date_open": "2026-10-30T04:00:04.564263",
+    "date_close": "2026-10-30T04:00:07.289723",
+    "status": "closed_profit",
+    "confidence": "MEDIUM",
+    "reasoning": "Adopted from Kraken Futures — untracked position (not opened by this bot)",
+    "market_read": "",
+    "current_price": 1789.02,
+    "pnl_pct": 19.11,
+    "pnl_usd": 4.23,
+    "txid": "",
+    "sell_txid": null,
+    "close_price": 1789.02,
+    "close_txid": "a31a487e-79d2-45c3-a30e-752084c4d36b"
   }
 ]
