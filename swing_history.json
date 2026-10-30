@@ -2023,5 +2023,30 @@
     "entry_bb_pct": null,
     "entry_macd_hist": null,
     "entry_change_24h": 3.42
+  },
+  {
+    "coin": "ANTHROPIC",
+    "pair": "PF_ANTHROPICXUSD",
+    "status": "closed_externally",
+    "leveraged": false,
+    "collateral": 18.9,
+    "volume": 0.01,
+    "entry_price": 1890.0,
+    "close_price": 1890.0,
+    "target_price": 2041.2,
+    "stop_price": 2139.9461,
+    "pnl_usd": 0,
+    "pnl_pct": 0,
+    "date_open": "2026-08-23T04:00:38.809583",
+    "date_close": "2026-10-30T03:00:07.180776",
+    "reasoning": "ANTHROPIC היחיד שעולה (+0.8%) עם נפח מסחר יציב וטווח יומי גבוה (12%) שמעיד על תנודתיות בריאה לכיוון חיובי, וההיסטוריה הבודדת שלו הייתה רווחית מאוד.",
+    "confidence": "MEDIUM",
+    "txid": "a2917dc2-b953-4ff9-8015-881e60b28bdd",
+    "close_txid": null,
+    "side": "long",
+    "entry_rsi": null,
+    "entry_bb_pct": null,
+    "entry_macd_hist": null,
+    "entry_change_24h": 0.8
   }
 ]
