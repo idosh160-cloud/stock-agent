@@ -1,17 +1,17 @@
 {
- "time": "2026-11-07T08:00:04",
+ "time": "2026-11-07T09:00:09",
  "usdc": 28.34,
- "portfolio": 595.53,
+ "portfolio": 596.02,
  "api_billing_blocked": true,
  "margin_headroom": 141.7,
  "open": [],
  "stock_candidates": 20,
  "top_stocks": [
   "ANTHROPIC -6.6% vol=$63,913",
-  "SPCX +6.5% vol=$1,619,296",
-  "TSLA +3.5% vol=$5,003,187",
-  "OPENAI -3.2% vol=$19,154",
-  "CF -1.7% vol=$5,228"
+  "SPCX +6.3% vol=$1,640,698",
+  "TSLA +3.1% vol=$4,915,625",
+  "OPENAI -3.1% vol=$19,218",
+  "CF -2.2% vol=$5,214"
  ],
  "futures_ok": true,
  "futures_balance": 83.89,
@@ -19,6 +19,8 @@
   "ETH $450"
  ],
  "call_reason": "אין פוזיציות פתוחות — סורק הזדמנויות",
- "claude_called": false,
- "skip": "snapshot זהה לקריאה הקודמת"
+ "claude_called": true,
+ "market_read": "",
+ "skip_reason": "Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'Your credit balance is too low to access the Anthropic API. Please go to Plans & Billing to upgrade or purchase credits.'}, 'request_id': 'req_011CgoJ1C9iR3mmfd9dPvXu7'}",
+ "picks": []
 }
